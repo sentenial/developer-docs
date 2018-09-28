@@ -1,0 +1,39 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/sentenial
+    - title: News
+      url: /news
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+#    - title: Jekyll Help
+#      folderitems:
+#        - title: Jekyll Talk
+#          external_url: https://talk.jekyllrb.com
+#        - title: Jekyll documentation
+#          external_url: http://jekyllrb.com/docs/home/
+#        - title: Jekyll on Stack Overflow
+#          external_url: http://stackoverflow.com/questions/tagged/jekyll
+#       - title: Jekyll on my blog
+#          external_url: http://idratherbewriting.com/category-jekyll/
+    - title: Products
+      folderitems:
+#        - title: Home
+#          url: /mydoc_introduction.html
+#          url: /index.html
+        - title: Product Overview
+          url: /prod_overview.html
+        - title: Nuapay
+          url: /np_landing_page.html
+        - title: Electronic Mandates
+          url: /em_landing_page.html
+        - title: UK Open Banking
+          url: /ob_landing_page.html
+        - title: Instant Payments
+          url: /ip_landing_page.html

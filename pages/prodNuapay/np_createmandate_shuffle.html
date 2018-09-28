@@ -1,0 +1,127 @@
+---
+title: Shuffle layout
+tags: [special_layouts]
+last_updated: November 30, 2015
+keywords: shuffle, card layout, dynamic grid, doc portal, support portal
+summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
+permalink: np_createmandate_shuffle.html
+sidebar: mydoc_sidebar
+folder: mydoc
+---
+
+
+
+{% if site.output == "pdf" %}
+{{site.data.alerts.note}} The content on this page doesn't display well on PDF, but I included it anyway so you could see the problems this layout poses if you're including it in PDF.  {{site.data.alerts.end}}
+{% endif %}
+
+{% unless site.output == "pdf" %}
+<script src="js/jquery.shuffle.min.js"></script>
+<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+{% endunless %}
+
+      <div class="filter-options">
+      <button class="btn btn-primary" data-group="all">All</button>
+      <button class="btn btn-primary" data-group="request">Request</button>
+      <button class="btn btn-primary" data-group="required">Required</button>
+      <button class="btn btn-primary" data-group="response">Response</button>
+      <button class="btn btn-primary" data-group="httpcodes">HTTP Response Codes</button>
+      
+    </div>      
+
+<div id="grid" class="row">
+
+
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["request"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">Request</div>
+               <div class="panel-body">
+                  API Reference: <a href = "#">OpenAPI/Swagger</a>
+                   <ul>
+                       <li><b>Usage</b>: Mandates must be created under a CSID</li>
+                       <li><b>Method</b>: POST</li>
+                       <li><b>URI</b>: /schemes/{CS_ID}/mandates</li>
+                   </ul>
+            <!--      <ul>
+                      
+                      
+                {% for page in site.pages %}
+                {% for tag in page.tags %}
+                {% if tag == "request" %}
+                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %} 
+                  </ul>-->
+               </div>
+            </div>
+    
+    </div>
+    
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["required"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">Required</div>
+               <div class="panel-body">
+                  The following are required:
+                   <ul>
+                       <li><b>debtor.name</b>: The payer's name</li>
+                       <li><b>debtorAccount.iban</b>: The payer's account</li>
+                     
+                   </ul>
+            <!--      <ul>
+                      
+                      
+                {% for page in site.pages %}
+                {% for tag in page.tags %}
+                {% if tag == "request" %}
+                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %} 
+                  </ul>-->
+               </div>
+            </div>
+    
+    </div>
+    
+   
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["response"]'>
+
+                <div class="panel panel-default">
+               <div class="panel-heading">Response</div>
+               <div class="panel-body">
+                  These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages: 
+                  
+               </div>
+            </div>
+
+    </div>
+
+  
+
+       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["httpcodes"]'>
+
+           <div class="panel panel-default">
+               <div class="panel-heading">HTTP Response Codes</div>
+               <div class="panel-body">When you're building, publishing, and deploying your Jekyll site, you might find these topics helpful.
+                   
+               </div>
+            </div>
+
+    </div>
+
+       
+          <!-- sizer -->
+      <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
+
+
+    </div><!-- /#grid -->
+
+{% unless site.output == "pdf" %}
+{% include initialize_shuffle.html %}
+{% endunless %}
+
+{{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
+

@@ -1,0 +1,137 @@
+---
+title: Product Overview
+keywords: mydoc
+sidebar: productOverview_sidebar
+toc: false
+permalink: prod_overview.html
+folder: prodOverview
+---
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">More ways to Pay!</h2>
+            <p>We offer various payment products, from Direct Debits and Credit Transfers in our Nuapay product to e-manadates, UK Open Banking and SEPA Instant Payments. Jump in, the water's fine!</p>
+            
+            {% include note.html content="For advanced users find the <a href='#SR'>Swagger Reference</a> you need and get your hands dirty!" %}
+            
+           
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <a href="np_landing_page.html">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                       <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-euro-sign fa-stack-1x fa-inverse"></i>                       
+                    </span>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <h4>Nuapay SEPA Payments</h4>
+                    <p>Create Direct Debits and schedules </p>
+                    <a href="np_landing_page.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <a href="p3_landing_page.html">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-barcode fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <h4>Electronic Mandates</h4>
+                    <p>Create e-mandates and contracts.</p>
+                    <a href="p3_landing_page.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>                        
+                          <i class="fa fa-lock-open fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>UK Open Banking</h4>
+                    <p>List participating banks and act as a PISP</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-stopwatch fa-stack-1x fa-inverse""></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Instant Payments</h4>
+                    <p>Transmit and receive instant payments in seconds.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Tabs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header" id ="SR">Swagger Reference</h2>
+        </div>
+        <div class="col-lg-12">
+
+            <ul id="myTab" class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-euro-sign"></i> Nuapay SEPA Payments</a>
+                </li>
+                <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-barcode"></i> Electronic Mandates</a>
+                </li>
+                <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-lock-open"></i> UK Open Banking</a>
+                </li>
+                <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-stopwatch"></i> Instant Payments</a>
+                </li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="service-one">
+                    <h4>Nuapay SEPA Payments</h4>
+                    <p>Nuapay allows you to process Direct Debit and Credit Transfer payments.</p>
+                    <p>With Direct Debit you are the payee; you can initiate pull payments as agreed with your payers. With Credit Transfer payments, you are the payer.</p>
+                    <p><a href="#" data-toggle="tab"><i class="fa fa-cogs"></i> Swagger Reference</a></p>
+                    <p><a href="#" data-toggle="tab"><i class="fa fa-file-import"></i> YAML</a></p>
+                </div>
+                <div class="tab-pane fade" id="service-two">
+                    <h4>E-Mandates</h4>
+                    <p>We have designed E-Mandates to be easy-to-use, Developer-friendly and customisable so that it can be integrated into your business, regardless of how your business is set up.</p>
+                    <p>See the Implementation Overview section for more details </p>
+                    <a href="#" data-toggle="tab"><i class="fa fa-cogs"></i> Swagger Reference</a>
+                </div>
+                <div class="tab-pane fade" id="service-three">
+                    <h4>UK Open Banking</h4>
+                    <p>Acting as a Payment Initiation Service Provider, Nuapay allows you to offer your users the option to pay via their bank account. For your users that means that they don't need to use a credit card and because they are verifying their credentials on their own online banking portal, they can be confident that their personal data is secure. </p>
+                    <p>For you, the merchant, no chargebacks are possible and funds are credited to your account in real time (via Faster Payments). Cheaper than card payments, we really believe that Open Banking is a game changer for any business handling online payments</p>
+                    <a href="#" data-toggle="tab"><i class="fa fa-cogs"></i> Swagger Reference</a>
+                </div>
+                <div class="tab-pane fade" id="service-four">
+                    <h4>Instant Payments</h4>
+                    <p>Sentenial's Origix Instant Payments module allows financial institutions / PSPs to process near instantaneous payments using our powerful Application Programming Interface (API). </p>
+                    <p>The application works in two modes:
+
+                         <li>As a Receiver of inbound Payments.</li>  
+                        <li> As a Disburser of outbound Payments.</li>    </p>
+                    <a href="https://sentenial.github.io/instant-payments-swagger/docs/redoc.html" target = "new""><i class="fa fa-cogs"></i> Swagger Reference</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+  

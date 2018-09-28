@@ -1,0 +1,296 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Nuapay
+  product: Nuapay
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_landing_page.html
+      output: web
+
+  - title: Basics
+    output: web, pdf
+    folderitems:
+
+    - title: Mandate Basics
+      url: /np_mdtbasics.html
+      output: web, pdf
+
+    - title: Direct Debit Payments
+      url: /np_ddpayments.html
+      output: web, pdf
+
+    - title: Payment Schedules
+      url: /np_paymentschedules.html
+      output: web, pdf
+
+    - title: Currency Support
+      url: /np_currencysupport.html
+      output: web, pdf
+      
+      subfolders:
+      - title: API Basics
+        output: web, pdf
+        subfolderitems:
+
+        - title: API Call Sequence
+          url: /np_callsequence.html
+          output: web, pdf
+
+        - title: General API Rules
+          url: /np_generalrules.html
+          output: web, pdf
+
+        - title: List Creditor Schemes
+          url: /np_listcredscheme.html
+          output: web, pdf
+
+        - title: Response Handling
+          url: /np_responsehandling.html
+          output: web, pdf
+  
+  - title: Mandates
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_mdtoverview.html
+      output: web, pdf
+
+    - title: Mandate Statuses
+      url: /np_mandatestatuses.html
+      output: web, pdf
+
+      subfolders:
+      - title: Mandate APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Mandate
+          url: /np_createmandate.html
+          output: web
+
+        - title: Retrieve Mandate
+          url: /np_retrievemandate.html
+          output: web
+
+        - title: Retrieve Mandate Document
+          url: /np_retrievemandatedoc.html
+          output: web
+
+        - title: Upload Mandate Document
+          url: /np_uploademandatedoc.html
+          output: web
+
+        - title: List Mandates
+          url: /np_listmandates.html
+          output: web
+
+        - title: Update Mandate
+          url: /np_updatemandate.html
+          output: web
+
+        - title: Activate Mandate
+          url: /np_activatemandate.html
+          output: web
+          
+        - title: Cancel Mandate
+          url: /np_cancelmandate.html
+          output: web
+
+
+  - title: Direct Debits
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_ddoverview.html
+      output: web, pdf
+
+    - title: Direct Debit Statuses
+      url: /np_ddstatuses.html
+      output: web, pdf
+
+      subfolders:
+      - title: Direct Debit APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Direct Debit
+          url: /np_createdirectdebit.html
+          output: web
+
+        - title: Create Direct Debit & Mandate
+          url: /np_createddandmand.html
+          output: web
+
+        - title: Retrieve Direct Debit
+          url: /np_retrievedirectdebit.html
+          output: web
+
+        - title: List Direct Debit
+          url: /np_listdirectdebits.html
+          output: web
+
+        - title: List Failed Direct Debits
+          url: /np_listfaileddds.html
+          output: web
+
+        - title: Revoke Direct Debit
+          url: /np_revokedirectdebit.html
+          output: web
+
+        - title: Revoke All Direct Debits
+          url: /np_revokealldds.html
+          output: web
+          
+        - title: Re-present Failed Direct Debit
+          url: /np_representfaileddds.html
+          output: web  
+
+  - title: Payment Schedules
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_schedulesoverview.html
+      output: web, pdf
+
+      subfolders:
+      - title: Payment Schedule APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Payment Schedule
+          url: /np_createschedule.html
+          output: web
+
+        - title: Create Payment Schedule & Mandate
+          url: /np_createschedulemandate.html
+          output: web
+
+        - title: List Payment Schedule
+          url: /np_listschedules.html
+          output: web
+
+        - title: Cancel Payment Schedule
+          url: /np_cancelschedule.html
+          output: web
+          
+  - title: Credit Transfers
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_ctoverview.html
+      output: web, pdf
+    
+      subfolders:
+      - title: Credit Transfer APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Beneficiary
+          url: /np_createbeneficiary.html
+          output: web
+
+        - title: Retrieve Beneficiary
+          url: /np_retrievebene.html
+          output: web
+
+        - title: List Beneficiaries
+          url: /np_listbeneficiaries.html
+          output: web
+
+        - title: Create Credit Transfer
+          url: /np_createdct.html
+          output: web
+
+        - title: Create Credit Transfer & Beneficiary
+          url: /np_createctandbene.html
+          output: web
+
+        - title: Retrieve Credit Transfer
+          url: /np_retrievect.html
+          output: web
+
+        - title: List Credit Transfers
+          url: /np_listcts.html
+          output: web       
+           
+  - title: Nuapay Accounts
+    output: web, pdf
+    folderitems:
+
+    - title: Account Overview
+      url: /np_accountoverview.html
+      output: web, pdf  
+
+    - title: Transaction Overview
+      url: /np_transactionoverview.html
+      output: web, pdf  
+        
+      subfolders:
+      - title: Nuapay Account APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Account
+          url: /np_createaccount.html
+          output: web
+
+        - title: List Accounts
+          url: /np_listaccounts.html
+          output: web
+
+        - title: View Account
+          url: /np_viewaccount.html
+          output: web
+
+        - title: List Account Balances
+          url: /np_listaccountbal.html
+          output: web
+
+        - title: View Transaction
+          url: /np_viewtransaction.html
+          output: web
+ 
+        - title: List Transaction
+          url: /np_listtransactions.html
+          output: web
+
+        - title: Transfer Between Accounts
+          url: /np_accounttransfer.html
+          output: web
+          
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_whoverview.html
+      output: web, pdf  
+
+    - title: Configuration
+      url: /np_whconfiguration.html
+      output: web, pdf          
+      
