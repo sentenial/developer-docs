@@ -1,40 +1,52 @@
-## Welcome to GitHub Pages
+## Welcome to the Sentenial GitHub Pages Documentation
 
-docker-compose build --no-cache && docker-compose up
-
-
-You can use the [editor on GitHub](https://github.com/whelanp/developer-docs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+The following details how to create a pull request for this repo.
+1) Fork the repository https://github.com/sentenial/developer-docs *[Once Off Step]*
+2) git clone the new fork, an example is shown below this will however be pointing to your fork. *[Once Off Step]*
 ```
+git clone https://github.com/whelanp/developer-docs.git
+```
+3) Add a link to the upstream repository you forked from. *[Once Off Step]* (sometimes this is called the remote upstream maintainer URL).
+```
+git remote add upstream https://github.com/sentenial/developer-docs.git
+```
+4) create a feature branch for your edits and switch to your feature branch, sample command shown below
+```
+git checkout -b my-feature
+```
+5) In the project there is a docker compose file run the following to start up a Jekyll docker container. The compose file is called *docker-compose.yml*
+```
+docker-compose build --no-cache && docker-compose up
+```
+6) Work on the changes you wish to make to the project
+7) Commit your change to the feature branch you created in step 4 when you are happy with the changes. docker runs Jekyll on localhost:4000 you can observe the changes you make in the browser at this URL. Once you are happy with the changes you can commit them.
+```
+git commit -m "my commit message".
+```
+8) Switch back to you master branch
+```
+git checkout master
+```
+9) Get updates from the upstream master, this could of changed since you created your fork of the repository.
+```
+git pull upstream master
+```
+10) Push these changes to our origin master branch
+```
+git push origin master
+```
+11) Switch back to your feature branch
+```
+git checkout my-feature
+```
+12) Rebase off local master, this brings into the branch any updates on the master branch we may of missed. (sometimes there will be no changes that's fine too)
+```
+git rebase master
+```
+13) Push the change to origin master
+```
+git push origin my-feature
+```
+14) Login to the user interface and create a pull request. After you have created a pull request the Maintainers of the project decide to accept or reject the pull request.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/whelanp/developer-docs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+TODO add pictures
