@@ -293,4 +293,28 @@ entries:
     - title: Configuration
       url: /np_whconfiguration.html
       output: web, pdf          
-      
+        
+      subfolders:
+      - title: Webhook Events 
+        output: web
+        subfolderitems:
+
+        - title: Direct Debit R-Transaction
+          url: /np_whddrejectevent.html
+          output: web
+
+        - title: Incoming Credit Transfer
+          url: /np_listaccounts.html
+          output: web
+
+        - title: Accepted Direct Debit
+          url: /np_viewaccount.html
+          output: web
+
+        - title: Mandate Signature
+          url: /np_listaccountbal.html
+          output: web
+
+        - title: Credit Transfer Reject
+          url: /np_viewtransaction.html
+          output: web      
