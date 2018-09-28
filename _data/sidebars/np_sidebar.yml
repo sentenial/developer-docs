@@ -304,7 +304,7 @@ entries:
           output: web
 
         - title: Incoming Credit Transfer
-          url: /np_listaccounts.html
+          url: /np_whincomingct.html
           output: web
 
         - title: Accepted Direct Debit
