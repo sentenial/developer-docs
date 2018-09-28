@@ -1,12 +1,14 @@
-## Welcome to the Sentenial GitHub Pages Documentation
+# Welcome to the Sentenial GitHub Pages Documentation
 
-Prerequisites
+##Prerequisites
 - Install docker on your machine
 - Install git for your operating system
 - If you are required to use a proxy the following environment variables are observed.
   - http_proxy url of your http proxy 
   - https_proxy url of your https proxy
   - no_proxy csv list of addresses to not use the proxy for
+
+##Documentation Workflow
 
 The following details how to create a pull request for this repo.
 1) Fork the repository https://github.com/sentenial/developer-docs *[Once Off Step]*
