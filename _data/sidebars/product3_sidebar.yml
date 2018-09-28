@@ -1,0 +1,51 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Electonic Mandates
+  product: E-Mandates
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /p3_landing_page.html
+      output: web
+
+  - title: Implementation Options
+    output: web, pdf
+    folderitems:
+
+    - title: Redirect
+      url: /p3_sample1.html
+      output: web, pdf
+      
+    - title: Overlay
+      url: /p3_sample2.html
+      output: web, pdf
+
+    - title: Wordpress Plug-in
+      url: /p3_sample3.html
+      output: web, pdf
+
+    - title: Direct API Integration
+      url: /p3_sample4.html
+      output: web, pdf
+
+  
+  

@@ -1,0 +1,15 @@
+version: '2'
+services:
+  server:
+    build:
+      context: .
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+      dockerfile: Dockerfile
+    image: result/latest
+    ports:
+      - "4000:4000"
+    volumes:
+      - ".:/src"
