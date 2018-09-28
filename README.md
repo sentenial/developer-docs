@@ -61,4 +61,4 @@ git push origin my-feature
 ```
 14) Login to the user interface and create a pull request. After you have created a pull request the Maintainers of the project decide to accept or reject the pull request.
 
-TODO add pictures
+Have a nice day
