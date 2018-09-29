@@ -14,7 +14,7 @@ The following details how to create a pull request for this repo.
 1) Fork the repository https://github.com/sentenial/developer-docs *[Once Off Step]*
 2) git clone the new fork, an example is shown below this will however be pointing to your fork. *[Once Off Step]*
 ```
-git clone https://github.com/YOUR_REPO/developer-docs.git
+git clone https://github.com/YOUR_USERNAME/developer-docs.git
 ```
 3) Add a link to the upstream repository you forked from. *[Once Off Step]* (sometimes this is called the remote upstream maintainer URL).
 ```
