@@ -10,6 +10,8 @@ toc: false
 
 ## API Details
 
+{% include important.html content="The [JWS-Signature header](np_secjws.html) is required for this endpoint. " type="primary" %} 
+
 Unlike the Direct Debit payment API, Beneficiary and CT requests do not require a Creditor Scheme ID reference.
 
 Before you can initiate a payment via the Create Credit Transfer request you must first create a beneficiary. 

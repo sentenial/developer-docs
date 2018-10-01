@@ -308,13 +308,41 @@ entries:
           output: web
 
         - title: Accepted Direct Debit
-          url: /np_viewaccount.html
+          url: /np_whaccepteddd.html
           output: web
 
         - title: Mandate Signature
-          url: /np_listaccountbal.html
+          url: /np_whmandsignature.html
           output: web
 
         - title: Credit Transfer Reject
-          url: /np_viewtransaction.html
+          url: /np_ctreject.html
           output: web      
+          
+  - title: Security
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_secoverview.html
+      output: web, pdf  
+
+    - title: API Key Authentication
+      url: /np_secapikeyauth.html
+      output: web, pdf          
+
+    - title: JSON Web Signature
+      url: /np_secjws.html
+      output: web, pdf          
+
+    - title: PKI Management
+      url: /np_secpkidevdashboard.html
+      output: web, pdf          
+
+    - title: Simple JSON Web Signature
+      url: /np_whconfiguration.html
+      output: web, pdf          
+
+    - title: JWS Signature Generator
+      url: /np_whconfiguration.html
+      output: web, pdf          
