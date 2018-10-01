@@ -21,11 +21,11 @@ folder: mydoc
 {% endunless %}
 
       <div class="filter-options">
-      <button class="btn btn-primary" data-group="all">All</button>
-      <button class="btn btn-primary" data-group="request">Request</button>
-      <button class="btn btn-primary" data-group="required">Required</button>
-      <button class="btn btn-primary" data-group="response">Response</button>
-      <button class="btn btn-primary" data-group="httpcodes">HTTP Response Codes</button>
+     
+      <button class="btn btn-primary" data-group="request">JWS Header</button>
+      <button class="btn btn-primary" data-group="required">JWS Payload</button>
+      <button class="btn btn-primary" data-group="response">Private Key</button>
+       <button class="btn btn-primary" data-group="all">All</button>
       
     </div>      
 
@@ -35,25 +35,27 @@ folder: mydoc
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["request"]'>
 
                <div class="panel panel-default">
-               <div class="panel-heading">Request</div>
+               <div class="panel-heading">JWS Header</div>
                <div class="panel-body">
-                  API Reference: <a href = "#">OpenAPI/Swagger</a>
-                   <ul>
-                       <li><b>Usage</b>: Mandates must be created under a CSID</li>
-                       <li><b>Method</b>: POST</li>
-                       <li><b>URI</b>: /schemes/{CS_ID}/mandates</li>
-                   </ul>
-            <!--      <ul>
-                      
-                      
-                {% for page in site.pages %}
-                {% for tag in page.tags %}
-                {% if tag == "request" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %} 
-                  </ul>-->
+                  Edit the "kid", "iat" and "iss" <br><br>
+                   <form action="/action_page.php">
+                kid:<br>
+                <input type="text" name="firstname" value="Mickey">
+                <br>
+                iat:<br>
+                <input type="text" name="lastname" value="Mouse">
+                <br>
+                iss:<br>
+                <input type="text" name="lastname" value="Mouse">
+            <br><br>
+                   
+                  <b>kid</b>: must match your certificate serial number <br>
+                  <b>iat</b>: must contain the current datetime (the milliseconds since Unix Epoch) <br>
+                  <b>iss</b>: must match the subject on your certificate <br>
+                  
+           
+  
+</form> 
                </div>
             </div>
     
@@ -62,25 +64,13 @@ folder: mydoc
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["required"]'>
 
                <div class="panel panel-default">
-               <div class="panel-heading">Required</div>
+               <div class="panel-heading">JWS Payload</div>
                <div class="panel-body">
-                  The following are required:
-                   <ul>
-                       <li><b>debtor.name</b>: The payer's name</li>
-                       <li><b>debtorAccount.iban</b>: The payer's account</li>
-                     
-                   </ul>
-            <!--      <ul>
-                      
-                      
-                {% for page in site.pages %}
-                {% for tag in page.tags %}
-                {% if tag == "request" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %} 
-                  </ul>-->
+                  Paste your HTTP request:<br>
+                 <form action="/action_page.php">
+                     <input type="text" style="height:310px" name="JSON" value="Paste your JSON here..." align ="top">
+                   </form>
+                
                </div>
             </div>
     
@@ -90,10 +80,12 @@ folder: mydoc
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["response"]'>
 
                 <div class="panel panel-default">
-               <div class="panel-heading">Response</div>
+               <div class="panel-heading">Private Key</div>
                <div class="panel-body">
-                  These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages: 
-                  
+                 Paste your Private Key:	 
+                <form action="/action_page.php">
+                     <input type="text" style="height:310px" name="Private Key" value="Paste your key here..." align ="top">
+                   </form>
                </div>
             </div>
 
@@ -101,14 +93,7 @@ folder: mydoc
 
   
 
-       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["httpcodes"]'>
-
-           <div class="panel panel-default">
-               <div class="panel-heading">HTTP Response Codes</div>
-               <div class="panel-body">When you're building, publishing, and deploying your Jekyll site, you might find these topics helpful.
-                   
-               </div>
-            </div>
+      
 
     </div>
 
