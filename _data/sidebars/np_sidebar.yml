@@ -339,8 +339,8 @@ entries:
       url: /np_secpkidevdashboard.html
       output: web, pdf          
 
-    - title: Simple JSON Web Signature
-      url: /np_whconfiguration.html
+    - title: Sample JSON Web Signature
+      url: /np_secjwssample.html
       output: web, pdf          
 
     - title: JWS Signature Generator

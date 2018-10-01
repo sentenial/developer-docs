@@ -9,7 +9,12 @@ folder: prodNuapay
 
 ## About the JSON Web Signature
 
-The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requests made to certain endpoints. This section will deal with generation of the JWS.
+The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requests made to certain endpoints (Beneficiary creation and CT creation). Having this header indicates that you have signed the request with your private key. If you have not provided your private key then these calls will be unsuccessful. 
+
+{% include callout.html content="We require that you use a JWS signature for these types of requests for the pusposes of non-repudiation. By providing a JWS signature you are ensuring that you, as merchant, have generated the request; no other party has been involved; no tampering has occurred.." type="primary" %} 
+
+
+This section will deal with the generation of the JWS.
 
 ## Generating a JSON Web Signature - Step-by-step
 
@@ -17,11 +22,11 @@ The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requ
 	<li value="1">Generate and download a private key and certificate using the Developer Dashboard, for details on how to do this see the <a href="np_secpkidevdashboard.html">PKI Management</a> page in this guide.</li>
 	<li value="2">Obtain the certificate serial number by viewing the certificate details. This is stored as a hexadecimal number and will need to be decoded.</li>
 	<p>
-		<img src="Images/ViewCertificate.png" />
+		<img src="images/ViewCertificate.png" />
 	</p>
 	<li value="3">Obtain the subject parameters from the certificate,</li>
 	<p>
-		<img src="Images/viewCertificate2.PNG" />
+		<img src="images/viewCertificate2.PNG" />
 	</p>
 	<table style="width: 100%;mc-table-style: url('Resources/TableStyles/Simple.css');" class="TableStyle-Simple" cellspacing="0">
 		<col style="width: 101px;" class="TableStyle-Simple-Column-Column1" />
@@ -116,4 +121,4 @@ The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requ
 		</tbody>
 	</table>
 	
-    {% include links.html %}
+   
