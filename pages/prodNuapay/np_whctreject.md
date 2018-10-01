@@ -1,25 +1,31 @@
 ---
-title: Incoming Credit Transfer Event
-keywords: Incoming Credit Transfer Event Webhook 
-summary: "Incoming Credit Transfer Webhook event"
+title: Credit Transfer Reject Event
+keywords: Credit Transfer Reject Event Webhook 
+summary: "Credit Transfer Reject Webhook event"
 sidebar: np_sidebar
-permalink: np_whincomingct.html
+permalink: np_ctreject.html
 folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="Incoming Credit Transfer payment crediting the Nuapay IBAN." %}
+{% include webhook.html content="A PAIN.002 Import with a Credit Transfer rejection." %}
 
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>IncomingCreditTransfer</b>
+This Webhook has the following event types:
+
+|**Webhook Event Type**| **Description**|
+|CreditTransferReject|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = REJECTED|
+|CreditTransferCancel|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = CANCELLED. A Credit Transfer is updated to CANCELLED where the SEPA Reason Code is one of the following: CUST, CUTA, DUPL, UPAY|
+
 
 
 ## Webhook Event Message Details
 
 <p>
 	The following table describes the details of the Webhook notification:</p>
+
 <table cellspacing="0">
 	
 	<tbody>
@@ -42,7 +48,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>IncomingCreditTransfer</td>
+            <td>Either <b>CreditTransferReject </b> <br/> or <br/> <b>CreditTransferCancel</b></td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -77,7 +83,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>uri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the resource for RESTful API querying. Use the URI in the <a href="np_retrievect.html">Retrieve Credit Transfer</a> call.</td>
+			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_viewtransaction.html">Retrieve Credit Transfer Transaction</a>.</td>
 		</tr>
 		<tr>
 			<td>resourceDetails</td>
@@ -91,7 +97,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>Null for Incoming Credit Transfers. </td>
+			<td>The SEPA Reason code</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -105,7 +111,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 
 ## JSON Sample
 
-The following is an example of a Direct Debit Reject event JSON:
+The following is an example of an electonic mandate signing event JSON:
 
 ```js
 POST http://example.com/webhooks
@@ -115,12 +121,12 @@ Content-Length: 261
 X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
 	{
 		"eventTimestamp": 1500651159000,
-		"eventType": "IncomingCreditTransfer",
+		"eventType": "CreditTransferCancel",
 		"resourceReference": "DemoE2EID",
 		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
+		"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 		"resourceType": "Transaction",
-		"reasonCode": null
+		"reasonCode": "CUST"
 	}
 ````
 

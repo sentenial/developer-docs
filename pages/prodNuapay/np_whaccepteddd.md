@@ -1,19 +1,19 @@
 ---
-title: Incoming Credit Transfer Event
-keywords: Incoming Credit Transfer Event Webhook 
-summary: "Incoming Credit Transfer Webhook event"
+title: Accepted Direct Debit Event
+keywords: Accepted Direct Debit Event Webhook 
+summary: "Accepted Direct Debit Webhook event"
 sidebar: np_sidebar
-permalink: np_whincomingct.html
+permalink: np_whaccepteddd.html
 folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="Incoming Credit Transfer payment crediting the Nuapay IBAN." %}
+{% include webhook.html content="A Direct Debit payment's status moves to ACCEPTED (on its value date)" %}
 
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>IncomingCreditTransfer</b>
+This Webhook has a single event type: <b>DirectDebitAccept</b>
 
 
 ## Webhook Event Message Details
@@ -42,7 +42,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>IncomingCreditTransfer</td>
+			<td>DirectDebitAccept</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -77,21 +77,21 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>uri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the resource for RESTful API querying. Use the URI in the <a href="np_retrievect.html">Retrieve Credit Transfer</a> call.</td>
+			<td> This is URI of the Direct Debit resource. Use the URI in the <a href="np_retrievedirectdebit.html">Retrieve Direct Debit</a> call.</td>
 		</tr>
 		<tr>
 			<td>resourceDetails</td>
 			<td>type</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
 		<tr>
 			<td>resourceDetails</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>Null for Incoming Credit Transfers. </td>
+			<td>Null for Direct Debits in ACCEPTED status. </td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -114,12 +114,12 @@ X-Signature: 521ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304
 Content-Length: 261
 X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
 	{
-		"eventTimestamp": 1500651159000,
-		"eventType": "IncomingCreditTransfer",
-		"resourceReference": "DemoE2EID",
+		"eventTimestamp": 1501169079000,
+		"eventType": "DirectDebitAccept",
+		"resourceReference": "Webhook1",
 		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
-		"resourceType": "Transaction",
+		"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
+		"resourceType": "DirectDebit",
 		"reasonCode": null
 	}
 ````

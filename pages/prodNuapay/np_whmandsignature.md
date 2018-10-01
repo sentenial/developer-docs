@@ -1,25 +1,32 @@
 ---
-title: Incoming Credit Transfer Event
-keywords: Incoming Credit Transfer Event Webhook 
-summary: "Incoming Credit Transfer Webhook event"
+title: Mandate Signature Event
+keywords: Mandate Signature Event Webhook 
+summary: "Mandate Signature Webhook event"
 sidebar: np_sidebar
-permalink: np_whincomingct.html
+permalink: np_whmandsignature.html
 folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="Incoming Credit Transfer payment crediting the Nuapay IBAN." %}
+{% include webhook.html content="A mandate moves to ACTIVE status." %}
 
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>IncomingCreditTransfer</b>
+This Webhook has the following event types:
+
+|**Webhook Event Type**| **Description**|
+|MandateElectronicSign|When an electronic mandate is created via Nuapay as Active or is transitioned from Pending to Active, or to Active from Exported (BACS), for all channel. BACS and SEPA included|
+|MandatePaperActivation|When a non-electronic Mandate transitions from Pending to Active or to Active from Exported (BACS), including Mandate-on-the-fly (MOTF). BACS and SEPA included|
+|MandateCreation|When a non-electronic Mandate created in Nuapay with a status of Active is created, including MOTF for all channels.|
+
 
 
 ## Webhook Event Message Details
 
 <p>
 	The following table describes the details of the Webhook notification:</p>
+
 <table cellspacing="0">
 	
 	<tbody>
@@ -42,7 +49,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>IncomingCreditTransfer</td>
+            <td><b>MandateElectronicSign</b> <br/> or <br/> <b>MandatePaperActivation</b> <br/> or <br/> <b>MandateCreation</b></td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -77,21 +84,21 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>uri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the resource for RESTful API querying. Use the URI in the <a href="np_retrievect.html">Retrieve Credit Transfer</a> call.</td>
+			<td> This is URI of the resource allowing you to query the mandate details. See <a href ="np_retrievemandate.html">Retrieve Mandate</a>.</td>
 		</tr>
 		<tr>
 			<td>resourceDetails</td>
 			<td>type</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
 		<tr>
 			<td>resourceDetails</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>Null for Incoming Credit Transfers. </td>
+			<td>Null for mandates. </td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -105,7 +112,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 
 ## JSON Sample
 
-The following is an example of a Direct Debit Reject event JSON:
+The following is an example of an electonic mandate signing event JSON:
 
 ```js
 POST http://example.com/webhooks
@@ -114,12 +121,12 @@ X-Signature: 521ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304
 Content-Length: 261
 X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
 	{
-		"eventTimestamp": 1500651159000,
-		"eventType": "IncomingCreditTransfer",
-		"resourceReference": "DemoE2EID",
-		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
-		"resourceType": "Transaction",
+		"eventTimestamp": 1501169079000,
+		"eventType": "MandateElectronicSign",
+		"resourceReference": "Webhook1",
+		"resourceReferenceType": "MandateId",
+		"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
+		"resourceType": "Mandate",
 		"reasonCode": null
 	}
 ````
