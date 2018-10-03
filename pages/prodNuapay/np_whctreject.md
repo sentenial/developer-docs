@@ -111,24 +111,29 @@ This Webhook has the following event types:
 
 ## JSON Sample
 
-The following is an example of an electonic mandate signing event JSON:
+The following is an example of a Credit Transfer Rejection event JSON:
 
-```js
-POST http://example.com/webhooks
-Content-Type: application/json;charset=UTF-8
-X-Signature: 521ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304
-Content-Length: 261
-X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
-	{
-		"eventTimestamp": 1500651159000,
-		"eventType": "CreditTransferCancel",
-		"resourceReference": "DemoE2EID",
-		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
-		"resourceType": "Transaction",
-		"reasonCode": "CUST"
-	}
-````
+<b>Headers</b>:
+
+
+|POST| http://example.com/webhooks|
+|Content-Type:| application/json;charset=UTF-8|
+|X-Signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|Content-Length:| 261|
+|X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
+
+<b>JSON Request Body</b>
+<pre>
+<code class="json">{
+    "eventTimestamp": 1501169079000,
+    "eventType": "CreditTransferCancel",
+	"resourceReference": "DemoE2EID",
+	"resourceReferenceType": "EndToEndId",
+	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
+	"resourceType": "Transaction",
+	"reasonCode": "CUST"
+}</code>
+</pre>
 
 
 {% include links.html %}

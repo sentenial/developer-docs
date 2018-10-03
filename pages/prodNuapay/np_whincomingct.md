@@ -105,24 +105,30 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 
 ## JSON Sample
 
-The following is an example of a Direct Debit Reject event JSON:
+The following is an example of an Incoming CT event JSON:
 
-```js
-POST http://example.com/webhooks
-Content-Type: application/json;charset=UTF-8
-X-Signature: 521ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304
-Content-Length: 261
-X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
-	{
-		"eventTimestamp": 1500651159000,
-		"eventType": "IncomingCreditTransfer",
-		"resourceReference": "DemoE2EID",
-		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
-		"resourceType": "Transaction",
-		"reasonCode": null
-	}
-````
+<b>Headers</b>:
+
+
+|POST| http://example.com/webhooks|
+|Content-Type:| application/json;charset=UTF-8|
+|X-Signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|Content-Length:| 261|
+|X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
+
+
+<b>JSON Request Body</b>
+<pre>
+<code class="json">{
+    "eventTimestamp": 1501169079000,
+    "eventType": "IncomingCreditTransfer",
+	"resourceReference": "DemoE2EID",
+	"resourceReferenceType": "EndToEndId",
+	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
+	"resourceType": "Transaction",
+	"reasonCode": null
+}</code>
+</pre>
 
 
 {% include links.html %}

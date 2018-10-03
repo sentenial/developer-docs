@@ -105,24 +105,30 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 
 ## JSON Sample
 
-The following is an example of a Direct Debit Reject event JSON:
+The following is an example of a Direct Debit Accept event JSON:
 
-```js
-POST http://example.com/webhooks
-Content-Type: application/json;charset=UTF-8
-X-Signature: 521ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304
-Content-Length: 261
-X-Request-Id: dc645679-71a5-498d-bb29-ec027948c7c1
-	{
-		"eventTimestamp": 1501169079000,
-		"eventType": "DirectDebitAccept",
-		"resourceReference": "Webhook1",
-		"resourceReferenceType": "EndToEndId",
-		"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
-		"resourceType": "DirectDebit",
-		"reasonCode": null
-	}
-````
+<b>Headers</b>:
+
+
+|POST| http://example.com/webhooks|
+|Content-Type:| application/json;charset=UTF-8|
+|X-Signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|Content-Length:| 261|
+|X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
+
+<b>JSON Request Body</b>
+<pre>
+<code class="json">{
+    "eventTimestamp": 1501169079000,
+    "eventType": "DirectDebitAccept",
+	"resourceReference": "Webhook1",
+	"resourceReferenceType": "EndToEndId",
+	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
+	"resourceType": "DirectDebit",
+	"reasonCode": null
+}</code>
+</pre>
+
 
 
 {% include links.html %}
