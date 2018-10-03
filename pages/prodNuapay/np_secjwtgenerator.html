@@ -1,0 +1,175 @@
+---
+title: JWT Generator
+tags: [special_layouts]
+last_updated: November 30, 2015
+keywords: shuffle, card layout, dynamic grid, doc portal, support portal
+summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
+permalink: np_secjwtgenerator.html
+sidebar: mydoc_sidebar
+folder: mydoc
+---
+
+
+
+
+{% unless site.output == "pdf" %}
+<script src="js/jquery.shuffle.min.js"></script>
+<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="js/jsrsasign-all-min.js"></script>
+{% endunless %}
+
+<script language="JavaScript" type="text/javascript">
+
+function _genJWS() {
+
+  var sHead = document.form1.jwshead1.value;
+  var sPayload = document.form1.jwspayload1.value;
+  var sPemPrvKey = document.form1.pemprvkey1.value;
+
+  var sResult = null;
+  
+  try {
+    prv = KEYUTIL.getKey(sPemPrvKey);
+	sResult = sign("RS256", sHead, sPayload, prv);
+    document.form1.jwsgenerated1.value = sResult;
+  } catch (ex) {
+    alert("Error: " + ex);
+  }
+}
+
+function sign(alg, spHeader, spPayload, key, pass) {
+
+    var sHeader, pHeader, sPayload;
+
+	sHeader = spHeader;
+	if (! KJUR.jws.JWS.isSafeJSONString(sHeader))
+	    throw "JWS Head is not safe JSON string: " + sHeader;
+	pHeader = KJUR.jws.JWS.readSafeJSONString(sHeader);
+    
+    sPayload = spPayload;
+   
+    if (alg !== pHeader.alg)
+		throw "alg and sHeader.alg doesn't match: " + alg + "!=" + pHeader.alg;
+
+    var sigAlg = KJUR.jws.JWS.jwsalg2sigalg[alg];
+    
+    var uHeader = utf8tob64u(sHeader);
+    var uPayload = sPayload;
+    var uSignatureInput = uHeader + "." + uPayload
+
+    var hSig = "";
+    if (sigAlg != "none") {
+		var sig = new KJUR.crypto.Signature({'alg': sigAlg});
+		sig.init(key, pass);
+		sig.updateString(uSignatureInput);
+		hSig = sig.sign();
+    }
+
+    var uSig = hextob64u(hSig);
+    return uHeader + ".." + uSig;
+};
+
+</script>
+
+      <div class="filter-options">
+     
+      <button class="btn btn-primary" data-group="request">JWS Header</button>
+      <button class="btn btn-primary" data-group="required">JWS Payload</button>
+      <button class="btn btn-primary" data-group="response">Private Key</button>
+       <button class="btn btn-primary" data-group="all">All</button>
+      
+    </div>      
+
+<div id="grid" class="row">
+
+
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["request"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">JWS Header</div>
+               <div class="panel-body">
+                  Type your "kid", "iat" and "iss": <br><br>
+                   <form action="jwshead1">
+                kid:<br>
+                <input type="text" name="kid" value="">
+                <br>
+                iat:<br>
+                <input type="text" name="iat" value="">
+                <br>
+                iss:<br>
+                <input type="text" name="iss" value="">
+            <br><br>
+                   
+                  <b>kid</b>: must match your certificate serial number <br>
+                  <b>iat</b>: must contain the current datetime (the milliseconds since Unix Epoch) <br>
+                  <b>iss</b>: must match the subject on your certificate <br>
+                  
+           
+  
+</form> 
+               </div>
+            </div>
+    
+    </div>
+    
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["required"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">JWS Payload</div>
+               <div class="panel-body">
+                  Paste your HTTP request:<br>
+				  
+				  <textarea name="jwspayload1" rows="15" cols="25"></textarea>
+               
+                
+               </div>
+            </div>
+    
+    </div>
+    
+   
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["response"]'>
+
+                <div class="panel panel-default">
+               <div class="panel-heading">Private Key</div>
+               <div class="panel-body">
+                 Paste your Private Key:	 
+                <textarea name="pemprvkey1" rows="15" cols="25"></textarea>
+               </div>
+            </div>
+
+    </div>
+
+  
+
+      
+
+    </div>
+
+       
+          <!-- sizer -->
+      <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
+
+
+    </div><!-- /#grid -->
+
+	<table>
+	<td>
+	<tr>
+	
+	<input type="button" value="Generate JWS Signature&darr;" onClick="_genJWS();"/>
+</td></tr>
+<tr><td colspan="2">Output JWS Signature</br><i>Copy it and use as JWS-Signature header value</i></td><td colspan="2">
+<textarea name="jwsgenerated1" cols="100" rows="10" readonly></textarea>
+</td></tr>
+</tbody>
+</table>
+	
+
+	
+{% unless site.output == "pdf" %}
+{% include initialize_shuffle.html %}
+{% endunless %}
+
+{{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
+
