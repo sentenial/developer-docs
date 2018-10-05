@@ -342,3 +342,23 @@ entries:
     - title: Sample JSON Web Signature
       url: /np_secjwssample.html
       output: web, pdf          
+          
+  - title: Resources
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_resourcesoverview.html
+      output: web, pdf  
+
+    - title: Use Cases
+      url: /np_secapikeyauth.html
+      output: web, pdf          
+
+    - title: FAQs
+      url: /np_faq.html
+      output: web, pdf          
+ 
+    - title: SEPA Reason Codes
+      url: /np_separeasons.html
+      output: web, pdf          
