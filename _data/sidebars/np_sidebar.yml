@@ -352,7 +352,7 @@ entries:
       output: web, pdf  
 
     - title: Use Cases
-      url: /np_secapikeyauth.html
+      url: /np_usecases.html
       output: web, pdf          
 
     - title: FAQs
