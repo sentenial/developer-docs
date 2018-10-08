@@ -1,24 +1,75 @@
 ---
-title: Shuffle layout
+title: JWT Generator
 tags: [special_layouts]
 last_updated: November 30, 2015
 keywords: shuffle, card layout, dynamic grid, doc portal, support portal
 summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
-permalink: np_createmandate_shuffle.html
+permalink: np_secjwtgenerator.html
 sidebar: mydoc_sidebar
 folder: mydoc
 ---
 
 
 
-{% if site.output == "pdf" %}
-{{site.data.alerts.note}} The content on this page doesn't display well on PDF, but I included it anyway so you could see the problems this layout poses if you're including it in PDF.  {{site.data.alerts.end}}
-{% endif %}
 
 {% unless site.output == "pdf" %}
 <script src="js/jquery.shuffle.min.js"></script>
 <script src="js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="js/jsrsasign-all-min.js"></script>
 {% endunless %}
+
+<script language="JavaScript" type="text/javascript">
+
+function _genJWS() {
+
+  var sHead = document.form1.jwshead1.value;
+  var sPayload = document.form1.jwspayload1.value;
+  var sPemPrvKey = document.form1.pemprvkey1.value;
+
+  var sResult = null;
+  
+  try {
+    prv = KEYUTIL.getKey(sPemPrvKey);
+	sResult = sign("RS256", sHead, sPayload, prv);
+    document.form1.jwsgenerated1.value = sResult;
+  } catch (ex) {
+    alert("Error: " + ex);
+  }
+}
+
+function sign(alg, spHeader, spPayload, key, pass) {
+
+    var sHeader, pHeader, sPayload;
+
+	sHeader = spHeader;
+	if (! KJUR.jws.JWS.isSafeJSONString(sHeader))
+	    throw "JWS Head is not safe JSON string: " + sHeader;
+	pHeader = KJUR.jws.JWS.readSafeJSONString(sHeader);
+    
+    sPayload = spPayload;
+   
+    if (alg !== pHeader.alg)
+		throw "alg and sHeader.alg doesn't match: " + alg + "!=" + pHeader.alg;
+
+    var sigAlg = KJUR.jws.JWS.jwsalg2sigalg[alg];
+    
+    var uHeader = utf8tob64u(sHeader);
+    var uPayload = sPayload;
+    var uSignatureInput = uHeader + "." + uPayload
+
+    var hSig = "";
+    if (sigAlg != "none") {
+		var sig = new KJUR.crypto.Signature({'alg': sigAlg});
+		sig.init(key, pass);
+		sig.updateString(uSignatureInput);
+		hSig = sig.sign();
+    }
+
+    var uSig = hextob64u(hSig);
+    return uHeader + ".." + uSig;
+};
+
+</script>
 
       <div class="filter-options">
      
@@ -37,16 +88,16 @@ folder: mydoc
                <div class="panel panel-default">
                <div class="panel-heading">JWS Header</div>
                <div class="panel-body">
-                  Edit the "kid", "iat" and "iss" <br><br>
-                   <form action="/action_page.php">
+                  Type your "kid", "iat" and "iss": <br><br>
+                   <form action="jwshead1">
                 kid:<br>
-                <input type="text" name="firstname" value="Mickey">
+                <input type="text" name="kid" value="">
                 <br>
                 iat:<br>
-                <input type="text" name="lastname" value="Mouse">
+                <input type="text" name="iat" value="">
                 <br>
                 iss:<br>
-                <input type="text" name="lastname" value="Mouse">
+                <input type="text" name="iss" value="">
             <br><br>
                    
                   <b>kid</b>: must match your certificate serial number <br>
@@ -67,9 +118,9 @@ folder: mydoc
                <div class="panel-heading">JWS Payload</div>
                <div class="panel-body">
                   Paste your HTTP request:<br>
-                 <form action="/action_page.php">
-                     <input type="text" style="height:310px" name="JSON" value="Paste your JSON here..." align ="top">
-                   </form>
+				  
+				  <textarea name="jwspayload1" rows="15" cols="25"></textarea>
+               
                 
                </div>
             </div>
@@ -83,9 +134,7 @@ folder: mydoc
                <div class="panel-heading">Private Key</div>
                <div class="panel-body">
                  Paste your Private Key:	 
-                <form action="/action_page.php">
-                     <input type="text" style="height:310px" name="Private Key" value="Paste your key here..." align ="top">
-                   </form>
+                <textarea name="pemprvkey1" rows="15" cols="25"></textarea>
                </div>
             </div>
 
@@ -104,6 +153,20 @@ folder: mydoc
 
     </div><!-- /#grid -->
 
+	<table>
+	<td>
+	<tr>
+	
+	<input type="button" value="Generate JWS Signature&darr;" onClick="_genJWS();"/>
+</td></tr>
+<tr><td colspan="2">Output JWS Signature</br><i>Copy it and use as JWS-Signature header value</i></td><td colspan="2">
+<textarea name="jwsgenerated1" cols="100" rows="10" readonly></textarea>
+</td></tr>
+</tbody>
+</table>
+	
+
+	
 {% unless site.output == "pdf" %}
 {% include initialize_shuffle.html %}
 {% endunless %}

@@ -1,0 +1,122 @@
+
+<html>
+<head>
+<title>Nuapay Non-repudiation JWS signature header generator</title>
+<script language="JavaScript" type="text/javascript" src="jsrsasign-all-min.js"></script>
+
+<style type="text/css">
+TD  {vertical-align: top; border: solid 1px #000000; }
+</style>
+<script language="JavaScript" type="text/javascript">
+
+function _genJWS() {
+
+  var sHead = document.form1.jwshead1.value;
+  var sPayload = document.form1.jwspayload1.value;
+  var sPemPrvKey = document.form1.pemprvkey1.value;
+
+  var sResult = null;
+  
+  try {
+    prv = KEYUTIL.getKey(sPemPrvKey);
+	sResult = sign("RS256", sHead, sPayload, prv);
+    document.form1.jwsgenerated1.value = sResult;
+  } catch (ex) {
+    alert("Error: " + ex);
+  }
+}
+
+function sign(alg, spHeader, spPayload, key, pass) {
+
+    var sHeader, pHeader, sPayload;
+
+	sHeader = spHeader;
+	if (! KJUR.jws.JWS.isSafeJSONString(sHeader))
+	    throw "JWS Head is not safe JSON string: " + sHeader;
+	pHeader = KJUR.jws.JWS.readSafeJSONString(sHeader);
+    
+    sPayload = spPayload;
+   
+    if (alg !== pHeader.alg)
+		throw "alg and sHeader.alg doesn't match: " + alg + "!=" + pHeader.alg;
+
+    var sigAlg = KJUR.jws.JWS.jwsalg2sigalg[alg];
+    
+    var uHeader = utf8tob64u(sHeader);
+    var uPayload = sPayload;
+    var uSignatureInput = uHeader + "." + uPayload
+
+    var hSig = "";
+    if (sigAlg != "none") {
+		var sig = new KJUR.crypto.Signature({'alg': sigAlg});
+		sig.init(key, pass);
+		sig.updateString(uSignatureInput);
+		hSig = sig.sign();
+    }
+
+    var uSig = hextob64u(hSig);
+    return uHeader + ".." + uSig;
+};
+
+</script>
+</head>
+
+<body>
+<h1>Non-repudiation JWS signature header generator</h1>
+
+<form name="form1">
+<table width="100%">
+<tbody>
+<tr>
+<td rowspan="3">Input</td><td>JWS Header<br/><i>Edit only "kid", "iat" and "iss"</i><br/><br/><i>* iss must match subject on your cert</i><br/><i>* kid must match your certificate serial number</i><br/><i>* iat must contain current datetime<br/>&nbsp;&nbsp;(milliseconds since Unix Epoch)</i><br/></td><td colspan="2">
+<textarea name="jwshead1" rows="8" cols="100">
+{
+  "alg": "RS256",
+  "kid": "kid",
+  "iat": 0,
+  "iss": "C=UK, L=London, OU=Nuapay API, O=Nuapay, CN=j29p3kpabx",
+  "b64": false,
+  "crit": ["iat","iss","b64"]
+}</textarea>
+</td>
+</tr>
+<tr><td>JWS Payload<br/><i>Your HTTP request body here</i></td><td colspan="2">
+<textarea name="jwspayload1" rows="3" cols="100"></textarea>
+</td></tr>
+<tr><td>Signing Private Key in PKCS#8 format<br/><i>The key never leaves your browser</i></td><td colspan="2">
+<textarea name="pemprvkey1" rows="10" cols="100">
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDYaL4nrbIEYTR5XMOwlr9j0nRUSERr8R9/wtZcyhj8ZYJeebG4Ho9m6kzx7i+3y4+LvIhARqAh4QnjoQ+/DE945cJc2+I06mLONx8D8aHM4U9PSv6625y+beN40l9/BpvYhV/oSTIpjG7cxvRoGVq+elIrdiX7pG0+n/al0tV34xOlEoUmjAbFRzGB/qfEY6RJ7kaoQI7CQjaRI+fpw7nwwijiemExZX3QRoxOUUqjPMgXqkx6aIX1N2UEkWdnKJGlS68F8WCrWBmxJRO4rOkYR9LGMNkXupxmEDD5xYcvn9axvvp6IN4Zj1fydJ9RS+EHDX9XGjbY/Ts8iK2SL5iZAgMBAAECggEAAhZAfzF1ngUx9FmoqXNKtTO6W3W28zOIEjtWxd5ND2ILN84EoLnquBtaUprxatxTrg1LYxNLSAhbiA5tkHIV8hyFG1Ajhk8cVNDDQ854uPkTQrh+bF7hzBRTNT8SHK97oULoAd1y1mO8TfS9NqPH9D5JvJGPHDYht5DjWAYIePd7FIVIJqtQOP5XMryPrGL4RhZudXj3WX8ZEI6HFpIc5imE/GD+v2nOQlN7cYQn0comFzgXN6o5Um6YyD4PkXGaCmEL+To8xYaInGR/mSVH+rVfOgH6IexiHbT6u2H42df8x1Pa7008TvOtKDEjVJ4cnR7h7FtSKrWhiIX/LrTAAQKBgQD6yii34euoMYUBKuSXmsoqvPJmQZQQERMrPOtV/ImP3qogwoe1aIIJvRtKNs0kh2lJms4f3qDrznWVw4px5UmvIIZJA3hpdEYkfFwqXeee9iu9t27CDVhMqL+Lec03k9CdXzCTVQws2uVOulIY0JMSNuAxDxYSUFn5aygH8AajAQKBgQDc57qK24bk7xMfs42+xBK57rk5jcryWlGnA1+ZlT89ZvzVIMQJmA6F2CJwrL3v2jf/jcya4nyrtV9K3QpGuHxCHxCY78ERPDZbt5NyaP8pu3yDfHKkCvw4NZSE8rkGxZixf6qmrRzzmWePwO1AHuwoPPAfmiUlVN8brewboJEtmQKBgHdAR6pgcAkzOtZ6SeZZAUbfP7gl+LzHEcFen1zsz5CsxWL8fUFip2rwFBjvBA8ZoJQSW29GEmjubHVBXQSZjbcLlS8Eym4CjxPsWnr+2hN5ZQU6Qx1c8R7KowI0ccO6stkSGWwFZduyXpVX/Y+1JinkFCjfzpP4xz/Vl1xm4xEBAoGAOPb4v74Edxy/jbk7oCnnulK5KQJLh1uLGspf6Lb369mW8U7VvrObayBlITEqeaOINTpXvMkS5SSMQj3l3H7ObC6elRGec9dXHSeluichRZ23aiC5X1wF1mjat73vwLNLwNnvI7QYdyjj78oMZDCVLXspYLzbP1k3f2fGLwmk5mECgYEAzS6vTj1I48cTUF1UV1rZHhI3m9Jdg2FL/7kRYXLn1EDmiNyGfbv20sIRczjqylMlqMPtvYtqw64LxXVURDTieEhpQDbrsIkmRGwIOAPDTyiXejsWs9sucrcmyE+8sOzla4sVN66Y8afc3qn/DKcgP2hAe+F0ZTWmY/ZGMF+WXbY=
+-----END PRIVATE KEY-----</textarea>
+</td></tr>
+<tr><td colspan="4">
+<input type="button" value="Generate JWS Signature&darr;" onClick="_genJWS();"/>
+</td></tr>
+<tr><td colspan="2">Output JWS Signature</br><i>Copy it and use as JWS-Signature header value</i></td><td colspan="2">
+<textarea name="jwsgenerated1" cols="100" rows="10" readonly></textarea>
+</td></tr>
+</tbody>
+</table>
+
+</form>
+<h3>USAGE</h3>
+<ol>
+<li>Edit JWS Header section by updating only following attributes: "kid", "iat" and "iss"</li>
+<li>Put HTTP request body into JWS Payload section</li>
+<li>Press "Generate JWS Signature" button.</li>
+<li>Use generated string as a JWS-Signature header value when making call to Nuapay.</li>
+</ol>
+
+<h3>RFCs</h3>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc7515" target="_blank">RFC7515 - JSON Web Signature (JWS)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7797" target="_blank">RFC7797 - JSON Web Signature (JWS) Unencoded Payload Option</a></li>
+</ul>
+
+
+<center>
+Copyright &copy; 2017 Sentenial
+</center>
+
+</body>
+</html>

@@ -5877,6 +5877,13 @@ a.thumbnail:hover {
     border-color: #bce8f1
 }
 
+.webhook-info {
+    color: #31708f;
+    background-color: #FFFFC0;
+    border-color: #FFFF40
+}
+
+
 .alert-info hr {
     border-top-color: #a6e1ec
 }

@@ -10,6 +10,8 @@ toc: false
 
 ## API Details
 
+{% include important.html content="The [JWS-Signature header](np_secjws.html) is required for this endpoint. " type="primary" %} 
+
 Before you can generate a Credit Transfer (CT) payment, using this API request, you must have first <a href = "np_createbeneficiary.html">created a beneficiary</a>.
 
 CT payments, unlike Direct Debit payments, do not require that the transaction is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> days in advance of the collection date.

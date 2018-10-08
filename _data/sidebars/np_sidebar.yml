@@ -293,4 +293,72 @@ entries:
     - title: Configuration
       url: /np_whconfiguration.html
       output: web, pdf          
-      
+        
+      subfolders:
+      - title: Webhook Events 
+        output: web
+        subfolderitems:
+
+        - title: Direct Debit R-Transaction
+          url: /np_whddrejectevent.html
+          output: web
+
+        - title: Incoming Credit Transfer
+          url: /np_whincomingct.html
+          output: web
+
+        - title: Accepted Direct Debit
+          url: /np_whaccepteddd.html
+          output: web
+
+        - title: Mandate Signature
+          url: /np_whmandsignature.html
+          output: web
+
+        - title: Credit Transfer Reject
+          url: /np_ctreject.html
+          output: web      
+          
+  - title: Security
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_secoverview.html
+      output: web, pdf  
+
+    - title: API Key Authentication
+      url: /np_secapikeyauth.html
+      output: web, pdf          
+
+    - title: JSON Web Signature
+      url: /np_secjws.html
+      output: web, pdf          
+
+    - title: JWS Signature Generator
+      url: /np_secjwsgenerator.html
+      output: web, pdf          
+
+    - title: Sample JSON Web Signature
+      url: /np_secjwssample.html
+      output: web, pdf          
+          
+  - title: Resources
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_resourcesoverview.html
+      output: web, pdf  
+
+    - title: Use Cases
+      url: /np_usecases.html
+      output: web, pdf          
+
+    - title: FAQs
+      url: /np_faq.html
+      output: web, pdf          
+ 
+    - title: SEPA Reason Codes
+      url: /np_separeasons.html
+      output: web, pdf          
