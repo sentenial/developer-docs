@@ -196,19 +196,104 @@ folder: prodNuapay
                             </div>
                         </div>
                     </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">What is a Resource ID?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwelve" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>For security reasons our APIs use a unique identifier to reference Nuapay objects (mandates, Direct Debits, Creditor Schemes, etc.). These may be referred to as encoded IDs in some code snippets.</p>
+                            </div>
+                        </div>
+                    </div>
 <h2>Failed Payments (R-Transactions)</h2>
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">What is the difference between a REJECT and a RETURN?</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">What is the difference between a REJECT and a RETURN?</a>
                             </h4>
                         </div>
-                        <div id="collapseTwelve" class="panel-collapse collapse">
+                        <div id="collapseThirteen" class="panel-collapse collapse">
                             <div class="panel-body">
-                            <p>A re-presentation lets you re-try to settle a Direct Debit payment that has been rejected. When you re-present a payment (see <a href="np_representfaileddds.html"> Re-present Failed Direct Debits</a>) the original failed Direct Debit's status is updated to REPRESENTED; this payment is no longer used at this point.</p>
+                            <p>A Reject is received before the settlement date; a Return is received after the settlement date. When your Nuapay settlement is calculated your gross credit will be debited by the value of any pre-settlement rejects that have been processed. Any Return transactions that are processed after the settlement date will be debited against your <b>next</b> collection.</p>
+                            
 
-                            <p>A new payment (in READY FOR EXPORT status) is created that attempts to collect the original payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">What is the difference between an Authorised and an Unauthorised REFUND?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFourteen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p><b>AUTHORISED</b>: In the case of an authorised refund the payer has claimed a refund for a transaction within an 8 week period of the initial debit on his/her account. The payer must be credited - you as a merchant cannot contest this, as per the SEPA CORE scheme rules.</p>
+
+                            <p><b>UNAUTHORISED</b>: An unauthorised refund can occur after 8 weeks and within 13 months of the debit. In this scenario the payer's bank will lodge a request with your bank to provide proof of a mandate. Your bank will seek this proof from you and pass it to the payer's bank. If the payer's bank is satisfied that the mandate is valid then they will not seek to debit your account for the refund amount. If the mandate is not provided or the payer's bank deem that no mandate (and payer authorisation) was in place they will initiate a debit on your account to credit your payer's account.</p>
+                            
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">What is a REFUSAL?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFifteen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>A REFUSAL is a pre-settlement R-transaction. A payer may refuse your direct debit based on specific settings that they may have applied to their bank account.
+
+                            For example the payer may have set a limit on the value of collections that may be debited in a single transaction. If your debit exceeds this limit then this will result in a REFUSAL (typically an MS02 - see <a href="np_separeasons.html">SEPA Error Codes</a> for more information)</p>
+                            
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen">When can I re-present a payment?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSixteen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>It is possible to re-present any failed payment but we recommend that you only attempt to re-present failed payments with error code <b>AM04</b> and <b>MS03</b>. </p>
+
+                            <p>See <a href ="np_representfaileddds.html">Re-present Failed Direct Debits</a> for more details.</p>
+                            
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                     <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen">What is a Technical Reject?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSeventeen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Technical rejects refer to transactions that fail for business validation reason when imported <b>via file upload only</b>.</p>
+
+                            <p>When interacting with Nuapay via the API you will not receive technical rejects.</p>
+                            
+
                             </div>
                         </div>
                     </div>

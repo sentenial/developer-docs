@@ -6,36 +6,27 @@ entries:
   version: 
   folders:
 
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage.html
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage.html
-      output: pdf
-      type: frontmatter
-
   - title: Introduction
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /p3_landing_page.html
+      url: /em_landing_page.html
       output: web
 
   - title: Implementation Options
     output: web, pdf
     folderitems:
 
-    - title: Redirect
-      url: /p3_sample1.html
+    - title: Overview
+      url: /em_overview.html
       output: web, pdf
       
     - title: Overlay
+      url: /p3_sample1.html
+      output: web, pdf
+      
+    - title: Redirect
       url: /p3_sample2.html
       output: web, pdf
 
@@ -46,6 +37,10 @@ entries:
     - title: Direct API Integration
       url: /p3_sample4.html
       output: web, pdf
+
+  - title: Mandate & Contract
+    output: web, pdf
+    folderitems:
 
   
   

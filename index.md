@@ -1,12 +1,11 @@
 ---
 title: "Developer Documentation"
 keywords: developer homepage
-tags: [getting_started]
-sidebar: mydoc_sidebar
 permalink: index.html
 summary: A resource for all developers interested in integrating with the Nuapay and Sentenial suite of RESTful APIs.
 toc: false
 ---
+
 
 {% include tip.html content="This Hub includes links to the Developer documentation for all our <b>RESTful APIs</b> and <b>OpenAPI/Swagger</b> resources. Jump to the <a href='prod_overview.html' >Product Overview</a> page for more details." %}
 
