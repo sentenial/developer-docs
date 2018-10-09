@@ -21,10 +21,27 @@ entries:
     - title: Overview
       url: /em_overview.html
       output: web, pdf
-      
-    - title: Overlay
-      url: /p3_sample1.html
-      output: web, pdf
+         
+      subfolders:
+      - title: Overlay
+        output: web, pdf
+        subfolderitems:
+
+        - title: Overview
+          url: /em_overlay.html
+          output: web, pdf
+
+        - title: E-Mandate Token
+          url: /em_token.html
+          output: web, pdf
+
+        - title: Add Overlay JavaScript
+          url: /em_overlayjavascript.html
+          output: web, pdf
+
+        - title: Add Overlay Event Handler
+          url: /np_responsehandling.html
+          output: web, pdf      
       
     - title: Redirect
       url: /p3_sample2.html
