@@ -4,4 +4,5 @@ _site/
 _pdf
 .DS_Store
 .idea
+*.iml
 Gemfile.lock

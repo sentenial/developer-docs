@@ -1,5 +1,6 @@
 # Welcome to the Sentenial GitHub Pages Documentation
 
+
 ## Prerequisites
 - Install docker on your machine
 - Install git for your operating system
