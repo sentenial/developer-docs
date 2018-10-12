@@ -3,7 +3,7 @@ title: Credit Transfer Reject Event
 keywords: Credit Transfer Reject Event Webhook 
 summary: "Credit Transfer Reject Webhook event"
 sidebar: np_sidebar
-permalink: np_ctreject.html
+permalink: np_whctreject.html
 folder: prodNuapay
 toc: false
 ---
@@ -11,7 +11,7 @@ toc: false
 {% include webhook.html content="A PAIN.002 Import with a Credit Transfer rejection." %}
 
 
-## Webhook Message Details
+## Webhook Message Details TC
 
 This Webhook has the following event types:
 
@@ -97,7 +97,7 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>The SEPA Reason code</td>
+            <td>The <a href="np_separeasons.html">SEPA Reason Code</a> </td>
 		</tr>
 		<tr>
 			<td>root</td>

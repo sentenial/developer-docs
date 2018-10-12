@@ -97,7 +97,7 @@ The following event types are possible:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td> The SEPA Reason Code </td>
+            <td> The <a href="np_separeasons.html">SEPA Reason Code</a> </td>
 		</tr>
 		<tr>
 			<td>root</td>

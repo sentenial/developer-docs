@@ -40,7 +40,7 @@ entries:
           output: web, pdf
 
         - title: Add Overlay Event Handler
-          url: /np_responsehandling.html
+          url: /em_overlayeventhandler.html
           output: web, pdf      
       
     - title: Redirect

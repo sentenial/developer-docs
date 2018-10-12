@@ -1,6 +1,6 @@
 ---
 title: SEPA Reason Codes
-keywords: SEPA Reason Codes
+keywords: SEPA Reason Codes SEPA Errors
 summary: "SEPA Reason Codes - review the various SEPA Reason codes that are possible and how to best deal with them"
 sidebar: np_sidebar
 permalink: np_separeasons.html
