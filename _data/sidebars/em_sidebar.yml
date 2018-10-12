@@ -14,6 +14,10 @@ entries:
       url: /em_landing_page.html
       output: web
 
+    - title: Configuration
+      url: /em_configuration.html
+      output: web
+
   - title: Implementation Options
     output: web, pdf
     folderitems:
@@ -21,43 +25,89 @@ entries:
     - title: Overview
       url: /em_overview.html
       output: web, pdf
-         
-      subfolders:
-      - title: Overlay
-        output: web, pdf
-        subfolderitems:
 
-        - title: Overview
-          url: /em_overlay.html
-          output: web, pdf
-
-        - title: E-Mandate Token
-          url: /em_token.html
-          output: web, pdf
-
-        - title: Add Overlay JavaScript
-          url: /em_overlayjavascript.html
-          output: web, pdf
-
-        - title: Add Overlay Event Handler
-          url: /em_overlayeventhandler.html
-          output: web, pdf      
-      
-    - title: Redirect
-      url: /p3_sample2.html
-      output: web, pdf
-
-    - title: Wordpress Plug-in
-      url: /p3_sample3.html
-      output: web, pdf
-
-    - title: Direct API Integration
-      url: /p3_sample4.html
-      output: web, pdf
-
-  - title: Mandate & Contract
+     
+  - title: Overlay
     output: web, pdf
     folderitems:
 
-  
-  
+    - title: Overview
+      url: /em_overlay.html
+      output: web, pdf
+
+    - title: E-Mandate Token
+      url: /em_token.html
+      output: web, pdf
+ 
+    - title: Overlay JavaScript
+      url: /em_overlayjavascript.html
+      output: web, pdf                 
+
+    - title: Overlay Event Handler
+      url: /em_overlayeventhandler.html
+      output: web, pdf                 
+
+  - title: Redirect
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_redirect.html
+      output: web, pdf
+
+    - title: E-Mandate Token
+      url: /em_tokenredirect.html
+      output: web, pdf
+ 
+    - title: Redirect to Mandate Signing
+      url: /em_redirectmdtsigning.html
+      output: web, pdf                 
+
+    - title: Redirect Success and Failure
+      url: /em_redirecteventhandler.html
+      output: web, pdf                 
+
+  - title: WordPress
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_wpoverview.html
+      output: web, pdf
+
+    - title: Plugin Installation
+      url: /em_wpinstall.html
+      output: web, pdf
+ 
+    - title: Plugin Configuration
+      url: /em_wpconfig.html
+      output: web, pdf                 
+
+    - title: WordPress Page Setup
+      url: /em_wppagesetup.html
+      output: web, pdf                 
+
+    - title: Handling Sign-Ups
+      url: /em_overlayeventhandler3.html
+      output: web, pdf                 
+
+  - title: Direct API Integration
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_overlay4.html
+      output: web, pdf
+
+    - title: E-Mandate Token
+      url: /em_token4.html
+      output: web, pdf
+ 
+    - title: Overlay JavaScript
+      url: /em_overlayjavascript4.html
+      output: web, pdf                 
+
+    - title: Overlay Event Handler
+      url: /em_overlayeventhandler4.html
+      output: web, pdf                     
+          
