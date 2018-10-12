@@ -316,7 +316,7 @@ entries:
           output: web
 
         - title: Credit Transfer Reject
-          url: /np_ctreject.html
+          url: /np_whctreject.html
           output: web      
           
   - title: Security

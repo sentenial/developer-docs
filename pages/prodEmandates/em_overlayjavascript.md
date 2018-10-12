@@ -11,9 +11,9 @@ folder: prodEmandates
 
 Once you have retrieved the E-Mandate token you will need to add the following JavaScript to your calling page,
 
-* <b>EMandates.setToken</b>: The E-Mandate token uniquely identifies details about the merchant and payer, setting the token allows the session to reference this information.
-* <b>EMandates.setUrl</b>: Sets the URL from which the overlay is rendered, for production this should be, https://api.nuapay.com/emandate. For UAT this should be, https://sandbox.nuapay.com/emandate.
-* <b>EMandates.overlay</b>: Renders the e-mandate overlay.
+* ``EMandates.setToken``: The E-Mandate token uniquely identifies details about the merchant and payer, setting the token allows the session to reference this information.
+* ``EMandates.setUrl``: Sets the URL from which the overlay is rendered, for production this should be, https://api.nuapay.com/emandate. For UAT this should be, https://sandbox.nuapay.com/emandate.
+* ``EMandates.overlay``: Renders the e-mandate overlay.
 
 The sample JavaScript below shows how you can render an e-mandate overlay, here we assume that your token is: 
 
