@@ -13,8 +13,8 @@ Electronic Mandates (E-Mandates) allow you to capture your payers' bank account 
 We currently offer the following implementation options:
 
 |<a href = "em_overlay.html">Overlay</a>| Your customers select to sign a mandate and an overlay window is generated positioned on top of your merchant site. This is a seamless experience for your users and they do not need to know that a third party is involved in the sign-up process.|
-|Redirect| With a Redirect, users see a new tab or Window being opened when they click the Sign button.|
-|WordPress| Our WordPress plug-in offers you the easiest integration option but is only available if your site has been built on WordPress.|
+|<a href="em_redirect.html">Redirect</a>| With a Redirect, users see a new tab or Window being opened when they click the Sign button.|
+|<a href="em_wpoverview.html">WordPress</a>| Our WordPress plug-in offers you the easiest integration option but is only available if your site has been built on WordPress.|
 |Direct API| This option allows you the greatest control, allowing you to build your own client from the ground up using our powerful APIs.| 
 
 
