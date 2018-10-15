@@ -1,0 +1,97 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Instant Payments
+  product: Instant Payments
+  version: 
+  folders:
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ip_landing_page.html
+      output: web
+
+    - title: Registration
+      url: /em_configuration.html
+      output: web
+
+    - title: SEPA CT Instant Scheme
+      url: /em_configuration.html
+      output: web
+
+  - title: Outbound Payments
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_overview.html
+      output: web, pdf
+
+    - title: Create Instant Payment
+      url: /em_overview.html
+      output: web, pdf
+
+    - title: Retrieve Instant Payment
+      url: /em_overview.html
+      output: web, pdf
+
+  - title: Inbound Payments
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_overview.html
+      output: web, pdf
+
+    - title: Validate IBAN
+      url: /em_overview.html
+      output: web, pdf
+      
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+   
+    - title: Overview
+      url: /em_overlay.html
+      output: web, pdf
+
+      subfolders:
+      - title: Webhook Events 
+        output: web
+        subfolderitems:
+
+        - title: Outbound - Accept
+          url: /np_createmandate.html
+          output: web
+
+        - title: Outbound - Reject
+          url: /np_retrievemandate.html
+          output: web
+
+        - title: Inbound - Accept
+          url: /np_retrievemandatedoc.html
+          output: web
+
+        - title: Inbound - Reject
+          url: /np_retrievemandatedoc.html
+          output: web
+  
+  - title: Resources
+    output: web, pdf
+    folderitems: 
+ 
+    - title: FAQ
+      url: /em_overlayjavascript.html
+      output: web, pdf                 
+
+    - title: SEPA Error Codes
+      url: /em_overlayeventhandler.html
+      output: web, pdf                 
+
+    - title: HTTP Response Codes
+      url: /em_overlayeventhandler.html
+      output: web, pdf                 
+
