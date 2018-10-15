@@ -35,7 +35,7 @@ function redirect() { window.location = 'https://demo.sentenialtest.com/emandate
 </script>
 ````
 
-The redirect() method is then called to redirect your payer to the E-Mandate platform with the onclick event:
+The redirect() method is then called to redirect your payer to the E-Mandate platform with the ``onclick`` event:
 
 <img src="images/sign_overlay.png">
 
