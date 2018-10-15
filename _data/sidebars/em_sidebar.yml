@@ -83,12 +83,12 @@ entries:
       url: /em_wpconfig.html
       output: web, pdf                 
 
-    - title: WordPress Page Setup
+    - title: Page Setup
       url: /em_wppagesetup.html
       output: web, pdf                 
 
-    - title: Handling Sign-Ups
-      url: /em_overlayeventhandler3.html
+    - title: Handling New Users
+      url: /em_wpnewusers.html
       output: web, pdf                 
 
   - title: Direct API Integration
@@ -96,18 +96,38 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /em_overlay4.html
+      url: /em_directapioverview.html
       output: web, pdf
 
-    - title: E-Mandate Token
-      url: /em_token4.html
+    - title: Integration Prerequisite
+      url: /em_directapiprereq.html
       output: web, pdf
  
-    - title: Overlay JavaScript
-      url: /em_overlayjavascript4.html
+    - title: E-Mandate Token
+      url: /em_tokendirectapi.html
       output: web, pdf                 
 
-    - title: Overlay Event Handler
-      url: /em_overlayeventhandler4.html
+    - title: Rendering the Screen
+      url: /em_directapirenderscreen.html
       output: web, pdf                     
-          
+
+    - title: Processing the Form Submission
+      url: /em_directapiformsub.html
+      output: web, pdf                     
+
+    - title: Adding a Response Handler
+      url: /em_directapiresphandler.html
+      output: web, pdf                     
+
+  - title: E-Mandate & Contract
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_contractoverview.html
+      output: web, pdf
+
+    - title: Uploading a Contract
+      url: /em_contractupload.html
+      output: web, pdf
+ 

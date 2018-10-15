@@ -1,0 +1,81 @@
+---
+title: E-Mandate Token
+keywords: E-Mandate Token
+summary: "The session identifier or token required to initiate the e-mandate conversation."
+sidebar: em_sidebar
+permalink: em_tokendirectapi.html
+folder: prodEmandates
+---
+
+An E-Mandate token is a session ID that is the starting point for your electronic mandate.
+
+The Token encapsulates the following:
+
+* Your Merchant configurations (Signing Method, UI customisations, Debtor/Payer Input Allowed, etc.)
+* Merchant-specific details (Creditor Scheme ID, Scheme Type, etc.)
+* Payer details (Address details, phone details, email, etc.)
+* Contract Identifier (optional, if you want to combine a contract and mandate - see <a href="#">E-mandate and Contract</a>)
+
+{% include note.html content="Because we use tokens, your customers' sensitive account details are never stored on your server." %}
+
+To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
+
+
+
+
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
+    <li><a href="#about" data-toggle="tab">Response</a></li>
+   
+</ul>
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="profile">
+
+
+  <table>
+<colgroup>
+<col width="30%" />
+<col width="90%" />
+</colgroup>
+
+<tbody>
+<tr>
+<td markdown="span">Usage</td>
+<td markdown="span">You must have a unique token in order to create an electronic mandate</td>
+</tr>
+<tr>
+<td markdown="span">Method</td>
+<td markdown="span"><span class="label label-info">POST </span>
+</td>
+</tr>
+<tr>
+<td markdown="span">URI</td>
+<td markdown="span">/emandates
+</td>
+</tr>
+<tr>
+<td markdown="span">Required Arguments</td>
+<td markdown="span">merchantDetails.iban <br/><br/>merchantDetails.creditorSchemeId (use <a href="np_listcredscheme.html">List Creditor Schemes</a> to retrieve your CSID)<br/><br/> merchantDetails.schemeType (CORE, B2B, BACS)<br/><br/>merchantDetails.mandateType (Use either OOFF (for a once-off mandate; only one Direct Debit payment may be made against a OOFF mandate) or RCUR (a recurring mandate; more than one Direct Debit payment may be made against the mandate))
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+<div role="tabpanel" class="tab-pane" id="about">
+<p>A successful request will return a <b>201 Created</b> response code</p>
+<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
+    {% include httpcodes.html %}
+    
+ 
+    </div>
+
+
+</div>
+
+
+
+{% include links.html %}

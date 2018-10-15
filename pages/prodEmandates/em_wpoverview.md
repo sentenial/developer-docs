@@ -9,12 +9,12 @@ folder: prodEmandates
 
 If your business currently has a Web site built on WordPress, the Nuapay plugin allows you to quickly configure electronic mandates for your site. No coding experience is required, just follow the steps outlined below:
 
-* Install the plugin via your WordPress dashboard
-* Configure it
-* Edit or add a new page to render the sign button
-* Set up payments against the new e-mandates as they are signed
+* <a href="em_wpinstall.html">Install</a> the plugin via your WordPress dashboard
+* <a href ="em_wpconfig.html">Configure</a> it
+* Edit or add a <a href="em_wppagesetup.html">new page</a> to render the sign button
+* <a href ="em_wpnewusers.html">Set up payments against the new e-mandates</a> as they are signed
 
-Once you have completed the installation and setup process a page on your WordPress site will include a new **SIGN** button allowing your payers to easily sign up for electronic mandates.
+Once you have completed the installation and setup process, a page on your WordPress site will include a new **SIGN** button allowing your payers to easily sign up for electronic mandates.
 
 When customers sign electronic mandates you will be notified via email. You can then log on to the Nuapay user interface and manage payments against these new mandates (see Handling Sign Ups for more information on this).
 

@@ -17,7 +17,7 @@ To get going with the Redirect approach you will need to:
 * Add a few lines of JavaScript to your Web site.
 * Use a redirect call to display the Success or Failure page
 
-To begin, you need to generate an E-Mandate token.
+To begin, you need to generate an <a href="em_tokenredirect.html">E-Mandate token</a>.
 
 
 {% include links.html %}
