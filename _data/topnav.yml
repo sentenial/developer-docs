@@ -33,7 +33,8 @@ topnav_dropdowns:
           url: /np_landing_page.html
         - title: Electronic Mandates
           url: /em_landing_page.html
-        - title: UK Open Banking
-          url: /ob_landing_page.html
         - title: Instant Payments
           url: /ip_landing_page.html
+        - title: UK Open Banking
+          url: /ob_landing_page.html
+        
