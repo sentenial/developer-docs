@@ -22,6 +22,13 @@ Optionally the new Direct Debit payment may also include a re-presentation fee
 
 {% include note.html content="Certain SEPA Response codes will indicate that a re-presentation will be unsuccessful. For example an MD07 (debtor deceased) or an AC04 (Account closed). We recommend that you only attempt to re-present a failed payment for MS03 (Reason not specified) and AM04 (Insufficient funds)." %}
 
+The following are optional arguments:
+
+* representationDate
+* representationFee
+* endToEndId
+
+{% include important.html content="If you do not specify a re-presentation date or fee, the default values will be taken from your organisation's Nuapay configuration. These settings are configured at the Scheme level for your business."%} 
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

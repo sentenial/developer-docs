@@ -9,7 +9,7 @@ topnav_title: Sentenial Developer Hub
 site_title: Sentenial Developer Hub
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: Sentenial
+company_name: Sentenial | Nuapay
 # this appears in the footer
 
 github_editme_path: sentenial/developer-docs/blob/master/
@@ -112,6 +112,3 @@ sidebars:
 description: "Nuapay Developer Hub providing documentation and support to API developers interested in Nuapay and Sentenial payment products."
 # the description is used in the feed.xml file
 
-# needed for sitemap.xml file only
-# url: http://idratherbewriting.com
-# baseurl: /documentation-theme-jekyll

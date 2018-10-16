@@ -15,11 +15,15 @@ entries:
       output: web
 
     - title: Registration
-      url: /em_configuration.html
+      url: /ip_registration.html
+      output: web
+
+    - title: General API Rules
+      url: /ip_apirules.html
       output: web
 
     - title: SEPA CT Instant Scheme
-      url: /em_configuration.html
+      url: /ip_sctinstscheme.html
       output: web
 
   - title: Outbound Payments
@@ -27,7 +31,7 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /em_overview.html
+      url: /ip_outboundoverview.html
       output: web, pdf
 
     - title: Create Instant Payment
@@ -83,7 +87,7 @@ entries:
     output: web, pdf
     folderitems: 
  
-    - title: FAQ
+    - title: FAQs
       url: /em_overlayjavascript.html
       output: web, pdf                 
 
