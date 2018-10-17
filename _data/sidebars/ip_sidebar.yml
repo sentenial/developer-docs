@@ -35,11 +35,11 @@ entries:
       output: web, pdf
 
     - title: Create Instant Payment
-      url: /em_overview.html
+      url: /ip_createinstct.html
       output: web, pdf
 
     - title: Retrieve Instant Payment
-      url: /em_overview.html
+      url: /ip_retrieveinstct.html
       output: web, pdf
 
   - title: Inbound Payments
@@ -47,11 +47,11 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /em_overview.html
+      url: /ip_inboundoverview.html
       output: web, pdf
 
     - title: Validate IBAN
-      url: /em_overview.html
+      url: /ip_validateiban.html
       output: web, pdf
       
   - title: Webhooks
@@ -59,8 +59,13 @@ entries:
     folderitems:
    
     - title: Overview
-      url: /em_overlay.html
+      url: /ip_whoverview.html
       output: web, pdf
+   
+    - title: Configuration
+      url: /ip_whconfiguration.html
+      output: web, pdf
+
 
       subfolders:
       - title: Webhook Events 

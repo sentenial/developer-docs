@@ -1,13 +1,16 @@
 ---
 title: Webhooks Configuration
-keywords: Webhooks Configuration
+keywords: Webhooks Configuration Instant Payments
 summary: "Details are provided in this section on setting up your Webhook Endpoint and listening for events"
-sidebar: np_sidebar
-permalink: np_whconfiguration.html
-folder: prodNuapay
+sidebar: ip_sidebar
+permalink: ip_whconfiguration.html
+folder: prodInstantPayments
 ---
 
 ## Overview Setup
+
+{% include note.html content="Webhook configuration may be managed by the Sentenial Customer Support staff on your behalf. Please discuss your requirements with your Account Manager." %}
+
 
 To set up Webhooks you will need to:
 
@@ -16,13 +19,13 @@ To set up Webhooks you will need to:
 1. Listen for events.
 
 
-Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your Web server. The steps required to configure your endpoint will vary depending on the Web server that you are currently using. PLease consult with the documentation for your preferred Web server.
+Before you can use Origix IP Webhooks you must set up a dedicated Endpoint on your Web server. The steps required to configure your endpoint will vary depending on the Web server that you are currently using.
 
 ## Setting up a Webhook
 
 <p>To set up a Webhook: </p>
   <ol>
-    <li value="1">Log on to the Developer Dashboard (currently available from the Origix Corporate home page).</li>
+    <li value="1">Log on to the Developer Dashboard (logon credentials will have been provided as part of your registration).</li>
     <li value="2">Click <b>Add Webhook</b>.</li>
     <li value="3">Add the required details in the pop-up dialog box:</li>
     <img src="/images/add_webhook.png" style="width: 390;height: 369;" />
