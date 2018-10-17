@@ -104,7 +104,7 @@ Click the tabs for more details on each stage:
 
 <div role="tabpanel" class="tab-pane" id="BeneBank">
     <b>Beneficiary Bank</b>
-    <br/>The payee's bank:
+    <br/>The bank:
     
     <ul>
     <li>Receives the SCT Instant message from RT1.</li>
@@ -113,7 +113,48 @@ Click the tabs for more details on each stage:
 </div>
 </div>
 
-Test
+## Origix IP Notification to the Initiating Bank/Financial Institution
+
+Once Origix IP has received the status of the payment from the beneficiary (via RT1), it notifies you (the originating Bank).
+
+<img src="images/sipFlow3.png">
+
+Click the tabs for more details on each stage:
+
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active">
+        <a href="#OrigixIP3" data-toggle="tab">Origix IP</a></li>
+    <li><a href="#OrigBnk" data-toggle="tab">Bank</a></li>
+    
+</ul>
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="OrigixIP3">
+    <b>Origix IP</b>
+    <br/>Having processed the response from RT1, Origix IP:
+    <ul>
+    <li>Triggers a Webhook notification to the Financial Institution's /PSP's configured endpoint.</li> 
+    <li>The Webhook event indicates the acceptance or rejection of the SCT Inst instruction.</li> 
+    <li>In the event of a positive notification, the bank would debit funds from its client account.</li>
+    </ul>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="OrigBnk">
+    <b>Bank</b>
+    <p>The originating bank :</p>
+    <ul>
+    <li>Has configured a Webhooks Endpoint.</li>
+    <li>Consumes the Webhook notification</li>    
+    </ul>
+    
+    
+    </div>
+
+
+</div>
+
+
+
+
 
 
 

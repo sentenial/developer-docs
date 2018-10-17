@@ -16,10 +16,10 @@ If your business currently has a Web site built on WordPress, the Nuapay plugin 
 
 Once you have completed the installation and setup process, a page on your WordPress site will include a new **SIGN** button allowing your payers to easily sign up for electronic mandates.
 
-When customers sign electronic mandates you will be notified via email. You can then log on to the Nuapay user interface and manage payments against these new mandates (see Handling Sign Ups for more information on this).
+When customers sign electronic mandates you will be notified via email. You can then log on to the Nuapay user interface and manage payments against these new mandates (see <a href="em_wpnewusers.html">Handling New Users</a> for more information on this).
 
 
-{% include note.html content="See the Nuapay WordPress site for additional information." %}
+{% include note.html content="See the [Nuapay WordPress site](https://wordpress.org/plugins/nuapay-emandates/) for additional information." %}
 
 
 
