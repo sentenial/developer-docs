@@ -28,7 +28,7 @@ Before you can use Origix IP Webhooks you must set up a dedicated Endpoint on yo
     <li value="1">Log on to the Developer Dashboard (logon credentials will have been provided as part of your registration).</li>
     <li value="2">Click <b>Add Webhook</b>.</li>
     <li value="3">Add the required details in the pop-up dialog box:</li>
-    <img src="/images/add_webhook.png" style="width: 390;height: 369;" />
+    <img src="images/add_webhook.png" style="width: 390;height: 369;" />
     <li value="4">Specify: <ol><li value="1">The name of the Webhook notification. </li><li value="2">The URL of the Endpoint you configured.</li><li value="3">Status is set to Enabled by default (if Disabled no notifications are generated).</li><li value="4">Retry period (determines for how many days failed notifications will be retried. Retries are automatically generated every 30 minutes).</li><li value="5">Sign Key is the secret key that the application uses to sign the notification JSON&#160;body. The signature is sent in the request HTTP 'X-Signature' header. If you leave this field blank the application will automatically generate a key.</li><li value="6">The Event Types drop-down allows you to configure what events will trigger the notification to the Webhooks Endpoint URL. In the example above only Refunds will trigger a notification but you may define 1-n events as required.</li></ol></li>
     <li value="5">Click <b>Submit</b>.</li>
 </ol>
@@ -58,8 +58,14 @@ Notification Details - HTTP POST Request
 |<b>Method</b>|<span class="label label-info">POST </span>|
 |<b>Content-Type</b>|application/json|
 
-
 <b>Extra Request Headers</b>
+
+|**Header Name**|**Header Value**                                                                      |
+|X-Request-Id   |UUID of the Webhook Notification                                                      |
+|X-Signature    |Signature of the request JSON body, created with the Sign Key stored on the Webhook   |
+
+
+<b>Request Body</b>
 
 <table style="width: 100%;" class="Code">
 	<col />
@@ -83,56 +89,59 @@ Notification Details - HTTP POST Request
 			<td>String
 					Max 255 chars</td>
 			<td>
-				<p>The type of event to which this notification is related. The event can be one of the following, for example: </p>
+				<p>The type of event to which this notification is related. The event can be one of the following: </p>
 				<ul>
-					<li value="1">IncomingCreditTransfer</li>
-					<li value="2">DirectDebitAccept</li>
-					<li value="3">DirectDebitCancel</li>
-					<li value="4">DirectDebitRefuse</li>
-					<li value="5">DirectDebitReject</li>
-					<li value="6">DirectDebitReturn</li>
-					<li value="7">DirectDebitRefund</li>
-					<li value="8">MandateElectronicSign</li>
-					<li value="9">MandatePaperActivation</li>
-					<li value="10">MandateCreation</li>
-					<li value="11">CreditTransferReject</li>
-					<li value="12">CreditTransferCancel</li>
+					<b>Outbound Payments:</b>
+                    <li value="1">InstantCreditTransferAccept</li>
+					<li value="2">InstantCreditTransferCSMReject</li>
+					<li value="3">InstantCreditTransferBBReject</li>
+                    <b>Inbound Payments</b>
+					<li value="4">InstantCreditTransferCSMAccept</li>
+					<li value="5">InstantCreditTransferReject</li>					
 				</ul>
 			</td>
+		</tr>
+        <tr>
+			<td>resourceTechnicalId</td>
+			<td>Number</td>
+			<td>The unique Instant Payment internal identifier</td>
 		</tr>
 		<tr>
 			<td>resourceReference</td>
 			<td>String
 					Max 255 chars</td>
-			<td>This is the reference to a specific resource (Direct Debit, Credit Transfer) . The type of reference is specified by the resourceReferenceType.</td>
+			<td>This is the Instant Payment transaction ID.</td>
 		</tr>
 		<tr>
 			<td>resourceReferenceType</td>
 			<td>String
 					Max 255 chars</td>
-			<td>This is the resource reference type to which the resourceReference is related i.e. the End-To-End ID.</td>
+			<td>Always set to 'TransactionId'.</td>
 		</tr>
 		<tr>
-			<td>resourceUri</td>
+			<td>resourceDetails.Uri</td>
 			<td>String
 					Max 255 chars</td>
 			<td>
-				<p>This is the URI to the resource being referenced in the event.
-						For an event related to an R-transaction, for example, you can use <a href="np_retrievedirectdebit.html">Retrieve Direct Debit</a> with this URI&#160;reference to retrieve the Direct Debit Direct Debit resource.</p>
-				<p>For an Incoming Credit Transfer, use the provided accountId and transactionId to retrieve details of the transaction (for more on this see <a href = "np_viewtransaction.html"> View Transaction</a>) </p>
+            <p>This is the URI to the resource being referenced in the event. You can use this URI to retrieve the Instant Payment details using the <a href="ip_retrieveinstct.html">Retrieve Instant Payment</a> API. </p>
 			</td>
 		</tr>
 		<tr>
-			<td>resourceType</td>
+			<td>resourceDetails.Type</td>
 			<td>String
-					Max 255 chars</td>
-			<td>The type of the resource to which the resourceUri is related. Direct-Debit-related events have a type 'DirectDebit'; Incoming-Credit-Transfer-related events have a type 'Transaction'.</td>
+					Max 21 chars</td>
+			<td>Always set to 'InstantCreditTransfer'</td>
 		</tr>
 		<tr>
-			<td>reasonCode</td>
+			<td>resourceDetails.reasonCode</td>
 			<td>String
 					Max 6 chars</td>
-			<td>This is only available for the R-Transaction type of events and includes the <a href="../Useful Resources/SEPA Error Codes.htm">SEPA Error Code</a>.</td>
+			<td>The SEPA Reason Code, populated where a Negative Acknowledgment (NACK) response from the CSM is received.</td>
+		</tr>
+        <tr>
+			<td>organizationId</td>
+			<td>Number</td>
+			<td>Unique Origix IP identifier assigned to your bank / financial institution.</td>
 		</tr>
 	</tbody>
 </table>

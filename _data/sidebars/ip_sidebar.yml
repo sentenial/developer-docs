@@ -66,28 +66,53 @@ entries:
       url: /ip_whconfiguration.html
       output: web, pdf
 
-
       subfolders:
       - title: Webhook Events 
         output: web
         subfolderitems:
 
-        - title: Outbound - Accept
-          url: /np_createmandate.html
+        - title: Outbound Accept Event
+          url: /ip_whoutaccept.html
           output: web
 
-        - title: Outbound - Reject
-          url: /np_retrievemandate.html
+        - title: Outbound Reject Event
+          url: /ip_whoutreject.html
           output: web
 
-        - title: Inbound - Accept
-          url: /np_retrievemandatedoc.html
+        - title: Inbound Accept Event
+          url: /ip_whinaccept.html
           output: web
 
-        - title: Inbound - Reject
-          url: /np_retrievemandatedoc.html
+        - title: Inbound Reject Event
+          url: /ip_whinreject.html
           output: web
-  
+
+  - title: Origix IP Account
+    output: web, pdf
+    folderitems:
+   
+    - title: Overview
+      url: /ip_accountoverview.html
+      output: web, pdf   
+            
+      subfolders:
+      - title: Account APIs 
+        output: web
+        subfolderitems:
+
+        - title: List Account
+          url: /ip_accountapilist.html
+          output: web
+
+        - title: List Transactions
+          url: /ip_accountapilisttx.html
+          output: web
+
+        - title: View Transaction
+          url: /ip_accountapiviewtx.html
+          output: web
+
+          
   - title: Resources
     output: web, pdf
     folderitems: 
