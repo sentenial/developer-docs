@@ -58,6 +58,13 @@ Notification Details - HTTP POST Request
 
 <b>Extra Request Headers</b>
 
+|**Header Name**|**Header Value**                                                                      |
+|X-Request-Id   |UUID of the Webhook Notification                                                      |
+|X-Signature    |Signature of the request JSON body, created with the Sign Key stored on the Webhook   |
+
+
+<b>Request Body</b>
+
 <table style="width: 100%;" class="Code">
 	<col />
 	<col style="width: 128px;" />
