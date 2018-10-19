@@ -92,7 +92,7 @@ This Webhook has a single event type: <b>InstantCreditTransferReject</b>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>The Reason Code returned. </td>
+			<td>The <a href="ip_separeasons.html">Reason Code</a> returned.</td>
 		</tr>
 		<tr>
 			<td>root</td>

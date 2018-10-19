@@ -96,7 +96,7 @@ Possible Webhook event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>The Reason Code returned. </td>
+            <td>The <a href="ip_separeasons.html">Reason Code</a> returned. </td>
 		</tr>
 		<tr>
 			<td>root</td>

@@ -118,11 +118,11 @@ entries:
     folderitems: 
  
     - title: FAQs
-      url: /em_overlayjavascript.html
+      url: /ip_faq.html
       output: web, pdf                 
 
     - title: SEPA Error Codes
-      url: /em_overlayeventhandler.html
+      url: /ip_separeasons.html
       output: web, pdf                 
 
     - title: HTTP Response Codes
