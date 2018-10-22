@@ -25,6 +25,19 @@ entries:
     - title: SEPA CT Instant Scheme
       url: /ip_sctinstscheme.html
       output: web
+      
+      subfolders:
+      - title: Security 
+        output: web
+        subfolderitems:
+
+        - title: Overview
+          url: /ip_security.html
+          output: web
+
+        - title: JWS Sample
+          url: /ip_securityjwssample.html
+          output: web    
 
   - title: Outbound Payments
     output: web, pdf
@@ -124,8 +137,3 @@ entries:
     - title: SEPA Error Codes
       url: /ip_separeasons.html
       output: web, pdf                 
-
-    - title: HTTP Response Codes
-      url: /em_overlayeventhandler.html
-      output: web, pdf                 
-
