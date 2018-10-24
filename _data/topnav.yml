@@ -35,6 +35,6 @@ topnav_dropdowns:
           url: /em_landing_page.html
         - title: Instant Payments
           url: /ip_landing_page.html
-        - title: UK Open Banking
+        - title: Open Banking
           url: /ob_landing_page.html
         

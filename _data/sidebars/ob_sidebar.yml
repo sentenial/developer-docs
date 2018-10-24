@@ -1,0 +1,121 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Open Banking
+  product: Open Banking
+  version: 
+  folders:
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ob_landing_page.html
+      output: web
+
+    - title: Open Banking Services
+      url: /ob_servicesoverview.html
+      output: web
+
+    - title: Terminology
+      url: /ob_terminology.html
+      output: web
+
+  - title: PISP Service
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ob_pispoverview.html
+      output: web, pdf
+      
+      subfolders:
+      - title: PISP APIs 
+        output: web
+        subfolderitems:
+
+        - title: Create Payment
+          url: /ob_createpayment.html
+          output: web
+
+        - title: Retrieve Payment
+          url: /ob_retrievepayment.html
+          output: web
+
+        - title: Reverse Payment
+          url: /np_retrievemandate.html
+          output: web      
+      
+  - title: AISP Service
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_redirect.html
+      output: web, pdf
+
+    - title: E-Mandate Token
+      url: /em_tokenredirect.html
+      output: web, pdf
+ 
+    - title: Redirect to Mandate Signing
+      url: /em_redirectmdtsigning.html
+      output: web, pdf                 
+
+    - title: Redirect Success and Failure
+      url: /em_redirecteventhandler.html
+      output: web, pdf                 
+
+  - title: Security
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_wpoverview.html
+      output: web, pdf
+
+    - title: Plugin Installation
+      url: /em_wpinstall.html
+      output: web, pdf
+ 
+    - title: Plugin Configuration
+      url: /em_wpconfig.html
+      output: web, pdf                 
+
+    - title: Page Setup
+      url: /em_wppagesetup.html
+      output: web, pdf                 
+
+    - title: Handling New Users
+      url: /em_wpnewusers.html
+      output: web, pdf                 
+
+  - title: Resources
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_directapioverview.html
+      output: web, pdf
+
+    - title: Integration Prerequisite
+      url: /em_directapiprereq.html
+      output: web, pdf
+ 
+    - title: E-Mandate Token
+      url: /em_tokendirectapi.html
+      output: web, pdf                 
+
+    - title: Rendering the Screen
+      url: /em_directapirenderscreen.html
+      output: web, pdf                     
+
+    - title: Processing the Form Submission
+      url: /em_directapiformsub.html
+      output: web, pdf                     
+
+    - title: Adding a Response Handler
+      url: /em_directapiresphandler.html
+      output: web, pdf                     
+ 

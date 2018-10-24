@@ -10,6 +10,12 @@ folder: prodEmandates
 To upload a contract, use the <b>Upload Contract</b> request.
 
 
+
+
+
+
+
+
 {% include note.html content="Contracts must be saved in PDF and we recommend that the file size does not exceed 1 MB." %}
 
 
@@ -55,15 +61,23 @@ Recurring (RCUR) contracts can be re-used in multiple signing operations; this i
 </tbody>
 </table>
 
+<p>Request Sample</p>
+{% gist 965035bdbb5a6ebe4b592e0c206fb81b %}
+
 
 
 </div>
 
 <div role="tabpanel" class="tab-pane" id="about">
 <p>A successful request will return a <b>200 Created</b> response code</p>
+<p>Response Sample</p>
+
+{% gist 7ad94961a01a55a2ac75948acf39c085 %}
+
 <p>The following is the complete list of possible status codes, which may be returned in the response:</p>
     {% include httpcodes.html %}
     
+
  
     </div>
 
@@ -71,6 +85,8 @@ Recurring (RCUR) contracts can be re-used in multiple signing operations; this i
 </div>
 
 Once you have retrieved your contract identifier you can use it in your Prepare E-Mandate request in your chosen integration approach:
+
+ 
 
 * <a href="em_tokenredirect.html">Redirect</a>
 * <a href="em_token.html">Overlay</a>

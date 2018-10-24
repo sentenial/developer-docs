@@ -1,0 +1,69 @@
+<table>
+<colgroup>
+<col width="10%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td markdown="span">200</td>
+<td markdown="span">OK - The request completed successfully.</td>
+</tr>
+<tr>
+<td markdown="span">201</td>
+<td markdown="span">Created - A new resource has been created successfully. The resource is appended to the response.
+</td>
+</tr>
+<tr>
+<td markdown="span">400</td>
+<td markdown="span">Bad Request - The request was malformed. The response body will include an error providing further information.
+</td>
+</tr>
+<tr>
+<td markdown="span">401</td>
+<td markdown="span">Unauthorized - Your API key is wrong.
+</td>
+</tr>
+<tr>
+<td markdown="span">403</td>
+<td markdown="span">Forbidden - The client has provided a valid Authentication header, but it does not have permission to access this resource.
+</td>
+</tr>
+<tr>
+<td markdown="span">404</td>
+<td markdown="span">Not Found - The requested resource did not exist.
+</td>
+</tr>
+<tr>
+<td markdown="span">405</td>
+<td markdown="span">Method Not Allowed - When a HTTP method is being requested that isn’t allowed.
+</td>
+</tr>
+<tr>
+<td markdown="span">415</td>
+<td markdown="span">Unsupported Media Type - If incorrect content type was provided as part of the request (e.g. other than "application/json").
+</td>
+</tr>
+<tr>
+<td markdown="span">422</td>
+<td markdown="span">Unprocessable Entity - Used for validation errors. More details will be provided in response body.
+</td>
+</tr>
+    <tr>
+<td markdown="span">429</td>
+<td markdown="span">Too Many Requests. More details will be provided in response body.
+</td>
+</tr>
+<tr>
+<td markdown="span">500</td>
+<td markdown="span">Internal Server Error - We had a problem with our server. Try again later and if the problem persists contact the Nuapay application support team.
+</td>
+</tr>
+
+</tbody>
+</table>
