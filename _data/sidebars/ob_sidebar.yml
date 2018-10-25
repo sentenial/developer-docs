@@ -22,6 +22,11 @@ entries:
       url: /ob_terminology.html
       output: web
 
+    - title: API Basics
+      url: /ob_generalrules.html
+      output: web, pdf    
+     
+      
   - title: PISP Service
     output: web, pdf
     folderitems:
@@ -29,6 +34,10 @@ entries:
     - title: Overview
       url: /ob_pispoverview.html
       output: web, pdf
+
+    - title: Payment Page Setup
+      url: /ob_setupoverview.html
+      output: web, pdf                         
       
       subfolders:
       - title: PISP APIs 
@@ -43,10 +52,6 @@ entries:
           url: /ob_retrievepayment.html
           output: web
 
-        - title: Reverse Payment
-          url: /np_retrievemandate.html
-          output: web      
-      
   - title: AISP Service
     output: web, pdf
     folderitems:
