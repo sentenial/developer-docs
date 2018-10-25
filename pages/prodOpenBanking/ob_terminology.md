@@ -19,3 +19,4 @@ Open Banking uses various accronyms, the following provides a summary of the pri
 | TPP       | Third Party Providers / Trusted Third Parties A party other than an ASPSP that provides payment related services.|
 
 
+{% include links.html %}
