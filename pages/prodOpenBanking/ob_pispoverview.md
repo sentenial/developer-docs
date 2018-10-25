@@ -44,7 +44,7 @@ Once configured your user will interact with your Open Banking Payment as descri
 1. The payment is authorised and the payer is redirected to the merchant site with a confirmation message:
 <img src="images/ob_4_conf.png">
 
-
+{% include callout.html content="On successful completion of this payment flow your customer has provided his/her consent for the payment to be collected for the selected account. The actual funds transfer to your account may happen within a matter of seconds or it may be processed on the following business day. The speed with which funds are transferred to your account is controlled by your customers' banks and is determined by the default payment scheme they are using. A scheme like SEPA CT Instant (for Euro payments) or Faster Payments (for GBP payments) will result in funds being credited to your account within seconds. Schemes like SEPA CT and BACS Credit will generally take a business day to process. Nuapay uses the [Payment Received Webhook](ob_whreceived.html) to notify you when funds are settled to your account." type="primary" %}
 
 
 

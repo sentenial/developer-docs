@@ -52,75 +52,106 @@ entries:
           url: /ob_retrievepayment.html
           output: web
 
+        - title: Reverse Payment
+          url: /ob_reversepayment.html
+          output: web
+          
   - title: AISP Service
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /em_redirect.html
+      url: /ob_aispoverview.html
       output: web, pdf
+      
+      subfolders:
+      - title: AISP APIs 
+        output: web
+        subfolderitems:
+        
+        - title: Retrieve Bank 
+          url: /ob_getbank.html
+          output: web
 
-    - title: E-Mandate Token
-      url: /em_tokenredirect.html
-      output: web, pdf
+        - title: Create Account Access 
+          url: /ob_createaccountaccess.html
+          output: web
+
+        - title: Retrieve Account Access
+          url: /ob_retrieveaccountaccess.html
+          output: web
+
+        - title: Delete Account Access
+          url: /ob_deleteaccountaccess.html
+          output: web
+
+        - title: Retrieve Account(s)
+          url: /ob_getaccounts.html
+          output: web
  
-    - title: Redirect to Mandate Signing
-      url: /em_redirectmdtsigning.html
-      output: web, pdf                 
+        - title: Retrieve Account Balance
+          url: /ob_getbalance.html
+          output: web
+ 
+        - title: Retrieve Account Beneficiaries
+          url: /ob_getbeneficiaries.html
+          output: web
+          
+        - title: Retrieve Account Direct Debits
+          url: /ob_getdds.html
+          output: web
+          
+        - title: Retrieve Account Standing Orders
+          url: /ob_getstandingorders.html
+          output: web
+          
+        - title: Retrieve Account Transactions
+          url: /ob_getaccounttx.html
+          output: web
+        
+        - title: Retrieve Account Product
+          url: /ob_getaccountprod.html
+          output: web
+          
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
 
-    - title: Redirect Success and Failure
-      url: /em_redirecteventhandler.html
-      output: web, pdf                 
+    - title: Overview
+      url: /ob_whoverview.html
+      output: web, pdf
 
+    - title: Configuration
+      url: /ob_whconfiguration.html
+      output: web, pdf      
+             
+      subfolders:
+      - title: Webhook Events 
+        output: web
+        subfolderitems:
+
+        - title: Payment Received
+          url: /ob_whreceived.html
+          output: web
+
+        - title: Payment Reversed
+          url: /ob_whrreversed.html
+          output: web      
+          
   - title: Security
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /em_wpoverview.html
+      url: /ob_secoverview.html
       output: web, pdf
-
-    - title: Plugin Installation
-      url: /em_wpinstall.html
-      output: web, pdf
- 
-    - title: Plugin Configuration
-      url: /em_wpconfig.html
-      output: web, pdf                 
-
-    - title: Page Setup
-      url: /em_wppagesetup.html
-      output: web, pdf                 
-
-    - title: Handling New Users
-      url: /em_wpnewusers.html
-      output: web, pdf                 
-
+    
   - title: Resources
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /em_directapioverview.html
+    - title: FAQs
+      url: /ob_faq.html
       output: web, pdf
 
-    - title: Integration Prerequisite
-      url: /em_directapiprereq.html
-      output: web, pdf
- 
-    - title: E-Mandate Token
-      url: /em_tokendirectapi.html
-      output: web, pdf                 
-
-    - title: Rendering the Screen
-      url: /em_directapirenderscreen.html
-      output: web, pdf                     
-
-    - title: Processing the Form Submission
-      url: /em_directapiformsub.html
-      output: web, pdf                     
-
-    - title: Adding a Response Handler
-      url: /em_directapiresphandler.html
-      output: web, pdf                     
- 
+   

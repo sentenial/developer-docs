@@ -1,7 +1,7 @@
 ---
 title: Payment Page Setup
 keywords: Payment Page Setup Javascript Add Open Banking Payment Page
-summary: "Adding Open Banking as a payment option to your Payment Page is relatively straightforward as outlined below."
+summary: "Adding Open Banking as a payment option to your Payment Page requires a little configuration as outlined below."
 sidebar: ob_sidebar
 permalink: ob_setupoverview.html
 folder: prodOpenBanking
@@ -15,7 +15,7 @@ To add Open Banking to your payment page you will need to carry out the followin
 1. Generate a unique Payment ID.
 1. Include a reference to a CSS and JS file on your payment page.
 1. Add a button to your page.
-1. Add a Listener.
+1. Add a JavaScript Event Listener to detect when the payment UI pop-up window closes.
 
 ## Retrieving Your API Key
 
@@ -61,7 +61,7 @@ At this point you have:
 * Added the JS and CSS links to your payment page.
 * Retrieved the payment ID (via the Create Payment service).
 
-To enable the **Pay** button use the following:
+To enable the **Pay** button you will need to add an ``onclick`` event. See the example below:
 
 ````
 <a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;’https://tpp-sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
@@ -86,7 +86,8 @@ To manage the closing of the pop-up window, you will need to add a Listener to y
 ``{"status":"CLOSED","paymentId":" gabxrlvbl5"}``
 
 
-A Sample Listener is provided below:
+A Sample Listener is provided below.
+
 
 ````
 <script>
@@ -115,7 +116,12 @@ window.addEventListener("message",listener,false);
 </script>
 ````
 
-{% include note.html content="On closing of the pop-up window we recommend that you make a server-to-server call to retrieve the payment status (using the [Retrieve Payment](ob_retrievepayment.html) service)." %}
+Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server. 
+
+The call is to ``/merchant/status?id=gabxrlvbl5``
+
+
+{% include note.html content="On closing of the pop-up window you must make a server-to-server call to retrieve the payment status (using the [Retrieve Payment](ob_retrievepayment.html) service)." %}
 
 {% include links.html %}
 
