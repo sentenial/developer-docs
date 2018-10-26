@@ -67,6 +67,6 @@ Return the current balance on a specified account.
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

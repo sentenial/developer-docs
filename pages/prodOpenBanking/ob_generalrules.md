@@ -18,7 +18,5 @@ For more details on how our API Keys work, see the [Security Overview](ob_secove
 
 To request your API Key please contact our Support Team: <a href="mailto:api.support@nuapay.com">api.support@nuapay.com</a>.
 
-For m
-
 
 {% include links.html %}

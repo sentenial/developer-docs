@@ -88,6 +88,6 @@ The Create Payment service generates an Open Banking payment object, returning a
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

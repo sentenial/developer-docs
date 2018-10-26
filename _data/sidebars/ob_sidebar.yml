@@ -22,7 +22,7 @@ entries:
       url: /ob_terminology.html
       output: web
 
-    - title: API Basics
+    - title: General API Rules
       url: /ob_generalrules.html
       output: web, pdf    
      
@@ -69,7 +69,7 @@ entries:
         output: web
         subfolderitems:
         
-        - title: Retrieve Bank 
+        - title: Retrieve Banks 
           url: /ob_getbank.html
           output: web
 
@@ -91,27 +91,11 @@ entries:
  
         - title: Retrieve Account Balance
           url: /ob_getbalance.html
-          output: web
- 
-        - title: Retrieve Account Beneficiaries
-          url: /ob_getbeneficiaries.html
-          output: web
-          
-        - title: Retrieve Account Direct Debits
-          url: /ob_getdds.html
-          output: web
-          
-        - title: Retrieve Account Standing Orders
-          url: /ob_getstandingorders.html
-          output: web
+          output: web        
           
         - title: Retrieve Account Transactions
           url: /ob_getaccounttx.html
-          output: web
-        
-        - title: Retrieve Account Product
-          url: /ob_getaccountprod.html
-          output: web
+          output: web       
           
   - title: Webhooks
     output: web, pdf

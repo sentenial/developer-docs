@@ -40,7 +40,7 @@ Returns the list of transactions linked to a specified account.
 </tr>
 <tr>
 <td markdown="span">URI</td>
-<td markdown="span">/accounts/{accountId}/standing-orders
+<td markdown="span">/accounts/{accountId}/transactions
 </td>
 </tr>
 <tr>
@@ -92,6 +92,6 @@ Returns the list of transactions linked to a specified account.
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

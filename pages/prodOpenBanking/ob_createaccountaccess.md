@@ -76,6 +76,6 @@ The Create Account Access service generates the account request that the end use
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

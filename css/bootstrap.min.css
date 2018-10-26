@@ -1669,7 +1669,7 @@ mark {
 }
 
 .text-primary {
-    color: #337ab7
+    color: #F5851F
 }
 
 a.text-primary:hover {
@@ -5873,8 +5873,8 @@ a.thumbnail:hover {
 
 .alert-info {
     color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1
+    background-color: #FFFFC0;
+    border-color: #EE8F35
 }
 
 .webhook-info {
@@ -5885,7 +5885,7 @@ a.thumbnail:hover {
 
 
 .alert-info hr {
-    border-top-color: #a6e1ec
+    border-top-color: #EE8F35
 }
 
 .alert-info .alert-link {
@@ -6578,21 +6578,21 @@ a.list-group-item-danger.active:hover {
 }
 
 .panel-primary {
-    border-color: #337ab7
+    border-color: #EE8F35
 }
 
 .panel-primary>.panel-heading {
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7
+    background-color: #EE8F35;
+    border-color: #EE8F35
 }
 
 .panel-primary>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #337ab7
+    border-top-color: #EE8F35
 }
 
 .panel-primary>.panel-heading .badge {
-    color: #337ab7;
+    color: #EE8F35;
     background-color: #fff
 }
 
@@ -6628,7 +6628,7 @@ a.list-group-item-danger.active:hover {
 }
 
 .panel-info>.panel-heading {
-    color: #31708f;
+    color: #EE8F35;
     background-color: #d9edf7;
     border-color: #bce8f1
 }
@@ -6639,7 +6639,7 @@ a.list-group-item-danger.active:hover {
 
 .panel-info>.panel-heading .badge {
     color: #d9edf7;
-    background-color: #31708f
+    background-color: #EE8F35
 }
 
 .panel-info>.panel-footer+.panel-collapse>.panel-body {

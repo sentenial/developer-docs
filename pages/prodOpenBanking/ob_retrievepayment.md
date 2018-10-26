@@ -62,6 +62,6 @@ The Retrieve Payment service returns an Open Banking payment object, where the u
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}
