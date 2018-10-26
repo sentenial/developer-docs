@@ -69,6 +69,6 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html%}
 
 {% include links.html %}

@@ -69,6 +69,6 @@ This service will typically be required where a customer has asked for the accou
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

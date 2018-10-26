@@ -1,16 +1,16 @@
 ---
-title: Retrieve Account Product
-keywords: Retrieve Account ProductOpen Banking 
-summary: "Retrieve Account Product RESTful API"
+title: Retrieve Banks
+keywords: Retrieve Banks Open Banking 
+summary: "Retrieve Bank RESTful API"
 sidebar: ob_sidebar
-permalink: ob_getaccountprod.html
+permalink: ob_getbank.html
 folder: prodOpenBanking
 toc: false
 ---
 
 ## API Details
 
-Returns the product name and type linked to the account. 
+Before you can initiate an account access request to your customer you must first offer the customer a choice of available banks. This service allows you to retrieve a list of banks participating in Open Banking.
 
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -31,7 +31,7 @@ Returns the product name and type linked to the account.
 <tbody>
 <tr>
 <td markdown="span">Usage</td>
-<td markdown="span">Provide the account id. </td>
+<td markdown="span">This service returns all Nuapay TPP particiapting banks.</td>
 </tr>
 <tr>
 <td markdown="span">Method</td>
@@ -40,13 +40,7 @@ Returns the product name and type linked to the account.
 </tr>
 <tr>
 <td markdown="span">URI</td>
-<td markdown="span">/accounts/{accountId}/product
-</td>
-</tr>
-<tr>
-<td markdown="span">Required Arguments</td>
-<td markdown="span"><b>accountId</b>
-<br/><i>A unique identifier used to identify the account resource. (Only mandatory for /accounts/{accountId}) </i>
+<td markdown="span">/banks
 </td>
 </tr>
 </tbody>
@@ -57,7 +51,7 @@ Returns the product name and type linked to the account.
 </div>
 
 <div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>200 Account Product retrieved</b> response code</p>
+<p>A successful request will return a <b>200 Banks retrieved</b> response code</p>
 <p>The following is the complete list of possible status codes, which may be returned in the response:</p>
     {% include ob_httpcodes.html %}
     
@@ -67,6 +61,6 @@ Returns the product name and type linked to the account.
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

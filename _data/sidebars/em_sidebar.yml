@@ -99,10 +99,6 @@ entries:
       url: /em_directapioverview.html
       output: web, pdf
 
-    - title: Integration Prerequisite
-      url: /em_directapiprereq.html
-      output: web, pdf
- 
     - title: E-Mandate Token
       url: /em_tokendirectapi.html
       output: web, pdf                 

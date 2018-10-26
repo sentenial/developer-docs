@@ -1,16 +1,16 @@
 ---
-title: Retrieve Supported Banks
-keywords: Retrieve Bank Open Banking 
-summary: "Retrieve Bank RESTful API"
+title: Retrieve Accounts
+keywords: Retrieve Accounts Open Banking 
+summary: "Retrieve Accounts RESTful API"
 sidebar: ob_sidebar
-permalink: ob_getbank.html
+permalink: ob_getaccounts.html
 folder: prodOpenBanking
 toc: false
 ---
 
 ## API Details
 
-Before you can initiate an account access request to your customer you must first offer the customer a choice of available banks. This service allows you to retrieve a list of banks participating in Open Banking.
+Retrieve all the accounts linked to an access request.
 
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -31,7 +31,7 @@ Before you can initiate an account access request to your customer you must firs
 <tbody>
 <tr>
 <td markdown="span">Usage</td>
-<td markdown="span">This service returns all Nuapay TPP particiapating banks.</td>
+<td markdown="span">This service returns all accounts linked to an account request.</td>
 </tr>
 <tr>
 <td markdown="span">Method</td>
@@ -40,7 +40,7 @@ Before you can initiate an account access request to your customer you must firs
 </tr>
 <tr>
 <td markdown="span">URI</td>
-<td markdown="span">/banks
+<td markdown="span">/accounts
 </td>
 </tr>
 </tbody>
@@ -51,7 +51,7 @@ Before you can initiate an account access request to your customer you must firs
 </div>
 
 <div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>200 Banks retrieved</b> response code</p>
+<p>A successful request will return a <b>200 Accounts retrieved</b> response code</p>
 <p>The following is the complete list of possible status codes, which may be returned in the response:</p>
     {% include ob_httpcodes.html %}
     
@@ -61,6 +61,6 @@ Before you can initiate an account access request to your customer you must firs
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

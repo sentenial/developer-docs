@@ -10,12 +10,33 @@ folder: prodEmandates
 
 ## API Information
 
+Before you begin your implementation please ensure that you have:
+
+* A valid *API Key*
+* A *Creditor IBAN*
+* The unique *Resource Identifier to the CSID*
+
 When working with E-Mandate APIs note that all requests must:
 
 * Be sent via the HTTPS protocol
 * Pass a specific API Key unique to each merchant, for authentication
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
+
+
+## Available End Points
+
+Nuapay uses the JSON format to submit and retrieve data.
+
+Note that in the API descriptions the endpoints use the LIVE URI.
+
+We offer two separate endpoints for our E-Mandates API:
+
+|LIVE| https://api.nuapay.com |
+|Sandbox| https://sandbox.nuapay.com/ |
+
+
+{% include note.html content="If you are a Java Developer please note that a Nuapay REST client is available on Github: [https://github.com/sentenial/nuapay-rest-client]( https://github.com/sentenial/nuapay-rest-client)" %}
 
 ## Configurations
 

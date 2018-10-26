@@ -29,7 +29,7 @@ body {
     color: #777;
 }
 .bs-callout-primary {
-    border-left-color: #428bca;
+    border-left-color: #EE8F35;
 }
 .bs-callout-primary h4 {
     color: #428bca;
@@ -568,7 +568,7 @@ i.border {
 }
 
 a[data-toggle] {
-    color: #248EC2;
+    color: #404040;
 }
 
 .summary {

@@ -68,6 +68,6 @@ Use this service to retrieve an account access request previously generated (see
 
 </div>
 
-{% include swaggerlink.html %}
+{% include ob_swaggerlink.html %}
 
 {% include links.html %}

@@ -30,7 +30,7 @@ EMandates.setUrl('https://api.nuapay.com/emandate-rest');
 
 EMandatesUI.setUrl('https://api.nuapay.com/emandate');
 
-function redirect() { window.location = 'https://demo.sentenialtest.com/emandate/web/show?token=07e43737-22d5-491e-9dd1-423e2270d190'; }; /*]]>*/
+function redirect() { window.location = 'https://api.nuapay.com/emandate/emandate/web/show?token=07e43737-22d5-491e-9dd1-423e2270d190'; }; /*]]>*/
 
 </script>
 ````
