@@ -69,6 +69,6 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 
 </div>
 
-{% include ob_swaggerlink.html%}
+<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://sentenial.github.io/open-banking-swagger/docs/redoc.html#operation/reversePaymentUsingPOST" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
 
 {% include links.html %}

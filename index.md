@@ -15,7 +15,7 @@ toc: false
 Find all the API Guide, Business Information, FAQs, and More on our portal.
 This Help system is primarily intended for Software Developers and it is assumed that you have a good understanding of Web technologies in general and RESTful APIs in particular.
 
-{% include note.html content="If you have not already been configured for Nuapay/Sentenial services  please contact a member of the Customer Support team who will be happy to set you up on our Sandbox. Please mail us: <a href ='mailto:api.support@nuapay.com'>api.support@nuapay.com</a>" %}
+{% include note.html content="If you have not already been configured for Nuapay/Sentenial services  please contact a member of the Customer Support team who will be happy to set you up on our Sandbox. Please mail us: <a href ='mailto:api.support@nuapay.com'>api.support@nuapay.com</a> or complete the <a href = 'https://www.nuapay.com/en/request-api-sandbox/' target ='_blank'>online form</a>." %}
 
 
 {% include links.html %}
