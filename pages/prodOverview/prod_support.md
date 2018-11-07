@@ -4,7 +4,7 @@ keywords: Support
 summary: "We're always keen to assist - if you have a problem or a query please do get in touch"
 sidebar: productOverview_sidebar
 permalink: prod_support.html
-folder: product1
+folder: prodOverview
 ---
 
 ## Support
