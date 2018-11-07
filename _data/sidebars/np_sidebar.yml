@@ -351,6 +351,10 @@ entries:
       url: /np_resourcesoverview.html
       output: web, pdf  
 
+    - title: Account Validation
+      url: /np_validateaccount.html
+      output: web, pdf          
+
     - title: Use Cases
       url: /np_usecases.html
       output: web, pdf          

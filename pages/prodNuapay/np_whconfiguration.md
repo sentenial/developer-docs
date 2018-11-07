@@ -136,7 +136,7 @@ Notification Details - HTTP POST Request
 			<td>reasonCode</td>
 			<td>String
 					Max 6 chars</td>
-			<td>This is only available for the R-Transaction type of events and includes the <a href="../Useful Resources/SEPA Error Codes.htm">SEPA Error Code</a>.</td>
+			<td>This is only available for the R-Transaction type of events and includes the <a href="np_separeasons.html">SEPA Reason Code</a>.</td>
 		</tr>
 	</tbody>
 </table>

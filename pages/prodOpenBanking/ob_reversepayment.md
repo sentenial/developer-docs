@@ -39,7 +39,7 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 <tbody>
 <tr>
 <td markdown="span">Usage</td>
-<td markdown="span">You must pass the paymentId.</td>
+<td markdown="span">You must pass the paymentId and optionally remittance information may be provided.</td>
 </tr>
 <tr>
 <td markdown="span">Method</td>
