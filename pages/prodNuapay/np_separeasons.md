@@ -40,7 +40,7 @@ The following is a summary of all possible SEPA R-transaction codes:
 
  Code      | Description                                                                  |  Type              | Suggested Action
 ---------- | ---------------------------------------------------------------------------- | ------------------ | ----------------
-AC01       | Format of the account number specified is not correct                        | REJECT  RETURN     | - Contact the Debtor in order to confirm the correctness of the Debtor’s IBAN<br/>- In case of mandate amendment: check the data provided by the Debtor<<br/>- Verify the database used for the BBAN conversion into IBAN.
+AC01       | Format of the account number specified is not correct                        | REJECT  RETURN     | - Contact the Debtor in order to confirm the correctness of the Debtor’s IBAN <br/>- In case of mandate amendment: check the data provided by the Debtor <br/>- Verify the database used for the BBAN conversion into IBAN.
 AC04       | Account number specified has been closed                                     | REJECT   RETURN    | Contact the Debtor for the new account
 AC06       | Account specified is blocked, prohibiting posting of transactions against it | REJECT   RETURN    | Contact the Debtor for alternative account/ solution to pay
 AC13       | Invalid debtor account type                                                  | REJECT   RETURN    | - Contact the Debtor for clarification and to agree on another means of payment <br/>- Conclude the SDD Core mandate with Debtor

@@ -37,12 +37,7 @@ To generate your private key and certificate:
 1. Click <b>Generate PKI Key</b>. This will generate:
 * Your Private Key
 * A Signed certificate
-
-
-
-You will be prompted to download your private key (in .key format):
-
-
+1. You will be prompted to download your private key (in .key format):
 <img src = "images/02_PKI_Management.png">
 
 {% include important.html content="Save your .key file in a safe location. This will be the only time you will be able to download this key and we will not retain it on our servers. If you need to regenerate the key for any reason you will need to revoke the certificate (see below)." %}

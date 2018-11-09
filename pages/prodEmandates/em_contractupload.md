@@ -54,8 +54,14 @@ To upload a contract, use the <b>Upload Contract</b> request.
 </tr>
 <tr>
 <td markdown="span">Optional Arguments</td>
-<td markdown="span">fileName: If not provided the name of the uploaded file is used. <br/><br/>contractType: OOFF or RCUR<br/><br/> Contracts can be either once-off or recurring: Once-Off (OOFF) contracts are just used once in a single signing operation.
-Recurring (RCUR) contracts can be re-used in multiple signing operations; this is useful where your business use a standard contract and you want to offer all your customers the same PDF contract document.
+<td markdown="span"><b>fileName</b>
+<br/><i>If not provided the name of the uploaded file is used. </i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>contractType</b>
+<br/><i>OOFF or RCUR. <br> Contracts can be either once-off or recurring: Once-Off (OOFF) contracts are just used once in a single signing operation. Recurring (RCUR) contracts can be re-used in multiple signing operations; this is useful where your business uses a standard contract and you want to offer all your customers the same PDF contract document.</i>
 </td>
 </tr>
 </tbody>

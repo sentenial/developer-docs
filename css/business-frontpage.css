@@ -27,3 +27,6 @@ body {
 .card {
   height: 100%;
 }
+
+a.noClass:link i
+{text-decoration:none;} 

@@ -19,7 +19,7 @@ folder: prodNuapay
 * (Optionally) an End-to-End Identifier
 * (Optionally) Remittance Information
 
-<p>The <b>collection date</b> must generally be set to 2 days in the future (this is to allow for payments to pass through Clearing). In some cases payments may need to have a later collection date but this is dependent on your specific SEPA scheme configuration.</p>
+<p>The <b>collection date</b> must generally be set to 2 days in the future (this is to allow for payments to pass through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">Clearing</a>). In some cases payments may need to have a later collection date but this is dependent on your specific SEPA scheme configuration.</p>
 
 <p>The <b>payment amount</b> must be provided in Euros and cents.</p>
 
