@@ -55,7 +55,26 @@ To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 </tr>
 <tr>
 <td markdown="span">Required Arguments</td>
-<td markdown="span">merchantDetails.iban <br/><br/>merchantDetails.creditorSchemeId (use <a href="np_listcredscheme.html">List Creditor Schemes</a> to retrieve your CSID)<br/><br/> merchantDetails.schemeType (CORE, B2B, BACS)<br/><br/>merchantDetails.mandateType (Use either OOFF (for a once-off mandate; only one Direct Debit payment may be made against a OOFF mandate) or RCUR (a recurring mandate; more than one Direct Debit payment may be made against the mandate))
+<td markdown="span"><b>merchantDetails.iban</b>
+<br/><i>The merchant IBAN</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>merchantDetails.creditorSchemeId</b>
+<br/><i>(use <a href="np_listcredscheme.html">List Creditor Schemes</a> to retrieve your CSID)</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>merchantDetails.schemeType</b>
+<br/><i>(CORE, B2B, BACS)</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>merchantDetails.mandateType</b>
+<br/><i>(Use either OOFF (for a once-off mandate; only one Direct Debit payment may be made against a OOFF mandate) or RCUR (a recurring mandate; more than one Direct Debit payment may be made against the mandate))</i>
 </td>
 </tr>
 </tbody>

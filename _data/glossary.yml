@@ -1,4 +1,9 @@
 clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payments. (The EBA's STEP-2 system allows banks across Europe to use one channel to send and receive their SEPA Credit Transfer and SEPA Direct Debit transactions)"
+
+credit_transfer: "A Credit Transfer or CT is a payment instruction from one account to another. Unlike a Direct Debit payment where funds are pulled from an account, a CT payment is a push payment."
+
+direct_debit: "A Direct Debit or DD is a payment initiated by an originator that pulls the requested amount from the payer's bank account. Payers must have agreed to the payment being pulled from their account in advance by signing a mandate or Direct Debit Instruction. "
+
 jekyll_platform: "Jekyll is a static site generator that builds sites using most modern web technologies."
 
 fractious: "Like a little mischevious child, full of annoying and constant trouble."

@@ -26,7 +26,7 @@ For end users they:
 * Confirm the payment amount.
 * Are then redirected to the merchant page.
 
-{% include note.html content="Whatever the standard verification and secure customer authentication methods that are normally used to access the customer's online banking portal are applied in the PISP payment flow. Users can feel secure that they are fully in control and are not providing any sensitive details with a third party. " %}
+{% include note.html content="Whatever the standard verification and secure customer authentication methods that are normally used to access the customer's online banking portal are applied in the PISP payment flow. Users can feel secure that they are fully in control and are not providing any sensitive details with a third party that is unknown to them. " %}
 
 ## AISP
 

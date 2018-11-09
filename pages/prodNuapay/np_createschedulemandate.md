@@ -49,7 +49,28 @@ The <b>Create Payment Schedule and Mandate</b> request allows you to combine the
 </tr>
 <tr>
 <td markdown="span">Required Arguments</td>
-<td markdown="span">paymentFrequency, paymentType, startDate, paymentAmount (Other arguments may be required depending on your schedule requirements (for example if you are setting up a FIXED_LENGTH schedule then the numberOfPayments is required).)
+<td markdown="span"><b>paymentFrequency</b>
+<br/><i>Possible values: DAILY, WEEKLY, BIWEEKLY, MONTHLY, YEARLY, CUSTOM</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>paymentType</b>
+<br/><i>FIXED_LENGTH, OPEN_ENDED</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>startDate</b>
+<br/><i>The Settlement Date of the first payment in the schedule</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>paymentAmount</b>
+<br/><i>The value of the regular payment to be collected. Max length without decimals is 12 digits. Decimal separator is "." A maximum of two decimal places is allowed. 
+<br/><br/>  Note: Other arguments may be required depending on your schedule requirements (for example if you are setting up a FIXED_LENGTH schedule then the <b>numberOfPayments</b> is mandatory).
+</i>
 </td>
 </tr>
 </tbody>
