@@ -24,7 +24,7 @@ To help you to identify why the payment failed, error codes are provided by your
 
 In this section we outline the various failed payments (R-transactions) and error codes that are possible, what they mean and what corrective action you should take based on the code.
 
-{% include note.html content="The following guidance is based on the EPC recommendations (see the [EPC Web site] (https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/guidance-reason-codes-sepa-direct-debit-r-transactions) for more details)." %}
+{% include note.html content="The following guidance is based on the EPC recommendations (see the [EPC Web site](https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/guidance-reason-codes-sepa-direct-debit-r-transactions) for more details)." %}
 
 
 {% include callout.html content="Certain error codes may be received both pre- and post-settlement.
