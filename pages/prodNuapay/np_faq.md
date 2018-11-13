@@ -122,7 +122,24 @@ folder: prodNuapay
                             <p><b>Note</b>: It is not currently possible to suspend a mandate via the API but this can be done via the Nuapay user interface.</p>
                             </div>
                         </div>
+                    </div>        
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSixa">Why is my mandate in Ready for Export status?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSixa" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Bacs DDIs go into READY_FOR_EXPORT status initially. Once passed to the AUDDIS service a DDi moves to EXPORTED and provided it is not returned by the service, it goes to ACTIVE status on Day 3 of the lodgement cycle.</p>
+
+                            <p><b>Note</b>: It is not currently possible to suspend a mandate via the API but this can be done via the Nuapay user interface.</p>
+                            </div>
+                        </div>
                     </div>
+
 <h2>Direct Debit Payments</h2>                    
                     <!-- /.panel -->
                     <div class="panel panel-default">

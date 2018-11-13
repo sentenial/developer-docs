@@ -10,14 +10,14 @@ toc: false
 
 ## API Details
 
-<p>All mandates that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID). </p>
+<p>All mandates that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID) for SEPA payments or to a Service User Number (SUN) for Bacs payments. </p>
 
-<p>This identifier (and its resource identifier) will be provided to you by Nuapay when you register or, if you have processed Direct Debit payments with another provider, you may already have a CSID that you may reuse in Nuapay. </p>
-<p>If you already have a CSID you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier. </p>
 
-{% include note.html content="You must use the resource identifier of the scheme in your requests. This identifier will be similar to this abxq9kq52l; do not reference the actual creditor scheme ID in your requests." %}
+<p>If you already have a CSID/SUN you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier. </p>
 
-<p>If you lose this reference or if you have multiple CSIDs and want to review them all, you can use the List Creditor Schemes request. You will use this resource identifier CSID in all subsequent Mandate and Direct Debit requests.</p>
+{% include note.html content="You must use the resource identifier of the scheme in your requests. This identifier will be similar to this: **abxq9kq52l** do not reference the actual creditor scheme ID or SUN in your requests." %}
+
+<p>If you lose this reference or if you have multiple CSIDs and want to review them all, you can use the List Creditor Schemes request. You will use this resource identifier CSID/SUN in all subsequent Mandate and Direct Debit requests.</p>
 
 
 

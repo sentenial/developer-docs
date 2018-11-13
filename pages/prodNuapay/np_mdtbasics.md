@@ -1,7 +1,7 @@
 ---
 title: Mandate Basics
 keywords: Mandates
-summary: "Mandates are the starting point for your Direct Debit payments processing. A signed mandates gives your business the legal authority to debit funds from your payers' accounts for the goods or services that you supply. "
+summary: "Mandates/Direct Debit Instructions (DDIs) are the starting point for your Direct Debit payments processing. A signed mandates gives your business the legal authority to debit funds from your payers' accounts for the goods or services that you supply. "
 sidebar: np_sidebar
 permalink: np_mdtbasics.html
 folder: prodNuapay
@@ -27,13 +27,20 @@ The following text must be displayed on all SEPA mandates:
 {% include callout.html content="By signing this mandate form, you authorise (A) {Company Name} to send instructions to your bank to debit your account and (B) your bank to debit your account in accordance with the instructions from {Company Name}. As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited." type="primary" %} 
 
 
+## Bacs Guarantee
+
+For Bacs the Direct Debit Guarantee and Direct Debit logo must be provided on all Direct Debit Instructions:
+
+<img src="images/bacs-guarantee.png">
+
+
 ## Mandate Types
 
 You may chose to collect mandates on paper, with a normal ink signature; alternatively mandates can be handled electronically (with authorisation being provided via a check box or SMS code, for example). Nuapay offers you the flexibility to choose either approach.
 
-For more information on electronic mandates, see the <a href ="#">E-Mandates</a> section.
+For more information on electronic mandates, see the <a href ="em_landing_page.html">E-Mandates</a> section.
 
-{% include note.html content="All your mandates must be linked to a specific SEPA identifier that is unique to your business. This identifier is the Creditor Scheme ID. If you don't already have one, a new Creditor Scheme ID will be assigned to your business when you complete your registration as a Nuapay business." %}
+{% include note.html content="All your mandates must be linked to a specific originator identifier that is unique to your business. This identifier is the Creditor Scheme ID (in the SEPA CORE schemes) or the Service User Number (SUN in the Bacs Direct Debit scheme)." %}
 
 
 {% include links.html %}
