@@ -70,7 +70,11 @@ Use an appropriate URI (as described below) to return the required collection of
 
 </div>
 
-{% include swaggerlink.html %}
+
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#list-credit-transfers-get" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 
 {% include links.html %}

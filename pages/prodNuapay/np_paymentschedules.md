@@ -20,7 +20,9 @@ Nuapay provides two payment schedule options:
 * Fixed Length
 * Open-ended
 
-In the <b>Fixed Length</b> model you can specify the amount to collect, the frequency and the number of payments to be collected.
 
-With an <b>Open-Ended</b> schedule the amount and the frequency is specified however there is no set number of payments and collections will continue to be made indefinitely.
+|<b>Fixed Length</b>| Specify the amount to collect, the frequency and the number of payments to be collected.|
+|<b>Open-Ended</b> | The amount and the frequency is specified however there is no set number of payments and collections will continue to be made indefinitely.|
+
+
 {% include links.html %}

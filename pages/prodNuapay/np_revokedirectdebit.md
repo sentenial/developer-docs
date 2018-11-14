@@ -67,6 +67,9 @@ If you decide that you do not want to settle the payment and do not want to pass
 
 </div>
 
-{% include swaggerlink.html %}
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#revoke-direct-debit" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}

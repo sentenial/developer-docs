@@ -19,13 +19,16 @@ The re-present request carries out two distinct steps:
 
 Optionally the new Direct Debit payment may also include a re-presentation fee
 
+For SEPA:
+{% include note.html content="Certain **SEPA Response codes** will indicate that a re-presentation will be unsuccessful. For example an MD07 (debtor deceased) or an AC04 (Account closed). We recommend that you only attempt to re-present a failed payment for MS03 (Reason not specified) and AM04 (Insufficient funds). " %}
 
-{% include note.html content="Certain SEPA Response codes will indicate that a re-presentation will be unsuccessful. For example an MD07 (debtor deceased) or an AC04 (Account closed). We recommend that you only attempt to re-present a failed payment for MS03 (Reason not specified) and AM04 (Insufficient funds)." %}
+For Bacs:
+{% include note.html content="For **Bacs** re-presentation must take place within one month of the date on which the first presentation was made; the amount must be the same as the original failed payment. A service user should give at least 5 working days' notice to the payer of the new collection date. For more information on the rules on re-presentation see the Bacs Service User Guide, available for download from the [Bacs site](https://www.bacs.co.uk/)" %}
 
 The following are optional arguments:
 
 * representationDate
-* representationFee
+* representationFee (not allowed for Bacs)
 * endToEndId
 
 {% include important.html content="If you do not specify a re-presentation date or fee, the default values will be taken from your organisation's Nuapay configuration. These settings are configured at the Scheme level for your business."%} 
@@ -48,7 +51,7 @@ The following are optional arguments:
 <tbody>
 <tr>
 <td markdown="span">Usage</td>
-<td markdown="span">You can only re-present a failed Direct Debit payment (status REJECTED, RETURNED, etc.) Use when the original payment has failed with an MS03 or AM04.</td>
+<td markdown="span">You can only re-present a failed SEPA Direct Debit payment (status REJECTED, RETURNED, etc.) Use when the original payment has failed with an MS03 or AM04. <br/><br/>For Bacs Direct Debits, re-presentation should only be generated where "the service user may reasonably assume that the conditions necessary for collection will be met" [Bacs Service User Guide].</td>
 </tr>
 <tr>
 <td markdown="span">Method</td>
@@ -78,6 +81,10 @@ The following are optional arguments:
 
 </div>
 
-{% include swaggerlink.html %}
+
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#re-present-failed-direct-debit" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}

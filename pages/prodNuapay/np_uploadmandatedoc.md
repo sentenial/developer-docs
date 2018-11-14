@@ -67,7 +67,7 @@ This can then be viewed later if you use the <a href = "np_retrievemandatedoc.ht
 
 </div>
 
-{% include swaggerlink.html %}
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#upload-mandate-document" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
 
 
-{% include links.html %}
+<!--{% include swaggerlink.html %}-->

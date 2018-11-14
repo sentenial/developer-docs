@@ -12,18 +12,23 @@ folder: product2
 
 {% include callout.html content="Successfully processed Direct Debits move through the following statuses: READY FOR EXPORT --> EXPORTED --> ACCEPTED" type="primary" %} 
 
-Prior to a Direct Debit payment being passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a>  it is given a <b>Ready for Export</b> status. Nuapay combines Direct Debits into a single payments file called a PAIN.008 prior to the collection date. 
+Prior to a Direct Debit payment being passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> or the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Service</a> it is given a <b>Ready for Export</b> status. Nuapay combines Direct Debits into a single payments file prior to the collection date. 
 
-When a payment is added to a PAIN.008 file its status is updated to <b>Exported</b> (it is exported to Clearing at this point - typically 2 days in advance of the settlement date).
+When a DD transaction is added to payment file its status is updated to <b>Exported</b> (it is exported to Clearing at this point - typically 2 days in advance of the settlement date).
 
-The SEPA Clearing channel will dispatch the Direct Debit payments to your payers' banks. If the debtor bank do not reject the Direct Debit payment, Nuapay will update the Direct Debit status to <b>ACCEPTED</b> on the collection date. This will generally be the final status of a Direct Debit.
+The Clearing channel will dispatch the Direct Debit payments to your payers' banks. If the payers' banks do not reject the Direct Debit payment, Nuapay will update the Direct Debit status to <b>ACCEPTED</b> on the collection date. This will generally be the final status of a Direct Debit.
 
 ## Pre- and Post-Settlement Rejects
 
 Should a payer refuse the Direct Debit payment or if there are insufficient funds to meet the requested amount, for example, the Bank will reject the payment. In this case the Direct Debit payment will not be in an ACCEPED status. This rejection is notified to Nuapay and the Direct Debit status is updated to <b>REJECTED</b> or <b>REFUSED</b>. These rejections occurs <i>before</i> the settlement date so they are referred to as Pre-Settlement Rs.
 
+## SEPA R-Transactions
 In some cases however (on average 5% of all your Direct Debits) your payers' bank or your payers may return or lodge a refund against your Direct Debit. Returns and Refunds can only happen <i>after</i> the collection day and are referred to as Post-settlement Rs. If Nuapay receives a post-settlement R, the Direct Debit status is update from ACCEPTED to <b>RETURNED</b> or <b>REFUNDED</b>.
 
+## Bacs Unpaid Transactions
+When a Bacs Direct Debit payment fails i.e. it is not paid by the paying bank, it will be returned unpaid to the service user via the Bacs service using **ARUDD** (Automated Return of Unpaid Direct Debit). Nuapay will update the status of the transaction on receipt of an ARUDD file from Bacs. Returned items will be debited on day 5 or in exceptional circumstances day 6 of the Bacs cycle.
+
+For more on the unpaid cycle for Bacs payments please see the Bacs Service User Guide available on the <a href="https://www.bacs.co.uk/" target='_blank'>Bacs site</a>.
 
 ## All Direct Debit Statuses
 

@@ -67,6 +67,9 @@ In an open-ended schedule the current READY FOR EXPORT payment is updated to Can
 
 </div>
 
-{% include swaggerlink.html %}
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#cancel-schedule" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}

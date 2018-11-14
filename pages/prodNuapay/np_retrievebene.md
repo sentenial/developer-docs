@@ -66,7 +66,10 @@ The request requires that you provide the beneficiary resource ID:
 
 </div>
 
-{% include swaggerlink.html %}
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#retrieve-beneficiary" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 
 {% include links.html %}

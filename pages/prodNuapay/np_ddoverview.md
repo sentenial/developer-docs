@@ -19,20 +19,19 @@ folder: prodNuapay
 * (Optionally) an End-to-End Identifier
 * (Optionally) Remittance Information
 
-<p>The <b>collection date</b> must generally be set to 2 days in the future (this is to allow for payments to pass through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">Clearing</a>). In some cases payments may need to have a later collection date but this is dependent on your specific SEPA scheme configuration.</p>
+|<b>Collection Date</b>     | The date funds will be transferred to your account; generally set to 2 days in the future (this is to allow for payments to pass through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">EBA Clearing</a> or the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Service</a>).|
+|<b>Payment Amount</b>      | Provided in either EUR or GBP|
+|<b>End-to-End-Identifier</b>       | a unique identification that is applied to all payments, which allows them to be tracked through their lifecycle (from initiation to collection to any potential future rejections). If you do not assign an end-to-end when creating a payment , Nuapay will automatically generate one for you.|
+|<b>Remittance information</b>      | allows you to provide any additional information related to the payment.|
 
-<p>The <b>payment amount</b> must be provided in Euros and cents.</p>
 
-<p>An <b>End-to-End-Identifier</b> is a unique identification that is applied to all payments, which allows them to be tracked through their lifecycle (from initiation to collection to any potential future rejections). If you do not assign an end-to-end when creating a payment , Nuapay will automatically generate one for you.</p>
-
-<p><b>Remittance information</b> allows you to provide any additional information related to the payment.</p>
 
 ## Prerequisites 
 
 <p>Before you can set up any payments via the API please note that you must:</p>
 
 * Reference an active mandate in your request.
-* Have retrieved your Creditor Scheme ID resource (see <a href="np_listcredscheme.html">List Creditor Schemes</a> call in the API Basics section).
+* Have retrieved your (encoded) Creditor Scheme ID / SUN resource identifier (see <a href="np_listcredscheme.html">List Creditor Schemes</a> call in the API Basics section).
 
 
 {% include links.html %}

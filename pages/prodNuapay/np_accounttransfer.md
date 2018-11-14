@@ -64,7 +64,13 @@ Where you have two or more Nuapay account, the Transfers API allows you to move 
 
 </div>
 
-{% include swaggerlink.html %}
+
+
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#transfers73" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
+
 
 
 {% include links.html %}

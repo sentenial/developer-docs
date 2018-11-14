@@ -62,6 +62,10 @@ Use this request to view the details of an account by referencing the resource I
 
 </div>
 
-{% include swaggerlink.html %}
+
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#view-account" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}

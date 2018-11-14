@@ -11,7 +11,9 @@ Credit Transfers (CTs) allow you to transfer funds from your account to a benefi
 
 Unlike Direct Debit payments where you pull funds from your payers' accounts, with a CT payment you push funds to a specific beneficiary account.
 
-{% include note.html content="Before you initiate a CT payment you will need to create one or more beneficiaries. Beneficiaries can be set up before you initiate your payment or, if required, the beneficiary and payment can be generated in a single step." %}
+Before you initiate a CT payment you will need to create one or more beneficiaries. Beneficiaries can be set up before you initiate your payment or, if required, the beneficiary and payment can be generated in a single step.
+
+{% include note.html content="Nuapay currently supports SEPA Credit Transfer and [SEPA Credit Transfer Instant](ip_landing_page.html) payments; Bacs Direct Credit is not currently available." %}
 
 
 {% include links.html %}

@@ -96,5 +96,7 @@ To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 </div>
 
 
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/emandate-api/#prepare-e-mandate" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
 
 {% include links.html %}
