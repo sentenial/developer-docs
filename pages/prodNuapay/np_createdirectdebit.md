@@ -74,6 +74,9 @@ A successful request will result in a Direct Debit being set up in <b>READY_FOR_
 
 </div>
 
-{% include swaggerlink.html %}
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#create-direct-debit" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}

@@ -69,6 +69,10 @@ The Create Credit Transfer request requires that you have first created a benefi
 
 </div>
 
-{% include swaggerlink.html %}
+
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#-a-name-create-credit-transfer-and-beneficiary-a-create-credit-transfer-and-beneficiary" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+
+<!--{% include swaggerlink.html %}-->
 
 {% include links.html %}
