@@ -80,6 +80,7 @@ To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 </tbody>
 </table>
 
+{% include callout.html content="If your business has been configured with ``Debtor Input Allowed = False`` (see the [Configuration](em_configuration.html) section)  then **debtorDetails.name** is a required argument. " type="primary" %} 
 
 
 </div>
@@ -94,6 +95,7 @@ To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 
 
 </div>
+
 
 
 
