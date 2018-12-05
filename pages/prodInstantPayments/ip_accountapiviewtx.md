@@ -64,6 +64,5 @@ toc: false
 
 </div>
 
-{% include swaggerlink.html %}
 
 {% include links.html %}
