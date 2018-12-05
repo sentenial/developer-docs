@@ -93,6 +93,5 @@ Two key details are returned:
 
 </div>
 
-{% include swaggerlink.html %}
 
 {% include links.html %}

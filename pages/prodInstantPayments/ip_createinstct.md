@@ -141,6 +141,7 @@ Details returned in the response include:
 
 </div>
 
-{% include swaggerlink.html %}
+<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://docs.sentenialtest.com/sip-docs/redoc.html?url=https://docs.sentenialtest.com/sip-docs/SIP_REST_Endpoints.json#operation/PostInstantPaymentsUsingPOST" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
+
 
 {% include links.html %}

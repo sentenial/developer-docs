@@ -1,3 +1,5 @@
+
+
 $('#mysidebar').height($(".nav").height());
 
 
@@ -21,6 +23,11 @@ $( document ).ready(function() {
     anchors.add('h2,h3,h4,h5');
 
 });
+
+
+
+
+
 
 // needed for nav tabs on pages. See Formatting > Nav tabs for more details.
 // script from http://stackoverflow.com/questions/10523433/how-do-i-keep-the-current-tab-active-with-twitter-bootstrap-after-a-page-reload

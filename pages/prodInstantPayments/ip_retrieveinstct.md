@@ -73,7 +73,7 @@ You must provide the transaction's unique URI as a GET request:
 
 </div>
 
-{% include swaggerlink.html %}
+<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://docs.sentenialtest.com/sip-docs/redoc.html?url=/sip-docs/SIP_REST_Endpoints.json#operation/GetInstantPaymentsUsingGET" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
 
 
 {% include links.html %}

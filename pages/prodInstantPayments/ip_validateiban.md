@@ -31,7 +31,7 @@ Accounts may fail validation for one of the following reasons (this code will be
 
 ## API Details
 
-Origix IP will need to call the <b>Sepa Instant Payments Validation Service</b> which you will need to implement for your Bank/Financila Institution.
+Origix IP will need to call the <b>Sepa Instant Payments Validation Service</b> which you will need to implement for your Bank/Financial Institution.
 You (as the Creditor Bank) can define your own security header and value. The Origix IP application will add the header and value to every IBAN validation request sent towards your Bank. Please discuss your requirements with your Account Manager.
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -112,7 +112,7 @@ You (as the Creditor Bank) can define your own security header and value. The Or
 
 </div>
 
-{% include swaggerlink.html %}
+<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://docs.sentenialtest.com/sip-docs/redoc.html?url=/sip-docs/SIP_REST_Endpoints.json#operation/GetInstantPaymentsUsingGET" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
 
 
 {% include links.html %}
