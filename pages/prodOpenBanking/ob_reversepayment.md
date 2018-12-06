@@ -22,53 +22,27 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
-    <li><a href="#about" data-toggle="tab">Response</a></li>
+    
    
 </ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
-
-
-  <table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
-
-<tbody>
-<tr>
-<td markdown="span">Usage</td>
-<td markdown="span">You must pass the paymentId and optionally remittance information may be provided.</td>
-</tr>
-<tr>
-<td markdown="span">Method</td>
-<td markdown="span"><span class="label label-info">POST </span>
-</td>
-</tr>
-<tr>
-<td markdown="span">URI</td>
-<td markdown="span">/payments/{paymentId}/reverse
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-</div>
-
-<div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>200 resource retrieved</b> response code, including details of the payment - status, amount, currency etc.</p>
-<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
-    {% include ob_httpcodes.html %}
-    
  
-    </div>
+{% include redoc.html %}
+
+loadRedoc('#profileTabs', 'https://sentenial.github.io/open-banking-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/reversePaymentUsingPOST','#profileTabs',timerRef); }, 500);
+
+
+</script>
+
+
+<div id="mydiv"></div>
 
 
 </div>
 
-<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://sentenial.github.io/open-banking-swagger/docs/redoc.html#operation/reversePaymentUsingPOST" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
+
+
+</div>
+
 
 {% include links.html %}

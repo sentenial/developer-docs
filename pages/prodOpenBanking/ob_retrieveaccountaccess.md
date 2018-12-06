@@ -15,59 +15,26 @@ Use this service to retrieve an account access request previously generated (see
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
-    <li><a href="#about" data-toggle="tab">Response</a></li>
+    
    
 </ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
-
-
-  <table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
-
-<tbody>
-<tr>
-<td markdown="span">Usage</td>
-<td markdown="span">Provide the URI of the required account. </td>
-</tr>
-<tr>
-<td markdown="span">Method</td>
-<td markdown="span"><span class="label label-success">GET </span>
-</td>
-</tr>
-<tr>
-<td markdown="span">URI</td>
-<td markdown="span">/account-requests/{accountRequestReference}
-</td>
-</tr>
-<tr>
-<td markdown="span">Required Arguments</td>
-<td markdown="span"><b>accountRequestReference</b>
-<br/><i>Unique identification as assigned by TPP to uniquely identify the account request resource.</i>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-</div>
-
-<div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>201 Created</b> response code</p>
-<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
-    {% include ob_httpcodes.html %}
-    
  
-    </div>
+ {% include redoc.html %}
+
+loadRedoc('#profileTabs', 'https://sentenial.github.io/open-banking-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/getAccountRequestUsingGET','#profileTabs',timerRef); }, 500);
+
+</script>
+
+
+<div id="mydiv"></div>
 
 
 </div>
 
-<p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://sentenial.github.io/open-banking-swagger/docs/redoc.html#operation/getAccountRequestUsingGET" target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
+
+
+</div>
+
 
 {% include links.html %}
