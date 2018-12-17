@@ -42,7 +42,7 @@ To set up your page with a new SIGN button:
 </ol>
 
 
-The final step in your WordPress integration is to add the Sign Up button to your required WordPress Web page.
+
 
 
 {% include links.html %}

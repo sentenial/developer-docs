@@ -30,7 +30,10 @@ Once you have successfully <a href="em_wpinstall.html">installed the plugin</a>,
 </ol>
 
 
-The final step in your WordPress integration is to add the Sign Up button to your required WordPress Web page.
+{% include important.html content="Note that some Web Hosting service providers use caching to improve the overall speed and performance for their sites. This means that rather than serve a HTML page every time it receives a HTTP request from a client, the Web Server may provide a page from its cache. Because the mandate signing screen contains confidential data and must be unique for every client,  caching should be disabled for the Nuapay plug-in. Please confirm with your Hosting provider that any page that has the Nuapay shortcode embedded is added to their no-cache whitelist." %}
+
+
+The final step in your WordPress integration is to add the [Sign Up button](em_wppagesetup.html) to your required WordPress Web page.
 
 
 {% include links.html %}
