@@ -110,7 +110,7 @@ folder: prodNuapay
                         </div>
                         <div id="collapse8" class="panel-collapse collapse">
                             <div class="panel-body">
-                            <p>An AISP (Account Information Service Provider) service is a TPP-provided service that allows merchants to access sepecific bank account data of its clients. This access may be used to provide consolidated information on one or more accounts held by a PSU with one or more payment service provider(s), for exam.</p>
+                            <p>An AISP (Account Information Service Provider) service is a TPP-provided service that allows merchants to access sepecific bank account data of its clients. This access may be used to provide consolidated information on one or more accounts held by a PSU with one or more payment service provider(s), for example.</p>
                             </div>
                         </div>
                     </div>
