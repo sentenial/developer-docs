@@ -9,6 +9,8 @@ folder: prodEmandates
 
 An E-Mandate token is a session ID that is the starting point for your electronic mandate.
 
+{% include important.html content="An E-Mandate token has an expiry date / time-to-live (TTL) of 30 days from its creation date." %}
+
 The Token encapsulates the following:
 
 * Your Merchant configurations (Signing Method, UI customisations, Debtor/Payer Input Allowed, etc.)
@@ -18,7 +20,11 @@ The Token encapsulates the following:
 
 {% include note.html content="Because we use tokens, your customers' sensitive account details are never stored on your server." %}
 
+
+
 To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
+
+
 
 
 

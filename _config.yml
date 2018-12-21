@@ -36,7 +36,7 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Nuapay Documentation Hub Feedback
+feedback_subject_line: Nuapay Documentation Hub 
 
 feedback_email: api.support@nuapay.com 
 # used as a contact email for the Feedback link in the top navigation bar
