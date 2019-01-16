@@ -67,8 +67,7 @@ To upload a contract, use the <b>Upload Contract</b> request.
 </tbody>
 </table>
 
-<p>Request Sample</p>
-{% gist 965035bdbb5a6ebe4b592e0c206fb81b %}
+
 
 
 
@@ -76,9 +75,7 @@ To upload a contract, use the <b>Upload Contract</b> request.
 
 <div role="tabpanel" class="tab-pane" id="about">
 <p>A successful request will return a <b>200 Created</b> response code</p>
-<p>Response Sample</p>
 
-{% gist 7ad94961a01a55a2ac75948acf39c085 %}
 
 <p>The following is the complete list of possible status codes, which may be returned in the response:</p>
     {% include httpcodes.html %}

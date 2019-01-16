@@ -19,7 +19,7 @@ With RTP a creditor will initiate a request for payment through a secure messagi
 * Request additional time to make the payment.
 * decline the payment.
 
-The acual payments will be processed via [Open Banking](ob_landing_page.html).
+The actual payments will be processed via [Open Banking](ob_landing_page.html).
 
 The EBA in launching their Task Force will look to fully flesh out how RTP will work across Europe:
 
