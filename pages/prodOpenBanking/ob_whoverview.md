@@ -10,7 +10,17 @@ folder: prodOpenBanking
 
 Webhooks are HTTP notifications, dispatched to a specified URL when certain Open Banking events are triggered. 
 
-When working with the Open Banking APIs you will generate a request and receive a response; when using Webhooks you will receive a notification (similar to an API response) when certain activities (events) occur.
+Webhooks may be managed: 
+* Via The [Nuapay UI](ob_whconfiguration.html) via the Developer Dashboard (for **merchant** users only) 
+
+Or 
+
+* Through [APIs](ob_whconfigurationrest.html) (primarily for **partner** users).
+
+{% include note.html content="Webhooks configuration via API is also available to merchant users" %}
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: Validate IBAN
 keywords: SEPA Instant CT Validate IBAN
-summary: "Retrieve SCT Instant RESTful API"
+summary: "Validate Beneficiary IBAN for Incoming Inst SCT RESTful API"
 sidebar: ip_sidebar
 permalink: ip_validateiban.html
 folder: prodInstantPayments

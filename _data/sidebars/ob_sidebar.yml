@@ -12,21 +12,65 @@ entries:
 
     - title: Overview
       url: /ob_landing_page.html
+      output: web      
+      
+    - title: Terminology
+      url: /ob_terminology.html
+      output: web
+           
+    - title: Deployment
+      url: /ob_deployment.html
       output: web
 
     - title: Open Banking Services
       url: /ob_servicesoverview.html
       output: web
 
-    - title: Terminology
-      url: /ob_terminology.html
-      output: web
-
     - title: General API Rules
       url: /ob_generalrules.html
       output: web, pdf    
-     
       
+  - title: Integration Models
+    output: web, pdf
+    folderitems:
+
+    - title: Integration Overview
+      url: /ob_integrationoverview.html
+      output: web, pdf            
+      
+    - title: Merchant Integration
+      url: /ob_merchantintegration.html
+      output: web      
+     
+    - title: Partner Integration
+      url: /ob_partnerintegration.html
+      output: web      
+    
+    - title: Token Management
+      url: /ob_tokenmgmt.html
+      output: web      
+      
+  - title: Bank Service
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ob_bankoverview.html
+      output: web, pdf
+      
+      subfolders:
+      - title: Bank APIs 
+        output: web
+        subfolderitems:
+        
+        - title: Retrieve Banks 
+          url: /ob_getbank.html
+          output: web
+       
+        - title: View Bank
+          url: /ob_viewbank.html
+          output: web     
+
   - title: PISP Service
     output: web, pdf
     folderitems:
@@ -35,9 +79,17 @@ entries:
       url: /ob_pispoverview.html
       output: web, pdf
 
-    - title: Payment Page Setup
+    - title: PISP Implementation Options
+      url: /ob_pispimplementation.html
+      output: web, pdf
+      
+    - title: Checkout Page Setup
       url: /ob_setupoverview.html
       output: web, pdf                         
+     
+    - title: Self-Hosted Page Setup
+      url: /ob_selfsetupoverview.html
+      output: web, pdf                
       
       subfolders:
       - title: PISP APIs 
@@ -68,10 +120,6 @@ entries:
       - title: AISP APIs 
         output: web
         subfolderitems:
-        
-        - title: Retrieve Banks 
-          url: /ob_getbank.html
-          output: web
 
         - title: Create Account Access 
           url: /ob_createaccountaccess.html
@@ -104,32 +152,57 @@ entries:
     - title: Overview
       url: /ob_whoverview.html
       output: web, pdf
-
-    - title: Configuration
+ 
+    - title: Webhooks Setup via UI
       url: /ob_whconfiguration.html
-      output: web, pdf      
-             
+      output: web, pdf
+
+    - title: Webhooks Setup via REST
+      url: /ob_whconfigurationrest.html
+      output: web, pdf 
+ 
       subfolders:
-      - title: Webhook Events 
+      - title: Webhook APIs 
+        output: web
+        subfolderitems:              
+        
+        - title: Create Webhook
+          url: /ob_whrestcreate.html
+          output: web
+
+        - title: Retrieve Webhook
+          url: /ob_whrestretrieve.html
+          output: web                
+
+        - title: Enable/Disable Webhook
+          url: /ob_whrestenabdisab.html
+          output: web
+
+        - title: Update/Delete Webhook
+          url: /ob_whrestupdel.html
+          output: web          
+          
+        - title: List Webhooks
+          url: /ob_whrestlist.html
+          output: web                                
+                    
+    - title: Webhook Receiving Endpoint 
+      url: /ob_whreceivingep.html
+      output: web, pdf 
+          
+      subfolders:
+      - title: Webhook Notifications 
         output: web
         subfolderitems:
-
+       
         - title: Payment Received
           url: /ob_whreceived.html
           output: web
 
         - title: Payment Reversed
           url: /ob_whrreversed.html
-          output: web      
-          
-  - title: Security
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /ob_secoverview.html
-      output: web, pdf
-    
+          output: web 
+ 
   - title: Resources
     output: web, pdf
     folderitems:

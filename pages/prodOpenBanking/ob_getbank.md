@@ -10,7 +10,8 @@ toc: false
 
 ## API Details
 
-Before you can initiate an account access request to your customer you must first offer the customer a choice of available banks. This service allows you to retrieve a list of banks participating in Open Banking.
+The Retrieve Bank service allows you to retrieve a list of banks participating in Open Banking.
+The participating ASPSPs are returned in order of popularity (dynamically determined based on Nuapay PSUs' preferences).
 
 
 <ul id="profileTabs" class="nav nav-tabs">
