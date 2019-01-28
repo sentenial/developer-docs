@@ -45,15 +45,15 @@ On your payment page you will need to add the following:
 **For Sandbox**
 
 ````
-<script src="https://tpp-sandbox.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://tpp-sandbox.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
+<script src="https://sandbox.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sandbox.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 **For Production**
 
 ````
-<script src="https://tpp.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://tpp.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
+<script src="https://api.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
+<link rel="stylesheet" type="text/css" href="https://api.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 ## Adding The Open Banking Pay Button
@@ -66,18 +66,18 @@ At this point you have:
 To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the example below:
 
 ````
-<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;’https://tpp-sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
+<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;’https://sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
 
 ````
 
 This button will open the Select Banks pop-up for the Payment ID ``gabxrlvbl5``
 
-``https://tpp.nuapay.com/tpp-ui/`` is the location of the Nuapay TPP User Interface, which will allow your customers to select their bank.
+``https://sandbox.nuapay.com/tpp-ui/`` is the location of the Nuapay TPP User Interface, which will allow your customers to select their bank.
 
 Note that there is a Sandbox and Production TPP for this so you will need to specify the correct URL based on whether you are testing or working in Production:
 
-|SANDBOX|https://tpp-sandbox.nuapay.com/tpp-ui/|
-|PRODUCTION| https://tpp.nuapay.com/tpp-ui/|
+|SANDBOX|https://sandbox.nuapay.com/tpp-ui/|
+|PRODUCTION| https://api.nuapay.com/tpp-ui/|
 
 ## Adding a Listener
 
