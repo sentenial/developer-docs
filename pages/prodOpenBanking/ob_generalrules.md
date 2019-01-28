@@ -16,7 +16,7 @@ folder: prodOpenBanking
 
 ## Endpoints
 
-Open Banking services may be accessed via the following endpoints:
+Open Banking services may be accessed via the following URLs:
 
 |SANDBOX|https://sandbox.nuapay.com/tpp/|
 |PRODUCTION| https://api.nuapay.com/tpp/|
