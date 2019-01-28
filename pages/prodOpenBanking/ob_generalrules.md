@@ -18,8 +18,8 @@ folder: prodOpenBanking
 
 Open Banking services may be accessed via the following endpoints:
 
-|SANDBOX|https://tpp-sandbox.nuapay.com/tpp-ui/|
-|PRODUCTION| https://tpp.nuapay.com/tpp-ui/|
+|SANDBOX|https://sandbox.nuapay.com/tpp/|
+|PRODUCTION| https://api.nuapay.com/tpp/|
 
 To request an API Key please contact our Support Team: <a href="mailto:api.support@nuapay.com">api.support@nuapay.com</a>.
 
