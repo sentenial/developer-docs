@@ -2,15 +2,15 @@
 title: Token Management
 keywords: Token Management Revocation
 summary: "Revoke individual tokens based on a unique identifier or revoke all tokens linked to a specific merchant."
-sidebar: ob_sidebar
-permalink: ob_tokenmgmt.html
-folder: prodOpenBanking
+sidebar: em_sidebar
+permalink: em_tokenmgmt.html
+folder: prodEmandates
 toc: true
 ---
 
 ## Overview
 
-As outlined in [Partner Integration](ob_partnerintegration.html), before you, as a partner, can initiate any API requests on behalf of your merchants, you must first generate an OAuth token unique to a specified merchant.  
+As outlined in [Partner Integration](em_partnerintegration.html), before you, as a partner, can initiate any API requests on behalf of your merchants, you must first generate an OAuth token unique to a specified merchant.  
 
 Along with offering the service to `Request Access Token for Organisation`, a number of other endpoints are available to allow you to revoke OAuth tokens, which are described in the following sections.
 

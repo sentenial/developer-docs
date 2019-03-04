@@ -13,6 +13,9 @@ toc: false
 The Retrieve Bank service allows you to retrieve a list of banks participating in Open Banking.
 The participating ASPSPs are returned in order of popularity (dynamically determined based on Nuapay PSUs' preferences).
 
+{% include swagger_ob.html %}
+
+
 
 <ul id="profileTabs" class="nav nav-tabs">
     

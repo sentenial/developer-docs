@@ -14,7 +14,7 @@ The Create Account Access service generates the account request that the end use
 
 {% include tip.html content="You must know the bank in which your customer's account is held; this is passed as the <b>x-tpp-bank-id</b> value in your API Header parameter. Use the <b>GET /banks</b> service to retrieve the required Bank ID. " %}
 
-
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

@@ -21,6 +21,8 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 {% include note.html content="Depending on the payment scheme you are using reversed payments may be settled the following business day e.g. for SEPA CTs or funds may be credited in a matter of seconds via the SEPA CT Instant Scheme or via Faster Payments in the UK." %}
 
 
+{% include swagger_ob.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

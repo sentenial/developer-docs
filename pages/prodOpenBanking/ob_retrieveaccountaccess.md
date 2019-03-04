@@ -12,7 +12,7 @@ toc: false
 
 Use this service to retrieve an account access request previously generated (see the [Create Account Access](ob_createaccountaccess.html) request). 
 
-
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

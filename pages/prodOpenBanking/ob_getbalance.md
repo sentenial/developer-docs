@@ -12,6 +12,7 @@ toc: false
 
 Return the current balance on a specified account.
 
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

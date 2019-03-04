@@ -12,6 +12,7 @@ toc: true
 
 Webhooks may be updated (using the `PUT` method) or deleted (using the `DELETE` method)  as required when you pass the Webhook identifier in the required request.
 
+{% include swagger_wh.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
 </ul>

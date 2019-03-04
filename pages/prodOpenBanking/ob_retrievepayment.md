@@ -12,7 +12,7 @@ toc: false
 
 The Retrieve Payment service returns an Open Banking payment object, where the unique ``paymentId`` is provided.
 
-
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

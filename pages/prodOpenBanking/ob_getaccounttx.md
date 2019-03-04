@@ -12,6 +12,7 @@ toc: false
 
 Returns the list of transactions linked to a specified account.
 
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

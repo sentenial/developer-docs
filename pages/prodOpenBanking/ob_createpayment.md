@@ -12,7 +12,12 @@ toc: false
 
 The Create Payment service generates an Open Banking payment object, returning a unique ``paymentId`` with an (initial) status of  ``PENDING_APPROVAL``.
 
+{% include swagger_ob.html %}
+
+
 {% include tip.html content="We recommend that you use a unique idempotency key with each unique Create Open Banking Payment request. The **x-idempotency-key** is a Header parameter in this API." %}
+
+
 
 
 

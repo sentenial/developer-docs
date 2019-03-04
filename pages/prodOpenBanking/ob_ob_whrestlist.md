@@ -12,6 +12,8 @@ toc: false
 
 The List service will return an array of configured Webhooks linked to the current merchant (related to either the OAuth token or API Key provided in the Authorisation header).
 
+{% include swagger_wh.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
 </ul>
   

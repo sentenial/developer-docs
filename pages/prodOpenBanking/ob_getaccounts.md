@@ -12,6 +12,7 @@ toc: false
 
 Retrieve all the accounts linked to an access request.
 
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     
