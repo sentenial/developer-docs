@@ -13,7 +13,7 @@ toc: false
 Use this service to delete an account access request previously generated (see the [Create Account Access](ob_createaccountaccess.html) request). 
 This service will typically be required where a customer has asked for the account access previously granted to be revoked.
 
-
+{% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

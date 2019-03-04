@@ -24,7 +24,7 @@ For more on this see [Merchant Integration](ob_merchantintegration.html).
 
 ## Partner Integration
 
-When interacting with the Open Banking services as a partner, you will need to generate and use a specific token per merchants in your API requests.  
+When interacting with the Open Banking services as a partner, you will need to generate and use a specific token per merchant in your API requests.  
 
 The following steps are required to generate an access token for a specific merchant:
 

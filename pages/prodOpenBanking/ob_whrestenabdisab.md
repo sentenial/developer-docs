@@ -10,6 +10,8 @@ toc: true
 
 ## API Details 
 
+{% include swagger_wh.html %}
+
 It is possible to enable or disable a single Webhook, when you provide its Webhook identifier. 
 Alternaltively you can use the `enable all` or `disable all` services to carry out the required action on ALL configured Webhooks for the given merchant.
 
@@ -17,6 +19,9 @@ Alternaltively you can use the `enable all` or `disable all` services to carry o
 |<span class="label label-info">Post</span>|Disable Webhook|
 |<span class="label label-info">Post</span>|Enable All|
 |<span class="label label-info">Post</span>|Disable All|
+
+
+
 
 {% include note.html content="Webhooks when first created are  enabled by default." %}
 

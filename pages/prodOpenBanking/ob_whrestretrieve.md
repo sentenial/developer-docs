@@ -12,6 +12,8 @@ toc: false
 
 The Retrieve Webhook service allows you to pass a Webhook Identifier in your request to return details of a previously configured Webhook.
 
+{% include swagger_wh.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

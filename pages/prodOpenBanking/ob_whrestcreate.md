@@ -14,6 +14,8 @@ The Create Webhook service generates a Webhook that will be passed to your defin
 
 Note that you can configure a single Webhook destination to respond to one or many event types. 
 
+{% include swagger_wh.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

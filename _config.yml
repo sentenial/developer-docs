@@ -1,5 +1,8 @@
 repository: sentenial/developer-docs
 
+plugins:
+  - jekyll-target-blank
+
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
