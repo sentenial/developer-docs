@@ -93,13 +93,7 @@ This Webhook has a single event type: <b>InstantCreditTransferAccept</b>
 			<td>optional</td>
 			<td>Always null for Accepted Instant Payments. </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique bank identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 
@@ -120,7 +114,7 @@ The following is an example of an ``Accepted Instant Payment`` event JSON:
 <pre>
 <code class="json">
 
-    {  
+{  
 	  "eventTimestamp":1529515534903,
 	  "eventType":"InstantCreditTransferAccept",
 	  "resourceTechnicalId":50,
@@ -131,9 +125,8 @@ The following is an example of an ``Accepted Instant Payment`` event JSON:
 	 	  "uri":"/instantpayments/wqj29nnmxn",
 		  "type":"InstantCreditTransfer",
 		  "reasonCode":null
-		},
-	  "organizationId":501000
-    }
+		}	  
+ }
 
 
 </code>

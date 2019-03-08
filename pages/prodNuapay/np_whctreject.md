@@ -99,13 +99,7 @@ This Webhook has the following event types:
 			<td>optional</td>
             <td>The <a href="np_separeasons.html">SEPA Reason Code</a> </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique merchant identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 

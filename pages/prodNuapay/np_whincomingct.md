@@ -93,13 +93,7 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>optional</td>
 			<td>Null for Incoming Credit Transfers. </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique merchant identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 

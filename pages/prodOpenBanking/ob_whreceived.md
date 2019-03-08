@@ -93,13 +93,7 @@ This Webhook has a single event type: <b>PaymentRecieved</b>
 			<td>optional</td>
 			<td>Null </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique merchant identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 
@@ -128,8 +122,7 @@ The following is an example of a Received Payment event JSON:
     "uri": "/payments/n7rklmvdmq",
     "type": "payment",
     "reasonCode": null
-  },
-  "organizationId":1000
+  }
 }</code>
 </pre>
 
