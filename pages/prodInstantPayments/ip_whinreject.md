@@ -94,13 +94,7 @@ This Webhook has a single event type: <b>InstantCreditTransferReject</b>
 			<td>optional</td>
 			<td>The <a href="ip_separeasons.html">Reason Code</a> returned.</td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique bank identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 
@@ -122,7 +116,7 @@ The following is an example of an ``InstantCreditTransferReject`` event JSON:
 <pre>
 <code class="json">
 
-    {  
+{  
 	  "eventTimestamp":1529515551496,
 	  "eventType":"InstantCreditTransferReject",
 	  "resourceTechnicalId":53,
@@ -133,9 +127,8 @@ The following is an example of an ``InstantCreditTransferReject`` event JSON:
 		  "uri":"/instantpayments/j6p2lj7bvy",
 		  "type":"InstantCreditTransfer",
 		  "reasonCode":"FF01"
-		},
-	  "organizationId":501000
-	}
+		}
+}
 
 
 

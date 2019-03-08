@@ -100,13 +100,7 @@ This Webhook has the following event types:
 			<td>optional</td>
 			<td>Null for mandates. </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique merchant identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 

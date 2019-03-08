@@ -93,13 +93,7 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 			<td>optional</td>
 			<td>Null for Direct Debits in ACCEPTED status. </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique merchant identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 

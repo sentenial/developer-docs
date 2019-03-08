@@ -98,13 +98,7 @@ Possible Webhook event types:
 			<td>optional</td>
             <td>The <a href="ip_separeasons.html">Reason Code</a> returned. </td>
 		</tr>
-		<tr>
-			<td>root</td>
-			<td>organizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td> The unique bank identifier </td>
-		</tr>
+		
 	</tbody>
 </table>
 
@@ -131,7 +125,7 @@ The following is an example of an ``InstantCreditTransferCSMReject`` event JSON:
 <pre>
 <code class="json">
 
-    {  
+{  
 	  "eventTimestamp":1529515562726,
 	  "eventType":"InstantCreditTransferCSMReject",
 	  "resourceTechnicalId":56,
@@ -142,9 +136,8 @@ The following is an example of an ``InstantCreditTransferCSMReject`` event JSON:
 		  "uri":"/instantpayments/xgwbvn9m7r",
 		  "type":"InstantCreditTransfer",
 		  "reasonCode":"AB06"
-		},
-	  "organizationId":501000
-	}
+		}	
+}
 
 
 </code>
