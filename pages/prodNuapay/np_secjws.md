@@ -161,4 +161,4 @@ In order to generate the JOSE Header you'll need to extract certain details from
 		</tbody>
 	</table>
 	
-<p>Use the JWS Signature Generator to generate the JOSE Header.</p>
+    <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>

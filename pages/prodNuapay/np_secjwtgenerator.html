@@ -1,6 +1,5 @@
 ---
 title: JWT Generator
-tags: [special_layouts]
 last_updated: November 30, 2015
 keywords: shuffle, card layout, dynamic grid, doc portal, support portal
 summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
@@ -151,18 +150,19 @@ function sign(alg, spHeader, spPayload, key, pass) {
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
 
-    </div><!-- /#grid -->
+ <!--   </div><!-- /#grid -->
 
 	<table>
 	<td>
 	<tr>
 	
 	<input type="button" value="Generate JWS Signature&darr;" onClick="_genJWS();"/>
+        
 </td></tr>
 <tr><td colspan="2">Output JWS Signature</br><i>Copy it and use as JWS-Signature header value</i></td><td colspan="2">
 <textarea name="jwsgenerated1" cols="100" rows="10" readonly></textarea>
 </td></tr>
-</tbody>
+<!--</tbody>-->
 </table>
 	
 
@@ -171,5 +171,4 @@ function sign(alg, spHeader, spPayload, key, pass) {
 {% include initialize_shuffle.html %}
 {% endunless %}
 
-{{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
 
