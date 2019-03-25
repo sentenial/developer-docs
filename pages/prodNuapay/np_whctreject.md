@@ -79,25 +79,25 @@ This Webhook has the following event types:
 			<td>Resource specific data grouping object </td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>root</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_viewtransaction.html">Retrieve Credit Transfer Transaction</a>.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The <a href="np_separeasons.html">SEPA Reason Code</a> </td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> </td>
 		</tr>
 		
 	</tbody>
@@ -121,7 +121,7 @@ The following is an example of a Credit Transfer Rejection event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "CreditTransferCancel",
-	"resourceReference": "DemoE2EID",
+	"resourceReference": "321-CTAB-234-GFT",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",

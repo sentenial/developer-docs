@@ -50,51 +50,37 @@ This Webhook has the following event types:
 			<td>string</td>
 			<td>Mandatory</td>
             <td><b>MandateElectronicSign</b> <br/> or <br/> <b>MandatePaperActivation</b> <br/> or <br/> <b>MandateCreation</b></td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>This can be the business reference of the resource, useful when filtering events via the Webhooks area of the Developer Dashboard.</td>
+			<td>This is the business reference of the resource (the Mandate ID/unique mandate reference).</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceReferenceType</td>
 			<td>string</td>
 			<td> optional</td>
-			<td>This can be a business reference of the resource, useful when filtering events via the Webhooks area of the Developer Dashboard.</td>
-		</tr>
+			<td>This is set to MandateReference for this message.</td>
+		</tr>		
 		<tr>
 			<td>root</td>
-			<td>resourceDetails</td>
-			<td> object</td>
-			<td>Mandatory</td>
-			<td>Resource specific data grouping object </td>
-		</tr>
-		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> This is URI of the resource allowing you to query the mandate details. See <a href ="np_retrievemandate.html">Retrieve Mandate</a>.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
@@ -122,8 +108,8 @@ The following is an example of an electronic mandate signing event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "MandateElectronicSign",
-	"resourceReference": "Webhook1",
-	"resourceReferenceType": "MandateId",
+	"resourceReference": "MY-UNIQUE-MANDATE-REF",
+	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
 	"resourceType": "Mandate",
 	"reasonCode": null

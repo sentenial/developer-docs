@@ -73,21 +73,21 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>Resource specific data grouping object </td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>root</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> This is URI of the resource for RESTful API querying. Use the URI in the <a href="np_retrievect.html">Retrieve Credit Transfer</a> call.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
@@ -116,7 +116,7 @@ The following is an example of an Incoming CT event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "IncomingCreditTransfer",
-	"resourceReference": "DemoE2EID",
+	"resourceReference": "EDS-1234-RFT-456-DEF-87",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
 	"resourceType": "Transaction",

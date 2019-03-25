@@ -73,21 +73,21 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 			<td>Resource specific data grouping object </td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>root</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> This is URI of the Direct Debit resource. Use the URI in the <a href="np_retrievedirectdebit.html">Retrieve Direct Debit</a> call.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
@@ -115,7 +115,7 @@ The following is an example of a Direct Debit Accept event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "DirectDebitAccept",
-	"resourceReference": "Webhook1",
+	"resourceReference": "36C1234B-99C2-8G9C-D",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
 	"resourceType": "DirectDebit",

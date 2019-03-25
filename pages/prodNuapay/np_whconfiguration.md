@@ -25,7 +25,7 @@ Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your 
     <li value="1">Log on to the Developer Dashboard (currently available from the Origix Corporate home page).</li>
     <li value="2">Click <b>Add Webhook</b>.</li>
     <li value="3">Add the required details in the pop-up dialog box:</li>
-    <img src="/images/add_webhook.png" style="width: 390;height: 369;" />
+    <img src="images/add_webhook.png" style="width: 390;height: 369;" />
     <li value="4">Specify: <ol><li value="1">The name of the Webhook notification. </li><li value="2">The URL of the Endpoint you configured.</li><li value="3">Status is set to Enabled by default (if Disabled no notifications are generated).</li><li value="4">Retry period (determines for how many days failed notifications will be retried. Retries are automatically generated every 30 minutes).</li><li value="5">Sign Key is the secret key that the application uses to sign the notification JSON&#160;body. The signature is sent in the request HTTP 'X-Signature' header. If you leave this field blank the application will automatically generate a key.</li><li value="6">The Event Types drop-down allows you to configure what events will trigger the notification to the Webhooks Endpoint URL. In the example above only Refunds will trigger a notification but you may define 1-n events as required.</li></ol></li>
     <li value="5">Click <b>Submit</b>.</li>
 </ol>
