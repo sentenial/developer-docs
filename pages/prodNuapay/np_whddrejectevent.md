@@ -49,14 +49,7 @@ The following event types are possible:
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> Allowed values are the Webhook Event Types referenced in the table above. </td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -73,31 +66,24 @@ The following event types are possible:
 		</tr>
 		<tr>
 			<td>root</td>
-			<td>resourceDetails</td>
-			<td> object</td>
+			<td>resourceUri</td>
+			<td> string</td>
 			<td>Mandatory</td>
-			<td>Resource specific data grouping object </td>
-		</tr>
+			<td>This is URI of the resource for RESTful API querying; a Direct Debit URI. You can use this to query the resource with a <a href="np_retrievedirectdebit.html">Retrieve Direct Debit</a> call for example. </td>
+		</tr>		
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td> This is URI of the resource for RESTful API querying; a Direct Debit URI. You can use this to query the resource with a <a href="np_retrievedirectdebit.html">Retrieve Direct Debit</a> call for example. </td>
-		</tr>
-		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td> The <a href="np_separeasons.html">SEPA Reason Code</a> </td>
+            <td> The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
 		</tr>		
 	</tbody>
 </table>
@@ -120,7 +106,7 @@ The following is an example of a Direct Debit Reject event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "DirectDebitReject",
-	"resourceReference": "Webhook1",
+	"resourceReference": "42F13E56-96C9-4F9B-A",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
 	"resourceType": "DirectDebit",
