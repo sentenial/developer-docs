@@ -69,13 +69,19 @@ The <b>Create Payment Schedule and Mandate</b> request allows you to combine the
 <td markdown="span"></td>
 <td markdown="span"><b>paymentAmount</b>
 <br/><i>The value of the regular payment to be collected. Max length without decimals is 12 digits. Decimal separator is "." A maximum of two decimal places is allowed. 
+</i>
+</td>
+</tr>
+<tr>
+<td markdown="span"></td>
+<td markdown="span"><b>paymentCustomFrequency</b>
+<br/><i>Where you have selected <b>CUSTOM</b> as the <b>paymentFrequency</b>, you must specify either 3 (for quarterly) or 6 (for bi-anually)  
 <br/><br/>  Note: Other arguments may be required depending on your schedule requirements (for example if you are setting up a FIXED_LENGTH schedule then the <b>numberOfPayments</b> is mandatory).
 </i>
 </td>
 </tr>
 </tbody>
 </table>
-
 
 
 </div>
