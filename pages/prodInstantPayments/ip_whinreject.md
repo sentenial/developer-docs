@@ -74,21 +74,21 @@ This Webhook has a single event type: <b>InstantCreditTransferReject</b>
 			<td>Resource specific data grouping object </td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>root</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
             <td>This is the URI of the resource for RESTful API querying. Use this URI to <a href="ip_retrieveinstct.html">Retrieve Instant Payment</a>.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is an 'InstantCreditTransfer' resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
@@ -117,17 +117,14 @@ The following is an example of an ``InstantCreditTransferReject`` event JSON:
 <code class="json">
 
 {  
-	  "eventTimestamp":1529515551496,
-	  "eventType":"InstantCreditTransferReject",
-	  "resourceTechnicalId":53,
-	  "resourceReference":"TxID001",
-	  "resourceReferenceType":"TransactionId",
-	  "resourceDetails":
-		{  
-		  "uri":"/instantpayments/j6p2lj7bvy",
-		  "type":"InstantCreditTransfer",
-		  "reasonCode":"FF01"
-		}
+    "eventTimestamp":1529515551496,
+    "eventType":"InstantCreditTransferReject",
+    "resourceTechnicalId":53,
+    "resourceReference":"TxID001",
+    "resourceReferenceType":"TransactionId",
+    "resourceUri":"uri":"/instantpayments/j6p2lj7bvy",
+    "resourceType":"InstantCreditTransfer",
+    "reasonCode":"FF01"
 }
 
 
