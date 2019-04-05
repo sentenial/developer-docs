@@ -74,21 +74,21 @@ To reverse (i.e. refund) an Open Banking payment, use the <a href="#">Reverse Pa
 			<td>Resource specific data grouping object </td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>uri</td>
+			<td>root</td>
+			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td> This is URI of the payment resource. Use the URI in the <a href="ob_retrievepayment.html">Retrieve Payment</a> call. Note that the payment's status will now be updated to REVERSED.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
-			<td>type</td>
+			<td>root</td>
+			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a payment resource.</td>
 		</tr>
 		<tr>
-			<td>resourceDetails</td>
+			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
@@ -114,16 +114,14 @@ The following is an example of a Received Payment event JSON:
 <b>JSON Request Body</b>
 <pre>
 <code class="json">{
-  "eventTimestamp": 1501169079000,
-  "eventType": "PaymentReversed",
-  "resourceTechnicalId": 500006,
-  "resourceReference": "reference",
-  "resourceReferenceType": "reference",
-  "resourceDetails": {		
-    "uri": "/payments/n7rklmvdmq",
-    "type": "payment",
+    "eventTimestamp": 1501169079000,
+    "eventType": "PaymentReversed",
+    "resourceTechnicalId": 500006,
+    "resourceReference": "reference",
+    "resourceReferenceType": "reference",
+    "resourceUri": "/payments/n7rklmvdmq",
+    "resourceType": "payment",
     "reasonCode": null
-  }
 }</code>
 </pre>
 
