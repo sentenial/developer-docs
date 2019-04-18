@@ -181,7 +181,7 @@ In order to generate the JOSE Header you'll need to extract certain details from
 		</tbody>
 	</table>
 	
-<p>Use the JWS Signature Generator to generate the JOSE Header.</p>
+Use the [JWS Signature Generator](ip_secjwsgenerator.html) to generate the JOSE Header.
 
 
 {% include links.html %}

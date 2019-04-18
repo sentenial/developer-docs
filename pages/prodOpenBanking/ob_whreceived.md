@@ -13,7 +13,7 @@ toc: false
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>PaymentRecieved</b>
+This Webhook has a single event type: <b>PaymentReceived </b>
 
 
 ## Webhook Event Message Details
@@ -42,7 +42,7 @@ This Webhook has a single event type: <b>PaymentRecieved</b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>PaymentRecieved</td>
+			<td>PaymentReceived</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -114,7 +114,7 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentRecieved",
+    "eventType": "PaymentReceived",
     "resourceTechnicalId": 500006,
     "resourceReference": "reference",
     "resourceReferenceType": "reference",

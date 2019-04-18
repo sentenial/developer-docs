@@ -35,6 +35,10 @@ entries:
           url: /ip_security.html
           output: web
 
+        - title: JWS Signature Generator
+          url: /ip_secjwsgenerator.html
+          output: web
+                  
         - title: JWS Sample
           url: /ip_securityjwssample.html
           output: web    
