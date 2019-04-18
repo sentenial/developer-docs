@@ -16,7 +16,7 @@ To set up Webhooks you will need to:
 
 1. Create an endpoint.
 1. Configure the Webhook(s) you require.
-1. Listen for events.
+1. Listen for events (see [Receiving Endpoint](ob_whreceivingep.html) for more on this).
 
 
 Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your infrastructure. See [Webhook Receiving Endpoint](ob_whreceivingep.html) for more on this.
@@ -33,5 +33,6 @@ Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your 
     <li value="5">Click <b>Submit</b>.</li>
 </ol>
 
+Once you have set up the Webhook, you will need to configure a [Receiving Endpoint](ob_whreceivingep.html).
 
 {% include links.html %}

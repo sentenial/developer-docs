@@ -315,6 +315,78 @@ folder: prodNuapay
                         </div>
                     </div>
                     <!-- /.panel -->
+<h2>Webhooks</h2>                    
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse18">How often are failed notifications retried?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse18" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>You can configure your Webhook notifications to retry for a period of time e.g. for 1 day. Notifications that fail to be delivered will be retried every 30 minutes until successful or until the configured retry period is reached.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse19">Can notification be received out of order?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse19" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Yes it is possible to receive notification out of sequence however every notification includes an eventTimestamp (a Unix Epoch value), which will allow you to determine the correct ordering of notifications. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                     <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse20">After the retry period what happens if the notification has still not been delivered?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse20" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Use the Retrieve Payment endpoint to determine the status of any given payment. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                     <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse21">Are messages sent individually or batched?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse21" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Webhook messages are always dispatched individually. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse22">What is the timeout period on the receiving endpoint?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse22" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Nuapay will timeout after 10 seconds if the receiving endpoint has not responded. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    
 </div>
 <!-- /.panel-group -->
 

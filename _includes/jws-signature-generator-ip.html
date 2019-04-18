@@ -1,0 +1,110 @@
+<!--Instant Payments version has Sentenial rather than Nuapay referenced -->
+<html>
+<head>
+
+<script language="JavaScript" type="text/javascript" src="js/jsrsasign-all-min.js"></script>
+
+<style type="text/css">
+TD  {vertical-align: top; border: solid 1px #000000; }
+</style>
+<script language="JavaScript" type="text/javascript">
+
+function _genJWS() {
+
+  var sHead = document.form1.jwshead1.value;
+  var sPayload = document.form1.jwspayload1.value;
+  var sPemPrvKey = document.form1.pemprvkey1.value;
+
+  var sResult = null;
+  
+  try {
+    prv = KEYUTIL.getKey(sPemPrvKey);
+	sResult = sign("RS256", sHead, sPayload, prv);
+    document.form1.jwsgenerated1.value = sResult;
+  } catch (ex) {
+    alert("Error: " + ex);
+  }
+}
+
+function sign(alg, spHeader, spPayload, key, pass) {
+
+    var sHeader, pHeader, sPayload;
+
+	sHeader = spHeader;
+	if (! KJUR.jws.JWS.isSafeJSONString(sHeader))
+	    throw "JWS Head is not safe JSON string: " + sHeader;
+	pHeader = KJUR.jws.JWS.readSafeJSONString(sHeader);
+    
+    sPayload = spPayload;
+   
+    if (alg !== pHeader.alg)
+		throw "alg and sHeader.alg doesn't match: " + alg + "!=" + pHeader.alg;
+
+    var sigAlg = KJUR.jws.JWS.jwsalg2sigalg[alg];
+    
+    var uHeader = utf8tob64u(sHeader);
+    var uPayload = sPayload;
+    var uSignatureInput = uHeader + "." + uPayload
+
+    var hSig = "";
+    if (sigAlg != "none") {
+		var sig = new KJUR.crypto.Signature({'alg': sigAlg});
+		sig.init(key, pass);
+		sig.updateString(uSignatureInput);
+		hSig = sig.sign();
+    }
+
+    var uSig = hextob64u(hSig);
+    return uHeader + ".." + uSig;
+};
+
+</script>
+</head>
+
+<body>
+
+
+<form name="form1">
+<table width="100%">
+<tbody>
+<tr>
+<td rowspan="3">Input</td><td>JWS Header<br/><i>Edit only "kid", "iat" and "iss"</i><br/><br/><i>* iss must match subject on your cert</i><br/><i>* kid must match your certificate serial number</i><br/><i>* iat must contain current datetime<br/>&nbsp;&nbsp;(milliseconds since Unix Epoch)</i><br/></td><td colspan="2">
+<textarea name="jwshead1" rows="8" cols="100">
+{
+  "alg": "RS256",
+  "kid": "PASTE YOUR SERIAL HERE",
+  "iat": PASTE THE CURRENT DATETIME (UNIX EPOCH HERE),
+  "iss": "C=GB, L=London, OU=Sentenial, O=Sentenial, CN=PASTE YOUR COMMON NAME HERE",
+  "b64": false,
+  "crit": ["iat","iss","b64"]
+}</textarea>
+</td>
+</tr>
+<tr><td>JWS Payload<br/><i>Your HTTP request body here</i></td><td colspan="2">
+<textarea name="jwspayload1" rows="3" cols="100">PASTE YOUR JSON PAYLOAD HERE</textarea>
+</td></tr>
+<tr><td>Signing Private Key in PKCS#8 format<br/><i>The key never leaves your browser</i></td><td colspan="2">
+<textarea name="pemprvkey1" rows="10" cols="100">
+PASTE YOUR PRIVATE KEY HERE</textarea>
+</td></tr>
+<tr><td colspan="4">
+<input type="button" value="Generate JWS Signature&darr;" onClick="_genJWS();"/>
+</td></tr>
+<tr><td colspan="2">Output JWS Signature <br> <i> Copy it and use as JWS-Signature header value</i></td><td colspan="2">
+<textarea name="jwsgenerated1" cols="100" rows="10" readonly></textarea>
+</td></tr>
+</tbody>
+</table>
+
+</form>
+
+
+    <p>For further reference see:</p>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc7515" target="_blank">RFC7515 - JSON Web Signature (JWS)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7797" target="_blank">RFC7797 - JSON Web Signature (JWS) Unencoded Payload Option</a></li>
+</ul>
+
+
+</body>
+</html>
