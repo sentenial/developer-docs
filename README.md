@@ -21,9 +21,9 @@ git clone https://github.com/YOUR_USERNAME/developer-docs.git
 ```
 git remote add upstream https://github.com/sentenial/developer-docs.git
 ```
-4) create a feature branch for your edits and switch to your feature branch, sample command shown below
+4) create a feature/edit branch for your edits and switch to your feature branch, sample command shown below
 ```
-git checkout -b my-feature
+git checkout -b my-edit
 ```
 5) In the project there is a docker compose file run the following to start up a Jekyll docker container. The compose file is called *docker-compose.yml*
 ```
@@ -48,9 +48,9 @@ git pull upstream master
 ```
 git push origin master
 ```
-11) Switch back to your feature branch
+11) Switch back to your feature/edit branch
 ```
-git checkout my-feature
+git checkout my-edit
 ```
 12) Rebase off local master, this brings into the branch any updates on the master branch we may of missed. (sometimes there will be no changes that's fine too)
 ```
@@ -58,7 +58,7 @@ git rebase master
 ```
 13) Push the change to origin master
 ```
-git push origin my-feature
+git push origin my-edit
 ```
 14) Login to the user interface and create a pull request. After you have created a pull request the Maintainers of the project decide to accept or reject the pull request.
 
