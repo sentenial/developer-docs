@@ -21,7 +21,7 @@ git clone https://github.com/YOUR_USERNAME/developer-docs.git
 ```
 git remote add upstream https://github.com/sentenial/developer-docs.git
 ```
-4) create a feature/edit branch for your edits and switch to your feature branch, sample command shown below
+4) create a feature/edit branch for your edits and switch to your feature/edit branch, sample command shown below
 ```
 git checkout -b my-edit
 ```
@@ -30,7 +30,7 @@ git checkout -b my-edit
 docker-compose build --no-cache && docker-compose up
 ```
 6) Work on the changes you wish to make to the project
-7) Commit your change to the feature branch you created in step 4 when you are happy with the changes. docker runs Jekyll on localhost:4000 you can observe the changes you make in the browser at this URL. Once you are happy with the changes you can commit them.
+7) Commit your change to the feature/edit branch you created in step 4 when you are happy with the changes. docker runs Jekyll on localhost:4000 you can observe the changes you make in the browser at this URL. Once you are happy with the changes you can commit them.
 You will need to add changes to a commit before making a commit. See [docs](https://git-scm.com/docs/git-add) for details of adding files to a commit.
 
 ```
