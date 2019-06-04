@@ -29,7 +29,11 @@ entries:
     - title: General API Rules
       url: /ob_generalrules.html
       output: web, pdf    
-      
+
+    - title: ASPSP Sandbox
+      url: /ob_sandbox.html
+      output: web, pdf    
+            
   - title: Integration Models
     output: web, pdf
     folderitems:
