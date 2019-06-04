@@ -22,7 +22,7 @@ The Retrieve Payment service returns an Open Banking payment object, where the u
  {% include redoc.html %}
  
 loadRedoc('#profileTabs', 'https://sentenial.github.io/open-banking-swagger/docs/redoc.html');
-var timerRef = setInterval(function() { getDocs('operation/getUsingGET','#profileTabs',timerRef); }, 500);
+var timerRef = setInterval(function() { getDocs('operation/getPaymentUsingGET','#profileTabs',timerRef); }, 500);
 
 
 </script>
