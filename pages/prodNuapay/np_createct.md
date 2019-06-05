@@ -19,6 +19,9 @@ CT payments, unlike Direct Debit payments, do not require that the transaction i
 If you create your CT payment early enough on a specific working day, the funds could be credited to your beneficiary on the same day. If you create the payment later in the day then the CT will generally be credited to the beneficiary on the following business day.
 
 
+{% include note.html content="If you have 2 or more Nuapay accounts configured and want to transfer funds between these accounts you will need to use the [Transfer Between Accounts](np_accounttransfer.html) service" %}
+
+
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

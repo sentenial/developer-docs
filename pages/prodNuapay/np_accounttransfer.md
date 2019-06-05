@@ -12,7 +12,7 @@ toc: false
 
 {% include important.html content="The [JWS-Signature header](np_secjws.html) is required for this endpoint. " type="primary" %} 
 
-Where you have two or more Nuapay account, the Transfers API allows you to move funds between two accounts.
+Where you have been configured with more than a single Nuapay account, the Transfers API allows you to move funds between your accounts.
 
 {% include note.html content="It is only possible to transfer funds between accounts that have the same currency." %}
 
