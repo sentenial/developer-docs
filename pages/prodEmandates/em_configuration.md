@@ -54,6 +54,10 @@ The following E-Mandate configurations may be customised for you as required:
 |Display Extended Data|Depending on your business needs you may already have specific customer details (address details for example) and you may just want to collect your customer's IBAN. This setting allows you to just present a slimmed down set of input fields.|
 |Debtor Input Allowed| This configuration is useful if you already have all of your customer's information; the E-Mandate application presents all the required data to the user - no input is required and the customer clicks Confirm to sign the mandate.|
 
+
+For more details on these customisations see [E-Mandate Customisations](em_uicustomisations.html).
+
+
 {% include note.html content="For Bacs E-mandates the Bacs DD Guarantee and logo are populated by default." %}
 
 
