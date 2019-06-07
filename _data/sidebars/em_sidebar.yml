@@ -17,7 +17,11 @@ entries:
     - title: Configuration
       url: /em_configuration.html
       output: web
-      
+ 
+    - title: User Interface Customisations
+      url: /em_uicustomisations.html
+      output: web
+           
   - title: Integration Models
     output: web, pdf
     folderitems:
