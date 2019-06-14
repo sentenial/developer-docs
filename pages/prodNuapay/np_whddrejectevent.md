@@ -78,6 +78,13 @@ The following event types are possible:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -110,6 +117,7 @@ The following is an example of a Direct Debit Reject event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
 	"resourceType": "DirectDebit",
+	"resourceOwner": "tc47ygrg72",
 	"reasonCode": "MS03"
 }</code>
 </pre>

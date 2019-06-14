@@ -86,6 +86,13 @@ This Webhook has a single event type: <b>IncomingCreditTransfer</b>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -120,6 +127,7 @@ The following is an example of an Incoming CT event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
 	"resourceType": "Transaction",
+	"resourceOwner": "tc47ygrg72",
 	"reasonCode": null
 }</code>
 </pre>

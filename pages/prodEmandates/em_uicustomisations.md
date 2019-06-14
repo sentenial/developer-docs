@@ -51,6 +51,13 @@ The Extended Data configuration allows you to control what details you are promp
 |Example| <img src = "images/em_extended.png">|
 |Default| True |
 
+If required you can refine what elements of the extended screen are displayed. One or more of the following elements may be hidden if required:
+
+* Address
+* Mobile Number
+* Contract Reference
+
+Please discuss your specific requirements with your Account Manager.
 
 {% include note.html content="For Bacs, all details must be collected so the extended data must always be displayed to your users." %}
 
