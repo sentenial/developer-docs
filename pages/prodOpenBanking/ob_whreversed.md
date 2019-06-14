@@ -87,6 +87,13 @@ To reverse (i.e. refund) an Open Banking payment, use the <a href="#">Reverse Pa
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a payment resource.</td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -117,10 +124,11 @@ The following is an example of a Received Payment event JSON:
     "eventTimestamp": 1501169079000,
     "eventType": "PaymentReversed",
     "resourceTechnicalId": 500006,
-    "resourceReference": "reference",
-    "resourceReferenceType": "reference",
+    "resourceReference": "51R13E22-12C8-7F9C-A",
+    "resourceReferenceType": "EndToEndId",
     "resourceUri": "/payments/n7rklmvdmq",
     "resourceType": "payment",
+    "resourceOwner": "tc47ygrg72",
     "reasonCode": null
 }</code>
 </pre>

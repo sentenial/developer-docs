@@ -21,7 +21,11 @@ entries:
     - title: User Interface Customisations
       url: /em_uicustomisations.html
       output: web
-           
+
+    - title: Language Support
+      url: /em_languagesupport.html
+      output: web
+                      
   - title: Integration Models
     output: web, pdf
     folderitems:

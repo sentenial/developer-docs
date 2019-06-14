@@ -79,6 +79,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -112,9 +119,9 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
 	"resourceType": "Mandate",
+	"resourceOwner": "tc47ygrg72",
 	"reasonCode": null
 }</code>
 </pre>
-
 
 {% include links.html %}
