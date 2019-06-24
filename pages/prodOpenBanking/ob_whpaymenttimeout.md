@@ -1,19 +1,19 @@
 ---
-title: Payment Received Event
-keywords: Received Payment Event Webhook 
-summary: "Received Payment Webhook event"
+title: Payment Timeout Event
+keywords: Payment Timeout Event Webhook 
+summary: "Payment Timeout Webhook event"
 sidebar: ob_sidebar
-permalink: ob_whreceived.html
+permalink: ob_whpaymenttimeout.html
 folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="An Open Banking payment is credited to the merchant's Nuapay account." %}
+{% include webhook.html content="An Open Banking payment moves to TIMEOUT status." %}
 
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>PaymentReceived </b>
+This Webhook has a single event type: <b>PaymentTimeout</b>
 
 
 ## Webhook Event Message Details
@@ -42,7 +42,7 @@ This Webhook has a single event type: <b>PaymentReceived </b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>PaymentReceived</td>
+			<td>PaymentTimeout</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -113,7 +113,7 @@ The following is an example of a Received Payment event JSON:
 
 |POST| http://example.com/webhooks|
 |Content-Type:| application/json;charset=UTF-8|
-|[X-Signature](ob_whreceivingep.html#x-signature):|123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|[X-Signature](ob_whreceivingep.html#x-signature): |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
 |Content-Length:| 261|
 |X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
 
@@ -121,9 +121,9 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentReceived",
+    "eventType": "PaymentTimeout",
     "resourceTechnicalId": 500006,
-    "resourceReference": "123F13C56-32C7-5D9B-3",
+    "resourceReference": "AC32C123C6-AB2D-5F99-5",
     "resourceReferenceType": "EndToEndId",
     "resourceDetails": {		
     "resourceUri": "/payments/n7rklmvdmq",

@@ -94,7 +94,11 @@ entries:
     - title: Self-Hosted Page Setup
       url: /ob_selfsetupoverview.html
       output: web, pdf                
-      
+     
+    - title: Payment Statuses
+      url: /ob_paymentstatuses.html
+      output: web, pdf                
+            
       subfolders:
       - title: PISP APIs 
         output: web
@@ -111,7 +115,7 @@ entries:
         - title: Reverse Payment
           url: /ob_reversepayment.html
           output: web
-          
+  
   - title: AISP Service
     output: web, pdf
     folderitems:
@@ -206,6 +210,22 @@ entries:
         - title: Payment Reversed
           url: /ob_whrreversed.html
           output: web 
+
+        - title: Payment In Progress
+          url: /ob_whpaymentinprogress.html
+          output: web                                  
+       
+        - title: Payment Complete
+          url: /ob_whpaymentcomplete.html
+          output: web
+                          
+        - title: Payment Rejected
+          url: /ob_whpaymentrejected.html
+          output: web
+                          
+        - title: Payment Timeout
+          url: /ob_whpaymenttimeout.html
+          output: web
  
   - title: Resources
     output: web, pdf
