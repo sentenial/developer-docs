@@ -42,7 +42,7 @@ To set up your page with a new SIGN button:
 </ol>
 
 
-
+Please note do not use any wordpress server side caching plugins for pages containing the nuapay shortcode, each page load requests a new token from the Nuapay Servers. 
 
 
 {% include links.html %}
