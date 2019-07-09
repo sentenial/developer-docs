@@ -23,83 +23,32 @@ The Token encapsulates the following:
 To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 
 
-
-
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
-    <li><a href="#about" data-toggle="tab">Response</a></li>
+    
    
 </ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
-
-
-  <table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
-
-<tbody>
-<tr>
-<td markdown="span">Usage</td>
-<td markdown="span">You must have a unique token in order to create an electronic mandate</td>
-</tr>
-<tr>
-<td markdown="span">Method</td>
-<td markdown="span"><span class="label label-info">POST </span>
-</td>
-</tr>
-<tr>
-<td markdown="span">URI</td>
-<td markdown="span">/emandates
-</td>
-</tr>
-<tr>
-<td markdown="span">Required Arguments</td>
-<td markdown="span"><b>merchantDetails.iban</b>
-<br/><i>The merchant IBAN</i>
-</td>
-</tr>
-<tr>
-<td markdown="span"></td>
-<td markdown="span"><b>merchantDetails.creditorSchemeId</b>
-<br/><i>(use <a href="np_listcredscheme.html">List Creditor Schemes</a> to retrieve your CSID)</i>
-</td>
-</tr>
-<tr>
-<td markdown="span"></td>
-<td markdown="span"><b>merchantDetails.schemeType</b>
-<br/><i>(CORE, B2B, BACS)</i>
-</td>
-</tr>
-<tr>
-<td markdown="span"></td>
-<td markdown="span"><b>merchantDetails.mandateType</b>
-<br/><i>(Use either OOFF (for a once-off mandate; only one Direct Debit payment may be made against a OOFF mandate) or RCUR (a recurring mandate; more than one Direct Debit payment may be made against the mandate))</i>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-{% include callout.html content="If your business has been configured with ``Debtor Input Allowed = False`` (see the [Configuration](em_configuration.html) section)  then **debtorDetails.name** is a required argument. " type="primary" %} 
-
-</div>
-
-<div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>201 Created</b> response code</p>
-<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
-    {% include httpcodes.html %}
-    
  
-    </div>
+ {% include redoc.html %}
+ 
+ 
+loadRedoc('#profileTabs', 'https://sentenial.github.io/emandates-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/prepareMandateUsingPOST','#profileTabs',timerRef); }, 500);
+
+
+
+</script>
+
+
+<div id="mydiv"></div>
 
 
 </div>
 
 
-<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/emandate-api/#prepare-e-mandate" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+
+</div>
+
+
 
 
 {% include links.html %}
