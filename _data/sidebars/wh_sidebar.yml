@@ -1,0 +1,56 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Webhooks
+  product: Webhooks
+  version: 
+  folders:
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /wh_overview.html
+      output: web       
+     
+  - title: Configuration
+    output: web, pdf
+    folderitems:  
+      
+    - title: Configuration via the UI
+      url: /wh_config_ui.html
+      output: web
+           
+    - title: Configuration via REST
+      url: /wh_config_rest.html
+      output: web
+
+    - title: Receiving Endpoint
+      url: /wh_receivingep.html
+      output: web 
+ 
+      subfolders:
+      - title: Webhook APIs 
+        output: web
+        subfolderitems:              
+        
+        - title: Create Webhook
+          url: /wh_restcreate.html
+          output: web
+
+        - title: Retrieve Webhook
+          url: /wh_restretrieve.html
+          output: web                
+
+        - title: Enable/Disable Webhook
+          url: /wh_restenabdisab.html
+          output: web
+
+        - title: Update/Delete Webhook
+          url: /wh_restupdel.html
+          output: web          
+          
+        - title: List Webhooks
+          url: /wh_restlist.html
+          output: web                                

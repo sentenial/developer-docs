@@ -1,10 +1,10 @@
 ---
 title: Create Webhook
-keywords: Create Open Banking Webhook
-summary: "Create Open Banking Webhook"
-sidebar: ob_sidebar
-permalink: ob_whrestcreate.html
-folder: prodOpenBanking
+keywords: Create Webhook
+summary: "Create Webhook"
+sidebar: wh_sidebar
+permalink: wh_restcreate.html
+folder: prodWebhooks
 toc: false
 ---
 

@@ -79,10 +79,6 @@ entries:
       url: /ip_whoverview.html
       output: web, pdf
    
-    - title: Configuration
-      url: /ip_whconfiguration.html
-      output: web, pdf
-
       subfolders:
       - title: Webhook Events 
         output: web

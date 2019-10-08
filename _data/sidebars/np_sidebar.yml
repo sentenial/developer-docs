@@ -290,10 +290,6 @@ entries:
       url: /np_whoverview.html
       output: web, pdf  
 
-    - title: Configuration
-      url: /np_whconfiguration.html
-      output: web, pdf          
-        
       subfolders:
       - title: Webhook Events 
         output: web
@@ -355,6 +351,10 @@ entries:
       url: /np_validateaccount.html
       output: web, pdf          
 
+    - title: Test IBANs
+      url: /np_testibans.html
+      output: web, pdf          
+      
     - title: Use Cases
       url: /np_usecases.html
       output: web, pdf          

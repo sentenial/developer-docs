@@ -2,8 +2,8 @@
 title: Enable/Disable Webhook
 keywords: Enable/Disable Open Banking Webhook
 summary: "Enable/Disable Open Banking Webhook"
-sidebar: ob_sidebar
-permalink: ob_whrestenabdisab.html
+sidebar: wh_sidebar
+permalink: wh_restenabdisab.html
 folder: prodOpenBanking
 toc: true
 ---

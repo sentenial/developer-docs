@@ -16,7 +16,7 @@ The Token encapsulates the following:
 * Your Merchant configurations (Signing Method, UI customisations, Debtor/Payer Input Allowed, etc.)
 * Merchant-specific details (Creditor Scheme ID, Scheme Type, etc.)
 * Payer details (Address details, phone details, email, etc.)
-* Contract Identifier (optional, if you want to combine a contract and mandate - see <a href="#">E-mandate and Contract</a>)
+* Contract Identifier (optional, if you want to combine a contract and mandate - see <a href="em_contractoverview.html">E-mandate and Contract</a>)
 
 {% include note.html content="Because we use tokens, your customers' sensitive account details are never stored on your server." %}
 
