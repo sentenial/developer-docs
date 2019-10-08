@@ -26,6 +26,9 @@ entries:
     - title: Product Overview
       url: /prod_overview.html
       output: web
+    - title: Versioning and Backward Compatibility
+      url: /prod_versioning.html
+      output: web
     - title: Support
       url: /prod_support.html
       output: web

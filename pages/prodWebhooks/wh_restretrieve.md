@@ -1,10 +1,10 @@
 ---
 title: Retrieve Webhook
-keywords: Retrieve Open Banking Webhook
-summary: "Retrieve Open Banking Webhook"
-sidebar: ob_sidebar
-permalink: ob_whrestretrieve.html
-folder: prodOpenBanking
+keywords: Retrieve Webhook
+summary: "Retrieve Webhook"
+sidebar: wh_sidebar
+permalink: wh_restretrieve.html
+folder: prodWebhooks
 toc: false
 ---
 

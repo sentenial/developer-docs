@@ -155,48 +155,11 @@ entries:
           
   - title: Webhooks
     output: web, pdf
-    folderitems:
-
+    folderitems:  
+    
     - title: Overview
       url: /ob_whoverview.html
-      output: web, pdf
- 
-    - title: Webhooks Setup via UI
-      url: /ob_whconfiguration.html
-      output: web, pdf
-
-    - title: Webhooks Setup via REST
-      url: /ob_whconfigurationrest.html
-      output: web, pdf 
- 
-      subfolders:
-      - title: Webhook APIs 
-        output: web
-        subfolderitems:              
-        
-        - title: Create Webhook
-          url: /ob_whrestcreate.html
-          output: web
-
-        - title: Retrieve Webhook
-          url: /ob_whrestretrieve.html
-          output: web                
-
-        - title: Enable/Disable Webhook
-          url: /ob_whrestenabdisab.html
-          output: web
-
-        - title: Update/Delete Webhook
-          url: /ob_whrestupdel.html
-          output: web          
-          
-        - title: List Webhooks
-          url: /ob_whrestlist.html
-          output: web                                
-                    
-    - title: Webhook Receiving Endpoint 
-      url: /ob_whreceivingep.html
-      output: web, pdf 
+      output: web, pdf      
           
       subfolders:
       - title: Webhook Notifications 

@@ -1,10 +1,10 @@
 ---
 title: Update/Delete Webhook
-keywords: Update/Delete Open Banking Webhook
-summary: "Update/Delete Open Banking Webhooks"
-sidebar: ob_sidebar
-permalink: ob_whrestupdel.html
-folder: prodOpenBanking
+keywords: Update/Delete Webhook
+summary: "Update/Delete Webhooks"
+sidebar: wh_sidebar
+permalink: wh_restupdel.html
+folder: prodWebhooks
 toc: true
 ---
 

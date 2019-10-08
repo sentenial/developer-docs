@@ -1,10 +1,10 @@
 ---
 title: Receiving Endpoint 
 keywords: Webhooks Receiving Endpoint
-summary: "Webhook notifications are passed to your configured Endpoint; this section gives you some important security and configuration information."
-sidebar: ob_sidebar
-permalink: ob_whreceivingep.html
-folder: prodOpenBanking
+summary: "Webhook notifications are passed to your configured Endpoint; this section gives you some important security and configuration information to consider when setting up your receiving endpoint."
+sidebar: wh_sidebar
+permalink: wh_receivingep.html
+folder: prodOpenWebhooks
 ---
 
 
@@ -27,7 +27,7 @@ For more information on HMAC see <a href ="https://tools.ietf.org/html/rfc2104" 
 
 ## Listening for Events
 
-When an event occurs on your Nuapay account it is notified to your configured endpoint URL.
+When an event occurs it is notified to your configured endpoint URL.
 
 Notification Details - HTTP POST Request
 
@@ -111,7 +111,9 @@ Notification Details - HTTP POST Request
 	</tbody>
 </table>
 
-For details of the Webhook Event messages and `JSON` samples, see the [Payment Received](ob_whreceived.html) and [Payment Reversed](ob_whrreversed.html) events.
+For details of the Webhook Event messages and `JSON` samples, see the events descriptions provided under your required Product (i.e. Nuapay, Open Banking, etc.) 
+
+
 
 {% include links.html %}
 

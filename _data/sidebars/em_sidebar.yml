@@ -155,3 +155,20 @@ entries:
     - title: Uploading a Contract
       url: /em_contractupload.html
       output: web, pdf
+      
+  - title: Webhooks
+    output: web, pdf
+    folderitems:  
+    
+    - title: Overview
+      url: /em_whoverview.html
+      output: web, pdf      
+          
+      subfolders:
+      - title: Webhook Notifications 
+        output: web
+        subfolderitems:
+       
+        - title: E-Mandate Signature
+          url: /em_whmandsignature.html
+          output: web

@@ -1,0 +1,154 @@
+---
+title: Test IBANs
+keywords: Test IBANs
+summary: "Use these test IBANs to try out our APIs - use them to create a mandate or an e-mandate, for example."
+sidebar: np_sidebar
+permalink: np_testibans.html
+folder: prodNuapay
+toc: false
+---
+
+
+<p>The following are some test IBANs, from a selection of countries, which may be useful when testing your implementation.</p>
+<!-- 1. Define some markup -->
+
+<table>
+
+    <tr>
+    <td> <div1>CY17002001280000001200527600</div1></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div1">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div2>DE25370502991000122343</div2></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div2">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div3>DE32250800200113090000</div3></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div3">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div4>DE75380500000108605346</div4></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div4">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div5>DE89370400440532013000</div5></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div5">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div6>DK2411990003179680</div6></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div6">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div7>DK8003450003179681</div7></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div7">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div8>ES9121000418450200051332</div8></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div8">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div9>ES9121000418450200051332</div9></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div9">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div10>FR1420041010050500013M02606</div10></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div10">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div11>GB49SELN00999922650631</div11></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div11">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div12>GB90SELN00999957437100</div12></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div12">Copy</button></td>
+    </tr>
+    
+    <tr>
+    <td> <div13>GB68SELN00999911111363</div13></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div13">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div14>IT60X0542811101000000123456</div14></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div14">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div15>LU360029152460050000</div15></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div15">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div16>LU567059555499100000</div16></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div16">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div17>LU700141252293103000</div17></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div17">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div18>NL53ABNA0540427152</div18></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div18">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div19>NL53ABNA0540427152</div19></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div19">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div20>NL69INGB0123456789</div20></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div20">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div21>NL91ABNA0417164300</div21></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div21">Copy</button></td>
+    </tr>
+    
+     <tr>
+    <td> <div22>PL27114020040000300201355387</div22></td>
+    <td><button class="btn" data-clipboard-action="copy" data-clipboard-target="div22">Copy</button></td>
+    </tr>
+    
+</table>
+
+
+<!--
+    <div1>IT60X0542811101000000123456</div1>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="div">Copy</button>
+	<div2>ES9121000418450200051332</div2>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="div2">Copy</button>
+	
+	 <div3>TOM-TEST</div3>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="div3">Copy</button>
+
+    <!-- 2. Include library -->
+   
+     <script src="../../js/clipboard.min.js"></script>
+
+    <!-- 3. Instantiate clipboard -->
+    <script>
+    var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>

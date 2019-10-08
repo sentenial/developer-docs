@@ -2,9 +2,9 @@
 title: Webhooks Setup via the User Interface 
 keywords: Webhooks Configuration
 summary: "Details are provided in this section on setting up your Webhook Endpoint and listening for events via the Nuapay User Interface"
-sidebar: ob_sidebar
-permalink: ob_whconfiguration.html
-folder: prodOpenBanking
+sidebar: wh_sidebar
+permalink: wh_config_ui.html
+folder: prodWebhooks
 ---
 
 ## Overview Setup
@@ -16,10 +16,10 @@ To set up Webhooks you will need to:
 
 1. Create an endpoint.
 1. Configure the Webhook(s) you require.
-1. Listen for events (see [Receiving Endpoint](ob_whreceivingep.html) for more on this).
+1. Listen for events (see the [Receiving Endpoint](wh_receivingep.html) section for more on this).
 
 
-Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your infrastructure. See [Webhook Receiving Endpoint](ob_whreceivingep.html) for more on this.
+Note that before you can use Webhooks you must set up a dedicated Endpoint on your infrastructure. (See [Webhook Receiving Endpoint](wh_receivingep.html) for more on this).
 
 ## Setting up a Webhook
 
@@ -33,6 +33,6 @@ Before you can use Nuapay Webhooks you must set up a dedicated Endpoint on your 
     <li value="5">Click <b>Submit</b>.</li>
 </ol>
 
-Once you have set up the Webhook, you will need to configure a [Receiving Endpoint](ob_whreceivingep.html).
+Once you have set up the Webhook, you will need to configure a [Receiving Endpoint](wh_receivingep.html).
 
 {% include links.html %}
