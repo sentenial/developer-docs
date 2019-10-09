@@ -13,6 +13,7 @@ toc: false
 Use this service to delete an account access request previously generated (see the [Create Account Access](ob_createaccountaccess.html) request). 
 This service will typically be required where a customer has asked for the account access previously granted to be revoked.
 
+<!--
 {% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -36,6 +37,7 @@ var timerRef = setInterval(function() { getDocs('operation/deleteAccountRequestU
 
 
 </div>
-
+-->
+{% include note.html content="Swagger samples are currently not published for our AISP services. Contact [api.support@nuapay.com](mailto:api.support@nuapay.com) if you need more information on AISP" %}
 
 {% include links.html %}
