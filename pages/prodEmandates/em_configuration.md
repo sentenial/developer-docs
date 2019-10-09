@@ -23,6 +23,7 @@ When working with E-Mandate APIs note that all requests must:
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
 
+{% include note.html content="Our API is backward-compatible. For more details see [Versioning and Backward Compatibility](prod_versioning.html) under the Product Overview section." %}
 
 ## Available End Points
 

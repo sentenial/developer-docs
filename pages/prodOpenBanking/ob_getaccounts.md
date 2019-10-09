@@ -12,6 +12,7 @@ toc: false
 
 Retrieve all the accounts linked to an access request.
 
+<!--
 {% include swagger_ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -35,6 +36,9 @@ var timerRef = setInterval(function() { getDocs('operation/getAccountsUsingGET',
 
 
 </div>
+-->
+
+{% include note.html content="Swagger samples are currently not published for our AISP services. Contact [api.support@nuapay.com](mailto:api.support@nuapay.com) if you need more information on AISP" %}
 
 
 {% include links.html %}

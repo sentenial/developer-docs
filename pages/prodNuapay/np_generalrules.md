@@ -16,7 +16,9 @@ folder: prodNuapay
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
 
-<p>Specific configurations are also required on the E-Mandate application. Note that specific configurations must be carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this.</p>
+{% include note.html content="Our API is backward-compatible. For more details see [Versioning and Backward Compatibility](prod_versioning.html) under the Product Overview section." %}
+
+<p>Specific configurations are also required on the E-Mandate application. Note that these configurations must be carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this.</p>
 
 ## Resource Identifiers
 
