@@ -90,14 +90,14 @@ The statuses are presented below in a table and as a state diagram:
     </tr>
     <tr>
       <td><code class="highlighter-rouge">AUTHORISED</code></td>
-      <td>The PSU has authorised the payment on the ASPSP.</td>
+      <td>The PSU has authorised the payment at the ASPSP.</td>
       <td>No</td>
       <td>No</td>
       <td>N/A</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">DECLINED</code></td>
-      <td>The PSU has declined the payment on the ASPSP.</td>
+      <td>The PSU has declined the payment at the ASPSP.</td>
       <td>Yes</td>
       <td>Yes</td>
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
@@ -132,7 +132,7 @@ The statuses are presented below in a table and as a state diagram:
     </tr>
     <tr>
       <td><code class="highlighter-rouge">SETTLEMENT_IN_PROGRESS</code></td>
-      <td>The settlement is being processed by the ASPSP. The payment will generally move to <code class="highlighter-rouge">SETTLEMEMT_COMPLETE</code> after this status. For high value goods we recommend to wait for a final status before processing the order.</td>
+      <td>The settlement is being processed by the ASPSP. The payment will generally move to <code class="highlighter-rouge">SETTLEMEMT_COMPLETE</code> after this status. For high value goods we recommend waiting for a final status before processing the order.</td>
       <td>No</td>
       <td>Yes</td>
       <td><a href="ob_whpaymentinprogress.html">PaymentInProgress</a></td>
@@ -189,6 +189,13 @@ The statuses are presented below in a table and as a state diagram:
     <tr>
       <td><code class="highlighter-rouge">UNEXPECTED_ERROR</code></td>
       <td>A processing error has occurred. This may be due to connectivity issues between ASPSP and the TPP for example.</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">UNKNOWN</code></td>
+      <td>After transitioning to <code class="highlighter-rouge">AUTHORISED</code>, the TPP cannot determine the status of the payment at the ASPSP (e.g. after receiving a 500 HTTP response) .</td>
       <td>Yes</td>
       <td>No</td>
       <td>N/A</td>
