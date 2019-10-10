@@ -17,14 +17,13 @@ This Webhook has the following event types:
 
 |**Webhook Event Type**| **Description**|
 |CreditTransferReject|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = REJECTED|
-|CreditTransferCancel|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = CANCELLED. A Credit Transfer is updated to CANCELLED where the SEPA Reason Code is one of the following: CUST, CUTA, DUPL, UPAY|
+|CreditTransferCancel|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = CANCELLED. A Credit Transfer is updated to CANCELLED where the [SEPA Reason Code](np_separeasons.html) is one of the following: CUST, CUTA, DUPL, UPAY|
 
 
 
 ## Webhook Event Message Details
 
-<p>
-	The following table describes the details of the Webhook notification:</p>
+<p>The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
 	
@@ -104,7 +103,7 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> </td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> 
 		</tr>
 		
 	</tbody>

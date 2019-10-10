@@ -15,9 +15,9 @@ For more information on the setup and configuration of Webhooks, see the general
 
 For details of the individual Nuapay events that trigger Webhook notifications, browse to the required link below:
 
-|**Event**| **Link**|
-|Direct Debit R-Transaction|[LINK](np_whddrejectevent.html)|
-|Incoming Credit Transfer|[LINK](np_whincomingct.html)|
-|Accepted Direct Debit|[LINK](np_whaccepteddd.html)|
-|Mandate Signature|[LINK](np_whmandsignature.html)|
-|Credit Transfer Reject|[LINK](np_whctreject.html)|
+|**Event**|
+|[Direct Debit R-Transaction](np_whddrejectevent.html)|
+|[Incoming Credit Transfer](np_whincomingct.html)|
+|[Accepted Direct Debit](np_whaccepteddd.html)|
+|[Mandate Signature](np_whmandsignature.html)|
+|[Credit Transfer Reject](np_whctreject.html)|
