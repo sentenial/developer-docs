@@ -203,7 +203,7 @@ The statuses are presented below in a table and as a state diagram:
 <div role="tabpanel" class="tab-pane" id="about">
 <p>The diagram below illustrates all possible statuses, with the happy path highlighted in green.</p>
 
-{% include note.html content="Click the image to open it in a new browwer window/tab, which will allow you to zoom in for a clearer view." %}
+{% include note.html content="Click the Extend button on the top menu to enlarge or click the image to open it in a new browser window/tab, which will allow you to zoom in for a clearer view." %}
 
  {% include image.html file="ob_paymentStatus.png" url="images/ob_paymentStatus.png" target = "_new" alt="Payment Statuses" caption="Payment Statuses" %}
  
