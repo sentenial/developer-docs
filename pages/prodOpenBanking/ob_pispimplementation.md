@@ -24,7 +24,9 @@ In **Checkout** mode you will:
 1. Call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`
 1. Manage the returned payment identifier with some Nuapay-provided JS and CSS to render the Bank Selection screen for your payers. 
 
-A detailed overview of the various steps involved in this flow is provided in the image below (click to enlarge):
+A detailed overview of the various steps involved in this flow is provided in the image below.
+
+{% include note.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 
 {% include image.html file="ob_checkout_flow.png" url="images/ob_checkout_flow.png" target = "_new" alt="Checkout Flow" caption="CHECKOUT Flow" %}
 
@@ -41,7 +43,9 @@ In **Self-Hosted** mode:
 1. Specify the `bankId` provided by the payer in step 2
 1. Manage the returned payment identifier as required.
 
-A detailed overview of the various steps involved in this flow is provided in the image below (click to enlarge):
+A detailed overview of the various steps involved in this flow is provided in the image below.
+
+{% include note.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 
 {% include image.html file="ob_checkout_flow.png" url="images/ob_selfhosted_flow.png" target = "_new" alt="Self-Hosted Flow" caption="SELF_HOSTED Flow" %}
 
