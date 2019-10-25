@@ -30,6 +30,10 @@ entries:
       url: /wh_receivingep.html
       output: web 
  
+    - title: Webhook Failure and Retry
+      url: /wh_failandretry.html
+      output: web 
+ 
       subfolders:
       - title: Webhook APIs 
         output: web
