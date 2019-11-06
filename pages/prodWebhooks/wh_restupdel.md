@@ -14,6 +14,8 @@ Webhooks may be updated (using the `PUT` method) or deleted (using the `DELETE` 
 
 {% include swagger_wh.html %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
 </ul>
   

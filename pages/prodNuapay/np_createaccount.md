@@ -14,7 +14,7 @@ The Create Account request allows you to generate a new Nuapay account. You may 
 
 {% include important.html content="It is possible to generate a Master or a Sub-Account. Note that sub-accounts may only be used for processing Credit Transfer payments. Note too that your merchant must be configured by Nuapay Client Services team to allow you to create a sub-account. For more information please contact your Account Manager." %}
 
-
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

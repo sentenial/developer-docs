@@ -20,6 +20,7 @@ The request requires that you provide the:
 * Beneficiary Resource ID
 * Credit Transfer Resource ID
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

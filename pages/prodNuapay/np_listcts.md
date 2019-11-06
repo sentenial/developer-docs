@@ -17,6 +17,8 @@ The List Credit Transfers request allows you to view a collection of Credit Tran
 
 Use an appropriate URI (as described below) to return the required collection of CTs.
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

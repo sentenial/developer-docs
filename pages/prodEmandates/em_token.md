@@ -25,6 +25,8 @@ The Token encapsulates the following:
 {% include swagger_em.html %}
 
 
+{% include urls.html %}
+
 To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 
 

@@ -46,7 +46,7 @@ The sample JavaScript below shows how you can render an e-mandate overlay, here 
 
 	<body>
 
-		<button onclick="EMandates.overlay();">hello</button>
+		<button onclick="EMandates.overlay();">€9.99 Sign Up Now!</button>
 
 	</body>
 

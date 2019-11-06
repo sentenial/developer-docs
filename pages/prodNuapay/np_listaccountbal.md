@@ -1,18 +1,18 @@
 ---
-title: List Transactions
-keywords: List Transactions API
-summary: "List Transactions RESTful API"
+title: List Account Balances
+keywords: List Account Balances API
+summary: "List Account Balances RESTful API"
 sidebar: np_sidebar
-permalink: np_listtransactions.html
+permalink: np_listaccountbals.html
 folder: prodNuapay
 toc: false
 ---
 
 ## API Details
 
-The List Transactions request allows you to view all the transactions linked to a specific Nuapay merchant account.
+Use this request to return the balance on a specific account.
 
-{% include note.html content="Because there are no required fields in this request, if you do not want to provide any parameters, you must supply an empty JSON body using {}. Filtering based on timestamps and based on the value of the transactions is also possible." %}
+{% include note.html content="This request uses the dateuntil parameter. This takes a Unix Epoch timestamp and defaults to the current date" %}
 
 {% include urls.html %}
 
@@ -34,16 +34,16 @@ The List Transactions request allows you to view all the transactions linked to 
 <tbody>
 <tr>
 <td markdown="span">Usage</td>
-<td markdown="span">Optionally Set the date range and amounts required</td>
+<td markdown="span">Supply an epoch value to return the balance for a specific timestamp</td>
 </tr>
 <tr>
 <td markdown="span">Method</td>
-<td markdown="span"><span class="label label-info">POST </span>
+<td markdown="span"><span class="label label-info">GET </span>
 </td>
 </tr>
 <tr>
 <td markdown="span">URI</td>
-<td markdown="span">/accounts/{accountId}/transactions/list
+<td markdown="span">/accounts/{ACCOUNT_ID}/balances
 </td>
 </tr>
 </tbody>
@@ -64,12 +64,11 @@ The List Transactions request allows you to view all the transactions linked to 
 
 </div>
 
-
-
-<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#list-transactions" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
+<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#list-account-balances" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
 
 
 <!--{% include swaggerlink.html %}-->
+
 
 
 {% include links.html %}

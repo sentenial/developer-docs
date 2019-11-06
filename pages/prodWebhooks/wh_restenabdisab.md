@@ -12,6 +12,8 @@ toc: true
 
 {% include swagger_wh.html %}
 
+{% include urls.html %}
+
 It is possible to enable or disable a single Webhook, when you provide its Webhook identifier. 
 Alternaltively you can use the `enable all` or `disable all` services to carry out the required action on ALL configured Webhooks for the given merchant.
 

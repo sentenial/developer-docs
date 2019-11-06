@@ -12,7 +12,7 @@ The E-Mandate token that is returned following your <a href ="em_tokendirectapi.
 In your Web page you must include the following JavaScript file reference:
 
 ````js
-<script src="/emandate/static/js/emandates.js">
+<script src="https://api.nuapay.com/emandate/static/js/emandates.js">
 ````
 
 In addition, two elements must be added to your Web page:

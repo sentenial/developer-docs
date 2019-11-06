@@ -18,6 +18,8 @@ The List Payment Schedule request allows you to view a collection of payment sch
 
 Use an appropriate URI (as described below) to return the required collection of Payment Schedules.
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

@@ -142,8 +142,58 @@ entries:
 
     - title: Adding a Response Handler
       url: /em_directapiresphandler.html
-      output: web, pdf                     
+      output: web, pdf                    
 
+  - title: Conversation APIs
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /em_conversation_overview.html
+      output: web, pdf
+      
+      subfolders:
+      - title: SMS Authentication Conversation 
+        output: web
+        subfolderitems:
+
+        - title: Settings
+          url: /em_conversation_settings.html
+          output: web
+
+        - title: Initialise Conversation
+          url: /em_conversation_init.html
+          output: web
+
+        - title: Sign GET and POST
+          url: /em_conversation_sign.html
+          output: web            
+
+        - title: Confirm GET and POST
+          url: /em_conversation_confirm.html
+          output: web                      
+      
+      - title: Resend OTP Conversation 
+        output: web
+        subfolderitems:
+
+        - title: Settings
+          url: /em_conversation_resend_settings.html
+          output: web        
+
+        - title: Sign GET and POST
+          url: /em_conversation_resend_sign.html
+          output: web            
+
+        - title: Resend POST
+          url: /em_conversation_resend_post.html
+          output: web            
+
+        - title: Confirm GET and POST
+          url: /em_conversation_resend_confirm.html
+          output: web                      
+  
+ 
   - title: E-Mandate & Contract
     output: web, pdf
     folderitems:

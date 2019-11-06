@@ -14,6 +14,8 @@ The List service will return an array of configured Webhooks linked to the curre
 
 {% include swagger_wh.html %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
 </ul>
   

@@ -14,6 +14,8 @@ If you want to upload a representation of the mandate, for example if you have a
 
 This can then be viewed later if you use the <a href = "np_retrievemandatedoc.html"> Retrieve Mandate Document</a> call.
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

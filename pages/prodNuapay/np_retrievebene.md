@@ -16,7 +16,7 @@ The beneficiary's resource identifier, URI, address details (if stored) and bank
 
 The request requires that you provide the beneficiary resource ID:
 
-
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

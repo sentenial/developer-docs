@@ -14,7 +14,7 @@ toc: false
 Following a <a href= "np_listtransactions.html">List Transaction</a> request you can use a returned resource URI to retrieve the details of an individual transaction.
 The various transaction types that are possible are described in the table in the <a href = "np_transactionoverview.html">Transaction Overview</a> section.
 
-
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

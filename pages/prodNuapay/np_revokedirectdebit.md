@@ -18,6 +18,7 @@ If you decide that you do not want to settle the payment and do not want to pass
 {% include tip.html content="The Revoke operation is only possible for payments that are in READY FOR EXPORT status. For more information see [Direct Debit Statuses](np_ddstatuses.html)." %}
 
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

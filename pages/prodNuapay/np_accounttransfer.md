@@ -23,6 +23,8 @@ It is possible to transfer between:
 
 {% include note.html content="It is only possible to transfer funds between accounts that have the same currency." %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

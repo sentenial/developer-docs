@@ -14,6 +14,8 @@ The Retrieve Payment service returns an Open Banking payment object, where the u
 
 {% include swagger_ob.html %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

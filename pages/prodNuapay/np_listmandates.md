@@ -17,6 +17,8 @@ The List Mandates request allows you to view a collection of mandates linked to 
 
 Use an appropriate URI (as described below) to return the required collection of Mandates.
 
+{% include urls.html %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

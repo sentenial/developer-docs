@@ -1,22 +1,22 @@
 ---
 title: Webhook Failure and Retry Support
 keywords: Webhooks Failure and Retry Support
-summary: "Where a Webhook notification fails to be delievered, the system will retry for a period of time. Details are provided below. "
+summary: "Details on Webhook notification failure, retry, batching and sequencing "
 sidebar: wh_sidebar
 permalink: wh_failandretry.html
 folder: prodOpenWebhooks
 ---
 
 
-## Failure and Retrying
-When a Webhook message is dispatched, the system expects the receiving endpoint to issue a successful response.
+## Failed Webhook Notification and Retry Mechanism
+When a Webhook notification is dispatched, the system expects the receiving endpoint to acknowledge receipt with an HTTP success status (200)
 
 Note that:
-* The Webhook module will timeout after **10 seconds** if the receiving endpoint has not responded.
-* Failed notifications are automatically retried. 
+* The Webhook module will timeout after **10 seconds** if the receiving endpoint has not acknowledged the receipt of the notification.
+* Failed notifications are retried based on the Retry strategy defined in the configuration of the webhook. 
 * You can configure your Webhook notifications to retry for a period of time e.g. for 1 day (this can be specified in the `retryNumberOfDays` - see [Create Webhook](wh_restcreate.html) or via the [UI](wh_config_ui.html#setting-up-a-webhook)). 
-* Notifications that fail to be delivered will be retried *every 30 minutes* until successful or until the configured retry period is reached.
-* After the retry period you can use an appropriate `GET` request to retrieve the details of any given resource. If you require the specific Webhook to be reissued after the retry period has elapsed, please contact the Support team.
+* Notifications that fail to be delivered will be retried *every 30 minutes* until successful or until the configured retry period is reached. After a final unsuccessful retry, the webhook notification is marked as Failed.
+* A `GET` request can also be used to retrieve the details of any given resource, where a Webhook notification has failed. If you require the specific Webhook to be reissued after the retry period has elapsed, please contact the Support team.
 
 ## Webhook Batching and Sequencing 
 

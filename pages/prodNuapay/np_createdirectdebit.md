@@ -20,6 +20,8 @@ A successful request will result in a Direct Debit being set up in <b>READY_FOR_
 {% include tip.html content="Nuapay allows you to create a mandate and a Direct Debit payment in a single API request. For more details on this see the [Create Direct Debit and Mandate](np_createddandmand.html) request." %}
 
 
+{% include urls.html %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
