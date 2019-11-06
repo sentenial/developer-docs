@@ -14,6 +14,8 @@ The List Accounts request allows you to view a collection of accounts linked to 
 
 {% include note.html content="Because there are no required fields in this request, if you do not want to provide any parameters, you must supply an empty JSON body using {}" %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

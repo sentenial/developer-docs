@@ -13,6 +13,7 @@ toc: false
 
 Use this request to view the details of an account by referencing the resource ID returned in the <a href="np_createaccount.html">Create Account</a> or <a href="np_listaccounts.html">List Accounts</a> calls.
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

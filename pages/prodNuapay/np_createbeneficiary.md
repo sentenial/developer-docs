@@ -19,6 +19,7 @@ Alternatively it is possible to generate a new beneficiary and a payment in a si
 
 {% include note.html content="at its most basic, a beneficiary requires a name and a bank account reference. Additional data may also be stored but is not mandatory (address details and contact details, for example)" %}
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

@@ -124,8 +124,7 @@ The following is an example of a Received Payment event JSON:
     "eventType": "PaymentRejected",
     "resourceTechnicalId": 500006,
     "resourceReference": "456H1123C6-32D9-5F99-5",
-    "resourceReferenceType": "EndToEndId",
-    "resourceDetails": {		
+    "resourceReferenceType": "EndToEndId",    
     "resourceUri": "/payments/n7rklmvdmq",
     "resourceType": "payment",
     "resourceOwner": "tc47ygrg72",

@@ -14,6 +14,7 @@ All Mandates include a PDF representation of the mandate data. If required you m
 
 The Retrieve Mandate Document call allows you to access the file representation of the mandate.
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

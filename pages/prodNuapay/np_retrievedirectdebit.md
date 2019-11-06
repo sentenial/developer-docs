@@ -21,6 +21,9 @@ The request requires that you provide the:
 * Resource Direct Debit ID
 
 
+{% include urls.html %}
+
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

@@ -14,7 +14,7 @@ The Create Payment Schedule request allows you to create either a Fixed-Length o
 
 The fixed-length schedule will result in a number of Direct Debit payments being created; an open-ended schedule will generate a single Direct Debit (with additional single payments being added as required, based on the configured frequency of the payments).
 
-
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

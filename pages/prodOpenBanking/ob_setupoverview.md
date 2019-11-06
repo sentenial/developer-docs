@@ -36,7 +36,6 @@ To generate a payment ID:
 1. Ensure that you have referenced your API Key or OAuth token in the request.
 1. The ``/payments`` service is described in <a href="ob_createpayment.html">Create Payment</a>.
 
-{% include tip.html content="To see an Open Banking payment page in action, see our Showcase sample: [Open BankingShowcase](https://merchant.nuapay.com/merchant/shop). If you select the Ozone Bank, use mits and mits as user name and password. If you select Nuapay as your bank then user name and password is psu and psu." %}
 
 ## Adding the CSS and JS File References
 

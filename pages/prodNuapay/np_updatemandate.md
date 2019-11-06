@@ -18,6 +18,7 @@ We would recommend that a mandate is approved by your payer if any of the follow
 * The Unique Mandate Reference (the SEPA Mandate ID)
 * Payer account data
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

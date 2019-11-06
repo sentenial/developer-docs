@@ -18,6 +18,8 @@ Along with offering the service to `Request Access Token for Organisation`, a nu
 [Gatekeeper](https://github.com/sentenial/gatekeeper-swagger){:target="_blank"}</div>
 
 
+{% include urls.html %}
+
 ## Revoke a Token for an Organisation
 
 Use this service if you want to revoke a token for a specific `encodedOrganisationId` and `tokenId`

@@ -14,6 +14,8 @@ The Retrieve Webhook service allows you to pass a Webhook Identifier in your req
 
 {% include swagger_wh.html %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

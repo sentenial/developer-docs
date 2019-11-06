@@ -14,7 +14,7 @@ The Retrieve Mandate call allows you to view the details of a specific mandate a
 
 The request requires that you provide the Mandate resource identifier (as returned in the <a href="np_createmandate.html">Create Mandate</a> call)
 
-
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

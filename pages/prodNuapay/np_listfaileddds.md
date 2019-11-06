@@ -32,6 +32,9 @@ The List Failed Direct Debits request allows you to return a list of all technic
 {% include note.html content="Optionally you can use the technicalrejects boolean in your request. If technicalrejects is true then all Bank rejects and all technical rejects are returned; if set to false then only Bank rejects are returned." %}
 
 
+{% include urls.html %}
+
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

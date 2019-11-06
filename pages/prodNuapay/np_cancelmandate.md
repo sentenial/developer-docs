@@ -18,6 +18,8 @@ toc: false
 <p>If you want to engage with your payer at a later point and want to take direct debit payments, you will need to create a new mandate.</p>
 
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

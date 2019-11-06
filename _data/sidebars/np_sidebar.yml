@@ -267,7 +267,7 @@ entries:
           output: web
 
         - title: List Account Balances
-          url: /np_listaccountbal.html
+          url: /np_listaccountbals.html
           output: web
 
         - title: View Transaction

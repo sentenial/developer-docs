@@ -41,11 +41,12 @@ We offer two separate endpoints for our E-Mandates API:
 
 ## Configurations
 
-{% include important.html content="Specific configurations must be carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this." %}
+{% include important.html content="Specific configurations must be carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this. It is possible to view your current settings via the [GET /conversations/settings](em_conversation_settings.html) service." %}
 
 The following E-Mandate configurations may be customised for you as required:
 
 
+|Authentication Method| E-mandates may be signed via a **check box**, via **SMS** or through **Email**. Where SMS or Email is selected as the authenticatioin method, users receive a unique code (through either SMS or via Email) that they must supply when prompted, to sign the mandate.| 
 |Email Alert|If turned on this setting will dispatch an email to notify you (the merchant) that a new e-mandate has been signed. This feature is particularly useful for smaller businesses with low volumes.|
 |Logo| A custom logo can be displayed on the E-Mandate application - suitable for Redirect and Overlay implementations.|
 |Third-Party Signing | A flag to indicate if additional third-party authorization is enabled. We partner with Morpho for mandates originating in France, for example, to provide an extra layer of archiving and traceability to protect your business against Refund claims. More suitable for larger businesses, please discuss your needs with our Customer Support team if you feel that this would be beneficial for your business.|

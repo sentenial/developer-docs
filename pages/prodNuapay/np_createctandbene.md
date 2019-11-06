@@ -16,6 +16,8 @@ The Create Credit Transfer request requires that you have first created a benefi
 
 {% include note.html content="If the beneficiary details you reference in the request have been previously provided (and that beneficiary is already stored against your merchant profile) Nuapay will reuse that stored beneficiary data: a new beneficiary is only created if his/her beneficiary account has not been referenced before in a previous Credit Transfer payment." %}
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>

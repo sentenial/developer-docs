@@ -18,6 +18,7 @@ In an open-ended schedule the current READY FOR EXPORT payment is updated to Can
 
 (See <a href="np_ddstatuses.html">Direct Debit Statuses</a> for more information on the various payment statuses that are possible).
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

@@ -16,6 +16,7 @@ The <b>Create Payment Schedule and Mandate</b> request allows you to combine the
 
 {% include note.html content="A successful request will result in a new mandate and a schedule of direct debits being created. If the request is unsuccessful neither a mandate nor any direct debits will be created." %}
 
+{% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>

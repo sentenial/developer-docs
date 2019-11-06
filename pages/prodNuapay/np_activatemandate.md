@@ -17,6 +17,8 @@ toc: false
 <p>If you are using E-Mandates, the activate mandate request is dynamically called and may (optionally) include details related to the electronic signing event (IP Address, location of the signature, the mobile phone or email address used)</p>
 
 
+{% include urls.html %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
