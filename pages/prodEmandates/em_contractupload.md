@@ -17,6 +17,8 @@ You may use a `contractType` = OOFF or RCUR.
 * Once-Off (OOFF) contracts are just used once in a single signing operation. 
 * Recurring (RCUR) contracts can be re-used in multiple signing operations; this is useful where your business uses a standard contract and you want to offer all your customers the same PDF contract document.
 
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    
