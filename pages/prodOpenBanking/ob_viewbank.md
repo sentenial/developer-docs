@@ -14,6 +14,9 @@ Pass a BankID to this endpoint to return details of a specific ASPSP.
 
 {% include swagger_ob.html %}
 
+
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    
