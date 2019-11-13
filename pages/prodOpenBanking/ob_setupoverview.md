@@ -65,7 +65,7 @@ At this point you have:
 To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the example below:
 
 ````
-<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;’https://sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
+<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;‘https://sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
 
 ````
 
@@ -73,10 +73,18 @@ This button will open the Select Banks pop-up for the Payment ID ``gabxrlvbl5``
 
 ``https://sandbox.nuapay.com/tpp-ui/`` is the location of the Nuapay TPP User Interface, which will allow your customers to select their bank.
 
+
+{% include tip.html content="To avoid any issues with **pop-up blockers**, we recommend that you request your users to: <br/>
+<br/>1. Click a button to pay by Open Banking (allowing you to retrieve the paymentId) 
+<br/>2. Click a second button to choose a bank (launching the pop-up with the paymentId retrieved in step 1)
+<br/><br/>Because launching the Select Bank screen in step 2 is a user-initiated action, your users will not be prompted to enable pop-ups.
+" %}
+
 Note that there is a Sandbox and Production TPP for this so you will need to specify the correct URL based on whether you are testing or working in Production:
 
 |SANDBOX|https://sandbox.nuapay.com/tpp-ui/|
 |PRODUCTION| https://api.nuapay.com/tpp-ui/|
+
 
 ## Adding a Listener
 
