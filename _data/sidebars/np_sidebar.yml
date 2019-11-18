@@ -274,7 +274,7 @@ entries:
           url: /np_viewtransaction.html
           output: web
  
-        - title: List Transaction
+        - title: List Transactions
           url: /np_listtransactions.html
           output: web
 

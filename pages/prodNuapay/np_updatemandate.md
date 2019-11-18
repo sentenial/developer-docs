@@ -18,84 +18,30 @@ We would recommend that a mandate is approved by your payer if any of the follow
 * The Unique Mandate Reference (the SEPA Mandate ID)
 * Payer account data
 
+{% include swagger_np.html %}
+
 {% include urls.html %}
 
+
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
-    <li><a href="#about" data-toggle="tab">Response</a></li>
+    
    
 </ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
+   
+{% include redoc.html %}
+   
+loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/editMandateUsingPUT','#profileTabs',timerRef); }, 500);
 
 
-  <table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
+</script>
 
-<tbody>
-<tr>
-<td markdown="span">Usage</td>
-<td markdown="span">You can update mandates in Pending and Active status</td>
-</tr>
-<tr>
-<td markdown="span">Method</td>
-<td markdown="span"><span class="label label-primary">PUT </span>
-</td>
-</tr>
-<tr>
-<td markdown="span">URI</td>
-<td markdown="span">/schemes/{CS_ID}/mandates/{MANDATE_ID}
-</td>
-</tr>
-</tbody>
-</table>
 
-<p>The <b>mandateInfo.resendMandateForSignature</b> argument allows you to control if your payer should re-sign the updated mandate: </p>
-
-<table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
-
-<tbody>
-<tr>
-<td markdown="span">DEFAULT</td>
-<td markdown="span">the mandate is updated from Active to Pending if a key mandate field (see above) is modified .</td>
-</tr>
-<tr>
-<td markdown="span">SEND</td>
-<td markdown="span">the mandate is always updated from Active to Pending for any mandate update.
-</td>
-</tr>
-<tr>
-<td markdown="span">DO_NOT_SEND</td>
-<td markdown="span">the mandate remains in Active status regardless of the modification to the mandate.
-</td>
-</tr>
-</tbody>
-</table>
-
+<div id="mydiv"></div>
+</div>
 </div>
 
-<div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>200 OK</b> response code.</p>
-<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
-      {% include httpcodes.html %}
-    
-    
-    </div>
 
-
-</div>
-
-<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#update-mandate" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
-
-
-<!--{% include swaggerlink.html %}-->
 
 
 
