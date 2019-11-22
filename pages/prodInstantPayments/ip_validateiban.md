@@ -19,6 +19,10 @@ Accounts may fail validation for various reasons. For a table listing the possib
 
 ## API Details
 
+{% include swagger_ip.html %}
+
+{% include urls.html %}
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    

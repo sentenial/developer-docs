@@ -18,6 +18,8 @@ You must provide the transaction's unique URI as a GET request:
 
 ## API Details
 
+{% include swagger_ip.html %}
+
 {% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">

@@ -14,6 +14,8 @@ Use the Create Instant Payment service to create an SCT Inst instruction in Orig
 
 ## API Details
 
+{% include swagger_ip.html %}
+
 {% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">

@@ -215,8 +215,9 @@ The various statuses possible are presented below in a table and as a state diag
 
  {% include image.html file="ob_paymentStatus.png" url="images/ob_paymentStatus.png" target = "_new" alt="Payment Statuses" caption="Payment Statuses" %}
 
+</div>
+</div>
 
-<!--{% include image-map-obuk.html %}-->
  
 
 
