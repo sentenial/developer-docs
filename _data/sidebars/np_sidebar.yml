@@ -359,6 +359,10 @@ entries:
       url: /np_usecases.html
       output: web, pdf          
 
+    - title: HTTP Response Codes
+      url: /np_httpreasons.html
+      output: web, pdf          
+
     - title: SEPA Reason Codes
       url: /np_separeasons.html
       output: web, pdf          
