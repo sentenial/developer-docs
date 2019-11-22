@@ -222,3 +222,12 @@ entries:
         - title: E-Mandate Signature
           url: /em_whmandsignature.html
           output: web
+      
+  - title: Resources
+    output: web, pdf
+    folderitems:  
+    
+    - title: HTTP Response Codes
+      url: /em_httpreasons.html
+      output: web, pdf      
+          
