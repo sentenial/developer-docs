@@ -15,6 +15,7 @@
 412             | Precondition Failed               | A conditions has not been met to process the request; this might happen where a timestamp provided is too old, for example.
 415             | Unsupported Media Type            | An incorrect content type has been provided as part of a request (e.g. something other than "application/json").
 422             | Unprocessable Entity              | Returned in the response where there are validation errors. More details will be provided in response body (see the Error Codes section below).
+429             | Too Many Requests                 | Indicates that too many requests have been generated in a given amount of time.
 500             | Internal Server Error             | There is a problem with our server. Try again later and if the problem persists contact the Nuapay application support team.
 501             | Not Implemented                   | This response will be returned where a service has not yet been developed or published.
 503             | Service Unavailable               | We're temporarially offline for maintanance. Please try again later.
