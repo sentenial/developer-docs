@@ -20,55 +20,29 @@ toc: false
 <p>If you lose this reference or if you have multiple CSIDs and want to review them all, you can use the List Creditor Schemes request. You will use this resource identifier CSID/SUN in all subsequent Mandate and Direct Debit requests.</p>
 
 
+{% include swagger_np.html %}
+
+{% include urls.html %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
-    <li><a href="#about" data-toggle="tab">Response</a></li>
+    
    
 </ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
+   
+{% include redoc.html %}
+   
+loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/listCreditorSchemesUsingGET','#profileTabs',timerRef); }, 500);
 
 
-  <table>
-<colgroup>
-<col width="30%" />
-<col width="90%" />
-</colgroup>
-
-<tbody>
-<tr>
-<td markdown="span">Usage</td>
-<td markdown="span">Generally you will just need to make this request once</td>
-</tr>
-<tr>
-<td markdown="span">Method</td>
-<td markdown="span"><span class="label label-success">GET </span>
-</td>
-</tr>
-<tr>
-<td markdown="span">URI</td>
-<td markdown="span">/schemes
-</td>
-</tr>
-</tbody>
-</table>
+</script>
 
 
-
+<div id="mydiv"></div>
+</div>
 </div>
 
-<div role="tabpanel" class="tab-pane" id="about">
-<p>A successful request will return a <b>200 Created</b> response code</p>
-<p>The following is the complete list of possible status codes, which may be returned in the response:</p>
-    {% include httpcodes.html %}
-    
- 
-    </div>
-
-
-</div>
-
-<b>Note:</b> For a more detailed view of this API see the: <a href="https://docs.nuapay.com/v1/#list-creditor-schemes" target = '_blank'><i class="fa fa-cogs"></i> API Reference</a>
 
 {% include links.html %}
+

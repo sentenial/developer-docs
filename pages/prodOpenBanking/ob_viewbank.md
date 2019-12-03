@@ -12,6 +12,8 @@ toc: false
 
 Pass a BankID to this endpoint to return details of a specific ASPSP.
 
+{% include warning.html content="This service is not currently implemented." %}
+
 {% include swagger_ob.html %}
 
 

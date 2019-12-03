@@ -10,7 +10,7 @@ folder: prodOpenBanking
 Nuapay provides the option to  interact with Open Banking as an individual Merchant or as a Partner entity (with the ability to call services on behalf of specific merchants linked to that entity).
 
 |Merchant| A single entity; calls Nuapay Open Banking APIs for itself|
-|Partner| An entity with one or more child merchants linked to it; calls Nuapay Open Banking APIs on behalf of individual merchants (using OAuth token to reference the required merchant entity)|
+|Partner| An entity with one or more child merchants linked to it; calls Nuapay Open Banking APIs on behalf of individual merchants (using an OAuth token to reference the required merchant entity)|
 
 
 ## Merchant Integration
@@ -19,8 +19,11 @@ As a merchant:
 
 1. Nuapay Customer Support will issue you with an API Key, unique to your business,  when first onboarded.
 1. Use this key to authenticate your API requests (Basic Auth).
+1. Or, alternatively, use your API key to generate OAuth tokens.
 
 For more on this see [Merchant Integration](ob_merchantintegration.html).
+
+
 
 ## Partner Integration
 

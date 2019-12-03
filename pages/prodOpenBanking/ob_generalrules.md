@@ -10,7 +10,7 @@ folder: prodOpenBanking
 <p>Note that all requests must:</p>
 
 * Be sent via the HTTPS protocol
-* Pass a specific encoded API Key (for merchant integrations) or a unique OAuth token (for partner integrations), for authentication
+* Pass a specific encoded API Key or a unique OAuth token for authentication
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
 

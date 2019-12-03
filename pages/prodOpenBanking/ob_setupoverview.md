@@ -134,7 +134,7 @@ Here we are checking that the event is a closed event, in this example the merch
 The call is to ``/merchant/status?id=gabxrlvbl5``
 
 
-{% include note.html content="On closing of the pop-up window you must make a server-to-server call to retrieve the payment status (using the [Retrieve Payment](ob_retrievepayment.html) service)." %}
+{% include note.html content="On closing of the pop-up window you must make a server-to-server call to retrieve the payment status (using the [Retrieve Payment](ob_retrievepayment.html) service). See [Payment Statuses](ob_paymentstatuses.html) for more on the possible statuses." %}
 
 ## The End-User Experience
 
