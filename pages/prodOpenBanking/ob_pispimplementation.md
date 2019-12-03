@@ -20,7 +20,7 @@ Your PISP checkout page may be implemented in one of two ways:
 
 In **Checkout** mode you will: 
 
-1. Retrieve the appropriate authorisation (merchants will typically use their API Key; partners will need to provide an OAuth token for the required merchant).
+1. Retrieve the appropriate authorisation (API Key or OAuth token).
 1. Call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`
 1. Manage the returned payment identifier with some Nuapay-provided JS and CSS to render the Bank Selection screen for your payers. 
 
@@ -47,7 +47,7 @@ A detailed overview of the various steps involved in this flow is provided in th
 
 {% include note.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 
-{% include image.html file="ob_checkout_flow.png" url="images/ob_selfhosted_flow.png" target = "_new" alt="Self-Hosted Flow" caption="SELF_HOSTED Flow" %}
+{% include image.html file="ob_selfhosted_flow.png" url="images/ob_selfhosted_flow.png" target = "_new" alt="Self-Hosted Flow" caption="SELF_HOSTED Flow" %}
 
 
 For more on this see [Self-Hosted Payment Page Setup](ob_selfsetupoverview.html)

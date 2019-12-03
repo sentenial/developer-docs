@@ -56,8 +56,7 @@ A password is not required, however the request must be made from an allowed IP 
 
 ## API Details - GET /organisations
 
-<div markdown="span" class="alert alert-info" role="alert"><i class="fab fa-github"></i> <b>Swagger Reference:</b>
-[Gatekeeper](https://github.com/sentenial/gatekeeper-swagger){:target="_blank"}</div>
+{% include swagger_gk.html %}
 
 Use the `/organisations` endpoint to retrive the organisations linked to your partner entity:
 

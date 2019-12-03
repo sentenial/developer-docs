@@ -194,6 +194,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: HTTP Response Codes
+      url: /ob_httpreasons.html
+      output: web, pdf   
+
     - title: FAQs
       url: /ob_faq.html
       output: web, pdf
