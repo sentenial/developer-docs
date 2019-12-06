@@ -19,6 +19,21 @@ It is possible to define the logo that is displayed on the E-Mandate screens and
 
 If you would like to set up the logo, please provide a URL reference for the logo to your Account Manager (e.g. the URL to the logo you use on your Web site); the Nuapay Client Support team will handle the configuration.
 
+## Debtor Communication
+
+You may configure E-Mandates to dispatch email communications to your users in response to certain events. When enabled, and depending on your overall configuration, users will receive emails that:
+
+* Prompt them to sign an e-mandate
+* Give them the authentication code to sign mandates (if the authorisation method is via email).
+* Confirm activation
+
+In addition you, as a merchant, may be configured to receive an email notifying you when a mandate has been signed. (This feature is more appropriate for smaller merchants).
+
+By default, email will be issued with the sender domain = Sentenial e.g. `emandates@sentenial.com`. 
+
+If you would prefer to use your own domain in the email notifications, it is possible to configure this but you will need to make some modifications at your DNS Provider: see [Email Customisation](em_communications.html) for more on this.
+
+
 ## Primary, Secondary and Border Colours
 
 The **Primary** and **Secondary** colours define how the buttons are rendered on the E-Mandate screens:
@@ -85,6 +100,7 @@ For **Failure**:
 
 |Description| Failure - where something has gone wrong and the mandate has not been signed|
 |Default| https://customer.nuapay.com/mandate-signing-issue/ |
+
 
 
 {% include links.html %}
