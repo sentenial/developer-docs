@@ -234,4 +234,7 @@ entries:
     - title: HTTP Response Codes
       url: /em_httpreasons.html
       output: web, pdf      
-          
+    
+    - title: Email Customisation 
+      url: /em_communications.html
+      output: web, pdf               
