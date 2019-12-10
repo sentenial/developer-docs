@@ -19,7 +19,7 @@ The participating ASPSPs are returned in order of popularity (dynamically determ
 {% include swagger_ob.html %}
 
 
-{% include urls.html %}
+{% include urls-ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     
