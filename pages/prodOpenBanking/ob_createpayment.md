@@ -54,7 +54,7 @@ Example: Sort Code = 12-34-56 & Account = 87654321 gives:
 
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
 
-{% include urls.html %}
+{% include urls-ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     

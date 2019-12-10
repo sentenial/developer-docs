@@ -24,7 +24,7 @@ Once the payment is successfully refunded (with funds disbursed to your customer
 {% include swagger_ob.html %}
 
 
-{% include urls.html %}
+{% include urls-ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
     
