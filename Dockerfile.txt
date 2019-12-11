@@ -1,0 +1,11 @@
+FROM jekyll/builder
+
+WORKDIR /tmp
+ADD Gemfile /tmp/
+RUN bundle install
+
+VOLUME /src
+EXPOSE 4000
+
+WORKDIR /src
+ENTRYPOINT ["ALGOLIA_API_KEY='217b775e53fe3faae7c9f5075a39321a'", "bundle", "exec", "jekyll", "algolia"]
