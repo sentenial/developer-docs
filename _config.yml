@@ -1,6 +1,6 @@
 repository: sentenial/developer-docs
 
-plugins:
+plugins_dir:
   - jekyll-target-blank
 
 output: web
