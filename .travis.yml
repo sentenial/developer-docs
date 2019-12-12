@@ -9,6 +9,6 @@ script:
 branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
-    - gh-pages
+    - master
 rvm:
  - 2.4.5
