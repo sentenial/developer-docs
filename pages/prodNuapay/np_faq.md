@@ -2,7 +2,7 @@
 title: FAQs
 permalink: np_faq.html
 sidebar: np_sidebar
-keywords: frequently asked questions, FAQ, question and answer
+keywords: frequently asked questions, FAQs, questions and answers
 summary: "Frequently Asked Questions have been provided here and arranged based on various Nuapay areas."
 toc: false
 folder: prodNuapay
