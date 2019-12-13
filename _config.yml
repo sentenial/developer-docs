@@ -23,8 +23,8 @@ github_editme_path: sentenial/developer-docs/blob/master/
 # if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 algolia:
-  application_id: LALAI3RLAJ
-  index_name:     devDocs # You can replace that with whatever name you want
+  application_id: 'LALAI3RLAJ'
+  index_name:     'devDocs' # You can replace that with whatever name you want
 
 disqus_shortname: 
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
