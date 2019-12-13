@@ -10,6 +10,6 @@ branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
     - master
-exclude: [vendor]
+exclude: vendor
 rvm:
- - 2.4
+ - 2.4.6
