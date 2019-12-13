@@ -13,7 +13,7 @@ toc: false
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>IncomingCreditTransfer</b>
+This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 
 
 ## Webhook Event Message Details
