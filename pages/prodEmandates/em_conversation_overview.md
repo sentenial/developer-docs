@@ -28,8 +28,8 @@ The following conversation steps are available (with links to the Swagger defini
 These services can be used when you need to implement a specific flow. 
 The following implementations examples show how you can work with the conversation APIs to:
 
-* [Set up SMS Authentication](em_conversation_settings.html)
-* [Resend a One-Time-Password](em_conversation_resend_settings.html)
+* [Set up SMS Authentication](em_conversation_settings.html) (EXAMPLE 1)
+* [Resend a One-Time-Password](em_conversation_resend_settings.html) (EXAMPLE 2)
 <!--* Contract Signing-->
 
 
