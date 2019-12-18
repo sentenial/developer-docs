@@ -157,7 +157,7 @@ entries:
       output: web, pdf
       
       subfolders:
-      - title: SMS Authentication Conversation 
+      - title: EXAMPLE 1 - SMS Authentication 
         output: web
         subfolderitems:
 
@@ -177,7 +177,7 @@ entries:
           url: /em_conversation_confirm.html
           output: web                      
       
-      - title: Resend OTP Conversation 
+      - title: EXAMPLE 2 - Resend OTP
         output: web
         subfolderitems:
 
