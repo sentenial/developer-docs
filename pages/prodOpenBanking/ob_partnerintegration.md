@@ -30,7 +30,7 @@ Nuapay offers two Partner models allowing you to connect to Nuapay as a:
 * An Open Banking TPP license.
 * To provide Sentenial with your eIDAS certificate (QWAC and QSEAL).
 * To allow Sentenial generate Software Statement Assertions(SSA) and OBUK specific PKI key pairs.
-* Sentenial establish relationships with each of the ASPSPs for you.
+* Sentenial establishes relationships with each of the ASPSPs for you.
 
 Note that:
 
