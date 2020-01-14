@@ -28,13 +28,15 @@ Nuapay offers two Partner models allowing you to connect to Nuapay as a:
  You will need: 
  
 * An Open Banking TPP license.
-* To provide us with your eIDAS certificate (QWAC and QSEAL).
-* To provide us with a Software Statement Assertion (SSA) file to allow Nuapay to establish relationships with each of the ASPSPs.
+* To provide Sentenial with your eIDAS certificate (QWAC and QSEAL).
+* To provide Sentenial access to generate Software Statement Assertions(SSA)
+* Sentenial establish relationships with each of the ASPSPs for you.
 
 Note that:
 
-* APIs are white labelled as `partnerdomain.com` (you must point your DNS records to the Nuapay infrastructure).
-* The ASPSP OAuth Callback is white labelled as `callback.partnerdomain.com` (you point your DNS records to the Nuapay infrastructure).
+* REST APIs can be white labelled as `partnerdomain.com` (you must point your DNS records to the Nuapay infrastructure).
+* The Openbanking ASPSP OAuth Callback domains can be whitelabelled too `callback.partnerdomain.com` (you point your DNS records to the Nuapay infrastructure).
+* We recommend three callback domains to be registered `callback1.partnerdomain.com`, `callback2.partnerdomain.com` and `callback3.partnerdomain.com`. This allows for flexability in routng OAuth responses.
 * A 'Powered by Partner' logo/notification can be displayed on the checkout window.
 
 {% include note.html content="If you want to use Nuapay as a Technical Service Provider and meet the criteria above, please contact your account manager; your domain, callback URLs and any white-labelling will need to be configured as per your requirements." %}
