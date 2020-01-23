@@ -19,7 +19,7 @@ For details of the individual Open Banking events that trigger Webhook notificat
 |Payment Reversed|[LINK](ob_whrreversed.html)|
 |Payment in Progress|[LINK](ob_whpaymentinprogress.html)|
 |Payment Complete|[LINK](ob_whpaymentcomplete.html)|
-|Paymnent Rejected|[LINK](ob_whpaymentrejected.html)|
+|Payment Rejected|[LINK](ob_whpaymentrejected.html)|
 |Payment Timeout|[LINK](ob_whpaymenttimeout.html)|
 
 
