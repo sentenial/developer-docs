@@ -15,6 +15,8 @@ The participating ASPSPs are returned in order of popularity (dynamically determ
 
 {% include tip.html content="Only one test bank (NUAPAY ASPSP OPENIDCONNECT) is available on the Sandbox environment." %}
 
+Where you specify two or more value for the `supportedcurrencies` array (in the Query Parameters of your request), the ASPSPs returned will support either currency; so the parameter is treated as a logical OR (not as an AND).
+
 
 {% include swagger_ob.html %}
 
