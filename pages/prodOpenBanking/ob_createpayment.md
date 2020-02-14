@@ -15,7 +15,13 @@ The Create Payment service generates an Open Banking payment object, returning a
 {% include swagger_ob.html %}
 
 
+## Idempotency in Payment Requests
+
 {% include tip.html content="We recommend that you use a unique idempotency key with each unique Create Open Banking Payment request. The **Idempotency-Key** is a Header parameter in this API." %}
+
+
+The Idempotency check is only against successful payments, so where a previous payment request has resulted in any of the following [HTTP Response Codes](ob_httpreasons.html), that Idempotency key may be reused without any issue:`401`, `403`, `404`, `408`, `500`, `501`, `503`
+
 
 ## Providing a Payment Reference
 
@@ -33,7 +39,7 @@ Payment identifiers have two attributes:
 
 The reference must be unique per merchant account within the defined time to live. If you require a variation on the default time-to-live setting of 3 days, please contact your account manager who will update your configuration as required.
 
-Where you reuse a reference, which was linked to a previously generate payment, and it is referenced within the time-to-live limit, your request will result in a 422 response: Duplicate Reference provided.
+Where you reuse a reference, which was linked to a previously generated payment, and it is referenced within the time-to-live limit, your request will result in a `422` response: Duplicate Reference provided.
 
 ## Providing the Debtor Account
 
@@ -72,12 +78,6 @@ Example: Sort Code = 12-34-56 & Account = 87654321 gives:
 
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
 
-
-## Idempotency in Payment Requests
-
-We recommend thast every request should include an `Idempotecny-Key` as a Header parameter. The Idempotency check will ensure that no duplicate payments are created in error. 
-
-|The Idempotency check is only against successful payments so where a previous payment request has resulted in any of the following HTTP statuses, that Idempotency key may be reused without any issue:`401`, `403`, `404`, `408`, `500`, `501`, `503`|
 
 
 {% include urls-ob.html %}
