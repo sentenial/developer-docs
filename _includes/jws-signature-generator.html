@@ -73,7 +73,7 @@ function sign(alg, spHeader, spPayload, key, pass) {
 {
   "alg": "RS256",
   "kid": "PASTE YOUR SERIAL HERE",
-  "iat": PASTE THE CURRENT DATETIME (UNIX EPOCH HERE),
+  "iat": PASTE THE CURRENT DATETIME (UNIX EPOCH HERE - Timestamp in milliseconds),
   "iss": "C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=PASTE YOUR COMMON NAME HERE",
   "b64": false,
   "crit": ["iat","iss","b64"]

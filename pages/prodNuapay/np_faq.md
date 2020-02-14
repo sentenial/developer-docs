@@ -2,7 +2,7 @@
 title: FAQs
 permalink: np_faq.html
 sidebar: np_sidebar
-keywords: frequently asked questions, FAQs, questions and answers
+keywords: frequently asked questions, FAQs, questions and answers, TLS
 summary: "Frequently Asked Questions have been provided here and arranged based on various Nuapay areas."
 toc: false
 folder: prodNuapay
@@ -387,7 +387,28 @@ folder: prodNuapay
                     </div>
                     <!-- /.panel -->
                     
+
+
+
+<h2>Technical</h2>                    
+                  <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse23">'Authentication failed because the remote party has closed the transport stream' error</a>
+                            </h4>
+                        </div>
+                        <div id="collapse23" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>This error is generally related to you application's default security protocol type being set too low. We recommend TLS 1.2 or above. Check out <a href = 'https://codeshare.co.uk/blog/how-to-fix-the-error-authentication-failed-because-the-remote-party-has-closed-the-transport-stream/'>codeshare.co.uk</a> for more information on how to reolve this.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+
 </div>
+
 <!-- /.panel-group -->
 
 {% include links.html %}

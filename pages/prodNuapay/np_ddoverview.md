@@ -25,7 +25,6 @@ folder: prodNuapay
 |<b>Remittance information</b>      | allows you to provide any additional information related to the payment.|
 
 
-
 ## Prerequisites 
 
 <p>Before you can set up any payments via the API please note that you must:</p>

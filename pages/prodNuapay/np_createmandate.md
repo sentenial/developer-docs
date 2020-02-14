@@ -14,8 +14,8 @@ toc: false
 
 ## API Details
 
-<p>Mandates must be created under a specific scheme (typically the SEPA CORE scheme) and must also be linked to a Creditor Scheme ID (CSID). (To determine your CSID use the <a href="np_listcredscheme.html"> List Creditor Schemes</a> API request).</p> 
-<p>Depending on the configuration of your Creditor Scheme your mandates will be created in a specific status. Note that Direct Debit payments can only be created against an Active mandate.</p>
+<p>Mandates must be created under a specific scheme (e.g. the SEPA CORE or Bacs scheme) and must also be linked to a Creditor Scheme ID (CSID) in SEPA or a Service User Number (SUN) for Bacs. (To determine your CSID/SUN use the <a href="np_listcredscheme.html"> List Creditor Schemes</a> API request).</p> 
+<p>Depending on the configuration of your Creditor Scheme your mandates will be created in a specific status. Note that, regardless of the scheme, Direct Debit payments can only be created against an Active mandate.</p>
 
 {% include swagger_np.html %}
 

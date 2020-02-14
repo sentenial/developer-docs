@@ -59,15 +59,26 @@ entries:
         - title: General API Rules
           url: /np_generalrules.html
           output: web, pdf
-
-        - title: List Creditor Schemes
-          url: /np_listcredscheme.html
-          output: web, pdf
+       
 
         - title: Response Handling
           url: /np_responsehandling.html
           output: web, pdf
-  
+
+  - title: Creditor Schemes
+    output: web, pdf
+    folderitems:  
+
+
+    - title: Overview
+      url: /np_schemeoverview.html
+      output: web, pdf    
+
+    - title: List Creditor Schemes
+      url: /np_listcredscheme.html
+      output: web, pdf  
+
+    
   - title: Mandates
     output: web, pdf
     folderitems:

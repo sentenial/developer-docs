@@ -5,7 +5,7 @@ summary: "Create Open Banking Payment RESTful API"
 sidebar: ob_sidebar
 permalink: ob_createpayment.html
 folder: prodOpenBanking
-toc: false
+toc: true
 ---
 
 ## API Details 
@@ -16,6 +16,24 @@ The Create Payment service generates an Open Banking payment object, returning a
 
 
 {% include tip.html content="We recommend that you use a unique idempotency key with each unique Create Open Banking Payment request. The **Idempotency-Key** is a Header parameter in this API." %}
+
+## Providing a Payment Reference
+
+You have the option to provide your own identifier to your transactions (the default) or, if you would prefer, a unique system-generated identifier may be automatically applied. 
+
+If your configuration requires that merchant-generated references must be provided, please note that:
+
+* For GB payments `remittanceInformation.refererence` must be a maximum of 18 characters
+* For non-GB payments 35 characters are allowed.
+
+Payment identifiers have two attributes:
+
+* The reference itself
+* The reference’s time to live (default is 3 days)
+
+The reference must be unique per merchant account within the defined time to live. If you require a variation on the default time-to-live setting of 3 days, please contact your account manager who will update your configuration as required.
+
+Where you reuse a reference, which was linked to a previously generate payment, and it is referenced within the time-to-live limit, your request will result in a 422 response: Duplicate Reference provided.
 
 ## Providing the Debtor Account
 
@@ -53,6 +71,14 @@ Example: Sort Code = 12-34-56 & Account = 87654321 gives:
 </pre>
 
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
+
+
+## Idempotency in Payment Requests
+
+We recommend thast every request should include an `Idempotecny-Key` as a Header parameter. The Idempotency check will ensure that no duplicate payments are created in error. 
+
+|The Idempotency check is only against successful payments so where a previous payment request has resulted in any of the following HTTP statuses, that Idempotency key may be reused without any issue:`401`, `403`, `404`, `408`, `500`, `501`, `503`|
+
 
 {% include urls-ob.html %}
 

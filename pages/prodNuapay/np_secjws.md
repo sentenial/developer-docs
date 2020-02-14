@@ -11,7 +11,7 @@ folder: prodNuapay
 
 The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requests made to certain endpoints (Beneficiary creation and CT creation, for example). Having this header indicates that you have signed the request with your private key. Any requests to these specific endpoints that do not include the Javascript Object Signing and Encryption (JOSE) header will fail.
 
-{% include callout.html content="We require that you use a JWS signature for these types of requests for the pusposes of non-repudiation. By providing a JWS signature you are ensuring that you, as merchant, have generated the request; no other party has been involved; no tampering has occurred.." type="primary" %} 
+{% include callout.html content="We require that you use a JWS signature for these types of requests for the purposes of non-repudiation. By providing a JWS signature you are ensuring that you, as merchant, have generated the request; no other party has been involved; no tampering has occurred.." type="primary" %} 
 
 
 ## Steps Required to Generate a Valid Header
@@ -162,3 +162,5 @@ In order to generate the JOSE Header you'll need to extract certain details from
 	</table>
 	
     <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
+    
+    {% include note.html content="If you are working on the Sandbox environment and then move to Production you will need to generate a separate JWS." %}
