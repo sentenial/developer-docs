@@ -164,10 +164,20 @@ The various statuses possible are presented below in a table and as a state diag
       <td>Yes</td>
       <td>Yes</td>
       <td><a href="ob_whpaymenttimeout.html">PaymentTimeout</a></td>
+    </tr>      
+    
+     <tr>
+      <td><code class="highlighter-rouge">REFUND_PENDING</code></td>
+      <td>The merchant has initiated a refund; it may be successfully processed or it may be rejected. </td>
+       <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>N/A</td>
     </tr>
+    
     <tr>
       <td><code class="highlighter-rouge">PAYMENT_REVERSED</code></td>
-      <td>A payment that was previously received is credited back to the PSU. A payment is typically reversed where the merchant deems it appropriate to refund a customer (following a complaint, for example).</td>
+      <td>A payment that was previously received is successfully refunded/credited back to the PSU. A payment is typically reversed where the merchant deems it appropriate to refund a customer (following a complaint, for example).</td>
        <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
@@ -175,7 +185,7 @@ The various statuses possible are presented below in a table and as a state diag
     </tr>
     <tr>
       <td><code class="highlighter-rouge">PAYMENT_REVERSAL_REJECTED</code></td>
-      <td>A payment credited to the PSU has been rejected by the beneficiary bank for a specific reason (e.g. the account is closed).</td>
+      <td>A refund payment credited to the PSU has been rejected by the beneficiary bank for a specific reason (e.g. the account is closed).</td>
        <td>Yes</td>
       <td>Yes</td>
       <td>No</td>

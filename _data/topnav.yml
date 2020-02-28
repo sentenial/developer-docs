@@ -29,7 +29,7 @@ topnav_dropdowns:
 #          url: /index.html
         - title: Product Overview
           url: /prod_overview.html
-        - title: Nuapay
+        - title: Direct Debits & Credit Transfers
           url: /np_landing_page.html
         - title: Electronic Mandates
           url: /em_landing_page.html
