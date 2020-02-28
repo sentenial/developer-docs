@@ -44,5 +44,5 @@ For more information on electronic mandates, see the <a href ="em_landing_page.h
 
 
 {% include links.html %}
-{% include snow.html %}
+
 

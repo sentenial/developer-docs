@@ -112,8 +112,8 @@ entries:
           url: /ob_retrievepayment.html
           output: web
 
-        - title: Reverse Payment
-          url: /ob_reversepayment.html
+        - title: Refund Payment
+          url: /ob_refundpayment.html
           output: web
   
   - title: AISP Service
@@ -165,7 +165,15 @@ entries:
       - title: Webhook Notifications 
         output: web
         subfolderitems:
-       
+        
+        - title: Payment Authorised
+          url: /ob_whpaymentauth.html
+          output: web
+        
+        - title: Payment Declined
+          url: /ob_whpaymentdecl.html
+          output: web
+              
         - title: Payment Received
           url: /ob_whreceived.html
           output: web
@@ -189,7 +197,11 @@ entries:
         - title: Payment Timeout
           url: /ob_whpaymenttimeout.html
           output: web
- 
+                          
+        - title: Payment Refunded
+          url: /ob_whrefundcomplete.html
+          output: web
+          
   - title: Resources
     output: web, pdf
     folderitems:
