@@ -31,7 +31,7 @@ It is possible to issue a refund for:
 * An amount that is less than the original transaction (a partial refund)
 * The full amount & a compensation amount (a full refund and compensation)
 
-The value of your refund is handled in the API via the `refundAmount` and `compensatioinAmount` values.(yeah you and my wife)
+The value of your refund is handled in the API via the `refundAmount` and `compensatioinAmount` values.
 
 ## Refund Configuration
 
