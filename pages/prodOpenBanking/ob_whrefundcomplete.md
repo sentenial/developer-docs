@@ -8,7 +8,7 @@ folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="A refunded payment has been successfully credited to the PSU and has moved to PAYMENT_REVERSED status." %}
+{% include webhook.html content="A refunded payment has been successfully credited to the PSU. The associated refund object has a status of REFUND_COMPLETE." %}
 
 
 ## Webhook Message Details
@@ -77,14 +77,14 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the payment resource. Use the URI in the <a href="ob_retrievepayment.html">Retrieve Payment</a> call.</td>
+			<td> This is URI of the refund resource. Use the URI in the <a href="ob_retrievepayment.html">Retrieve Payment</a> call.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a payment resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a refund resource.</td>
 		</tr>
         <tr>
 			<td>root</td>

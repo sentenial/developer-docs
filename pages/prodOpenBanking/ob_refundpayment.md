@@ -14,14 +14,28 @@ The Refund Payment service allows you to refund an Open Banking payment.
 
 {% include important.html content="Refunding a payment is only possible if you are using a Nuapay account as your merchant account; if your Open Banking payments have not been credited to this account then the Nuapay system has no beneficiary account reference and cannot refund the funds to the appropriate customer account. " %}
 
-A successful request puts the payment into an initial `REFUND_PENDING` status and a Credit Transfer payment is initiated to the customer account linked to the provided `paymentId`.
+When you initiate a refund request, a new refund object is created. 
 
-* If the payment is *successful*, funds are credited to the PSU and the payment status is updated to PAYMENT_REVERSED.
-* If the payment is *unsuccessful* (for example the beneficiary account is closed), the payment is updated to PAYMENT_REVERSAL_REJECTED.
+The refund request object may be in one of three statuses:
 
-Where the payment is successfully refunded (with funds disbursed to your customer's account) a Webhook notification will be triggered to your configured Webhooks Endpoint. See <a href="ob_whrreversed.html">Payment Reversed</a> in the Webhooks section for more details.
+* REFUND_PENDING
+* REFUND_COMPLETE
+* REFUND_REJECTED
 
-{% include note.html content="Where a refund is unsuccessful you will not be notified via a Webhook; instead you would need to use the Retrieve Payment service to determine the payment status. A Webhook will be available for this in the next Open Banking release." %}
+Where a refund request is successful:
+
+1. The user calls the `/payments/{paymentId}/refunds` service. Provided the referenced payment is in `PAYMENT_RECEIVED` status (and all other [Refund Configuration](ob_refundpayment.html#refund-configuration) constraints are met), a **refund object** is created in `REFUND_PENDING` status. Note that the actual payment status is unchanged.
+1. A Credit Transfer payment is initiated to the customer account linked to the provided `paymentId`.
+1. The payment is successfully processed - funds are credited to the PSU. The refund object's status is updated to `REFUND_COMPLETE`
+1. A Payment Refund Complete Webhook notifies the merchant of the successful refund. See <a href="ob_whrefundcomplete.html">Payment Refunded Event</a> in the Webhooks section for more details.
+
+Where a refund request is unsuccessful:
+
+1. The user calls the `/payments/{paymentId}/refunds` service and all validations (as mentioned above) are passed.
+1. A Credit Transfer payment is initiated to the customer account linked to the provided `paymentId` but cannot be processed e.g. the PSU's account is closed.
+1. The refund object is updated to `REFUND_REFJECTED` 
+
+{% include note.html content="Where a refund is unsuccessful you will not be notified via a Webhook; instead you would need to use the Retrieve Payment service (passing the refund object identifier) to determine the refund status. A Webhook will be available for this in the next Open Banking release." %}
 
 ## Refund Options
 
