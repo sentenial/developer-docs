@@ -95,7 +95,7 @@ entries:
       url: /ob_selfsetupoverview.html
       output: web, pdf                
      
-    - title: Payment Statuses
+    - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html
       output: web, pdf                
             
@@ -177,11 +177,7 @@ entries:
         - title: Payment Received
           url: /ob_whreceived.html
           output: web
-
-        - title: Payment Reversed
-          url: /ob_whrreversed.html
-          output: web 
-
+ 
         - title: Payment In Progress
           url: /ob_whpaymentinprogress.html
           output: web                                  

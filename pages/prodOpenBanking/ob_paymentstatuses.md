@@ -10,8 +10,9 @@ toc: false
 
 ## Overview
 
-Open Banking Payments transition from an initial `PENDING` to any one of a number of possible statuses (note that some statuses are Nuapay-specific and are only relevant if you are using a Nuapay beneficiary account for your Open Banking payments). 
-The various statuses possible are presented below in a table and as a state diagram:
+Open Banking Payments transition from an initial `PENDING` to any one of a number of possible statuses (note that some statuses are Nuapay-specific and are only relevant if you are using a Nuapay beneficiary account for your Open Banking payments).
+
+The various statuses possible (for both payments and refunds) are presented in the tables below and as a state diagram:
 
 
 
@@ -26,6 +27,7 @@ The various statuses possible are presented below in a table and as a state diag
 
 <p>The following table gives an overview of each possible status and, if applicable, the Webhook event triggered:</p>
 
+<p><b>PAYMENT STATUSES</b></p>
 
 <table style="width: 730px;">
   <tbody>
@@ -164,33 +166,9 @@ The various statuses possible are presented below in a table and as a state diag
       <td>Yes</td>
       <td>Yes</td>
       <td><a href="ob_whpaymenttimeout.html">PaymentTimeout</a></td>
-    </tr>      
+    </tr>        
     
-     <tr>
-      <td><code class="highlighter-rouge">REFUND_PENDING</code></td>
-      <td>The merchant has initiated a refund; it may be successfully processed or it may be rejected. </td>
-       <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>N/A</td>
-    </tr>
-    
-    <tr>
-      <td><code class="highlighter-rouge">PAYMENT_REVERSED</code></td>
-      <td>A payment that was previously received is successfully refunded/credited back to the PSU. A payment is typically reversed where the merchant deems it appropriate to refund a customer (following a complaint, for example).</td>
-       <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td><a href="ob_whrreversed.html">PaymentReversed</a></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">PAYMENT_REVERSAL_REJECTED</code></td>
-      <td>A refund payment credited to the PSU has been rejected by the beneficiary bank for a specific reason (e.g. the account is closed).</td>
-       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>N/A</td>
-    </tr>
+   
     <tr>
       <td><code class="highlighter-rouge">UNEXPECTED_ERROR</code></td>
       <td>A processing error has occurred. This may be due to connectivity issues between ASPSP and the TPP for example.</td>
@@ -211,6 +189,50 @@ The various statuses possible are presented below in a table and as a state diag
 </table>
 
 
+<p><b>REFUND STATUSES</b></p>
+
+<p>Where you query the ID of a refund object (returned when you call the <a href = 'ob_refundpayment.html'>Refund Payment</a> service), the following are the possible refund statuses:</p>
+
+<p><b>Note:</b> Refunds are only available to merchants who have opted to use a Nuapay account to receive their open banking payments.</p>
+
+<table style="width: 730px;">
+  <tbody>
+    <tr>
+      <td><strong>Status</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Nuapay-Specific?</strong></td>
+      <td><strong>Final Status?</strong></td>
+      <td><strong>Webhook Triggered?</strong></td>
+      <td><strong>Webhook Link</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">REFUND_PENDING</code></td>
+      <td>A refund has been initiated for a given <code class="highlighter-rouge">`paymentId`</code>. This is the initial staus of the refund object.</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">REFUND_COMPLETE</code></td>
+      <td>A refund  has been successfully paid to the PSU.</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td> 
+      <td><a href="ob_whrefundcomplete.html">PaymentRefundComplete</a></td>
+    </tr>
+     <tr>
+      <td><code class="highlighter-rouge">REFUND_REJECTED</code></td>
+      <td>The refund could not be paid to the PSU (e.g. the PSU's account is closed).</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td> 
+      <td>N/A</td>
+    </tr>
+ </tbody>
+</table>
+
+
 
 </div>
 
@@ -223,7 +245,7 @@ The various statuses possible are presented below in a table and as a state diag
 {% include note.html content="Click the Extend button on the top menu to enlarge or click the image to open it in a new browser window/tab, which will allow you to zoom in for a clearer view." %}
 
 
- {% include image.html file="ob_paymentStatus.png" url="images/ob_paymentStatus.png" target = "_new" alt="Payment Statuses" caption="Payment Statuses" %}
+ {% include image.html file="ob_paymentStatus.png" url="images/ob_paymentStatus.png" target = "_new" alt="Payment & Refund Statuses" caption="Payment & Refund Statuses" %}
 
 </div>
 </div>
