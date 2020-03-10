@@ -112,6 +112,10 @@ entries:
           url: /ob_retrievepayment.html
           output: web
 
+        - title: Retrieve Payment History
+          url: /ob_retrievepaymenthistory.html
+          output: web
+
         - title: Refund Payment
           url: /ob_refundpayment.html
           output: web

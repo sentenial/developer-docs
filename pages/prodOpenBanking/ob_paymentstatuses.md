@@ -88,7 +88,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">FUNDS_CHECK_TIMEOUT</code></td>
+      <td>FUNDS_CHECK_TIMEOUT [not implemented]</td>
       <td>The response to the funds check is later than the configured timeout.</td>
       <td>No</td>
       <td>Yes</td>
@@ -96,16 +96,16 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>N/A</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">FUNDS_CHECK_FAILED</code></td>
-      <td>The funds check has indicated that there are insufficient funds to complete the payment.</td>
+      <td>FUNDS_CHECK_FAILED [not implemented]</td>
+      <td>(Currently not implemented) The funds check has indicated that there are insufficient funds to complete the payment.</td>
        <td>No</td>
       <td>Yes</td>
       <td>No</td>
       <td>N/A</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">FUNDS_CHECK_PASSED</code></td>
-      <td>Sufficient funds are available to complete the payment.</td>
+      <td>FUNDS_CHECK_PASSED [not implemented]</td>
+      <td>(Currently not implemented) Sufficient funds are available to complete the payment.</td>
        <td>No</td>
       <td>No</td>
       <td>No</td>
