@@ -42,7 +42,7 @@ The various statuses possible (for both payments and refunds) are presented in t
     <tr>
       <td><code class="highlighter-rouge">PENDING</code></td>
       <td>[Relevant for <a href="ob_pispimplementation.html#checkout-mode">Checkout</a> mode only] The payment has been created: the merchant has initiated the <code class="highlighter-rouge">POST/payments</code> call but the PSU has not yet selected the required bank.</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>No</td>
       <td>No</td>
       <td>N/A</td>
