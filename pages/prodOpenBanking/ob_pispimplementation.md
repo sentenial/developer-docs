@@ -38,7 +38,7 @@ For more on this see [Checkout Payment Page Setup](ob_setupoverview.html).
 In **Self-Hosted** mode:
 
 1. You will design your own Bank Selection screen; use [Retrieve Banks](ob_getbank.html) to populate your interface. 
-1. Once you payer has selected a bank, call the `/payments` endpoint (see [Create Payment](ob_createpayment.html))
+1. Once your payer has selected a bank, call the `/payments` endpoint (see [Create Payment](ob_createpayment.html))
 1. Set the `integrationType` to `SELF_HOSTED`
 1. Specify the `bankId` provided by the payer in step 2
 1. Manage the returned payment identifier as required.
