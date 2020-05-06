@@ -1,7 +1,7 @@
 ---
 title: Integration Overview
 keywords: Open Banking Integration Overview
-summary: "Depending on whether you are an individual merchant or a Partner, managing multiple merchants, your integration with Nuapay will be different. This section outlines what is required in both models."
+summary: "Depending on whether you are an individual merchant or a Partner (who is managing multiple merchants) your integration with Nuapay will be different."
 sidebar: ob_sidebar
 permalink: ob_integrationoverview.html
 folder: prodOpenBanking
@@ -32,7 +32,7 @@ When interacting with the Open Banking services as a partner, you will need to g
 The following steps are required to generate an access token for a specific merchant:
 
 1. You will be provided with a (Partner-grade) API Key when onboarded. 
-1. Use this API Key to call the `GET /organisations` service; this returns a list of all merchants configured under your partner entity in Nuapay.
+1. Use this API Key to call the `GET /organisations` service; this returns a list of all organisations/merchants configured under your partner entity in Nuapay.
 1. Select the required merchant's encoded identifier from the response.
 1. Pass that encoded merchant identifier to the `Security /token` endpoint to retrieve an OAuth token unique to the selected merchant.
 

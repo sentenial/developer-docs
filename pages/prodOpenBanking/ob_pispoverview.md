@@ -28,16 +28,15 @@ Initiating payments via Open Banking offers numerous benefits.
 
 ## Implementations
 
-Nuapay offers two implementation options to offer Open Banking payments on your merchant site: 
+Nuapay supports the following implementation options: 
 
 * Checkout 
 * Self-Hosted 
+* Self-Hosted-Callback
 
-The Checkout option lets you use the Nuapay default user interface while the Self-Hosted option offers you greater flexibility to customise your screens for your users.
+These implementation modes are described in greater details in [PISP Implementation Options](ob_pispimplementation.html).
 
-Both implementation modes are described in greater details in [PISP Implementation Options](ob_pispimplementation.html).
-
-
+{% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
 
 
 
