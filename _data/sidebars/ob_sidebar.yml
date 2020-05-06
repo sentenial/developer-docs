@@ -87,14 +87,18 @@ entries:
       url: /ob_pispimplementation.html
       output: web, pdf
       
-    - title: Checkout Page Setup
+    - title: Checkout Setup
       url: /ob_setupoverview.html
       output: web, pdf                         
      
-    - title: Self-Hosted Page Setup
+    - title: Self-Hosted Setup
       url: /ob_selfsetupoverview.html
       output: web, pdf                
      
+    - title: Self-Hosted-Callback Setup
+      url: /ob_selfcallbacksetupoverview.html
+      output: web, pdf                
+           
     - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html
       output: web, pdf                
@@ -111,7 +115,11 @@ entries:
         - title: Retrieve Payment
           url: /ob_retrievepayment.html
           output: web
-
+          
+        - title: Forward Payment Callback
+          url: /ob_paymentcallback.html
+          output: web
+          
         - title: Retrieve Payment History
           url: /ob_retrievepaymenthistory.html
           output: web
@@ -119,7 +127,15 @@ entries:
         - title: Refund Payment
           url: /ob_refundpayment.html
           output: web
-  
+
+        - title: List Refund Payments
+          url: /ob_refundpaymentlist.html
+          output: web   
+
+        - title: Retrieve Refund
+          url: /ob_refundpaymentview.html
+          output: web             
+ 
   - title: AISP Service
     output: web, pdf
     folderitems:

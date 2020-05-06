@@ -15,6 +15,8 @@ Nuapay offers two Partner models allowing you to connect to Nuapay as a:
 1. Third Party Provider (TPP).
 1. Technical Service Provider
 
+## TPP MODE
+
 |With Nuapay in **TPP Mode**|:
 
 * You are licensed to offer Open Banking services under the Nuapay TPP license.
@@ -23,14 +25,16 @@ Nuapay offers two Partner models allowing you to connect to Nuapay as a:
 * A 'Powered by Nuapay' logo is displayed on the checkout window.
 
 
+## TECHNICAL SERVICE PROVIDER MODE
+
 |With Nuapay as a **Technical Service Provider**|: 
 
  You will need: 
  
 * An Open Banking TPP license.
 * To provide Sentenial with your eIDAS certificate (QWAC and QSEAL).
-* To allow Sentenial generate Software Statement Assertions(SSA) and OBUK specific PKI key pairs.
-* Sentenial establishes relationships with each of the ASPSPs for you.
+* To allow Sentenial to generate Software Statement Assertions(SSA) and OBUK specific PKI key pairs.
+* Sentenial to establish relationships with each ASPSP on your behalf.
 
 Note that:
 
