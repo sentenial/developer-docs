@@ -7,6 +7,8 @@ credit_transfer: "A Credit Transfer or CT is a payment instruction from one acco
 
 direct_debit: "A Direct Debit or DD is a payment initiated by an originator that pulls the requested amount from the payer's bank account. Payers must have agreed to the payment being pulled from their account in advance by signing a mandate or Direct Debit Instruction. "
 
+ddi: "A Direct Debit Instruction - used in the Bacs Direct Debit scheme to gain a payer's authority to debit his/her account; a DDI is the SEPA equivalent of a Direct Debit Mandate."
+
 otp: "One-Time Password"
 
 psu: "Payment Service User - the person using the payment service - the payer."

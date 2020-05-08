@@ -23,6 +23,8 @@ Where you specify two or more value for the `supportedcurrencies` array (in the 
 
 {% include urls-ob.html %}
 
+## Retrieve Banks Endpoint
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    
