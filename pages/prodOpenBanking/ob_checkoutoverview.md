@@ -136,7 +136,7 @@ window.addEventListener("message",listener,false);
 </script>
 ````
 
-Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server. 
+Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server to get the payment status. 
 
 The call is to ``/merchant/status?id=gabxrlvbl5``
 
