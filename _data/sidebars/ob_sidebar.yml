@@ -82,23 +82,52 @@ entries:
     - title: Overview
       url: /ob_pispoverview.html
       output: web, pdf
-
+      
     - title: PISP Implementation Options
-      url: /ob_pispimplementation.html
+      url: /ob_pispimplementations.html
       output: web, pdf
       
-    - title: Checkout Setup
-      url: /ob_setupoverview.html
-      output: web, pdf                         
+      subfolders:
+      - title: Partner Integration 
+        output: web
+        subfolderitems:  
+
+        - title: Quick Start
+          url: /ob_quickstartpart.html
+          output: web, pdf           
+      
+        - title: Checkout Setup
+          url: /ob_checkoutoverview.html
+          output: web, pdf                         
      
-    - title: Self-Hosted Setup
-      url: /ob_selfsetupoverview.html
-      output: web, pdf                
+        - title: Self-Hosted Setup
+          url: /ob_selfsetupoverview.html
+          output: web, pdf                
      
-    - title: Self-Hosted-Callback Setup
-      url: /ob_selfcallbacksetupoverview.html
-      output: web, pdf                
-           
+        - title: Self-Hosted-Callback Setup
+          url: /ob_selfcallbacksetupoverview.html
+          output: web, pdf                
+
+      - title: Merchant Integration 
+        output: web
+        subfolderitems:
+
+        - title: Quick Start
+          url: /ob_quickstart.html
+          output: web, pdf          
+      
+        - title: Checkout Setup
+          url: /ob_checkoutoverviewmerch.html
+          output: web, pdf                         
+     
+        - title: Self-Hosted Setup
+          url: /ob_selfsetupoverviewmerch.html
+          output: web, pdf                
+     
+        - title: Self-Hosted-Callback Setup
+          url: /ob_selfcallbackmerch.html
+          output: web, pdf                
+                  
     - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html
       output: web, pdf                

@@ -3,7 +3,7 @@ title: Self-Hosted-Callback Payment Page Setup
 keywords: Self Hosted Callback Payment Page Setup Javascript Add Open Banking Payment Page
 summary: "Adding Open Banking (in Self-Hosted-Callback mode) lets you fully control your PSU's payment journey and allows you to bypass the Nuapay TPP."
 sidebar: ob_sidebar
-permalink: ob_selfcallbacksetupoverview.html
+permalink: ob_selfcallbackmerch.html
 folder: prodOpenBanking
 toc: false
 ---
@@ -13,7 +13,7 @@ toc: false
 {% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
 
 
-{% include note.html content="This section is for **Partner** users who want to use the **SELF_HOSTED_CALLBACK** mode - see [Implementation Options](ob_pispimplementation.html) for more on this." %}
+{% include note.html content="This section is for **Merchant** users who want to use the **SELF_HOSTED_CALLBACK** mode - see [Implementation Options](ob_pispimplementation.html) for more on this." %}
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provid
 A detailed overview of the various steps involved in this flow is provided in the image below.
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
-{% include image.html file="ob_selfhostedcallback_flow-partner.png" url="images/ob_selfhostedcallback_flow-partner.png" target = "_new" alt="Self-Hosted-Callback Partner Flow" caption="SELF_HOSTED_CALLBACK Partner Flow" %}
+{% include image.html file="ob_selfhostedcallback_flow-merchant.png" url="images/ob_selfhostedcallback_flow-merchant.png" target = "_new" alt="Self-Hosted-Callback Merchant Flow" caption="SELF_HOSTED_CALLBACK Merchant Flow" %}
 
 
 {% include links.html %}
