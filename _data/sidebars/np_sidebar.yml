@@ -31,7 +31,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Mandate Basics
+    - title: Mandate / DDI Basics
       url: /np_mdtbasics.html
       output: web, pdf
 
@@ -79,7 +79,7 @@ entries:
       output: web, pdf  
 
     
-  - title: Mandates
+  - title: Mandates / DDIs
     output: web, pdf
     folderitems:
 
@@ -87,44 +87,44 @@ entries:
       url: /np_mdtoverview.html
       output: web, pdf
 
-    - title: Mandate Statuses
+    - title: Mandate / DDI Statuses
       url: /np_mandatestatuses.html
       output: web, pdf
 
       subfolders:
-      - title: Mandate APIs 
+      - title: Mandate / DDI APIs 
         output: web
         subfolderitems:
 
-        - title: Create Mandate
+        - title: Create Mandate / DDI
           url: /np_createmandate.html
           output: web
 
-        - title: Retrieve Mandate
+        - title: Retrieve Mandate / DDI
           url: /np_retrievemandate.html
           output: web
 
-        - title: Retrieve Mandate Document
+        - title: Retrieve Mandate / DDI Document
           url: /np_retrievemandatedoc.html
           output: web
 
-        - title: Upload Mandate Document
+        - title: Upload Mandate / DDI Document
           url: /np_uploademandatedoc.html
           output: web
 
-        - title: List Mandates
+        - title: List Mandates / DDI
           url: /np_listmandates.html
           output: web
 
-        - title: Update Mandate
+        - title: Update Mandate / DDI
           url: /np_updatemandate.html
           output: web
 
-        - title: Activate Mandate
+        - title: Activate Mandate / DDI
           url: /np_activatemandate.html
           output: web
           
-        - title: Cancel Mandate
+        - title: Cancel Mandate / DDI
           url: /np_cancelmandate.html
           output: web
 

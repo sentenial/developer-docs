@@ -1,23 +1,26 @@
 ---
-title: Mandate Basics
-keywords: Mandates
-summary: "Mandates/Direct Debit Instructions (DDIs) are the starting point for your Direct Debit payments processing. A signed mandates gives your business the legal authority to debit funds from your payers' accounts for the goods or services that you supply. "
+title: Mandate / Direct Debit Instruction Basics
+keywords: Mandates Direct Debit Instruction
+summary: "Mandates/Direct Debit Instructions (DDIs) are the starting point for your Direct Debit payments processing. A signed mandates/DDI gives your business the legal authority to debit funds from your payers' accounts for the goods or services that you supply. "
 sidebar: np_sidebar
 permalink: np_mdtbasics.html
 folder: prodNuapay
 ---
 
-## What is a Mandate?
+## What is a Mandate/ DDI?
 
-{% include important.html content=" Each of your payers must sign a mandate before you can take any Direct Debit payments!" %}
+{% include important.html content=" Each of your payers must sign a mandate/DDI before you can take any Direct Debit payments!" %}
 
 Direct Debits are a Pull payment method (you are <i>pulling</i> funds from your payers' accounts).
 
-When paying for your service with Credit or Debit Cards, for example, your payers are fully in control of the payment and they decide when to credit funds to you. Card payments are Push payments (your payers <i>push</i> payments to you).
+When paying for your service with Credit or Debit Cards, for example, note that your payers: 
+
+* Are fully in control of the payment and they decide when to credit funds to you. 
+* Card payments are Push payments (your payers <i>push</i> payments to you).
 
 As a merchant, having the ability to initiate a pull payment is very powerful. To ensure that payers are safeguarded and are fully aware that you will be taking (pulling) payments from their accounts at certain points in time, they must formally agree to allow you to take these pull payments.
 
-{% include note.html content="This agreement between the payer and merchant is the <b>Mandate</b>. It is a legal agreement that informs users that they are agreeing to have their bank account debited periodically and also provides them with full details of their refund rights." %}
+{% include note.html content="This agreement between the payer and merchant is the <b>Mandate</b> (in SEPA) and the <b>Direct Debit Instruction</b> (in Bacs). It is a legal agreement that informs users that they are agreeing to have their bank account debited periodically and also provides them with full details of their refund rights." %}
 
 
 ## SEPA Guarantee
@@ -34,13 +37,13 @@ For Bacs the Direct Debit Guarantee and Direct Debit logo must be provided on al
 <img src="images/bacs-guarantee.png">
 
 
-## Mandate Types
+## Mandate/DDI Types
 
-You may chose to collect mandates on paper, with a normal ink signature; alternatively mandates can be handled electronically (with authorisation being provided via a check box or SMS code, for example). Nuapay offers you the flexibility to choose either approach.
+You may chose to collect mandates on paper, with a normal ink signature; alternatively mandates/DDIs can be handled electronically (with authorisation being provided via a check box or SMS code, for example). Nuapay offers you the flexibility to choose either approach.
 
 For more information on electronic mandates, see the <a href ="em_landing_page.html">E-Mandates</a> section.
 
-{% include note.html content="All your mandates must be linked to a specific originator identifier that is unique to your business. This identifier is the Creditor Scheme ID (in the SEPA CORE schemes) or the Service User Number (SUN in the Bacs Direct Debit scheme)." %}
+{% include note.html content="All your mandates/DDIs must be linked to a specific originator identifier that is unique to your business. This identifier is the Creditor Scheme ID (in the SEPA schemes) or the Service User Number (SUN in the Bacs Direct Debit scheme)." %}
 
 
 {% include links.html %}

@@ -16,6 +16,8 @@ The Retrieve Payment service returns an Open Banking payment object, where the u
 
 {% include urls-ob.html %}
 
+## Retrieve Payment Endpoint
+
 <ul id="profileTabs" class="nav nav-tabs">
     
    
