@@ -33,9 +33,9 @@ An API Key or OAuth token uniquely identifies you on Nuapay and is required to a
 For more on API Keys and OAuth, see the <a href="ob_generalrules.html">API Basics</a> section.
 
 
-## Generating a Unique Payment ID
+## Generating a Unique Payment ID 
 
-Each Open Banking payment requires a unique payment identifier. 
+The Open Banking payment endpoint returns a payment identifier on a sucessful invocation. 
 
 To generate a payment ID:
 
@@ -136,7 +136,7 @@ window.addEventListener("message",listener,false);
 </script>
 ````
 
-Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server. 
+Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server to get the payment status. 
 
 The call is to ``/merchant/status?id=gabxrlvbl5``
 
