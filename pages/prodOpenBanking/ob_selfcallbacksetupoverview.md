@@ -17,7 +17,7 @@ toc: false
 
 ## Prerequisites
 
-In this mode, once a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> has been redirected to a selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> and has completed his/her interactions with that bank, you specify the callback/redirect URL (the `merchantPostAuthUrl`) to where that payer is then redirected. 
+In this mode, once a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> has been redirected to a selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> and has completed his/her interactions with that bank, the payer is redirected to the `merchantPostAuthUrl`, as provided in the [Create Payment](ob_createpayment.html) request. 
 
 In order for this to happen an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> must do two things:
 
@@ -53,13 +53,46 @@ Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provid
    * Unlike in the SELF_HOSTED mode, the OAuth callback from the bank is not passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> directly, instead it is directed to the merchantPostAuthUrl. 
    * The partner retrieves An OAuth token.
    * The payment callback is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>.
-1. Process the callback and confirm the payment status.
+1. Process the callback and confirm the payment status. (See the following section for more details on this).
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
 
 A detailed overview of the various steps involved in this flow is provided in the image below.
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 {% include image.html file="ob_selfhostedcallback_flow-partner.png" url="images/ob_selfhostedcallback_flow-partner.png" target = "_new" alt="Self-Hosted-Callback Partner Flow" caption="SELF_HOSTED_CALLBACK Partner Flow" %}
+
+
+## Processing the OpenID Connect Callback
+
+Note that:
+
+1. Since response parameters are returned in the Redirection URI fragment value, the Client needs to have the User Agent parse the fragment encoded values and pass them on to the Client's processing logic for consumption. (Basically parse the details in JavaScript to post back to your server)
+1. Accept the data on your systems.
+1. Post the information to the `/payments/callback` [endpoint](ob_paymentcallback.html).
+
+Please see a sample piece of JavaScript code below, which parses the data after the anchor:
+
+	#check for the anchor
+	var data = window.location.href.split(#);
+	if(data.length < 2) { //just in case not using anchors
+	    data = window.location.href.split(?);
+	}
+
+	var params = data[1]; 
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", YOUR_URL, true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+    		value: params
+	}));
+
+
+This assumes you can accept a `POST` of json to YOUR_URL.
+
+In your logic on the server side, you can parse all the params and submit to the [endpoint](ob_paymentcallback.html).
+
+{% include note.html content="You should ensure that the JavaScript you define works in all browsers for both desktop and mobile and we recommend that you fully test your implementation on all the browsers that you intend to support." %}
 
 
 {% include links.html %}
