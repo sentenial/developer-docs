@@ -33,9 +33,9 @@ An API Key or OAuth token uniquely identifies you on Nuapay and is required to a
 For more on API Keys and OAuth, see the <a href="ob_generalrules.html">API Basics</a> section.
 
 
-## Generating a Unique Payment ID 
+## Calling the Payment Endpoint
 
-The Open Banking payment endpoint returns a payment identifier on a sucessful invocation. 
+The Open Banking payment endpoint returns a payment identifier on a successful invocation.
 
 To generate a payment ID:
 
