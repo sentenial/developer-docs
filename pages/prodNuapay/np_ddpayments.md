@@ -35,10 +35,10 @@ Both the EPC and Bacs publish guides and rulebooks (which are generally updated 
 
 ## Scheme Differences
 
-|**Scheme Name**|**Mandate Lodged with Debtor Bank?**|**Earliest Export Date**|**Pre-Settlement R-Transactions Possible?**|**Post-Settlement Return Period**|**Refunds Allowed?**|**Refund Period (athorised)**|**Refund Period (Unathorised)**|
+|**Scheme Name**|**Mandate Lodged with Debtor Bank?**|**Earliest Export Date**|**Pre-Settlement R-Transactions Possible?**|**Post-Settlement Return Period**|**Refunds Allowed?**|**Refund Period (Authorised)**|**Refund Period (Unathorised)**|
 |SEPA CORE|	No|	D-1|Yes|D+5|Yes|D+8 weeks|D+13 months|
 |SEPA B2B|Yes (Manual Process)|D-1|Yes|D+3|No|N/A|N/A|
 |Bacs DD|Yes (Automated)|D-3|No|D+3|Yes|No Time limit|No Time limit|
 
-
+In SEPA any refund that is made within the 8 week period allowed under the SEPA Guarantee is referred to as an Authorised refund; where the refund request is received after 8 weeks of the initial debit (and before 13 months) it is referred for to as an Unauthorised refund.
 
