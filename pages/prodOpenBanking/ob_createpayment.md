@@ -10,7 +10,7 @@ toc: true
 
 ## API Details 
 
-The Create Payment service generates an Open Banking payment object, returning a unique ``paymentId`` with an (initial) status of  ``PENDING_APPROVAL``.
+The Create Payment service generates an Open Banking payment object, returning a unique ``paymentId`` with an (initial) status of `PENDING` (in Checkout Mode) or `PENDING_APPROVAL` (in Self-Hosted and Self-Hosted-Callback modes). See [PISP Implementation Options](ob_pispimplementations.html) for more on the available modes.
 
 {% include swagger_ob.html %}
 
