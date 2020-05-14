@@ -143,8 +143,12 @@ entries:
 
         - title: Retrieve Payment
           url: /ob_retrievepayment.html
+          output: web        
+        
+        - title: List Payments
+          url: /ob_listpayments.html
           output: web
-          
+        
         - title: Forward Payment Callback
           url: /ob_paymentcallback.html
           output: web

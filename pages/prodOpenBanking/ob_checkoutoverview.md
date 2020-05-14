@@ -11,24 +11,26 @@ folder: prodOpenBanking
 
 ## Overview
 
+A detailed overview of the various steps involved in the **Checkout** flow is provided in the image below.
+
+{% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
+
+{% include image.html file="ob_checkout_flow.png" url="images/ob_checkout_flow-partner.png" target = "_new" alt="Checkout Flow - Partner" caption="CHECKOUT Flow - Partner" %}
+
+
 In **Checkout** mode you will: 
 
 1. Use your partner-level API key to retrieve a token representing the required merchant. (For more on this see [list organisations](ob_partnerintegration.html#api-details---get-organisations) and [retrieving tokens](ob_partnerintegration.html#api-details---post-tokens)).
 1. Call the `/payments` endpoint, on behalf of the merchant, using the OAuth token retrieved in the previous step (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`. Manage the returned payment identifier with some Nuapay-provided JS and CSS to render the Bank Selection screen for your payers. 
 1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank.
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
-1. Process the callback URL; display the status to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> and close the TPP UI, passing control to the parent window.
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes the callback URL, displays the status to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> and closes the TPP UI (after 30 seconds), passing control to the parent window.
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
 
-A detailed overview of the various steps involved in this flow is provided in the image below.
-
-{% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
-
-{% include image.html file="ob_checkout_flow.png" url="images/ob_checkout_flow-partner.png" target = "_new" alt="Checkout Flow - Partner" caption="CHECKOUT Flow - Partner" %}
 
 ## Authorisation 
 
-An API Key or OAuth token uniquely identifies you on Nuapay and is required to allow you to use our API services.
+An API Key or an OAuth token uniquely identifies you on Nuapay and is required to allow you to use our API services.
 
 For more on API Keys and OAuth, see the <a href="ob_generalrules.html">API Basics</a> section.
 

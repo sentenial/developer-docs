@@ -19,31 +19,21 @@ toc: false
 
 In this mode, once a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> has been redirected to a selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> and has completed his/her interactions with that bank, the payer is redirected to the `merchantPostAuthUrl`, as provided in the [Create Payment](ob_createpayment.html) request. 
 
-In order for this to happen an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> must do two things:
+In order for the payer to be successfully redirected, an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> must do two things:
 
 1. Determine what the callback URL is for the specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>.
 1. Confirm that this URL has been properly configured and registered (with that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>).
 
-To configure a callback URL with an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>:
-
-1. You must have a TPP license. 
-1. Register the callback URL in your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> application (this is the Software Statement Assertion (SSA) in the UK Open Banking scheme).
-1. If you have already registered an SSA for UK Open Banking but had not specified any callback URLs, you will need to generate a new Software Statement in the Open Banking Directory and set the new callback URLs there. You may specify multiple callback URLs; as a partner you may want to specify different callback URLs for each of your merchants, for example.
-
-Note that:
-
-* A Callback URL is a url that has been listed as one of the redirect urls defined in the Software Statement in the Open Banking directory.
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSPs</a> will not process psuAuthUrls containing callbacks that are different to the ones used when the TPP registered with them.
-
-
-{% include important.html content="The Nuapay API Support team manage the TPP-to-ASPSP registration process including SSA management and callback URL registration. Please contact your Account Manager if you need to register a new callback URL." %}
-
+{% include important.html content="The Nuapay API Support team manage the TPP-to-ASPSP registration process (including callback URL registration) on behalf of our partners and merchants. Please contact your Account Manager if you need to register a new callback URL." %}
 
 ## Sequence Steps
 
 {% include note.html content="If you want to use this mode you must have first registered your OAuth 2.0 Callback Handler with the platform. Your Account Manager can provide you with more information on this." %}
 
-To use Self-Hosted-Callback mode:
+To use Self-Hosted-Callback mode see the flow described in the image below (click to enlarge) and refer to the steps 1-6 below for more detail:
+
+{% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
+{% include image.html file="ob_selfhostedcallback_flow-partner.png" url="images/ob_selfhostedcallback_flow-partner.png" target = "_new" alt="Self-Hosted-Callback Partner Flow" caption="SELF_HOSTED_CALLBACK Partner Flow" %}
 
 1. Using your partner-level API key retrieve the [list of your merchants](ob_partnerintegration.html#api-details---get-organisations) and [retrieve a token](ob_partnerintegration.html#api-details---post-tokens) representing the required merchant.
 1. You will design your own Bank Selection screen; use [Retrieve Banks](ob_getbank.html) to populate your interface. 
@@ -51,18 +41,12 @@ To use Self-Hosted-Callback mode:
 Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provided by the payer and set the `merchantPostAuthUrl`.
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment - note that in this mode the `callbackUrl` = the `merchantPostAuthUrl`.
    * Unlike in the SELF_HOSTED mode, the OAuth callback from the bank is not passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> directly, instead it is directed to the merchantPostAuthUrl. 
-   * The partner retrieves An OAuth token.
+   * The partner retrieves An OAuth token (providing the Partner API key and setting scope = `openbanking_callback`).
    * The payment callback is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>.
-1. Process the callback and confirm the payment status. (See the following section for more details on this).
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes the callback and confirm the payment status. (See the following section for more details on this).
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
 
-A detailed overview of the various steps involved in this flow is provided in the image below.
-
-{% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
-{% include image.html file="ob_selfhostedcallback_flow-partner.png" url="images/ob_selfhostedcallback_flow-partner.png" target = "_new" alt="Self-Hosted-Callback Partner Flow" caption="SELF_HOSTED_CALLBACK Partner Flow" %}
-
-
-## Processing the OpenID Connect Callback
+## Processing the Callback
 
 Note that:
 
