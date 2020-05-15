@@ -39,7 +39,7 @@ A detailed overview of the various steps involved in the **Self-Hosted-Callback*
 To use Self-Hosted-Callback mode:
 
 1. Using your API key, [retrieve a token](ob_partnerintegration.html#api-details---post-tokens); set your scope = `openbanking_pisp`.
-1. In this mode you design your own Bank Selection screen; use [Retrieve Banks](ob_getbank.html) to populate your interface. 
+1. Call GET `/banks` to retrieve a list of all supported banks (see [Retrieve Banks](ob_getbank.html)) to populate your Bank Selection screen.  
 1. Once the payer has selected a bank, call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)).
 Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provided by the payer and set the `merchantPostAuthUrl`.
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment - note that in this mode the `callbackUrl` = the `merchantPostAuthUrl`.
@@ -47,7 +47,7 @@ Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provid
    * You need to retrieve an OAuth token with scope = `openbanking_callback`.
    * Use this token to authenticate when you call the [Forward Payment Callback](ob_paymentcallback.html) endpoint, passing the callback parameters.
    * The payment callback is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>.
-1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes the callback and confirms the payment status.
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> posts the payment ID to the partner/merchant URL (`merchantPostAuthUrl`).
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
 
 ## Processing the Callback
