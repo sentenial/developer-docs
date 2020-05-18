@@ -14,8 +14,8 @@ Your PISP checkout page may be implemented in one of the following ways:
 1. SELF_HOSTED_CALLBACK
 
 
-|**Checkout**|This mode lets you use the Nuapay user interface for Bank Selection.|
-|**Self-Hosted**| The user interface is handled by you, the merchant (or partner, acting on behalf of a merchant) for Bank Selection; callback handling is through the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>.|
+|**Checkout**|This mode lets you use the Nuapay user interface for Bank Selection. You process JavaScript events to determine when the payment flow is completed.|
+|**Self-Hosted**| The user interface is handled by you, the merchant (or partner, acting on behalf of a merchant) for Bank Selection; callback handling is through the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP, you process a TPP callback to your system on the payment flow being completed</a>.|
 |**Self-Hosted-Callback**| In this mode the user interface is handled by you, the merchant (or partner, acting on behalf of a merchant) and you manage the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>'s experience after interacting with an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>: the Callback bypasses the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>, you manage the callback URL that is required for each <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> interaction|
 
 {% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
