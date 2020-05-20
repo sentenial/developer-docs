@@ -1,5 +1,5 @@
 ---
-title: Retrieve Mandate
+title: Retrieve Mandate / DDI
 keywords: Retrieve Mandate API
 summary: "Retrieve Mandate RESTful API"
 sidebar: np_sidebar
@@ -10,9 +10,9 @@ toc: false
 
 ## API Details
 
-The Retrieve Mandate call allows you to view the details of a specific mandate as stored in Nuapay.
+The Retrieve Mandate endpoint allows you to view the details of a specific mandate/DDI as stored in Nuapay.
 
-The request requires that you provide the Mandate resource identifier (as returned in the <a href="np_createmandate.html">Create Mandate</a> call)
+The request requires that you provide the Mandate/DDI resource identifier (as returned in the [Create Mandate](np_createmandate.html) call service).
 
 {% include swagger_np.html %}
 

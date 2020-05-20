@@ -1,5 +1,5 @@
 ---
-title: Create Payment Schedule & Mandate
+title: Create Payment Schedule & Mandate/DDI
 keywords: Create Payment Schedule & Mandate
 summary: "Create Payment Schedule & Mandate RESTful API"
 sidebar: np_sidebar
@@ -10,11 +10,11 @@ toc: false
 
 ## API Details
 
-As outlined in <a href = "np_createschedule.html">Create Payment Schedule</a>, before you can add a schedule of Direct Debit payments for a payer you must first have an Active mandate in place; so two separate requests are required: one to create and activate a mandate and a second to add the schedule of payments.
+As outlined in <a href = "np_createschedule.html">Create Payment Schedule</a>, before you can add a schedule of Direct Debit payments for a payer you must first have an `ACTIVE` mandate/DDI in place; so two separate requests are required: one to create and activate a mandate and a second to add the schedule of payments.
 
-The <b>Create Payment Schedule and Mandate</b> request allows you to combine these two request so that you can create a mandate and a payment schedule in a single request.
+The **Create Payment Schedule and Mandate** service allows you to combine these two request so that you can create a mandate/DDI and a payment schedule in a single request.
 
-{% include note.html content="A successful request will result in a new mandate and a schedule of direct debits being created. If the request is unsuccessful neither a mandate nor any direct debits will be created." %}
+{% include note.html content="A successful request will result in a new mandate/DDI and a schedule of direct debits being created. If the request is unsuccessful neither a mandate/DDI nor any direct debits will be created." %}
 
 {% include swagger_np.html %}
 

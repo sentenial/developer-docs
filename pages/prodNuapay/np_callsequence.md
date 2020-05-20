@@ -1,22 +1,28 @@
 ---
 title: API Call Sequence
 keywords: API Call Sequence
-summary: "APIs must be called in a logical order: you must have a Creidtor Scheme ID before you create a mandate. You cannot create a payment without first creating a mandate. "
+summary: "APIs must be called in a logical order: you must have a Creditor Scheme ID (in SEPA) or a Service User Number (in Bacs) before you create a mandate/DDI. You cannot create a payment without first creating a mandate/DDI. "
 sidebar: np_sidebar
 permalink: np_callsequence.html
 folder: prodNuapay
 ---
 
-<p>When working with the Nuapay API you need to be aware that the sequence of requests is important. You cannot create a payment without first having created a mandate; you cannot create a mandate without first having a Creditor Scheme ID.</p>
+When working with the Nuapay API you need to be aware that the sequence of requests is important. 
 
-<p>The following gives you a high-level view of the required stages:</p>
+* You cannot create a Direct Debit payment without first having created a mandate/DDI with which to link it. 
+* You cannot create a mandate/DDI without first having been assigned a Creditor Scheme ID (in SEPA) or a Service User Number (in Bacs). 
+* A Nuapay merchant account must also be linked to the scheme. 
 
-1. Before you can create mandates you must have a `Creditor Scheme Identifier` and a `Merchant account`. You will need to provide your account details to the Nuapay Support team when you are registering .
+<img src="images/scheme_to_payment.png">
 
-1. The Nuapay Support team will create a Nuapay virtual account (IBAN). This account will link to your physical IBAN. The support team will also create a Creditor Scheme ID for you. These details will be shared with you.
-1. With your Nuapay account and Payment Scheme configured (this may be a BACS or a SEPA CORE scheme) you can begin to add new mandates.
-1. Mandates have specific statuses (a `Pending status`, prior to signature for example). Your mandates must be in `Active` status before you can collect payments.
-1. Payment requests must be created a number of days prior to the desired collection date - this is a requirement of the SEPA scheme. In general payments may be created 2 business days before the desired collection date. Similarly For Bacs, payments must conform to the Bacs 3-day processing cycle.
+A signed mandate/DDI, which is in `ACTIVE` status (see [Mandate Statuses](np_mandatestatuses.html) for more on statuses), can be used to collect one or multiple Direct Debit transactions.
+
+The following gives you a high-level view of the required stages:
+
+1. Before you can create mandates you must have a `Creditor Scheme Identifier` and a Nuapay-issued `Merchant account`. Nuapay Support will provide you with these details for both the Sandbox and Production environments. 
+1. With your Nuapay account and Payment Scheme configured (this may be a Bacs or a SEPA scheme) you can begin to add new mandates/DDIs.
+1. Mandates/DDIs have specific statuses (a `PENDING` status, prior to signature for example). Your mandates/DDIs must be in `ACTIVE` status before you can collect payments.
+1. Payment requests must be created a number of days prior to the desired collection date. In general payments may be created 2 business days before the desired <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>.
 1. As payments can fail for various reasons (insufficient funds in your payer's account or a disputed transaction, for example) from the time when the payment is first created up to a number of weeks after the payment, it is important to ensure that you account for any failed payments and design how your solution will handle these.
 
 {% include links.html %}

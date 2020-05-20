@@ -12,7 +12,7 @@ folder: prodNuapay
 <p>Note that all requests must:</p>
 
 * Be sent via the HTTPS protocol
-* Pass a specific API Key unique to each merchant, for authentication
+* Pass a specific API Key unique to each merchant, for authentication or an OAuth token.
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
 
@@ -24,7 +24,7 @@ folder: prodNuapay
 
 In order to reference specific Nuapay elements in your API requests, e.g. a mandate or a direct debit, unique resource identifiers must be provided.
 
-For example, assume you have created a Direct Debit transaction under a specific scheme and mandate, with the following attributes:
+For example, assume you have created a SEPA Direct Debit transaction under a specific scheme and mandate, with the following attributes:
 
 |**Item**| **Value**|
 |Creditor Scheme ID | GB09ZZZSDDBBRU00000055356871SD1|
@@ -39,17 +39,18 @@ These might be as follows:
 |Mandate Reference | MAND-12345| rtsxq8kaby5 | 
 |Direct Debit End-to-End| C5F53BF5-EFA4-4319-8| eshw2137gfc |
 
-{% include note.html content="The resource identifier for your scheme is essential and is the building block for all subsequent mandate and direct debit calls. Details of how to retrieve your creditor scheme identifier (or SUN for Bacs users) is described in the [List Creditor Schemes](np_listcredscheme.html) section." %}
+<div markdown="span" class="alert alert-info" role="alert"><i class="fas fa-info-circle"></i> <b>Note</b>:  The resource identifier for your scheme is essential and is the building block for all subsequent mandate and direct debit calls. Details of how to retrieve your creditor scheme identifier (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.sun}}">SUN</a> for Bacs users) is described in the [List Schemes](np_listcredscheme.html) section.</div>
 
-**Create Mandate**
 
-The Create Mandate service would use the following URI:
+**Create Mandate/DDI**
+
+The Create Mandate/DDI service would use the following URI:
 
 |POST `/schemes/abxq9kq52l/mandates`|
 
 (Assume the mandate created has a resource identifier = `rtsxq8kaby5`)
 
-**Retrieve Mandate**
+**Retrieve Mandate/DDI**
 
 To retrieve that mandate later you would use the following:
 
@@ -63,8 +64,8 @@ To retrieve the details of the speific transaction created against the mandate, 
 
 For more on these services, see the following:
 
-* [Create Mandate](np_createmandate.html)
-* [Retrieve Mandate](np_retrievemandate.html)
+* [Create Mandate/DDI](np_createmandate.html)
+* [Retrieve Mandate/DDI](np_retrievemandate.html)
 * [Retrieve Direct Debit](np_retrievedirectdebit.html)
 
 

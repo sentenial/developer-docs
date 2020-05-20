@@ -8,12 +8,12 @@ folder: prodNuapay
 ---
 
 
-Payment Schedules allow you to set up a series of payments against a mandate. Schedules can be Fixed-Length or Open-Ended.
+Payment Schedules allow you to set up a series of payments against a mandate/DDI. Schedules can be Fixed-Length or Open-Ended.
 
-|<b>Fixed-Length</b>| You can specify the amount to collect, how often the payments are taken and the total number of Direct Debits to be collected. With a fixed-length schedule, the total number of required payments are created in READY FOR EXPORT <a href="np_ddstatuses.html">status</a>. The payments are exported (sent to Clearing) automatically as each payment in the schedule is due.|
-|<b>Open-Ended</b>| The amount and the frequency is specified however there is no set number of payments and collections will continue to be made indefinitely. Only one payment (the latest) is ever in READY FOR EXPORT status prior to its collection date.|
+|**Fixed-Length**| You can specify the amount to collect, how often the payments are taken and the total number of Direct Debits to be collected. With a fixed-length schedule, the total number of required payments are created in `READY FOR EXPORT` [status](np_ddstatuses.html). The payments are exported (sent to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Clearing</a>, depending on your selected scheme) automatically as each payment in the schedule is due.|
+|**Open-Ended**| The amount and the frequency is specified however there is no set number of payments and collections will continue to be made indefinitely. Only one payment (the latest) is ever in `READY_FOR_EXPORT` status prior to its collection date.|
 
-Schedules may be configured with the following frequencies:
+A schedule may be configured with any one of the following frequencies:
 
 * Daily
 * Weekly
@@ -22,6 +22,11 @@ Schedules may be configured with the following frequencies:
 * Yearly
 * Custom
 
-The *Custom* option allows you to make collections at intervals of every 3 months (quarterly) or every 6 months (bi-anually). Where you choose the custom option you must set `paymentCustomFrequency` = 3 or 6 in the [Create Payment Schedule](np_createschedule.html) or in the [Create Payment Schedule & Mandate](np_createschedulemandate.html) requests.
+The *Custom* option allows you to make collections at intervals of every: 
+
+* 3 months (quarterly) or
+* 6 months (bi-anually). 
+
+Where you choose the custom option you must set `paymentCustomFrequency` = 3 or 6 in the [Create Payment Schedule](np_createschedule.html) or in the [Create Payment Schedule & Mandate](np_createschedulemandate.html) endpoints.
 
 {% include links.html %}

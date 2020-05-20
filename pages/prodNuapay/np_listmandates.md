@@ -1,5 +1,5 @@
 ---
-title: List Mandates
+title: List Mandates / DDIs
 keywords: List Mandates API
 summary: "List Mandates RESTful API"
 sidebar: np_sidebar
@@ -10,12 +10,12 @@ toc: false
 
 ## API Details
 
-The List Mandates request allows you to view a collection of mandates linked to a:
+The List Mandates request allows you to view a collection of mandates/DDIs linked to a:
 
 * Specific Scheme
 * All schemes (i.e. all mandates)
 
-Use an appropriate URI (as described below) to return the required collection of Mandates.
+Use an appropriate URI (as described below) to return the required collection of Mandates/DDIs.
 
 {% include swagger_np.html %}
 

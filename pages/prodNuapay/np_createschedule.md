@@ -10,9 +10,7 @@ toc: false
 
 ## API Details
 
-The Create Payment Schedule request allows you to create either a Fixed-Length or an Open-Ended schedule. 
-
-The fixed-length schedule will result in a number of Direct Debit payments being created; an open-ended schedule will generate a single Direct Debit (with additional single payments being added as required, based on the configured frequency of the payments).
+The Create Payment Schedule request allows you to create either a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.schedule-fixed}}">Fixed-Length</a> or an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.schedule-open}}">Open-Ended</a> schedule. 
 
 {% include swagger_np.html %}
 

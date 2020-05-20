@@ -10,9 +10,9 @@ toc: false
 
 ## API Details
 
-As detailed in the <a href="np_revokedirectdebit.html">Revoke Direct Debit</a> section, it is possible to revoke a single Direct Debit payment that is in READY FOR EXPORT status. The Revoke All Direct Debits request allows you to revoke a number of payments, linked to a specific mandate, in a single request (for a fixed-length schedule).
+As detailed in the [Revoke Direct Debit](np_revokedirectdebit.html) section, it is possible to revoke a single Direct Debit payment that is in `READY_FOR_EXPORT` status. The Revoke All Direct Debits request allows you to revoke a number of payments, linked to a specific mandate/DDI, in a single request (for a fixed-length schedule).
 
-{% include important.html content="Note that in a fixed-length schedule (e.g. 12 payments, €10 per Direct Debit) all payments are created in READY FOR EXPORT status when you create the payment schedule. When you use the Revoke All Direct Debits request, all these payments are revoked. In an open-ended schedule only one payment is created in READY FOR EXPORT at any point in time; when one payment is exported a new payment is created in READY FOR EXPORT status. When you use Revoke All against an open-ended schedule, only one payment is revoked and a new payment will be create in READY FOR EXPORT." %}
+{% include important.html content="Note that in a fixed-length [payment schedule](np_schedulesoverview.html) (e.g. 12 payments, €10 per Direct Debit) all payments are created in READY_FOR_EXPORT status when you create the payment schedule. When you use the Revoke All Direct Debits request, all these payments are revoked. In an open-ended schedule only one payment is created in READY FOR EXPORT at any point in time; when one payment is exported a new payment is created in READY FOR EXPORT status. When you use Revoke All against an open-ended schedule, only one payment is revoked and a new payment will be create in `READY_FOR_EXPORT`." %}
 
 
 {% include swagger_np.html %}

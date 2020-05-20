@@ -1,5 +1,5 @@
 ---
-title: Upload Mandate Document
+title: Upload Mandate / DDI Document
 keywords: Upload Mandate Document API
 summary: "Upload Mandate Document RESTful API"
 sidebar: np_sidebar
@@ -10,9 +10,9 @@ toc: false
 
 ## API Details
 
-If you want to upload a representation of the mandate, for example if you have a signed paper mandate, have scanned it and saved it as a PDF, you can upload this to Nuapay so that it is linked to the required mandate.
+If you want to upload a representation of the mandate/DDI, for example if you have a signed paper mandate, have scanned it and saved it as a PDF, you can upload this to Nuapay so that it is linked to the required mandate/DDI.
 
-This can then be viewed later if you use the <a href = "np_retrievemandatedoc.html"> Retrieve Mandate Document</a> call.
+This can then be viewed later if you use the [Retrieve Mandate Document](np_retrievemandatedoc.html) service.
 
 {% include swagger_np.html %}
 

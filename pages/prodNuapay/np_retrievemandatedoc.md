@@ -1,5 +1,5 @@
 ---
-title: Retrieve Mandate Document
+title: Retrieve Mandate /DDI Document
 keywords: Retrieve Mandate Document API
 summary: "Retrieve Mandate Document RESTful API"
 sidebar: np_sidebar
@@ -10,9 +10,9 @@ toc: false
 
 ## API Details
 
-All Mandates include a PDF representation of the mandate data. If required you may upload a different representation of a mandate if required (PDF, JPG and GIF formats are all supported).
+All Mandates/DDIs include a PDF representation of the mandate/DDI data. If required you may upload a different representation of a mandate (PDF, JPG and GIF formats are all supported).
 
-The Retrieve Mandate Document call allows you to access the file representation of the mandate.
+The **Retrieve Mandate Document** call allows you to access the file representation of the mandate.
 
 {% include swagger_np.html %}
 

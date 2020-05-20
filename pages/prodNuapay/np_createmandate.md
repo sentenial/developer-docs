@@ -1,6 +1,6 @@
 ---
-title: Create Mandate
-keywords: sample
+title: Create Mandate/DDI
+keywords: Mandate DDI Create Initiate Begin
 summary: "Create Mandate RESTful API"
 sidebar: np_sidebar
 permalink: np_createmandate.html
@@ -14,8 +14,11 @@ toc: false
 
 ## API Details
 
-<p>Mandates must be created under a specific scheme (e.g. the SEPA CORE or Bacs scheme) and must also be linked to a Creditor Scheme ID (CSID) in SEPA or a Service User Number (SUN) for Bacs. (To determine your CSID/SUN use the <a href="np_listcredscheme.html"> List Creditor Schemes</a> API request).</p> 
-<p>Depending on the configuration of your Creditor Scheme your mandates will be created in a specific status. Note that, regardless of the scheme, Direct Debit payments can only be created against an Active mandate.</p>
+Mandates/DDIs must be created under a specific scheme (e.g. the SEPA CORE or Bacs scheme) and must also be linked to a Creditor Scheme ID (CSID) in SEPA or a Service User Number (SUN) for Bacs. (To determine your CSID/SUN use the [List Scheme](np_listcredscheme.html) service.  
+
+Depending on the configuration of your Creditor Scheme your mandates/DDI will be created in a specific [status](np_mandatestatuses.html). 
+
+Regardless of the scheme, Direct Debit payments can only be created against an **Active** mandate.
 
 {% include swagger_np.html %}
 
