@@ -1,5 +1,5 @@
 ---
-title: Activate Mandate
+title: Activate Mandate / DDI
 keywords: sample
 summary: "Activate Mandate RESTful API"
 sidebar: np_sidebar
@@ -10,11 +10,14 @@ toc: false
 
 ## API Details
 
-<p>Where a mandate is in Pending or Suspended <a href="np_mandatestatuses.html">status</a> you can set it to Active so that Direct Debit Payments can be made against it.</p>
+Where a SEPA mandate is in `PENDING` or `SUSPENDED` [status](np_mandatestatuses.html) you can set it to `ACTIVE` so that Direct Debit Payments can be made against it.
 
-<p>If you are using paper mandates then you may need to consider an option on your custom application to allow operators to click a button to activate mandates when a signed mandate is received, which would call this request.</p>
+If you are using paper mandates then you may need to consider an option on your custom application to allow operators to click a button to activate mandates when a signed mandate is received, which would call this service.
 
-<p>If you are using E-Mandates, the activate mandate request is dynamically called and may (optionally) include details related to the electronic signing event (IP Address, location of the signature, the mobile phone or email address used)</p>
+If you are using E-Mandates, the activate mandate request is dynamically called and may (optionally) include details related to the electronic signing event (IP Address, location of the signature, the mobile phone or email address used).
+
+
+{% include tip.html content="Bacs DDIs must go through the Bacs automated registration process (AUDDIS) and are automatically set to `ACTIVE` in Nuapay, once successfully registered with payers' banks." %}
 
 
 {% include swagger_np.html %}

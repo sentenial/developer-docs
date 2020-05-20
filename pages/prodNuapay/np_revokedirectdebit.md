@@ -10,12 +10,12 @@ toc: false
 
 ## API Details
 
-When you first create a Direct Debit it has a status of <b>READY FOR EXPORT</b>. Once it is forwarded from Nuapay on to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">Clearing</a> for processing, its status is updated to <b>EXPORTED</b>.
+When you first create a Direct Debit it has a status of `READY_FOR_EXPORT`. Once it is forwarded from Nuapay on to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs</a> for processing, its status is updated to `EXPORTED`.
 
 If you decide that you do not want to settle the payment and do not want to pass it on for further processing at Clearing, you may revoke it.
 
 
-{% include tip.html content="The Revoke operation is only possible for payments that are in READY FOR EXPORT status. For more information see [Direct Debit Statuses](np_ddstatuses.html)." %}
+{% include tip.html content="The Revoke operation is only possible for payments that are in READY_FOR_EXPORT status. For more information see [Direct Debit Statuses](np_ddstatuses.html)." %}
 
 
 {% include swagger_np.html %}

@@ -1,5 +1,5 @@
 ---
-title: Cancel Mandate
+title: Cancel Mandate / DDI
 keywords: sample
 summary: "Cancel Mandate RESTful API"
 sidebar: np_sidebar
@@ -10,12 +10,14 @@ toc: false
 
 ## API Details
 
-<p>When you cancel a mandate:</p>
+It is only possible to cancel a mandate/DDI that is in `ACTIVE` status. 
 
-* Any READY FOR EXPORT transactions linked to it are automatically cancelled.
-* No further collections may be made against the mandate.
+When you cancel a mandate/DDI:
 
-<p>If you want to engage with your payer at a later point and want to take direct debit payments, you will need to create a new mandate.</p>
+* Any `READY FOR EXPORT` Direct Debit transactions linked to it are automatically cancelled.
+* No further collections may be made against the mandate/DDI.
+
+If you want to engage with your payer at a later point, and want to collect direct debit payments once again, you will need to create a new mandate/DDI.
 
 
 {% include swagger_np.html %}

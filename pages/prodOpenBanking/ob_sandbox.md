@@ -8,7 +8,15 @@ folder: prodOpenBanking
 ---
 
 
-The ASPSP Sandbox allows you to simulate Open Banking calls by interacting with the **Nuapay Test Bank**. Depending on the integration mode, the method for accessing the test bank varies (see the following sections for details on the two modes):
+The ASPSP Sandbox allows you to simulate Open Banking calls by interacting with the **Nuapay Test Bank**. Depending on the integration mode, the method for accessing the test bank varies (see the following sections for details on the available modes):
+
+## Checkout Mode
+
+For [Checkout](ob_pispimplementation.html#checkout-mode) users who want to access the Nuapay Test Bank:
+
+1. Call the POST `/payments` service (setting `integrationType` = `CHECKOUT`).
+1. On the Bank Selection screen that's rendered, select the **Nuapay Test Bank**.
+1. Use the following credentials to log on: username = `psu` and password = `psu`
 
 ## Self-Hosted Mode
 
@@ -21,13 +29,16 @@ For [Self-Hosted](ob_pispimplementation.html#self-hosted-mode) users who want to
 1. Launch the returned URL in your browser and log on to the Nuapay Test Bank (ASPSP); use the following credentials: username = `psu` and password = `psu`
 
 
-## Checkout Mode
+## Self-Hosted-Callback Mode
 
-For [Checkout](ob_pispimplementation.html#checkout-mode) users who want to access the Nuapay Test Bank:
+For [Self-Hosted-Callback](ob_pispimplementation.html#self-hosted-callback-mode) users who want to access the Test Bank:
 
-1. Call the POST `/payments` service (setting `integrationType` = `CHECKOUT`).
-1. On the Bank Selection screen that's rendered, select the **Nuapay Test Bank**.
-1. Use the following credentials to log on: username = `psu` and password = `psu`
+1. Call the GET `/banks` service to retrieve the list of configured banks (see [Retrieve Banks](ob_getbank.html) for more information on this).
+1. Note down the ID of the **Nuapay Test Bank**.
+1. Call the POST `/payments` service (setting `integrationType` = `SELF_HOSTED_CALLBACK` and providing the appropriate `bankId`, which you retrieved in step 2).
+1. The response returns the `aspspAuthUrl` (the URL to the Sandbox ASPSP i.e. the Nuapay Test Bank)
+1. Launch the returned URL in your browser and log on to the Nuapay Test Bank (ASPSP); use the following credentials: username = `psu` and password = `psu`
+
 
 
 ## Simulating Different Responses

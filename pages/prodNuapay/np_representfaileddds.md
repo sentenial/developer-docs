@@ -10,26 +10,26 @@ toc: false
 
 ## API Details
 
-Where a payment fails (for example for insufficient funds) you may want to re-try (or re-present) the payment.
+Where a payment fails (for example for insufficient funds) you may want to re-try (i.e. re-present) the payment.
 
 The re-present request carries out two distinct steps:
 
-* It updates the original failed payment's status to Re-presented
-* It creates a new Direct Debit payment (with a new collection date and a new end-to-end ) in READY FOR EXPORT status
+* It updates the original failed payment's status to `RE-PRESENTED`
+* It creates a new Direct Debit payment (with a new collection date and a new payment reference) in `READY_FOR_EXPORT` status
 
 Optionally the new Direct Debit payment may also include a re-presentation fee
 
-For SEPA:
+For **SEPA**:
 {% include note.html content="Certain **SEPA Response codes** will indicate that a re-presentation will be unsuccessful. For example an MD07 (debtor deceased) or an AC04 (Account closed). We recommend that you only attempt to re-present a failed payment for MS03 (Reason not specified) and AM04 (Insufficient funds). " %}
 
-For Bacs:
+For **Bacs**:
 {% include note.html content="For **Bacs** re-presentation must take place within one month of the date on which the first presentation was made; the amount must be the same as the original failed payment. A service user should give at least 5 working days' notice to the payer of the new collection date. For more information on the rules on re-presentation see the Bacs Service User Guide, available for download from the [Bacs site](https://www.bacs.co.uk/)" %}
 
 The following are optional arguments:
 
-* representationDate
-* representationFee (not allowed for Bacs)
-* endToEndId
+* `representationDate`
+* `representationFee` (not allowed for Bacs)
+* `endToEndId`
 
 {% include important.html content="If you do not specify a re-presentation date or fee, the default values will be taken from your organisation's Nuapay configuration. These settings are configured at the Scheme level for your business."%} 
 

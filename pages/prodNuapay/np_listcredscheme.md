@@ -1,5 +1,5 @@
 ---
-title: List Creditor Schemes
+title: List Schemes
 keywords: List Creditor Schemes API
 summary: "List Creditor Schemes RESTful API"
 sidebar: np_sidebar
@@ -10,14 +10,14 @@ toc: false
 
 ## API Details
 
-<p>All mandates that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID) for SEPA payments or to a Service User Number (SUN) for Bacs payments. </p>
+All mandates/DDIs that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID) for SEPA payments or to a Service User Number (SUN) for Bacs payments. 
 
 
-<p>If you already have a CSID/SUN you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier. </p>
+If you already have a CSID/SUN you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier.
 
 {% include note.html content="You must use the resource identifier of the scheme in your requests. This identifier will be similar to this: **abxq9kq52l** do not reference the actual creditor scheme ID or SUN in your requests." %}
 
-<p>If you lose this reference or if you have multiple CSIDs and want to review them all, you can use the List Creditor Schemes request. You will use this resource identifier CSID/SUN in all subsequent Mandate and Direct Debit requests.</p>
+If you lose this reference or if you have multiple CSIDs or SUNs and want to review them all, you can use the List Creditor Schemes service. You will use this resource identifier CSID/SUN in all subsequent Mandate and Direct Debit requests.
 
 
 {% include swagger_np.html %}

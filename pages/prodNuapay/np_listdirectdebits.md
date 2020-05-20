@@ -12,11 +12,10 @@ toc: true
 
 The List Direct Debits request allows you to view a collection of direct debits linked to:
 
-* A Mandate
+* A Mandate/DDI
 * A Specific Scheme
 * All schemes (i.e. all payments)
 
-Use an appropriate URI (as described below) to return the required collection of Direct Debits.
 
 {% include swagger_np.html %}
 

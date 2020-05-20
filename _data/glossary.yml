@@ -1,7 +1,11 @@
-bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the schemes behind the clearing and settlement of UK automated payment methods Direct Debit and Bacs Direct Credit."
+bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the scheme behind the clearing and settlement of Direct Debits in the UK."
 clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payments. (The EBA's STEP-2 system allows banks across Europe to use one channel to send and receive their SEPA Credit Transfer and SEPA Direct Debit transactions)"
 
+bac-collection-cycle: "Day 1: payment file is submitted; Day 2: transactions processed (on the business day before the collection day); Day 3: Direct Debits are debited from payers' accounts and credited to the merchant; Day 4-6 Unpaids may be processed."
+
 aspsp: "The Account Servicing Payment Service Provider: this is the Bank or Payment Institution"
+
+collection_date: "The date on which funds are debited from payers' accounts and credited to the merchant account. Can also be referred to as the value date or the settlement date."
 
 credit_transfer: "A Credit Transfer or CT is a payment instruction from one account to another. Unlike a Direct Debit payment where funds are pulled from an account, a CT payment is a push payment."
 
@@ -13,18 +17,14 @@ otp: "One-Time Password"
 
 psu: "Payment Service User - the person using the payment service - the payer."
 
-jekyll_platform: "Jekyll is a static site generator that builds sites using most modern web technologies."
-
 nupay_tpp: "Nuapay TPP is the Open Banking application"
 
-fractious: "Like a little mischevious child, full of annoying and constant trouble."
+r-transaction: "Refers to the Direct Debit failures that begin with the letter 'R': Revoke, Reject, Refuse, Return, Refund (also Cancel)"
 
-gratuitous: "Something that is unwarranted and uncouth, like the social equivalent of a flagrant foul."
+schedule-fixed: "A fixed-length schedule results in a number of Direct Debit payments being created up front when the schedule is created e.g. 12 monthly Direct Debit payments"
 
-haughty: "Proud and flaunting it. Holding your head high up like a snooty, too-good-for-everything rich person."
+schedule-open: "In an open-ended schedule a single Direct Debit is created initially with additional payments being generated when required, based on the configured frequency (e.g. a new payment is generated once per month)."
 
-impertinent: "Someone acting rude and insensitive to others."
-
-intrepid: "Brave and courageous especially in a difficult, dangerous situation."
+sun: "Service User Number; a unique identifier used to identify a user (e.g. a merchant) in the Bacs scheme"
 
 tpp: "Third Party Provider; the provider of the payment service. Nuapay TPP is the Open Banking application."

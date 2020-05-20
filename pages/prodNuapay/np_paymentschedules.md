@@ -13,7 +13,7 @@ toc: false
 
 Direct Debit payments may be single, once-off payments but more typically they are grouped together so that a series, or schedule, of payments can be set up in one go.
 
-For example, a yearly magazine subscription could be easily set up so that Direct Debit collections of €5 are taken each month so that €60 is collected in total over the course of a single year (12 x €5).
+For example, a yearly magazine subscription could be easily set up so that SEPA Direct Debit collections of €5 are taken each month with €60 being collected in total over the course of a single year (12 x €5).
 
 Nuapay provides two payment schedule options:
 

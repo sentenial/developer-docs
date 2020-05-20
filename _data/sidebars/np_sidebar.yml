@@ -74,7 +74,7 @@ entries:
       url: /np_schemeoverview.html
       output: web, pdf    
 
-    - title: List Creditor Schemes
+    - title: List Schemes
       url: /np_listcredscheme.html
       output: web, pdf  
 
@@ -324,7 +324,11 @@ entries:
 
         - title: Credit Transfer Reject
           url: /np_whctreject.html
-          output: web      
+          output: web    
+          
+        - title: Credit Transfer Accept
+          url: /np_whctaccept.html
+          output: web    
           
   - title: Security
     output: web, pdf

@@ -1,5 +1,5 @@
 ---
-title: Create Direct Debit & Mandate
+title: Create Direct Debit & Mandate/DDI
 keywords: Create Direct Debit & Mandate
 summary: "Create Direct Debit & Mandate RESTful API - generate a mandate and a payment in a single API call."
 sidebar: np_sidebar
@@ -10,24 +10,28 @@ toc: false
 
 ## API Details
 
-As outlined in the <a href= "np_createdirectdebit.html"> Create Direct Debit</a> call, you must have an active mandate before you can begin to collect Direct Debit payments. Typically you would use the <a href="np_createmandate.html">Create Mandate</a> call and then reference the successfully activated mandate when you create the Direct Debit payment.
+As outlined in the [Create Direct Debit](np_createdirectdebit.html) service, you must have an `ACTIVE` mandate/DDI before you can begin to collect Direct Debit payments. Typically you would use the [Create Mandate](np_createmandate.html) endpoint and then reference the successfully activated mandate/DDI when you create the Direct Debit payment.
 
-The <b>Create Direct Debit and Mandate</b> call allows you to combine these separate requests into a single call; the request performs two operations:
+The **Create Direct Debit and Mandate** call allows you to combine these separate requests into a single call; the request performs two operations:
 
-* A mandate is created in Active status
-* A Direct Debit payment is created and linked to the new mandate
+* A mandate/DDI is created in `ACTIVE` status
+* A Direct Debit payment is created and linked to the new mandate/DDI
 
 
-{% include note.html content="A successful request will result in a new mandate and direct debit being created. If the request is unsuccessful neither a mandate nor a direct debit will be created." %}
+{% include note.html content="A successful request will result in a new mandate and direct debit being created. If the request is unsuccessful neither a mandate/DDI nor a direct debit will be created." %}
 
 
 The Create Direct Debit and Mandate request must include:
 
-* A requested collection date for the Direct Debit payment
+* A requested <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a> for the Direct Debit payment
 * The payment amount
 * The payer's name
-* The payer's IBAN
-* The Merchant Nuapay IBAN
+* The payer's account details
+* The Merchant's Nuapay IBAN
+
+
+{% include tip.html content="In Bacs, because the DDI will need to be registered with the scheme (via an AUDDIS submission) before the first Direct Debit payment can be made, if the `requestedCollectionDate` is not set beyond the 3 business days into the future, the date will be automatically shifted." %}
+
 
 {% include swagger_np.html %}
 

@@ -12,7 +12,7 @@ toc: true
 
 The List Payment Schedule request allows you to view a collection of payment schedules linked to:
 
-* A Mandate
+* A Mandate/DDI
 * A Specific Scheme
 * All schemes (i.e. all schedules)
 

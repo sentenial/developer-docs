@@ -10,13 +10,13 @@ toc: false
 
 ## API Details
 
-In a Fixed-Length schedule the <b>Cancel Payment Schedule</b> request will set the status of any READY FOR EXPORT Direct Debit transactions in a payment schedule to REVOKED.
+In a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.schedule-fixed}}">Fixed-Length</a> schedule the **Cancel Payment Schedule** request will set the status of any `READY_FOR_EXPORT` Direct Debit transactions in that schedule to `REVOKED`.
 
-In an open-ended schedule the current READY FOR EXPORT payment is updated to Cancelled and no additional payments will be added.
+In an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.schedule-open}}">Open-Ended</a> schedule the current `READY_FOR_EXPORT` payment is updated to `CANCELLED` and no additional payments will be added.
 
 {% include important.html content="Direct Debits that have been EXPORTED are unaffected by the cancel payment schedule request" %}
 
-(See <a href="np_ddstatuses.html">Direct Debit Statuses</a> for more information on the various payment statuses that are possible).
+(See [Direct Debit Statuses](np_ddstatuses.html) for more information on the various payment statuses that are possible).
 
 {% include swagger_np.html %}
 
