@@ -19,7 +19,6 @@ See [PISP Implementation Options](ob_pispimplementations.html) for more on these
 
 Depending on the setup that best suits your business needs, the API calls that you need to make and how you process the responses vary. 
 
-The following sections give a high-level summary of the calls required for each of the integration models.
 
 ## A Note on Authentication
 
@@ -30,6 +29,39 @@ When interacting with the Nuapay Endpoints you must be authenticated via one of 
 
 For more details, and to decide on the approach that suits your business needs, see [API Key Authentication](ob_merchantintegration.html#api-key-authentication) and [Token Authentication](ob_merchantintegration.html#token-authentication).
   
+
+## Postman Collection
+
+|<img src="images/postman-logo.png">|<br>We highly recommend that you use **Postman** to test our PISP APIs on the Sandbox environment. Download it for free from <a href= "https://www.postman.com/downloads/" target="_blank">www.postman.com/downloads</a>.<br>| 
+
+
+{% include tip.html content="Unlike the Swagger specification, the Postman Collection we've created allows you to work with the APIs directly in our Sandbox environment. While our Swagger file is a formal definition of our PISP service, which you can use to generate client libraries, the Postman Collection logically groups the services together so that you can see the business logic of why (and when) to call the various PISP endpoints."%} 
+
+You will need to download:
+
+* A Collection `.JSON` file. 
+* An Environment `.JSON` file.
+
+{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_merchants' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a>" type="primary" %} 
+
+
+1. Once you have downloaded the files, open Postman.
+1. Select **File > Import**. 
+1. Click the **Upload Files** button on the Import dialog box and choose both the *Collection* and the *Environment* file (which you downloaded above).
+1. Click the **Import** button.
+1. Once you've successfully imported the collection: 
+   * `STEP 1` - Select the **Open Banking Merchant PISP Sandbox** environment from the drop-down (located on the top-right of the Postman application). 
+   * `STEP 2` - Click the Eye icon. 
+   * `STEP 3` - Click **Edit**.
+
+    <img src="images/postman-setup-editenvmerch.png">
+1. The **MANAGE ENVIRONMENTS** dialog box is displayed.
+1. Specify your `apiKey` in the *CURRENT VALUE* text box:
+    
+    <img src="images/postman-setup-manageenv.png">
+
+{% include tip.html content="If you don't already have one, contact our Support Team to request an API Key: <a href='mailto:api.support@nuapay.com'>api.support@nuapay.com</a>."%} 
+
 
 ## Checkout Mode
 
