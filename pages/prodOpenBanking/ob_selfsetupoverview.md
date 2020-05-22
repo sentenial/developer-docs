@@ -28,7 +28,7 @@ Set the `integrationType` to `SELF_HOSTED`, specify the `bankId` provided by the
 1. Your payer interacts with the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment. 
 1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> posts the payment ID to the partner/merchant URL (`merchantPostAuthUrl`). The payload of this request that you need to process includes:
     * **Headers** e.g. `ContentType: x-www-form-urlencoded`
-    * **Body** e.g. `endToEndIdentification` = `d8e17bf1f3244e5f96a869f9661a2a6&`; `paymentId` = `gabxl3knbl`
+    * **Body** e.g. `endToEndIdentification=d8e17bf1f3244e5f96a869f9661a2a6&paymentId=gabxl3knbl`
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step) or, alternatively, use Webhooks. 
 
 
