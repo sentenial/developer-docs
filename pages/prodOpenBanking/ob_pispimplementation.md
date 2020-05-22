@@ -59,7 +59,7 @@ The following summarises the options available to both merchants and partners (a
       <ul>
       <li>The user interface is handled by you for Bank Selection.</li>       
       <li>The signal that the <a href="#" data-toggle="tooltip" data-original-title="Payment Service User - the person using the payment service - the payer.">PSU</a> and <a href="#" data-toggle="tooltip" data-original-title="The Account Servicing Payment Service Provider: this is the Bank or Payment Institution">ASPSP</a> have finished interacting is sent via a <strong>POST</strong> to the URL defined in the <code class="language-plaintext highlighter-rouge">merchantPostAuthUrl</code> of the <code class="language-plaintext highlighter-rouge">/tpp/payment</code> request.
-       For more on this see <a href= "ob_selfsetupoverview.html#merchantpostauthurl-handling">Processing the Callback
+       For more on this see <a href= "ob_selfsetupoverview.html#merchantpostauthurl-handling">Processing the Callback</a>
        </li></ul></td>
     </tr>
     <tr>
