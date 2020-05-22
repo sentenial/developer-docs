@@ -30,7 +30,7 @@ Set the `integrationType` to `SELF_HOSTED`, specify the `bankId` provided by the
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step) or, alternatively, use Webhooks. 
 
 ## merchantPostAuthUrl handling
-The mercahnt merchantPostAuthUrl is sent as follows
+The merchant merchantPostAuthUrl is sent as follows
 
 The payload of this request that you need to process includes:  
     * **Headers** e.g. `ContentType: x-www-form-urlencoded`  
