@@ -32,9 +32,9 @@ Set the `integrationType` to `SELF_HOSTED`, specify the `bankId` provided by the
 ## merchantPostAuthUrl handling
 The mercahnt merchantPostAuthUrl is sent as follows
 
-The payload of this request that you need to process includes:
-    * **Headers** e.g. `ContentType: x-www-form-urlencoded`
-    * **Body** e.g. `endToEndIdentification=d8e17bf1f3244e5f96a869f9661a2a6&paymentId=gabxl3knbl`
+The payload of this request that you need to process includes:  
+    * **Headers** e.g. `ContentType: x-www-form-urlencoded`  
+    * **Body** e.g. `endToEndIdentification=d8e17bf1f3244e5f96a869f9661a2a6&paymentId=gabxl3knbl`  
 
 {% include links.html %}
 
