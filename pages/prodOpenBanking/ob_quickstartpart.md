@@ -31,23 +31,13 @@ You will need to download:
 * A Collection `.JSON` file. 
 * An Environment `.JSON` file.
 
-{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_partners' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a>" type="primary" %} 
+{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_partners' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %} 
 
+Once you have donwloaded the *Collection* and the *Environment* files:
 
-1. Once you have downloaded the files, open Postman.
-1. Select **File > Import**. 
-1. Click the **Upload Files** button on the Import dialog box and choose both the *Collection* and the *Environment* file (which you downloaded above).
-1. Click the **Import** button.
-1. Once you've successfully imported the collection:
-   * `STEP 1` - Select the **Open Banking Partner PISP Sandbox** environment from the drop-down (located on the top-right of the Postman application). 
-   * `STEP 2` - Click the Eye icon. 
-   * `STEP 3` - Click **Edit**.
-
-    <img src="images/postman-setup-editenv.png">
-1. The **MANAGE ENVIRONMENTS** dialog box is displayed.
-1. Specify your `apiKey` in the *CURRENT VALUE* text box:
-    
-    <img src="images/postman-setup-manageenv.png">
+1. Open Postman.
+1. Import the collection files.
+1. Specify your API Key.
 
 {% include tip.html content="If you don't already have one, contact our Support Team to request an API Key: <a href='mailto:api.support@nuapay.com'>api.support@nuapay.com</a>."%} 
 
