@@ -72,13 +72,6 @@ Possible Webhook event types:
 		</tr>
 		<tr>
 			<td>root</td>
-			<td>resourceDetails</td>
-			<td> object</td>
-			<td>Mandatory</td>
-			<td>Resource specific data grouping object </td>
-		</tr>
-		<tr>
-			<td>root</td>
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
