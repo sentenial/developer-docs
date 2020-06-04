@@ -85,7 +85,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
+      <td><a href="ob_whpaymentdecl.html">PaymentDeclined</a></td>
     </tr>
     <tr>
       <td>FUNDS_CHECK_TIMEOUT [not implemented]</td>
