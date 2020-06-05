@@ -41,12 +41,12 @@ To use Self-Hosted-Callback mode see the flow described in the image below (clic
 Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provided by the payer and set the `merchantPostAuthUrl`.
 The merchantPostAuthUrl will process the callback from the ASPSP, this information needs to be captured and sent to Nuapay.
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment - note after the PSU approves or denies the payment request they are redirected to the merchantPostAuthUrl.
-1. [Process the callback](ob_selfcallbacksetupoverview.html#processing-the-callback)
-   * The partner retrieves An OAuth token (providing the Partner API key and setting scope = `openbanking_callback`).
+1. [Process The Callback](ob_selfcallbacksetupoverview.html#processing-the-callback)
+   * The partner prepares A partner level OAuth token with scope = `openbanking_callback`).
    * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>  at `/tpp/callback`. (See the following section for more on this).   
 1. The response to `/tpp/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status. Use [Retrieve Payment](ob_retrievepayment.html)
 
-## Processing the Callback
+## Processing The Callback
 
 Note that:
 
