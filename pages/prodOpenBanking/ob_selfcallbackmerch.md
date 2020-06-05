@@ -49,7 +49,8 @@ Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provid
    * Use this token to authenticate when you call the [Forward Payment Callback](ob_paymentcallback.html) endpoint, passing the callback parameters.
    * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> at `/tpp/callback`. (See the following section for more on this).   
 1. The response to `/tpp/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status by using [Retrieve Payment](ob_retrievepayment.html).
-## Processing the Callback
+
+## Processing The Callback
 
 Note that:
 
