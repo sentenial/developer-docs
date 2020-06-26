@@ -4,7 +4,7 @@ keywords: Payment Timeout Event Webhook
 summary: "Payment Timeout Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymenttimeout.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

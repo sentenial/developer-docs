@@ -4,7 +4,7 @@ keywords: Payment Complete Event Webhook
 summary: "Payment Complete Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymentcomplete.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

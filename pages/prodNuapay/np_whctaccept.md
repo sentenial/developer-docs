@@ -13,8 +13,6 @@ toc: false
 
 ## Webhook Message Details
 
-{% include warning.html content="This Webhook notification is currently only available in the Nuapay Test environment. This will be available on Production on June 9th 2020" %}
-
 This Webhook has a single event type: **CreditTransferAccept**
 
 ## Webhook Event Message Details

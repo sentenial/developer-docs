@@ -7,6 +7,8 @@ aspsp: "The Account Servicing Payment Service Provider: this is the Bank or Paym
 
 collection_date: "The date on which funds are debited from payers' accounts and credited to the merchant account. Can also be referred to as the value date or the settlement date."
 
+csm: "The Clearing and Settlement Mechanisms are the processes underlying all payment transactions exchanged between two payment service providers (PSPs)."
+
 credit_transfer: "A Credit Transfer or CT is a payment instruction from one account to another. Unlike a Direct Debit payment where funds are pulled from an account, a CT payment is a push payment."
 
 direct_debit: "A Direct Debit or DD is a payment initiated by an originator that pulls the requested amount from the payer's bank account. Payers must have agreed to the payment being pulled from their account in advance by signing a mandate or Direct Debit Instruction. "

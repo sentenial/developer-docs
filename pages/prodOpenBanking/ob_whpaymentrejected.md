@@ -4,7 +4,7 @@ keywords: Payment Rejected Event Webhook
 summary: "Payment Rejected Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymentrejected.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  
