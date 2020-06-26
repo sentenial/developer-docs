@@ -10,8 +10,6 @@ toc: false
 
 ## Overview
 
-{% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
-
 
 {% include note.html content="This section is for **Partner** users who want to use the **SELF_HOSTED_CALLBACK** mode - see [Implementation Options](ob_pispimplementation.html) for more on this." %}
 

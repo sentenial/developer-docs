@@ -4,7 +4,7 @@ keywords: Payment Declined Event Webhook
 summary: "Payment Declined Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymentdecl.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

@@ -147,23 +147,49 @@ The call is to ``/merchant/status?id=gabxrlvbl5``
 
 ## The End-User Experience
 
-Once configured your users' interaction with Open Banking payments will be similar to the following:
+Once configured, your users' interaction with Open Banking payments will be similar to the following for a Desktop user (for users on mobile devices, the screens vary from the sample presented below):
 
 The PSU (i.e. the end user) will select the required goods or services on your merchant site and:
 
 1. Select **Nuapay Open Banking** as the payment method.
 1. Click **Pay**.
 1. A pop-up window overlayed on the calling payment page is generated. This is rendered through Nuapay's TPP application:<br/>
-<img src = "images/ob_1_selectbnk3.png">
-1. The user selects the <i>ASPSP</i> (i.e. the bank) in which his account is held (Barclays for example) and clicks **Continue**.
-1. A confirmation of the bank selected is displayed and the user clicks **Confirm**.
-1. The user is then redirected to his bank where he must sign on with his online banking credentials:
-<img src="images/ob_2_bnklogon.png">
-1. Once successfully signed on the user can choose to **Confirm** the payment to the merchant:
-<img src ="images/ob_3_bnkconfirm.png">
-1. The payment is authorised and the payer (PSU) is redirected to the Nuapay TPP with a confirmation message:
-<img src="images/ob_4_conf.png">
-1. The pop-up window may be closed by the payer (or may close automatically) and the user is redirected to the merchant payment page, with a confirmation message.
+<img src = "images/ob_select_bnk.png">
+1. If required, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> can click the order details icon to expand and view the items making up the order:<br/>
+<img src = "images/ob_order_details.png"><br/>
+(See the `orderDetails` object on the [Create Payment](ob_createpayment.html#create-payment-endpoint) endpoint for more on this).
+1. The user selects the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> in which his/her account is held (Revolut for example) and is redirected to the bank's logon page (or optionally the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects the bank and clicks **Continue**, if you have decided to configure a Confirmation page - see the following section for more on this).<br/>
+<img src = "images/ob_redirect.png">
+1. The user then authenticates on to the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> (Revolut in this example):
+<img src="images/ob_sign_in.png">
+1. Once authenticated with the bank, the user can choose to **Authorise** the payment:
+<img src ="images/ob_authorise.png">
+1. Once authorised, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is redirected to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> with a confirmation message:
+<img src="images/ob_success.png">
+1. The pop-up closes (either the user clicks **Close** or it closes automatically after 30 seconds) and the user is redirected to the merchant payment page, with a confirmation message.
+
+## Configuring a Confirmation Screen
+
+Some merchants like the Open Banking payment user experience to be as fast as possible: 
+
+The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>:
+1. Selects the required <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
+1. Logs on to his/her bank.
+1. Authorises the payment and is  redirected to a success page. 
+
+Friction is limited and the user can completed the payment in seconds.
+
+However in some cases a little friction isn't all bad! Especially where users may be new to the payment method, it can be good to slow things down a little. 
+With this in mind, rather than provide only the 3 steps above, you can configure the flow to have an additional confirmation page. 
+
+With this additional page added:
+
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects the required <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
+1. The selected bank details are then displayed on a confirmation screen:
+<img src="images/ob_confirm.png">
+1. The user see the payee details (in this example the merchant Men's Fashion) and can choose to click **Continue** (to redirect to the selected bank) or **Go Back** if he/she has made an incorrect selection.
+
+If you think that you would like to include the confirmation screen in your flow, please inform your Account Manager and we will be happy to configure this for you.
 
 {% include callout.html content="On successful completion of this payment flow your customer has provided his/her consent for the payment to be collected for the selected account. The actual funds transfer to your account may happen within a matter of seconds or it may be processed on the following business day. The speed with which funds are transferred to your account is controlled by your customers' banks and is determined by the default payment scheme they are using. A scheme like SEPA CT Instant (for Euro payments) or Faster Payments (for GBP payments) will result in funds being credited to your account within seconds. Schemes like SEPA CT and BACS Credit will generally take a business day to process. Nuapay uses the [Payment Received Webhook](ob_whreceived.html) to notify you when funds are settled to your Nuapay account (Note: only available if you are using a Nuapay account)." type="primary" %}
 

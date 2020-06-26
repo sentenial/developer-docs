@@ -4,7 +4,7 @@ keywords: Received Payment Event Webhook
 summary: "Received Payment Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whreceived.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

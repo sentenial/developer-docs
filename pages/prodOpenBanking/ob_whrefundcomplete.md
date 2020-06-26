@@ -4,7 +4,7 @@ keywords: Payment Refunded Event Webhook
 summary: "Payment Refunded Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whrefundcomplete.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

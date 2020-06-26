@@ -42,7 +42,7 @@ You will need to download:
 * A Collection `.JSON` file. 
 * An Environment `.JSON` file.
 
-{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_partners' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %} 
+{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_merchants' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %} 
 
 Once you have donwloaded the *Collection* and the *Environment* files:
 

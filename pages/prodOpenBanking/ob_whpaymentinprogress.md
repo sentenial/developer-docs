@@ -4,7 +4,7 @@ keywords: Payment in Progress Event Webhook
 summary: "Payment in Progress Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymentinprogress.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: false
 ---
  

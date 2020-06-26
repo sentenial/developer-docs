@@ -1,25 +1,24 @@
 ---
-title: Payment Authorised Event
-keywords: Payment Authorised Event Webhook 
-summary: "Payment Authorised Webhook event"
-sidebar: ob_sidebar
-permalink: ob_whpaymentauth.html
-folder: prodOpenBanking
+title: Express Credit Transfer Accept Event
+keywords: Express Credit Transfer Accept Event Webhook 
+summary: "Express Credit Transfer Accept Webhook event"
+sidebar: np_sidebar
+permalink: np_whctexpaccept.html
+folder: prodNuapay
 toc: false
 ---
  
-{% include webhook.html content="The PSU has authorised a payment at the ASPSP." %}
+{% include webhook.html content="An Express Credit Transfer transaction transitions to ACCEPTED status." %}
 
 
 ## Webhook Message Details
 
-This Webhook has a single event type: <b>PaymentAuthorised</b>
-
+This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
 
 ## Webhook Event Message Details
 
-<p>
-	The following table describes the details of the Webhook notification:</p>
+<p>The following table describes the details of the Webhook notification:</p>
+
 <table cellspacing="0">
 	
 	<tbody>
@@ -42,7 +41,7 @@ This Webhook has a single event type: <b>PaymentAuthorised</b>
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>PaymentAuthorised</td>
+            <td><b>OutgoingExpressCreditTransferAccepted</b> </td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -70,14 +69,14 @@ This Webhook has a single event type: <b>PaymentAuthorised</b>
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the payment resource. Use the URI in the <a href="ob_retrievepayment.html">Retrieve Payment</a> call.</td>
+			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_viewtransaction.html">Retrieve Credit Transfer Transaction</a>.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a payment resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
         <tr>
 			<td>root</td>
@@ -91,7 +90,7 @@ This Webhook has a single event type: <b>PaymentAuthorised</b>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>Null </td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> 
 		</tr>
 		
 	</tbody>
@@ -99,14 +98,14 @@ This Webhook has a single event type: <b>PaymentAuthorised</b>
 
 ## JSON Sample
 
-The following is an example of a Received Payment event JSON:
+The following is an example of a Credit Transfer Accept event JSON:
 
 <b>Headers</b>:
 
 
 |POST| http://example.com/webhooks|
 |Content-Type:| application/json;charset=UTF-8|
-|[X-Signature](wh_receivingep.html#x-signature): |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|X-Signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
 |Content-Length:| 261|
 |X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
 
@@ -114,17 +113,15 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentAuthorised",
-    "resourceTechnicalId": 500006,
-    "resourceReference": "4321-1122-9012345678",
-    "resourceReferenceType": "EndToEndId",    
-    "resourceUri": "/payments/n7rklmvmmg",
-    "resourceType": "payment",
-    "resourceOwner": "tc47ygrg72",
-    "reasonCode": null
+    "eventType": "OutgoingExpressCreditTransferAccepted",
+	"resourceReference": "341-CTCD-264-ABC",
+	"resourceReferenceType": "EndToEndId",
+	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
+	"resourceType": "Transaction",
+	"resourceOwner": "tc47ygrg72",
+	"reasonCode": null
 }</code>
 </pre>
-
 
 
 {% include links.html %}
