@@ -10,7 +10,7 @@ toc: false
 
 ## Versioning
 
-Changess may be made to any of our APIs without a change in version number, provided the change follows our backwards compatibility guidelines (see below). Different versions will be managed via a HTTP header indicating the version of the API that the client is using.
+Changes may be made to any of our APIs without a change in version number, provided the change follows our backwards compatibility guidelines (see below). Different versions will be managed via a HTTP header indicating the version of the API that the client is using.
 
 Requests with no version number, or an unmatched version number, will be treated as version 1.0 requests.
 
