@@ -36,6 +36,8 @@ The payload of this request that you need to process includes:
     * **Headers** e.g. `ContentType: x-www-form-urlencoded`  
     * **Body** e.g. `endToEndIdentification=d8e17bf1f3244e5f96a869f9661a2a6&paymentId=gabxl3knbl`  
 
+Please note that the 'paymentId' allows you to look up the payment associated with this callback.
+
 {% include links.html %}
 
 
