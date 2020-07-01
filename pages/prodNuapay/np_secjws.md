@@ -166,14 +166,14 @@ In order to generate the JOSE Header you'll need to extract certain details from
     {% include note.html content="The expected JWS should use a detached payload." %}
     
 A signed JWS encodes information in three parts separated by periods: 
-* a header 
-* a payload
-* a signature
+ * a header 
+ * a payload
+ * a signature
 
-'header.payload.signature'
+> 'header.payload.signature'
 	
 A JWS also supports a detached format that omits the payload from the JWS:
-'header..signature'
+> 'header..signature'
 	
 <p>
 When using a detached JWS, the payload is sent as normal in the body but its not included in the JWS. 
