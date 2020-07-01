@@ -160,8 +160,6 @@ In order to generate the JOSE Header you'll need to extract certain details from
 			</tr>
 		</tbody>
 	</table>
-	
-    <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
 
 ## Using A Detached JWS
 
@@ -179,5 +177,9 @@ A JWS also supports a detached format that omits the payload from the JWS:
 <p>
 When using a detached JWS, the payload is sent as normal in the body but its not included in the JWS. 
 </p>
+
+
+    <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
+
 
 {% include note.html content="The expected JWS should use a detached payload." %}
