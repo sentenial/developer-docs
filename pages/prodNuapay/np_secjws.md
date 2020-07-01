@@ -165,6 +165,8 @@ In order to generate the JOSE Header you'll need to extract certain details from
     
     {% include note.html content="The expected JWS should use a detached payload." %}
     
+## Using A Detached JWS
+
 A signed JWS encodes information in three parts separated by periods: 
  * a header 
  * a payload
