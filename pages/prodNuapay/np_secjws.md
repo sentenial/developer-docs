@@ -164,26 +164,27 @@ In order to generate the JOSE Header you'll need to extract certain details from
 			</tr>
 		</tbody>
 	</table>
+<p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
 
-## Using A Detached JWS
+{% include note.html content="The expected JWS should use a detached payload." %}
 
+<br/>
+<h1> Detached Payload JWS</h1>
 A signed JWS encodes information in three parts separated by periods: 
-* a header 
-* a payload
-* a signature
-
-> 'header.payload.signature'
-	
+<ul>
+ <li>a header</li>	
+ <li>a payload</li>	
+ <li>a signature</li>	
+</ul>	
+<br/>	
+<strong>'header.payload.signature' </strong>
+<br/>	
 A JWS also supports a detached format that omits the payload from the JWS:
+<br/>	
 
-> 'header..signature'
-	
+<strong>'header..signature' </strong>
+<br/>	
 <p>
 When using a detached JWS, the payload is sent as normal in the body but its not included in the JWS. 
 </p>
 
-
-    <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
-
-
-{% include note.html content="The expected JWS should use a detached payload." %}
