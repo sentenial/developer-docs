@@ -176,12 +176,10 @@ A signed JWS encodes information in three parts separated by periods:
  <li>a payload</li>	
  <li>a signature</li>	
 </ul>	
-<br/>	
 <strong>'header.payload.signature' </strong>
 <br/>	
 A JWS also supports a detached format that omits the payload from the JWS:
 <br/>	
-
 <strong>'header..signature' </strong>
 <br/>	
 <p>
