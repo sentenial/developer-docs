@@ -175,6 +175,7 @@ A signed JWS encodes information in three parts separated by periods:
 > 'header.payload.signature'
 	
 A JWS also supports a detached format that omits the payload from the JWS:
+
 > 'header..signature'
 	
 <p>
