@@ -163,4 +163,17 @@ In order to generate the JOSE Header you'll need to extract certain details from
 	
     <p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
     
-    {% include note.html content="If you are working on the Sandbox environment and then move to Production you will need to generate a separate JWS." %}
+    {% include note.html content="The expected JWS should use a detached payload." %}
+    
+    A signed JWS encodes information in three parts separated by periods: a header, a payload, and the signature:
+
+	'header.payload.signature'
+	
+    A JWS also supports a detached format that omits the payload from the JWS:
+	
+	'header..signature'
+	
+When using a detached JWS, the payload is sent as normal in the body but its not included in the JWS. 
+When Verifying the JWS you use the header and signature in the JWS and the payload specified by the body of the request.
+
+    
