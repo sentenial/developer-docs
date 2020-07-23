@@ -36,7 +36,6 @@ Nuapay supports the following implementation options:
 
 These implementation modes are described in greater details in [PISP Implementation Options](ob_pispimplementation.html).
 
-{% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
 
 
 
