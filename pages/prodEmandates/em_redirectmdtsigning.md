@@ -37,6 +37,6 @@ function redirect() { window.location = 'https://api.nuapay.com/emandate/web/sho
 
 The redirect() method is then called to redirect your payer to the E-Mandate platform with the ``onclick`` event:
 
-<img src="images/sign_overlay.png">
+<img src="images/sign_redirect.png">
 
 {% include links.html %}
