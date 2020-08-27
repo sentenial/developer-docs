@@ -337,31 +337,7 @@ entries:
         - title: Express Credit Transfer Accept
           url: /np_whctexpaccept.html
           output: web    
-          
-  - title: Security
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /np_secoverview.html
-      output: web, pdf  
-
-    - title: API Key Authentication
-      url: /np_secapikeyauth.html
-      output: web, pdf          
-
-    - title: JSON Web Signature
-      url: /np_secjws.html
-      output: web, pdf          
-
-    - title: JWS Signature Generator
-      url: /np_secjwsgenerator.html
-      output: web, pdf          
-
-    - title: Sample JSON Web Signature
-      url: /np_secjwssample.html
-      output: web, pdf          
-          
+ 
   - title: Resources
     output: web, pdf
     folderitems:

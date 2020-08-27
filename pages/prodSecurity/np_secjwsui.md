@@ -1,31 +1,15 @@
 ---
-title: JSON Web Signature
-keywords: JSON Web Signature
-summary: "JSON Web Signature"
-sidebar: np_sidebar
-permalink: np_secjws.html
-folder: prodNuapay
+title: JSON Web Signature UI Setup
+keywords: JSON Web Signature Configuration via the UI
+summary: "JSON Web Signature User Interface Configuration"
+sidebar: sec_sidebar
+permalink: np_secjwsui.html
+folder: prodSecurity
 ---
 
-## About the JSON Web Signature
+It is possible to set up and manage the JWS via the User Interface (as described in this section) or alternatively, this may be done via [REST](np_secjwsrest.html).
 
-The 'JSON Web Signature' (JWS) is used as part of a REST header to validate requests made to certain endpoints (Beneficiary creation and CT creation, for example). Having this header indicates that you have signed the request with your private key. Any requests to these specific endpoints that do not include the Javascript Object Signing and Encryption (JOSE) header will fail.
-
-{% include callout.html content="We require that you use a JWS signature for these types of requests for the purposes of non-repudiation. By providing a JWS signature you are ensuring that you, as merchant, have generated the request; no other party has been involved; no tampering has occurred.." type="primary" %} 
-
-
-## Steps Required to Generate a Valid Header
-
-To create a JOSE header you will need to:
-
-* Generate a <b>Private Key</b> and a <b>Certificate</b>.
-* Retrieve the certificate serial number and decode it.
-* Extract the issuer details from your certificate.
-* Use the JWS Signature Generator to generate the JOSE header. 
-
-You will then use this header value in any APIs where it is required.  
-
-## Generating the PKI Key and Certificate
+## Generating the PKI Key and Certificate via the UI
 
 {% include note.html content="You will require access to the Developer Dashboard via the Nuapay front end. Once you have logged on to Nuapay, the <b>Developer Dashboard</b> link is available on the top right of the screen. Click this to launch the dashboard." %}
 
@@ -44,9 +28,7 @@ To generate your private key and certificate:
 
 {% include important.html content="Ideally you should generate your public private key pair in a HSM and present the CSR to be signed over the REST endpoints. The certificate creation UI in the developer dashboard is offered as a convience tool to you" %}
 
-
-
-## Managing Certificates
+## Managing Certificates via the UI
 
 Once you have generated your PKI Key you have two available actions, you can:
 

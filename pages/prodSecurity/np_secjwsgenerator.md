@@ -2,9 +2,9 @@
 title: JWS Signature Header Generator
 keywords: JWS Generator Utility - Non-repudiation JWS signature header generator
 summary: "JWS Generator Utility"
-sidebar: np_sidebar
+sidebar: sec_sidebar
 permalink: np_secjwsgenerator.html
-folder: prodNuapay
+folder: prodSecurity
 toc: false
 ---
 
