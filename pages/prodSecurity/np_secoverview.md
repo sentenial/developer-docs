@@ -2,9 +2,9 @@
 title: Security Overview
 keywords: Security Overview
 summary: "Because you are working with sensitive financial data, we ensure that our Nuapay API is highly secure."
-sidebar: np_sidebar
+sidebar: sec_sidebar
 permalink: np_secoverview.html
-folder: prodNuapay
+folder: prodSecurity
 toc: false
 ---
 

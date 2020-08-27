@@ -2,9 +2,9 @@
 title: JWS Sample
 keywords: JWS Sample
 summary: "JSON Web Signature Sample"
-sidebar: np_sidebar
+sidebar: sec_sidebar
 permalink: np_secjwssample.html
-folder: prodNuapay
+folder: prodSecurity
 ---
 
 To illustrate how to set up the JWS please view the following samples, which include:

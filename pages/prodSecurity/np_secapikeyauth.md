@@ -2,9 +2,9 @@
 title: API Key Authentication
 keywords: API Key Authentication
 summary: "API Key Authentication"
-sidebar: np_sidebar
+sidebar: sec_sidebar
 permalink: np_secapikeyauth.html
-folder: prodNuapay
+folder: prodSecurity
 toc: false
 ---
 
