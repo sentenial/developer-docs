@@ -49,7 +49,7 @@ flags QR RD RA
 ;QUESTION
 Merchant123.com. IN TXT
 ;ANSWER
-Merchant123.com. 299 IN TXT "v=spf1 mx ip4:123.456.789.12 mx:mail. merchant123.com a:webserver1.bizspacehost.com include:spf.protection.sentenial.com -all"
+Merchant123.com. 299 IN TXT "v=spf1 mx ip4:123.456.789.12 mx:mail. merchant123.com a:webserver1.bizspacehost.com include:sent-prod-smtp1.sentenial.com -all"
 ;AUTHORITY
 ;ADDITIONAL
 
