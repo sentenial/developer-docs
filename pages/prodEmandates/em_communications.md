@@ -36,9 +36,9 @@ Your DNS Provider will need to include Sentenial as a trusted domain.
 To do this: 
 
 * Locate the Sender Policy Framework (SPF) record on your DNS Provider dashboard.
-* Make an update to your SPF record to add `sentenial.com`
+* Make an update to your SPF record to add `sent-prod-smtp1.sentenial.com `
 
-The following is a sample SPF record (where the business name is Merchant123.com). Note that `sentenial.com` has been added:
+The following is a sample SPF record (where the business name is Merchant123.com). Note that `sent-prod-smtp1.sentenial.com` has been added:
 
 ````js
 
