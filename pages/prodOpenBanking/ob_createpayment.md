@@ -43,7 +43,13 @@ Where you reuse a reference, which was linked to a previously generated payment,
 
 ## Providing the Debtor Account
 
-In some cases you may already have a debtor account stored for a specific customer and you may want that user to use this account for the payment. 
+**Berlin Group - NextGenPSD2 XS2A Specification**
+
+If you are processing payments under the Berlin Group NextGenPSD2 specification `debtorAccount` is mandatory and must be provided as an IBAN. 
+
+**Open Banking UK - OBIE Specification**
+
+While providing the `debtorAccount` is not mandatory for OBUK, in some cases you may already have a debtor account stored for a specific customer and you may want that user to use that account for the payment. 
 
 The `/payments` service allows you to provide the PSU account information as an IBAN or as a Sort Code and Account number (for GB accounts in UK Open Banking).
 

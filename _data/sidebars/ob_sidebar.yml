@@ -17,7 +17,11 @@ entries:
     - title: Terminology
       url: /ob_terminology.html
       output: web
-           
+   
+    - title: Scheme Overview
+      url: /ob_schemeoverview.html
+      output: web
+   
     - title: Deployment
       url: /ob_deployment.html
       output: web
@@ -249,6 +253,10 @@ entries:
                           
         - title: Payment Refunded
           url: /ob_whrefundcomplete.html
+          output: web
+        
+        - title: Payment Refund Rejected
+          url: /ob_whrefundrejected.html
           output: web
           
   - title: Resources
