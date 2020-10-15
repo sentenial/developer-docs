@@ -51,7 +51,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td><code class="highlighter-rouge">CONSENT_API_REJECTED</code></td>
       <td>There was a technical issue at the ASPSP; no further processing will be possible.</td>
       <td>No</td>
-      <td>No</td>
+      <td>Yes</td>
       <td>Yes</td> 
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
     </tr>
@@ -226,8 +226,8 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>The refund could not be paid to the PSU (e.g. the PSU's account is closed).</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td> 
-      <td>N/A</td>
+      <td>Yes</td> 
+      <td><a href="ob_whrefundrejected.html">PaymentRefundRejected</a></td>
     </tr>
  </tbody>
 </table>
