@@ -1,5 +1,5 @@
 ---
-title: Coversation API Overview
+title: Conversation API Overview
 keywords: E-Mandate Conversation Steps
 summary: "When building a direct API integration, conversation steps can be useful to allow you to further customise your integration"
 sidebar: em_sidebar
