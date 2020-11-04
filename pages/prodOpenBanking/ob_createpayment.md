@@ -41,15 +41,21 @@ The reference must be unique per merchant account within the defined time to liv
 
 Where you reuse a reference, which was linked to a previously generated payment, and it is referenced within the time-to-live limit, your request will result in a `422` response: Duplicate Reference provided.
 
+## Providing an End-to-End Identifier
+When providing an `endToEndIdentification` note that for:
+
+* EUR currency transactions, the max length allowable is 35 characters.
+* GBP currency transactions allow a max length of 31 characters.
+
 ## Providing the Debtor Account
 
 **Berlin Group - NextGenPSD2 XS2A Specification**
 
-If you are processing payments under the Berlin Group NextGenPSD2 specification `debtorAccount` is mandatory and must be provided as an IBAN. 
+If you are processing payments under the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.berlin-group}}">Berlin Group</a> NextGenPSD2 specification `debtorAccount` is mandatory and must be provided as an IBAN. 
 
 **Open Banking UK - OBIE Specification**
 
-While providing the `debtorAccount` is not mandatory for OBUK, in some cases you may already have a debtor account stored for a specific customer and you may want that user to use that account for the payment. 
+While providing the `debtorAccount` is not mandatory for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBUK</a>, in some cases you may already have a debtor account stored for a specific customer and you may want that user to use that account for the payment. 
 
 The `/payments` service allows you to provide the PSU account information as an IBAN or as a Sort Code and Account number (for GB accounts in UK Open Banking).
 
@@ -83,6 +89,80 @@ Example: Sort Code = 12-34-56 & Account = 87654321 gives:
 </pre>
 
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
+
+## Providing Address Details
+{% include warning.html content="Debtor address is only required in the **STET** Scheme." %}
+Certain STET ASPSPs require that you provide the debtor address in your payment request. 
+It is also possible to pass the merchant (creditor) address in your request if required. If no creditor address details are provided, but are required for the selected ASPSP, the Nuapay TPP will pass the address stored against the merchant's profile.
+
+
+## Specifying an Execution Date
+
+{% include warning.html content="It is only possible to specify a future-dated payment in the **STET** Scheme." %}
+
+Use `requestedExecutionDate` if you want to specify a future-dated payment. Note that:
+
+* The payment must be initiated against a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.stet}}">STET</a>-supporting ASPSP.
+* The payment can have a date up to 30 days into the future.
+* The date cannot be in the past; if a past date is provided a `T0058` error is triggered: "Requested Execution Date cannot be post cut-off time or in the past."
+* The Requested date specified may be a non-processing date (a holiday or weekend); the TPP does not validate this.
+* Dates must be passed as YYYY-MM-DD.
+
+|If a future-dated payment is specified in the payment request for a payment linked to an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBUK</a> or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.berlin-group}}">Berlin Group</a> ASPSP it will be rejected.|
+
+
+## Specifying the Creditor Account
+
+In some cases you might want to specify the creditor/beneficiary account (i.e. your merchant account) into which funds will be credited following a successful payment. 
+
+You can provide your creditor account information as an IBAN or as a Sort Code and Account number (for GB accounts in UK Open Banking).
+
+The `schemeName` under the `creditorAccount`object, can be provided in two ways, as:
+
+* `IBAN`
+* `SortCodeAccountNumber`
+
+Where `IBAN` is used your creditor's IBAN is provided for `identification`:
+
+<pre>
+<code class="json">
+"creditorAccount": {
+   "identification": "GB34BARC20051122334455",
+   "schemeName": "IBAN"
+}
+</code>
+</pre>
+
+Where `SortCodeAccountNumber` is used the Sort Code and Account number are concatenated and provided for `identification`. 
+
+Example: Sort Code = 12-34-56 & Account = 87654321 gives:
+
+<pre>
+<code class="json">
+"creditorAccount": {
+   "identification": "12345687654321",
+   "schemeName": "SortCodeAccountNumber"
+}
+</code>
+</pre>
+
+Note that:
+
+**For GB Payments**:
+
+1. The only allowed account country format is GB.
+1. UK Faster Payments is the only allowed payment scheme.
+1. The account format is sort code and account number.
+
+**For EUR payments**: 
+
+1. IBAN is the only allowed account format.
+1. SEPA Credit Transfer and SEPA Instant Credit Transfer are allowed payment schemes.
+1. The Payment Scheme corresponds to the currently available Local Instrument/ Payment Type configuration at API level and ASPSP level. Merchant requests that contains payment scheme that is different to the scheme set at ASPSP level will be rejected.
+1. Creditor Account IBAN/sortCodeAccountNumber validations in terms of account validity are the same as for debtorAccount.
+
+
+|If you do not specify a creditor account then the payment will be processed as per the configured defaults for your merchant.|
 
 
 

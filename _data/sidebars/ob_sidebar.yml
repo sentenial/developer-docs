@@ -209,7 +209,23 @@ entries:
         - title: Retrieve Account Transactions
           url: /ob_getaccounttx.html
           output: web       
-          
+
+  - title: Health Service
+    output: web, pdf
+    folderitems:  
+    
+    - title: Overview
+      url: /ob_healthoverview.html
+      output: web, pdf  
+ 
+    - title: Health Check (All Banks)
+      url: /ob_healthchkallbnks.html
+      output: web, pdf                 
+
+    - title: Health Check (Single Bank)
+      url: /ob_healthchkbnk.html
+      output: web, pdf                       
+  
   - title: Webhooks
     output: web, pdf
     folderitems:  

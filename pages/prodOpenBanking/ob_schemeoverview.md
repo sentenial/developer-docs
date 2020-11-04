@@ -20,8 +20,8 @@ The following Open Banking Schemes are supported:
 ## What Open Banking Scheme is Right for my Business?
 
 So what scheme makes sense for me?
-* If you process **GBP** payments then the OBIE UK Open Banking scheme is your only option. However Irish banks has also opted for the OBUK standard to process its EUR Open Banking payments. Note that across the EU, only Ireland has opted to use the OBIE implementation.
-* If you intend to use Open Banking to process **EUR** payments then either the Berlin Group or the STET option are available. The EU has not mandated that any one specification must be followed across the EU so to determine which of these schemes is the better option for your business, you will need to decide on what markets you want to focus. Please discuss your requirements with your Account Manager.
+* If you process **GBP** payments then the OBIE UK Open Banking scheme is your only option. However Irish banks have also opted for the OBUK standard to process its EUR Open Banking payments. Note that across the EU, only Ireland has opted to use the OBIE implementation.
+* If you intend to use Open Banking to process **EUR** payments then either the Berlin Group or the STET option are available. <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psd2}}">PSD2</a> has not mandated that any one specification must be followed across the EU so to determine which of these schemes is the better option for your business, you will need to decide on what markets you want to focus. Please discuss your requirements with your Account Manager.
 
 
 {% include links.html %}
