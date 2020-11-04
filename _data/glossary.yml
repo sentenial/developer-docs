@@ -3,6 +3,8 @@ clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payme
 
 bac-collection-cycle: "Day 1: payment file is submitted; Day 2: transactions processed (on the business day before the collection day); Day 3: Direct Debits are debited from payers' accounts and credited to the merchant; Day 4-6 Unpaids may be processed."
 
+berlin-group: "A pan-European payments interoperability standards and harmonisation initiative responsible for the development of the NextGenPSD2 Access to Account  (XS2A) Framework API specification." 
+
 aspsp: "The Account Servicing Payment Service Provider: this is the Bank or Payment Institution"
 
 collection_date: "The date on which funds are debited from payers' accounts and credited to the merchant account. Can also be referred to as the value date or the settlement date."
@@ -15,7 +17,13 @@ direct_debit: "A Direct Debit or DD is a payment initiated by an originator that
 
 ddi: "A Direct Debit Instruction - used in the Bacs Direct Debit scheme to gain a payer's authority to debit his/her account; a DDI is the SEPA equivalent of a Direct Debit Mandate."
 
+epc: "European Payments Council - The authority that manages the SEPA payment schemes and the rules underlying most of the euro credit transfers and direct debits in Europe."
+
+obie: "The UK Open Banking Implementation Entity is an organization set up by the UK’s Competition and Markets Authority to design and manage the  specifications for the Application Program Interfaces (APIs) that banks and building societies use to securely provide Open Banking services to TPPs. The OBIE manage the Open Banking Directory, produce guidelines and act as an arbiter managing disputes/complaints"
+
 otp: "One-Time Password"
+
+psd2: "The Payment Services Directive 2 (Directive (EU) 2015/2366), commonly referred to as PSD2 is the EU directive that compelled ASPSPs (typically high-street banks) to makes its customers' data available for Third Party Providers (TPPs like Nuapay) to allow them to provide Account Initiation and Payment Initiation services."
 
 psu: "Payment Service User - the person using the payment service - the payer."
 
@@ -26,6 +34,8 @@ r-transaction: "Refers to the Direct Debit failures that begin with the letter '
 schedule-fixed: "A fixed-length schedule results in a number of Direct Debit payments being created up front when the schedule is created e.g. 12 monthly Direct Debit payments"
 
 schedule-open: "In an open-ended schedule a single Direct Debit is created initially with additional payments being generated when required, based on the configured frequency (e.g. a new payment is generated once per month)."
+
+stet: "A French payments organization that drafted an Open Banking specification that stakeholders (ASPSPs and TPPs) in France must  adhere to when implementing their PSD2 Access to accounts solutions."
 
 sun: "Service User Number; a unique identifier used to identify a user (e.g. a merchant) in the Bacs scheme"
 

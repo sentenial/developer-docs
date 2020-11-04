@@ -12,6 +12,7 @@ Your PISP checkout page may be implemented in one of the following ways:
 1. CHECKOUT
 1. SELF_HOSTED
 1. SELF_HOSTED_CALLBACK
+1. REDIRECT
 
 The implementation you choose determines if you:
 
@@ -69,6 +70,20 @@ The following summarises the options available to both merchants and partners (a
       <li>The details of how to process this callback differs from the <em>SELF_HOSTED</em> flow. You need to process the OAUTH callback from the ASPSP directly, parse the information and send it back to the Nuapay TPP platform. For more on this see <a href= "ob_selfcallbacksetupoverview.html#processing-the-callback">Processing the Callback</a></li> 
       <li>This option is useful if you want to style your callback handler or have mobile apps handle the callbacks using mobile deeplinking. </li>      
       <li>In the context of mobile apps, <strong>Deep Linking</strong> consists of using a uniform resource identifier (URI) that is opened within a mobile app rather than simply launching a Web browser. </li></ul></td>
+    </tr>
+    <tr>
+      <td>Redirect</td>
+      <td>In this implementation mode: 
+      <ul>
+      <li>The merchant/partner creates a payment using the <strong>POST</strong> /payments endpoint with <code class="language-plaintext highlighter-rouge">integrationType = REDIRECT</code> and the <strong>merchantPostAuthUrl</strong> supplied as a mandatory parameter.</li> 
+      <li>The TPP creates the payment and sends back the paymentId to the merchant/partner.</li>
+      <li>The merchant/partner redirects the PSU to the redirect URI specified with the paymentId. (The merchant/partner must build a URI that can be used on a web page or sent by e-mail to the customer).</li> 
+      <li>The PSU uses the URI to launch the TPP-UI with the ASPSP selection window being opened in a new browser window.</li>
+      <li>The TPP processes the callback. As the integrationType=REDIRECT, the TPP-UI displays 'Back to {Merchant name}>' button instead of a close button.</li>
+      <li>The TPP redirects the PSU to the merchantPostAuthURl with parameters indicating success/failure and the paymentId so that the merchant/partner can correlate the redirect with the originally create payment.
+      </li>
+      
+      </ul></td>
     </tr>
   </tbody>
 </table>
