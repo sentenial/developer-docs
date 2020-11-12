@@ -14,6 +14,7 @@ This section gives **merchants** an overview of the API calls required for the t
 * CHECKOUT
 * SELF-HOSTED
 * SELF-HOSTED-CALLBACK
+* REDIRECT
 
 See [PISP Implementation Options](ob_pispimplementations.html) for more on these options.
 
@@ -91,6 +92,16 @@ Call the following services in this order:
 
 For more details, see [Merchant Self-Hosted-Callback Payment Page Setup](ob_selfcallbackmerch.html).
 
+## Redirect Mode
+
+Call the following services in this order
+
+|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| (Optional) Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls. Alternatively you may use your API Key.|
+|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| The `integrationType` must be set to REDIRECT and the `merchantPostAuthUrl` must be provided. The Create Payment service generates an Open Banking payment object, returning a unique `paymentId` with an (initial) [status](ob_paymentstatuses.html) of `PENDING`. |
+|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>). The Bank Selection screen is displayed on a new browser window (unlike in the CHECKOUT flow, where the Bank Selection is rendered in a pop-up). The PSU selects his/her bank and is redirected to authenticate and approve the payment on that ASPSP's online banking portal.|
+|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
+
+For more details on this see the [Merchant-level Redirect Setup](ob_redirectoverviewmerch.html). 
 
 
 

@@ -13,11 +13,12 @@ toc: true
 The Health Check service for a single bank returns a score for that specific ASPSP. 
 
 * You must provide the required `{bankId}`.
-* Possible Scores:
- 
- `0`: There are some connectivity issues. 
- `100`: The ASPSP is available.
- `-1`: The service is not supported by the ASPSP. 
+* Possible Scores: 
+  * `0`: There are some connectivity issues. 
+  * `100`: The ASPSP is available. 
+  * `-1`: The service is not supported by the ASPSP. 
+
+Use the [Retrieve Banks](ob_getbank.html) service to retrieve a specific `bankId`.
 
 {% include swagger_hc.html %}
 

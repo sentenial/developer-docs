@@ -110,6 +110,10 @@ entries:
      
         - title: Self-Hosted-Callback Setup
           url: /ob_selfcallbacksetupoverview.html
+          output: web, pdf              
+            
+        - title: Redirect Setup
+          url: /ob_redirectoverview.html
           output: web, pdf                
 
       - title: Merchant Integration 
@@ -130,7 +134,11 @@ entries:
      
         - title: Self-Hosted-Callback Setup
           url: /ob_selfcallbackmerch.html
-          output: web, pdf                
+          output: web, pdf          
+        
+        - title: Redirect Setup
+          url: /ob_redirectoverviewmerch.html
+          output: web, pdf          
                   
     - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html

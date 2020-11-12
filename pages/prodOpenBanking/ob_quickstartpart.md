@@ -14,6 +14,7 @@ This section gives **partners** an overview of the API calls required for the th
 * CHECKOUT
 * SELF-HOSTED
 * SELF-HOSTED-CALLBACK
+* REDIRECT
 
 See [PISP Implementation Options](ob_pispimplementations.html) for more on these options.
 
@@ -91,6 +92,20 @@ Call the following services in this order:
 |[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
 
 For more details, see [Partner Self-Hosted-Callback Payment Page Setup](ob_selfcallbacksetupoverview.html).
+
+## Redirect Mode
+
+As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
+
+Call the following services in this order
+
+|[<span class="label label-success">GET</span>](ob_partnerintegration.html#api-details---get-organisations)| [Organisations](ob_partnerintegration.html#api-details---get-organisations)| (Optional) Use this service to retrieve the list of organisations/merchants under you as the Partner entity. Use your Partner-level API Key and store the required merchant identifier.|
+|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| Use this service to retrieve an OAuth token for the required merchant. Pass your API Key and merchantId with scope = `openbanking_pisp`.|
+|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| Call this service with the merchant access token. The `integrationType` must be set to REDIRECT and the `merchantPostAuthUrl` must be provided. The Create Payment service generates an Open Banking payment object, returning a unique `paymentId` with an (initial) [status](ob_paymentstatuses.html) of `PENDING`. |
+|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>). The Bank Selection screen is displayed on a new browser window (unlike in the CHECKOUT flow, where the Bank Selection is rendered in a pop-up). The PSU selects his/her bank and is redirected to authenticate and approve the payment on that ASPSP's online banking portal.|
+|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
+
+For more details on this see the [Partner-level Redirect Setup](ob_redirectoverview.html). 
 
 
 

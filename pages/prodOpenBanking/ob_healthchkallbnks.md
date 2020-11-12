@@ -12,6 +12,11 @@ toc: true
 
 The Health Check service for all banks returns a score for all APSPs.
 
+* Possible Scores: 
+  * `0`: There are some connectivity issues. 
+  * `100`: The ASPSP is available. 
+  * `-1`: The service is not supported by the ASPSP. 
+
 
 {% include urls-ob.html %}
 
