@@ -18,13 +18,13 @@ To calculate the overall health:
 * Only requests made in the last 15 minutes are considered.
 * Based on the success/failure rate against each ASPSP, a score is returned.
 
-Where an ASPSP is deemed to be unavailable for any reason, you may decide to mark that ASPSP as unavailable on the User Interface or potentially direct the PSU to an alternative payment method.
+Where an ASPSP is deemed to be unreachable for any reason, you may decide to mark that ASPSP as unavailable on the User Interface or potentially direct the PSU to an alternative payment method.
 
-Two services are available to allow you to retrievea a Health Score:
+Two services are available to allow you to retrieve a Health Score:
 
-|**Method**|**Service**|
-|<span class="label label-success">GET</span>| /status/banks | 
-|<span class="label label-success">GET</span>| /status/banks/{bankId} |
+|**Method**|**Service**| **Details**|
+|<span class="label label-success">GET</span>| /status/banks | Retrieve the status for **all** banks.|
+|<span class="label label-success">GET</span>| /status/banks/{bankId} | Retrieve the status for a **single** bank.| 
 
 ## Scoring
 

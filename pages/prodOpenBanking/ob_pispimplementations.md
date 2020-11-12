@@ -98,6 +98,7 @@ If you think you know the implementation that best suits your needs, select from
 |Partner|[Checkout](ob_checkoutoverview.html)|
 ||[Self-Hosted](ob_selfsetupoverview.html)|
 ||[Self-Hosted-Callback](ob_selfcallbacksetupoverview.html)|
+||[Redirect](ob_redirectoverview.html)|
 |Merchant|[Checkout](ob_checkoutoverviewmerch.html)|
 ||[Self-Hosted](ob_selfsetupoverviewmerch.html)|
 ||[Self-Hosted-Callback](ob_selfcallbackmerch.html)|
