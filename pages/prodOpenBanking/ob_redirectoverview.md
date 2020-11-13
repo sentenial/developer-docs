@@ -15,7 +15,7 @@ A detailed overview of the various steps involved in the **REDIRECT** flow is pr
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 
-{% include image.html file="ob_checkout_flow.png" url="images/ob_checkout_flow-partner.png" target = "_new" alt="Redirect Flow - Partner" caption="REDIRECT Flow - Partner" %}
+{% include image.html file="ob_redirect_flow-partner.png" url="images/ob_redirect_flow-partner.png" target = "_new" alt="Redirect Flow - Partner" caption="REDIRECT Flow - Partner" %}
 
 
 In **Redirect** mode you will: 
@@ -23,10 +23,10 @@ In **Redirect** mode you will:
 1. Use your partner-level API key to retrieve a token representing the required merchant. (For more on this see [list organisations](ob_partnerintegration.html#api-details---get-organisations) and [retrieving tokens](ob_partnerintegration.html#api-details---post-tokens)).
 1. Call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)), on behalf of the merchant, using the OAuth token retrieved in the previous step. 
 1. Set the `integrationType` to `REDIRECT`. You must also provide the `merchantPostAuthUrl` - this is mandatory for the Redirect flow. 
-1. The Nuapay TPP creates the payment object and returns the `paymentId`.
-1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> then needs to be redirected to the URI with the `paymentId`. You must build a URI that can be used on a web page or sent by an e-mail to the end user. The URI will be similar to the following: 
-   * `https://tpp.nuapay.com/tpp-ui/redirect?token=<paymentId>`
-1. The end user clicks the URI and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> (with the Bank selection window) is displayed in a new browser window.
+1. The Nuapay TPP creates the payment object and returns the `userInterfacePaymentId`.
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> then needs to be redirected to the URL with the `userInterfacePaymentId`. You must build a URI that can be used on a web page or sent by an e-mail to the end user. The URL will be similar to the following: 
+   * `https://tpp.nuapay.com/tpp-ui/redirect?uiid=<userInterfacePaymentId>`
+1. The end user clicks the link and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> (with the Bank selection window) is displayed in a new browser window.
 1. When the user selects a bank he/she is redirected to the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
 1. The ASPSP redirects the PSU to the callback URL and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes that callback (as the `integrationType` = `REDIRECT` the TPP UI will display a **Back to {MerchantName}** button; in the `CHECKOUT` flow the TPP UI displays a **Close** button).
 1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with parameters indicating success/failure and the `paymentId`.

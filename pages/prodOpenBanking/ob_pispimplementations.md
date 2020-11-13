@@ -76,10 +76,10 @@ The following summarises the options available to both merchants and partners (a
       <td>In this implementation mode: 
       <ul>
       <li>The merchant/partner creates a payment using the <strong>POST</strong> /payments endpoint with <code class="language-plaintext highlighter-rouge">integrationType = REDIRECT</code> and the <strong>merchantPostAuthUrl</strong> supplied as a mandatory parameter.</li> 
-      <li>The TPP creates the payment and sends back the paymentId to the merchant/partner.</li>
-      <li>The merchant/partner redirects the PSU to the redirect URI specified with the paymentId. (The merchant/partner must build a URI that can be used on a web page or sent by e-mail to the customer).</li> 
+      <li>The TPP creates the payment and sends back the userInterfacePaymentId to the merchant/partner.</li>
+      <li>The merchant/partner redirects the PSU to the redirect URI specified with the `userInterfacePaymentId`. (The merchant/partner must build a URI that can be used on a web page or sent by e-mail to the customer, for example).</li> 
       <li>The PSU uses the URI to launch the TPP-UI with the ASPSP selection window being opened in a new browser window.</li>
-      <li>The TPP processes the callback. As the integrationType=REDIRECT, the TPP-UI displays 'Back to {Merchant name}>' button instead of a close button.</li>
+      <li>The TPP processes the callback.</li>
       <li>The TPP redirects the PSU to the merchantPostAuthURl with parameters indicating success/failure and the paymentId so that the merchant/partner can correlate the redirect with the originally create payment.
       </li>
       
@@ -102,7 +102,7 @@ If you think you know the implementation that best suits your needs, select from
 |Merchant|[Checkout](ob_checkoutoverviewmerch.html)|
 ||[Self-Hosted](ob_selfsetupoverviewmerch.html)|
 ||[Self-Hosted-Callback](ob_selfcallbackmerch.html)|
-
+||[Redirect](ob_redirectoverviewmerch.html)|
 
 
 {% include links.html %}
