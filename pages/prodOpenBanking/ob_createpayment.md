@@ -103,7 +103,7 @@ If you do not specify an account in this request, and assuming the PSU has more 
 
 ## Address Details
 
-{% include warning.html content="Debtor address is only required in the **STET** Scheme." %}
+{% include tip.html content="Debtor address is only required in the **STET** Scheme." %}
 
 In STET:
 * Certain STET ASPSPs require that you provide the debtor address in your payment request. 
@@ -113,7 +113,7 @@ In STET:
 
 ## Setting an Execution Date
 
-{% include warning.html content="It is only possible to specify a future-dated payment in the **STET** Scheme." %}
+{% include tip.html content="It is only possible to specify a future-dated payment in the **STET** Scheme." %}
 
 Use `requestedExecutionDate` if you want to specify a future-dated payment. 
 

@@ -24,12 +24,12 @@ In **Redirect** mode you will:
 1. Call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)), on behalf of the merchant, using the OAuth token retrieved in the previous step. 
 1. Set the `integrationType` to `REDIRECT`. You must also provide the `merchantPostAuthUrl` - this is mandatory for the Redirect flow. 
 1. The Nuapay TPP creates the payment object and returns the `userInterfacePaymentId`.
-1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> then needs to be redirected to the URL with the `userInterfacePaymentId`. You must build a URI that can be used on a web page or sent by an e-mail to the end user. The URL will be similar to the following: 
-   * `https://tpp.nuapay.com/tpp-ui/redirect?uiid=<userInterfacePaymentId>`
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> then needs to be redirected to the URL with the `userInterfacePaymentId`. You must build a URI that can be used on a web page or sent by an e-mail to the end user. The URL will be similar to the following (on the Production environment): 
+   * `https://api.nuapay.com/tpp-ui/redirect?uiid=<userInterfacePaymentId>`
 1. The end user clicks the link and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> (with the Bank selection window) is displayed in a new browser window.
 1. When the user selects a bank he/she is redirected to the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
 1. The ASPSP redirects the PSU to the callback URL and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes that callback (as the `integrationType` = `REDIRECT` the TPP UI will display a **Back to {MerchantName}** button; in the `CHECKOUT` flow the TPP UI displays a **Close** button).
-1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with parameters indicating success/failure and the `paymentId`.
+1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with parameters indicating success/failure and the `userInterfacePaymentId`.
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
 
 ## Authorisation 
@@ -78,23 +78,20 @@ At this point you have:
 To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the example below:
 
 ````
-<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showUI(‘gabxrlvbl5’;‘https://sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
+<a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.redirect(uiid, tppUibaseUrl);">Pay Now</a>
 
 ````
 
-This button will open the Select Banks on a new browser tab or window for the Payment ID ``gabxrlvbl5``
-
-``https://sandbox.nuapay.com/tpp-ui/`` is the location of the Nuapay TPP User Interface, which will allow your customers to select their bank.
-
+This button will open the Select Banks on a new browser tab or window for the `userInterfacePaymentId` (the `uiid`).
 
 Note that there is a Sandbox and Production TPP for this so you will need to specify the correct URL based on whether you are testing or working in Production:
 
-|SANDBOX|https://sandbox.nuapay.com/tpp-ui/|
-|PRODUCTION| https://api.nuapay.com/tpp-ui/|
+|**SANDBOX**|https://sandbox.nuapay.com/tpp-ui/|
+|**PRODUCTION**| https://api.nuapay.com/tpp-ui/|
 
 ## Reusing the Link
 
-If you have decided to email the link to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> or have provided a QR code, that user may begin the payment, drop out at some point without completing the payment and retry accessing the link later. In that case:
+If you have decided to email the link to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> or have provided a QR code, that user may begin the payment, drop out of the flow and retry accessing the link later. In that case:
 
 * Where a link is accessed, the TPP will check the existing payment status in the TPP database. 
 * If the payment's current status means that the payment cannot proceed (e.g. if the payment is in `SETTLEMENT_REJECTED`) an alert is displayed to the user on the TPP and he/she cannot continue. 
