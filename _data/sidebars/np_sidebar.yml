@@ -214,6 +214,11 @@ entries:
     - title: Overview
       url: /np_ctoverview.html
       output: web, pdf
+        
+    - title: Credit Transfer Statuses
+      url: /np_ctstatuses.html
+      output: web, pdf
+    
     
       subfolders:
       - title: Credit Transfer APIs 
@@ -279,14 +284,14 @@ entries:
 
         - title: List Account Balances
           url: /np_listaccountbals.html
+          output: web     
+ 
+        - title: List Transactions
+          url: /np_listtransactions.html
           output: web
 
         - title: View Transaction
           url: /np_viewtransaction.html
-          output: web
- 
-        - title: List Transactions
-          url: /np_listtransactions.html
           output: web
 
         - title: Transfer Between Accounts
@@ -353,7 +358,11 @@ entries:
     - title: Test IBANs
       url: /np_testibans.html
       output: web, pdf          
-      
+          
+    - title: Non-Processing Days
+      url: /np_businessdays.html
+      output: web, pdf          
+    
     - title: Use Cases
       url: /np_usecases.html
       output: web, pdf          

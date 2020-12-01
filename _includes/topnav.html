@@ -80,8 +80,54 @@
                             siteId: "developer.nuapay.com",
                             searchBox: {
                                             selector: "input#search-input"
-                                        }
-}
+                                        },
+                            
+                            style: {
+                                            accentColor: "#F5BA39",
+                                            searchBox: {
+                                                text: {
+                                                    color: "#333333",
+                                                    size: "12px"
+                                                },
+                                                background: {
+                                                    color: "#ffffff"
+                                                },
+                                                border: {
+                                                    color: "#dddddd",
+                                                    radius: "7px"
+                                                },
+                                                padding: "8px"
+                                            },
+                                            animationSpeed: 500
+                                    },
+                            
+                           
+                            layout: {
+                                            mobile: {
+                                                showImages: false
+                                            },
+                                            desktop: {
+                                                type: "grid",
+                                                showImages: false
+                                            },
+                                            navigation: {
+                                                position: "none"
+                                            }
+                                    },
+                                
+                             voiceSearch: {
+                                                enabled: true,
+                                                color: "#EE8F35"
+                                          },
+                                
+                            filters:      {
+                                        enabled: true
+                                           },
+                                
+                            loaderType: "circle",
+                            animationSpeed: 50
+                                
+                                            }
 </script>
 <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
 <!-- End of Site Search 360 Scripts -->
