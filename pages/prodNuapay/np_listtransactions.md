@@ -12,6 +12,9 @@ toc: false
 
 The List Transactions request allows you to view all the transactions linked to a specific Nuapay merchant account.
 
+{% include tip.html content="When specifying a `valueDateFrom` and `valueDateTo` you must provide the values in miliseconds (the Unix Epoch)." %}
+
+
 {% include note.html content="Because there are no required fields in this request, if you do not want to provide any parameters, you must supply an empty JSON body using {}. Filtering based on timestamps and based on the value of the transactions is also possible." %}
 
 {% include swagger_np.html %}

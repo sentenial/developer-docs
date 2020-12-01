@@ -19,6 +19,8 @@ ddi: "A Direct Debit Instruction - used in the Bacs Direct Debit scheme to gain 
 
 epc: "European Payments Council - The authority that manages the SEPA payment schemes and the rules underlying most of the euro credit transfers and direct debits in Europe."
 
+flat_file: "A payment file (e.g. the Bacs Std-18 file) that is provided as text with a number of lines/records for each Direct Debit or Credit Transfer payment."
+
 obie: "The UK Open Banking Implementation Entity is an organization set up by the UK’s Competition and Markets Authority to design and manage the  specifications for the Application Program Interfaces (APIs) that banks and building societies use to securely provide Open Banking services to TPPs. The OBIE manage the Open Banking Directory, produce guidelines and act as an arbiter managing disputes/complaints"
 
 otp: "One-Time Password"

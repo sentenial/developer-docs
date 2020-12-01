@@ -7,13 +7,31 @@ permalink: np_ctoverview.html
 folder: prodNuapay
 ---
 
-Credit Transfers (CTs) allow you to transfer funds from your account to a beneficiary's account. With a CT, you (the merchant) become the payer and the person to whom you are transferring funds becomes the beneficiary.
+|Credit Transfers (CTs) are **push** payments: you as the payer _push_ funds to your payee (or beneficiary); in contrast, Direct Debits are **pull** payments: you as the payee _pull_ funds from your payers' accounts, once a mandate (granting you permission to do so) is in place.|
 
-Unlike Direct Debit payments where you pull funds from your payers' accounts, with a CT payment you push funds to a specific beneficiary account.
+A few points to note in relation to CTs:
 
-Before you initiate a CT payment you will need to create one or more beneficiaries. Beneficiaries can be set up before you initiate your payment or, if required, the beneficiary and payment can be generated in a single step.
+* CTs allow you to transfer funds from your account to a beneficiary's account.
+* You must have sufficient balance on your account to make the payment.
+* You (the merchant) are the payer and the person to whom you are transferring funds is the beneficiary.
+* For a SEPA CT generated _today_, the beneficiary's account is generally credited on the following working day (however payments generated prior to 08:00 GMT should be credited on the same day).
+* A Bacs Direct Credit generated _today_ will typically be credited to your beneficiary in 2 business days' time.
+* Express payments (Faster Payments for GBP; SEPA CT Instant for EUR) are typically credited within seconds.
 
-{% include note.html content="Nuapay currently supports SEPA Credit Transfer and [SEPA Credit Transfer Instant](ip_landing_page.html) payments; Bacs Direct Credit is not currently available." %}
+## Using the Credit Transfer APIs
 
+There are two approachs to CT creation:
+1. Before you initiate a CT payment, you create one or more beneficiaries. When you generate a payment, the beneficiary is referenced; this is a 2-step process, requiring two API calls: see [Create Beneficiary](np_createbeneficiary.html) and [Create Credit Transfer](np_createdct.html).
+1. You initiate a CT payment where the beneficiary is created **and** the payment is generated; this is a 1-step process, requiring a single API call: [Create Credit Transfer & Beneficiary](np_createctandbene.html).
+
+## Payment Schemes Supported
+
+We currently support the following CT payment schemes:
+
+|**Currency**|**Payment Scheme**|
+|EUR|SEPA CT|
+|EUR|SEPA Inst CT|
+|GBP|Faster Payments|
+|GBP|Bacs Direct Credit|
 
 {% include links.html %}
