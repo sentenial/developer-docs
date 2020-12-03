@@ -1,5 +1,5 @@
 ---
-title: Integration Overview
+title: E-Mandates Integration Overview
 keywords: E-Mandates Integration Overview
 summary: "Depending on whether you are an individual merchant or a partner, managing multiple merchants, your integration with Nuapay will be different. This section outlines what is required in both models."
 sidebar: em_sidebar

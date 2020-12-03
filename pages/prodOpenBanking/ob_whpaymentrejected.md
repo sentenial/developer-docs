@@ -1,5 +1,5 @@
 ---
-title: Payment Rejected Event
+title: Open Banking Payment Rejected Event
 keywords: Payment Rejected Event Webhook 
 summary: "Payment Rejected Webhook event"
 sidebar: ob_sidebar

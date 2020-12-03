@@ -1,5 +1,5 @@
 ---
-title: Checkout Payment Page Setup
+title: Partner PISP Checkout Payment Page Setup
 keywords: Checkout Payment Page Setup Javascript Add Open Banking Payment Page
 summary: "Adding Open Banking (Checkout mode) as a payment option to your Payment Page requires a little configuration as outlined below. In Checkout mode you will use the Nuapay user interface for Bank Selection and Confirmation screens."
 sidebar: ob_sidebar

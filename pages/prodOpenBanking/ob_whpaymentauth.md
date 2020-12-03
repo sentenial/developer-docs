@@ -1,5 +1,5 @@
 ---
-title: Payment Authorised Event
+title: Open Banking Payment Authorised Event
 keywords: Payment Authorised Event Webhook 
 summary: "Payment Authorised Webhook event"
 sidebar: ob_sidebar

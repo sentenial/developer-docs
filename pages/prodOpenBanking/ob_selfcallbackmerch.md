@@ -1,5 +1,5 @@
 ---
-title: Self-Hosted-Callback Payment Page Setup
+title: Merchant PISP Self-Hosted-Callback Payment Page Setup
 keywords: Self Hosted Callback Payment Page Setup Javascript Add Open Banking Payment Page
 summary: "Adding Open Banking (in Self-Hosted-Callback mode) lets you fully control your PSU's payment journey and allows you to bypass the Nuapay TPP."
 sidebar: ob_sidebar

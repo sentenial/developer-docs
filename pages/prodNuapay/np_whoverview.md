@@ -1,5 +1,5 @@
 ---
-title: Webhooks in Nuapay
+title: Webhooks for Direct Debits and Credit Transfers
 keywords: Webhooks Overview
 summary: "Webhooks can be used to notify your internal systems when specific events occur in Nuapay."
 sidebar: np_sidebar

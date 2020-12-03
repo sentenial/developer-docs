@@ -1,5 +1,5 @@
 ---
-title: Merchant Integration
+title: Open Banking Merchant Integration
 keywords: Merchant Integration Open Banking
 summary: "Merchant integrations may use API Keys or OAuth tokens to secure access to the Open Banking APIs"
 sidebar: ob_sidebar
