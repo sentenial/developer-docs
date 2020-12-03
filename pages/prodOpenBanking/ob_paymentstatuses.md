@@ -1,5 +1,5 @@
 ---
-title: Payment Statuses
+title: Open Banking Payment Statuses
 keywords: Payment status open banking transitions
 summary: "Open Banking payments transition through various statuses through their lifecycle. This section describes each of these statuses and the Webhooks that may be generated as statuses transition."
 sidebar: ob_sidebar

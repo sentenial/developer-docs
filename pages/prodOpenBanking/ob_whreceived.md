@@ -1,5 +1,5 @@
 ---
-title: Payment Received Event
+title: Open Banking Payment Received Event
 keywords: Received Payment Event Webhook 
 summary: "Received Payment Webhook event"
 sidebar: ob_sidebar

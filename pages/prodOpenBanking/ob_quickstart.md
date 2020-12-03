@@ -1,5 +1,5 @@
 ---
-title: Quick Start Payment Initiation for Merchants
+title: Merchant Quick Start PISP Initiation
 keywords: Open Banking Quick Start
 summary: "Quick Start - Let's make an Open Banking payment!"
 sidebar: ob_sidebar

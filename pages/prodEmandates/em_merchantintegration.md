@@ -1,5 +1,5 @@
 ---
-title: Merchant Integration
+title: E-Mandates Merchant Integration
 keywords: Merchant Integration 
 summary: "Merchant integrations use API Keys to secure access to the Nuapay APIs"
 sidebar: em_sidebar

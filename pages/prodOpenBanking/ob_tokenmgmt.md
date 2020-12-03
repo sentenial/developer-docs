@@ -1,5 +1,5 @@
 ---
-title: Token Management
+title: Open Banking Token Management
 keywords: Token Management Revocation
 summary: "Revoke individual tokens based on a unique identifier or revoke all tokens linked to a specific merchant."
 sidebar: ob_sidebar

@@ -1,5 +1,5 @@
 ---
-title: Payment Declined Event
+title: Open Banking Payment Declined Event
 keywords: Payment Declined Event Webhook 
 summary: "Payment Declined Webhook event"
 sidebar: ob_sidebar

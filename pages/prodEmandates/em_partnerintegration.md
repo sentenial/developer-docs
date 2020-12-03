@@ -1,5 +1,5 @@
 ---
-title: Partner Integration
+title: E-Mandates Partner Integration
 keywords: Partner Integration
 summary: "Partner integrations require you to retrieve an OAuth access token for a specific merchant and use that unique token in all subsequent API calls."
 sidebar: em_sidebar

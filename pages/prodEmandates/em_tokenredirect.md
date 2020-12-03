@@ -1,5 +1,5 @@
 ---
-title: E-Mandate Token
+title: Redirect E-Mandate Token
 keywords: E-Mandate Token
 summary: "The session identifier or token required to initiate the e-mandate conversation."
 sidebar: em_sidebar

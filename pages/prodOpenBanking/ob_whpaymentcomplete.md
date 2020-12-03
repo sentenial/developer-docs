@@ -1,5 +1,5 @@
 ---
-title: Payment Complete Event
+title: Open Banking Payment Complete Event
 keywords: Payment Complete Event Webhook 
 summary: "Payment Complete Webhook event"
 sidebar: ob_sidebar

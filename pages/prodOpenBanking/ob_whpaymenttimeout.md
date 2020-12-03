@@ -1,5 +1,5 @@
 ---
-title: Payment Timeout Event
+title: Open Banking Payment Timeout Event
 keywords: Payment Timeout Event Webhook 
 summary: "Payment Timeout Webhook event"
 sidebar: ob_sidebar

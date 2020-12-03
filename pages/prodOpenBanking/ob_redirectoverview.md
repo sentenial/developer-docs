@@ -1,5 +1,5 @@
 ---
-title: Redirect Payment Page Setup
+title: Partner PISP Redirect Payment Page Setup
 keywords: Redirect Payment Page Setup Javascript Add Open Banking Payment Page
 summary: "Adding Open Banking (Redirect mode) as a payment option to your Payment Page requires a little configuration as outlined below. In Redirect mode you will use the Nuapay user interface for Bank Selection and Confirmation screens, with the screens being launched in a new browser window. Alternatively, you can use this mode if you would like to implement a setup where PSUs are emailed a link to the Bank Selection page or scan a QR code, for example."
 sidebar: ob_sidebar

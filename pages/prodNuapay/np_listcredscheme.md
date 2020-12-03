@@ -1,5 +1,5 @@
 ---
-title: List Schemes
+title: List Direct Debit Creditor Schemes
 keywords: List Creditor Schemes API
 summary: "List Creditor Schemes RESTful API"
 sidebar: np_sidebar

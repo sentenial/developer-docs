@@ -1,5 +1,5 @@
 ---
-title: Self-Hosted Payment Page Setup
+title: Merchant PISP Self-Hosted Payment Page Setup
 keywords: Self Hosted Payment Page Setup Javascript Add Open Banking Payment Page
 summary: "Adding Open Banking (Self-Hosted mode) as a payment option to your Payment Page requires configuration as outlined below. In Self-Hosted mode you must develop your own user interface."
 sidebar: ob_sidebar

@@ -21,6 +21,8 @@ epc: "European Payments Council - The authority that manages the SEPA payment sc
 
 flat_file: "A payment file (e.g. the Bacs Std-18 file) that is provided as text with a number of lines/records for each Direct Debit or Credit Transfer payment."
 
+iso_xml: "The ISO 20022 XML standard used for electronic data interchange between financial institutions."
+
 obie: "The UK Open Banking Implementation Entity is an organization set up by the UK’s Competition and Markets Authority to design and manage the  specifications for the Application Program Interfaces (APIs) that banks and building societies use to securely provide Open Banking services to TPPs. The OBIE manage the Open Banking Directory, produce guidelines and act as an arbiter managing disputes/complaints"
 
 otp: "One-Time Password"
@@ -32,6 +34,8 @@ psu: "Payment Service User - the person using the payment service - the payer."
 nupay_tpp: "Nuapay TPP is the Open Banking application"
 
 r-transaction: "Refers to the Direct Debit failures that begin with the letter 'R': Revoke, Reject, Refuse, Return, Refund (also Cancel)"
+
+scheme: "A payment scheme is a set of rules that govern how DD and CT transactions are processed. SEPA and Bacs are two such schemes, which govern both Direct Debit and Credit Transfer transactions in the EU and in the UK."
 
 schedule-fixed: "A fixed-length schedule results in a number of Direct Debit payments being created up front when the schedule is created e.g. 12 monthly Direct Debit payments"
 

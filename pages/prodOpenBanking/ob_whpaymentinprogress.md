@@ -1,5 +1,5 @@
 ---
-title: Payment in Progress Event
+title: Open Banking Payment in Progress Event
 keywords: Payment in Progress Event Webhook 
 summary: "Payment in Progress Webhook event"
 sidebar: ob_sidebar

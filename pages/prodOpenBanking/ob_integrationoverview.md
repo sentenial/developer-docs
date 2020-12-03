@@ -1,5 +1,5 @@
 ---
-title: Integration Overview
+title: Open Banking Integration Overview
 keywords: Open Banking Integration Overview
 summary: "Depending on whether you are an individual merchant or a Partner (who is managing multiple merchants) your integration with Nuapay will be different."
 sidebar: ob_sidebar
