@@ -24,18 +24,21 @@ The refund request object may be in one of three statuses:
 * REFUND_COMPLETE
 * REFUND_REJECTED
 
+## Successful Refund
 Where a refund request is **successful**:
 
-1. The user calls the `/payments/{paymentId}/refunds` service. Provided the referenced payment is in `PAYMENT_RECEIVED` status (and all other [Refund Configuration](ob_refundpayment.html#refund-configuration) constraints are met), a **refund object** is created in `REFUND_PENDING` status. Note that the actual payment status is unchanged.
+1. The user calls the `/payments/{paymentId}/refunds` service. Provided the referenced payment is in `PAYMENT_RECEIVED` status (and all other [Refund Configuration](ob_refundpayment.html#refund-configuration) constraints are met), a **refund object** is created in `REFUND_PENDING` status. Note that the status of the original payment is unchanged (it remains in `PAYMENT_RECEIVED` status).
 1. A Credit Transfer payment is initiated to the customer account linked to the provided `paymentId`.
-1. The payment is successfully processed - funds are credited to the PSU. The refund object's status is updated to `REFUND_COMPLETE`
-1. A Payment Refund Complete Webhook notifies the merchant of the successful refund. See <a href="ob_whrefundcomplete.html">Payment Refunded Event</a> in the Webhooks section for more details.
+1. The payment is successfully processed - funds are credited to the PSU. The refund object's status is updated to `REFUND_COMPLETE`.
+1. A **Payment Refunded** webhook notifies the merchant of the _successful refund_. See <a href="ob_whrefundcomplete.html">Open Banking Payment Refunded Event</a> in the Webhooks section for more details.
 
+## Unsuccessful Refund
 Where a refund request is **unsuccessful**:
 
 1. The user calls the `/payments/{paymentId}/refunds` service and all validations (as mentioned above) are passed.
 1. A Credit Transfer payment is initiated to the customer account linked to the provided `paymentId` but cannot be processed e.g. the PSU's account is closed.
-1. The refund object is updated to `REFUND_REFJECTED` 
+1. The refund object is updated to `REFUND_REJECTED`. 
+1. A **Payment Refund Rejected** webhook notifies the merchant of the _unsuccessful_ refund. See <a href="ob_whrefundrejected.html">Open Banking Payment Refunded Rejected Event</a> in the Webhooks section for more details.
 
 {% include note.html content="Where a refund is unsuccessful you will not be notified via a Webhook; this will be available in the next Open Banking release." %}
 
