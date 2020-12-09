@@ -1,3 +1,5 @@
+addacs: "The Automated Direct Debit Amendment and Cancellation Service. An electronic notification file, issued by the Bacs scheme, to notify Nuapay on behalf of its merchants/partners of payer-requested amendments or cancellations of DDIs (mandates)."
+
 bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the scheme behind the clearing and settlement of Direct Debits in the UK."
 clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payments. (The EBA's STEP-2 system allows banks across Europe to use one channel to send and receive their SEPA Credit Transfer and SEPA Direct Debit transactions)"
 
