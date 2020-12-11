@@ -12,13 +12,15 @@ toc: false
 
 {% include tip.html content="This Webhook notification is currently only available in our Sandbox environment." %}
 
+
 ## Webhook Message Details
 
 This Webhook has the following event types:
 
 |**Webhook Event Type**| **Description**|
-|MandateCancel|Nuapay may be notified by the scheme of a cancellation of a DDI. In this scenario a payer has gone to his/her bank and requested that the Direct Debit Instruction be cancelled so that funds may no longer be debited from their account. Bacs issue a notification file, referred to as an ADDACS to notify of cancelations. Once processed, Nuapay will trigger this notification, provided the partner/merchant has been configured to receive it.|
+|MandateCancel|Nuapay may be notified by the scheme of a cancellation of a DDI. In this scenario a payer has gone to his/her bank and requested that the Direct Debit Instruction be cancelled so that funds may no longer be debited from his/her account. Bacs issue a notification file, referred to as an ADDACS, to notify of cancelations. Once processed, Nuapay will update the DDI status to CANCELLED and trigger this notification, provided the partner/merchant has been configured to receive it.|
 
+The full list of possible cancellation reasons is provided under [ADDACS Reason Codes](np_bacsreasons.html#addacs-reason-codes).
 
 ## Webhook Event Message Details
 
@@ -89,7 +91,7 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td>Reason code as assigned during the ADDACS import.</td>
+            <td>The <a href = "np_bacsreasons.html#addacs-reason-codes">Reason code</a> as assigned during the ADDACS import.</td>
 		</tr>
 		<tr>
 			<td>root</td>
