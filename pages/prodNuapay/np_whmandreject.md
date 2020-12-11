@@ -14,7 +14,7 @@ toc: false
 
 A Direct Debit Instruction (mandate) created under Bacs: 
 * Must be passed to the scheme to be approved before collections may be made against it. 
-* Where the DDI is not approved (e.g. the payer's account does not allow Direct Debit payments), the scheme will inform Nuapay via an Automated Direct Debit Instruction Service (AUDDIS) notification.
+* Where the DDI is not approved (e.g. the payer's account does not allow Direct Debit payments), the scheme will inform Nuapay via an Automated Direct Debit Instruction Service (AUDDIS) notification. A specific [AUDDIS error code](np_bacsreasons.html#auddis-reason-codes) is assigned.
 * Nuapay will set the [DDI status](np_mandatestatuses.html) to `REJECTED`.
 
 ## Webhook Message Details
@@ -94,7 +94,7 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td>Reason code as assigned during the AUDDIS import.</td>
+            <td>The <a href="np_bacsreasons.html#auddis-reason-codes">Reason code</a> as assigned during the AUDDIS import.</td>
 		</tr>
 		<tr>
 			<td>root</td>
