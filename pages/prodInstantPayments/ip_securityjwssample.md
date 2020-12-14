@@ -43,7 +43,7 @@ MIIEbTCCAlWgAwIBAgIFAJTPRnEwDQYJKoZIhvcNAQELBQAwVTELMAkGA1UEBhMCR0IxDzANBgNVBAcM
 
 ## Sample JOSE Header
 
-The JOSE Header is generated from the certificate attributes above, note that the ``Serial Number`` is first decoded from hexadecimal before use in the JOSE header.
+The JOSE Header is generated from the certificate attributes above, note that the ``Serial Number`` is first converted from hexadecimal to decimal before use in the JOSE header as the kid.
 
 <pre>
 <code class="json">
