@@ -10,7 +10,9 @@ toc: false
 
 ## API Details
 
-The List Transactions request allows you to view all the transactions linked to a specific Nuapay merchant account.
+Note that:
+* The List Transactions request allows you to view all the transactions linked to a specific Nuapay merchant account.
+* The various transaction types that are possible are described in the table in the [Transaction Overview](np_transactionoverview.html) section.
 
 {% include tip.html content="When specifying a `valueDateFrom` and `valueDateTo` you must provide the values in miliseconds (the Unix Epoch)." %}
 

@@ -10,9 +10,10 @@ toc: false
 
 ## API Details
 
-The Retrieve Mandate endpoint allows you to view the details of a specific mandate/DDI as stored in Nuapay.
+Note that:
 
-The request requires that you provide the Mandate/DDI resource identifier (as returned in the [Create Mandate](np_createmandate.html) call service).
+* The Retrieve Mandate endpoint allows you to view the details of a specific mandate/DDI stored in Nuapay.
+* The request requires that you provide the Mandate/DDI resource identifier (as returned in the [Create Mandate](np_createmandate.html) call service): the `mandateId`.
 
 {% include swagger_np.html %}
 

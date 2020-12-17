@@ -65,6 +65,26 @@ entries:
           url: /np_responsehandling.html
           output: web, pdf
 
+  - title: Integration Models
+    output: web, pdf
+    folderitems:
+
+    - title: Integration Overview
+      url: /np_integrationoverview.html
+      output: web, pdf            
+      
+    - title: Merchant Integration
+      url: /np_merchantintegration.html
+      output: web      
+     
+    - title: Partner Integration
+      url: /np_partnerintegration.html
+      output: web      
+    
+    - title: Token Management
+      url: /np_tokenmgmt.html
+      output: web
+
   - title: Creditor Schemes
     output: web, pdf
     folderitems:  

@@ -26,3 +26,12 @@ The following gives you a high-level view of the required stages:
 1. As payments can fail for various reasons (insufficient funds in your payer's account or a disputed transaction, for example) from the time when the payment is first created up to a number of weeks after the payment, it is important to ensure that you account for any failed payments and design how your solution will handle these.
 
 {% include links.html %}
+
+## Integration Models
+
+Nuapay allows for two integration methods:
+
+|**Merchant**|With this approach, you access the required API services for your business; you are acting as a single entity.|
+|**Partner**|In this model you are acting on behalf of merchants, which exist under your partner-level entity. The partner needs to retrieve an OAuth tokens, which represents a specific "child" merchant, and then call the required APIs on behalf of that merchant, using that token.|
+
+For more on the the `Merchant` and `Partner` integrations, see the [Integration Overview](np_integrationoverview.html) section.

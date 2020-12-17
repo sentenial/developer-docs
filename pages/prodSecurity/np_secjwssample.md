@@ -50,7 +50,7 @@ The JOSE Header is generated from the certificate attributes above, note that th
      "iat": 0,
      "iss": "C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=a2av3py82w",
      "b64": false,
-     "crit": ["b64","iat","iss"]
+     "crit": ["iat","iss","b64",]
 }
 ````
 
@@ -77,7 +77,7 @@ For this example we will use the following payload:
 This JWS was generated using the above certificate, private key, JOSE Header and payload to RFC 7515 specification.
 
 ```
-ewogICAgICJhbGciOiAiUlMyNTYiLAogICAgICJraWQiOiAiMjQ5NjYxMTk1MyIsCiAgICAgImlhdCI6IDAsCiAgICAgImlzcyI6ICJDPUdCLCBMPUxvbmRvbiwgT1U9TnVhcGF5IEFQSSwgTz1OdWFwYXksIENOPWEyYXYzcHk4MnciLAogICAgICJiNjQiOiBmYWxzZSwKICAgICAiY3JpdCI6IFsiYjY0IiwiaWF0IiwiaXNzIl0KfQ..cI1J4sFocsXlYcbD4vvTZFEZXZtieR4HJJ-3BJOr9uFTv5tsChPLlc6bIDMJssm_B598yURFTixsWHOcF6QsR3NkOtUauFHJZdkbQcxPWrbHzQApgQoglV5CBlUTiv3GkBaNhNuyNAoE10D6ToqyTB2NYSo3kYU4JWRtly-33UXutG1Z-4ZKS-nGWSpVGkP45RjcrPzyOXdkX_Gg3hr3pYwX5M8pZDS3SfkCDnlV7fGBp0Iz8aSTq8cNVKc5-zBjAQG8Q4xcWeEKTW_TXAA9mhHtTHD_tVs6dVdsc2-cXNfReaaKvHzHaR3af_oQImJcGRepZfL1gtFr2tAbkoS3ow
+ewogICJhbGciOiAiUlMyNTYiLAogICJraWQiOiAiMjQ5NjYxMTk1MyIsCiAgImlhdCI6IDAsCiAgImlzcyI6ICJDPUdCLCBMPUxvbmRvbiwgT1U9TnVhcGF5IEFQSSwgTz1OdWFwYXksIENOPWEyYXYzcHk4MnciLAogICJiNjQiOiBmYWxzZSwKICAiY3JpdCI6IFsiaWF0IiwiaXNzIiwiYjY0Il0KfQ..B0c8T2biQpd0R1Uer_Cpuj_ShT2freDEIjuSIh3UsAwvkYRTyOpUV9wDSoOb_Qgawh0lHyCIs2w6RCqgQarFwDRVpfbm0D7UzSJIarH7oQUXcDDBSwo5c4XVfdLyeZElIdQpS1vF9BSUx8ZuV366qNamH4qNHFHAStfNQo6EYNR2Ahgw55Zlee11xWfPSSt2sDzyFgrSQJPkM3Npop2KO5RImAUQcHNHJ0sxfwNtw6URpBMWiXplL8ftMrdI1RY9NC20b0lORMsqYuja_iieMHWrXsE1_zjctAnL7-OmwAPV50YlWg4_Mk0C6A6hYw3VsYG7Zr-d5wQrZ8dmNz5_rA
 ````
 
 {% include links.html %}
