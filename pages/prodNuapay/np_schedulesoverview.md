@@ -10,8 +10,40 @@ folder: prodNuapay
 
 Payment Schedules allow you to set up a series of payments against a mandate/DDI. Schedules can be Fixed-Length or Open-Ended.
 
-|**Fixed-Length**| You can specify the amount to collect, how often the payments are taken and the total number of Direct Debits to be collected. With a fixed-length schedule, the total number of required payments are created in `READY FOR EXPORT` [status](np_ddstatuses.html). The payments are exported (sent to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Clearing</a>, depending on your selected scheme) automatically as each payment in the schedule is due.|
-|**Open-Ended**| The amount and the frequency is specified however there is no set number of payments and collections will continue to be made indefinitely. Only one payment (the latest) is ever in `READY_FOR_EXPORT` status prior to its collection date.|
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed-Length</td>
+<td>In a fixed-length schedule you must specify the:<br/>
+<ul>
+<li>Amount of the Direct Debit payment.</li>
+<li>Frequency of the Direct Debit payments.</li>
+<li>Total number of payments.</li>
+<li>Direct Debits are created when the schedule is created.</li>
+</ul>
+With a fixed-length schedule, the total number of required payments are created in <code>READY FOR EXPORT</code> <a href = "np_ddstatuses.html">status</a>. The latest payment is exported (i.e. sent to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Clearing</a>, depending on your selected scheme) automatically as each payment in the schedule is due.
+</td>
+</tr>
+<tr>
+<td>Open-Ended</td>
+<td>In an open-ended schedule the:<br/>
+<ul>
+<li>Direct Debit amount is specified.</li>
+<li>Frequency is required.</li>
+<li>Number of payments <i>is not defined</i>.</li> 
+<li>Payments will continue to be made indefinitely.</li>
+</ul>
+Only one payment (the latest) is ever in <code>READY_FOR_EXPORT</code> status prior to its collection date. The payment is exported (i.e. sent to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Clearing</a>, depending on your selected scheme) automatically and a new Direct Debit is created in READY_FOR_EXPORT.
+</td>
+</tr>
+</tbody>
+</table>
 
 A schedule may be configured with any one of the following frequencies:
 

@@ -11,6 +11,21 @@ folder: prodOpenBanking
 
 ## Overview
 
+Redirect mode allows merchants to:
+
+* Use the Nuapay User Interface for the Bank Selection and Confirmation screens.
+* Offer a full browser window/tab for the PSU interaction (this is in contrast to [CHECKOUT](ob_checkoutoverview.html) mode, where the Bank selection and confirmation screens are rendered in a pop-up window).
+* Create a payment link, which can be emailed or converted to a QR code.
+
+**Redirect Example**
+
+A business issues invoices monthly for its services and needs to be paid promptly.
+
+* Using the `REDIRECT` integration, the business creates an Open Banking payment and retrieves the payment link for its debtors.
+* This link is converted to a QR code and is printed on the company's invoice report, which it issues on the 1st of every month. 
+* When customers receives their invoices, they simply scan the QR code and are redirected to the Bank Selection page, where they are prompted to select their bank to complete the payment for the invoiced amount.
+
+## Steps in the Redirect Flow
 A detailed overview of the various steps involved in the **REDIRECT** flow is provided in the image below.
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}

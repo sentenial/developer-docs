@@ -29,7 +29,7 @@ This is the lifecycle of a DDI:
 * The payer signs the DDI and Nuapay moves its status to `READY FOR EXPORT`.
 * Once per day, Nuapay picks up all `READY FOR EXPORT` DDIs and includes them in an AUDDIS submission file, which is passed to Bacs; at this point the DDI status is updated to `EXPORTED`
 * Bacs operates on a 3- to 4-business day cycle (see below) so when the scheme receives the AUDDIS file from Nuapay it processes all the DDIs contained in it and lodges the instructions with the various payers' banks.
-* Where there are issues with a submission (e.g. the account provided does not allow Direct Debit payments to be taken, for example), Bacs will inform Nuapay via an AUDDIS response file and that DDI will be automatically updated to `CANCELLED`
+* Where there are issues with a submission (e.g. the account provided does not allow Direct Debit payments to be taken, for example), Bacs will inform Nuapay via an AUDDIS response file and that DDI will be automatically updated to `REJECTED`. You may want to configure a Webhook to be automatically notified of this: see details on the [Mandate Reject Event](np_whmandreject.html) page.
 * Where there is no issue, the DDI is deemed to be successfully lodged and its status is updated to `ACTIVE`. Once a DDI is in Active status, Direct Debit payments may be made against it.
 
 See [Mandate/DDI Statuses](np_mandatestatuses.html) For more information on the various statuses.
@@ -56,14 +56,21 @@ Before they can process a B2B Direct Debit, your payer's bank must:
 
 ## E-Mandate Benefits
 
-Working with paper-based mandates can be problematic; you need to use standard post; your payers may be slow to return the signed mandate; they may make an error when writing their account details; in some cases the signature may be unreadbale or the payer may have incorrectly completed the form. Assuming the mandate/DDI is returned and has been completed correctly, you then need to store the paper mandates and ensure that they can be retrieved later if required.
+Working with paper-based mandates can be problematic: 
+* You need to use standard post. 
+* Your payers may be slow to return the signed mandate.
+* Users may make an error when writing their account details.
+* In some cases the signature may be unreadbale or the payer may have incorrectly completed the form. 
+* Assuming the mandate/DDI is returned and has been completed correctly, you then need to store the paper mandates and ensure that they can be retrieved later if required.
 
 Electronic mandates remove all these pain points:
 
-* Users sign the mandates online
-* Account details are validated in real time (so your payers cannot provide you with an invalid account number)
-* The mandate is set to **ACTIVE** status immediately (for the SEPA CORE scheme) so you can begin to take payments right away: no waiting for signed paper mandates to arrive. Note that for BACS, DDIs are subject to the lodgement and collection cycle so mandates do not go into ACTIVE status immediately (see the previous section).
-* Your users receive emails to confirm activation of their mandates so again, less admin work for you!
-* Mandate/DDI details can be easily retrieved at any time via the [List Mandates](np_listmandates.html) service.
+1. Users sign the mandates online.
+1. Account details are validated in real time (so your payers cannot provide you with an invalid account number).
+1. The mandate is set to **ACTIVE** status immediately (for the SEPA CORE scheme) so you can begin to take payments right away: no waiting for signed paper mandates to arrive. 1. (Note that for BACS, DDIs are subject to the lodgement and collection cycle so mandates do not go into ACTIVE status immediately (see the previous section)).
+1. Your users receive emails to confirm activation of their mandates so again, less admin work for you!
+1. Mandate/DDI details can be easily retrieved at any time via the [List Mandates](np_listmandates.html) service.
+
+For more information on E-Mandates, see the [E-Mandates Overview](em_landing_page.html).
 
 {% include links.html %}

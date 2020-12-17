@@ -10,10 +10,10 @@ toc: false
 
 ## API Details
 
-All mandates/DDIs that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID) for SEPA payments or to a Service User Number (SUN) for Bacs payments. 
+A payment scheme is a set of rules that govern how transactions are processed. SEPA and Bacs are two such schemes, which govern both Direct Debit and Credit Transfer transactions in the EU and in the UK.
 
-
-If you already have a CSID/SUN you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier.
+* All mandates/DDIs that you create (and all subsequent Direct Debit payments) must be linked to a unique Creditor Scheme Identifier (CSID) for SEPA payments or to a Service User Number (SUN) for Bacs payments. 
+* If you already have a CSID/SUN you will need to use List Creditor Schemes to retrieve its Nuapay resource identifier.
 
 {% include note.html content="You must use the resource identifier of the scheme in your requests. This identifier will be similar to this: **abxq9kq52l** do not reference the actual creditor scheme ID or SUN in your requests." %}
 
