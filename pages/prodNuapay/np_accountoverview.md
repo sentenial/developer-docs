@@ -1,7 +1,7 @@
 ---
 title: Nuapay Account Overview
 keywords: Nuapay Account Overview
-summary: "Every Nuapay merchant is assigned a unique Nuapay International Bank Account - Direct Debut settlements are credited to this account; Credit Transfers are debited from this account."
+summary: "Every Nuapay merchant is assigned a unique Nuapay International Bank Account - Direct Debit settlements are credited to this account; Credit Transfers are debited from this account."
 sidebar: np_sidebar
 permalink: np_accountoverview.html
 folder: prodNuapay

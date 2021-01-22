@@ -1,7 +1,7 @@
 ---
 title: Credit Transfer Overview
 keywords: Credit Transfer Overview
-summary: "Credit Transfer payments allow you to push payments to your creditors' accounts via the SEPA CT (SCT) Scheme."
+summary: "Credit Transfer payments allow you to push payments to your creditors' accounts via the SEPA CT (SCT) and SEPA Instant CT Schemes (EUR currency) or via Faster Payments or Bacs Direct Credit (for GBP currency)"
 sidebar: np_sidebar
 permalink: np_ctoverview.html
 folder: prodNuapay

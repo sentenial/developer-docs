@@ -20,4 +20,9 @@ For details of the individual Nuapay events that trigger Webhook notifications, 
 |[Incoming Credit Transfer](np_whincomingct.html)|
 |[Accepted Direct Debit](np_whaccepteddd.html)|
 |[Mandate Signature](np_whmandsignature.html)|
+|[Mandate Cancel](np_whmandcancel.html)|
+|[Mandate Reject](np_whmandreject.html)|
 |[Credit Transfer Reject](np_whctreject.html)|
+|[Credit Transfer Accept](np_whctaccept.html)|
+|[Express Credit Transfer Reject](np_whctexpreject.html)|
+|[Express Credit Transfer Accept](np_whctexpaccept.html)|

@@ -37,6 +37,8 @@ The Idempotency check is only against successful payments, so where a previous p
 
 You have the option to provide your own remittance reference to your transactions (the default) or, if you would prefer, a unique system-generated remittance reference may be automatically applied. This reference unambiguously refers to the payment transaction.
 
+{% include tip.html content="Adding Remittance and End-to-End identifiers will allow you to more easily reconcile the payments later via [Webhook notifications](ob_whoverview.html) or when retrieving payment details using the [Retrieve Payment](ob_retrievepayment.html) endpoint." %}
+
 If your configuration requires that merchant-generated references must be provided, please note that:
 
 * For GB payments `remittanceInformation.refererence` must be a maximum of 18 characters
@@ -176,6 +178,9 @@ Note that:
 1. The only allowed account country format is GB.
 1. UK Faster Payments is the only allowed payment scheme.
 1. The account format is sort code and account number.
+
+{% include tip.html content="A change introduced as part of the 2.4 release will allow IBAN to be used for GBP payments; this change will be available on the Sandbox from January 2021 and in Live from early February." %}
+
 
 **For EUR payments**: 
 

@@ -1,7 +1,7 @@
 ---
-title: Health Check - Single Bank
-keywords: Health Check single bank
-summary: "Perform a health check on a specific ASPSP to retrive its score"
+title: Status Check - Single Bank
+keywords: Status Check single bank
+summary: "Perform a status check on a specific ASPSP to retrive its score"
 sidebar: ob_sidebar
 permalink: ob_healthchkbnk.html
 folder: prodOpenBanking
@@ -10,7 +10,9 @@ toc: true
 
 ## API Details 
 
-The Health Check service for a single bank returns a score for that specific ASPSP. 
+{% include tip.html content="This functionality is not currently available on the Sandbox or Live environments. The feature will be available on the Sandbox from the end of January 2021 and on the Live environment from early February 2021. " %}
+
+The Status Check service for a single bank returns a score for that specific ASPSP. 
 
 * You must provide the required `{bankId}`.
 * Possible Scores: 
@@ -24,7 +26,7 @@ Use the [Retrieve Banks](ob_getbank.html) service to retrieve a specific `bankId
 
 {% include urls-ob.html %}
 
-## Health Check (Single ASPSP) Endpoint
+## Status Check (Single ASPSP) Endpoint
 
 
 <ul id="profileTabs" class="nav nav-tabs">
