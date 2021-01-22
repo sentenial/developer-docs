@@ -19,6 +19,7 @@ For details of the individual Nuapay events that trigger Webhook notifications, 
 |**Event**|
 |[Payment Authorised](ob_whpaymentauth.html)|
 |[Payment Declined](ob_whpaymentdecl.html)|
+|[Payment Received](ob_whreceived.html)|
 |[Payment in Progress](ob_whpaymentinprogress.html)|
 |[Payment Complete](ob_whpaymentcomplete.html)|
 |[Payment Rejected](ob_whpaymentrejected.html)|

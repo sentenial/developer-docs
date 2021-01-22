@@ -218,7 +218,7 @@ entries:
           url: /ob_getaccounttx.html
           output: web       
 
-  - title: Health Service
+  - title: Bank Status Service
     output: web, pdf
     folderitems:  
     
@@ -226,11 +226,11 @@ entries:
       url: /ob_healthoverview.html
       output: web, pdf  
  
-    - title: Health Check (All Banks)
+    - title: Status Check (All Banks)
       url: /ob_healthchkallbnks.html
       output: web, pdf                 
 
-    - title: Health Check (Single Bank)
+    - title: Status Check (Single Bank)
       url: /ob_healthchkbnk.html
       output: web, pdf                       
   

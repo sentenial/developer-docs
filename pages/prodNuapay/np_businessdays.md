@@ -54,7 +54,6 @@ Note that:
 To confirm the exact dates for the Bacs holidays, please refer to the **Bacs Processing Calendar**, which is published annually and available on the Bacs Web site:
 
 |**Year**|**Link**|
-|2020|[https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2020.pdf](https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2020.pdf){:target="_blank"}|
 |2021|[https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf](https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf){:target="_blank"}|
 
 

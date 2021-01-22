@@ -1,7 +1,7 @@
 ---
 title: Bank Overview
 keywords: Open Banking Participating Banks Overview
-summary: "The Bank APIs allow you to retrive and view details of the ASPSPs currently enrolled in Open Banking"
+summary: "The Bank APIs allow you to retrieve and view details of the ASPSPs currently enrolled in Open Banking"
 sidebar: ob_sidebar
 permalink: ob_bankoverview.html
 folder: prodOpenBanking

@@ -1,7 +1,7 @@
 ---
-title: Health Check - All Banks
-keywords: Health Check all banks
-summary: "Perform a health check on all ASPSPs via RESTful API"
+title: Status Check - All Banks
+keywords: Status Check all banks
+summary: "Perform a status check on all ASPSPs via RESTful API"
 sidebar: ob_sidebar
 permalink: ob_healthchkallbnks.html
 folder: prodOpenBanking
@@ -10,7 +10,9 @@ toc: true
 
 ## API Details 
 
-The Health Check service for all banks returns a score for all APSPs.
+{% include tip.html content="This functionality is not currently available on the Sandbox or Live environments. The feature will be available on the Sandbox from the end of January 2021 and on the Live environment from early February 2021. " %}
+
+The status check service for all banks returns a score for all APSPs.
 
 * Possible Scores: 
   * `0`: There are some connectivity issues. 
@@ -20,7 +22,7 @@ The Health Check service for all banks returns a score for all APSPs.
 
 {% include urls-ob.html %}
 
-## Health Check (All ASPSPs) Endpoint
+## Status Check (All ASPSPs) Endpoint
 
 
 <ul id="profileTabs" class="nav nav-tabs">
