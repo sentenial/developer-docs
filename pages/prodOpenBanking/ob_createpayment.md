@@ -103,6 +103,13 @@ Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
 
+## The Account Name
+
+The debtorAccount `name` allows up to 70 characters but note:
+
+* For FPS transactions, the maximum account name length is 35 characters. If you have used > 35 characters, the name will be truncated before sending to the Scheme.
+* For SEPA transactions up to 70 characters may be provided.
+
 ## Address Details
 
 {% include tip.html content="Debtor address is only required in the **STET** Scheme." %}

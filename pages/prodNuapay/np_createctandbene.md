@@ -35,6 +35,8 @@ Note that FPS:
 * Requires the following values in your request:
   * `paymentCurrency` = GBP.
   * `type` = EXPRESS
+  
+{% include tip.html content="If you specify domestic account details for the beneficiary account, specify the Sort Code in **domesticBranchCode** (not in the **domesticBankCode**)." %}
 
 ## Payment Types
 
