@@ -20,10 +20,12 @@ A detailed overview of the various steps involved in the **Checkout** flow is pr
 In **Checkout** mode you will: 
 
 1. (Optionally) Use your API key to retrieve a merchant access token. (For more on this see [retrieving tokens](ob_partnerintegration.html#api-details---post-tokens)).
-1. Call the `/payments` endpoint, using the OAuth token retrieved in the previous step (or else use your API Key) (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`. Manage the returned payment identifier with some Nuapay-provided JS and CSS to render the Bank Selection screen for your payers. 
+1. Call the `/payments` endpoint, using the OAuth token retrieved in the previous step (or else use your API Key) (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`
+1. Using the returned `userInterfacePaymentId` from step 2, call **NuapayOpenbanking.showUI()**, e.g. `NuapayOpenbanking.showUI (772d0ef5-596b-43de-a6a0-832c9ab7a7a5)` to display the bank selection screen to the user.
 1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank.
-1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
-1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> posts the payment ID to the partner/merchant URL (`merchantPostAuthUrl`).
-1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.tpp}}">Nuapay TPP</a> will then redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
+1. Once finished at the bank, the user is redirected to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.tpp}}">Nuapay TPP</a>, where a payment summary screen is displayed.
+1. When the summary screen is closed (either when the user clicks **Close** or the pop-up self closes after 30 seconds), a payment-finished event is passed to the parent window.
+
 
 {% include checkout_steps.html %} <!--pulls in common steps for Partner and Merchant-->

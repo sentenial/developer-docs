@@ -15,6 +15,8 @@ toc: false
 
 This Webhook has a single event type: <b>PaymentRejected</b>
 
+{% include tip.html content="For [Developer Dashboard](wh_config_ui.html#setting-up-a-webhook) users: select the **Open Banking Rejected Credit Transfer** event." %}
+
 
 ## Webhook Event Message Details
 

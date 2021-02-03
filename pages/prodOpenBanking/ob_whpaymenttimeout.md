@@ -15,6 +15,8 @@ toc: false
 
 This Webhook has a single event type: <b>PaymentTimeout</b>
 
+{% include tip.html content="For [Developer Dashboard](wh_config_ui.html#setting-up-a-webhook) users: select the **PaymentTimeout** event." %}
+
 
 ## Webhook Event Message Details
 
