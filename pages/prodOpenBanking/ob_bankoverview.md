@@ -31,35 +31,37 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 |AIB|
 |AIB Business|
 |Bank Of Ireland|
+|Bank Of Ireland Business|
 |Bank Of Scotland|
 |Barclays Corporate|
 |Barclays Personal|
 |Clydesdale|
 |Danske|
 |First Direct|
+|Halifax|
 |HSBC Business|
 |HSBC Personal|
-|Halifax|
 |Lloyds Business|
 |Lloyds Commercial|
 |Lloyds Personal|
 |Marks and Spencer|
 |Monzo|
-|NatWest|
 |Nationwide|
+|NatWest|
+|NatWest Corporate|
 |RBS|
 |Revolut|
 |Santander|
-|TSB|
 |Tesco|
 |TransferWise|
+|TSB|
 |Ulster|
 |Yorkshire|
 
 # Berlin Group ASPSPs
 
 
-{% include note.html content="the following ASPSPs are currently only supported on the **Sandbox environment**" %}
+{% include note.html content="the following ASPSPs are currently only supported in **Beta**" %}
 
 |**Berlin-Group-Supporting ASPSPs**| 
 |Commerzbank|
@@ -71,7 +73,7 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 
 # STET ASPSPs
 
-{% include note.html content="the following ASPSPs are currently only supported on the **Sandbox environment**" %}
+{% include note.html content="the following ASPSPs are currently only supported in **Beta**" %}
 
 |**STET-Supporting ASPSPs**|
 |Allianz Banque|
