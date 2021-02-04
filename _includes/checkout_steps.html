@@ -75,17 +75,15 @@ In a successful flow:
 * The pop-up will be closed by users after they confirm the payment with their bank and are redirected to your confirmation message. 
 * Users may also choose to cancel out of the flow at any point and close the pop-up window without completing the payment.
 
-To manage the closing of the pop-up window:
+
+{% include note.html content="On closing of the pop-up window you must make a server-to-server call to retrieve the payment status. See [Payment Statuses](ob_paymentstatuses.html) for more on the possible statuses." %}
+
+To handle the pop-up close event:
+
 * You will need to add a Listener to your parent Payment Page window to <i>listen</i> for the close event.
 * For `userInterfacePaymentId` = `772d0ef5-596b-43de-a6a0-832c9ab7a7a5`, this would look like this:
 
 |`{source: "NUAPAY_OPEN_BANKING", status: "CLOSED", paymentId: "dmq8nexom", userInterfacePaymentId: "772d0ef5-596b-43de-a6a0-832c9ab7a7a5"}`|
-
-
-The Listener:
-* With URL = `https://yourdomain.com/yourserver/status` needs to retrieve the payment status.
-* Use the `paymentId` to call the [Retrieve Payment](ob_retrievepayment.html) endpoint to get the status.
-* Alternatively you can use the `userInterfacePaymentId` and call [List Payments](ob_listpayments.html) to get the status.
 
 
 
@@ -119,12 +117,22 @@ window.addEventListener("message",listener,false);
 </script>
 ````
 
-Here we are checking that the event is a closed event, in this example the merchant is calling back to their own server to get the payment status. 
+The `var url = "/merchant/status?id=" +` must be appended with one of the following:
 
-The call is to ``/merchant/status?id=772d0ef5-596b-43de-a6a0-832c9ab7a7a5``
+* event.data.userInterfacePaymentId
+* event.data.paymentId
+
+{% include tip.html content="For new integrations, we recommend that you use the **event.data.userInterfacePaymentId**; for existing users, who have already applied the **event.data.paymentId**, this may continue to be used." %}
 
 
-{% include note.html content="On closing of the pop-up window you must make a server-to-server call to retrieve the payment status (using the [Retrieve Payment](ob_retrievepayment.html) service). See [Payment Statuses](ob_paymentstatuses.html) for more on the possible statuses." %}
+The payment identifier (either the `userInterfacePaymentId` or the `paymentId`) must be: 
+* Stored in a session or in a Databases, for example.
+* Posted back to your payment page. 
+
+To retrieve the payment status:
+
+* (For **userInterfacePaymentId**): call [List Payments](ob_listpayments.html) and filter on the `userInterfacePaymentId`.
+* (For **paymentId**): call [Retrieve Payment](ob_retrievepayment.html) using the `paymentId``. 
 
 ## The End-User Experience
 
