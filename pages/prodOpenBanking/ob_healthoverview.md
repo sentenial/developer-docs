@@ -9,8 +9,6 @@ folder: prodOpenBanking
 
 ## Overview
 
-{% include tip.html content="This functionality is not currently available on the Sandbox or Live environments. The feature will be available on the Sandbox from the end of January 2021 and on the Live environment from early February 2021. " %}
-
 As ASPSPs may not always be available (there may be connectivity issues or scheduled downtime, for example) merchants/partners can use the Check Status Services to determine the availability of all ASPSPs or the health of a specific bank at any given time. 
 
 To calculate the overall status:

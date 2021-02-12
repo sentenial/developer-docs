@@ -28,9 +28,8 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 {% include note.html content="the following ASPSPs are supported on **Production**" %}
 
 |**OBIE-Supporting ASPSPs**|
-|AIB|
-|AIB Business|
-|Bank Of Ireland|
+|AIB & AIB Business|
+|Bank Of Ireland| 
 |Bank Of Ireland Business|
 |Bank Of Scotland|
 |Barclays Corporate|
