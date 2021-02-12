@@ -10,8 +10,6 @@ toc: true
 
 ## API Details 
 
-{% include tip.html content="This functionality is not currently available on the Sandbox or Live environments. The feature will be available on the Sandbox from the end of January 2021 and on the Live environment from early February 2021. " %}
-
 The status check service for all banks returns a score for all APSPs.
 
 * Possible Scores: 
