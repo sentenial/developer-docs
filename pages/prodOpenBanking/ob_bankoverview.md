@@ -32,8 +32,13 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 |Bank Of Ireland| 
 |Bank Of Ireland Business|
 |Bank Of Scotland|
+|Bank of Scotland Business|
+|Bank of Scotland Commercial|
+|Barclays Business Banking|
 |Barclays Corporate|
 |Barclays Personal|
+|Barclays Wealth|
+|Barclaycard Commercial|
 |Clydesdale|
 |Danske|
 |First Direct|

@@ -45,14 +45,7 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>PaymentRefundComplete</td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -83,18 +76,19 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 		</tr>
         <tr>
 			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
-		<tr>
-			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
 			<td>Null </td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
+		
 		
 	</tbody>
 </table>
@@ -116,14 +110,13 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentRefundComplete",
-    "resourceTechnicalId": 500006,
-    "resourceReference": "1234-5678-9012345678",
-    "resourceReferenceType": "EndToEndId",    
+    "eventType": "PaymentRefundComplete",   
+    "resourceReference": "3w92ihg276rg8b4d13x9z9",
+    "resourceReferenceType": "reference",    
     "resourceUri": "/payments/n7rklmvtjc",
     "resourceType": "payment",
-    "resourceOwner": "tc47ygrg72",
-    "reasonCode": null
+    "reasonCode": null,
+    "resourceOwner": "tc47ygrg72"    
 }</code>
 </pre>
 
