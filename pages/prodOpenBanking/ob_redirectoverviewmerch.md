@@ -28,9 +28,9 @@ In **Redirect** mode you will:
    * `https://api.nuapay.com/tpp-ui/redirect?uiid=<userInterfacePaymentId>`
 1. The end user clicks the URI and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> (with the Bank selection window) is displayed in a new browser window.
 1. When the user selects a bank he/she is redirected to the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
-1. The ASPSP redirects the PSU to the callback URL and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes that callback (as the `integrationType` = `REDIRECT` the TPP UI will display a **Back to {MerchantName}** button; in the `CHECKOUT` flow the TPP UI displays a **Close** button).
-1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with parameters indicating success/failure and the `userInterfacePaymentId`.
-1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
+1. The ASPSP redirects the PSU back to the TPP UI which processes that callback.
+1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with the parameters `userInterfacePaymentId`.
+1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (This integration also supports webhooks so you can be informed when the payment is completed).
 
 ## Authorisation 
 
@@ -84,10 +84,6 @@ To enable the <span class="label label-info">PAY</span> button you will need to 
 
 This button will open the Select Banks on a new browser tab or window for the `userInterfacePaymentId` (the `uiid`).
 
-Note that there is a Sandbox and Production TPP for this so you will need to specify the correct URL based on whether you are testing or working in Production:
-
-|**SANDBOX**|https://sandbox.nuapay.com/tpp-ui/|
-|**PRODUCTION**| https://api.nuapay.com/tpp-ui/|
 
 ## Reusing the Link
 
