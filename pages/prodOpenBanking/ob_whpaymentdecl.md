@@ -45,14 +45,7 @@ This Webhook has a single event type: <b>PaymentDeclined</b>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>PaymentDeclined</td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -83,19 +76,19 @@ This Webhook has a single event type: <b>PaymentDeclined</b>
 		</tr>
         <tr>
 			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
-		<tr>
-			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
 			<td>Null </td>
 		</tr>
-		
+		<tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
+        
 	</tbody>
 </table>
 
@@ -116,14 +109,13 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentDeclined",
-    "resourceTechnicalId": 500006,
-    "resourceReference": "7654-1142-9012654321",
-    "resourceReferenceType": "EndToEndId",    
+    "eventType": "PaymentDeclined",    
+    "resourceReference": "42f8c5e2326f8b4c0563",
+    "resourceReferenceType": "reference",    
     "resourceUri": "/payments/l5rklmvjsc",
     "resourceType": "payment",
-    "resourceOwner": "tc47ygrg72",
-    "reasonCode": null
+    "reasonCode": null,
+    "resourceOwner": "tc47ygrg72"    
 }</code>
 </pre>
 

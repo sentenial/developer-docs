@@ -45,14 +45,7 @@ This Webhook has a single event type: <b>PaymentInProgress</b>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>PaymentInProgress</td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -80,14 +73,7 @@ This Webhook has a single event type: <b>PaymentInProgress</b>
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a payment resource.</td>
-		</tr>
-        <tr>
-			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
+		</tr>        
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -95,7 +81,13 @@ This Webhook has a single event type: <b>PaymentInProgress</b>
 			<td>optional</td>
 			<td>Null </td>
 		</tr>
-		
+		<tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -116,14 +108,13 @@ The following is an example of a Received Payment event JSON:
 <pre>
 <code class="json">{
     "eventTimestamp": 1501169079000,
-    "eventType": "PaymentInProgress",
-    "resourceTechnicalId": 500006,
-    "resourceReference": "5432C123C6-32D9-5F99-5",
-    "resourceReferenceType": "EndToEndId",   
+    "eventType": "PaymentInProgress",    
+    "resourceReference": "43f8c5e89326f8b4d1e3243",
+    "resourceReferenceType": "reference",   
     "resourceUri": "/payments/n7rklmvdmq",
     "resourceType": "payment",
-    "resourceOwner": "tc47ygrg72",
-    "reasonCode": null
+    "reasonCode": null,
+    "resourceOwner": "tc47ygrg72"    
 }</code>
 </pre>
 
