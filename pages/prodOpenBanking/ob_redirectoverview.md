@@ -13,17 +13,9 @@ folder: prodOpenBanking
 
 Redirect mode allows merchants to:
 
-* Use the Nuapay User Interface for the Bank Selection and Confirmation screens.
-* Offer a full browser window/tab for the PSU interaction (this is in contrast to [CHECKOUT](ob_checkoutoverview.html) mode, where the Bank selection and confirmation screens are rendered in a pop-up window).
-* Create a payment link, which can be emailed or converted to a QR code.
-
-**Redirect Example**
-
-A business issues invoices monthly for its services and needs to be paid promptly.
-
-* Using the `REDIRECT` integration, the business creates an Open Banking payment and retrieves the payment link for its debtors.
-* This link is converted to a QR code and is printed on the company's invoice report, which it issues on the 1st of every month. 
-* When customers receives their invoices, they simply scan the QR code and are redirected to the Bank Selection page, where they are prompted to select their bank to complete the payment for the invoiced amount.
+* Use the Nuapay User Interface for the bank selection and bank confirmation screens.
+* Offer a full browser window/tab for the PSU interaction (this is in contrast to [CHECKOUT](ob_checkoutoverview.html) mode, where the bank selection and bank confirmation screens are rendered in a pop-up window).
+* Create a payment link which can be presented to the PSU.
 
 ## Steps in the Redirect Flow
 A detailed overview of the various steps involved in the **REDIRECT** flow is provided in the image below.
@@ -38,14 +30,14 @@ In **Redirect** mode you will:
 1. Use your partner-level API key to retrieve a token representing the required merchant. (For more on this see [list organisations](ob_partnerintegration.html#api-details---get-organisations) and [retrieving tokens](ob_partnerintegration.html#api-details---post-tokens)).
 1. Call the `/payments` endpoint (see [Create Payment](ob_createpayment.html)), on behalf of the merchant, using the OAuth token retrieved in the previous step. 
 1. Set the `integrationType` to `REDIRECT`. You must also provide the `merchantPostAuthUrl` - this is mandatory for the Redirect flow. 
-1. The Nuapay TPP creates the payment object and returns the `userInterfacePaymentId`.
+1. The TPP creates the payment object and returns the `userInterfacePaymentId`.
 1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> then needs to be redirected to the URL with the `userInterfacePaymentId`. You must build a URI that can be used on a web page or sent by an e-mail to the end user. The URL will be similar to the following (on the Production environment): 
    * `https://api.nuapay.com/tpp-ui/redirect?uiid=<userInterfacePaymentId>`
 1. The end user clicks the link and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> (with the Bank selection window) is displayed in a new browser window.
 1. When the user selects a bank he/she is redirected to the selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment.
-1. The ASPSP redirects the PSU to the callback URL and the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> processes that callback (as the `integrationType` = `REDIRECT` the TPP UI will display a **Back to {MerchantName}** button; in the `CHECKOUT` flow the TPP UI displays a **Close** button).
-1. The TPP then redirects the PSU to the `merchantPostAuthUrl` with parameters indicating success/failure and the `userInterfacePaymentId`.
-1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step). 
+1. The ASPSP redirects the PSU back to the TPP UI which processes that callback. 
+1. The TPP UI then redirects the PSU to the `merchantPostAuthUrl` with the parameter `paymentId`.
+1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status. (This integration also supports webhooks so you can be informed when the payment is completed). 
 
 ## Authorisation 
 
@@ -73,14 +65,12 @@ On your payment page you will need to add the following:
 
 ````
 <script src="https://sandbox.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://sandbox.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 **For Production**
 
 ````
 <script src="https://api.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://api.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 ## Adding The Open Banking Pay Button
