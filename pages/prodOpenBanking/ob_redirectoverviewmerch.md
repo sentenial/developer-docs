@@ -58,14 +58,12 @@ On your payment page you will need to add the following:
 
 ````
 <script src="https://sandbox.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://sandbox.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 **For Production**
 
 ````
 <script src="https://api.nuapay.com/tpp-ui/js/nuapay-open-banking.js"></script>
-<link rel="stylesheet" type="text/css" href="https://api.nuapay.com/tpp-ui/css/nuapay-open-banking.css" />
 ````
 
 ## Adding The Open Banking Pay Button
