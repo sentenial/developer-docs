@@ -89,16 +89,11 @@ To enable the <span class="label label-info">PAY</span> button you will need to 
 
 This button will open the Select Banks on a new browser tab or window for the `userInterfacePaymentId` (the `uiid`).
 
-Note that there is a Sandbox and Production TPP for this so you will need to specify the correct URL based on whether you are testing or working in Production:
-
-|**SANDBOX**|https://sandbox.nuapay.com/tpp-ui/|
-|**PRODUCTION**| https://api.nuapay.com/tpp-ui/|
-
 ## Reusing the Link
 
 If you have decided to email the link to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> or have provided a QR code, that user may begin the payment, drop out of the flow and retry accessing the link later. In that case:
 
-* Where a link is accessed, the TPP will check the existing payment status in the TPP database. 
+* The TPP will check the existing payment status in the TPP database. 
 * If the payment's current status means that the payment cannot proceed (e.g. if the payment is in `SETTLEMENT_REJECTED`) an alert is displayed to the user on the TPP and he/she cannot continue. 
 * If the payment is in status `PENDING` then the user will be able to proceed and complete the payment. Note that `PENDING` is the only status that will allow the PSU to proceed.
 
