@@ -18,7 +18,7 @@ Once you have successfully <a href="em_wpinstall.html">installed the plugin</a>,
 	</p>
 	<li value="3">Add the following URLs:<ol>
 			<li value="1">
-				<b>REST URL</b>: https://api.nuapay.com/emandate-rest</li>
+				<b>REST URL</b>: https://api.nuapay.com/</li>
 			<li value="2">
 				<b>EMANDATE WEB URL</b>: https://api.nuapay.com/emandate/</li>
 		</ol>
