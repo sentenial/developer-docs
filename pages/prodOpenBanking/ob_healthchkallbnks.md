@@ -18,7 +18,7 @@ The status check service for all banks returns a score for all APSPs.
   * `-1`: The service is not supported by the ASPSP. 
 
 
-{% include urls-ob.html %}
+{% include urls-ob-healthchk.html %}
 
 ## Status Check (All ASPSPs) Endpoint
 

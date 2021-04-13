@@ -22,7 +22,7 @@ Use the [Retrieve Banks](ob_getbank.html) service to retrieve a specific `bankId
 
 {% include swagger_hc.html %}
 
-{% include urls-ob.html %}
+{% include urls-ob-healthchk.html %}
 
 ## Status Check (Single ASPSP) Endpoint
 
