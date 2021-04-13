@@ -44,8 +44,8 @@ Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provid
 1. [Process The Callback](ob_selfcallbackmerch.html#processing-the-callback) sent to the merchantPostAuthUrl from the ASPSP.
    * You need to retrieve an OAuth token with scope = `openbanking_callback`.
    * Use this token to authenticate when you call the [Forward Payment Callback](ob_paymentcallback.html) endpoint, passing the callback parameters.
-   * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> at `/tpp/callback`. (See the following section for more on this).   
-1. The response to `/tpp/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status by using [Retrieve Payment](ob_retrievepayment.html).
+   * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> at `/payments/callback`. (See the following section for more on this).   
+1. The response to `/payments/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status by using [Retrieve Payment](ob_retrievepayment.html).
 
 ## Processing The Callback
 

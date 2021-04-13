@@ -41,8 +41,8 @@ The merchantPostAuthUrl will process the callback from the ASPSP, this informati
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment - note after the PSU approves or denies the payment request they are redirected to the merchantPostAuthUrl.
 1. [Process The Callback](ob_selfcallbacksetupoverview.html#processing-the-callback) sent to the merchantPostAuthUrl from the ASPSP.
    * The partner retrieves a partner level OAuth token with scope = `openbanking_callback`.
-   * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>  at `/tpp/callback`. (See the following section for more on this).   
-1. The response to `/tpp/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status by using [Retrieve Payment](ob_retrievepayment.html).
+   * The payment callback params are passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> at `/payments/callback`. (See the following section for more on this).   
+1. The response to `/payments/callback` includes the paymentId in the Location Header which you can use to get the most up to date payment status by using [Retrieve Payment](ob_retrievepayment.html).
 
 ## Processing The Callback
 
