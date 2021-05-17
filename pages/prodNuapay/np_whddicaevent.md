@@ -26,7 +26,7 @@ Note that:
 * Bacs allows you a number of business days to contest the claim. 
 * If you are unsuccessful in contesting the claim, the value of the Direct Debit will be automatically debited from your account on Day 14 (this Webhook will be received on Day 1). (Each "Day" is a working day)
 
-For more on the possible refund reasons and the challenges available, see [DDIC Reason Codes](http://localhost:4000/np_bacsreasons.html#ddic-reason-codes).
+For more on the possible refund reasons and the challenges available, see [DDIC Reason Codes](np_bacsreasons.html#ddic-reason-codes).
 
 |We also recommend that you contact your Account Manager who will be able to assist you with the challenge process.|
 
@@ -98,7 +98,7 @@ For more on the possible refund reasons and the challenges available, see [DDIC 
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td> The <a href="np_bacsreasons.html"> Bacs Reason Code</a></td>
+            <td> The <a href="np_bacsreasons.html#ddic-reason-codes"> Bacs DDIC Reason Code</a></td>
 		</tr>		
 	</tbody>
 </table>
