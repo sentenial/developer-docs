@@ -20,7 +20,7 @@ Initiating payments via Open Banking offers numerous benefits.
 
 **For your clients**
 
-* No need to key in credit card, expiry and CVV numbers.
+* No need to key in credit card, expiry and CVV details.
 * Card limits are not applicable.
 * Added confidence that the payment is secure as the actual authroisation takes place on the user's online banking portal.
 * Potential for card details to be stolen or hacked is eleminated.
@@ -31,6 +31,7 @@ Initiating payments via Open Banking offers numerous benefits.
 Nuapay supports the following implementation options: 
 
 * Checkout 
+* Redirect
 * Self-Hosted 
 * Self-Hosted-Callback
 

@@ -4,7 +4,7 @@ keywords: Webhooks Receiving Endpoint
 summary: "Webhook notifications are passed to your configured Endpoint; this section gives you some important security and configuration information to consider when setting up your receiving endpoint."
 sidebar: wh_sidebar
 permalink: wh_receivingep.html
-folder: prodOpenWebhooks
+folder: prodWebhooks
 ---
 
 

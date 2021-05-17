@@ -45,6 +45,9 @@ Once you have donwloaded the *Collection* and the *Environment* files:
 
 ## Checkout Mode
 
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+
+
 As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
 
 Call the following services in this order
@@ -94,6 +97,8 @@ Call the following services in this order:
 For more details, see [Partner Self-Hosted-Callback Payment Page Setup](ob_selfcallbacksetupoverview.html).
 
 ## Redirect Mode
+
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
 
 As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
 

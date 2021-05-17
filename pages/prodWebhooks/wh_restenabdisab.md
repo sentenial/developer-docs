@@ -4,7 +4,7 @@ keywords: Enable/Disable Open Banking Webhook
 summary: "Enable/Disable Open Banking Webhook"
 sidebar: wh_sidebar
 permalink: wh_restenabdisab.html
-folder: prodOpenBanking
+folder: prodWebhooks
 toc: true
 ---
 

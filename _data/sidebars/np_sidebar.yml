@@ -333,6 +333,10 @@ entries:
 
         - title: Direct Debit R-Transaction
           url: /np_whddrejectevent.html
+          output: web        
+        
+        - title: Direct Debit Indemnity Claim
+          url: /np_whddicaevent.html
           output: web
 
         - title: Incoming Credit Transfer

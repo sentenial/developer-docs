@@ -4,7 +4,7 @@ keywords: Webhooks Configuration
 summary: "Details are provided in this section on setting up your Webhook Endpoint and listening for events via RESTful API"
 sidebar: wh_sidebar
 permalink: wh_config_rest.html
-folder: prodOpenBanking
+folder: prodWebhooks
 toc: false
 ---
 

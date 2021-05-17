@@ -49,9 +49,9 @@ The various statuses possible (for both payments and refunds) are presented in t
     </tr>
     <tr>
       <td><code class="highlighter-rouge">CONSENT_API_REJECTED</code></td>
-      <td>There was a technical issue at the ASPSP; no further processing will be possible.</td>
+      <td>There was a technical issue at the ASPSP; the payment may be retried.</td>
       <td>No</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>Yes</td> 
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
     </tr>
@@ -81,9 +81,9 @@ The various statuses possible (for both payments and refunds) are presented in t
     </tr>
     <tr>
       <td><code class="highlighter-rouge">DECLINED</code></td>
-      <td>The PSU has declined the payment at the ASPSP.</td>
+      <td>The PSU has declined the payment at the ASPSP. A payment in this status may be retried if required.</td>
       <td>No</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>Yes</td>
       <td><a href="ob_whpaymentdecl.html">PaymentDeclined</a></td>
     </tr>
@@ -137,15 +137,15 @@ The various statuses possible (for both payments and refunds) are presented in t
     </tr>
     <tr>
       <td><code class="highlighter-rouge">SETTLEMENT_REJECTED</code></td>
-      <td>The settlement has not been completed and won’t be in future. This is a Final status; the merchant should not ship goods.</td>
+      <td>The settlement has not been completed and won’t be in future. The merchant should not ship goods however this payment may be retried, if required.</td>
        <td>No</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>Yes</td>
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">PAYMENT_RECEIVED</code></td>
-      <td>The settlement amount has been credited to the merchant’s Nuapay account.</td>
+      <td>The settlement amount has been credited to the merchant’s Nuapay account. Only possible if the merchant has a Nuapay account.</td>
        <td>No</td>
        <td>No</td>
       <td>Yes</td>    
@@ -153,8 +153,8 @@ The various statuses possible (for both payments and refunds) are presented in t
     </tr>
     <tr>
       <td><code class="highlighter-rouge">TIMEOUT</code></td>
-      <td>[Relevant for <a href="ob_pispimplementation.html#checkout-mode">Checkout</a> mode only] The payment timed out - this may happen where the user fails to progress to the ASPSP from the TPP before the merchant-configured time out period e.g. if the user has not selected an option on the Bank Select screen within the required time period.</td>
-       <td>Yes</td>
+      <td>The payment has expired - payments move to this status where the user fails to complete the payment before the configured timeout period (default is 15 minutes).</td>
+       <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
       <td><a href="ob_whpaymenttimeout.html">PaymentTimeout</a></td>

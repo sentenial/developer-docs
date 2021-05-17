@@ -9,23 +9,21 @@ folder: prodOpenBanking
 
 Depending on how you intend to interact with the Open Banking APIs:
 
-* It may be necessary to initially retrieve all the ASPSPs that are currently enrolled in Open Banking.
+* It may be necessary to initially retrieve all the banks that are currently enrolled in Open Banking.
 * If, for example, you intend to develop your own Select Bank user interface for your PISP application, you will need to offer your PSUs (your payers) a list of all the possible banks with which they may hold an account. 
 * The [Retrieve Banks](ob_getbank.html) endpoint will return all the currently enrolled banks.
 
 # Available Banks
 
-Nuapay currently supports connections to various ASPSPs for the following Open Banking schemes:
+Nuapay currently supports connections to various banks for the following Open Banking schemes:
 
-* Open Banking UK (OBIE)
-* The Berlin Group
-* STET
+|UK|Open Banking UK (OBIE)|
+|Germany|The Berlin Group|
+|France|STET|
 
-# OBIE ASPSPs
+# Connected UK Banks
 
-
-
-{% include note.html content="the following ASPSPs are supported on **Production**" %}
+{% include note.html content="the following banks are supported on **Production**" %}
 
 |**OBIE-Supporting ASPSPs**|
 |AIB & AIB Business|
@@ -57,15 +55,15 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 |Revolut|
 |Santander|
 |Tesco|
+|Tide|
 |TransferWise|
 |TSB|
 |Ulster|
 |Yorkshire|
 
-# Berlin Group ASPSPs
+# Connected German Banks
 
-
-{% include note.html content="the following ASPSPs are currently only supported in **Beta**" %}
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
 
 |**Berlin-Group-Supporting ASPSPs**| 
 |Commerzbank|
@@ -75,9 +73,9 @@ Nuapay currently supports connections to various ASPSPs for the following Open B
 |UniCredit Bank|
 |UniCredit SpA|
 
-# STET ASPSPs
+# Connected French Banks
 
-{% include note.html content="the following ASPSPs are currently only supported in **Beta**" %}
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
 
 |**STET-Supporting ASPSPs**|
 |Allianz Banque|

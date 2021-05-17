@@ -11,6 +11,8 @@ folder: prodOpenBanking
 
 ## Overview
 
+{% include note.html content="REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+
 Redirect mode allows merchants to:
 
 * Use the Nuapay User Interface for the bank selection and bank confirmation screens.

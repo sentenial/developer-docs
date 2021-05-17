@@ -10,12 +10,17 @@ toc: false
 
 ## API Details
 
-The Retrieve Bank service allows you to retrieve a list of banks participating in Open Banking.
+The Retrieve Bank service allows you to: 
+* Retrieve a list of the banks participating in Open Banking.
+* Filter based on:
+  * The `supportedcurrencies` of the bank.
+  * The `country` in which the bank is based (using the ISO 3166 country code). 
+
 The participating ASPSPs are returned in order of popularity (dynamically determined based on Nuapay PSUs' preferences).
 
 {% include tip.html content="Only one test bank (NUAPAY ASPSP OPENIDCONNECT) is available on the Sandbox environment." %}
 
-Where you specify two or more value for the `supportedcurrencies` array (in the Query Parameters of your request), the ASPSPs returned will support either currency; so the parameter is treated as a logical OR (not as an AND).
+|Where you specify two or more value for the `supportedcurrencies` array (in the Query Parameters of your request), the ASPSPs returned will support either currency; so the parameter is treated as a logical OR (not as an AND).|
 
 
 {% include swagger_ob.html %}

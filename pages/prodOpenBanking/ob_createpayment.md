@@ -186,7 +186,8 @@ Note that:
 1. UK Faster Payments is the only allowed payment scheme.
 1. The account format is sort code and account number.
 
-{% include tip.html content="A change introduced as part of the 2.4 release will allow IBAN to be used for GBP payments; this change will be available on the Sandbox from January 2021 and in Live from early February." %}
+
+{% include tip.html content="the defined limit for `creditorAccount` > `name` is 70 characters; for HSBC Business Bank (in UK Open Banking) the maximum length will deviate from this and 18 character will be the maximum allowable. This change will come into effect from **29/07/2021**" %}
 
 
 **For EUR payments**: 
