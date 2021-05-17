@@ -142,7 +142,12 @@ entries:
                   
     - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html
-      output: web, pdf                
+      output: web, pdf     
+
+              
+    - title: Payment Retries
+      url: /ob_paymentretries.html
+      output: web, pdf          
             
       subfolders:
       - title: PISP APIs 
@@ -156,6 +161,10 @@ entries:
         - title: Retrieve Payment
           url: /ob_retrievepayment.html
           output: web        
+        
+        - title: Retry Payment
+          url: /ob_retrypayment.html
+          output: web
         
         - title: List Payments
           url: /ob_listpayments.html

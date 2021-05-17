@@ -11,6 +11,8 @@ folder: prodOpenBanking
 
 ## Overview
 
+{% include note.html content="REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+
 A detailed overview of the various steps involved in the **REDIRECT** flow is provided in the image below.
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}

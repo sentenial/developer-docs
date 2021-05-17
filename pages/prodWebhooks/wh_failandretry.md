@@ -4,7 +4,7 @@ keywords: Webhooks Failure and Retry Support
 summary: "Details on Webhook notification failure, retry, batching and sequencing "
 sidebar: wh_sidebar
 permalink: wh_failandretry.html
-folder: prodOpenWebhooks
+folder: prodWebhooks
 ---
 
 

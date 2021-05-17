@@ -17,6 +17,7 @@ For details of the individual Nuapay events that trigger Webhook notifications, 
 
 |**Event**|
 |[Direct Debit R-Transaction](np_whddrejectevent.html)|
+|[Direct Debit Indemnity Claim](np_whddicaevent.html)|
 |[Incoming Credit Transfer](np_whincomingct.html)|
 |[Accepted Direct Debit](np_whaccepteddd.html)|
 |[Mandate Signature](np_whmandsignature.html)|

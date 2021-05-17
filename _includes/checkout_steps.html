@@ -184,14 +184,15 @@ With this additional page added:
    * Click **Continue on this Device** to complete the payment on the desktop. 
    * Click **Go Back** to choose a different bank.
 
-If you think that you would like to include the confirmation screen in your flow, please inform your Account Manager and we will be happy to configure this for you.
+
+
+{% include tip.html content="It is possible to have the Confirmation screen enabled for desktop users (so they can take advantage of the QR Code flow) and disabled for users on mobile devices. Please discuss your requirements with your Account Manager." %}
+
 
 {% include callout.html content="On successful completion of this payment flow your customer has provided his/her consent for the payment to be collected for the selected account. The actual funds transfer to your account may happen within a matter of seconds or it may be processed on the following business day. The speed with which funds are transferred to your account is controlled by your customers' banks and is determined by the default payment scheme they are using. A scheme like SEPA CT Instant (for Euro payments) or Faster Payments (for GBP payments) will result in funds being credited to your account within seconds. Schemes like SEPA CT and BACS Credit will generally take a business day to process. Nuapay uses the [Payment Received Webhook](ob_whreceived.html) to notify you when funds are settled to your Nuapay account (Note: only available if you are using a Nuapay account)." type="primary" %}
 
 
 ## QR Code Functionality
-
-{% include tip.html content="This functionality is not currently available on the Sandbox or Live environments. The feature will be available on the Sandbox from the end of January 2021 and on the Live environment from early February 2021. " %}
 
 Why a QR Code?
 

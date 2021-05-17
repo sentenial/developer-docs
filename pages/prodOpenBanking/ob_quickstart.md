@@ -55,6 +55,8 @@ Once you have donwloaded the *Collection* and the *Environment* files:
 
 ## Checkout Mode
 
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+
 Call the following services in this order:
 
 |[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| (Optional) Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls. Alternatively you may use your API Key.|
@@ -93,6 +95,9 @@ Call the following services in this order:
 For more details, see [Merchant Self-Hosted-Callback Payment Page Setup](ob_selfcallbackmerch.html).
 
 ## Redirect Mode
+
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+
 
 Call the following services in this order
 

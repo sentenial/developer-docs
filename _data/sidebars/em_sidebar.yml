@@ -210,6 +210,51 @@ entries:
       url: /em_contractupload.html
       output: web, pdf
       
+  - title: E-Mandate APIs
+    output: web, pdf
+    folderitems:  
+    
+    - title: Prepare E-Mandate
+      url: /em_prepare.html
+      output: web, pdf      
+      
+      subfolders:
+      - title: Conversation APIs 
+        output: web
+        subfolderitems:  
+
+        - title: Retrieve Settings
+          url: /em_retrsettings.html
+          output: web, pdf           
+      
+        - title: Initialise Conversation
+          url: /em_init.html
+          output: web, pdf    
+        
+        - title: Sign Conversation
+          url: /em_sign.html
+          output: web, pdf    
+        
+        - title: Verify Conversation
+          url: /em_verify.html
+          output: web, pdf              
+        
+        - title: Confirm Conversation
+          url: /em_confirm.html
+          output: web, pdf 
+        
+        - title: Re-Send One-Time-Password
+          url: /em_resend.html
+          output: web, pdf          
+        
+        - title: Retrieve Mandate Document
+          url: /em_retrieve_doc.html
+          output: web, pdf    
+        
+        - title: Download Contract Document
+          url: /em_retrieve_contract.html
+          output: web, pdf    
+      
   - title: Webhooks
     output: web, pdf
     folderitems:  
