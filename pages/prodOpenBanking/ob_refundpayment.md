@@ -5,7 +5,7 @@ summary: "Refund an Open Banking Payment RESTful API"
 sidebar: ob_sidebar
 permalink: ob_refundpayment.html
 folder: prodOpenBanking
-toc: false
+toc: true
 ---
 
 ## API Details
@@ -14,7 +14,9 @@ toc: false
 
 The Refund Payment service allows you to refund an Open Banking payment. 
 
-{% include important.html content="Refunding a payment is only possible if you are using a Nuapay account as your merchant account; if your Open Banking payments have not been credited to this account then the Nuapay system has no beneficiary account reference and cannot refund the funds to the appropriate customer account. " %}
+{% include important.html content="Refunding a payment using the Refund Payment API is only possible if you are using a Nuapay account as your merchant account."%}
+
+{% include tip.html content="for clients who do not have a Nuapay account, in some cases you may be able to retrieve your payer's account details and use this information to make a credit payment see [Refund for Non-Nuapay-Account Owners](#refund-for-non-nuapay-account-owners) below for more on this." %}
 
 When you initiate a refund request, a new refund object is created. 
 
@@ -77,6 +79,15 @@ A refund will be initiated where:
 {% include note.html content="Depending on the payment scheme you are using, refunded payments may be credited to the PSU on the following business day e.g. for SEPA CTs or funds may be credited in a matter of seconds via the SEPA CT Instant Scheme or via Faster Payments for GBP payments." %}
 
 
+## Refund for Non-Nuapay-Account Owners
+
+In Open Banking UK, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBIE</a> specification allows for merchants to retrieve their payers' account details. This feature is available for banks that have implemented the specification v3.1.6 (or later).
+
+To use the PSU account details:
+1. Call the [Retrieve Payment](ob_retrievepayment.html) API.
+1. If the details have been retrieved from the payer's bank, they are included in the `debtorAccount` object.
+1. Use the details to initiate a payment to the PSU.
+1. As you do not have a Nuapay account, you will need to use the account details to create a beneficiary and initiate the payment via another system.
 
 
 

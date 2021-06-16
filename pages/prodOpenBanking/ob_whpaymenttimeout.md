@@ -20,9 +20,11 @@ This Webhook has a single event type: <b>PaymentTimeout</b>
 ## Timeouts Overview
 
 The timeout is the configured period from when a payment is initiated and when the PSU can complete that payment (by authorising it at the ASPSP). 
-Merchants may:
+You can:
+
+* Set the timeout individually, per payment, by setting the `paymentTimeout` parameter in the [Create Payment](ob_createpayment.html) API.
 * Use the global timeout (15 minutes).
-* Set up a custom default timeout for all their payments.
+* Set up a custom default timeout for all your payments.
 
 Please discuss your requirements with your Account Manager. The Nuapay API Support team will be happy to configure your required timeout value if requested.
 

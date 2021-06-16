@@ -101,6 +101,8 @@ Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 </code>
 </pre>
 
+{% include tip.html content="The account details provided above are for demonstration purposes only; these are not a valid accounts and if passed in a request will return a validation error.  " %}
+
 If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
 
 ## The Account Name
@@ -178,6 +180,10 @@ Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 </code>
 </pre>
 
+
+{% include tip.html content="The account details provided above are for demonstration purposes only; these are not valid accounts and if passed in a request will return a validation error. " %}
+
+
 Note that:
 
 **For GB Payments**:
@@ -202,6 +208,39 @@ Note that:
 
 
 {% include urls-ob.html %}
+
+
+## Timeout Setting
+
+It is possible to configure the timeout period for your payments. This is the time allowed from when the payment is initially created to when it is approved at the ASPSP.
+
+The timeout period that is set for a given payment may be: 
+
+* Set in the API request 
+* If not provided in the API, it may be taken from your merchant configuration. 
+* If no default time has been configured for you then the global default time is used.
+
+The following is the priority order for timeout configuration:
+
+|**Priority**|**Timeout Setting**|
+|1|Set in the API request|
+|2|Defined in the merchant configuration|
+|3|Taken from the global default setting (15 minutes)|
+
+If you want to use a default custom timeout for all your payments, please contact your Account Manager.
+
+To set the timeout in the API, set the required time value (in seconds) for `paymentTimeout`.
+
+## Multiple Authorisations
+
+{% include tip.html content="Only relevant for UK Open Banking (OBIE)." %}
+
+* In some cases a PSU may have an account that requires multiple authorisations to make a payment.
+* In this case, the `multiAuthorisation` object is returned with details of the additional autorisations that are required.
+* The payment will initially be in `SETTLEMENT_PENDING`
+* As Nuapay TPP cannot determine when these additional authorisations are applied (the other authorising party or parties will typically authorise via their ASPSP's banking portal), the system will continue to poll for a payment status update.
+* The system will poll for the payment status and if the payment has expired (after 24 hours), but its status is not `AUTHORISED` or `REJECTED`, one attempt per day will be made to retrieve the final status.
+
 
 ## Create Payment Endpoint
 
