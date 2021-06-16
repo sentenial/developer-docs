@@ -253,6 +253,18 @@ entries:
         
         - title: Download Contract Document
           url: /em_retrieve_contract.html
+          output: web, pdf   
+          
+      - title: Configuration APIs 
+        output: web
+        subfolderitems:  
+
+        - title: Apply Configuration
+          url: /em_applyconfig.html
+          output: web, pdf           
+      
+        - title: Retrieve Configuration
+          url: /em_retrieveconfig.html
           output: web, pdf    
       
   - title: Webhooks

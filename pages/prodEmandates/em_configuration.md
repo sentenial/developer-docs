@@ -41,9 +41,9 @@ We offer two separate endpoints for our E-Mandates API:
 
 ## Configurations
 
-{% include important.html content="Specific configurations must be carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this. It is possible to view your current settings via the [GET /conversations/settings](em_conversation_settings.html) service." %}
+{% include important.html content="Specific configurations are generally carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this. Alternatively, you may make your own configuration changes via the Configuration API. In addition, you can view your current settings using the [Retrieve Configuration](em_retrieveconfig.html) service." %}
 
-The following E-Mandate configurations may be customised for you as required:
+The following E-Mandate configurations may be customised as required:
 
 
 |Authentication Method| E-mandates may be signed via a **check box**, via **SMS** or through **Email**. Where SMS or Email is selected as the authenticatioin method, users receive a unique code (through either SMS or via Email) that they must supply when prompted, to sign the mandate.| 
