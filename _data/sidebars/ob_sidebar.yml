@@ -190,6 +190,27 @@ entries:
           url: /ob_refundpaymentview.html
           output: web             
  
+  
+  - title: PISP & E-Mandate
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ob_emoverview.html
+      output: web, pdf      
+    
+    - title: The PSU Journey
+      url: /ob_emoverallflow.html
+      output: web, pdf
+      
+    - title: Launching the Flow
+      url: /ob_emlaunching.html
+      output: web, pdf
+      
+    - title: Self-Hosted Mode
+      url: /ob_emselfhosted.html
+      output: web, pdf
+  
   - title: AISP Service
     output: web, pdf
     folderitems:
