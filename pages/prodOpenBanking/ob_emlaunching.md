@@ -7,8 +7,6 @@ permalink: ob_emlaunching.html
 folder: prodOpenBanking
 ---
 
-{% include important.html content="This functionality is **coming soon** in v2.7. The features described here are not currently available on Production. The release is scheduled for late June 2021."%}
-
 In order to launch the Open Banking Payment and E-Mandate signup flow, the merchant needs:
 
 * A User Interface Payment ID (the `userInterfacePaymentId` returned in the [Create Payment](ob_createpayment.html) request).

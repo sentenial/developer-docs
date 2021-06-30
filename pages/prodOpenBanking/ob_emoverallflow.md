@@ -7,8 +7,6 @@ permalink: ob_emoverallflow.html
 folder: prodOpenBanking
 ---
 
-{% include important.html content="This functionality is **coming soon** in v2.7. The features described here are not currently available on Production. The release is scheduled for late June 2021."%}
-
 For Merchants/Partners who are using either the `CHECKOUT` or `REDIRECT` integration approach, the following gives a summary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU's</a> interaction.
 
 ## The PSU's User Experience

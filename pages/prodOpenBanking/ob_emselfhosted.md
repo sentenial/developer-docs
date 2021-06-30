@@ -7,9 +7,6 @@ permalink: ob_emselfhosted.html
 folder: prodOpenBanking
 ---
 
-{% include important.html content="This functionality is **coming soon** in v2.7. The features described here are not currently available on Production. The release is scheduled for late June 2021."%}
-
-
 In order to launch the Open Banking Payment and E-Mandate signup flow, in `SELF_HOSTED` mode, you must call a number of payment- and mandate-related APIs, as outlined below.
 A Postman collection is also available. Please contact your Account Manager for more details.
 

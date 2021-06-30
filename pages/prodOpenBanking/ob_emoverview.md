@@ -7,8 +7,6 @@ permalink: ob_emoverview.html
 folder: prodOpenBanking
 ---
 
-{% include important.html content="This functionality is **coming soon** in v2.7. The features described here are not currently available on Production. The release is scheduled for late June 2021."%}
-
 Merchants and Partners may combine an Open Banking payment with an electronic mandate (Direct Debit Instruction – DDI) signup. This means that a merchant can take an initial bank transfer payment and then use the same payer account details to automatically create a Direct Debit mandate to collect subsequent payments.
 
 Note that:
