@@ -28,7 +28,7 @@ The following APIs are required:
       <td>Returns the list of banks to be displayed on the Bank Selection screen.</td>      
     </tr>
     <tr>
-    <td><a href= "ob_createpayment.html">Create Paymeent</a></td>
+    <td><a href= "ob_createpayment.html">Create Payment</a></td>
       <td>POST /payments</td>
       <td>Creates the Open Banking payment.As part of this interaction the payer is: 
       <uL>
@@ -112,7 +112,7 @@ Once the payment has been successfully processed, the following services are req
     <td><a href= "np_retrievemandate.html">Retrieve Mandate</a> (Optional)
 </td>
       <td>GET /schemes/{schemeId}/mandates/{mandateId}</td>
-      <td>Use this service to retrieve the mandate details after it has been signed. This step is optional
+      <td>Use this service to retrieve the mandate details after it has been signed.
       <br/>This step is optional     
         </td>      
     </tr>
