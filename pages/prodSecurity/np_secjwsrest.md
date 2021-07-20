@@ -58,6 +58,8 @@ When generating your CSR you must provide the following details:
 		</tbody>
 	</table>
 
+{% include tip.html content="The State attribute is not required and **should not be included in your certficate**"%} 
+
 {% include callout.html content="The process for creating a CSR varies depending on the Web Server being used and it is not poissible to cover all the variations in this documentation. Details are available online for all popular Web Servers." type="primary" %} 
 
 The Common Name `CN` may be either: 
@@ -67,6 +69,8 @@ The Common Name `CN` may be either:
 Where a partner identifier is used, the Certificate that is generated will be used to generate the JOSE header that will be used by that partner when calling API services (where non-repudiation is required) on behalf of its merchants.
 
 Please contact Nuapay Support if you do not know your Nuapay merchant/partner identifier.
+
+
 
 ## Generating Your Certificate via REST
 
