@@ -97,6 +97,9 @@ In order to generate the JOSE Header you'll need to extract certain details from
 		</tbody>
 	</table>
 
+{% include tip.html content="The State attribute is not required and **should not be included in your certficate**."%} 
+
+
 <p>At this point you have gathered everything you need from the Certificate. These are the details you need to generate the JOSE Header: </p>
 	<table style="width" cellspacing="0">
 		<col style="width: 103px;"  />
@@ -165,6 +168,6 @@ A JWS also supports a detached format that omits the payload from the JWS:
 <strong>'header..signature' </strong>
 <br/>	
 <p>
-When using a detached JWS, the payload is sent as normal in the body but its not included in the JWS. 
+When using a detached JWS, the payload is sent as normal in the body but it is not included in the JWS. 
 </p>
 
