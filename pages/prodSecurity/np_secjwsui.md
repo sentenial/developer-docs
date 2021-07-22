@@ -9,6 +9,8 @@ folder: prodSecurity
 
 It is possible to set up and manage the JWS via the User Interface (as described in this section) or alternatively, this may be done via [REST](np_secjwsrest.html).
 
+{% include tip.html content="Partner users cannot configure their JWS via the User Interface instead they must use the [REST API](np_secjwsrest.html) approach." %}
+
 ## Generating the PKI Key and Certificate via the UI
 
 {% include note.html content="You will require access to the Developer Dashboard via the Nuapay front end. Once you have logged on to Nuapay, the <b>Developer Dashboard</b> link is available on the top right of the screen. Click this to launch the dashboard." %}
