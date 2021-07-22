@@ -43,7 +43,7 @@ entries:
           url: /np_secjwsgenerator.html
           output: web, pdf          
 
-        - title: Sample JSON Web Signature
+        - title: JWS Signature Samples
           url: /np_secjwssample.html
           output: web, pdf          
           

@@ -70,6 +70,24 @@ Where a partner identifier is used, the Certificate that is generated will be us
 
 Please contact Nuapay Support if you do not know your Nuapay merchant/partner identifier.
 
+<br/>
+## Detached Payload JWS
+A signed JWS encodes information in three parts separated by periods: 
+<ul>
+ <li>a header</li>	
+ <li>a payload</li>	
+ <li>a signature</li>	
+</ul>	
+<strong>'header.payload.signature' </strong>
+<br/>	
+A JWS also supports a detached format that omits the payload from the JWS:
+<br/>	
+<strong>'header..signature' </strong>
+<br/>	
+<p>
+When using a detached JWS, the payload is sent as normal in the body but it is not included in the JWS. 
+</p>
+
 
 
 ## Generating Your Certificate via REST

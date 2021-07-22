@@ -97,7 +97,6 @@ In order to generate the JOSE Header you'll need to extract certain details from
 		</tbody>
 	</table>
 
-{% include tip.html content="The State attribute is not required and **should not be included in your certficate**."%} 
 
 
 <p>At this point you have gathered everything you need from the Certificate. These are the details you need to generate the JOSE Header: </p>
