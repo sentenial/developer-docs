@@ -55,6 +55,41 @@ Note that:
 * If you require a variation on the default time-to-live setting of 3 days, please contact your account manager who will update your configuration as required.
 * Where you reuse a reference, which was linked to a previously generated payment, and it is referenced within the time-to-live limit, your request will result in a:
   * `422` response: Duplicate Reference provided.
+  
+**Supported Characters**
+
+Remittance can use the following characters:
+
+* All alphanumeric characters (upper- and lower-case).
+* A set of special characters (as per the table below)
+
+Special Characters include: 
+
+|ampersand|&|
+|asterisk|*|
+|blank space| |
+|carriage return line feed|CrLf|
+|colon|:|
+|comma|,|
+|at sign|@|
+|equals|=|
+|exclamation mark|!|
+|forward slash|/|
+|full stop|.|
+|greater than|>|
+|hash|#|
+|hyphen|-|
+|left brace|{|
+|left parenthesis|(|
+|less than|<|
+|percentage|%|
+|plus sign|+|
+|question mark|?|
+|right double quote|”|
+|right parenthesis|)|
+|right single quote|'|
+|semi colon|;|
+
 
 ## End-to-End Identifiers
 
