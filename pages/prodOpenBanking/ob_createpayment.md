@@ -61,35 +61,16 @@ Note that:
 Remittance can use the following characters:
 
 * All alphanumeric characters (upper- and lower-case).
-* A set of special characters (as per the table below)
+* A set of special characters.
 
-Special Characters include: 
+The following are all allowed:
 
-|ampersand|&|
-|asterisk|*|
-|blank space| |
-|carriage return line feed|CrLf|
-|colon|:|
-|comma|,|
-|at sign|@|
-|equals|=|
-|exclamation mark|!|
-|forward slash|/|
-|full stop|.|
-|greater than|>|
-|hash|#|
-|hyphen|-|
-|left brace|{|
-|left parenthesis|(|
-|less than|<|
-|percentage|%|
-|plus sign|+|
-|question mark|?|
-|right double quote|”|
-|right parenthesis|)|
-|right single quote|'|
-|semi colon|;|
+|a b c d e f g h i j k l m n o p q r s t u v w x y z| 
+|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
+|0 1 2 3 4 5 6 7 8 9|
+|/ - ? : ( ) . , ' + Space|
 
+{% include tip.html content="For Faster Payments (GBP) the following special characters are also allowed: # (hash), = (equals), ! (exclamation mark), “ (right double quote), % (percentage), & (ampersand), * (asterisk), < (less than), > (greater than), ; (semi colon), { (left curly bracket), @ (at), CrLf (carriage return line feed)." %}
 
 ## End-to-End Identifiers
 
