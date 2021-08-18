@@ -1,7 +1,7 @@
 ---
 title: Open Banking & E-Mandate Overview
 keywords: Open Banking Payment and E-Mandate setup
-summary: "Combine an Open Banking tranfer payment with an electronic mandate to better and more seamlessly manage subscriptions."
+summary: "Combine an Open Banking transfer payment with an electronic mandate to better and more seamlessly manage subscriptions."
 sidebar: ob_sidebar
 permalink: ob_emoverview.html
 folder: prodOpenBanking
