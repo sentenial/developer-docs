@@ -26,7 +26,8 @@ Nuapay currently supports connections to various banks for the following Open Ba
 
 {% include note.html content="the following banks are supported on **Production**" %}
 
-|**OBIE-Supporting ASPSPs**|
+**OBIE-Supporting ASPSPs**:
+
 |AIB & AIB Business|
 |Bank Of Ireland| 
 |Bank Of Ireland Business|
@@ -66,7 +67,8 @@ Nuapay currently supports connections to various banks for the following Open Ba
 
 {% include note.html content="the following banks are currently only supported in **Beta**" %}
 
-|**Berlin-Group-Supporting ASPSPs**| 
+**Berlin-Group-Supporting ASPSPs**:
+
 |Commerzbank|
 |Deutsche Bank|
 |Post Bank|  
@@ -78,44 +80,113 @@ Nuapay currently supports connections to various banks for the following Open Ba
 
 {% include note.html content="the following banks are currently only supported in **Beta**" %}
 
-|**STET-Supporting ASPSPs**|
-|Allianz Banque|
-|Aquitaine Poitou-Charentes|
-|Arkéa Banking Services|
-|Arkéa Banque Entreprises|
-|Arkéa Banque Privée|
-|Auvergne et Limousin|
-|Banque Populaire|
-|Boursorama|
-|B.P AUvergne et Rhône-Alpes|
-|B.P Bourgogne Franche Comté|
-|BNP Paribas Fortis|
-|Banque BCP|
-|Bourgogne Franche-Comté|
-|Bretagne-Pays De Loire|
-|Caisse d’Epargne|
-|Côte d Azur|
-|CIC|
-|Crédit Agricole|
-|Credit Coopératif|
-|Crédit du Nord|
-|Crédit Mutuel de Bretagne|
-|Credit Mutuel|
-|Crédit Mutuel Alliance Fédérale|
-|Crédit Mutuel Arkéa|
-|Fintro|
-|Grand Est Europe|
-|Hello Bank!|
-|Ile De France|
-|LCL|
-|Languedoc-Roussillon|
-|Loire Drôme Ardèche|
-|Loire-Centre|
-|Midi-Pyrénées|
-|Natixis Trade|
-|Nord France Europe|
-|Normandie|
-|Provence Alpes Corse|
-|Revolut France|
-|Rhône Alpes|
-|Societe Generale|
+**STET-Supporting ASPSPs**:
+
+|**Group**|**Bank**|
+|Arkéa:|	|
+||Crédit Mutuel du Sud Ouest|
+||	Crédit Mutuel de Bretagne|
+||	Fortuneo|
+||	Max|
+||	Arkéa Banque Privée|
+||	Arkéa Banque Entreprises et Institutionnels|
+||	Arkéa Banking Services|
+||	BPE|
+||	Allianz Banque|
+|Banque BCP||
+|Banque Populaire:||
+||B.P Bourgogne Franche Comté|
+||B.P AUvergne et Rhône-Alpes|
+||B.P RIves de Paris + BICS|
+||B.P Val de France|
+||B.P du Nord|
+||B.P Sud|
+||B.P Aquitaine Centre Atlantique|
+||CMM Littoral du Sud Ouest|
+||B.P Alsace Lorraine Champagne|
+||B.P OCcitane|
+||B.P Grand Ouest|
+||CMM Grand Ouest|
+||B.P Méditerranée|
+||Banque de Savoie|
+|Banque Palatine||
+|Boursorama||
+|BNP||
+|Caisse d'Epargne:||
+||Aquitaine Poitou-Charentes|
+||Auvergne et Limousin|
+||Bourgogne Franche-Comté|
+||Bretagne-Pays De Loire|
+||Côte d'Azur|
+||Grand Est Europe|
+||Ile De France|
+||Languedoc-Roussillon|
+||Loire Drôme Ardèche|
+||Loire-Centre|
+||Midi-Pyrénées|
+||Nord France Europe|
+||Normandie|
+||Provence Alpes Corse|
+||Rhône Alpes|
+|CIC||
+|Crédit Agricole:||
+||Alpes Provence|
+||Alsace Vosges|
+||Anjou Maine|
+||Aquitaine|
+||Atlantique Vendée|
+||Brie Picardie|
+||Centre France|
+||Centre Loire|
+||Centre-Est|
+||Centre-Ouest|
+||Champagne-Bourgogne|
+||Charente Périgord|
+||Charente-Maritime|
+||Corse|
+||Côtes d'Armor|
+||Deux-Sèvres|
+||Finistère|
+||Franche Comté|
+||Guadeloupe|
+||Ile de France|
+||Ille-et-Vilaine|
+||Languedoc|
+||Loire Haute Loire|
+||Lorraine|
+||Martinique-Guyane|
+||Morbihan|
+||Nord De France|
+||Nord Est|
+||Nord Midi-Pyrénées|
+||Normandie|
+||Normandie Seine|
+||Provence Côte d'Azur|
+||Pyrénées Gascogne|
+||Réunion|
+||Savoie|
+||Sud Méditerranée|
+||Sud Rhône Alpes|
+||Toulouse 31|
+||Touraine Poitou|
+||Val de France|
+|Crédit Coopératif||
+|Crédit Du Nord||
+|Crédit Mutuel:||
+||Site National|
+||Antilles-Guyane|
+||Bretagne|
+||Bretagne Pro|
+||Sud-Ouest|
+||Sud-Ouest Pro|
+||Maine-Anjou|
+||Massif Central|
+||Massif Central Pro|
+||Nord-Europe|
+||Océan|
+|HelloBank||
+|ING Direct||
+|LCL||
+|Natixis||
+|Revolut||
+|Société Générale||
