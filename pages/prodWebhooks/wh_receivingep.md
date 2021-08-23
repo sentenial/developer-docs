@@ -114,6 +114,16 @@ Notification Details - HTTP POST Request
 For details of the Webhook Event messages and `JSON` samples, see the events descriptions provided under your required Product (i.e. Nuapay, Open Banking, etc.) 
 
 
+## Webhook-Triggering IPs
+
+Nuapay Webhooks are triggered from the following IP addresses:
+
+|**Production**:|217.114.175.30|
+|**Sandbox**:| 149.5.33.51, 149.5.33.52, 149.5.33.53, 87.252.222.190|
+
+
+{% include note.html content="Nuapay may update these IP addresses periodically. Merchants/Partners will be given advanced notice of any changes (at least 30 days' notice will be provided)." %}
+
 
 {% include links.html %}
 
