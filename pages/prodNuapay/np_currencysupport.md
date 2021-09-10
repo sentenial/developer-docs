@@ -4,13 +4,13 @@ keywords: sample
 summary: "Nuapay currently supports two currencies: EUR and GBP."
 sidebar: np_sidebar
 permalink: np_currencysupport.html
-folder: product2
+folder: prodNuapay
 toc: false
 ---
 
 ## Currency Support
 
-Nuapay currently supports both Euro Payments and British Sterling payments. 
+Nuapay currently supports both Euro Payments and British Sterling payments.
 <br/>Note that in the:
 
 * SEPA payment schemes (CORE and B2B) all currencies are <b>EUR</b>

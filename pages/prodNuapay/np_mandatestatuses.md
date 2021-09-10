@@ -5,18 +5,18 @@ summary: "Mandate/DDI statuses and how they impact Direct Debit Collection are f
 sidebar: np_sidebar
 permalink: np_mandatestatuses.html
 toc: false
-folder: product2
+folder: prodNuapay
 ---
 
 
 ## Overview
 
-Mandates/DDIs can have various statuses, which are summarised below: 
+Mandates/DDIs can have various statuses, which are summarised below:
 
 | Status | Description |
 |-------|--------|
 | `PENDING` | The mandate/DDI has been created but the payer has not signed. Direct Debits cannot be created against the mandate/DDI. |
-| `READY_FOR_EXPORT` | **Bacs-only status**; the DDI has been created, the payer has signed but the DDI has not been exported to the AUDDIS service; Nuapay exports DDIs once per day | 
+| `READY_FOR_EXPORT` | **Bacs-only status**; the DDI has been created, the payer has signed but the DDI has not been exported to the AUDDIS service; Nuapay exports DDIs once per day |
 | `EXPORTED` | **Bacs-only status**; the DDI has been passed to the AUDDIS service |
 | `REJECTED` | **Bacs-only status**; the DDI has been passed to the scheme via an AUDDIS submission but it has not been approved. Nuapay is notified of the DDI rejection via an AUDDIS response message from the scheme. A DDI may be rejected where the payer's account does not support Direct Debits, for example.|
 | `ACTIVE` | The SEPA mandate has been signed and Direct Debits can be created against it or the DDI has reached Day 5 in the [Bacs cycle](np_mdtoverview.html#auddis-processing-cycle), so payments may now be made against it. |

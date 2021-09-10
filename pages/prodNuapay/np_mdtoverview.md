@@ -5,7 +5,7 @@ summary: "You can seek your payers' permission to debit their accounts with a pa
 sidebar: np_sidebar
 permalink: np_mdtoverview.html
 toc: false
-folder: product2
+folder: prodNuapay
 ---
 
 
@@ -56,11 +56,11 @@ Before they can process a B2B Direct Debit, your payer's bank must:
 
 ## E-Mandate Benefits
 
-Working with paper-based mandates can be problematic: 
-* You need to use standard post. 
+Working with paper-based mandates can be problematic:
+* You need to use standard post.
 * Your payers may be slow to return the signed mandate.
 * Users may make an error when writing their account details.
-* In some cases the signature may be unreadbale or the payer may have incorrectly completed the form. 
+* In some cases the signature may be unreadbale or the payer may have incorrectly completed the form.
 * Assuming the mandate/DDI is returned and has been completed correctly, you then need to store the paper mandates and ensure that they can be retrieved later if required.
 
 Electronic mandates remove all these pain points:
