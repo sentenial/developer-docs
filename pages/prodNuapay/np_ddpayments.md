@@ -4,7 +4,7 @@ keywords: Payments
 summary: "Once your mandate is created you can link single Direct Debit or payment schedules to it."
 sidebar: np_sidebar
 permalink: np_ddpayments.html
-folder: product2
+folder: prodNuapay
 toc: false
 ---
 
@@ -19,7 +19,7 @@ In Direct Debit payments:
 
 ## Scheme Overview
 
-Every Direct Debit payment must be linked to a mandate or a DDI and every mandate/DDI must be linked to a specific scheme and currency. 
+Every Direct Debit payment must be linked to a mandate or a DDI and every mandate/DDI must be linked to a specific scheme and currency.
 
 Nuapay supports the following Direct Debit schemes:
 
@@ -28,9 +28,9 @@ Nuapay supports the following Direct Debit schemes:
 |SEPA B2B| EUR|
 |Bacs|GBP|
 
-The SEPA scheme is managed by the European Payment Council. In the UK, Bacs is responsible for the Direct Debit scheme. 
+The SEPA scheme is managed by the European Payment Council. In the UK, Bacs is responsible for the Direct Debit scheme.
 
-Both the EPC and Bacs publish guides and rulebooks (which are generally updated on an anual basis) related to how the schemes should be implemented. Nuapay is fully compliant with these rulebooks and constantly monitor and update our Direct Debit solution as required to ensure that we remain fully compliant. 
+Both the EPC and Bacs publish guides and rulebooks (which are generally updated on an anual basis) related to how the schemes should be implemented. Nuapay is fully compliant with these rulebooks and constantly monitor and update our Direct Debit solution as required to ensure that we remain fully compliant.
 
 
 ## Scheme Differences
@@ -41,4 +41,3 @@ Both the EPC and Bacs publish guides and rulebooks (which are generally updated 
 |Bacs DD|Yes (Automated)|D-3|No|D+3|Yes|No Time limit|No Time limit|
 
 In SEPA any refund that is made within the 8 week period allowed under the SEPA Guarantee is referred to as an Authorised refund; where the refund request is received after 8 weeks of the initial debit (and before 13 months) it is referred for to as an Unauthorised refund.
-
