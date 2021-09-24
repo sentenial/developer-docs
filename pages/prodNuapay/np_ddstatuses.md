@@ -10,13 +10,13 @@ folder: prodNuapay
 
 ## Overview
 
-{% include callout.html content="Successfully processed Direct Debits move through the following statuses: READY FOR EXPORT --> EXPORTED --> ACCEPTED" type="primary" %} 
+{% include callout.html content="Successfully processed Direct Debits move through the following statuses: READY FOR EXPORT --> EXPORTED --> ACCEPTED" type="primary" %}
 
 Please note:
 
-* Prior to a Direct Debit (DD) payment being passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> or to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Service</a> it is given a `READY_FOR_EXPORT` status. 
-* Nuapay combines Direct Debits into a single payments file prior to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>. 
-* When a DD transaction is added to a payment file its status is updated to `EXPORTED` (it is transmitted electonically (exported) to an appropriate Clearing mechanism at this point). 
+* Prior to a Direct Debit (DD) payment being passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> or to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Service</a> it is given a `READY_FOR_EXPORT` status.
+* Nuapay combines Direct Debits into a single payments file prior to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>.
+* When a DD transaction is added to a payment file its status is updated to `EXPORTED` (it is transmitted electonically (exported) to an appropriate Clearing mechanism at this point).
 * The DD transaction is exported at least one business day before the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a> (for SEPA) or 2 business days before (for Bacs).
 * The Clearing channel will dispatch the Direct Debit payments to your payers' banks. If the payers' banks do not reject the Direct Debit payment, Nuapay will update the Direct Debit status to `ACCEPTED` on the collection date. This will generally be the final status of a Direct Debit.
 
@@ -34,15 +34,15 @@ Rejections that occur **before** the <a href="#" data-toggle="tooltip" data-orig
 
 ## Post-Settlement Return/Refund
 
-Returns and Refunds can only happen <i>after</i> the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a> and are referred to as Post-settlement R-transactions. 
+Returns and Refunds can only happen <i>after</i> the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a> and are referred to as Post-settlement R-transactions.
 
 If Nuapay receives a post-settlement 'R', the Direct Debit status is update from `ACCEPTED` to `RETURNED` or `REFUNDED`.
 
 ## Bacs Unpaid Transactions
 
-When a Bacs Direct Debit payment fails i.e. it is not paid by the paying bank, it will be: 
-* Returned unpaid to the service user via the Bacs service using **ARUDD** (Automated Return of Unpaid Direct Debit). 
-* Nuapay will update the status of the transaction on receipt of an ARUDD file from Bacs. 
+When a Bacs Direct Debit payment fails i.e. it is not paid by the paying bank, it will be:
+* Returned unpaid to the service user via the Bacs service using **ARUDD** (Automated Return of Unpaid Direct Debit).
+* Nuapay will update the status of the transaction on receipt of an ARUDD file from Bacs.
 * Returned items will be debited on day 5 or in exceptional circumstances day 6 of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bac-collection-cycle}}">Bacs cycle</a>.
 
 For more on the unpaid cycle for Bacs payments please see the Bacs Service User Guide available on the <a href="https://www.bacs.co.uk/" target='_blank'>Bacs site</a>.
@@ -58,7 +58,6 @@ For more on the unpaid cycle for Bacs payments please see the Bacs Service User 
 | `RETURNED`/`REFUNDED` | Where a Direct Debit is in Accepted status and a post-settlement R-transaction is processed its status will be updated to Returned/Refunded|
 | `RE-PRESENTED` | Where a direct debit has been Rejected/Refused/Cancelled/Returned/Refunded you may want to re-try to collect the payment. When you re-present the Direct Debit status is updated to Re-presented and a new Ready-for-Export Direct Debit is generated with a new collection date.|
 |`REVOKED`| A Direct Debit that is in READY FOR EXPORT status can be withdrawn before it is dispatched to Clearing so that it isn't processed. In this case the Direct Debit status is updated to REVOKED.|
-|`REVERSED` | If you as the merchant have debited funds in error (for example if you have taken a duplicate payment) and want to credit your payer , you can contact your bank to initiate a reversal, The direct debit status is updated to REVERSED and you are debited the funds. A Reversal is a post-settlement status.|
 |`PENDING`|The payment is in a pending status. A payment may be in this status where it is created with a mandate and the mandate status is in pending status. |
 
 

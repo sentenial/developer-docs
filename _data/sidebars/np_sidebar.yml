@@ -3,7 +3,7 @@
 entries:
 - title: DDs & CTs
   product: DDs & CTs
-  version: 
+  version:
   folders:
 
   - title:
@@ -46,7 +46,7 @@ entries:
     - title: Currency Support
       url: /np_currencysupport.html
       output: web, pdf
-      
+
       subfolders:
       - title: API Basics
         output: web, pdf
@@ -59,7 +59,7 @@ entries:
         - title: General API Rules
           url: /np_generalrules.html
           output: web, pdf
-       
+
 
         - title: Response Handling
           url: /np_responsehandling.html
@@ -71,34 +71,34 @@ entries:
 
     - title: Integration Overview
       url: /np_integrationoverview.html
-      output: web, pdf            
-      
+      output: web, pdf
+
     - title: Merchant Integration
       url: /np_merchantintegration.html
-      output: web      
-     
+      output: web
+
     - title: Partner Integration
       url: /np_partnerintegration.html
-      output: web      
-    
+      output: web
+
     - title: Token Management
       url: /np_tokenmgmt.html
       output: web
 
   - title: Creditor Schemes
     output: web, pdf
-    folderitems:  
+    folderitems:
 
 
     - title: Overview
       url: /np_schemeoverview.html
-      output: web, pdf    
+      output: web, pdf
 
     - title: List Schemes
       url: /np_listcredscheme.html
-      output: web, pdf  
+      output: web, pdf
 
-    
+
   - title: Mandates / DDIs
     output: web, pdf
     folderitems:
@@ -112,7 +112,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Mandate / DDI APIs 
+      - title: Mandate / DDI APIs
         output: web
         subfolderitems:
 
@@ -143,7 +143,7 @@ entries:
         - title: Activate Mandate / DDI
           url: /np_activatemandate.html
           output: web
-          
+
         - title: Cancel Mandate / DDI
           url: /np_cancelmandate.html
           output: web
@@ -162,7 +162,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Direct Debit APIs 
+      - title: Direct Debit APIs
         output: web
         subfolderitems:
 
@@ -193,10 +193,10 @@ entries:
         - title: Revoke All Direct Debits
           url: /np_revokealldds.html
           output: web
-          
+
         - title: Re-present Failed Direct Debit
           url: /np_representfaileddds.html
-          output: web  
+          output: web
 
   - title: Payment Schedules
     output: web, pdf
@@ -207,7 +207,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Payment Schedule APIs 
+      - title: Payment Schedule APIs
         output: web
         subfolderitems:
 
@@ -226,7 +226,7 @@ entries:
         - title: Cancel Payment Schedule
           url: /np_cancelschedule.html
           output: web
-          
+
   - title: Credit Transfers
     output: web, pdf
     folderitems:
@@ -234,14 +234,14 @@ entries:
     - title: Overview
       url: /np_ctoverview.html
       output: web, pdf
-        
+
     - title: Credit Transfer Statuses
       url: /np_ctstatuses.html
       output: web, pdf
-    
-    
+
+
       subfolders:
-      - title: Credit Transfer APIs 
+      - title: Credit Transfer APIs
         output: web
         subfolderitems:
 
@@ -258,7 +258,7 @@ entries:
           output: web
 
         - title: Create Credit Transfer
-          url: /np_createdct.html
+          url: /np_createct.html
           output: web
 
         - title: Create Credit Transfer & Beneficiary
@@ -271,22 +271,22 @@ entries:
 
         - title: List Credit Transfers
           url: /np_listcts.html
-          output: web       
-           
+          output: web
+
   - title: Nuapay Accounts
     output: web, pdf
     folderitems:
 
     - title: Account Overview
       url: /np_accountoverview.html
-      output: web, pdf  
+      output: web, pdf
 
     - title: Transaction Overview
       url: /np_transactionoverview.html
-      output: web, pdf  
-        
+      output: web, pdf
+
       subfolders:
-      - title: Nuapay Account APIs 
+      - title: Nuapay Account APIs
         output: web
         subfolderitems:
 
@@ -304,8 +304,8 @@ entries:
 
         - title: List Account Balances
           url: /np_listaccountbals.html
-          output: web     
- 
+          output: web
+
         - title: List Transactions
           url: /np_listtransactions.html
           output: web
@@ -317,24 +317,24 @@ entries:
         - title: Transfer Between Accounts
           url: /np_accounttransfer.html
           output: web
-          
+
   - title: Webhooks
     output: web, pdf
     folderitems:
 
     - title: Overview
       url: /np_whoverview.html
-      output: web, pdf  
+      output: web, pdf
 
       subfolders:
-      - title: Webhook Events 
+      - title: Webhook Events
         output: web
         subfolderitems:
 
         - title: Direct Debit R-Transaction
           url: /np_whddrejectevent.html
-          output: web        
-        
+          output: web
+
         - title: Direct Debit Indemnity Claim
           url: /np_whddicaevent.html
           output: web
@@ -349,69 +349,68 @@ entries:
 
         - title: Mandate Signature
           url: /np_whmandsignature.html
-          output: web          
-          
+          output: web
+
         - title: Mandate Cancel
           url: /np_whmandcancel.html
           output: web
-          
+
         - title: Mandate Reject
           url: /np_whmandreject.html
           output: web
 
         - title: Credit Transfer Reject
           url: /np_whctreject.html
-          output: web    
-          
+          output: web
+
         - title: Credit Transfer Accept
           url: /np_whctaccept.html
-          output: web          
-                     
+          output: web
+
         - title: Express Credit Transfer Reject
           url: /np_whctexpreject.html
-          output: web    
-            
+          output: web
+
         - title: Express Credit Transfer Accept
           url: /np_whctexpaccept.html
-          output: web    
- 
+          output: web
+
   - title: Resources
     output: web, pdf
     folderitems:
 
     - title: Overview
       url: /np_resourcesoverview.html
-      output: web, pdf  
+      output: web, pdf
 
     - title: Account Validation
       url: /np_validateaccount.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: Test IBANs
       url: /np_testibans.html
-      output: web, pdf          
-          
+      output: web, pdf
+
     - title: Non-Processing Days
       url: /np_businessdays.html
-      output: web, pdf          
-    
+      output: web, pdf
+
     - title: Use Cases
       url: /np_usecases.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: HTTP Response Codes
       url: /np_httpreasons.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: SEPA Reason Codes
       url: /np_separeasons.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: Bacs Reason Codes
       url: /np_bacsreasons.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: FAQs
       url: /np_faq.html
-      output: web, pdf          
- 
+      output: web, pdf

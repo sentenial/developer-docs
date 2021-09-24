@@ -1,13 +1,13 @@
 ---
 title: Mandate Signature Event
-keywords: Mandate Signature Event Webhook 
+keywords: Mandate Signature Event Webhook
 summary: "Mandate Signature Webhook event"
 sidebar: em_sidebar
 permalink: em_whmandsignature.html
-folder: prodNuapay
+folder: prodEmandates
 toc: false
 ---
- 
+
 {% include webhook.html content="A mandate moves to ACTIVE status." %}
 
 
@@ -25,7 +25,7 @@ When an e-mandate is signed, the following event type is notified:
 	The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -90,7 +90,7 @@ When an e-mandate is signed, the following event type is notified:
 			<td>optional</td>
 			<td>Null for mandates. </td>
 		</tr>
-		
+
 	</tbody>
 </table>
 

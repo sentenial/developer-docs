@@ -4,7 +4,7 @@ keywords: List Account API
 summary: "Use this service to retrieve the URI of your Origix IP Technical Account (or Shadow Account). This is required for subsequent calls to other Account services."
 sidebar: ip_sidebar
 permalink: ip_accountapilist.html
-folder: prodNuapay
+folder: prodInstantPayments
 toc: false
 ---
 
@@ -22,12 +22,12 @@ This URI will be used later in the List Transactions and View Transaction API re
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listAccountsUsingPOST','#profileTabs',timerRef); }, 500);
 

@@ -4,7 +4,7 @@ keywords: Partner Integration Open Banking
 summary: "Partner integrations require you to retrieve an OAuth access token for a specific merchant and use that unique token in all subsequent API calls."
 sidebar: ob_sidebar
 permalink: ob_partnerintegration.html
-folder: prodNuapay
+folder: prodOpenBanking
 toc: true
 ---
 
@@ -27,10 +27,10 @@ Nuapay offers two Partner models allowing you to connect to Nuapay as a:
 
 ## TECHNICAL SERVICE PROVIDER MODE
 
-|With Nuapay as a **Technical Service Provider**|: 
+|With Nuapay as a **Technical Service Provider**|:
 
- You will need: 
- 
+ You will need:
+
 * An Open Banking TPP license.
 * To provide Sentenial with your eIDAS certificate (QWAC and QSEAL).
 * To allow Sentenial to generate Software Statement Assertions(SSA) and OBUK specific PKI key pairs.
@@ -45,7 +45,7 @@ Note that:
 
 {% include note.html content="If you want to use Nuapay as a Technical Service Provider and meet the criteria above, please contact your account manager; your domain, callback URLs and any white-labelling will need to be configured as per your requirements." %}
 
-## OAuth Token Generation 
+## OAuth Token Generation
 
 Regardless of the integration mode chosen, in order to initiate API requests on behalf of your merchants, you will first need to retrieve OAuth tokens.
 The process is illustrated below:
@@ -54,7 +54,7 @@ The process is illustrated below:
 The Nuapay Customer Support team will issue An API Key to you upon request.
 The OAuth token retrieved from the `/tokens` endpoint allows you to then generate API requests <b>on behalf of</b> a specific merchant/organisation.
 
-When generating an API request, provide the retrieved token as the authentication username in all your API requests. 
+When generating an API request, provide the retrieved token as the authentication username in all your API requests.
 A password is not required, however the request must be made from an allowed IP address.
 
 |API authentication header format:|`Authorization: Bearer <OAuth Token>`|
@@ -69,9 +69,9 @@ Use the `/organisations` endpoint to retrive the organisations linked to your pa
 
 <ul id="profileTabs" class="nav nav-tabs">
 </ul>
-  
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/gatekeeper-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/ListOrganisationsUsingGET','#profileTabs',timerRef); }, 500);
 </script>
@@ -85,8 +85,8 @@ Before generating an OAuth token for a specific organisation you will need to sp
 
 Two scopes are available for Open Banking APIs:
 
-* AISP 
-* PISP 
+* AISP
+* PISP
 
 In additions, the following scopes are available:
 
@@ -102,16 +102,16 @@ The TTL by default is 10 seconds but long-lived tokens may also be created by co
 
 ## API Details - POST /tokens
 
-The `/organisations/{encodedOrganisationId}/tokens` endpoint takes an encoded organisation ID (returned from the `/organisations` endpoint) and returns an OAuth token. 
+The `/organisations/{encodedOrganisationId}/tokens` endpoint takes an encoded organisation ID (returned from the `/organisations` endpoint) and returns an OAuth token.
 
 As outlined above, specify the `scopes` (required) and Time To Live - `expiresIn` (optional) in the request.
 
 
 <ul id="profileTabs2" class="nav nav-tabs">
 </ul>
-  
+
 {% include redoc.html %}
-   
+
 var timerRef2 = setInterval(function() { getDocs('operation/requestTokensForOrganisationUsingPOST','#profileTabs2',timerRef2); }, 500);
 </script>
 </div>
