@@ -5,7 +5,7 @@ sidebar: ob_sidebar
 keywords: frequently asked questions, FAQ, question and answer Open Banking
 summary: "Frequently Asked Questions have been provided here and arranged based on various Open Banking  areas."
 toc: false
-folder: prodNuapay
+folder: prodOpenBanking
 ---
 <!--when adding items to the FAQ, remember to increment the href="#collapse<NUM> elements-->
 
@@ -41,11 +41,11 @@ folder: prodNuapay
                             <div class="panel-body">
                             <p>When you register for the service you may optionally receive a Nuapay IBAN. This account will  be used to receive all Open Banking payments you generate. Note that if you want to use the <a href="ob_reversepayment.html">Reverse Payment</a> service you must have a Nuapay account. </p>
 
-                            
+
                             </div>
                         </div>
                     </div>
-                    
+
 
 <h2>Some Key Concepts</h2>
 
@@ -126,7 +126,7 @@ folder: prodNuapay
                         <div id="collapse9" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <p>No but you will need to be authorised with a Base64-encoded API Key. See <a href="ob_generalrules.html"> General API Rules</a> for more.</p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -154,12 +154,12 @@ folder: prodNuapay
                             <div class="panel-body">
                             <p>We recommend that you use the x-idempotency-key Header parameter in all your Create Payment requests.</p>
 
-                         
+
                             </div>
                         </div>
                     </div>        
-                    
-                    
+
+
 <h2>Webhooks</h2>                    
                     <!-- /.panel -->
                     <div class="panel panel-default">
@@ -171,7 +171,7 @@ folder: prodNuapay
                         <div id="collapse12" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <p>You can configure your Webhook notifications to retry for a period of time e.g. for 1 day. Notifications that fail to be delivered will be retried every 30 minutes until successful or until the configured retry period is reached.</p>
-                                
+
                             </div>
                         </div>
                     </div>

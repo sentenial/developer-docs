@@ -4,7 +4,7 @@ keywords: SEPA Instant CT Create
 summary: "Create SCT Instant RESTful API"
 sidebar: ip_sidebar
 permalink: ip_createinstct.html
-folder: product2
+folder: prodInstantPayments
 toc: false
 ---
 
@@ -19,10 +19,10 @@ Use the Create Instant Payment service to create an SCT Inst instruction in Orig
 {% include urls.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
- 
+
  {% include redoc.html %}
 
 loadRedoc('#profileTabs', 'https://sentenial.github.io/instant-payments-swagger/docs/redoc.html');

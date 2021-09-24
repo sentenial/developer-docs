@@ -1,4 +1,4 @@
-## Authorisation 
+## Authorisation
 
 An API Key or an OAuth token uniquely identifies you on Nuapay and is required to allow you to use our API services.
 
@@ -40,7 +40,7 @@ On your payment page you will need to add the following:
 At this point you have:
 
 * Added the JS and CSS links to your payment page.
-* Retrieved the `userInterfacePaymentId` (via the [Create Payment](ob_createpayment.html) service). 
+* Retrieved the `userInterfacePaymentId` (via the [Create Payment](ob_createpayment.html) service).
 
 
 To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the example below:
@@ -52,7 +52,7 @@ To enable the <span class="label label-info">PAY</span> button you will need to 
 
 |In the NuapayOpenBanking.showUI(**id**, url) function, the **id** is the `userInterfacePaymentId`|
 
-In this example, when the user clicks this button: 
+In this example, when the user clicks this button:
 * The Select Banks pop-up for the identifier ``772d0ef5-596b-43de-a6a0-832c9ab7a7a5`` is displayed.
 * The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> would be directed to the Nuapay TPP (Sandbox) Bank Selection screen located at ``https://sandbox.nuapay.com/tpp-ui/``.
 
@@ -62,7 +62,7 @@ Note that you will need to specify the correct URL based on whether you are test
 |PRODUCTION| https://api.nuapay.com/tpp-ui/|
 
 {% include tip.html content="To avoid any issues with **pop-up blockers**, we recommend that you request your users to: <br/>
-<br/>1. Click a button to pay by Open Banking (allowing you to retrieve the payment identifier) 
+<br/>1. Click a button to pay by Open Banking (allowing you to retrieve the payment identifier)
 <br/>2. Click a second button to choose a bank (launching the pop-up with the payment identifier retrieved in step 1)
 <br/><br/>Because launching the Select Bank screen in step 2 is a user-initiated action, your users will not be prompted to enable pop-ups.
 " %}
@@ -70,9 +70,9 @@ Note that you will need to specify the correct URL based on whether you are test
 ## Adding a Listener
 
 Once you have successfully added the <span class="label label-info">PAY</span> button to your site you will next need to handle when the pop-up window is closed.
-In a successful flow: 
+In a successful flow:
 
-* The pop-up will be closed by users after they confirm the payment with their bank and are redirected to your confirmation message. 
+* The pop-up will be closed by users after they confirm the payment with their bank and are redirected to your confirmation message.
 * Users may also choose to cancel out of the flow at any point and close the pop-up window without completing the payment.
 
 
@@ -87,7 +87,7 @@ To handle the pop-up close event:
 
 
 
-A Sample Listener is provided below: 
+A Sample Listener is provided below:
 
 
 ````
@@ -125,14 +125,14 @@ The `var url = "/merchant/status?id=" +` must be appended with one of the follow
 {% include tip.html content="For new integrations, we recommend that you use the **event.data.userInterfacePaymentId**; for existing users, who have already applied the **event.data.paymentId**, this may continue to be used." %}
 
 
-The payment identifier (either the `userInterfacePaymentId` or the `paymentId`) must be: 
+The payment identifier (either the `userInterfacePaymentId` or the `paymentId`) must be:
 * Stored in a session or in a Databases, for example.
-* Posted back to your payment page. 
+* Posted back to your payment page.
 
 To retrieve the payment status:
 
 * (For **userInterfacePaymentId**): call [List Payments](ob_listpayments.html) and filter on the `userInterfacePaymentId`.
-* (For **paymentId**): call [Retrieve Payment](ob_retrievepayment.html) using the `paymentId` (associated with the `userInterfacePaymentId`). 
+* (For **paymentId**): call [Retrieve Payment](ob_retrievepayment.html) using the `paymentId` (associated with the `userInterfacePaymentId`).
 
 ## The End-User Experience
 
@@ -159,17 +159,17 @@ The PSU (i.e. the end user) will select the required goods or services on your m
 
 ## Configuring a Confirmation Screen
 
-Some merchants like the Open Banking payment user experience to be as fast as possible: 
+Some merchants like the Open Banking payment user experience to be as fast as possible:
 
 The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>:
 1. Selects the required <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
 1. Logs on to his/her bank.
-1. Authorises the payment and is  redirected to a success page. 
+1. Authorises the payment and is  redirected to a success page.
 
 Friction is limited and the user can completed the payment in seconds.
 
-However in some cases a little friction isn't all bad! Especially where users may be new to the payment method, it can be good to slow things down a little. 
-With this in mind, rather than provide only the 3 steps above, you can configure the flow to have an additional confirmation page. 
+However in some cases a little friction isn't all bad! Especially where users may be new to the payment method, it can be good to slow things down a little.
+With this in mind, rather than provide only the 3 steps above, you can configure the flow to have an additional confirmation page.
 
 {% include note.html content="If you want to offer QR Code functionality to your PSUs then the Confirmation page must be enabled." %}
 
@@ -179,9 +179,9 @@ With this additional page added:
 1. The selected bank details are then displayed on a confirmation screen:
 <img src = "images/ob_qrcode.png">
 1. Users are informed that they  must log on to their bank.
-1. A QR Code is also presented; users may: 
+1. A QR Code is also presented; users may:
    * Scan the code to complete the bank authentication and payment authorisation steps on a mobile device (see the following section for more on this).
-   * Click **Continue on this Device** to complete the payment on the desktop. 
+   * Click **Continue on this Device** to complete the payment on the desktop.
    * Click **Go Back** to choose a different bank.
 
 
@@ -191,14 +191,32 @@ With this additional page added:
 
 {% include callout.html content="On successful completion of this payment flow your customer has provided his/her consent for the payment to be collected for the selected account. The actual funds transfer to your account may happen within a matter of seconds or it may be processed on the following business day. The speed with which funds are transferred to your account is controlled by your customers' banks and is determined by the default payment scheme they are using. A scheme like SEPA CT Instant (for Euro payments) or Faster Payments (for GBP payments) will result in funds being credited to your account within seconds. Schemes like SEPA CT and BACS Credit will generally take a business day to process. Nuapay uses the [Payment Received Webhook](ob_whreceived.html) to notify you when funds are settled to your Nuapay account (Note: only available if you are using a Nuapay account)." type="primary" %}
 
+## Prompting for PSU Details Upfront
+
+{% include note.html content="This section is only applicable for merchants/partners who want to offer support to PSUs who hold accounts in banks that have implemented support for the Berlin Group specification." %}
+
+For <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSPs</a> that have implemented the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.berlin-group}}">Berlin Group</a> specification, before being redirected to their bank, users are required to provide their:
+
+* PSU-ID (which is their unique identifier with their bank).
+
+And/OR
+
+* IBAN.
+
+<img src = "images/ob_psuId.png">
+
+Note that:
+*	When a PSU selects an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> that has a `psuId` = required (see more about bank metadata on [View Bank](ob_getbank.html)) then the Payment Confirmation screen is always displayed (even if the merchant configuration is set to not display the confirmation page).
+* If the selected bank's `debtorAccountRequired` is `true` then similarly, the PSU will be prompted to provide his/her IBAN.
+*	Once a valid PSU-ID and/or IBAN are provided the QR code is rendered and the Continue button is enabled.
 
 ## QR Code Functionality
 
 Why a QR Code?
 
-* When working on a desktop and accessing online banking, it can be tedious for users to authenticate themselves. 
-* Typically banks will issue a unique code and then request a password or specific characters from that password. 
-* To avoid this, it is possible for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSUs</a> to use a mobile device for both the authentication and payment approval steps: users scan the QR code on their device to launch their mobile banking app. 
+* When working on a desktop and accessing online banking, it can be tedious for users to authenticate themselves.
+* Typically banks will issue a unique code and then request a password or specific characters from that password.
+* To avoid this, it is possible for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSUs</a> to use a mobile device for both the authentication and payment approval steps: users scan the QR code on their device to launch their mobile banking app.
 * Using a mobile device allows users to take advantage of biometric authentication: so instead of having to type codes and passwords, face recognition or a fingerprint scan is all that is required.
 
 The QR code will only be displayed where:
@@ -214,6 +232,6 @@ To use the feature:
 <img src = "images/ob_qr_scanning.png">
 1. The user's online banking app is launched (via Mobile Deep Linking), where the user has a mobile banking app installed on his/her device.
 1. The desktop displays an In-Progress overlay while the user completes the authentication and authorisation on the mobile device.
-1. Once the payment is authorised on the mobile device, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is automatically logged out of the ASPSP on the mobile device and the Success page is displayed on the desktop. 
+1. Once the payment is authorised on the mobile device, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is automatically logged out of the ASPSP on the mobile device and the Success page is displayed on the desktop.
 
 {% include links.html %}
