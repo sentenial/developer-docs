@@ -9,7 +9,7 @@ folder: prodEmandates
 
 ## Overview
 
-{% include note.html content="A mandate is an agreement between a merchant and a customer in which the customer (the payer) gives consent to the merchant to take funds from a nominated account either on a once-off basis or, more typically, for a recurring series of payments. 
+{% include note.html content="A mandate is an agreement between a merchant and a customer in which the customer (the payer) gives consent to the merchant to take funds from a nominated account either on a once-off basis or, more typically, for a recurring series of payments.
 Electronic Mandates (E-Mandates) allow you to capture your payers' bank account details and retrieve their authorisation without the need for traditional paper-based mandates." %}
 
 We currently offer the following implementation options:
@@ -17,8 +17,9 @@ We currently offer the following implementation options:
 |<a href = "em_overlay.html">Overlay</a>| Your customers select to sign a mandate and an overlay window is generated positioned on top of your merchant site. This is a seamless experience for your users and they do not need to know that a third party is involved in the sign-up process.|
 |<a href="em_redirect.html">Redirect</a>| With a Redirect, users see a new tab or Window being opened when they click the Sign button.|
 |<a href="em_wpoverview.html">WordPress</a>| Our WordPress plug-in offers you the easiest integration option but is only available if your site has been built on WordPress.|
-|<a href = "em_directapioverview.html">Direct API</a>| This option allows you the greatest control, allowing you to build your own client from the ground up using our powerful APIs.| 
+|<a href = "em_directapioverview.html">Direct API</a>| This option allows you the greatest control, allowing you to build your own client from the ground up using our powerful APIs.|
 
+{% include tip.html content="It is also possible to leverage Open Banking to create an electronic mandate. Note that in this flow, the payer initially makes an Open Banking payment and then signs the mandate so that future payments may be collected via Direct Debit. This option is currently only available for the Bacs scheme. For more information, see the Open Banking section: [Open Banking & E-mandate Overview](ob_emoverview.html)  " %}
 
 ## Showcase
 
