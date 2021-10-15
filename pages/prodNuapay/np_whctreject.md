@@ -1,17 +1,17 @@
 ---
 title: Credit Transfer Reject Event
-keywords: Credit Transfer Reject Event Webhook 
+keywords: Credit Transfer Reject Event Webhook
 summary: "Credit Transfer Reject Webhook event"
 sidebar: np_sidebar
 permalink: np_whctreject.html
 folder: prodNuapay
 toc: false
 ---
- 
-{% include webhook.html content="A PAIN.002 Import with a Credit Transfer rejection." %}
+
+{% include webhook.html content="A PAIN.002 Import with a Credit Transfer rejection OR a Credit Transfer payment initially created with a future execution date is rejected for insufficient funds when processed on that future execution date (the payment is rejected with a Nuapay CT042 - 'Insufficient funds' error code)." %}
 
 
-## Webhook Message Details TC
+## Webhook Message Details
 
 This Webhook has the following event types:
 
@@ -19,14 +19,14 @@ This Webhook has the following event types:
 |CreditTransferReject|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = REJECTED|
 |CreditTransferCancel|Triggered where a PAIN.002 import updates a Credit Transfer transaction to status = CANCELLED. A Credit Transfer is updated to CANCELLED where the [SEPA Reason Code](np_separeasons.html) is one of the following: CUST, CUTA, DUPL, UPAY|
 
-
+{% include tip.html content="Where a future-dated Credit Transfer is rejected for insufficient funds, an internal Nuapay error (CT042) is applied. This is an internal reject i.e. the transaction is rejected prior to being passed to Clearing."%}
 
 ## Webhook Event Message Details
 
 <p>The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -96,9 +96,9 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> 
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
