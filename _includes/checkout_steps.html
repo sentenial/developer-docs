@@ -234,4 +234,29 @@ To use the feature:
 1. The desktop displays an In-Progress overlay while the user completes the authentication and authorisation on the mobile device.
 1. Once the payment is authorised on the mobile device, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is automatically logged out of the ASPSP on the mobile device and the Success page is displayed on the desktop.
 
+## Launching the PSU's Mobile App
+
+When using a mobile device to complete the Open Banking payment, note that not every user's experience will be the same.
+Ideally you would like your payers to be directed to their online banking application once they scan the QR code but this may not always be the case; some mobile devices are configured to always open links in the device's Web browser and this may not always give your end users the best user experience.
+
+Note that:
+
+* For the bank application to open by default to authorize an OB payment the user must have the bank application installed on their handset and they must have logged in to their bank using the app at least once before attempting to authorize the OB payment.
+* When receiving the first authorization URI on the handset, the user should be prompted to select a “default action” when receiving a deep link. This can be “Open in browser” or “Open in App” .
+* This decision can be made *only once* and the user choice will be the default behaviour in future.
+
+A note on browsers:
+
+* Some browsers have default actions set at install time.
+* For example by default, the Samsung Internet app will open the PSU's bank page in the browser. This is a Samsung internet browser setting.
+* To change this default setting, open Samsung Internet:
+  * Go to **Settings > Useful Features** and select the slider *Open links in other apps* (note the description of this useful feature : Open Links in a related app instead of Samsung Internet).
+  * Once a PSU does this, the bank app will be launched by default, rather than the browser.
+* Similarly in the Firefox browser, the PSU's bank page is opened in the browser by default.
+* To change this default setting:
+  * Open Firefox.
+  * Go to **Settings > Advanced > Add-ons** and select the slider *Open links in apps*.
+  * Once the PSU does this, the user's bank app will be launched, rather than the bank's Web page on the browser.
+
+
 {% include links.html %}
