@@ -210,6 +210,27 @@ Note that:
 * If the selected bank's `debtorAccountRequired` is `true` then similarly, the PSU will be prompted to provide his/her IBAN.
 *	Once a valid PSU-ID and/or IBAN are provided the QR code is rendered and the Continue button is enabled.
 
+## Configuring the Refund Alert
+
+When using a Nuapay account as the creditor account for your Open Banking payments, your payers' account details are retrieved as part of the payment processing. If in future you want to refund the payer, you can call the [Refund Payment](ob_refundpayment.html) endpoint.
+
+If you are not using a Nuapay account, it is still possible to make a refund
+
+In the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBIE</a> specification (v3.1.6):
+
+*	It is possible to retrieve the PSU’s account details when making a PISP payment for the purposes of making a refund payment later (if required).
+*	The OBIE scheme suggests that the PSU should be informed that the TPP will be retrieving these account details (as per the GDPR) and we allow for an alert text to be displayed on the user interface (for CHECKOUT and REDIRECT implementations).
+In this release we have added a configuration to allow partners/merchants to decide on whether or not to display this detail to the PSU. Options are:
+•	Read Refund Account – YES/NO
+•	Default = NO
+This configuration may be made at the:
+•	Partner level
+OR
+•	Merchant level.
+If configured at both levels, the merchant-level configuration takes precedence.
+
+
+
 ## QR Code Functionality
 
 Why a QR Code?

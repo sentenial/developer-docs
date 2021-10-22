@@ -15,6 +15,12 @@ Use this service to return the details of a Bank Family by passing its unique id
 
 For more on Bank Families, see [View Bank Families](ob_getbankfamilies.html).
 
+{% include swagger_ob.html %}
+
+
+{% include urls-ob.html %}
+
+
 ## View Bank Family Endpoint
 
 <ul id="profileTabs" class="nav nav-tabs">

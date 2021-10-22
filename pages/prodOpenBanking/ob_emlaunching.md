@@ -56,7 +56,7 @@ On your payment page you will need to add the following:
 
 At this point you have:
 
-* Retrieved the `userInterfacePaymentId` (via the [Create Payment](ob_createpayment.html) service). 
+* Retrieved the `userInterfacePaymentId` (via the [Create Payment](ob_createpayment.html) service).
 * Added the JS and CSS references to your payment page.
 
 
@@ -78,7 +78,7 @@ Note that you will need to specify the correct URL based on whether you are test
 |PRODUCTION| https://api.nuapay.com/tpp-ui/|
 
 {% include tip.html content="To avoid any issues with **pop-up blockers**, we recommend that you request your users to: <br/>
-<br/>1. Click a button to pay by Open Banking (allowing you to retrieve the payment identifier) 
+<br/>1. Click a button to pay by Open Banking (allowing you to retrieve the payment identifier)
 <br/>2. Click a second button to choose to start the flow (launching the pop-up with the payment identifier retrieved in step 1)
 <br/><br/>Because launching the Overview screen in step 2 is a user-initiated action, your users will not be prompted to enable pop-ups.
 " %}
@@ -91,18 +91,15 @@ To launch the Payment and E-Mandate flow In REDIRECT mode:
 * Call the [Create Payment](ob_createpayment.html) endpoint to retrieve the `userInterfacePaymentId`.
 * Constuct the required URL to pass to the PSU as a payment link.
 
-In the standard `REDIRECT` Open Banking payment, a URL similar to the following is used: 
+In the standard `REDIRECT` Open Banking payment, a URL similar to the following is used:
 
 |/tpp-ui/redirect?userInterfacePaymentId=userInterfacePaymentId|
 
 To launch the Payment and E-Mandate flow, the URL becomes:
 
-|/tpp-ui/**payment-ui**/redirect?**creditorSchemeId=SUN**&userInterfacePaymentId=userInterfacePaymentId|
+|/tpp-ui/**paymentui**/redirect?**creditorSchemeId=SUN**&userInterfacePaymentId=userInterfacePaymentId|
 
 Note that the URL:
 
-* Includes /payment-ui/
+* Includes /paymentui/
 * The value of the SUN is the 6-digit identifier (not the encoded identifier).
-
-
-
