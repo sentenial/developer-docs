@@ -23,6 +23,12 @@ To address this issue for `SELF-HOSTED` and `SELF-HOSTED-CALLBACK` users (who de
 
 {% include tip.html content="A Bank Family is a bank that has numerous regional banks linked to it." %}
 
+{% include swagger_ob.html %}
+
+
+{% include urls-ob.html %}
+
+
 ## View Bank Families Endpoint
 
 <ul id="profileTabs" class="nav nav-tabs">
