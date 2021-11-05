@@ -5,7 +5,7 @@ summary: "Create Credit Transfer RESTful API"
 sidebar: np_sidebar
 permalink: np_createct.html
 folder: prodNuapay
-toc: false
+toc: true
 ---
 
 ## API Details
@@ -17,12 +17,14 @@ toc: false
 
 ## SEPA Credit Transfers
 
-When creating a SEPA Credit Transfer (also referred to as an SCT or CT) payments, note that:
+When creating SEPA Credit Transfer (also referred to as an SCT or CT) payments, note that:
 
 * Payments are processed for **EUR currency payments only**
 * CT payments, unlike Direct Debit payments, do not require that the transaction is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> days in advance of the collection date.
-* If you create your CT payment early enough on a specific working day (before 9 AM GMT), the funds will typically be credited to your beneficiary on the same day.
+* If you create your CT payment early enough on a specific working day (before 8AM GMT), the funds will typically be credited to your beneficiary on the same day. (See the Important Note below for more on this).
 * If you create the payment later in the day then the CT will generally be credited to the beneficiary on the following business day.
+
+{% include important.html content="A Note on GMT: Nuapay apply Daylight Savings Time (DST) during the summer months (which is commonly referred to as British Summer Time (BST)). BST runs from the last Sunday in March to the last Sunday in October. During this period the cut off time is actually GMT -1 (so 07:00 GMT); during the period from November to the end of March, the cut off time is 08:00 GMT." type="primary" %}
 
 ## Faster Payments
 

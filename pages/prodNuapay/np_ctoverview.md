@@ -18,6 +18,8 @@ A few points to note in relation to CTs:
 * A Bacs Direct Credit generated _today_ will typically be credited to your beneficiary in 2 business days' time.
 * Express payments (Faster Payments for GBP; SEPA CT Instant for EUR) are typically credited within seconds.
 
+{% include important.html content="A Note on GMT: Nuapay apply Daylight Savings Time (DST) during the summer months (which is commonly referred to as British Summer Time (BST)). BST runs from the last Sunday in March to the last Sunday in October. During this period the cut off time is actually GMT -1 (so 07:00 GMT); during the period from November to the end of March, the cut off time is 08:00 GMT." type="primary" %}
+
 ## Using the Credit Transfer APIs
 
 There are two approachs to CT creation:

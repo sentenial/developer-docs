@@ -43,14 +43,16 @@ For [Self-Hosted-Callback](ob_pispimplementation.html#self-hosted-callback-mode)
 
 ## Simulating Different Responses
 
-When creating a payment, specify a differenet value for the cents/pence amont to trigger a specific final transaction status:
+When creating a payment, specify a differenet value for the pence amont to trigger a specific final transaction status:
 
-| **Payment Amount** | **Final Status** | **Notes** | 
-| Any Amount (not ending in .10, .20 or .30) | `SETTLEMENT_IN_PROGRESS` | After the payment is authorised by the PSU in the Nuapay Test Bank the payment status will transition to a final status of `SETTLEMENT_IN_PROGRESS`. |
+| **Payment Amount** | **Final Status** | **Notes** |
+| Any Amount (not ending in .10, .20, .30 or 0.40) | `SETTLEMENT_IN_PROGRESS` | After the payment is authorised by the PSU in the Nuapay Test Bank the payment status will transition to a final status of `SETTLEMENT_IN_PROGRESS`. |
 | xxx.10 | `SETTLEMENT_COMPLETE` | After the payment is authorised by the PSU in the Nuapay Test Bank, the payment status will transition to a final status of `SETTLEMENT_COMPLETE`.  Once you call a **GET** `/payments/{paymentId}` ([Retrieve Payment](ob_retrievepayment.html)) for the transaction, the status will be returned as  `SETTLEMENT_COMPLETE`. This simulates the real-world scenario where it will typically take some time (generally only a few seconds) for the payment to update to its final status .|
 | xxx.20 |  `SETTLEMENT_REJECTED` | After the payment is authorised by the PSU in the Nuapay Test Bank, the payment status will transition to a final status of `SETTLEMENT_REJECTED`. Call a **GET** `/payments/{paymentId}` ([Retrieve Payment](ob_retrievepayment.html)) for the transaction to confirm that its status is `SETTLEMENT_REJECTED`|
 | xxx.30 | `PAYMENT_RECEIVED` | After the payment is authorised by the PSU in the Nuapay Test Bank, the payment status will transition initially to a status of `SETTLEMENT_COMPLETE`. Once you call a **GET** /payments/{paymentId} ([Retrieve Payment](ob_retrievepayment.html)) for the transaction, the status will be returned as `PAYMENT_RECEIVED`. This simulates the real-world scenario where it will typically take some time (typically a few seconds) for the payment to be credited to your Nuapay account.|
 | xxx.40 | `SETTLEMENT_PENDING` | After the payment is authorised by the PSU in the Nuapay Test Bank, the payment status will transition to a status of `SETTLEMENT_PENDING`.  This simulates the real-world scenario where multiple authorisations are required on a PSU account. The other authorising PSUs would need to authorise the payment before it can transition to a final status.|
+
+{% include important.html content="It is possible to simulate specific payment statuses for UK Open Banking transactions only; other Open Banking schemes are not currently supported." type="primary" %}
 
 ## Payment Transitions
 
@@ -64,10 +66,10 @@ The following table gives a summary of the status transitions, based on the amou
     </tr>
     <tr>
       <td>Any Amount (not ending in .10, .20, .30)</td>
-      <td>Status Transitions: 
+      <td>Status Transitions:
       <ul>
-      <li>PENDING</li> 
-      <li>PENDING_APPROVAL</li> 
+      <li>PENDING</li>
+      <li>PENDING_APPROVAL</li>
       <li>OAUTH_CALLBACK_COMPLETE</li>
       <li>AUTHORISED</li>
       <li><strong>SETTLEMENT_IN_PROGRESS</strong></li>
@@ -76,10 +78,10 @@ The following table gives a summary of the status transitions, based on the amou
     </tr>
     <tr>
       <td>Amount Ending in .10</td>
-      <td>Status Transitions: 
+      <td>Status Transitions:
       <ul>
-      <li>PENDING</li> 
-      <li>PENDING_APPROVAL</li> 
+      <li>PENDING</li>
+      <li>PENDING_APPROVAL</li>
       <li>OAUTH_CALLBACK_COMPLETE</li>
       <li>AUTHORISED</li>
       <li><strong>SETTLEMENT_COMPLETE</strong></li>
@@ -88,10 +90,10 @@ The following table gives a summary of the status transitions, based on the amou
     </tr>
     <tr>
       <td>Amount Ending in .20</td>
-      <td>Status Transitions: 
+      <td>Status Transitions:
       <ul>
-      <li>PENDING</li> 
-      <li>PENDING_APPROVAL</li> 
+      <li>PENDING</li>
+      <li>PENDING_APPROVAL</li>
       <li>OAUTH_CALLBACK_COMPLETE</li>
       <li>AUTHORISED</li>
       <li><strong>SETTLEMENT_REJECTED</strong></li>
@@ -100,10 +102,10 @@ The following table gives a summary of the status transitions, based on the amou
     </tr>
     <tr>
       <td>Amount Ending in .30</td>
-      <td>Status Transitions: 
+      <td>Status Transitions:
       <ul>
-      <li>PENDING</li> 
-      <li>PENDING_APPROVAL</li> 
+      <li>PENDING</li>
+      <li>PENDING_APPROVAL</li>
       <li>OAUTH_CALLBACK_COMPLETE</li>
       <li>AUTHORISED</li>
       <li>SETTLEMENT_COMPLETE</li>
@@ -113,10 +115,10 @@ The following table gives a summary of the status transitions, based on the amou
     </tr>
      <tr>
       <td>Amount Ending in .40</td>
-      <td>Status Transitions: 
+      <td>Status Transitions:
       <ul>
-      <li>PENDING</li> 
-      <li>PENDING_APPROVAL</li> 
+      <li>PENDING</li>
+      <li>PENDING_APPROVAL</li>
       <li>OAUTH_CALLBACK_COMPLETE</li>      
       <li><strong>SETTLEMENT_PENDING</strong></li>     
       </ul>
