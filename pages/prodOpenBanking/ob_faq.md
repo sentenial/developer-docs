@@ -152,7 +152,7 @@ folder: prodOpenBanking
                         </div>
                         <div id="collapse11" class="panel-collapse collapse">
                             <div class="panel-body">
-                            <p>We recommend that you use the x-idempotency-key Header parameter in all your Create Payment requests.</p>
+                            <p>We recommend that you use the Idempotency-Key Header parameter in all your Create Payment requests.</p>
 
 
                             </div>

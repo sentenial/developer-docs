@@ -10,9 +10,9 @@ toc: false
 
 ## API Details
 
-{% include important.html content="The [JWS-Signature header](np_secjws.html) is required for this endpoint. " type="primary" %} 
+{% include important.html content="The [JWS-Signature header](np_secjws.html) is required for this endpoint. " type="primary" %}
 
-The Create Credit Transfer request requires that you have first created a beneficiary. In some scenarios it is simpler to generate both the beneficiary and the payment at the same time and this request allows you to do that. 
+The Create Credit Transfer request requires that you have first created a beneficiary. In some scenarios it is simpler to generate both the beneficiary and the payment at the same time and this request allows you to do that.
 
 {% include note.html content="If the beneficiary details you reference in the request have been previously provided (and that beneficiary is already stored against your merchant profile) Nuapay will reuse that stored beneficiary data: a new beneficiary is only created if his/her beneficiary account has not been referenced before in a previous Credit Transfer payment." %}
 
@@ -22,8 +22,10 @@ When creating a SEPA Credit Transfer (also referred to as an SCT or CT) payments
 
 * Payments are processed for **EUR currency payments only**
 * CT payments, unlike Direct Debit payments, do not require that the transaction is passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> days in advance of the collection date.
-* If you create your CT payment early enough on a specific working day (before 9 AM GMT), the funds will typically be credited to your beneficiary on the same day. 
+* If you create your CT payment early enough on a specific working day (before 8AM GMT), the funds will typically be credited to your beneficiary on the same day.
 * If you create the payment later in the day then the CT will generally be credited to the beneficiary on the following business day.
+
+{% include important.html content="A Note on GMT: Nuapay apply Daylight Savings Time (DST) during the summer months (which is commonly referred to as British Summer Time (BST)). BST runs from the last Sunday in March to the last Sunday in October. During this period the cut off time is actually GMT -1 (so 07:00 GMT); during the period from November to the end of March, the cut off time is 08:00 GMT." type="primary" %}
 
 ## Faster Payments
 
@@ -35,7 +37,7 @@ Note that FPS:
 * Requires the following values in your request:
   * `paymentCurrency` = GBP.
   * `type` = EXPRESS
-  
+
 {% include tip.html content="If you specify domestic account details for the beneficiary account, specify the Sort Code in **domesticBranchCode** (not in the **domesticBankCode**)." %}
 
 ## Payment Types
@@ -65,12 +67,12 @@ Where you specify `FASTEST_POSSIBLE` a payment will go via the the Express payme
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/addCTBeneficiaryOnFlyUsingPOST','#profileTabs',timerRef); }, 500);
 
