@@ -17,8 +17,8 @@ It is possible to set up and manage the JWS via the User Interface (as described
 
 To generate your private key and certificate:
 
-1. Navigate to the 'PKI Management' screen on the Developer Dashboard. (If you cannot see this as a menu option please contact your Account Manager - specific permissions must be enabled to allow you to access this section of the dashboard). 
-1. If this is the first time using this screen you will see a notification to say that no PKI key has been generated. 
+1. Navigate to the 'PKI Management' screen on the Developer Dashboard. (If you cannot see this as a menu option please contact your Account Manager - specific permissions must be enabled to allow you to access this section of the dashboard).
+1. If this is the first time using this screen you will see a notification to say that no PKI key has been generated.
 <img src = "images/01_PKI_Management.png">
 1. Click <b>Generate PKI Key</b>. This will generate:
 * Your Private Key
@@ -40,21 +40,19 @@ Once you have generated your PKI Key you have two available actions, you can:
 
 ## Retrieving Details from the Certificate
 
-In order to generate the JOSE Header you'll need to extract certain details from your certificate:
+You need to extract certain details from your certificate:
 
-<ol>
-	<li value="1">Browse to where you downloaded your certificate (.CRT file) and double-click to view its details.</li>
-	<li value="2">Locate the certificate serial number section of the certificate. This is stored as a hexadecimal number and will need to be decoded.</li>
-	<p>
-		<img src="images/ViewCertificate.png" />
-	</p>
-	<li value="3">There are various tools available online to allow you to decode the haxadecimal value, see <a href = "https://www.rapidtables.com/convert/number/hex-to-decimal.html" target = "_blank">https://www.rapidtables.com/convert/number/hex-to-decimal.html</a> for example. (The decoded number is the <i>kid</i> value that you will need to generate your Header later).</li> 
-	<li value="4">Next, locate the subject parameters from the certificate:</li>
+1. Browse to where you downloaded your certificate (.CRT file) and double-click to view its details.
+1. Locate the certificate serial number section of the certificate. This is stored as a hexadecimal number **and will need to be decoded**.
 
-    <p>
-		<img src="images/viewCertificate2.PNG" />
-	</p>
-    <p>The following details are required:</p>
+	 <img src="images/ViewCertificate.png" />
+
+1. There are various tools available online to allow you to decode the haxadecimal value, see <a href = "https://www.rapidtables.com/convert/number/hex-to-decimal.html" target = "_blank">https://www.rapidtables.com/convert/number/hex-to-decimal.html</a> for example. (The decoded number is the <i>kid</i> value that you will need to generate your Header later). In the example above, `0094cf4671` is decoded as `2496611953`.
+1. Next, locate the subject parameters from the certificate:
+
+	 <img src="images/viewCertificate2.PNG" />
+
+    <p>The following details are provided:</p>
 	<table style="width: 100%;mc-table-style: url('Resources/TableStyles/Simple.css');" class="TableStyle-Simple" cellspacing="0">
 		<col style="width: 101px;" class="TableStyle-Simple-Column-Column1" />
 		<col style="width: 198px;" class="TableStyle-Simple-Column-Column1" />
@@ -78,8 +76,8 @@ In order to generate the JOSE Header you'll need to extract certain details from
 			</tr>
 			<tr>
 				<td>CN</td>
-				<td>a2av3py82w</td>
-				<td>Common name, the originator technical ID</td>
+				<td>a2av3py82w (for example)</td>
+				<td>Common name, the merchant identifier.</td>
 			</tr>
 			<tr>
 				<td>O</td>
@@ -99,76 +97,100 @@ In order to generate the JOSE Header you'll need to extract certain details from
 		</tbody>
 	</table>
 
+<p>You have now gathered everything you need from the Certificate.</p>
 
+## JOSE Header
+To generate the JOSE Header you will need the following:
 
-<p>At this point you have gathered everything you need from the Certificate. These are the details you need to generate the JOSE Header: </p>
-	<table style="width" cellspacing="0">
-		<col style="width: 103px;"  />
-		<col style="width: 308px;" />
-		<col style="width: 33%;"  />
-		<tbody>
-			<tr>
-				<td>
-					<b>Attribute</b>
-				</td>
-				<td>
-					<b>Value</b>
-				</td>
-				<td>
-					<b>Description</b>
-				</td>
-			</tr>
-			<tr>
-				<td>alg</td>
-				<td>RS256</td>
-				<td>Algorithm, always 'RS256'</td>
-			</tr>
-			<tr>
-				<td>kid</td>
-				<td>2496611953</td>
-				<td>Key&#160;ID, use the decoded certificate serial number</td>
-			</tr>
-			<tr>
-				<td>iat</td>
-				<td>0</td>
-				<td>Issued at, always '0'</td>
-			</tr>
-			<tr>
-				<td>iss</td>
-				<td>"C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=a2av3py82w"</td>
-				<td>Issuer, use the certificate subject parameters</td>
-			</tr>
-			<tr>
-				<td>b64</td>
-				<td>false</td>
-				<td>Base64 encoded payload, always 'false'</td>
-			</tr>
-			<tr>
-				<td>crit</td>
-				<td>["b64","iat","iss"]</td>
-				<td>Critical, always ["b64","iat","iss"]</td>
-			</tr>
-		</tbody>
-	</table>
-<p>Use the <a href= "np_secjwsgenerator.html">JWS Signature Generator</a> to create the JOSE Header.</p>
+<table style="width: 100%;mc-table-style: url('Resources/TableStyles/Simple.css');" class="TableStyle-Simple" cellspacing="0">
+	<col style="width: 101px;" class="TableStyle-Simple-Column-Column1" />
+	<col style="width: 198px;" class="TableStyle-Simple-Column-Column1" />
+	<col style="width: 1140px;" class="TableStyle-Simple-Column-Column1" />
+	<tbody>
+	<tr>
+			<td>
+				<b>Attribute</b>
+			</td>
+			<td>
+				<b>Example Value</b>
+			</td>
+			<td>
+				<b>Description</b>
+			</td>
+		</tr>
+		<tr>
+			<td>alg</td>
+			<td>RS256</td>
+			<td>Algorithm, always 'RS256'</td>
+		</tr>
+		<tr>
+			<td>kid</td>
+			<td>2496611953 (for example)</td>
+			<td>Key&#160;ID, use the decoded certificate serial number (see Step 3 above).</td>
+		</tr>
+		<tr>
+			<td>iat</td>
+			<td>0</td>
+			<td>Issued at, the current Unix Epoch timestamp (in milliseconds). Note: this cannot be a future-date timestamp.</td>
+		</tr>
+		<tr>
+			<td>iss</td>
+			<td>"C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=a2av3py82w"</td>
+			<td>Issuer, use the certificate subject parameters. </td>
+		</tr>
+		<tr>
+			<td>b64</td>
+			<td>false</td>
+			<td>Base64 encoded payload, always 'false'</td>
+		</tr>
+		<tr>
+			<td>crit</td>
+			<td>"crit": [
+    "iat",
+    "iss",
+    "b64"
+  ]
+</td>
+			<td>Critical, always ["iat","iss","b64"]</td>
+		</tr>
+	</tbody>
+</table>
 
-{% include note.html content="The expected JWS should use a detached payload." %}
+At this point you have the following unique details:
+1. Your Private Key.
+1. The Key ID (kid): the serial number from your .crt file.
+1. The Common Name (CN): the Nuapay identifier for your merchant or partner entity.
+(Other certificate elements are always the same i.e. the `C`, `OU`, `L`, etc. )
 
-<br/>
-<h1> Detached Payload JWS</h1>
-A signed JWS encodes information in three parts separated by periods: 
-<ul>
- <li>a header</li>	
- <li>a payload</li>	
- <li>a signature</li>	
-</ul>	
+Use these details to generate your signature.
+
+## Unit Testing
+
+We recommend that you create a unit test that takes your inputs (as described above) and generates an appropriate JWS Signature.
+To better understand how best to do this please refer to the:
+
+* Java sample project: [https://github.com/sentenial/jws-sample-java](https://github.com/sentenial/jws-sample-java)
+	 OR
+* [JWS Signature Sample values](np_secjwssample.html) to see how a specific Private Key, Certificate and payload, can be used to generate a specific JWS signature (using the JWS Generator tool). You can then use the tool to pass in YOUR private key and certificate details to generate a signature for testing purposes.
+
+{% include note.html content="Once enabled on Production, the Signature needs to be dynamically generated each time you create a request that require the JWS signature as a header e.g. for [Create Beneficiary](np_createbeneficiary.html), or [Create Credit Transfer](np_createct.html). The payload used in the JWS signature generation must match exactly the payload in your request." %}
+
+## Detached Payload JWS
+
+The JWS signature generated will need to have a detached payload (the payload is sent as normal in the POST request body but it is not included in the JWS).
+
+A signed JWS encodes information in three parts separated by periods:
+
+* A Header
+* A Payload
+* A Signature
+
 <strong>'header.payload.signature' </strong>
-<br/>	
+<br/>
 A JWS also supports a detached format that omits the payload from the JWS:
-<br/>	
+<br/>
 <strong>'header..signature' </strong>
-<br/>	
+<br/>
 <p>
-When using a detached JWS, the payload is sent as normal in the body but it is not included in the JWS. 
+When using a detached JWS, the payload is sent as normal in the body but it is not included in the JWS.
 </p>
-

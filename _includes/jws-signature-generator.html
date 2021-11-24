@@ -16,7 +16,7 @@ function _genJWS() {
   var sPemPrvKey = document.form1.pemprvkey1.value;
 
   var sResult = null;
-  
+
   try {
     prv = KEYUTIL.getKey(sPemPrvKey);
 	sResult = sign("RS256", sHead, sPayload, prv);
@@ -34,14 +34,14 @@ function sign(alg, spHeader, spPayload, key, pass) {
 	if (! KJUR.jws.JWS.isSafeJSONString(sHeader))
 	    throw "JWS Head is not safe JSON string: " + sHeader;
 	pHeader = KJUR.jws.JWS.readSafeJSONString(sHeader);
-    
+
     sPayload = spPayload;
-   
+
     if (alg !== pHeader.alg)
 		throw "alg and sHeader.alg doesn't match: " + alg + "!=" + pHeader.alg;
 
     var sigAlg = KJUR.jws.JWS.jwsalg2sigalg[alg];
-    
+
     var uHeader = utf8tob64u(sHeader);
     var uPayload = sPayload;
     var uSignatureInput = uHeader + "." + uPayload
@@ -68,7 +68,8 @@ function sign(alg, spHeader, spPayload, key, pass) {
 <table width="100%">
 <tbody>
 <tr>
-<td rowspan="3">Input</td><td>JWS Header<br/><i>Edit only "kid", "iat" and "iss"</i><br/><br/><i>* iss must match subject on your cert</i><br/><i>* kid must match your certificate serial number</i><br/><i>* iat must contain current datetime<br/>&nbsp;&nbsp;(milliseconds since Unix Epoch)</i><br/></td><td colspan="2">
+<td rowspan="3">Input</td><td>JWS Header<br/><i>Edit only "kid" and the CN`of the "iss"</i><br/><br/><i>* iss must match subject on your cert</i><br/><i>* kid must match your certificate serial number</i><br/><br/></td><td colspan="2">
+<!--
 <textarea name="jwshead1" rows="8" cols="100">
 {
   "alg": "RS256",
@@ -78,6 +79,22 @@ function sign(alg, spHeader, spPayload, key, pass) {
   "b64": false,
   "crit": ["iat","iss","b64"]
 }</textarea>
+-->
+
+<textarea name="jwshead1" rows="12" cols="100">
+{
+  "alg": "RS256",
+  "kid": "PASTE YOUR SERIAL HERE",
+  "iat": 0,
+  "iss": "C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=PASTE YOUR COMMON NAME HERE",
+  "b64": false,
+  "crit": [
+    "iat",
+    "iss",
+    "b64"
+  ]
+}</textarea>
+
 </td>
 </tr>
 <tr><td>JWS Payload<br/><i>Your HTTP request body here</i></td><td colspan="2">

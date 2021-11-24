@@ -1,11 +1,13 @@
 addacs: "The Automated Direct Debit Amendment and Cancellation Service. An electronic notification file, issued by the Bacs scheme, to notify Nuapay on behalf of its merchants/partners of payer-requested amendments or cancellations of DDIs (mandates)."
 
+auddis: "The Automated Direct Debit Instruction Service. A Bacs service allowing merchants to set up new Direct Debit Instructions (DDIs) and also to notify the scheme of any DDI cancellations."
+
 bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the scheme behind the clearing and settlement of Direct Debits in the UK."
 clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payments. (The EBA's STEP-2 system allows banks across Europe to use one channel to send and receive their SEPA Credit Transfer and SEPA Direct Debit transactions)"
 
 bac-collection-cycle: "Day 1: payment file is submitted; Day 2: transactions processed (on the business day before the collection day); Day 3: Direct Debits are debited from payers' accounts and credited to the merchant; Day 4-6 Unpaids may be processed."
 
-berlin-group: "A pan-European payments interoperability standards and harmonisation initiative responsible for the development of the NextGenPSD2 Access to Account  (XS2A) Framework API specification." 
+berlin-group: "A pan-European payments interoperability standards and harmonisation initiative responsible for the development of the NextGenPSD2 Access to Account  (XS2A) Framework API specification."
 
 aspsp: "The Account Servicing Payment Service Provider: this is the Bank or Payment Institution"
 

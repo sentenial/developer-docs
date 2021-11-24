@@ -3,48 +3,42 @@
 entries:
 - title: Security Overview
   product: Security
-  version: 
+  version:
   folders:
-  
+
   - title: Security
     output: web, pdf
     folderitems:
 
     - title: Overview
       url: /np_secoverview.html
-      output: web, pdf  
+      output: web, pdf
 
     - title: API Key Authentication
       url: /np_secapikeyauth.html
-      output: web, pdf          
+      output: web, pdf
 
     - title: MTLS Configuration
       url: /np_secmtls.html
       output: web, pdf
-      
+
       subfolders:
-      - title: JSON Web Signature 
+      - title: JSON Web Signature
         output: web
-        subfolderitems:  
-      
+        subfolderitems:
+
         - title: Overview
           url: /np_secjws.html
-          output: web, pdf                
-      
+          output: web, pdf
+
         - title: JWS Configuration via UI
           url: /np_secjwsui.html
-          output: web, pdf          
-          
+          output: web, pdf
+
         - title: JWS Configuration via REST
           url: /np_secjwsrest.html
-          output: web, pdf          
-      
-        - title: JWS Signature Generator
-          url: /np_secjwsgenerator.html
-          output: web, pdf          
+          output: web, pdf
 
         - title: JWS Signature Samples
           url: /np_secjwssample.html
-          output: web, pdf          
-          
-   
+          output: web, pdf
