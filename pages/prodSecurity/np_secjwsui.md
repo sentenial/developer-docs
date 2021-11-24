@@ -171,7 +171,7 @@ To better understand how best to do this please refer to the:
 
 * Java sample project: [https://github.com/sentenial/jws-sample-java](https://github.com/sentenial/jws-sample-java)
 	 OR
-* [JWS Signature Sample values](np_secjwssample.html) to see how a specific Private Key, Certificate and payload, can be used to generate a specific JWS signature (using the JWS Generator tool). You can then use the tool to pass in YOUR private key and certificate details to generate a signature for testing purposes.
+* [JWS Signature Sample values](np_secjwssample.html) to see how a specific Private Key, Certificate and payload, can be used to generate a specific JWS signature (using the JWS Generator tool). You can then use the tool to pass in **YOUR** private key and certificate details to generate a signature for testing purposes.
 
 {% include note.html content="Once enabled on Production, the Signature needs to be dynamically generated each time you create a request that require the JWS signature as a header e.g. for [Create Beneficiary](np_createbeneficiary.html), or [Create Credit Transfer](np_createct.html). The payload used in the JWS signature generation must match exactly the payload in your request." %}
 

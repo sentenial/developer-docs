@@ -148,7 +148,7 @@ The following details are required:
 
 |Only the CN will vary per merchant/partner; all other attributes are static.|
 
-At this point you have gathered everything you need from the Certificate. These are the details you need to generate the JOSE Header:
+The following are the details you need to generate the JOSE Header:
 
 |**Attribute**|**Value**|**Description**|
 |alg|RS256|Algorithm: always 'RS256'|
@@ -158,7 +158,25 @@ At this point you have gathered everything you need from the Certificate. These 
 |b64|false|Base64 encoded payload: always 'false'|
 |crit|["b64","iat","iss"]|Critical: always ["b64","iat","iss"]|
 
-Use the [JWS Signature Generator](np_secjwsgenerator.html) to create the JOSE Header.
+At this point you have the following unique details:
+1. Your Private Key.
+1. The Key ID (kid): the serial number from your .crt file.
+1. The Common Name (CN): the Nuapay identifier for your merchant or partner entity.
+(Other certificate elements are always the same i.e. the `C`, `OU`, `L`, etc. )
+
+Use these details to generate your signature.
+
+## Unit Testing
+
+We recommend that you create a unit test that takes your inputs (as described above) and generates an appropriate JWS Signature.
+To better understand how best to do this please refer to the:
+
+* Java sample project: [https://github.com/sentenial/jws-sample-java](https://github.com/sentenial/jws-sample-java)
+	 OR
+* [JWS Signature Sample values](np_secjwssample.html) to see how a specific Private Key, Certificate and payload, can be used to generate a specific JWS signature (using the JWS Generator tool). You can then use the tool to pass in **YOUR** private key and certificate details to generate a signature for testing purposes.
+
+{% include note.html content="Once enabled on Production, the Signature needs to be dynamically generated each time you create a request that require the JWS signature as a header e.g. for [Create Beneficiary](np_createbeneficiary.html), or [Create Credit Transfer](np_createct.html). The payload used in the JWS signature generation must match exactly the payload in your request." %}
+
 
 ## Managing Certificates
 
