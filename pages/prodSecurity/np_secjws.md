@@ -46,7 +46,7 @@ To create a JOSE header **via the UI** you will need to:
 
 To create a JOSE header **via REST** you will need to:
 
-* Create a [Certificate Signing Request (CSR)](http://localhost:4000/np_secjwsrest.html#creating-a-certificate-signing-request-csr).
+* Create a [Certificate Signing Request (CSR)](np_secjwsrest.html#creating-a-certificate-signing-request-csr).
 * Pass that CSR in the [`POST/certificates`](np_secjwsrest.html#generating-your-certificate-via-rest) endpoint.
 * Retrieve the certificate and extract the issuer details.
 * Use these details in your code to generate the JWS Signature when required.
