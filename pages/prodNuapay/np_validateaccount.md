@@ -1,7 +1,7 @@
 ---
 title: Account Validation
-keywords: Validate IBAN BBAN 
-summary: "The Validate Account service allows you to pass either domestic account details (BBAN) to retrieve an IBAN or to pass an IBAN and retrieve the domestic account details. "
+keywords: Validate IBAN BBAN
+summary: "The Validate Account service allows you to pass either domestic account details (to validate and retrieve an IBAN) or to pass an IBAN (to validate and retrieve the domestic account details). "
 sidebar: np_sidebar
 permalink: np_validateaccount.html
 folder: prodNuapay
@@ -10,17 +10,40 @@ toc: false
 
 ## API Details
 
-The Validate Account service allows you to: 
+The Validate Account service allows you to:
 
 * Validate an IBAN.
-* Validate a domestic account (also referred to as a Basic Bank Account Number - BBAN)
+* Validate a domestic account.
 
-{% include note.html content="When validating a BBAN, depending on the country selected, certain arguments may or may not be required. For a Spanish domestic account, for example, Account Number, Bank Code, Branch Code and Check Sum are all required; for an Irish account just the Account Number and Branch Code are mandatory. " %}
+{% include tip.html content="When validating a domestic account, depending on the country selected, certain arguments may or may not be required. For a Spanish domestic account, for example, Account Number, Bank Code, Branch Code and Check Sum are all required; for an Irish or UK account just the Account Number and Branch Code are mandatory. " %}
 
+
+
+{% include swagger_np.html %}
+
+{% include urls.html %}
+
+
+<ul id="profileTabs" class="nav nav-tabs">
+
+
+</ul>
+
+{% include redoc.html %}
+
+loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
+var timerRef = setInterval(function() { getDocs('operation/validateDomesticAccountUsingPOST','#profileTabs',timerRef); }, 500);
+
+
+</script>
+
+
+
+<!--
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Request</a></li>
     <li><a href="#about" data-toggle="tab">Response</a></li>
-   
+
 </ul>
   <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="profile">
@@ -76,8 +99,8 @@ The Validate Account service allows you to:
 <p>A successful request will return a <b>201 Created</b> response code</p>
 <p>The following is the complete list of possible status codes, which may be returned in the response:</p>
     {% include ob_httpcodes.html %}
-    
- 
+
+
     </div>
 
 
@@ -85,4 +108,7 @@ The Validate Account service allows you to:
 
 <p><b>Note</b>: For a more detailed view of this API see the OpenAPI/Swagger redoc: <a href="https://sentenial.github.io/open-banking-swagger/docs/redoc.html#operation/createPaymentUsingPOST " target = "_blank"><i class="fa fa-cogs"></i> OpenAPI/Swagger Reference</a> </p>
 
+
+
 {% include links.html %}
+-->
