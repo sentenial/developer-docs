@@ -132,7 +132,7 @@ In order to generate the JOSE Header you'll need to extract certain details from
 1. Locate the certificate serial number section of the certificate. This is stored as a hexadecimal number and will need to be decoded.
 
    <img src="images/ViewCertificate.png">
-1. There are various tools available online to allow you to decode the hexadecimal value, see <a href = "https://www.rapidtables.com/convert/number/hex-to-decimal.html" target = "_blank">https://www.rapidtables.com/convert/number/hex-to-decimal.html</a> for example. (The decoded number is the <i>kid</i> value that you will need to generate your signature later). In the example above, <b>0094cf4671</b> is decoded as <b>2496611953</b>.</li>
+1. There are various tools available online to allow you to decode the hexadecimal value, see <a href = "https://www.rapidtables.com/convert/number/hex-to-decimal.html" target = "_blank">https://www.rapidtables.com/convert/number/hex-to-decimal.html</a> for example. (The decoded number is the <i>kid</i> value that you will need to generate your signature later). In the example above, <b>0094cf4671</b> is decoded as <b>2496611953</b>.
 1. Next, locate the subject parameters from the certificate:
 
 	 <img src="images/viewCertificate2.PNG">
@@ -141,7 +141,7 @@ The following details are required:
 
 |**Attribute**	|**Value**	|**Description**																							|
 |OU				|Nuapay API	|Organization unit: this will always be 'Nuapay API' for certificates signed by Nuapay.						|
-|CN				|a2av3py82w (Example)|Common name: the merchant/partner identifier. If you don't have this identifier, please contact Nuapay Support.|
+|CN				|a2av3py82w (Example)|Common name: the merchant/partner identifier.|
 |O				|Nuapay		|Organization: will always be 'Nuapay' for certificates signed by Nuapay.									|
 |L				|London		|Locality: will always be 'London' for certificates signed by Nuapay.										|
 |C				|GB			|Country Name: two letter country code will always be 'GB' for certificates signed by Nuapay.				|
