@@ -9,6 +9,7 @@ folder: prodNuapay
 
 {% include webhook.html content="A DDICA file is imported into Nuapay, indicating that a Direct Debit Indemnity Claim Advice has been received from Bacs." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -86,27 +87,27 @@ For more on the possible refund reasons and the challenges available, see [DDIC 
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
-        <tr>
-			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
-    <tr>
-  <td>root</td>
-  <td>resourceRemittanceInformation</td>
-  <td>string</td>
-  <td>optional</td>
-  <td>Remittance information related to the transaction.</td>
-</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
             <td> The <a href="np_bacsreasons.html#ddic-reason-codes"> Bacs DDIC Reason Code</a></td>
-		</tr>		
+		</tr>
+		<tr>
+	<td>root</td>
+	<td>resourceOwner</td>
+	<td>string</td>
+	<td>Mandatory</td>
+	<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+</tr>
+		<tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 	</tbody>
 </table>
 
@@ -133,10 +134,10 @@ The following is an example of a Direct Debit Indemnity Claim Received event JSO
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
 	"resourceType": "DirectDebit",
+	"reasonCode": "8",
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null,  
-	"reasonCode": "8"
-}</code>
+	"resourceRemittanceInformation": null
+	}</code>
 </pre>
 
 {% include links.html %}

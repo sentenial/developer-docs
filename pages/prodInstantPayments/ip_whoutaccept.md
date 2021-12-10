@@ -1,15 +1,16 @@
 ---
 title: Outbound Instant Payment Accepted Event
-keywords: Outbound Instant Payment Accepted Event 
+keywords: Outbound Instant Payment Accepted Event
 summary: "An outbound Instant Payment is set to Accepted status"
 sidebar: ip_sidebar
 permalink: ip_whoutaccept.html
 folder: prodInstantPayment
 toc: false
 ---
- 
+
 {% include webhook.html content="A positive confirmation message received from the CSM in response to an outbound SCT Inst instruction." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -21,7 +22,7 @@ This Webhook has a single event type: <b>InstantCreditTransferAccept</b>
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -86,7 +87,21 @@ This Webhook has a single event type: <b>InstantCreditTransferAccept</b>
 			<td>optional</td>
 			<td>Always null for Accepted Instant Payments. </td>
 		</tr>
-		
+    <tr>
+  <td>root</td>
+  <td>resourceOwner</td>
+  <td>string</td>
+  <td>Mandatory</td>
+  <td>This is the identifier of the merchant resource to which this notification is linked.</td>
+</tr>
+<tr>
+<td>root</td>
+<td>resourceRemittanceInformation</td>
+<td>string</td>
+<td>optional</td>
+<td>Remittance information related to the transaction.</td>
+</tr>    
+
 	</tbody>
 </table>
 
@@ -116,7 +131,9 @@ The following is an example of an ``Accepted Instant Payment`` event JSON:
     "resourceReferenceType":"TransactionId",
     "resourceUri":"/instantpayments/wqj29nnmxn",
     "resourceType":"InstantCreditTransfer",
-    "reasonCode":null 
+    "reasonCode":null,
+    "resourceOwner": "tc47abc73",
+    "resourceRemittanceInformation": null
  }
 
 

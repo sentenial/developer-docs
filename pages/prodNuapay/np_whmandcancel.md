@@ -10,6 +10,8 @@ toc: false
 
 {% include webhook.html content="A Direct Debit Instruction (mandate) that was ACTIVE moves to CANCELLED status following a notification from the Scheme. This event only impacts DDIs created in the Bacs scheme." %}
 
+{% include wh-compatibility.html %}
+
 ## Webhook Message Details
 
 This Webhook has the following event types:
@@ -76,6 +78,13 @@ The full list of possible cancellation reasons is provided under [ADDACS Reason 
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>Optional</td>
+            <td>The <a href = "np_bacsreasons.html#addacs-reason-codes">Reason code</a> as assigned during the ADDACS import.</td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -90,13 +99,7 @@ The full list of possible cancellation reasons is provided under [ADDACS Reason 
   <td>optional</td>
   <td>Remittance information related to the transaction.</td>
 </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>Optional</td>
-            <td>The <a href = "np_bacsreasons.html#addacs-reason-codes">Reason code</a> as assigned during the ADDACS import.</td>
-		</tr>
+
 	</tbody>
 </table>
 
@@ -122,9 +125,9 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/ltc1ebd",
 	"resourceType": "Mandate",
+	"reasonCode": 2,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null,
-	"reasonCode": 2
+	"resourceRemittanceInformation": null	
 }</code>
 </pre>
 {% include links.html %}

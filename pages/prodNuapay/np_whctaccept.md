@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A Credit Transfer transaction transitions to ACCEPTED status on its execution date." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -78,27 +79,6 @@ This Webhook has a single event type: **CreditTransferAccept**
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
-        <tr>
-			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
-    <tr>
-  <td>root</td>
-  <td>resourceOwner</td>
-  <td>string</td>
-  <td>Mandatory</td>
-  <td>This is the identifier of the merchant resource to which this notification is linked.</td>
-</tr>
-<tr>
-<td>root</td>
-<td>resourceRemittanceInformation</td>
-<td>string</td>
-<td>optional</td>
-<td>Remittance information related to the transaction.</td>
-</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -106,6 +86,21 @@ This Webhook has a single event type: **CreditTransferAccept**
 			<td>optional</td>
             <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
 		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>  
+<tr>
+<td>root</td>
+<td>resourceRemittanceInformation</td>
+<td>string</td>
+<td>optional</td>
+<td>Remittance information related to the transaction.</td>
+</tr>
+
 
 	</tbody>
 </table>
@@ -132,9 +127,9 @@ The following is an example of a Credit Transfer Accept event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": "PAYMENT RE: ABC",
-	"reasonCode": null
+	"resourceRemittanceInformation": "PAYMENT RE: ABC"
 }</code>
 </pre>
 

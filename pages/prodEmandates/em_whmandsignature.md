@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A mandate moves to ACTIVE status." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -75,14 +76,7 @@ When an e-mandate is signed, the following event type is notified:
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
-		</tr>
-        <tr>
-			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
+		</tr>        		
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -90,7 +84,20 @@ When an e-mandate is signed, the following event type is notified:
 			<td>optional</td>
 			<td>Null for mandates. </td>
 		</tr>
-
+		<tr>
+	<td>root</td>
+	<td>resourceOwner</td>
+	<td>string</td>
+	<td>Mandatory</td>
+	<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+</tr>
+<tr>
+<td>root</td>
+<td>resourceRemittanceInformation</td>
+<td>string</td>
+<td>optional</td>
+<td>Remittance information related to the transaction.</td>
+</tr>
 	</tbody>
 </table>
 
@@ -116,8 +123,9 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
 	"resourceType": "Mandate",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"reasonCode": null
+	"resourceRemittanceInformation": null
 }</code>
 </pre>
 

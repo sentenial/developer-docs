@@ -9,6 +9,7 @@ folder: prodNuapay
 
 {% include webhook.html content="A PAIN.002 reject file is imported into Nuapay updating a Direct Debit's [payment status](np_ddstatuses.html)." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -24,6 +25,7 @@ The following event types are possible:
 |DirectDebitReject|REJECTED|
 |DirectDebitRevoke|REVOKED|
 |DDReturnPeriodPassed|ACCEPTED|
+
 
 ## Webhook Event Message Details
 
@@ -80,28 +82,28 @@ The following event types are possible:
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
-		</tr>
-        <tr>
-			<td>root</td>
-			<td>resourceOwner</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
-		</tr>
+		</tr>   
     <tr>
-  <td>root</td>
-  <td>resourceRemittanceInformation</td>
-  <td>string</td>
-  <td>optional</td>
-  <td>Remittance information related to the transaction.</td>
-</tr>
-		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
             <td> The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
-		</tr>		
+		</tr>
+		<tr>
+	<td>root</td>
+	<td>resourceOwner</td>
+	<td>string</td>
+	<td>Mandatory</td>
+	<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+</tr>
+<tr>
+<td>root</td>
+<td>resourceRemittanceInformation</td>
+<td>string</td>
+<td>optional</td>
+<td>Remittance information related to the transaction.</td>
+</tr>
 	</tbody>
 </table>
 
@@ -135,9 +137,9 @@ The following is an example of a Direct Debit Reject event JSON:
       "resourceReferenceType": "EndToEndId",
       "resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
       "resourceType": "DirectDebit",
+      "reasonCode": "MS03",
       "resourceOwner": "tc47ygrg72",
-      "resourceRemittanceInformation": null,
-      "reasonCode": "MS03"
+      "resourceRemittanceInformation": null      
 }</code>
 </pre>
 

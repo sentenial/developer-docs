@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A PACS.002 Reject Import against an Express Credit Transfer." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -84,6 +85,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -98,13 +106,7 @@ This Webhook has the following event types:
     <td>optional</td>
     <td>Remittance information related to the transaction.</td>
     </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
-		</tr>
+
 
 	</tbody>
 </table>
@@ -131,9 +133,9 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrtc1",
 	"resourceType": "Transaction",
+	"reasonCode": "CUST",
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": "PAYMENT RE: DEF",
-	"reasonCode": "CUST"
+	"resourceRemittanceInformation": "PAYMENT RE: DEF"	
 }</code>
 </pre>
 

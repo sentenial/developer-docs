@@ -1,15 +1,16 @@
 ---
 title: Open Banking Payment Timeout Event
-keywords: Payment Timeout Event Webhook 
+keywords: Payment Timeout Event Webhook
 summary: "Payment Timeout Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whpaymenttimeout.html
 folder: prodOpenBanking
 toc: false
 ---
- 
+
 {% include webhook.html content="An Open Banking payment moves to TIMEOUT status." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -19,7 +20,7 @@ This Webhook has a single event type: <b>PaymentTimeout</b>
 
 ## Timeouts Overview
 
-The timeout is the configured period from when a payment is initiated and when the PSU can complete that payment (by authorising it at the ASPSP). 
+The timeout is the configured period from when a payment is initiated and when the PSU can complete that payment (by authorising it at the ASPSP).
 You can:
 
 * Set the timeout individually, per payment, by setting the `paymentTimeout` parameter in the [Create Payment](ob_createpayment.html) API.
@@ -33,7 +34,7 @@ Please discuss your requirements with your Account Manager. The Nuapay API Suppo
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -98,8 +99,14 @@ Please discuss your requirements with your Account Manager. The Nuapay API Suppo
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
-		
-		
+    <tr>
+    <td>root</td>
+    <td>resourceRemittanceInformation</td>
+    <td>string</td>
+    <td>optional</td>
+    <td>Remittance information related to the transaction.</td>
+    </tr>    
+
 	</tbody>
 </table>
 
@@ -126,7 +133,8 @@ The following is an example of a Received Payment event JSON:
     "resourceUri": "/payments/n7rklmvdmq",
     "resourceType": "payment",
     "reasonCode": null,
-    "resourceOwner": "tc47ygrg72"    
+    "resourceOwner": "tc47ygrg72",
+    "resourceRemittanceInformation": null    
 }</code>
 </pre>
 

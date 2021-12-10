@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A PAIN.002 Import with a Credit Transfer rejection OR a Credit Transfer payment initially created with a future execution date is rejected for insufficient funds when processed on that future execution date (the payment is rejected with a Nuapay CT042 - 'Insufficient funds' error code)." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -84,6 +85,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -98,13 +106,7 @@ This Webhook has the following event types:
 	<td>optional</td>
 	<td>Remittance information related to the transaction.</td>
 </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
-		</tr>
+
 
 	</tbody>
 </table>
@@ -131,9 +133,9 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",
+	"reasonCode": "CUST",
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null,
-	"reasonCode": "CUST"
+	"resourceRemittanceInformation": null	
 }</code>
 </pre>
 
