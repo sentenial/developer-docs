@@ -92,6 +92,13 @@ This Webhook has the following event types:
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
 		<tr>
+	<td>root</td>
+	<td>resourceRemittanceInformation</td>
+	<td>string</td>
+	<td>optional</td>
+	<td>Remittance information related to the transaction.</td>
+</tr>
+		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
@@ -125,9 +132,9 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": null,
 	"reasonCode": "CUST"
 }</code>
 </pre>
-
 
 {% include links.html %}

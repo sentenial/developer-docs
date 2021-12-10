@@ -1,13 +1,13 @@
 ---
 title: Express Credit Transfer Accept Event
-keywords: Express Credit Transfer Accept Event Webhook 
+keywords: Express Credit Transfer Accept Event Webhook
 summary: "Express Credit Transfer Accept Webhook event"
 sidebar: np_sidebar
 permalink: np_whctexpaccept.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="An Express Credit Transfer transaction transitions to ACCEPTED status." %}
 
 
@@ -20,7 +20,7 @@ This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
 <p>The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -85,14 +85,21 @@ This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+    <td>root</td>
+    <td>resourceRemittanceInformation</td>
+    <td>string</td>
+    <td>optional</td>
+    <td>Remittance information related to the transaction.</td>
+    </tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> 
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
@@ -119,6 +126,7 @@ The following is an example of a Credit Transfer Accept event JSON:
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": "PAYMENT RE: 123",
 	"reasonCode": null
 }</code>
 </pre>

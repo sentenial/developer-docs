@@ -1,13 +1,13 @@
 ---
 title: Express Credit Transfer Reject Event
-keywords: Express Credit Transfer Reject Event Webhook 
+keywords: Express Credit Transfer Reject Event Webhook
 summary: "Express Credit Transfer Reject Webhook event"
 sidebar: np_sidebar
 permalink: np_whctexpreject.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="A PACS.002 Reject Import against an Express Credit Transfer." %}
 
 
@@ -26,7 +26,7 @@ This Webhook has the following event types:
 <p>The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -91,14 +91,21 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+    <td>root</td>
+    <td>resourceRemittanceInformation</td>
+    <td>string</td>
+    <td>optional</td>
+    <td>Remittance information related to the transaction.</td>
+    </tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td> 
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
@@ -125,6 +132,7 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrtc1",
 	"resourceType": "Transaction",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": "PAYMENT RE: DEF",
 	"reasonCode": "CUST"
 }</code>
 </pre>

@@ -1,13 +1,13 @@
 ---
 title: Accepted Direct Debit Event
-keywords: Accepted Direct Debit Event Webhook 
+keywords: Accepted Direct Debit Event Webhook
 summary: "Accepted Direct Debit Webhook event"
 sidebar: np_sidebar
 permalink: np_whaccepteddd.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="A Direct Debit payment's status moves to ACCEPTED (on its value date)" %}
 
 
@@ -21,7 +21,7 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -86,6 +86,13 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -93,7 +100,7 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 			<td>optional</td>
 			<td>Null for Direct Debits in ACCEPTED status. </td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
@@ -115,11 +122,12 @@ The following is an example of a Direct Debit Accept event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "DirectDebitAccept",
-	"resourceReference": "36C1234B-99C2-8G9C-D",
+	"resourceReference": "36C1234B-99C2-8G9C",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
 	"resourceType": "DirectDebit",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": "SUBSCRIPTION-03",
 	"reasonCode": null
 }</code>
 </pre>

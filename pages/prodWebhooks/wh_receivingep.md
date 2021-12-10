@@ -1,5 +1,5 @@
 ---
-title: Receiving Endpoint 
+title: Receiving Endpoint
 keywords: Webhooks Receiving Endpoint
 summary: "Webhook notifications are passed to your configured Endpoint; this section gives you some important security and configuration information to consider when setting up your receiving endpoint."
 sidebar: wh_sidebar
@@ -42,7 +42,7 @@ Notification Details - HTTP POST Request
 |X-Signature    |Signature of the request JSON body, created with the Sign Key stored on the Webhook   |
 
 
-<b>Request Body</b>
+<b>JSON Body</b>
 
 <table style="width: 100%;" class="Code">
 	<col />
@@ -66,19 +66,14 @@ Notification Details - HTTP POST Request
 			<td>String
 					Max 255 chars</td>
 			<td>
-				<p>The type of event to which this notification is related. The event can be one of the following, for example: </p>
-				<ul>
-					<li value="1">PaymentRecieved</li>
-					<li value="2">PaymentReversed</li>
-					
-				</ul>
+				<p>The type of event to which the notification is related. </p>				
 			</td>
 		</tr>
 		<tr>
 			<td>resourceReference</td>
 			<td>String
 					Max 255 chars</td>
-			<td>This is the reference to a specific resource (received or reversed payment). The type of reference is specified by the resourceReferenceType.</td>
+			<td>This is the reference to a specific resource e.g. an End-to-End Identifier for a Direct Debit transaction. The type of reference is specified by the resourceReferenceType.</td>
 		</tr>
 		<tr>
 			<td>resourceReferenceType</td>
@@ -91,27 +86,40 @@ Notification Details - HTTP POST Request
 			<td>String
 					Max 255 chars</td>
 			<td>
-				<p>This is the URI to the resource being referenced in the event.
-						You can use <a href="ob_retrievepayment.html">Retrieve Payment</a> to retrieve the payment details.</p>
-				
+				<p>This is the URI to the resource being referenced in the event.</p>
 			</td>
 		</tr>
 		<tr>
 			<td>resourceType</td>
 			<td>String
 					Max 255 chars</td>
-                    <td>The type of the resource to which the resourceUri is related; a <i>payment</i> resource in this scenario.</td>
+                    <td>The type of the resource to which the resourceUri is related.</td>
+		</tr>
+		<tr>
+			<td>resourceOwner</td>
+			<td>String
+					Max 255 chars</td>
+                    <td>This is the identifier of the merchant resource to which the notification is linked.</td>
+		</tr>
+		<tr>
+			<td>resourceRemittanceInformation</td>
+			<td>String
+					Max 140 chars</td>
+										<td>Remittance Information specific to the transaction.</td>
 		</tr>
 		<tr>
 			<td>reasonCode</td>
 			<td>String
 					Max 6 chars</td>
-			<td>Null.</td>
+			<td>The reason code, where applicable (e.g. where the Webhook relates to a rejected Direct Debit payment).</td>
 		</tr>
 	</tbody>
 </table>
 
-For details of the Webhook Event messages and `JSON` samples, see the events descriptions provided under your required Product (i.e. Nuapay, Open Banking, etc.) 
+{% include tip.html content="Nuapay may update Webhooks from time to time and it is important to consider our [Versioning and Backward Compatibility](prod_versioning.html) guidelines when developing your solution. We recommend that the code that you write today is designed to be robust enough to handle any future changes (where a new Webhook parameter is added to (or removed from) a specific Webhook, for example). " %}
+
+
+For details of the Webhook Event messages and `JSON` samples, see the events descriptions provided under your required Product (i.e. [Direct Debits & Credit Transfers](np_whoverview.html), [Electronic Mandates](em_whoverview.html), [Open Banking](ob_whoverview.html), etc.)
 
 
 ## Webhook-Triggering IPs
@@ -126,10 +134,3 @@ Nuapay Webhooks are triggered from the following IP addresses:
 
 
 {% include links.html %}
-
-
-
-
-
-
-

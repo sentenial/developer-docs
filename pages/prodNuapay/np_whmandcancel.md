@@ -1,17 +1,14 @@
 ---
 title: Mandate Cancel Event
-keywords: Mandate/DDI Cancel Event Webhook 
+keywords: Mandate/DDI Cancel Event Webhook
 summary: "Direct Debit Intruction cancel Webhook event"
 sidebar: np_sidebar
 permalink: np_whmandcancel.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="A Direct Debit Instruction (mandate) that was ACTIVE moves to CANCELLED status following a notification from the Scheme. This event only impacts DDIs created in the Bacs scheme." %}
-
-{% include tip.html content="This Webhook notification is currently only available in our Sandbox environment." %}
-
 
 ## Webhook Message Details
 
@@ -28,7 +25,7 @@ The full list of possible cancellation reasons is provided under [ADDACS Reason 
 	The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -86,19 +83,19 @@ The full list of possible cancellation reasons is provided under [ADDACS Reason 
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>Optional</td>
             <td>The <a href = "np_bacsreasons.html#addacs-reason-codes">Reason code</a> as assigned during the ADDACS import.</td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>OrganizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td>The organization identifier.</td>
 		</tr>
 	</tbody>
 </table>
@@ -126,8 +123,8 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceUri": "/schemes/p2lqa394mv/mandates/ltc1ebd",
 	"resourceType": "Mandate",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": null,
 	"reasonCode": 2
 }</code>
 </pre>
-
 {% include links.html %}
