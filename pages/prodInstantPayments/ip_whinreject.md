@@ -1,15 +1,16 @@
 ---
 title: Inbound Instant Payment Reject Event
-keywords: Inbound Instant Payment Reject Event 
+keywords: Inbound Instant Payment Reject Event
 summary: "An Inbound Instant Payment is set to Rejected status"
 sidebar: ip_sidebar
 permalink: ip_whinreject.html
 folder: prodInstantPayment
 toc: false
 ---
- 
+
 {% include webhook.html content="A formal notification from the CSM for the negative confirmation message dispatched from Origix IP." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -22,7 +23,7 @@ This Webhook has a single event type: <b>InstantCreditTransferReject</b>
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -87,7 +88,20 @@ This Webhook has a single event type: <b>InstantCreditTransferReject</b>
 			<td>optional</td>
 			<td>The <a href="ip_separeasons.html">Reason Code</a> returned.</td>
 		</tr>
-		
+    <tr>
+  <td>root</td>
+  <td>resourceOwner</td>
+  <td>string</td>
+  <td>Mandatory</td>
+  <td>This is the identifier of the merchant resource to which this notification is linked.</td>
+</tr>
+<tr>
+<td>root</td>
+<td>resourceRemittanceInformation</td>
+<td>string</td>
+<td>optional</td>
+<td>Remittance information related to the transaction.</td>
+</tr>   
 	</tbody>
 </table>
 
@@ -117,7 +131,9 @@ The following is an example of an ``InstantCreditTransferReject`` event JSON:
     "resourceReferenceType":"TransactionId",
     "resourceUri":"uri":"/instantpayments/j6p2lj7bvy",
     "resourceType":"InstantCreditTransfer",
-    "reasonCode":"FF01"
+    "reasonCode":"FF01",
+    "resourceOwner": "tc47abc73",
+    "resourceRemittanceInformation": null
 }
 
 

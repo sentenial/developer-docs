@@ -1,15 +1,16 @@
 ---
 title: Open Banking Payment Refunded Event
-keywords: Payment Refunded Event Webhook 
+keywords: Payment Refunded Event Webhook
 summary: "Payment Refunded Webhook event"
 sidebar: ob_sidebar
 permalink: ob_whrefundcomplete.html
 folder: prodOpenBanking
 toc: false
 ---
- 
+
 {% include webhook.html content="A refunded payment has been successfully credited to the PSU. The associated refund object has a status of REFUND_COMPLETE." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -23,7 +24,7 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -88,8 +89,14 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
-		
-		
+    <tr>
+    <td>root</td>
+    <td>resourceRemittanceInformation</td>
+    <td>string</td>
+    <td>optional</td>
+    <td>Remittance information related to the transaction.</td>
+    </tr>    
+
 	</tbody>
 </table>
 
@@ -116,7 +123,8 @@ The following is an example of a Received Payment event JSON:
     "resourceUri": "/payments/n7rklmvtjc",
     "resourceType": "payment",
     "reasonCode": null,
-    "resourceOwner": "tc47ygrg72"    
+    "resourceOwner": "tc47ygrg72",
+    "resourceRemittanceInformation": null     
 }</code>
 </pre>
 

@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A Direct Debit payment's status moves to ACCEPTED (on its value date)" %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -79,6 +80,14 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Direct Debit resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+			<td>Null for Direct Debits in ACCEPTED status. </td>
+		</tr>
+
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -93,13 +102,6 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
   <td>optional</td>
   <td>Remittance information related to the transaction.</td>
 </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-			<td>Null for Direct Debits in ACCEPTED status. </td>
-		</tr>
 
 	</tbody>
 </table>
@@ -126,9 +128,9 @@ The following is an example of a Direct Debit Accept event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
 	"resourceType": "DirectDebit",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": "SUBSCRIPTION-03",
-	"reasonCode": null
+	"resourceRemittanceInformation": "SUBSCRIPTION-03"	
 }</code>
 </pre>
 

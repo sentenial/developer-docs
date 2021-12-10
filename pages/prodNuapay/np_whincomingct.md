@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="Incoming Credit Transfer payment crediting the Nuapay IBAN." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -79,6 +80,13 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+			<td>Null for Incoming Credit Transfers. </td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -92,14 +100,7 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
   <td>string</td>
   <td>optional</td>
   <td>Remittance information related to the transaction.</td>
-</tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-			<td>Null for Incoming Credit Transfers. </td>
-		</tr>
+</tr>		
 
 	</tbody>
 </table>
@@ -127,9 +128,10 @@ The following is an example of an Incoming CT event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
 	"resourceType": "Transaction",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": "PAYMENT FOR INVOICE 123ABC",
-	"reasonCode": null
+	"resourceRemittanceInformation": "PAYMENT FOR INVOICE 123ABC"
+
 }</code>
 </pre>
 

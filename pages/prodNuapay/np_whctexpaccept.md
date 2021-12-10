@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="An Express Credit Transfer transaction transitions to ACCEPTED status." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -78,6 +79,13 @@ This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -92,13 +100,7 @@ This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
     <td>optional</td>
     <td>Remittance information related to the transaction.</td>
     </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
-		</tr>
+
 
 	</tbody>
 </table>
@@ -125,9 +127,9 @@ The following is an example of a Credit Transfer Accept event JSON:
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/yabcdwgrg23",
 	"resourceType": "Transaction",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": "PAYMENT RE: 123",
-	"reasonCode": null
+	"resourceRemittanceInformation": "PAYMENT RE: 123"	
 }</code>
 </pre>
 

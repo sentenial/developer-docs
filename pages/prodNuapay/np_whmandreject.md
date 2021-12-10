@@ -10,7 +10,7 @@ toc: false
 
 {% include webhook.html content="An AUDDIS rejection is processed resulting in a DDI transitioning from EXPORTED to REJECTED status. This event only impacts DDIs created in the Bacs scheme." %}
 
-{% include tip.html content="This Webhook notification is currently only available in our Sandbox environment." %}
+{% include wh-compatibility.html %}
 
 A Direct Debit Instruction (mandate) created under Bacs:
 * Must be passed to the scheme to be approved before collections may be made against it.
@@ -82,6 +82,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>Optional</td>
+            <td>The <a href="np_bacsreasons.html#auddis-reason-codes">Reason code</a> as assigned during the AUDDIS import.</td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -96,13 +103,7 @@ This Webhook has the following event types:
   <td>optional</td>
   <td>Remittance information related to the transaction.</td>
 </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>Optional</td>
-            <td>The <a href="np_bacsreasons.html#auddis-reason-codes">Reason code</a> as assigned during the AUDDIS import.</td>
-		</tr>
+
 	</tbody>
 </table>
 
@@ -128,9 +129,9 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/awtc1ebd",
 	"resourceType": "Mandate",
+	"reasonCode": B,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null,
-	"reasonCode": B
+	"resourceRemittanceInformation": null	
 }</code>
 </pre>
 

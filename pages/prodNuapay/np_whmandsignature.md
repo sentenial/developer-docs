@@ -10,6 +10,7 @@ toc: false
 
 {% include webhook.html content="A mandate moves to ACTIVE status." %}
 
+{% include wh-compatibility.html %}
 
 ## Webhook Message Details
 
@@ -79,6 +80,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
 		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>optional</td>
+			<td>Null for mandates. </td>
+		</tr>
         <tr>
 			<td>root</td>
 			<td>resourceOwner</td>
@@ -93,13 +101,7 @@ This Webhook has the following event types:
   <td>optional</td>
   <td>Remittance information related to the transaction.</td>
 </tr>
-		<tr>
-			<td>root</td>
-			<td>reasonCode</td>
-			<td>string</td>
-			<td>optional</td>
-			<td>Null for mandates. </td>
-		</tr>
+
 
 	</tbody>
 </table>
@@ -126,9 +128,9 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
 	"resourceType": "Mandate",
+	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null,
-	"reasonCode": null
+	"resourceRemittanceInformation": null	
 }</code>
 </pre>
 

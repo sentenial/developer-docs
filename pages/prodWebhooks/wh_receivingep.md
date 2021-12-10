@@ -116,8 +116,8 @@ Notification Details - HTTP POST Request
 	</tbody>
 </table>
 
-{% include tip.html content="Nuapay may update Webhooks from time to time and it is important to consider our [Versioning and Backward Compatibility](prod_versioning.html) guidelines when developing your solution. We recommend that the code that you write today is designed to be robust enough to handle any future changes (where a new Webhook parameter is added to (or removed from) a specific Webhook, for example). " %}
 
+{% include wh-compatibility.html %}
 
 For details of the Webhook Event messages and `JSON` samples, see the events descriptions provided under your required Product (i.e. [Direct Debits & Credit Transfers](np_whoverview.html), [Electronic Mandates](em_whoverview.html), [Open Banking](ob_whoverview.html), etc.)
 

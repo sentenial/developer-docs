@@ -1,7 +1,7 @@
 ---
 title: Versioning and Backward Compatibility
 keywords: Versioning Backward Compatibility
-summary: "Details on API versioning and backward compatibility"
+summary: "Details on API and Webhook versioning and backward compatibility"
 sidebar: productOverview_sidebar
 permalink: prod_versioning.html
 folder: prodOverview
@@ -10,9 +10,9 @@ toc: false
 
 ## Versioning
 
-Changes may be made to any of our APIs without a change in version number, provided the change follows our backwards compatibility guidelines (see below). Different versions will be managed via a HTTP header indicating the version of the API that the client is using.
-
-Requests with no version number, or an unmatched version number, will be treated as version 1.0 requests.
+* Changes may be made to any of our APIs or Webhooks without a change in version number, provided the change follows our backwards compatibility guidelines (see below).
+* Different versions will be managed via a HTTP header indicating the version of the API that the client is using.
+* Requests with no version number, or an unmatched version number, will be treated as version 1.0 requests.
 
 
 ## Backwards Compatibility
@@ -20,6 +20,8 @@ Requests with no version number, or an unmatched version number, will be treated
 The following changes are considered to be backwards-compatible:
 
 * Adding new API endpoints; new endpoints are independent.
+* Adding new Webhooks; new Webhooks are independent.
+* Adding new Webhook event parameters.
 * Adding new optional request parameters to existing API calls.
 * Adding new response properties to existing API calls. You should pay particular attention to this point if you are mapping your JSON responses to another programming language construct.
 * Changing of the property order in existing API responses.
