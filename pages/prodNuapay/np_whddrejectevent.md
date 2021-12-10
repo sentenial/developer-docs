@@ -1,18 +1,18 @@
 ---
 title: Direct Debit R-Transaction Event
-keywords: Direct Debit R-Transaction Event Webhook 
+keywords: Direct Debit R-Transaction Event Webhook
 summary: "Direct Debit R-Transaction Webhook event"
 sidebar: np_sidebar
 permalink: np_whddrejectevent.html
 folder: prodNuapay
 ---
- 
+
 {% include webhook.html content="A PAIN.002 reject file is imported into Nuapay updating a Direct Debit's [payment status](np_ddstatuses.html)." %}
 
 
 ## Webhook Message Details
 
-This Webhook notifies you when a Direct Debit is updated to a Rejected status. 
+This Webhook notifies you when a Direct Debit is updated to a Rejected status.
 
 The following event types are possible:
 
@@ -30,7 +30,7 @@ The following event types are possible:
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -88,6 +88,13 @@ The following event types are possible:
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -100,11 +107,11 @@ The following event types are possible:
 
 ## A Note on the DD RETURN Period
 
-As described in the [Direct Debit Statuses](np_ddstatuses.html) section, once a payment moves to ACCEPTED status on its value date, there is the potential to receive post-settlement RETURNs against it (or UNPAIDs in Bacs). 
+As described in the [Direct Debit Statuses](np_ddstatuses.html) section, once a payment moves to ACCEPTED status on its value date, there is the potential to receive post-settlement RETURNs against it (or UNPAIDs in Bacs).
 
-For SEPA CORE scheme payments, a RETURN is possible up to 5 working days after the initial payment moves to ACCEPTED status. For Bacs payments this is up to 3 working days. 
-
-The `DDReturnPeriodPassed` is a useful notification as it lets your listener application know when a payment has passed the period when a RETRUN could be received. (After this period has passed only a customer refund may be possible against that transaction).
+* For SEPA CORE scheme payments, a RETURN is possible up to 5 working days after the initial payment moves to ACCEPTED status.
+* For Bacs payments this is up to 3 working days.
+* The `DDReturnPeriodPassed` eventType is a useful notification as it lets your listener application know when a payment has passed the period when a RETRUN/UNPAID could be received. (After this period has passed only a customer refund may be possible against that transaction).
 
 ## JSON Sample
 
@@ -122,14 +129,15 @@ The following is an example of a Direct Debit Reject event JSON:
 <b>JSON Request Body</b>
 <pre>
 <code class="json">{
-    "eventTimestamp": 1501169079000,
-    "eventType": "DirectDebitReject",
-	"resourceReference": "42F13E56-96C9-4F9B-A",
-	"resourceReferenceType": "EndToEndId",
-	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
-	"resourceType": "DirectDebit",
-	"resourceOwner": "tc47ygrg72",
-	"reasonCode": "MS03"
+  "eventTimestamp": 1501169079000,
+  "eventType": "DirectDebitReject",
+      "resourceReference": "42F13E56-96C9-4F9B",
+      "resourceReferenceType": "EndToEndId",
+      "resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
+      "resourceType": "DirectDebit",
+      "resourceOwner": "tc47ygrg72",
+      "resourceRemittanceInformation": null,
+      "reasonCode": "MS03"
 }</code>
 </pre>
 

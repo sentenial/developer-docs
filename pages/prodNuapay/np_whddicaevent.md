@@ -1,12 +1,12 @@
 ---
 title: Bacs Direct Debit Indemnity Claim Event
-keywords: Direct Debit Indemnity Claim Event Webhook 
+keywords: Direct Debit Indemnity Claim Event Webhook
 summary: "Bacs Direct Debit Indemnity Claim Advice Webhook event"
 sidebar: np_sidebar
 permalink: np_whddicaevent.html
 folder: prodNuapay
 ---
- 
+
 {% include webhook.html content="A DDICA file is imported into Nuapay, indicating that a Direct Debit Indemnity Claim Advice has been received from Bacs." %}
 
 
@@ -15,15 +15,15 @@ folder: prodNuapay
 {% include tip.html content="This Webhook is only applicable to Bacs clients, processing GBP Direct Debits. " %}
 
 
-This Webhook notifies you that a payer has sought a refund for a previously-settled Direct Debit payment. 
+This Webhook notifies you that a payer has sought a refund for a previously-settled Direct Debit payment.
 
 Note that:
-* The payer's bank will initially refund the payer in the event of an error in the payment of a Direct Debit by you, the merchant (the Service User in Bacs terminology). 
-* The payer's bank then use the indemnity claim process to recover the refunded payment from you, the merchant. 
-* An indemnity claim can only be raised for the full amount of the original Direct Debit payment. 
-* This Webhook notifies you that a claim has been initiated. 
-* The value of the Direct Debit is not debited immediately, you have the option to contest the claim, if you feel that you debited the payment in good faith and did not breach any Bacs guidelines in taking the payment. 
-* Bacs allows you a number of business days to contest the claim. 
+* The payer's bank will initially refund the payer in the event of an error in the payment of a Direct Debit by you, the merchant (the Service User in Bacs terminology).
+* The payer's bank then use the indemnity claim process to recover the refunded payment from you, the merchant.
+* An indemnity claim can only be raised for the full amount of the original Direct Debit payment.
+* This Webhook notifies you that a claim has been initiated.
+* The value of the Direct Debit is not debited immediately, you have the option to contest the claim, if you feel that you debited the payment in good faith and did not breach any Bacs guidelines in taking the payment.
+* Bacs allows you a number of business days to contest the claim.
 * If you are unsuccessful in contesting the claim, the value of the Direct Debit will be automatically debited from your account on Day 14 (this Webhook will be received on Day 1). (Each "Day" is a working day)
 
 For more on the possible refund reasons and the challenges available, see [DDIC Reason Codes](np_bacsreasons.html#ddic-reason-codes).
@@ -35,7 +35,7 @@ For more on the possible refund reasons and the challenges available, see [DDIC 
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -93,6 +93,13 @@ For more on the possible refund reasons and the challenges available, see [DDIC 
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -127,6 +134,7 @@ The following is an example of a Direct Debit Indemnity Claim Received event JSO
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
 	"resourceType": "DirectDebit",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": null,  
 	"reasonCode": "8"
 }</code>
 </pre>

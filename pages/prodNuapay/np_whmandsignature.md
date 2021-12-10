@@ -1,13 +1,13 @@
 ---
 title: Mandate Signature Event
-keywords: Mandate Signature Event Webhook 
+keywords: Mandate Signature Event Webhook
 summary: "Mandate Signature Webhook event"
 sidebar: np_sidebar
 permalink: np_whmandsignature.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="A mandate moves to ACTIVE status." %}
 
 
@@ -28,7 +28,7 @@ This Webhook has the following event types:
 	The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -86,6 +86,13 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -93,7 +100,7 @@ This Webhook has the following event types:
 			<td>optional</td>
 			<td>Null for mandates. </td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
@@ -120,6 +127,7 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
 	"resourceType": "Mandate",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": null,
 	"reasonCode": null
 }</code>
 </pre>

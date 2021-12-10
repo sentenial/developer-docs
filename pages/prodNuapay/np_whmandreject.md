@@ -1,19 +1,19 @@
 ---
 title: Mandate Reject Event
-keywords: Mandate/DDI Cancel Event Webhook 
+keywords: Mandate/DDI Cancel Event Webhook
 summary: "Direct Debit Intruction Reject Webhook event"
 sidebar: np_sidebar
 permalink: np_whmandreject.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="An AUDDIS rejection is processed resulting in a DDI transitioning from EXPORTED to REJECTED status. This event only impacts DDIs created in the Bacs scheme." %}
 
 {% include tip.html content="This Webhook notification is currently only available in our Sandbox environment." %}
 
-A Direct Debit Instruction (mandate) created under Bacs: 
-* Must be passed to the scheme to be approved before collections may be made against it. 
+A Direct Debit Instruction (mandate) created under Bacs:
+* Must be passed to the scheme to be approved before collections may be made against it.
 * Where the DDI is not approved (e.g. the payer's account does not allow Direct Debit payments), the scheme will inform Nuapay via an Automated Direct Debit Instruction Service (AUDDIS) notification. A specific [AUDDIS error code](np_bacsreasons.html#auddis-reason-codes) is assigned.
 * Nuapay will set the [DDI status](np_mandatestatuses.html) to `REJECTED`.
 
@@ -31,7 +31,7 @@ This Webhook has the following event types:
 	The following table describes the details of the Webhook notification:</p>
 
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -89,19 +89,19 @@ This Webhook has the following event types:
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>Optional</td>
             <td>The <a href="np_bacsreasons.html#auddis-reason-codes">Reason code</a> as assigned during the AUDDIS import.</td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>OrganizationId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-			<td>The organization identifier.</td>
 		</tr>
 	</tbody>
 </table>
@@ -129,6 +129,7 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceUri": "/schemes/p2lqa394mv/mandates/awtc1ebd",
 	"resourceType": "Mandate",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": null,
 	"reasonCode": B
 }</code>
 </pre>

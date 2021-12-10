@@ -1,13 +1,13 @@
 ---
 title: Incoming Credit Transfer Event
-keywords: Incoming Credit Transfer Event Webhook 
+keywords: Incoming Credit Transfer Event Webhook
 summary: "Incoming Credit Transfer Webhook event"
 sidebar: np_sidebar
 permalink: np_whincomingct.html
 folder: prodNuapay
 toc: false
 ---
- 
+
 {% include webhook.html content="Incoming Credit Transfer payment crediting the Nuapay IBAN." %}
 
 
@@ -21,7 +21,7 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 <p>
 	The following table describes the details of the Webhook notification:</p>
 <table cellspacing="0">
-	
+
 	<tbody>
 		<tr>
 			<th>Parent</th>
@@ -86,6 +86,13 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 			<td>Mandatory</td>
 			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
 		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
@@ -93,7 +100,7 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 			<td>optional</td>
 			<td>Null for Incoming Credit Transfers. </td>
 		</tr>
-		
+
 	</tbody>
 </table>
 
@@ -121,6 +128,7 @@ The following is an example of an Incoming CT event JSON:
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
 	"resourceType": "Transaction",
 	"resourceOwner": "tc47ygrg72",
+	"resourceRemittanceInformation": "PAYMENT FOR INVOICE 123ABC",
 	"reasonCode": null
 }</code>
 </pre>
