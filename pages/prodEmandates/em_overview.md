@@ -31,9 +31,9 @@ The showcase can be accessed from this link:
 
 Or jump to the demo of your required implementation:
 
-|Overlay|<a href="https://demo.sentenialtest.com/showcase/movie-flix" target="_blank"> <img src ="images/LOGO_movieFlix.png"></a>|
-|Redirect|<a href = "https://demo.sentenialtest.com/showcase/cats-trust" target="_blank"><img src = "images/LOGO_cats.png"></a>
-|Direct API| <a href="https://demo.sentenialtest.com/showcase/milk-man" target="_blank"><img src = "images/LOGO_MilkMan.png"></a>
+|Overlay|<a href="https://showcase.nuapay.com/showcase/movie-flix" target="_blank"> <img src ="images/LOGO_movieFlix.png"></a>|
+|Redirect|<a href = "https://showcase.nuapay.com/showcase/cats-trust" target="_blank"><img src = "images/LOGO_cats.png"></a>
+|Direct API| <a href="https://showcase.nuapay.com/showcase/milk-man" target="_blank"><img src = "images/LOGO_MilkMan.png"></a>
 
 
 

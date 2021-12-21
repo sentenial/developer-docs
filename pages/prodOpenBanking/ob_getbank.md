@@ -12,7 +12,7 @@ toc: false
 
 The Retrieve Bank service allows you to:
 * Retrieve a list of the banks participating in Open Banking.
-* Filter based on `supportedcurrencies` of the bank.
+* Filter based on the bank's `supportedcurrencies` and/or `country`.
 
 The participating ASPSPs are returned in order of popularity (dynamically determined based on Nuapay PSUs' preferences).
 

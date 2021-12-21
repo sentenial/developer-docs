@@ -10,7 +10,7 @@ toc: false
 
 ## Overview
 
-{% include note.html content="The Faster Payments (GBP) and SEPA Instant CT (EUR) schemes are always-on schemes, operating 24/7/365 so there are no non-processing days for those schemes." %} 
+{% include note.html content="The Faster Payments (GBP) and SEPA Instant CT (EUR) schemes are always-on schemes, operating 24/7/365 so there are no non-processing days for those schemes." %}
 
 
 In both the SEPA and Bacs schemes (for both Direct Debit and Credit Transfer payments) the following are non-processing days:
@@ -40,9 +40,9 @@ The following summarises the non-processing days applicable to both the SEPA and
 |**Christmas Day**| December 25th|If the day falls on a Saturday or Sunday it is not carried forward in SEPA; for Bacs the next business day is taken.|SEPA & Bacs|
 |**Christmas Holiday**| December 26th| If the day falls on a Saturday or Sunday it is not carried forward in SEPA; for Bacs the next business day is taken.|SEPA & Bacs|
 
-{% include tip.html content="SEPA Countries may have specific 'bank holidays', for example March 17th is St. Patrick's Day in Ireland, where banks are closed. These local holidays do not impact SEPA processing and March 17th is treated as a standard business day for SEPA processing in Ireland." %} 
+{% include tip.html content="SEPA Countries may have specific 'bank holidays', for example March 17th is St. Patrick's Day in Ireland, where banks are closed. These local holidays do not impact SEPA processing and March 17th is treated as a standard business day for SEPA processing in Ireland." %}
 
-{% include note.html content="Where you specify a non-processing date as your collection date (for a Direct Debit payment) if `settlementDateShift` is set to true then the date will automatically be moved to the next available processing date. The API response will return the Requested Date and the Actual Date that will be applied after the date shifting. " %} 
+{% include note.html content="If you specify a non-processing date as your collection date where `settlementDateShift` is set to true then the date will automatically be moved to the next available processing date. The API response will return the Requested Date and the Actual Date that will be applied after the date shifting. " %}
 
 ## Bacs Non-Processing Days
 
@@ -55,6 +55,7 @@ To confirm the exact dates for the Bacs holidays, please refer to the **Bacs Pro
 
 |**Year**|**Link**|
 |2021|[https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf](https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf){:target="_blank"}|
+|2022|[https://www.bacs.co.uk/documentlibrary/bacs_payment_system_processing_calendar_2022.pdf](https://www.bacs.co.uk/documentlibrary/bacs_payment_system_processing_calendar_2022.pdf){:target="_blank"}|
 
 
 {% include links.html %}

@@ -157,6 +157,13 @@ The PSU (i.e. the end user) will select the required goods or services on your m
 <img src="images/ob_success.png">
 1. The pop-up closes (either the user clicks **Close** or it closes automatically after 30 seconds) and the user is redirected to the merchant payment page, with a confirmation message.
 
+## Managing The Bank Screen
+
+The banks that are listed are determined by the values you pass in your call to the [Create Payment](ob_createpayment.html) (`POST /payments`) endpoint:
+
+* The `currency` determines whether EUR-supporting or GBP-supporting banks are displayed.
+* The `countryCode` allows you to further filter the banks that are listed.
+
 ## Configuring a Confirmation Screen
 
 Some merchants like the Open Banking payment user experience to be as fast as possible:
