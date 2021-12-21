@@ -5,59 +5,37 @@ summary: "Once you have retrieved an E-Mandate Token, add JavaScript to your cal
 sidebar: em_sidebar
 permalink: em_overlayjavascript.html
 folder: prodEmandates
+toc: false
 ---
 
 ## Add JavaScript to your Site
 
-Once you have retrieved the E-Mandate token you will need to add the following JavaScript to your calling page,
+* After you have retrieved your [E-Mandate token](em_token.html), you need to add some JavaScript to your page.
+* You must reference the Nuapay `.js` and a `.css` file.
+* You will need to references either the Sandbox or the Production environment:
 
-* ``EMandates.setToken``: The E-Mandate token uniquely identifies details about the merchant and payer, setting the token allows the session to reference this information.
-* ``EMandates.setUrl``: Sets the URL from which the overlay is rendered, for production this should be, https://api.nuapay.com/emandate. For UAT this should be, https://sandbox.nuapay.com/emandate.
-* ``EMandates.overlay``: Renders the e-mandate overlay.
+|**Environment**|**JS Link**|**CSS Link**|
+|**Sandbox**|https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js | https://sandbox.nuapay.com/emandate/static/css/emandates-overlay.css |
+|**Production**|https://api.nuapay.com/emandate/static/js/emandates-integration.js | https://api.nuapay.com/emandate/static/css/emandates-overlay.css |
 
-The sample JavaScript below shows how you can render an e-mandate overlay, here we assume that your token is: 
-
-``3d895152-724c-4547-a8ae-acefa2b73423:``
-
-
-
-```html
-<html>
-
-	<head>;
-
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<link href="https://api.nuapay.com/emandate/static/css/emandates-overlay.css" rel="stylesheet">
-
-		<script src="https://api.nuapay.com/emandate/static/js/emandates-overlay.js">
-
-		</script>
-
-		<script>
-
-			EMandates.setToken('3d895152-724c-4547-a8ae-acefa2b73423');
-
-			EMandates.setUrl("http://api.nuapay.com/emandate");
-
-		</script>
-
-	</head>
-
-	<body>
-
-		<button onclick="EMandates.overlay();">€9.99 Sign Up Now!</button>
-
-	</body>
-
-</html>
-````
-
-You then need to call the overlay method for the ``onclick`` event on your calling Web page:
-
-<p>
-{% include image.html file="sign_overlay.png" alt="overlay button" %}
-</p>
+To set up your page (for Sandbox):
+1. Use the following JS and CSS references:
+  ```js
+  <script type='text/javascript' src="https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://sandbox.nuapay.com/emandate/static/css/emandates-overlay.css"/>
+  ````
+1. Add the following script (replacing `90c72f56-5c12-4bd0-aad8-371c5a1db617-24j8rvwov2`, in this example, with the retrieved [E-Mandate token](em_token.html)):
+  ```js
+  <script>
+    /*<![CDATA[*/
+     EMandates.setToken("90c72f56-5c12-4bd0-aad8-371c5a1db617-24j8rvwov2");
+     EMandates.setUrl("https://sandbox.nuapay.com/emandate");    
+     };
+     /*]]>*/
+  </script>
+  ````
+1. Finally call the overlay method for the ``onclick`` event on your calling Web page:
+   <img src="images/sign_overlay.png">
 
 
 {% include links.html %}

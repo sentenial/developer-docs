@@ -11,15 +11,13 @@ folder: prodOpenBanking
 
 ## Overview
 
-{% include note.html content="CHECKOUT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
-
 A detailed overview of the various steps involved in the **Checkout** flow is provided in the image below.
 
 {% include tip.html content="Click Extend from the top menu to enlarge or click the image itself to open it in a new browser tab/window" %}
 
 
 {% include image.html file="ob_checkout_flow-merchant.png" url="images/ob_checkout_flow-merchant.png" target = "_new" alt="Checkout Flow - Merchant" caption="CHECKOUT Flow - Merchant" %}
-In **Checkout** mode you will: 
+In **Checkout** mode you will:
 
 1. (Optionally) Use your API key to retrieve a merchant access token. (For more on this see [retrieving tokens](ob_partnerintegration.html#api-details---post-tokens)).
 1. Call the `/payments` endpoint, using the OAuth token retrieved in the previous step (or else use your API Key) (see [Create Payment](ob_createpayment.html)) and set the `integrationType` to `CHECKOUT`

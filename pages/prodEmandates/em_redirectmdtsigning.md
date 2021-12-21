@@ -1,42 +1,39 @@
 ---
 title: E-Mandate Redirect for Mandate Signing
 keywords: E-Mandate Redirect for Mandate Signing
-summary: "Handling Mandate Signing via JavaScript on your payment page."
+summary: "Handle the Mandate Signing via JavaScript on your payment page."
 sidebar: em_sidebar
 permalink: em_redirectmdtsigning.html
 folder: prodEmandates
 ---
 
-After you have retrieved your E-Mandate token, you need to add some JavaScript to your Web site page to handle the redirect.
+* After you have retrieved your [E-Mandate token](em_tokenredirect.html), you need to add some JavaScript to your Web site page to handle the redirect.
+* To set up your page you will need to reference a Nuapay `.js` file and add some JavaScript.
+* You must reference either the Sandbox or the Production JavaScript file:
 
-Your JavaScript needs to include:
+|**Sandbox**|https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js |
+|**Production**|https://api.nuapay.com/emandate/static/js/emandates-integration.js |
 
-* The appropriate references to the E-Mandate REST endpoints
-* A reference to the E-Mandate token
-* A Redirect function
+To set up your page (for Sandbox):
+1. Use the following JS reference:
+  ```js
+  <script type='text/javascript' src="https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js"></script>
+  ````
+1. Add the following script (replacing `90c72f56-5c12-4bd0-aad8-371c5a1db617-24j8rvwov2`, in this example, with the retrieved [E-Mandate token](em_tokenredirect.html)):
+  ```js
+  <script>
+    /*<![CDATA[*/
+     EMandates.setToken("90c72f56-5c12-4bd0-aad8-371c5a1db617-24j8rvwov2");
+     EMandates.setUrl("https://sandbox.nuapay.com/emandate");
 
-If we assume that the E-Mandate token returned in the <a href= "em_tokenredirect.html">Prepare E-Mandate Token</a> request was:
+     function redirect() {
+     EMandates.redirect();
+     };
 
-``07e43737-22d5-491e-9dd1-423e2270d190``
-
-Then your Web site script would need to be similar to the following
-
-```js
-<script> /*<![CDATA[*/
-
-EMandates.setToken('07e43737-22d5-491e-9dd1-423e2270d190');
-
-EMandates.setUrl('https://api.nuapay.com/emandate-rest');
-
-EMandatesUI.setUrl('https://api.nuapay.com/emandate');
-
-function redirect() { window.location = 'https://api.nuapay.com/emandate/web/show?token=07e43737-22d5-491e-9dd1-423e2270d190'; }; /*]]>*/
-
-</script>
-````
-
-The redirect() method is then called to redirect your payer to the E-Mandate platform with the ``onclick`` event:
-
-<img src="images/sign_redirect.png">
+     /*]]>*/
+  </script>
+  ````
+1. Finally, call the redirect() method to send your payer to the E-Mandate platform with the ``onclick`` event:
+   <img src="images/sign_redirect.png">
 
 {% include links.html %}

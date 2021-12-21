@@ -96,6 +96,12 @@ Notification Details - HTTP POST Request
                     <td>The type of the resource to which the resourceUri is related.</td>
 		</tr>
 		<tr>
+			<td>reasonCode</td>
+			<td>String
+					Max 6 chars</td>
+			<td>The reason code, where applicable (e.g. where the Webhook relates to a rejected Direct Debit payment).</td>
+		</tr>
+		<tr>
 			<td>resourceOwner</td>
 			<td>String
 					Max 255 chars</td>
@@ -106,13 +112,7 @@ Notification Details - HTTP POST Request
 			<td>String
 					Max 140 chars</td>
 										<td>Remittance Information specific to the transaction.</td>
-		</tr>
-		<tr>
-			<td>reasonCode</td>
-			<td>String
-					Max 6 chars</td>
-			<td>The reason code, where applicable (e.g. where the Webhook relates to a rejected Direct Debit payment).</td>
-		</tr>
+		</tr>		
 	</tbody>
 </table>
 
