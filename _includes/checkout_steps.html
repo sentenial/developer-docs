@@ -164,6 +164,11 @@ The banks that are listed are determined by the values you pass in your call to 
 * The `currency` determines whether EUR-supporting or GBP-supporting banks are displayed.
 * The `countryCode` allows you to further filter the banks that are listed.
 
+In addition to this:
+* Banks are automatically ordered based on popularity for the given region. Where banks are equally ranked, they are ordered alpahbetically.
+* If you pass a value for your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> email address in the `POST /payments` request, and this email has been previously provided in a payment request, the bank that the user previously selected will be displayed as the first option.
+
+
 ## Configuring a Confirmation Screen
 
 Some merchants like the Open Banking payment user experience to be as fast as possible:
