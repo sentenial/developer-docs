@@ -8,11 +8,11 @@ folder: prodOpenBanking
 toc: true
 ---
 
-## API Details 
+## API Details
 
-The Create Payment service: 
-* Generates an Open Banking payment object. 
-* Returns a unique ``paymentId`` with an (initial) [status](ob_paymentstatuses.html) of `PENDING` (in Checkout and Redirect Mode) or `PENDING_APPROVAL` (in Self-Hosted and Self-Hosted-Callback modes). 
+The Create Payment service:
+* Generates an Open Banking payment object.
+* Returns a unique ``paymentId`` with an (initial) [status](ob_paymentstatuses.html) of `PENDING` (in Checkout and Redirect Mode) or `PENDING_APPROVAL` (in Self-Hosted and Self-Hosted-Callback modes).
 * See [PISP Implementation Options](ob_pispimplementations.html) for more on the available modes.
 
 {% include swagger_ob.html %}
@@ -51,11 +51,11 @@ Payment identifiers have two attributes:
 
 Note that:
 
-* The reference must be unique per merchant account within the defined time to live. 
+* The reference must be unique per merchant account within the defined time to live.
 * If you require a variation on the default time-to-live setting of 3 days, please contact your account manager who will update your configuration as required.
 * Where you reuse a reference, which was linked to a previously generated payment, and it is referenced within the time-to-live limit, your request will result in a:
   * `422` response: Duplicate Reference provided.
-  
+
 **Supported Characters**
 
 Remittance can use the following characters:
@@ -65,7 +65,7 @@ Remittance can use the following characters:
 
 The following are all allowed:
 
-|a b c d e f g h i j k l m n o p q r s t u v w x y z| 
+|a b c d e f g h i j k l m n o p q r s t u v w x y z|
 |A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
 |0 1 2 3 4 5 6 7 8 9|
 |/ - ? : ( ) . , ' + Space|
@@ -81,10 +81,10 @@ If you want to provide an `endToEndIdentification` note that for:
 
 ## The Debtor Account
 
-Handling of the Debtor Account varies based on the Open Banking Scheme: 
+Handling of the Debtor Account varies based on the Open Banking Scheme:
 
 |**Berlin Group**|If you are processing payments under the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.berlin-group}}">Berlin Group</a> NextGenPSD2 specification `debtorAccount` **is mandatory** and must be provided as an IBAN.|
-|**Open Banking UK**|While providing the `debtorAccount` is not mandatory for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBUK</a>, in some cases you may already have a debtor account stored for a specific customer and you may want that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to use that account for the payment.| 
+|**Open Banking UK**|While providing the `debtorAccount` is not mandatory for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.obie}}">OBUK</a>, in some cases you may already have a debtor account stored for a specific customer and you may want that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to use that account for the payment.|
 
 The `/payments` service allows you to provide the PSU account information (i.e. the `debtorAccount`) as an IBAN or as a Sort Code and Account number (for GB accounts).
 
@@ -104,7 +104,7 @@ Where `IBAN` is used the PSU's IBAN is provided for `identification`:
 </code>
 </pre>
 
-Where `SortCodeAccountNumber` is used the Sort Code and Account number are concatenated and provided for `identification`. 
+Where `SortCodeAccountNumber` is used the Sort Code and Account number are concatenated and provided for `identification`.
 
 Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 
@@ -119,7 +119,7 @@ Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 
 {% include tip.html content="The account details provided above are for demonstration purposes only; these are not a valid accounts and if passed in a request will return a validation error.  " %}
 
-If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down. 
+If you do not specify an account in this request, and assuming the PSU has more than one account, the ASPSP will typically allow the user to select any of his/her accounts for the payment, via a drop-down.
 
 ## The Account Name
 
@@ -133,8 +133,8 @@ The debtorAccount `name` allows up to 70 characters but note:
 {% include tip.html content="Debtor address is only required in the **STET** Scheme." %}
 
 In STET:
-* Certain STET ASPSPs require that you provide the debtor address in your payment request. 
-* It is also possible to pass the merchant (creditor) address in your request if required. 
+* Certain STET ASPSPs require that you provide the debtor address in your payment request.
+* It is also possible to pass the merchant (creditor) address in your request if required.
 * If no creditor address details are provided, but are required for the selected ASPSP, the Nuapay TPP will pass the address stored against the merchant's profile.
 
 
@@ -142,7 +142,7 @@ In STET:
 
 {% include tip.html content="It is only possible to specify a future-dated payment in the **STET** Scheme." %}
 
-Use `requestedExecutionDate` if you want to specify a future-dated payment. 
+Use `requestedExecutionDate` if you want to specify a future-dated payment.
 
 Note that:
 
@@ -157,12 +157,12 @@ Note that:
 
 ## Creditor Accounts
 
-In some cases you might want to specify the creditor/beneficiary account (i.e. your merchant account) into which funds will be credited following a successful payment. 
+In some cases you might want to specify the creditor/beneficiary account (i.e. your merchant account) into which funds will be credited following a successful payment.
 
-You can provide your creditor account information: 
+You can provide your creditor account information:
 
 * As an IBAN
-  
+
   OR
 
 * as a Sort Code and Account number (for GB accounts in UK Open Banking).
@@ -183,7 +183,7 @@ Where `IBAN` is used your creditor's IBAN is provided for `identification`:
 </code>
 </pre>
 
-Where `SortCodeAccountNumber` is used the Sort Code and Account number are concatenated and provided for `identification`. 
+Where `SortCodeAccountNumber` is used the Sort Code and Account number are concatenated and provided for `identification`.
 
 Example: Sort Code = `12-34-56` & Account = `87654321` gives:
 
@@ -212,7 +212,7 @@ Note that:
 {% include tip.html content="the defined limit for `creditorAccount` > `name` is 70 characters; for HSBC Business Bank (in UK Open Banking) the maximum length will deviate from this and 18 character will be the maximum allowable. This change will come into effect from **29/07/2021**" %}
 
 
-**For EUR payments**: 
+**For EUR payments**:
 
 1. IBAN is the only allowed account format.
 1. SEPA Credit Transfer and SEPA Instant Credit Transfer are allowed payment schemes.
@@ -223,17 +223,14 @@ Note that:
 {% include tip.html content="If you do not specify a creditor account then the payment will be processed as per the configured defaults for your merchant." %}
 
 
-{% include urls-ob.html %}
-
-
 ## Timeout Setting
 
 It is possible to configure the timeout period for your payments. This is the time allowed from when the payment is initially created to when it is approved at the ASPSP.
 
-The timeout period that is set for a given payment may be: 
+The timeout period that is set for a given payment may be:
 
-* Set in the API request 
-* If not provided in the API, it may be taken from your merchant configuration. 
+* Set in the API request
+* If not provided in the API, it may be taken from your merchant configuration.
 * If no default time has been configured for you then the global default time is used.
 
 The following is the priority order for timeout configuration:
@@ -257,17 +254,26 @@ To set the timeout in the API, set the required time value (in seconds) for `pay
 * As Nuapay TPP cannot determine when these additional authorisations are applied (the other authorising party or parties will typically authorise via their ASPSP's banking portal), the system will continue to poll for a payment status update.
 * The system will poll for the payment status and if the payment has expired (after 24 hours), but its status is not `AUTHORISED` or `REJECTED`, one attempt per day will be made to retrieve the final status.
 
+## A Note on Time Standards
+
+Dates are formatted as ISO-8601 Date and Time in UTC (so daylight saving time is not observed).
+
+So the `creationDateTime` returned in a 201 response, for example, would be formatted as follows:
+
+|"creationDateTime": "2020-05-01T08:25:29.291Z"|
+
 
 ## Create Payment Endpoint
 
+{% include urls-ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/open-banking-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/createPaymentUsingPOST','#profileTabs',timerRef); }, 500);
 
