@@ -23,17 +23,11 @@ We currently offer the following implementation options:
 
 ## Showcase
 
-Our Show Case site displays the E-Mandate application in action with some of the more common implementations being presented.
+Our <a href = "https://showcase.nuapay.com/showcase/landing-page/index.html" target = "new">Show Case site</a> presents examples of the various implementations in action:
 
-The showcase can be accessed from this link:
-
-[https://showcase.nuapay.com/showcase/static/landing-page/index.html](https://showcase.nuapay.com/showcase/static/landing-page/index.html)
-
-Or jump to the demo of your required implementation:
-
-|Overlay|<a href="https://showcase.nuapay.com/showcase/movie-flix" target="_blank"> <img src ="images/LOGO_movieFlix.png"></a>|
-|Redirect|<a href = "https://showcase.nuapay.com/showcase/cats-trust" target="_blank"><img src = "images/LOGO_cats.png"></a>
-|Direct API| <a href="https://showcase.nuapay.com/showcase/milk-man" target="_blank"><img src = "images/LOGO_MilkMan.png"></a>
+|**Overlay**|<a href="https://showcase.nuapay.com/showcase/movie-flix" target="_blank"> <img src ="images/LOGO_movieFlix.png"></a>|
+|**Redirect**|<a href = "https://showcase.nuapay.com/showcase/cats-trust" target="_blank"><img src = "images/LOGO_cats.png"></a>
+|**Direct API**| <a href="https://showcase.nuapay.com/showcase/milk-man" target="_blank"><img src = "images/LOGO_MilkMan.png"></a>
 
 
 
