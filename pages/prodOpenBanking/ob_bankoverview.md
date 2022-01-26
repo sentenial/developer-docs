@@ -11,10 +11,10 @@ toc: true
 Depending on how you intend to interact with the Open Banking APIs:
 
 * It may be necessary to initially retrieve all the banks that are currently enrolled in Open Banking.
-* If, for example, you intend to develop your own Select Bank user interface for your PISP application, you will need to offer your PSUs (your payers) a list of all the possible banks with which they may hold an account. 
+* If, for example, you intend to develop your own Select Bank user interface for your PISP application, you will need to offer your PSUs (your payers) a list of all the possible banks with which they may hold an account.
 * The [Retrieve Banks](ob_getbank.html) endpoint will return all the currently enrolled banks.
 
-## Available Banks
+## Schemes Support
 
 Nuapay currently supports connections to various banks for the following Open Banking schemes:
 
@@ -22,61 +22,32 @@ Nuapay currently supports connections to various banks for the following Open Ba
 |Germany|The Berlin Group|
 |France|STET|
 
-## UK Banks
+## Country Coverage
 
-{% include note.html content="the following banks are supported on **Production**" %}
+Nuapay currently supports Open Banking payments in the following countries:
 
-**OBIE-Supporting ASPSPs**:
+* Belgium
+* France
+* Ireland
+* Netherlands
+* Spain
+* United Kingdom
 
-|AIB & AIB Business|
-|Bank Of Ireland| 
-|Bank Of Ireland Business|
-|Bank Of Scotland|
-|Bank of Scotland Business|
-|Bank of Scotland Commercial|
-|Barclays Business Banking|
-|Barclays Corporate|
-|Barclays Personal|
-|Barclays Wealth|
-|Barclaycard Commercial|
-|Clydesdale|
-|Danske|
-|First Direct|
-|Halifax|
-|HSBC Business|
-|HSBC Personal|
-|Lloyds Business|
-|Lloyds Commercial|
-|Lloyds Personal|
-|Marks and Spencer|
-|Monzo|
-|Nationwide|
-|NatWest|
-|NatWest Corporate|
-|RBS|
-|Revolut|
-|Santander|
-|Tesco|
-|Tide|
-|TransferWise|
-|TSB|
-|Ulster|
-|Yorkshire|
-
-## German Banks
-
+## Belgium
 {% include note.html content="the following banks are currently only supported in **Beta**" %}
 
-**Berlin-Group-Supporting ASPSPs**:
+|KBC|
+|BNP Paribas Fortis|
+|Belfius|
+|ING|
+|Argenta|
+|Hello (part of BNP)|
+|Crelan|
+|Beobank|
+|Revolut|
+|Fintro|
 
-|Commerzbank|
-|Deutsche Bank|
-|Post Bank|  
-|Sparkassen-hub|
-|UniCredit Bank|
-|UniCredit SpA|
-
-## French Banks
+## France
 
 {% include note.html content="the following banks are currently only supported in **Beta**" %}
 
@@ -190,3 +161,96 @@ Nuapay currently supports connections to various banks for the following Open Ba
 |Natixis||
 |Revolut||
 |Société Générale||
+
+## Ireland
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
+
+|Allied Irish Banks|
+|Bank of Ireland|
+|Ulster Bank|
+|PTSB|
+|Revolut|
+|ING wholesale banking|
+|EBS|
+|AN Post|
+
+
+## Netherlands
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
+
+|ING|
+|Rabobank|
+|ABN AMRO|
+|De Volksbank NV|
+|Triodis|
+|Van Lanschot|
+|ASN bank|
+|Regio bank|
+|Revolut|
+
+## Spain
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
+
+|CaixaBank|
+|BBVA|
+|Santander|
+|Sabadell|
+|Ibercaja|
+|Kuxtabank|
+|ING direct|
+|Revolut|
+|CajaSur|
+
+## UK
+
+{% include note.html content="the following banks are supported on **Production**" %}
+
+**OBIE-Supporting ASPSPs**:
+
+|AIB & AIB Business|
+|Bank Of Ireland|
+|Bank Of Ireland Business|
+|Bank Of Scotland|
+|Bank of Scotland Business|
+|Bank of Scotland Commercial|
+|Barclays Business Banking|
+|Barclays Corporate|
+|Barclays Personal|
+|Barclays Wealth|
+|Barclaycard Commercial|
+|Clydesdale|
+|Danske|
+|First Direct|
+|Halifax|
+|HSBC Business|
+|HSBC Personal|
+|Lloyds Business|
+|Lloyds Commercial|
+|Lloyds Personal|
+|Marks and Spencer|
+|Monzo|
+|Nationwide|
+|NatWest|
+|NatWest Corporate|
+|RBS|
+|Revolut|
+|Santander|
+|Tesco|
+|Tide|
+|TransferWise|
+|TSB|
+|Ulster|
+|Yorkshire|
+
+## German Banks
+
+{% include note.html content="the following banks are currently only supported in **Beta**" %}
+
+**Berlin-Group-Supporting ASPSPs**:
+
+|Commerzbank|
+|Deutsche Bank|
+|Post Bank|  
+|Sparkassen-hub|
+|UniCredit Bank|
+|UniCredit SpA|
