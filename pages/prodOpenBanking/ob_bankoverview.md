@@ -1,256 +1,146 @@
 ---
 title: Bank Overview
 keywords: Open Banking Participating Banks Overview
-summary: "The Bank APIs allow you to retrieve and view details of the ASPSPs currently enrolled in Open Banking"
+summary: "The Bank APIs allow you to retrieve and view details of all available banks (ASPSPs)"
 sidebar: ob_sidebar
 permalink: ob_bankoverview.html
 folder: prodOpenBanking
-toc: true
+toc: false
 ---
 
-Depending on how you intend to interact with the Open Banking APIs:
+When making a payment, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSUs</a> must initially select the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> with which their account is held.
 
-* It may be necessary to initially retrieve all the banks that are currently enrolled in Open Banking.
-* If, for example, you intend to develop your own Select Bank user interface for your PISP application, you will need to offer your PSUs (your payers) a list of all the possible banks with which they may hold an account.
-* The [Retrieve Banks](ob_getbank.html) endpoint will return all the currently enrolled banks.
+* In [CHECKOUT](ob_pispimplementations.html#implementation-overview) and [REDIRECT](ob_pispimplementations.html#implementation-overview) modes the list of banks is displayed automatically.
+* In [SELF-HOSTED](ob_pispimplementations.html#implementation-overview) and [SELF-HOSTED-CALLBACK](ob_pispimplementations.html#implementation-overview) mode, you will need to call [Retrieve Banks](ob_getbank.html) to get the list of banks you want to display to your PSU on your user interface.
 
-## Schemes Support
-
-Nuapay currently supports connections to various banks for the following Open Banking schemes:
-
-|UK|Open Banking UK (OBIE)|
-|Germany|The Berlin Group|
-|France|STET|
+Nuapay offers support for both GBP- and EUR-supporting banks. Click the country link below to view the banks that are currently available on our Live environment.
 
 ## Country Coverage
 
-Nuapay currently supports Open Banking payments in the following countries:
+{% include note.html content="We are constantly building on our connections and currently we have approximately 95% bank coverage on average, in the countries referenced below." %}
 
-* Belgium
-* France
-* Ireland
-* Netherlands
-* Spain
-* United Kingdom
+**GBP-Supporting Banks**
 
-## Belgium
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
+<div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">United Kingdom</a></strong>                                
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
 
-|KBC|
-|BNP Paribas Fortis|
-|Belfius|
-|ING|
-|Argenta|
-|Hello (part of BNP)|
-|Crelan|
-|Beobank|
-|Revolut|
-|Fintro|
+                            {% include ob_uk_bnks.html %}
 
-## France
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+**EUR-Supporting Banks**
+<div class="panel-group" id="accordion">
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Belgium</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">                
 
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
+                          {% include ob_be_banks.html %}
 
-**STET-Supporting ASPSPs**:
+                            </div>
+                        </div>
+                    </div>
 
-|**Group**|**Bank**|
-|Arkéa:|	|
-||Crédit Mutuel du Sud Ouest|
-||	Crédit Mutuel de Bretagne|
-||	Fortuneo|
-||	Max|
-||	Arkéa Banque Privée|
-||	Arkéa Banque Entreprises et Institutionnels|
-||	Arkéa Banking Services|
-||	BPE|
-||	Allianz Banque|
-|Banque BCP||
-|Banque Populaire:||
-||B.P Bourgogne Franche Comté|
-||B.P AUvergne et Rhône-Alpes|
-||B.P RIves de Paris + BICS|
-||B.P Val de France|
-||B.P du Nord|
-||B.P Sud|
-||B.P Aquitaine Centre Atlantique|
-||CMM Littoral du Sud Ouest|
-||B.P Alsace Lorraine Champagne|
-||B.P OCcitane|
-||B.P Grand Ouest|
-||CMM Grand Ouest|
-||B.P Méditerranée|
-||Banque de Savoie|
-|Banque Palatine||
-|Boursorama||
-|BNP||
-|Caisse d'Epargne:||
-||Aquitaine Poitou-Charentes|
-||Auvergne et Limousin|
-||Bourgogne Franche-Comté|
-||Bretagne-Pays De Loire|
-||Côte d'Azur|
-||Grand Est Europe|
-||Ile De France|
-||Languedoc-Roussillon|
-||Loire Drôme Ardèche|
-||Loire-Centre|
-||Midi-Pyrénées|
-||Nord France Europe|
-||Normandie|
-||Provence Alpes Corse|
-||Rhône Alpes|
-|CIC||
-|Crédit Agricole:||
-||Alpes Provence|
-||Alsace Vosges|
-||Anjou Maine|
-||Aquitaine|
-||Atlantique Vendée|
-||Brie Picardie|
-||Centre France|
-||Centre Loire|
-||Centre-Est|
-||Centre-Ouest|
-||Champagne-Bourgogne|
-||Charente Périgord|
-||Charente-Maritime|
-||Corse|
-||Côtes d'Armor|
-||Deux-Sèvres|
-||Finistère|
-||Franche Comté|
-||Guadeloupe|
-||Ile de France|
-||Ille-et-Vilaine|
-||Languedoc|
-||Loire Haute Loire|
-||Lorraine|
-||Martinique-Guyane|
-||Morbihan|
-||Nord De France|
-||Nord Est|
-||Nord Midi-Pyrénées|
-||Normandie|
-||Normandie Seine|
-||Provence Côte d'Azur|
-||Pyrénées Gascogne|
-||Réunion|
-||Savoie|
-||Sud Méditerranée|
-||Sud Rhône Alpes|
-||Toulouse 31|
-||Touraine Poitou|
-||Val de France|
-|Crédit Coopératif||
-|Crédit Du Nord||
-|Crédit Mutuel:||
-||Site National|
-||Antilles-Guyane|
-||Bretagne|
-||Bretagne Pro|
-||Sud-Ouest|
-||Sud-Ouest Pro|
-||Maine-Anjou|
-||Massif Central|
-||Massif Central Pro|
-||Nord-Europe|
-||Océan|
-|HelloBank||
-|ING Direct||
-|LCL||
-|Natixis||
-|Revolut||
-|Société Générale||
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">France</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">
 
-## Ireland
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
-
-|Allied Irish Banks|
-|Bank of Ireland|
-|Ulster Bank|
-|PTSB|
-|Revolut|
-|ING wholesale banking|
-|EBS|
-|AN Post|
+                        {% include ob_fr_bnks.html %}
 
 
-## Netherlands
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
 
-|ING|
-|Rabobank|
-|ABN AMRO|
-|De Volksbank NV|
-|Triodis|
-|Van Lanschot|
-|ASN bank|
-|Regio bank|
-|Revolut|
+                            </div>
+                        </div>
+                    </div>
 
-## Spain
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Germany</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">
 
-|CaixaBank|
-|BBVA|
-|Santander|
-|Sabadell|
-|Ibercaja|
-|Kuxtabank|
-|ING direct|
-|Revolut|
-|CajaSur|
+                        {% include ob_de_bnks.html %}
 
-## UK
 
-{% include note.html content="the following banks are supported on **Production**" %}
 
-**OBIE-Supporting ASPSPs**:
+                            </div>
+                        </div>
+                    </div>
 
-|AIB & AIB Business|
-|Bank Of Ireland|
-|Bank Of Ireland Business|
-|Bank Of Scotland|
-|Bank of Scotland Business|
-|Bank of Scotland Commercial|
-|Barclays Business Banking|
-|Barclays Corporate|
-|Barclays Personal|
-|Barclays Wealth|
-|Barclaycard Commercial|
-|Clydesdale|
-|Danske|
-|First Direct|
-|Halifax|
-|HSBC Business|
-|HSBC Personal|
-|Lloyds Business|
-|Lloyds Commercial|
-|Lloyds Personal|
-|Marks and Spencer|
-|Monzo|
-|Nationwide|
-|NatWest|
-|NatWest Corporate|
-|RBS|
-|Revolut|
-|Santander|
-|Tesco|
-|Tide|
-|TransferWise|
-|TSB|
-|Ulster|
-|Yorkshire|
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Ireland</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">
 
-## German Banks
+                        {% include ob_ie_bnks.html %}
 
-{% include note.html content="the following banks are currently only supported in **Beta**" %}
 
-**Berlin-Group-Supporting ASPSPs**:
 
-|Commerzbank|
-|Deutsche Bank|
-|Post Bank|  
-|Sparkassen-hub|
-|UniCredit Bank|
-|UniCredit SpA|
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Netherlands</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">
+
+                        {% include ob_nl_bnks.html %}
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /.panel -->                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <strong><a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Spain</a></strong>
+                            </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
+                        <div class="panel-body">
+
+                        {% include ob_es_bnks.html %}
+
+
+
+                            </div>
+                        </div>
+                    </div>
