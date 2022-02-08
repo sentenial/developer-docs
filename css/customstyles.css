@@ -114,6 +114,12 @@ margin-top: -40px
     color: gray;
 }
 
+.obOverviewTable
+{
+ font-size: smaller;
+}
+
+
 table {
     background-color: transparent;
 }
@@ -477,6 +483,7 @@ figcaption {
 .preference {
     color: red;
 }
+
 
 
 table.dataTable thead {
