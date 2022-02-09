@@ -132,7 +132,7 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceReference": "321-CTAB-234-GFT",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/beneficiaries/abxq9ox92l/credittransfers/a2av38kz2w",
-	"resourceType": "Transaction",
+	"resourceType": "CreditTransfer",
 	"reasonCode": "CUST",
 	"resourceOwner": "tc47ygrg72",
 	"resourceRemittanceInformation": "PAYMENT RE: DEF"

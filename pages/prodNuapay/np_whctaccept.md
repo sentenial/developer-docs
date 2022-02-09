@@ -126,7 +126,7 @@ The following is an example of a Credit Transfer Accept event JSON:
 	"resourceReference": "341-CTCD-264-ABC",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/beneficiaries/ru39pkgnbx/credittransfers/tcabdwgrg23",
-	"resourceType": "Transaction",
+	"resourceType": "CreditTransfer",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",
 	"resourceRemittanceInformation": "PAYMENT RE: ABC"
