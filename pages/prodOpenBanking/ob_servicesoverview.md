@@ -12,6 +12,8 @@ Open Banking currently offers two basic ways for you as a merchant to interact w
 |PISPs|	Payment Initiation Service Providers|
 |AISPs|	Account Initiation Service Providers|
 
+{% include note.html content="Nuapay currently only offers PISP services but AISP support is coming soon. As an initial step we will soon be rolling out support for AISP-based E-Mandate signup (in Q2 2022)." %}
+
 ## PISP
 
 When acting as a **PISP**, merchants can request clients to make payments via Open Banking.
@@ -27,27 +29,3 @@ For end users they:
 * Are then redirected to the merchant page.
 
 {% include note.html content="Whatever the standard verification and secure customer authentication methods that are normally used to access the customer's online banking portal are applied in the PISP payment flow. Users can feel secure that they are fully in control and are not providing any sensitive details with a third party that is unknown to them. " %}
-
-## AISP
-
-Access to account information may be useful for certain businesses where seeing a client's activity on a given account may inform a lending decision, for example. 
-AISP access would also be useful in an ERP application that needs to provide real-time views of a number of bank accounts in a single location.   
-
-For end users they:
-
-* Need to confirm the account access request. 
-* Are redirected to their bank and must log on.
-* Review the requested access and the requested duration.
-* Confirm the request.
-
-Once confirmed the requesting organization may handle the account details as required.
-
-
-
-
-
-
-
-
-
-
