@@ -70,7 +70,7 @@ This Webhook has a single event type: **OutgoingExpressCreditTransferAccepted**
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_viewtransaction.html">Retrieve Credit Transfer Transaction</a>.</td>
+			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_retrievect.html">Retrieve Credit Transfer</a>.</td>
 		</tr>
 		<tr>
 			<td>root</td>
