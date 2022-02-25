@@ -47,8 +47,23 @@ folder: prodOpenBanking
                     </div>
 
 
-<h2>Some Key Concepts</h2>
+<h2>General</h2>
 
+<!-- /.panel -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree-1">What banks are supported?</a>
+        </h4>
+    </div>
+    <div id="collapseThree-1" class="panel-collapse collapse">
+        <div class="panel-body">
+           <p>Nuapay supports a number of banks in various countries for PISP services. See the <a href = "ob_bankoverview.html">Bank Overview</a> page for more details. </p>
+
+        </div>
+    </div>
+</div>
+<!-- /.panel -->
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -111,7 +126,7 @@ folder: prodOpenBanking
                         </div>
                         <div id="collapse8" class="panel-collapse collapse">
                             <div class="panel-body">
-                            <p>An AISP (Account Information Service Provider) service is a TPP-provided service that allows merchants to access sepecific bank account data of its clients. This access may be used to provide consolidated information on one or more accounts held by a PSU with one or more payment service provider(s), for example.</p>
+                            <p>An AISP (Account Information Service Provider) service is a TPP-provided service that allows merchants to access sepecific bank account data of its clients. This access may be used to provide consolidated information on one or more accounts held by a PSU with one or more payment service provider(s), for example. <br><strong>Note</strong>: Nuapay does not currently offer AISP services.</p>
                             </div>
                         </div>
                     </div>

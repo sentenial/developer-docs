@@ -219,43 +219,6 @@ entries:
       url: /ob_emselfhosted.html
       output: web, pdf
 
-  - title: AISP Service
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /ob_aispoverview.html
-      output: web, pdf
-
-      subfolders:
-      - title: AISP APIs
-        output: web
-        subfolderitems:
-
-        - title: Create Account Access
-          url: /ob_createaccountaccess.html
-          output: web
-
-        - title: Retrieve Account Access
-          url: /ob_retrieveaccountaccess.html
-          output: web
-
-        - title: Delete Account Access
-          url: /ob_deleteaccountaccess.html
-          output: web
-
-        - title: Retrieve Account(s)
-          url: /ob_getaccounts.html
-          output: web
-
-        - title: Retrieve Account Balance
-          url: /ob_getbalance.html
-          output: web
-
-        - title: Retrieve Account Transactions
-          url: /ob_getaccounttx.html
-          output: web
-
   - title: Bank Status Service
     output: web, pdf
     folderitems:
