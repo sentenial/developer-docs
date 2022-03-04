@@ -27,7 +27,7 @@ topnav_dropdowns:
 #        - title: Home
 #          url: /mydoc_introduction.html
 #          url: /index.html
-        - title: Product Overview
+        - title: Getting Started
           url: /prod_overview.html
         - title: Direct Debits & Credit Transfers
           url: /np_landing_page.html
@@ -41,4 +41,3 @@ topnav_dropdowns:
           url: /wh_landing_page.html
         - title: Security
           url: /np_secoverview.html
-        

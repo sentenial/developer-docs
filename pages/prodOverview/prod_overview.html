@@ -1,7 +1,7 @@
 ---
-title: Product Overview 
-keywords: Product Overview
-summary: "We offer various payment products, please select an option from the items below to discover more... "
+title: Getting Started
+keywords: Getting Started
+summary: "We offer various payment products, from Direct Debits and Credit Transfers to E-Mandates, Open Banking and SEPA Instant Payments. Please get in touch to arrange access to our Sandbox or select an option from the items below to discover more; check out the documentation or jump straight to the Swagger."
 sidebar: productOverview_sidebar
 toc: false
 permalink: prod_overview.html
@@ -11,17 +11,22 @@ folder: prodOverview
 
 <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Various API-Driven Ways to Pay</h2>
 
-            <p>We offer various payment products, from Direct Debits and Credit Transfers to E-Mandates, Open Banking and SEPA Instant Payments. Jump in, the water's fine!</p>
 
-            
-            {% include important.html content="If you are new to our APIs please complete the online form to request <a href='https://www.nuapay.com/en/request-api-sandbox/' target = '_blank'>Sandbox access</a>." %}
-            
-            
-            {% include note.html content="For advanced users find the <a href='#SR'>Swagger Reference</a> you need and get your hands dirty!" %}
-            
-           
+  <h2 class="page-header" id ="SR">Sandbox Access</h2>
+
+If you want to try our API:
+<ol>
+<li>Please complete this online form to request <a href='https://www.nuapay.com/en/request-api-sandbox/' target = '_blank'>Sandbox access</a>.</li>
+<li>Tell us a little about your company and the product(s) that you'd like to explore.</li>
+<li>Our support team will review your request and send you an API key to allow you to begin testing. </li>
+</ol>
+
+{% include tip.html content="Once you have completed your Sandbox testing and want to move to the Live environment, please ensure that you have a good understanding of our approach to <a href='prod_versioning.html'> Versioning and Backward Compatibility</a>" %}
+
+
+  <h2 class="page-header" id ="SR">The Nuapay Product Suite</h2>
+
         </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -29,8 +34,8 @@ folder: prodOverview
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-money-bill-wave fa-stack-1x fa-inverse"></i>   
-                        
+                          <i class="fa fa-money-bill-wave fa-stack-1x fa-inverse"></i>
+
                     </span>
                     </a>
                 </div>
@@ -64,9 +69,9 @@ folder: prodOverview
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-stopwatch fa-stack-1x fa-inverse"></i>                                                                           
+                          <i class="fa fa-stopwatch fa-stack-1x fa-inverse"></i>
                     </span>
-                  </a>                                                                              
+                  </a>
                 </div>
                 <div class="panel-body">
                     <h4>Instant Payments</h4>
@@ -75,25 +80,25 @@ folder: prodOverview
                 </div>
             </div>
         </div>
-                                                                     
+
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
                 <a href="ob_landing_page.html">
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>                        
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
                           <i class="fa fa-lock-open fa-stack-1x fa-inverse"></i>
                     </span>
                     </a>
                 </div>
                 <div class="panel-body">
                     <h4>Open Banking</h4>
-                    <p>List participating banks and act as a PISP or AISP</p>
+                    <p>List participating banks and act as a PISP to collect payments.</p>
                     <a href="ob_landing_page.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <!-- Service Tabs -->
@@ -128,13 +133,13 @@ folder: prodOverview
                     <p>See the Implementation Overview section for more details </p>
                     <a href="https://github.com/sentenial/emandates-swagger" target = "_blank"><i class="fa fa-cogs"></i> Swagger Reference</a>
                     <p><a href="https://github.com/sentenial/emandates-swagger/blob/master/emandates-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
-                </div>                
+                </div>
                 <div class="tab-pane fade" id="service-three">
                     <h4>Instant Payments</h4>
                     <p>Sentenial's Origix Instant Payments module allows financial institutions / PSPs to process near instantaneous payments using our powerful Application Programming Interface (API). </p>
                     <p>The application works in two modes:
 
-                         <li>As a Receiver of inbound Payments.</li>  
+                         <li>As a Receiver of inbound Payments.</li>
                         <li> As a Disburser of outbound Payments.</li>    </p>
                     <a href="https://github.com/sentenial/instant-payments-swagger" target = "_new"><i class="fa fa-cogs"></i> Swagger Reference</a>
                     <p><a href="https://github.com/sentenial/instant-payments-swagger/blob/master/instant-payments-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
@@ -151,5 +156,3 @@ folder: prodOverview
 
         </div>
     </div>
-
-  

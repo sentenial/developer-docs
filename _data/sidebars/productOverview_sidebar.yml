@@ -3,9 +3,9 @@
 
 entries:
 - title: Sidebar
-  product: Product Overview
-  version: 
-  folders: 
+  product: Getting Started
+  version:
+  folders:
 
   - title:
     output: pdf
@@ -23,7 +23,7 @@ entries:
   - title: Getting Started
     output: web, pdf
     folderitems:
-    - title: Product Overview
+    - title: Overview
       url: /prod_overview.html
       output: web
     - title: Versioning and Backward Compatibility
@@ -32,4 +32,3 @@ entries:
     - title: Support
       url: /prod_support.html
       output: web
-    

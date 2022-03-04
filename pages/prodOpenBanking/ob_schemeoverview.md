@@ -9,8 +9,6 @@ folder: prodOpenBanking
 
 ## Overview
 
-{% include note.html content="This section is for users who want to use the **CHECKOUT** mode - see [Implementation Options](ob_pispimplementation.html) for more on this." %}
-
 The following Open Banking Schemes are supported:
 
 1. Open Banking UK (supporting the latest `Open Banking Implementation Entity (OBIE)` API specification). [Open Banking Web site](https://www.openbanking.org.uk/standards/)
@@ -25,9 +23,3 @@ So what scheme makes sense for me?
 
 
 {% include links.html %}
-
-
-
-
-
-
