@@ -118,10 +118,10 @@ The following is an example of a Received Payment event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "PaymentRefundComplete",   
-    "resourceReference": "3w92ihg276rg8b4d13x9z9",
+    "resourceReference": "null",
     "resourceReferenceType": "reference",    
-    "resourceUri": "/payments/n7rklmvtjc",
-    "resourceType": "payment",
+    "resourceUri": "/payments/n7rklmvtjc/refunds/mfc672erts",
+    "resourceType": "null",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",
     "resourceRemittanceInformation": null     

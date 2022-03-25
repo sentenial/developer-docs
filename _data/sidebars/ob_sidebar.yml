@@ -14,28 +14,12 @@ entries:
       url: /ob_landing_page.html
       output: web
 
-    - title: Terminology
-      url: /ob_terminology.html
-      output: web
-
-    - title: Scheme Overview
-      url: /ob_schemeoverview.html
-      output: web
-
-    - title: Deployment
-      url: /ob_deployment.html
-      output: web
-
     - title: Open Banking Services
       url: /ob_servicesoverview.html
       output: web
 
     - title: General API Rules
       url: /ob_generalrules.html
-      output: web, pdf
-
-    - title: ASPSP Sandbox
-      url: /ob_sandbox.html
       output: web, pdf
 
   - title: Integration Models
@@ -288,9 +272,25 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Terminology
+      url: /ob_terminology.html
+      output: web
+
+    - title: ASPSP Sandbox
+      url: /ob_sandbox.html
+      output: web, pdf
+
+    - title: Scheme Overview
+      url: /ob_schemeoverview.html
+      output: web
+
     - title: HTTP Response Codes
       url: /ob_httpreasons.html
       output: web, pdf
+
+    - title: Deployment
+      url: /ob_deployment.html
+      output: web
 
     - title: FAQs
       url: /ob_faq.html

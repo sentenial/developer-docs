@@ -19,7 +19,7 @@ The various statuses possible (for both payments and refunds) are presented in t
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#profile" data-toggle="tab">Table</a></li>
     <li><a href="#about" data-toggle="tab">Diagram</a></li>
-   
+
 </ul>
   <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="profile">
@@ -52,7 +52,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>There was a technical issue at the ASPSP; the payment may be retried.</td>
       <td>No</td>
       <td>No</td>
-      <td>Yes</td> 
+      <td>Yes</td>
       <td><a href="ob_whpaymentrejected.html">PaymentRejected</a></td>
     </tr>
     <tr>
@@ -87,6 +87,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>Yes</td>
       <td><a href="ob_whpaymentdecl.html">PaymentDeclined</a></td>
     </tr>
+    <!--
     <tr>
       <td>FUNDS_CHECK_TIMEOUT [not implemented]</td>
       <td>The response to the funds check is later than the configured timeout.</td>
@@ -111,6 +112,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>No</td>
       <td>N/A</td>
     </tr>
+    -->
     <tr>
       <td><code class="highlighter-rouge">SETTLEMENT_PENDING</code></td>
       <td>The payment has been authorised but has not yet transitioned to <code class="highlighter-rouge">SETTLEMENT_IN_PROGRESS</code> status.</td>
@@ -167,8 +169,8 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>Yes</td>
       <td><a href="ob_whpaymenttimeout.html">PaymentTimeout</a></td>
     </tr>        
-    
-   
+
+
     <tr>
       <td><code class="highlighter-rouge">UNEXPECTED_ERROR</code></td>
       <td>A processing error has occurred. This may be due to connectivity issues between ASPSP and the TPP for example.</td>
@@ -218,7 +220,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>A refund  has been successfully paid to the PSU.</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>Yes</td> 
+      <td>Yes</td>
       <td><a href="ob_whrefundcomplete.html">PaymentRefundComplete</a></td>
     </tr>
      <tr>
@@ -226,7 +228,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td>The refund could not be paid to the PSU (e.g. the PSU's account is closed).</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>Yes</td> 
+      <td>Yes</td>
       <td><a href="ob_whrefundrejected.html">PaymentRefundRejected</a></td>
     </tr>
  </tbody>
@@ -250,7 +252,7 @@ The various statuses possible (for both payments and refunds) are presented in t
 </div>
 </div>
 
- 
+
 
 
 
