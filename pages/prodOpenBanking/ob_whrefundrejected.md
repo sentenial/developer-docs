@@ -118,10 +118,10 @@ The following is an example of a Refund Rejected event JSON:
 <code class="json">{
     "eventTimestamp": 1501169079000,
     "eventType": "PaymentRefundRejected",   
-    "resourceReference": "4892i45r76rg8b4d874r65",
+    "resourceReference": "null",
     "resourceReferenceType": "reference",    
-    "resourceUri": "/payments/t9rklm6lrp",
-    "resourceType": "payment",
+    "resourceUri": "/payments/t9rklm6lrp/refunds/ghyxq6df2",
+    "resourceType": "refund",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",
     "resourceRemittanceInformation": null    
