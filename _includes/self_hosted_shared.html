@@ -1,0 +1,46 @@
+## merchantPostAuthUrl handling
+The merchant merchantPostAuthUrl is sent as follows
+
+The payload of this request that you need to process includes:
+
+**Headers** e.g. `ContentType: x-www-form-urlencoded`
+<br/>
+**Body** e.g. `endToEndIdentification=d8e17bf1f3244e5f96a869f9661a2a6&paymentId=gabxl3knbl`
+
+Please note that the 'paymentId' allows you to look up the payment associated with this callback.
+
+## User Interface Guidelines
+
+Note that:
+
+* In SELF_HOSTED mode you have control over the User Interface design of your application.
+* It is important that your design incorporates links to the Nuapay "Terms of Service" and "About" pages.
+* These pages provide useful information to your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSUs</a> in regard to Nuapay and our license details, as issued by the Financial Conduct Authority.
+
+Please use the following links:
+
+|Terms of Service|[https://www.nuapay.com/en/pisp-psu-terms-of-service/](https://www.nuapay.com/en/pisp-psu-terms-of-service/)|
+|About|[https://www.nuapay.com/en/pisp-information/](https://www.nuapay.com/en/pisp-information/)|
+
+## Bank Families
+
+In <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.stet}}">STET</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.berlin-group}}">Berlin Group</a>:
+
+* Some <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSPs</a> are individually configured with a URL and token endpoint per regional bank.
+* For example Credit Agricole in France (which follows the STET specification) has 44 distinct regional banks.
+* Rendering individual regional banks on a user interface is problematic as, in the Credit Agricole example, this would result in 44 individual bank options.
+* In practice this would mean 44 identical icons on a Bank Selection screen (with the PSU having to find his/her specific branch by scrolling though a large list).
+
+When designing your user interface, we recommend that you use the [Retrieve Banks](ob_getbank.html) and the [View Bank Families](ob_getbankfamilies.html) endpoints so that when a PSU selects a bank that has a number of regional banks (branches) linked to it, the user is provided with an option to select the required branch.
+
+In CHECKOUT mode (i.e. where Nuapay manages the User Interface), the bank/branch selection screens are handled as follows:
+1. The user selects a bank that has a number of branches linked to it (in the call to [Retrieve Banks](ob_getbank.html), `bankfamilyId` is populated for Credit Agricole, for example).
+1. The bank is rendered once, as in the image below and appears like any other bank icon on screen:
+   {% include image.html file="bnk_fam_chckout.png" url="images/bnk_fam_chckout.png" target = "_new" alt="Bank with Bank Family Selected" %}
+1. When the PSU selects this bank, a screen allowing the user to select his/her required branch is displayed:
+   {% include image.html file="bnk_fam_brnch_chckout.png" url="images/bnk_fam_brnch_chckout.png" target = "_new" alt="Bank Family drop-down" %}
+1. Once the user selects the required branch (bank family), the payment flow continues as normal.
+
+{% include tip.html content="In SELF-HOSTED mode, you have full control over how your user interface is designed. The screens above are just an example of how Bank Families are rendered for the Nuapay UI in CHECKOUT and REDIRECT modes. " %}
+
+{% include links.html %}

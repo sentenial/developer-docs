@@ -34,7 +34,7 @@ To use Self-Hosted-Callback mode see the flow described in the image below (clic
 {% include image.html file="ob_selfhostedcallback_flow-partner.png" url="images/ob_selfhostedcallback_flow-partner.png" target = "_new" alt="Self-Hosted-Callback Partner Flow" caption="SELF_HOSTED_CALLBACK Partner Flow" %}
 
 1. Using your partner-level API key retrieve the [list of your merchants](ob_partnerintegration.html#api-details---get-organisations) and [retrieve a token](ob_partnerintegration.html#api-details---post-tokens) representing the required merchant.
-1. You will design your own Bank Selection screen; use [Retrieve Banks](ob_getbank.html) to populate your bank select user interface.
+1.  Call GET `/banks` to retrieve a list of all supported banks (see [Retrieve Banks](ob_getbank.html)) to populate your Bank Selection screen. Where banks have specific branches (bank families), you will also need to call the [View Bank Families](ob_getbankfamilies.html) endpoint. (See the section on Bank Families below for more information on this).
 1. Once the payer has selected a bank, call the `/tpp/payments` endpoint using the OAuth token, representing the required merchant, (see [Create Payment](ob_createpayment.html)).
 Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provided by the payer and set the `merchantPostAuthUrl`.
 The merchantPostAuthUrl will process the callback from the ASPSP, this information needs to be captured and sent to Nuapay.
@@ -76,18 +76,7 @@ In your logic on the server side, you can parse all the params and submit to the
 
 {% include note.html content="You should ensure that the JavaScript you define works in all browsers for both desktop and mobile and we recommend that you fully test your implementation on all the browsers that you intend to support." %}
 
-## User Interface Guidelines
-
-Note that:
-
-* In SELF_HOSTED_CALLBACK mode you have control over the User Interface design of your application.
-* It is important that your design incorporates links to the Nuapay "Terms of Service" and "About" pages.
-* These pages provide useful information to your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSUs</a> in regard to Nuapay and our license details, as issued by the Financial Conduct Authority.
-
-Please use the following links:
-
-|Terms of Service|[https://www.nuapay.com/en/pisp-psu-terms-of-service/](https://www.nuapay.com/en/pisp-psu-terms-of-service/)|
-|About|[https://www.nuapay.com/en/pisp-information/](https://www.nuapay.com/en/pisp-information/)|
+{% include self_hosted_shared.html %}
 
 
 {% include links.html %}

@@ -14,7 +14,7 @@ toc: false
 
 ## Prerequisites
 
-In this mode, once a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> has been redirected to a selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> and has completed his/her interactions with that bank, the payer is redirected to the `merchantPostAuthUrl`, as provided in the [Create Payment](ob_createpayment.html) request. 
+In this mode, once a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> has been redirected to a selected <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> and has completed his/her interactions with that bank, the payer is redirected to the `merchantPostAuthUrl`, as provided in the [Create Payment](ob_createpayment.html) request.
 
 In order for the payer to be successfully redirected, an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> must do two things:
 
@@ -36,7 +36,7 @@ A detailed overview of the various steps involved in the **Self-Hosted-Callback*
 To use Self-Hosted-Callback mode:
 
 1. Using your API key, [retrieve a token](ob_partnerintegration.html#api-details---post-tokens); set your scope = `openbanking_pisp`.
-1. Call GET `/banks` to retrieve a list of all supported banks (see [Retrieve Banks](ob_getbank.html)) to populate your Bank Selection screen.  
+1. Call GET `/banks` to retrieve a list of all supported banks (see [Retrieve Banks](ob_getbank.html)) to populate your Bank Selection screen. Where banks have specific branches (bank families), you will also need to call the [View Bank Families](ob_getbankfamilies.html) endpoint. (See the section on Bank Families below for more information on this).
 1. Once the payer has selected a bank, call the `/tpp/payments` endpoint (see [Create Payment](ob_createpayment.html)).
 Set the `integrationType` to `SELF_HOSTED_CALLBACK`, specify the `bankId` provided by the payer and set the `merchantPostAuthUrl`. The merchantPostAuthUrl will process the callback from the ASPSP, this information needs to be captured and sent to Nuapay.
 1. Redirect the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> to authorise the payment - note after the PSU approves or denies the payment request they are redirected to the `merchantPostAuthUrl`.
@@ -63,7 +63,7 @@ Please see a sample piece of JavaScript code below, which parses the data after 
 	    data = window.location.href.split(?);
 	}
 
-	var params = data[1]; 
+	var params = data[1];
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", YOUR_URL, true);
@@ -79,10 +79,7 @@ In your logic on the server side, you can parse all the params and submit to the
 
 {% include note.html content="You should ensure that the JavaScript you define works in all browsers for both desktop and mobile and we recommend that you fully test your implementation on all the browsers that you intend to support." %}
 
+{% include self_hosted_shared.html %}
+
 
 {% include links.html %}
-
-
-
-
-
