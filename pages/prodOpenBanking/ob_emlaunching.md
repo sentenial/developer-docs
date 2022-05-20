@@ -12,7 +12,7 @@ In order to launch the Open Banking Payment and E-Mandate signup flow, the merch
 * A User Interface Payment ID (the `userInterfacePaymentId` returned in the [Create Payment](ob_createpayment.html) request).
 * A Bacs Service User Number - <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.sun}}">SUN</a> (the `creditorSchemeIdentifier`). If you do not know your Service User number, please contact the Nuapay Support team or your Account Manager.
 
-These elements are required for both the `CHECKOT` and the `REDIRECT` integrations.
+These elements are required for both the `CHECKOUT` and the `REDIRECT` integrations.
 
 ## CHECKOUT Mode
 
@@ -67,7 +67,7 @@ To enable the <span class="label label-info">PAY</span> button you will need to 
 
 ````
 
-The funtion takes three parameters:
+The function takes three parameters:
 1. The `creditorSchemeId` (i.e. the SUN; 123456 in the example above).
 1. The `userInterfaceIdentifier` (772d0ef5-596b-43de-a6a0-832c9ab7a7a5 in the example above)
 1. The `url` (https://sandbox.nuapay.com/tpp-ui/)
