@@ -57,6 +57,41 @@ Where you specify `FASTEST_POSSIBLE` a payment will go via the Express channel i
 
 {% include note.html content="If you have 2 or more Nuapay accounts configured and want to transfer funds between these accounts you will need to use the [Transfer Between Accounts](np_accounttransfer.html) service" %}
 
+## Remittance Information
+
+Remittance Information allows you to specify details of the payment to your beneficiary.
+
+* This information may be used for reconciliation and will be displayed on the payee's bank statement.
+* Remittance can be passed in one of two fields.
+
+Depending on the currency of the payment, use the correct remittance value as outlined in the table below:
+
+|**Currency**|**Field**|**Details**|
+|GBP|`structuredRemittanceInformation.creditorReference`|While 35 characters are possible, only 18 will be used (as per the Faster Payments scheme rules). If you provide > 18 characters, the remittance text will be truncated and only 18 will be passed in your request.|
+|EUR|`remittanceInformation`|Up to a maximum of 140 characters may be used.|
+
+
+{% include note.html content="Passing Remittance is optional and only one instance of either `remittanceInformation` (for EUR) or `structuredRemittanceInformation.creditorReference` (for GBP) should be passed in your request; if both values are provided, you will receive a validation error." %}
+
+
+
+
+**Supported Characters**
+
+Remittance can use the following characters:
+
+* All alphanumeric characters (upper- and lower-case).
+* A set of special characters.
+
+The following are all allowed:
+
+|a b c d e f g h i j k l m n o p q r s t u v w x y z|
+|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
+|0 1 2 3 4 5 6 7 8 9|
+|/ - ? : ( ) . , ' + Space|
+
+{% include tip.html content="For Faster Payments (GBP) the following special characters are also allowed: # (hash), = (equals), ! (exclamation mark), “ (right double quote), % (percentage), & (ampersand), * (asterisk), < (less than), > (greater than), ; (semi colon), { (left curly bracket), @ (at), CrLf (carriage return line feed)." %}
+
 
 {% include swagger_np.html %}
 
