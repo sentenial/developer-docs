@@ -79,8 +79,18 @@ This Webhook has a single event type: <b>PaymentRejected</b>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
-			<td>optional</td>
-			<td>Null </td>
+			<td>Mandatory</td>
+			<td>Returns one of the following, based on the reason for the rejection:
+			<ul>
+			<li>PIS01 - SETTLEMENT_REJECTED</li>
+			<li>PIS01 - CONSENT_API_REJECTED</li>
+			<li>PIS01 - UNEXPECTED_ERROR</li>
+			</ul>
+			<strong>SETTLEMENT_REJECTED</strong> - indicates that there was an issue with the settlement.<br>
+			<strong>CONSENT_API_REJECTED</strong> - indicates that the reject occurred because the bank was not available.<br>
+			<strong>UNEXPECTED_ERROR</strong> - generated where there is a communication issue between TPP and the bank.
+			<br><br>See <a href="ob_paymentstatuses.html">Payment Statuses</a> for more information on payment transitions.
+			</td>
 		</tr>
         <tr>
 			<td>root</td>
@@ -122,7 +132,7 @@ The following is an example of a Received Payment event JSON:
     "resourceReferenceType": "reference",    
     "resourceUri": "/payments/n7rklmvdmq",
     "resourceType": "payment",
-    "reasonCode": null,
+    "reasonCode": "PIS01 - SETTLEMENT_REJECTED,
     "resourceOwner": "tc47ygrg72",
     "resourceRemittanceInformation": null   
 }</code>
