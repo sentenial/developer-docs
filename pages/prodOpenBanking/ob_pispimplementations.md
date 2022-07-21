@@ -1,13 +1,13 @@
 ---
-title: PISP Implementation Options
-keywords: Open Banking PISP Implementation Options
+title: Implementation Options
+keywords: Open Banking Payment Initiation Implementation Options
 summary: "Payment Initiation Service Provider Checkout Page implementation Options"
 sidebar: ob_sidebar
 permalink: ob_pispimplementations.html
 folder: prodOpenBanking
 ---
 
-Your PISP checkout page may be implemented in one of the following ways:
+Your Payment Initiation checkout page may be implemented in one of the following ways:
 
 1. CHECKOUT
 1. SELF_HOSTED
@@ -18,11 +18,11 @@ The implementation you choose determines if you:
 
 * Use the default Nuapay user interface or implement your own design.
 * Choose the `merchantPostAuthUrl`; this is the URL that is used to signal to merchants/partners that the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is finished interacting with the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
- 
+
 
 ## What is the Callback URL?
 
-To understand the Callback URL, and how it is used in Nuapay Open Banking, take the following "Happy" flow for an Open Banking payment... 
+To understand the Callback URL, and how it is used in Nuapay Open Banking, take the following "Happy" flow for an Open Banking payment...
 
 In an Open Banking payment the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>:
 
@@ -46,10 +46,10 @@ The following summarises the options available to both merchants and partners (a
     </tr>
     <tr>
       <td>Checkout</td>
-      <td>In this implementation mode: 
+      <td>In this implementation mode:
       <ul>
-      <li>You use the Nuapay user interface for the Bank Selection and you don’t set any <code class="language-plaintext highlighter-rouge">merchantPostAuth</code> URL in the request to <code class="language-plaintext highlighter-rouge">/tpp/payments</code>.</li> 
-      <li>The signal that the <a href="#" data-toggle="tooltip" data-original-title="Payment Service User - the person using the payment service - the payer.">PSU</a> and <a href="#" data-toggle="tooltip" data-original-title="The Account Servicing Payment Service Provider: this is the Bank or Payment Institution">ASPSP</a> have finished interacting is sent via a JavaScript event to the Web page hosting the NuaPay Payment User Interface.</li> 
+      <li>You use the Nuapay user interface for the Bank Selection and you don’t set any <code class="language-plaintext highlighter-rouge">merchantPostAuth</code> URL in the request to <code class="language-plaintext highlighter-rouge">/tpp/payments</code>.</li>
+      <li>The signal that the <a href="#" data-toggle="tooltip" data-original-title="Payment Service User - the person using the payment service - the payer.">PSU</a> and <a href="#" data-toggle="tooltip" data-original-title="The Account Servicing Payment Service Provider: this is the Bank or Payment Institution">ASPSP</a> have finished interacting is sent via a JavaScript event to the Web page hosting the NuaPay Payment User Interface.</li>
       <li>You will need to configure a <a href="ob_checkoutoverviewmerch.html#adding-a-listener">Listener</a> for this close event.</li></ul></td>
     </tr>
     <tr>
@@ -63,26 +63,26 @@ The following summarises the options available to both merchants and partners (a
     </tr>
     <tr>
       <td>Self-Hosted-Callback</td>
-      <td>In this implementation mode: 
+      <td>In this implementation mode:
       <ul>
-      <li>You handle the user interface and you also manage the ASPSP OAuth Callback URL</li> 
+      <li>You handle the user interface and you also manage the ASPSP OAuth Callback URL</li>
       <li>The signal that the PSU and ASPSP are finished interacting is sent via a <strong>POST</strong> to the URL defined in the <code class="language-plaintext highlighter-rouge">merchantPostAuthUrl</code> of the <code class="language-plaintext highlighter-rouge">/tpp/payment</code> request.</li>
-      <li>The details of how to process this callback differs from the <em>SELF_HOSTED</em> flow. You need to process the OAUTH callback from the ASPSP directly, parse the information and send it back to the Nuapay TPP platform. For more on this see <a href= "ob_selfcallbacksetupoverview.html#processing-the-callback">Processing the Callback</a></li> 
+      <li>The details of how to process this callback differs from the <em>SELF_HOSTED</em> flow. You need to process the OAUTH callback from the ASPSP directly, parse the information and send it back to the Nuapay TPP platform. For more on this see <a href= "ob_selfcallbacksetupoverview.html#processing-the-callback">Processing the Callback</a></li>
       <li>This option is useful if you want to style your callback handler or have mobile apps handle the callbacks using mobile deeplinking. </li>      
       <li>In the context of mobile apps, <strong>Deep Linking</strong> consists of using a uniform resource identifier (URI) that is opened within a mobile app rather than simply launching a Web browser. </li></ul></td>
     </tr>
     <tr>
       <td>Redirect</td>
-      <td>In this implementation mode: 
+      <td>In this implementation mode:
       <ul>
-      <li>The merchant/partner creates a payment using the <strong>POST</strong> /payments endpoint with <code class="language-plaintext highlighter-rouge">integrationType = REDIRECT</code> and the <strong>merchantPostAuthUrl</strong> supplied as a mandatory parameter.</li> 
+      <li>The merchant/partner creates a payment using the <strong>POST</strong> /payments endpoint with <code class="language-plaintext highlighter-rouge">integrationType = REDIRECT</code> and the <strong>merchantPostAuthUrl</strong> supplied as a mandatory parameter.</li>
       <li>The TPP creates the payment and sends back the userInterfacePaymentId to the merchant/partner.</li>
-      <li>The merchant/partner redirects the PSU to the redirect URI specified with the `userInterfacePaymentId`. (The merchant/partner must build a URI that can be used on a web page or sent by e-mail to the customer, for example).</li> 
+      <li>The merchant/partner redirects the PSU to the redirect URI specified with the `userInterfacePaymentId`. (The merchant/partner must build a URI that can be used on a web page or sent by e-mail to the customer, for example).</li>
       <li>The PSU uses the URI to launch the TPP-UI with the ASPSP selection window being opened in a new browser window.</li>
       <li>The TPP processes the callback.</li>
       <li>The TPP redirects the PSU to the merchantPostAuthURl with parameters indicating success/failure and the paymentId so that the merchant/partner can correlate the redirect with the originally create payment.
       </li>
-      
+
       </ul></td>
     </tr>
   </tbody>

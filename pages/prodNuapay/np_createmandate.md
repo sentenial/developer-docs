@@ -57,12 +57,15 @@ For this reason we recommend that your `mandateId` should not use all 18 charact
 {% include swagger_np.html %}
 
 {% include urls.html %}
+{% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l - so in this case you would call POST /schemes/abxq9kq52l/mandates. See [List Schemes](np_listcredscheme.html) for more on this." %}
+
 
 
 <ul id="profileTabs" class="nav nav-tabs">
 
 
 </ul>
+
 
 {% include redoc.html %}
 
