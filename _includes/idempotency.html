@@ -1,0 +1,14 @@
+## Idempotency
+
+{% include tip.html content="We recommend that you use a unique idempotency key when working with this endpoint. The **Idempotency-Key** is a Header parameter in this API." %}
+
+
+The Idempotency check is only against successful requests, so where a previous call has resulted in any of the following [HTTP Response Codes](np_httpreasons.html), that Idempotency key may be reused without any issue:
+
+* `401`
+* `403`
+* `404`
+* `408`
+* `500`
+* `501`
+* `503`

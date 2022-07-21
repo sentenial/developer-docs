@@ -21,6 +21,8 @@ When creating mandates/DDIs, please note that:
 * Depending on the configuration of your Creditor Scheme your mandates/DDI will be created in a specific [status](np_mandatestatuses.html).
 * Regardless of the scheme, Direct Debit payments can only be created against an **ACTIVE** mandate/DDI.
 
+{% include idempotency.html %} 
+
 ## A Note on the Mandate Identifier in the Bacs Scheme
 
 A unique mandate (DDI) identifier (also known as the Core Reference in Bacs), the `mandateId` is applied automatically when you call the Create Mandate/DDI endpoint.
@@ -57,12 +59,15 @@ For this reason we recommend that your `mandateId` should not use all 18 charact
 {% include swagger_np.html %}
 
 {% include urls.html %}
+{% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l - so in this case you would call POST /schemes/abxq9kq52l/mandates. See [List Schemes](np_listcredscheme.html) for more on this." %}
+
 
 
 <ul id="profileTabs" class="nav nav-tabs">
 
 
 </ul>
+
 
 {% include redoc.html %}
 

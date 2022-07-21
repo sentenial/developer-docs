@@ -1,5 +1,5 @@
 ---
-title: PISP Overview
+title: Payment Initiation Overview
 keywords: Open Banking PISP Overview
 summary: "Payment Initiation Service Provider mode"
 sidebar: ob_sidebar
@@ -28,22 +28,11 @@ Initiating payments via Open Banking offers numerous benefits.
 
 ## Implementations
 
-Nuapay supports the following implementation options: 
+Nuapay supports the following implementation options:
 
-* Checkout 
+* Checkout
 * Redirect
-* Self-Hosted 
+* Self-Hosted
 * Self-Hosted-Callback
 
-These implementation modes are described in greater details in [PISP Implementation Options](ob_pispimplementation.html).
-
-
-
-
-
-
-
-
-
-
-
+These implementation modes are described in greater details in [PISP Implementation Options](ob_pispimplementations.html).

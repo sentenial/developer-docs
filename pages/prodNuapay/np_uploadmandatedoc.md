@@ -17,15 +17,17 @@ This can then be viewed later if you use the [Retrieve Mandate Document](np_retr
 {% include swagger_np.html %}
 
 {% include urls.html %}
+{% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l. Similarly, the mandate identifier is the resource identifier (e.g., rtsxq8kaby5) and is not the actual unique mandate reference - so in this case you would call POST /schemes/abxq9kq52l/mandates/rtsxq8kaby5/document" %}
 
+{% include idempotency.html %} 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/putPdfFileUsingPOST','#profileTabs',timerRef); }, 500);
 

@@ -18,6 +18,8 @@ The Create Direct Debit request must:
 
 {% include tip.html content="Nuapay allows you to create a mandate/DDI and a Direct Debit payment in a single API request. For more details on this see the [Create Direct Debit and Mandate](np_createddandmand.html) request." %}
 
+{% include idempotency.html %}
+
 ## A Note on End-to-End Identifiers in the Bacs Scheme
 
 When creating a Direct Debit against a Bacs DDI, please note:

@@ -31,7 +31,9 @@ The following are optional arguments:
 * `representationFee` (not allowed for Bacs)
 * `endToEndId`
 
-{% include important.html content="If you do not specify a re-presentation date or fee, the default values will be taken from your organisation's Nuapay configuration. These settings are configured at the Scheme level for your business."%} 
+{% include important.html content="If you do not specify a re-presentation date or fee, the default values will be taken from your organisation's Nuapay configuration. These settings are configured at the Scheme level for your business."%}
+
+{% include idempotency.html %}
 
 
 {% include swagger_np.html %}
@@ -40,12 +42,12 @@ The following are optional arguments:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/representDirectDebitUsingPOST','#profileTabs',timerRef); }, 500);
 

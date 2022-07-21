@@ -18,18 +18,20 @@ If you decide that you do not want to settle the payment and do not want to pass
 {% include tip.html content="The Revoke operation is only possible for payments that are in READY_FOR_EXPORT status. For more information see [Direct Debit Statuses](np_ddstatuses.html)." %}
 
 
+{% include idempotency.html %}
+
 {% include swagger_np.html %}
 
 {% include urls.html %}
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/revokeDirectDebitUsingPOST','#profileTabs',timerRef); }, 500);
 

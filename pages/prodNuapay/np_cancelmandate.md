@@ -23,6 +23,8 @@ In **SEPA** If you want to engage with your payer at a later point, and want to 
 In **Bacs**, it is possible for your payers to reinstate a cancelled DDI through their bank, provided that the DDI was cancelled within the last 2 months.
 Where this happens, Nuapay will receives a code "R" in an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.addacs}}">ADDACS</a> file and will set the DDI status back to `ACTIVE`. See the [ADDACS Reason Codes](np_bacsreasons.html#addacs-reason-codes) for more information.
 
+{% include idempotency.html %} 
+
 ## SEPA Mandate Cancelation
 In SEPA:
 * A mandate may only be cancelled by the merchant.
@@ -60,6 +62,7 @@ Where the payer goes directly to the bank to request the DDI cancellation:
 {% include swagger_np.html %}
 
 {% include urls.html %}
+{% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l. Similarly, the mandate identifier is the resource identifier (e.g., rtsxq8kaby5) and is not the actual unique mandate reference - so in this case you would call POST /schemes/abxq9kq52l/mandates/rtsxq8kaby5/cancel" %}
 
 
 <ul id="profileTabs" class="nav nav-tabs">
