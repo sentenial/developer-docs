@@ -18,7 +18,9 @@ You may need to re-send the mandate/DDI for signature depending on the update th
 
 {% include urls.html %}
 
+
 {% include idempotency.html %} 
+
 
 {% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l. Similarly, the mandate identifier is the resource identifier (e.g., rtsxq8kaby5) and is not the actual unique mandate reference - so in this case you would call PATCH /schemes/abxq9kq52l/mandates/rtsxq8kaby5" %}
 
