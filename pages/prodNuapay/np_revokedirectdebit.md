@@ -24,6 +24,8 @@ If you decide that you do not want to settle the payment and do not want to pass
 
 {% include urls.html %}
 
+{% include tip.html content="You must use the resource identifier of the `schemeId`/ `mandateId`/ `directDebitId` in your requests and not the actual creditor scheme ID/SUN or Unique Mandate Reference or Direct Debit identifier. Resource identifiers are short alphanumeric strings, similar to this: abxq9kq52l. Depending on the request you may need 1, 2 or all 3 of these resource identifiers in your URI." %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
 
