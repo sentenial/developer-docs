@@ -29,6 +29,8 @@ The Create Direct Debit and Mandate request must include:
 * The payer's account details
 * The Merchant's Nuapay IBAN
 
+{% include idempotency.html %}
+
 
 {% include tip.html content="In Bacs, because the DDI will need to be registered with the scheme (via an AUDDIS submission) before the first Direct Debit payment can be made, if the `requestedCollectionDate` is not set beyond the 3 business days into the future, the date will be automatically shifted." %}
 
@@ -37,14 +39,16 @@ The Create Direct Debit and Mandate request must include:
 
 {% include urls.html %}
 
+{% include tip.html content="You must use the resource identifier of the `schemeId`/ `mandateId`/ `directDebitId` in your requests and not the actual creditor scheme ID/SUN or Unique Mandate Reference or Direct Debit identifier. Resource identifiers are short alphanumeric strings, similar to this: abxq9kq52l. Depending on the request you may need 1, 2 or all 3 of these resource identifiers in your URI." %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/addSinglePaymentMOTFUsingPOST','#profileTabs',timerRef); }, 500);
 

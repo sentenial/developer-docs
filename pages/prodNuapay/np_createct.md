@@ -15,6 +15,9 @@ toc: true
 
 {% include tip.html content="Before you can generate a Credit Transfer (CT) payment, using this API request, you must first [Create a Beneficiary](np_createbeneficiary.html). Alternatively you can use the [Create Credit Transfer & Beneficiary](np_createctandbene.html) to create the payee and the payment in one API request." %}
 
+{% include idempotency.html %} 
+
+
 ## SEPA Credit Transfers
 
 When creating SEPA Credit Transfer (also referred to as an SCT or CT) payments, note that:

@@ -16,6 +16,8 @@ The Create Credit Transfer request requires that you have first created a benefi
 
 {% include note.html content="If the beneficiary details you reference in the request have been previously provided (and that beneficiary is already stored against your merchant profile) Nuapay will reuse that stored beneficiary data: a new beneficiary is only created if his/her beneficiary account has not been referenced before in a previous Credit Transfer payment." %}
 
+{% include idempotency.html %} 
+
 ## SEPA Credit Transfers
 
 When creating a SEPA Credit Transfer (also referred to as an SCT or CT) payments, note that:
