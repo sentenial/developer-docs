@@ -60,6 +60,7 @@ Where the payer goes directly to the bank to request the DDI cancellation:
 {% include swagger_np.html %}
 
 {% include urls.html %}
+{% include tip.html content="You must use the resource identifier of the `schemeId` in your request and not the actual creditor scheme ID or SUN. This identifier will be similar to this: abxq9kq52l. Similarly, the mandate identifier is the resource identifier (e.g., rtsxq8kaby5) and is not the actual unique mandate reference - so in this case you would call POST /schemes/abxq9kq52l/mandates/rtsxq8kaby5/cancel" %}
 
 
 <ul id="profileTabs" class="nav nav-tabs">

@@ -1,0 +1,887 @@
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jquery-jvectormap-2.0.5.min.js"></script>
+<script src="js/jquery-jvectormap-europe-merc.js"></script>
+<style>
+
+	#eu-map {
+		width:900px; height: 1024px; margin: 40px auto;box-shadow:rgba(149, 157, 165, 0.2) 0px 0px 50px;position: relative;border-radius: 20px;
+	}
+
+	.jvectormap-container .jvectormap-zoomin, .jvectormap-zoomout {
+		right: 10px;
+		top: initial;
+		left: initial;
+		width: 20px;
+		height: 20px;
+		border-radius: 20px;
+		padding: 5px;
+    	line-height: 19px;
+    	background: #fff;
+    	border: 1px solid #999;
+    	color: #3f3f3f;
+	}
+	.jvectormap-container .jvectormap-zoomin   {
+		bottom: 50px;
+	}
+	.jvectormap-container .jvectormap-zoomout   {
+		bottom: 10px;
+	}
+	.jvectormap-heading {
+		    position: absolute;
+		    border: 1px solid #eee;
+		    top: 20px;
+		    left: 20px;
+		    height: 60px;
+		    border-radius: 5px;
+		    background: #Fff;
+		    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+		    border: none;
+		    z-index: 2;
+	}
+	.jvm-heading {
+		font-family: 'Work Sans', sans-serif;
+	    font-size: 24px;
+	    color: #3f3f3f;
+	    font-weight: 600;
+	  	margin: 16px 85px 0 18px;
+	}
+	.jvectormap-tip {
+		min-width: 280px;
+		height: 60px;
+		border-radius: 5px;
+		background: #F3F5F7;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		transform: translateY(-10px);
+		border: none;
+	}
+	.jvm-flag, .jvm-flag-mobile {
+		width: 50px;
+	    height: 30px;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    border-radius: 5px;
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+    	left: 10px;
+	}
+	.jvm-label {
+		font-family: 'Work Sans', sans-serif;
+	    font-size: 18px;
+	    color: #3f3f3f;
+	    font-weight: 600;
+	  	margin: 18px 85px 18px 72px;
+	}
+	.jvm-value, .mobile-jvm-value {
+		font-family: 'Work Sans', sans-serif;
+	    font-size: 24px;
+	    font-weight: 800;
+	    color: #3f3f3f;
+	    margin-bottom: 15px;
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    right: 10px;
+	    width: 60px;
+	    background: #FCCC12;
+	    border-radius: 5px;
+	    text-align: center;
+	    padding: 8px 0;
+	}
+	.bank-list
+	{
+		line-height: initial;
+		display: none;
+		font-family: 'Work Sans', sans-serif;
+	    width:92%;
+	    height: 92%;
+	    background: #fff;
+	    box-shadow: rgb(149 157 165 / 20%) 0px 0px 50px;
+	  	padding: 10px;
+	    border-radius: 10px;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    z-index: 2;
+	}
+	.bank-list .jvm-flag {
+		top: 75px;
+		left: 20px;
+	}
+	.bank-list .jvm-label {
+		font-size: 28px;
+    	margin-top: 25px;
+   		margin-left: 76px;
+	}
+	.bank-list-table {
+		display: table;
+	    border-collapse: collapse;
+	    position: relative;
+	    margin-left: 20px;
+   		margin-right: 20px;
+	}
+
+	.bank-list-header {
+		display: table-row;
+	}
+	.bank-list-row
+	{
+		display: table-row;
+		margin: 10px;
+		padding: 10px;
+		border-radius: 5px;
+		background: #f5f7f9;
+		height: 60px;
+	}
+	.bank-list-row > div, .bank-list-header>div {
+			display: table-cell;
+	}
+	.bank-list-row > div, .bank-list-header>th, .bank-list-header>div {  vertical-align: middle; white-space: nowrap;padding-left: 5px;padding-right: 5px;}
+
+	.bank-list-row.branch  {
+		height: 40px;
+	}
+
+	.bank-list-row.branch .bank-list-name {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.cell100 {
+		width: 100%;
+		padding-left: 14px !important;
+		padding-right: 10px;
+	}
+	.celllast {
+		padding-right: 10px;
+	}
+
+	.cell-logo, .cell-button {
+		width: 36px;
+	}
+
+	.cell-button>.icon-chevron2 {
+		position: relative;
+	    width: 16px;
+	    margin: 0 0.5rem;
+	    height: 16px;
+	    top: unset;
+	    right: unset;
+	    left: unset;
+	    cursor: pointer;
+	}
+
+	.bank-list-header>th, .bank-list-header>div {
+		font-size: 12px;
+		color: #999;
+		font-weight: 400;
+		background: #fff;
+		position: sticky;
+  		top: -1px;
+  		height: 30px;
+  		z-index: 2;
+  		text-align: left;
+  		letter-spacing: -0.5;
+
+	}
+	.bank-list-row > div:nth-child(n+4) {
+		text-align: center;
+	}
+
+
+
+	.bank-list-logo {
+		width: 40px;
+		height: 40px;
+		background-size: contain;
+		border-radius: 5px;
+		background-repeat: no-repeat;
+		background-position: center;
+
+	}
+	.bank-list-name {
+		font-size: 20px;
+	    color: #3f3f3f;
+	    font-weight: 600;
+	    width: 100%;
+	}
+	.token {
+		font-size: 16px;
+	    color: #87919e;
+	    font-weight: 600;
+	    padding: 5px;
+	    background: #e9ecee;
+	    border-radius: 5px;
+	    min-width: 30px;
+	    text-align: center;
+	    display: inline-block;
+	    position: relative;
+
+	}
+	.bank-list-currs.token
+	{
+		margin-left: 5px;
+	}
+	.bank-list-iban, .bank-list-insta {
+	}
+	.bank-list-branch {
+	}
+	.bank-list-space {
+		height: 10px;
+	}
+	.nocurrid {
+	   height: 18px;
+ 	   width: 35px;
+	}
+
+	.nocurrid .icon-chevron2 {
+	   right: unset;
+   	   left: 17px;
+   		top: 6px;
+   		cursor: pointer;
+	}
+
+
+	.token.Yes, .token.No {
+   		position: relative;
+   		padding-left: 20px;
+	}
+	.token.Yes {
+		background: #d8f6c4;
+   		color: #478f46;
+	}
+	.token.No {
+		background: #e9ecee;
+   		color: #87919e;
+	}
+	.token.Yes:before, .token.No:before  {
+		content: "";
+	    width: 10px;
+	    height: 10px;
+	    border-radius: 10px;
+	    position: absolute;
+	    left: 6px;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	.token.Yes:before {
+		 background: #478f46;
+	}
+
+	.token.No:before {
+	    background: #87919e;
+	}
+	.token.emphasised {
+		background: #FCCC11;
+		cursor: pointer;
+		color: #3f3f3f;
+	}
+	.filter {
+		position: absolute;
+    	right: 20px;
+    	top: 56px;
+	}
+	.filter input {
+		height: 34px;
+		border-radius: 5px;
+		border: none;
+		width: 300px;
+		box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+		font-family: 'Work Sans', sans-serif;
+		font-size: 16px;
+		padding:10px 36px 10px 10px;
+		color: #3f3f3f;
+	}
+	.filter input:active, .filter input:focus-visible {
+		outline-width: 0;
+		border:  1px solid #eee;
+
+	}
+	.bank-list-container {
+		height: calc(100% - 108px);
+		overflow-y: auto;
+		overflow-x: hidden;
+		margin-top: 20px;
+	}
+	.bank-list-footer {
+		position: relative;
+		opacity: 0.5;
+	}
+	.bank-list-footer a {
+		cursor: pointer;
+	}
+	.filter:before {
+		opacity: 0.5;
+   	    content: "";
+	    position: absolute;
+	    background-size: contain;
+	    top: 9px;
+	    right: 10px;
+	    width: 14px;
+	    height: 14px;
+		background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAC6ADAAQAAAABAAAACwAAAACidng8AAABD0lEQVQYGX2QvUoDURCFvXd/IFgJFjZWQbHfn7CgEEQEC0krWFjmBQLxKURfIHWs8gYioiz7B5aiYO8LaLHZu343cUBBHRjmzJlz7syuWvmKIAi6Sqkj2o7W+j7P81RmUpUFURSN2rbtAa/Jd/KYXPU8b5im6Qd4GWEYDnj1Snqp8Cfwl9Lbqsmx7/vn30mLy7KcctY2hnWZWbH5sUomVE57dBxnSygr/jN4eRPDmwg0zR2rzoSQCtcFbxRF8SqcSpKkU9f1FOIB44T7Df0h+MKKOKPPb3y2ePHrGKg4jk+NMQesXoPPEN00TTNjZlzX7WdZ9rIQW9dvwSk7mG8xzDHv/fuBVVU9IdrHwFKz+wm/0GK+nUREkwAAAABJRU5ErkJggg==');
+	}
+
+	.mobile-list {box-sizing: border-box;min-width: 320px;font-family: 'Work sans', sans-serif;text-align: center;}
+
+	.mobile-wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.mobile-wrapper>div {
+		flex-grow: 1;
+	}
+
+	.mobile-bank-container {
+		position: relative;
+	    background: #eee;
+	    border-radius: 5px;
+	    margin: 10px auto;
+	    background: #fff;
+		box-shadow: rgba(149, 157, 165, 0.25) 0px 4px 12px;
+		overflow: hidden;
+		display: inline-block;
+		height: 50px;
+	}
+
+	.mobile-bank-list-header {
+		height: 3rem;
+		position: relative;
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.mobile-bank-table {
+		display: table;
+	    border-collapse: collapse;
+	    margin: 4px auto 12px;
+	    clear: both;
+	}
+	.mobile-bank-table .bank-list-header>div {
+		text-align: center;
+		white-space: initial;
+		letter-spacing: -0.5;
+	}
+	.mobile-bank-table-row {
+		display: table-row;
+	}
+	.mobile-bank-table-row>div {
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 5px;
+		text-align: center;
+	}
+	.mobile-bank-name-header {
+		 position: relative;
+	}
+	.mobile-bank-name-header .bank-list-logo {
+		display: block;
+	    height: 30px;
+	    background-size: 30px;
+	    background-repeat: no-repeat;
+	    background-position: left center;
+	    width: 100%;
+	    text-align: left;
+	    padding:6px 0 0 44px;
+	    box-sizing: border-box;
+	    font-weight: 500;
+	    max-width: 320px;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	}
+	.mobile-bank-name-header .bank-list-name {
+		display: block;
+	    max-width: 260px;
+	    padding-left: 8px;
+	    float: left;
+	    font-size: 16px;
+	    margin-top: 7px;
+	}
+	.mobile-bank-container .bank-list-space {
+		height: 10px;
+	}
+	.mobile-bank-table-row.colspaced>div {
+		display: inline-block;
+	}
+	.mobile-bank-table-row .bank-list-logo {
+		width: 32px;
+		height: 32px;
+	}
+	.mobile-bank-table-row .bank-list-name {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.mobile-bank-table-row .token {
+		font-size: 11px;
+		min-width: 20px;
+		min-height: 12px;
+	}
+
+	.mobile-bank-list-header>.jvm-label {
+		margin: 0 0 0 80px;
+    	line-height: 3rem;
+       text-align: left;
+	}
+	.mobile-jvm-value {
+		font-size: 18px;
+		width: 44px;
+	}
+	.icon-chevron2 {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAYAAADebrddAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAC6ADAAQAAAABAAAABwAAAABnhpU9AAAAxElEQVQYGWM0NjbW5eDgeHD06NHPDDiAmZmZPisr6z0mRkbG/T9//tzn4OAggE0t0LCov3//nvvx40cqSHHi////9b98+bIbXYOJiUkEUH4REB8GGjSD6fTp05uZmZnDgRwDoIZdMA1AE0OBYkuABh0XEhLyPnv27DdGmNUgSaAJy4H8c0C8BohbgQrPAP3jBvMPXDFIE8h9QGoxEIOcdxqo2BVo4keQHAgwQygI+fz588vS0tK3QeKcnJyhJ0+e/IAsDwBTe0ypxpYRDAAAAABJRU5ErkJggg==');
+		background-size: contain;
+		display: inline-block;
+		width: 12px;height: 12px;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+	    top: 5px;
+	    right: 10px;
+	}
+
+	.mobile-currency {
+		padding-right: 20px;
+		position: relative;
+		cursor: pointer;
+	}
+	.mobile-bank-family-button {
+		position: absolute;
+	    left: 0.5rem;
+	    width: 1.5rem;
+	    height: 1.5rem;
+	    border-radius: 30px;
+	    cursor: pointer;
+	}
+
+
+	.rot90 {
+		transform: rotate(-90deg);
+		top: 8px;
+    	left: 10px;
+	}
+
+	.mobile-bank-table .token.Yes, .mobile-bank-table .token.No {
+		padding-left: 16px;
+	}
+	.mobile-bank-table .token.Yes:before, .mobile-bank-table .token.No:before {
+		width: 7px;
+		height: 7px;
+	}
+	.branch-container {
+		margin-top: -12px;
+	}
+	.branch-container .mobile-bank-table {
+		margin: 0;
+	}
+	.branch-container .mobile-wrapper:last-child .mobile-bank-table {
+		margin-bottom:1rem;
+	}
+
+	.displayonidentifier {
+		cursor: pointer;
+	}
+
+	.bank-list-logo.branch {
+		padding-top: 0;
+		font-size: 14px;
+		font-weight: 500;
+		color: #666;
+	}
+
+	.vis-col {
+		visibility: collapse;
+		height: 0;
+	}
+	.tooltip-currency {
+		position: absolute;
+		width: auto;
+		background: #fff;
+		display: none;
+		border: 1px solid #F3F5F7;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		border-radius: 5px;
+	    padding: 10px;
+	    font-size: 14px;
+	    font-family: 'Work Sans';
+	}
+	#bank-list-close {
+		display: inline-block;
+		padding: 5px 30px 0;
+	}
+	#bank-list-close:before {
+		content: "";
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAYAAADebrddAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAC6ADAAQAAAABAAAABwAAAABnhpU9AAAAxElEQVQYGWM0NjbW5eDgeHD06NHPDDiAmZmZPisr6z0mRkbG/T9//tzn4OAggE0t0LCov3//nvvx40cqSHHi////9b98+bIbXYOJiUkEUH4REB8GGjSD6fTp05uZmZnDgRwDoIZdMA1AE0OBYkuABh0XEhLyPnv27DdGmNUgSaAJy4H8c0C8BohbgQrPAP3jBvMPXDFIE8h9QGoxEIOcdxqo2BVo4keQHAgwQygI+fz588vS0tK3QeKcnJyhJ0+e/IAsDwBTe0ypxpYRDAAAAABJRU5ErkJggg==');
+		background-size: contain;
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-repeat: no-repeat;
+		background-position: center;
+		transform: rotate(90deg);
+		position: absolute;
+		top: 6px;
+  	   left: 10px;
+
+	}
+
+	.displayoff {
+		display: none !important;
+	}
+	.displayon {
+		display: on;
+	}
+	@media (min-width: 769px) {
+	  .mobile-list {
+			display: none;
+	   }
+	   #eu-map {
+		   	display: block;
+	   }
+	}
+	@media (min-width: 600px) and (max-width: 768px) {
+	  .mobile-bank-container {
+	  		width: 100%;
+	  }
+	  .mobile-wrapper>div.mobile-bank-name-header{
+			flex: 70%;
+		}
+	  .mobile-list {
+			display: block;;
+	   }
+	   .mobile-bank-name-header .bank-list-logo {
+	   		margin-left: 40px;
+	   }
+	   .mobile-bank-family-button>span {
+			left: 0.5rem;
+			top: 0.5rem;
+			width: 14px;
+			height: 14px;
+		}
+	   #eu-map {
+		   	display: none;
+	   }
+	}
+
+	@media (min-width: 320px) and (max-width: 599px) {
+		body {margin: 0;}
+	  .mobile-bank-container {
+	  		width: 100%;
+
+	  }
+	  .mobile-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		}
+		.mobile-wrapper>div {
+			flex-grow: 1;
+		}
+	  .mobile-list {
+			display: block;;
+	   }
+	     .mobile-bank-family-button>span {
+		    top: 10px;
+		    left: -2rem;
+		    width: 14px;
+		    height: 14px; }
+
+	   .mobile-bank-family-button.rot90>span {
+		    left: 10px;
+		    top: -2rem;
+		    width: 14px;
+		    height: 14px; }
+	   #eu-map {
+		   	display: none;
+	   }
+	}
+	@media (max-width: 319px) {
+		body {display:none}
+	}
+
+	}
+
+.mobile-bank-container {
+	transition: max-height 1s ease;
+}
+</style>
+
+
+<body>
+		<!--<div style="text-align:center;"><img src="supported_headline.png" style="margin: 60px auto 20px;" /></div>-->
+
+		<div class="mobile-list"></div>
+
+		<!-- ******************************************* -->
+		<div id="eu-map">
+	  		<div class="jvectormap-heading">
+		  		<div class="jvm-heading">Total Bank Connections</div><div class="jvm-value"></div>
+		 	</div>
+	  		<div class="map-tooltip"></div>
+
+	  		 <div class="bank-list">
+	  		 	<div class="bank-list-footer">
+			  		<a id="bank-list-close" style="">Back To Map</a>
+				</div>
+			 	<div class="jvm-flag"></div><div class="jvm-label"></div>
+			 	<div class="filter">
+			 		<input type="text" id="f-filter" />
+			 	</div>
+			 	<div class="bank-list-container">
+				 	<table class="bank-list-table">
+				 	   <tr class="bank-list-header">
+				 	   		<th style="width:50px"></th>
+				 	   		<th style="width:50px"></th>
+				 	   		<th  style="width:100%">Bank name</th>
+				 	   		<th>Currencies</th>
+				 	   		<th>Connection</th>
+				 	   		<th>Debtor IBAN</th>
+				 	   		<th>Instant Payment</th>
+				 	   </tr>
+				  </table>
+	  		 </div>
+			</div>
+	 </div>
+
+	<div class="tooltip-currency"></div>
+	<div class="tooltip-branch"></div>
+
+
+	  <script src="js/mocked_banks_response.js"></script>
+	  <script>
+	  	var mobilevp=false;
+
+	    $(function(){
+	    		var newWidth = window.innerWidth;
+		  		if(newWidth<768) {mobilevp=true;}else{mobilevp=false;}
+
+	    		var countryData = jsonObj.countries;
+				var countrySeries = {};
+				var tmp = [];
+				var tconn = 0;
+
+	    		$.each(countryData, function() {
+				  var mobiltipcounter=0;
+				  mobiltipcounter=mobiltipcounter+this.banks.length;
+				  $.each(this.banks, function(){
+					mobiltipcounter=mobiltipcounter+this.branches.length;
+				  });
+	    		  var moblistbanks='';
+			      tmp.push(this.country,'#F5861E');
+			      $.each(this.banks, function(){
+			      	  tconn=tconn+this.branches.length;
+			      });
+				  tconn=tconn+this.banks.length;
+			      console.log(tconn);
+				  //Generate banks for country
+				   $.each(this.banks, function() {
+				      	var branch_html='';var cnt_curr=0;var classstatus = 'No';var classdebt = 'No';var classinstapay = 'No';
+				      	var singlecurrency='';var singlecurrencyd='displayoff';var currencyd='displayoff';var branchbutton='displayoff';if (this.statusLive) classstatus='Yes';if (this.debtorIbanRequired) classdebt='Yes'; if (this.instantPay) classinstapay='Yes';
+						if (this.branches.length>0) {
+							branchbutton='displayon';
+							$.each(this.branches, function() {
+								if (this.statusLive) classstatus='Yes';if (this.debtorIbanRequired) classdebt='Yes'; if (this.instantPay) classinstapay='Yes';
+								if (typeof this.currencies !== 'undefined') {
+									singlecurrency=this.currencies;
+									singlecurrencyd='displayoff';
+								}
+								else
+								{
+									singlecurrency="";
+									singlecurrencyd='displayon';
+								}
+
+								branch_html=branch_html+'<div class="mobile-wrapper"><div class="mobile-bank-name-header"><div class="bank-list-logo branch">'+this.name+'</div></div><div class="mobile-bank-table"><div class="bank-list-header vis-col"><div>Currencies</div><div>Connection</div><div>Debtor IBAN</div><div>Instant Payment</div></div><div class="mobile-bank-table-row"><div><div class="mobile-currency-single token">' + singlecurrency + '</div></div><div><div class="bank-list-cs token ' + classstatus + '">' + classstatus + '</div></div><div><div class="bank-list-iban token ' + classdebt + '">' + classdebt + '</div></div><div><div class="bank-list-insta token ' + classinstapay + '">' + classinstapay + '</div></div></div><div class="bank-list-space"></div></div></div>';
+				 			});
+
+						}
+						else
+						{
+							branchbutton='displayoff';
+							branch_html='';
+						}
+						if (typeof this.currencies !== 'undefined') {
+							singlecurrency=this.currencies;
+							singlecurrencyd='displayoff';
+						}
+						else
+						{
+							singlecurrency="";
+							singlecurrencyd='displayon';
+						}
+
+
+					  	moblistbanks=moblistbanks+'<div class="mobile-wrapper"><div class="mobile-bank-name-header"><div attr-branch="'+this.name+'" class="mobile-bank-family-button '+branchbutton+' rot90"><span class="icon-chevron2"></span></div><div class="bank-list-logo '+branchbutton+'identifier" attr-branch="'+this.name+'" style="background-image:url('+this.logo+')" >'+this.name+'</div></div><div class="mobile-bank-table"><div class="bank-list-header"><div>Currencies</div><div>Connection</div><div>Debtor IBAN</div><div>Instant Payment</div></div><div class="mobile-bank-table-row"><div><div attr-branch="'+this.name+'" class="mobile-currency-single token  '+branchbutton+'identifier">' + singlecurrency + '<span class="icon-chevron2 '+singlecurrencyd+'"></span></div></div><div><div class="bank-list-cs token ' + classstatus + '">' + classstatus + '</div></div><div><div class="bank-list-iban token ' + classdebt + '">' + classdebt + '</div></div><div><div class="bank-list-insta token ' + classinstapay + '">' + classinstapay + '</div></div></div><div class="bank-list-space"></div></div></div><div attr-branch="'+this.name+'" class=" branch-container displayoff">'+branch_html+'</div>';
+				  });
+				 //Populate mobile countries
+			      $('.mobile-list').append('<div class="mobile-bank-container" data-attr-country="' + this.country + '"><div class="mobile-bank-list-header"  data-attr-country="'+this.country+'"><div class="jvm-flag-mobile" style="background-image:url(https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/svg/'+this.country.toLowerCase()+'.svg"></div><div class="jvm-label">'+ this.name +'</div><div class="mobile-jvm-value">'+mobiltipcounter+'</div></div>'+moblistbanks+'</div>');
+
+			  	});
+	    		$('.jvm-value').html(tconn);
+	    		$('.mobile-currency').click(function(e) {
+	    			$('.tooltip-currency').html($(this).attr('attr-data-curr'));
+	    			$('.tooltip-currency').css('top', e.clientY+10);
+	    			$('.tooltip-currency').css('left', e.clientX-50);
+	    			$('.tooltip-currency').css('display', 'block');
+	    		})
+	    		$('.mobile-currency').click(function(e) {
+	    			e.stopPropagation();
+	    		})
+				$('.mobile-bank-list-header').click(function() {
+	    			var bankcountry=$(this).attr('data-attr-country');
+	    			$('.mobile-bank-container').each(function() {
+	    			    if ($(this).attr('data-attr-country')==bankcountry) {
+	    			    	if($(this).css('height') == '50px') {$(this).css('height', 'auto');} else {$(this).css('height', '50px');}
+	    			    }
+	    			});
+	    		});
+
+				$('.bank-list-logo.displayonidentifier, .mobile-bank-family-button, .mobile-currency-single.displayonidentifier').click(function() {
+					var bankbranch=$(this).attr('attr-branch');
+					$('.mobile-bank-family-button').each(function() {
+						if ($(this).attr('attr-branch')==bankbranch) {$(this).toggleClass('rot90');}
+					});
+					$('.branch-container').each(function() {
+	    			    if ($(this).attr('attr-branch')==bankbranch) {$(this).toggleClass('displayoff')}
+	    			});
+				});
+
+	    		$(window).click(function() {
+				  if($('.tooltip-currency').css('display') == 'block') {$('.tooltip-currency').css('display', 'none');}
+				});
+
+
+	    		for (var i = 0; i < tmp.length / 2; i++)
+			  	  countrySeries[tmp[i * 2]] = tmp[i * 2 + 1];
+
+			    map = new jvm.Map({
+				    map: 'europe_merc',
+				    container: $('#eu-map'),
+				    zoomOnScroll: false,
+				    backgroundColor: 'transparent',
+				    regionStyle: {
+				      initial: {fill: '#f1f3f5','stroke-width': 2,stroke: '#fff'},
+				      	hover: {fill: '#f1f3f5','fill-opacity': 1,cursor: 'default'}
+					},
+					focusOn: {
+					    x: 0.5,
+					    y: 0.5,
+					    scale: 1
+					},
+					series: {regions: [{ values: countrySeries, attribute: 'fill' }]},
+					onRegionTipShow: function (e, tip, code) {
+						var maptip=$('.jvectormap-tip');
+						var index=0;
+						var tipcounter=0;
+						var connections=0;
+						var found = false;
+				    	for(var i = 0; i < countryData.length; i++){if (code==countryData[i].country) {found=true;index=i}}
+	    				if (found) {maptip.css('opacity', '1');$('path[data-code="'+code+'"]').attr('fill', '#FECB06').css('cursor', 'pointer');
+
+	    					      $.each(countryData[index].banks, function(){
+							      	  tipcounter=tipcounter+this.branches.length;
+							      });
+								  tipcounter=tipcounter+countryData[index].banks.length;
+								  maptip.html('<div class="jvm-flag"></div><div class="jvm-label">'+countryData[index].name+'</div><div class="jvm-value">'+ tipcounter +'</div>');
+	    					$('.jvm-flag').css('background-image','url(https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/svg/'+countryData[index].country.toLowerCase()+'.svg)');
+
+	    				} else {maptip.css('opacity', '0');}
+					},
+				    onRegionClick: function (e, code) {
+						console.log(countryData);
+				    	var index=0;
+					 	for(var i = 0; i < countryData.length; i++){if (code==countryData[i].country) {found=true;index=i}}
+				    	$.each(countryData[index].banks, function() {
+				    		var strBankName=this.name;var cnt_curr=0;var classstatus = 'No';var classdebt = 'No';var classinstapay = 'No';var branchbutton='displayoff';var branch_html=''; var branchfilter='';
+				    		if (this.branches.length>0) {
+								branchbutton='displayon';
+								$.each(this.branches, function() {
+									branchfilter=branchfilter+this.name+' ';
+									if (this.statusLive) classstatus='Yes';if (this.debtorIbanRequired) classdebt='Yes'; if (this.instantPay) classinstapay='Yes';
+									if (typeof this.currencies !== 'undefined') {
+										singlecurrency=this.currencies;
+										singlecurrencyd='displayoff';
+									}
+									else
+									{
+										singlecurrency="";
+										singlecurrencyd='displayon';
+									}
+
+									 branch_html=branch_html+'<div class="bank-list-row branch displayoff" attr-bank="'+ strBankName +'" attr-filter="' + this.name + '"><div></div><div></div><div class="cell100"><div class="bank-list-name">' + this.name + '</div></div><div><div class="bank-list-currs token">' + singlecurrency + '</div></div><div><div class="bank-list-cs token ' + classstatus + '">' + classstatus + '</div></div><div><div class="bank-list-iban token ' + classdebt + '">' + classdebt + '</div></div><div><div class="bank-list-insta token ' + classinstapay + '">' + classinstapay + '</div></div> </div>'
+
+						 			});
+
+								}
+								else
+								{
+									branchbutton='displayoff';
+									branch_html='';
+								}
+
+							if (typeof this.currencies !== 'undefined') {
+								singlecurrency='<div class="bank-list-currs token">' + this.currencies + '</div>';
+							}
+							else
+							{
+								singlecurrency='<div class="bank-list-currs nocurrid token" attr-bank="'+strBankName+'"><span class="icon-chevron2"></span></div>';
+							}
+
+					    	if (this.statusLive) classstatus='Yes';
+					    	if (this.debtorIbanRequired) classdebt='Yes';
+					    	if (this.instantPay) classinstapay='Yes';
+					    	$('.bank-list-table').append('<div class="bank-list-row" attr-filter="' + this.name + ' ' +branchfilter+ '"><div class="cell-button"><span attr-bank="'+strBankName+'" class="icon-chevron2 rot90 '+branchbutton+'"></span></div><div class="cell-logo"><div class="bank-list-logo" attr-filter="' + this.name + '" style="background-image:url('+this.logo+')" ></div></div><div class="cell100"><div class="bank-list-name">' + this.name + '</div></div><div>' + singlecurrency + '</div><div><div class="bank-list-cs token ' + classstatus + '">' + classstatus + '</div></div><div><div class="bank-list-iban token ' + classdebt + '">' + classdebt + '</div></div><div><div class="bank-list-insta token ' + classinstapay + '">' + classinstapay + '</div></div> </div>'+branch_html+'<div class="bank-list-space" attr-filter="' + this.name + '"></div>');
+				    	});
+				    	$('.bank-list .jvm-label').html(countryData[index].name);
+						$('#f-filter').keyup(function () {
+			    			var strfilter=$(this).val().toLowerCase();
+			    			if (strfilter!="") {
+				    			$.each($('.bank-list-row'), function() {
+				    				strdestf= $(this).attr('attr-filter').toLowerCase();
+				    				if (strdestf.indexOf(strfilter)==-1) {$(this).css('display','none');$(this).next().css('display','none')} else {$(this).removeClass('displayoff');$(this).css('display','table-row');$(this).next().css('display','table-row')};
+				    			});
+				    			$('.cell-button>.icon-chevron2').removeClass('rot90');
+			    			} else {
+			    				$.each($('.bank-list-row'), function() {
+			    					$(this).css('display','table-row');
+			    					$(this).next().css('display','table-row');
+				    			});
+				    			$('.cell-button>.icon-chevron2').addClass('rot90');
+				    			$('.bank-list-row.branch').each(function() {
+									$(this).addClass('displayoff');
+								});
+				    		}
+
+			    		});
+
+						$('.cell-button>.icon-chevron2, .nocurrid.token').click(function() {
+							var tempstr=$(this).attr('attr-bank');
+							$('.cell-button>.icon-chevron2').each(function() {
+								if ($(this).attr('attr-bank')==tempstr) {$(this).toggleClass('rot90');}
+							});
+							$('.bank-list-row.branch').each(function() {
+								if ($(this).attr('attr-bank')==tempstr) {$(this).toggleClass('displayoff');}
+							});
+
+						});
+						$('#bank-list-close').click(function(){
+			    			$('.bank-list').css('display','none');
+			    			$('.bank-list-row').remove();
+			    			$('.bank-list-space').remove();
+			    		});
+
+			    		$('.bank-list').css('display','block');
+
+				    }
+				  });
+
+		   });
+	  </script>
+		</body>

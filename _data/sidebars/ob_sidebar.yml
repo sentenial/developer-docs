@@ -71,7 +71,7 @@ entries:
           url: /ob_viewbank.html
           output: web
 
-  - title: PISP Service
+  - title: Payment Initiation Service
     output: web, pdf
     folderitems:
 
@@ -79,7 +79,7 @@ entries:
       url: /ob_pispoverview.html
       output: web, pdf
 
-    - title: PISP Implementation Options
+    - title: Implementation Options
       url: /ob_pispimplementations.html
       output: web, pdf
 
@@ -142,7 +142,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: PISP APIs
+      - title: Payment Initiation APIs
         output: web
         subfolderitems:
 
@@ -183,7 +183,7 @@ entries:
           output: web
 
 
-  - title: PISP & E-Mandate
+  - title: Payment Initiation & E-Mandate
     output: web, pdf
     folderitems:
 

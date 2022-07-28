@@ -17,6 +17,15 @@ Nuapay supports Open Banking payments in GBP and EUR currencies. Click the count
 
 ## Country Coverage
 
+<!--
+<iframe src="https://coverage.nuapay.com/coverage/" width="100%" height="900" frameborder = "0" title="Coverage"></iframe>
+-->
+
+<!--
+{% comment %} {% include map.html %} {% endcomment %}
+Comment this out to reveal the Banks map
+-->
+
 {% include note.html content="We are constantly building on our connections and currently we have approximately 95% bank coverage on average, in the countries referenced below." %}
 
 **GBP-Supporting Banks**
