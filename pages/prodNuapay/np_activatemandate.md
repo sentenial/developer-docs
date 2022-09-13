@@ -15,8 +15,9 @@ Where a SEPA mandate is in `PENDING` or `SUSPENDED` [status](np_mandatestatuses.
 * If you are using paper mandates then you may need to consider an option on your custom application to allow operators to click a button to activate mandates when a signed mandate is received, which would call this service.
 * If you are using E-Mandates, the activate mandate request is dynamically called and may (optionally) include details related to the electronic signing event (IP Address, location of the signature, the mobile phone or email address used).
 
+{% include idempotency.html %}
 
-{% include tip.html content="Bacs DDIs must go through the Bacs automated registration process (AUDDIS) and are automatically set to `ACTIVE` in Nuapay, once successfully registered with payers' banks." %}
+{% include tip.html content="Bacs DDIs must go through the Bacs automated registration process (AUDDIS) and are automatically set to `ACTIVE` in Nuapay, once successfully registered with the payers' banks. This will typically take 3-4 working days." %}
 
 
 {% include swagger_np.html %}

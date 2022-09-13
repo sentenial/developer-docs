@@ -12,9 +12,9 @@ toc: false
 
 Direct Debit payments can fail at various stages in their lifecycle.
 
-Where you are creating payments via the API you will be informed in your API response when there is an error in your request. 
+Where you are creating payments via the API you will be informed in your API response when there is an error in your request.
 
-The List Failed Direct Debits API allows you to query any Bank-related rejects (i.e. any R-Transactions received after your DD payments have been exported to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs</a>). 
+The List Failed Direct Debits API allows you to query any Bank-related rejects (i.e. any R-Transactions received after your DD payments have been exported to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing</a> or to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs</a>).
 
 It also allows you to list any Technical Rejects that you may have had (you will only have Technical Rejects if you are importing payments via file upload; API requests do not result in Technical Rejects).
 
@@ -28,12 +28,12 @@ Failed payments can be grouped into three basic types:
 
 ## API Details
 
-The List Failed Direct Debits request allows you to return a list of all: 
+The List Failed Direct Debits request allows you to return a list of all:
 * Technical rejects (only possible if you are processing files).
 * Pre-settlement Rejects/Refusals (only in SEPA schemes).
-* Post-settlement Returns/Refunds. 
+* Post-settlement Returns/Refunds.
 
-We recommend that you schedule to run this request at various times in the lifecycle of your Direct Debits, to ensure that you have the current statuses of your payments before and after the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>. 
+We recommend that you schedule to run this request at various times in the lifecycle of your Direct Debits, to ensure that you have the current statuses of your payments before and after the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>.
 
 Alternatively, you could implement a Webhook for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.r-transaction}}">R-Transactions</a> (see details of the [Direct Debit R-Transaction](np_whddrejectevent.html) Webhooks for more).
 
@@ -45,14 +45,16 @@ Alternatively, you could implement a Webhook for <a href="#" data-toggle="toolti
 
 {% include urls.html %}
 
+{% include tip.html content="You must use the resource identifier of the `schemeId`/ `mandateId`/ `directDebitId` in your requests and not the actual creditor scheme ID/SUN or Unique Mandate Reference or Direct Debit identifier. Resource identifiers are short alphanumeric strings, similar to this: abxq9kq52l. Depending on the request you may need 1, 2 or all 3 of these resource identifiers in your URI." %}
+
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listFailedDirectDebitUsingGET','#profileTabs',timerRef); }, 500);
 
