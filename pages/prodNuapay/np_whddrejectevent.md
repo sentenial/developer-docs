@@ -23,8 +23,7 @@ The following event types are possible:
 |DirectDebitReturn|RETURNED|
 |DirectDebitRefund|REFUNDED|
 |DirectDebitReject|REJECTED|
-|DirectDebitRevoke|REVOKED|
-|DDReturnPeriodPassed|ACCEPTED|
+|DirectDebitReturnPeriodPassed|ACCEPTED|
 
 
 ## Webhook Event Message Details
@@ -107,13 +106,13 @@ The following event types are possible:
 	</tbody>
 </table>
 
-## A Note on the DD RETURN Period
+## A Note on the Direct Debit RETURN Period
 
 As described in the [Direct Debit Statuses](np_ddstatuses.html) section, once a payment moves to ACCEPTED status on its value date, there is the potential to receive post-settlement RETURNs against it (or UNPAIDs in Bacs).
 
 * For SEPA CORE scheme payments, a RETURN is possible up to 5 working days after the initial payment moves to ACCEPTED status.
 * For Bacs payments this is up to 3 working days.
-* The `DDReturnPeriodPassed` eventType is a useful notification as it lets your listener application know when a payment has passed the period when a RETRUN/UNPAID could be received. (After this period has passed only a customer refund may be possible against that transaction).
+* The `DirectDebitDReturnPeriodPassed` eventType is a useful notification as it lets your listener application know when a payment has passed the period when a RETRUN/UNPAID could be received. (After this period has passed only a customer refund may be possible against that transaction).
 
 ## JSON Sample
 

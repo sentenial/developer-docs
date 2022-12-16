@@ -262,6 +262,11 @@ So the `creationDateTime` returned in a 201 response, for example, would be form
 
 |"creationDateTime": "2020-05-01T08:25:29.291Z"|
 
+## A Note on Customer IP Address
+
+For clients using `SELF-HOSTED` and `SEL-HOSTED-CALLBACK` integrations we recommend that you provide a value for `Customer-IP-Address`, when making EUR payments.
+
+Failure to supply this value may result in a payment status of `CONSENT_API_REJECTED`, for payments processed at some EU banks. 
 
 ## Create Payment Endpoint
 
