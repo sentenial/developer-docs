@@ -183,7 +183,7 @@ entries:
           output: web
 
 
-  - title: Payment Initiation & E-Mandate
+  - title: Subscription Payments
     output: web, pdf
     folderitems:
 
@@ -191,17 +191,38 @@ entries:
       url: /ob_emoverview.html
       output: web, pdf
 
-    - title: The PSU Journey
-      url: /ob_emoverallflow.html
-      output: web, pdf
+      subfolders:
+      - title: Payment-Initiated E-Mandates
+        output: web
+        subfolderitems:
 
-    - title: Launching the Flow
-      url: /ob_emlaunching.html
-      output: web, pdf
+        - title: Launching the Flow
+          url: /ob_emlaunching.html
+          output: web, pdf
 
-    - title: Self-Hosted Mode
-      url: /ob_emselfhosted.html
-      output: web, pdf
+        - title: The User Journey
+          url: /ob_emoverallflow.html
+          output: web, pdf
+
+        - title: Self-Hosted Mode
+          url: /ob_emselfhosted.html
+          output: web, pdf
+
+      - title: Account-Access E-Mandates
+        output: web
+        subfolderitems:
+
+         - title: Launching the Flow
+           url: /ob_acc_emlaunching.html
+           output: web, pdf
+
+         - title: The User Journey
+           url: /ob_acc_emoverallflow.html
+           output: web, pdf
+
+         - title: Self-Hosted Mode
+           url: /ob_acc_emselfhosted.html
+           output: web, pdf
 
   - title: Bank Status Service
     output: web, pdf

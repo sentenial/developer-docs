@@ -1,16 +1,21 @@
 ---
-title: Launching the Open Banking & E-Mandate Flow
-keywords: Launching Triggering the Open Banking & E-Mandate Flow
+title: Launching the Payment & E-Mandate Setup Flow
+keywords: Launching The Payment & E-Mandate Setup Flow
 summary: "Depending on the integration type you have implemented, the method for launching the Open Banking & E-Mandate flow varies."
 sidebar: ob_sidebar
 permalink: ob_emlaunching.html
 folder: prodOpenBanking
 ---
 
+{% include tip.html content="Before you can set up a subscription payment solution you must first be configured for Direct Debit processing. Read more about [Direct Debit Basics](np_mdtbasics.html) and discuss your requirements with your Account Manager, who can guide you on how best to configure Direct Debits for your specific business needs." %}
+
 In order to launch the Open Banking Payment and E-Mandate signup flow, the merchant needs:
 
 * A User Interface Payment ID (the `userInterfacePaymentId` returned in the [Create Payment](ob_createpayment.html) request).
-* A Bacs Service User Number - <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.sun}}">SUN</a> (the `creditorSchemeIdentifier`). If you do not know your Service User number, please contact the Nuapay Support team or your Account Manager.
+* A reference to the Direct Debit scheme to be used.
+  * For GBP payments, a Bacs Service User Number - <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.sun}}">SUN</a> is required.
+  * For EUR payments, the SEPA Scheme Identifier is required.
+  * In both Bacs and SEPA, this identifier is passed in the `creditorSchemeIdentifier`. Call `GET /schemes` ([List Schemes](np_listcredscheme)) to retrieve your scheme identifier.
 
 These elements are required for both the `CHECKOUT` and the `REDIRECT` integrations.
 
@@ -60,7 +65,7 @@ At this point you have:
 * Added the JS and CSS references to your payment page.
 
 
-To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the example below:
+To enable the <span class="label label-info">PAY</span> button you will need to add an ``onclick`` event. See the (GBP Bacs) example below:
 
 ````
 <a class="btn btn-primary" href="#" onclick="NuapayOpenBanking.showPaymentUI('123456', 772d0ef5-596b-43de-a6a0-832c9ab7a7a5';'https://sandbox.nuapay.com/tpp-ui/’);">Pay Now</a>
@@ -68,7 +73,7 @@ To enable the <span class="label label-info">PAY</span> button you will need to 
 ````
 
 The function takes three parameters:
-1. The `creditorSchemeId` (i.e. the SUN; 123456 in the example above).
+1. The `creditorSchemeId` (i.e. the SUN; 123456 in the example above): this is the actual SUN and not its encoded value.
 1. The `userInterfaceIdentifier` (772d0ef5-596b-43de-a6a0-832c9ab7a7a5 in the example above)
 1. The `url` (https://sandbox.nuapay.com/tpp-ui/)
 

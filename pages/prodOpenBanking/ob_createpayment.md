@@ -51,8 +51,7 @@ Payment identifiers have two attributes:
 
 Note that:
 
-* The reference must be unique per merchant account within the defined time to live.
-* If you require a variation on the default time-to-live setting of 3 days, please contact your account manager who will update your configuration as required.
+* The reference must be unique per merchant account within the defined time to live (default = 3 days).
 * Where you reuse a reference, which was linked to a previously generated payment, and it is referenced within the time-to-live limit, your request will result in a:
   * `422` response: Duplicate Reference provided.
 
@@ -266,7 +265,7 @@ So the `creationDateTime` returned in a 201 response, for example, would be form
 
 For clients using `SELF-HOSTED` and `SEL-HOSTED-CALLBACK` integrations we recommend that you provide a value for `Customer-IP-Address`, when making EUR payments.
 
-Failure to supply this value may result in a payment status of `CONSENT_API_REJECTED`, for payments processed at some EU banks. 
+Failure to supply this value may result in a payment status of `CONSENT_API_REJECTED`, for payments processed at some EU banks.
 
 ## Create Payment Endpoint
 
