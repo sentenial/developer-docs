@@ -2,7 +2,7 @@
 title: Create Beneficiary
 keywords: Create Beneficiary
 summary: "Create Beneficiary RESTful API"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_createbeneficiary.html
 folder: prodNuapay
 toc: false
@@ -22,7 +22,7 @@ When working with this endpoint note that:
 
 {% include tip.html content="If you specify domestic account details for the beneficiary account, specify the Sort Code in **domesticBranchCode** (not in the **domesticBankCode**)." %}
 
-{% include idempotency.html %} 
+{% include idempotency.html %}
 
 
 

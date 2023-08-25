@@ -28,6 +28,8 @@ Set the `integrationType` to `SELF_HOSTED`, specify the `bankId` provided by the
 1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a> posts the payment ID to the partner/merchant URL (`merchantPostAuthUrl`). See posting details below.
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status, if required (an optional step) or, alternatively, use Webhooks.
 
+## Merchant Post-Auth URL Handling
+
 {% include self_hosted_shared.html %}
 
 {% include links.html %}

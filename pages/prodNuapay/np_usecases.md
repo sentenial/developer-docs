@@ -2,7 +2,7 @@
 title: Use Cases
 keywords: Use Cases
 summary: "The following Use Cases should give you some good ideas of how best to implement a solution for your particular business. It gives a typical use case and the API requests and Webhooks that we'd recommend to implement."
-sidebar: np_sidebar
+sidebar: resources_sidebar
 permalink: np_usecases.html
 folder: prodNuapay
 toc: false
@@ -11,7 +11,7 @@ toc: false
 
 ## Overview
 
-The following is a list of some of the most common Nuapay use cases: 
+The following is a list of some of the most common Nuapay use cases:
 
 <div class="panel-group" id="accordion">
 
@@ -24,7 +24,7 @@ The following is a list of some of the most common Nuapay use cases:
                         </div>
                         <div id="collapse1" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            
+
                              <table>
     <tbody>
 		<tr>
@@ -70,12 +70,12 @@ The following is a list of some of the most common Nuapay use cases:
 		</tr>
 	</tbody>
 </table>
-                                
+
                             </div>
                         </div>
                     </div>
                     <!-- END PANEL -->
-                    
+
                     <!-- START PANEL-->
 <div class="panel panel-default">
                         <div class="panel-heading">
@@ -85,7 +85,7 @@ The following is a list of some of the most common Nuapay use cases:
                         </div>
                         <div id="collapse2" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                                
+
                                 <table style="width: 100%;" class="Code">
 	<col style="width: 191px;" />
 	<col style="width: 258px;" />
@@ -129,14 +129,14 @@ The following is a list of some of the most common Nuapay use cases:
 </table>
 
 
-                                
-                                
-                                
+
+
+
                             </div>
                         </div>
                     </div>
                 <!-- END PANEL -->
-                
+
                 <!-- START PANEL-->
 <div class="panel panel-default">
                         <div class="panel-heading">
@@ -146,7 +146,7 @@ The following is a list of some of the most common Nuapay use cases:
                         </div>
                         <div id="collapse3" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                                
+
                                 <table style="width: 100%;" class="Code">
 	<col style="width: 191px;" />
 	<col style="width: 258px;" />
@@ -199,14 +199,14 @@ The following is a list of some of the most common Nuapay use cases:
 
 
 
-                                
-                                
-                                
+
+
+
                             </div>
                         </div>
                     </div>
                 <!-- END PANEL -->
-                
+
                 <!-- START PANEL-->
 <div class="panel panel-default">
                         <div class="panel-heading">
@@ -216,7 +216,7 @@ The following is a list of some of the most common Nuapay use cases:
                         </div>
                         <div id="collapse4" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                                
+
                                 <table style="width: 100%;" class="Code">
 	<col style="width: 191px;" />
 	<col style="width: 258px;" />
@@ -268,19 +268,19 @@ The following is a list of some of the most common Nuapay use cases:
 
 
 
-                                
-                                
-                                
+
+
+
                             </div>
                         </div>
                     </div>
                 <!-- END PANEL -->
-                
-                
+
+
                  <!-- Final -->
-                    
+
                     </div>
-                   
+
 
 
 

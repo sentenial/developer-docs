@@ -2,7 +2,7 @@
 title: Transfer Between Accounts
 keywords: Transfers API
 summary: "Transfers RESTful API"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_accounttransfer.html
 folder: prodNuapay
 toc: false

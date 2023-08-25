@@ -1,5 +1,5 @@
 ---
-title: List Mandates / DDIs
+title: List Scheme Mandates / DDIs
 keywords: List Mandates API
 summary: "List Mandates RESTful API"
 sidebar: np_sidebar

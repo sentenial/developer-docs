@@ -2,7 +2,7 @@
 title: Transaction Overview
 keywords: Transaction Overview
 summary: "Various transaction types are stored on your Nuapay account. This section gives a breakdown of the possible types"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_transactionoverview.html
 folder: prodNuapay
 ---

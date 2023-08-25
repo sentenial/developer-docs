@@ -2,7 +2,7 @@
 title: Incoming Credit Transfer Event
 keywords: Incoming Credit Transfer Event Webhook
 summary: "Incoming Credit Transfer Webhook event"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_whincomingct.html
 folder: prodNuapay
 toc: false

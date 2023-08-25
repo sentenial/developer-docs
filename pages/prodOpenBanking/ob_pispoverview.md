@@ -22,8 +22,8 @@ Initiating payments via Open Banking offers numerous benefits.
 
 * No need to key in credit card, expiry and CVV details.
 * Card limits are not applicable.
-* Added confidence that the payment is secure as the actual authroisation takes place on the user's online banking portal.
-* Potential for card details to be stolen or hacked is eleminated.
+* Added confidence that the payment is secure as the actual authorisation takes place on the user's online banking portal.
+* Potential for card details to be stolen or hacked is eliminated.
 * The merchant doesn't hold any of your personal financial details.
 
 ## Implementations

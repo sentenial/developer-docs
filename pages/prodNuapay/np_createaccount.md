@@ -2,7 +2,7 @@
 title: Create Account
 keywords: Create Account
 summary: "Create Account RESTful API"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_createaccount.html
 folder: prodNuapay
 toc: true

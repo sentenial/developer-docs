@@ -2,7 +2,7 @@
 title: Create Credit Transfer & Beneficiary
 keywords: Create Credit Transfer & Beneficiary
 summary: "Create Credit Transfer & Beneficiary RESTful API - generate a payment and its beneficiary in a single API call."
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_createctandbene.html
 folder: prodNuapay
 toc: false
@@ -16,7 +16,7 @@ The Create Credit Transfer request requires that you have first created a benefi
 
 {% include note.html content="If the beneficiary details you reference in the request have been previously provided (and that beneficiary is already stored against your merchant profile) Nuapay will reuse that stored beneficiary data: a new beneficiary is only created if his/her beneficiary account has not been referenced before in a previous Credit Transfer payment." %}
 
-{% include idempotency.html %} 
+{% include idempotency.html %}
 
 ## SEPA Credit Transfers
 

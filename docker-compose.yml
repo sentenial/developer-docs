@@ -9,6 +9,7 @@ services:
         - no_proxy
       dockerfile: Dockerfile
     image: result/latest
+    command: jekyll serve --watch --drafts --host 0.0.0.0
     ports:
       - "4000:4000"
     volumes:

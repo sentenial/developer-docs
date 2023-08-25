@@ -2,7 +2,7 @@
 title: Bacs Reason Codes
 keywords: Bacs Reason Codes Errors
 summary: "Bacs Codes - review the various Bascs Reason codes that are possible and how to best deal with them"
-sidebar: np_sidebar
+sidebar: resources_sidebar
 permalink: np_bacsreasons.html
 folder: prodNuapay
 toc: true

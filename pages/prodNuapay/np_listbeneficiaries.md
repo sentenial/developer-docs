@@ -2,7 +2,7 @@
 title: List Beneficiaries
 keywords: List Beneficiaries API
 summary: "List Beneficiaries RESTful API"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_listbeneficiaries.html
 folder: prodNuapay
 toc: false
@@ -20,12 +20,12 @@ The beneficiaries' unique resource IDs, URIs, address details (if stored) and ba
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listBeneficiariesUsingGET','#profileTabs',timerRef); }, 500);
 

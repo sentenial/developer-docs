@@ -20,7 +20,7 @@
     border-color: #C0C0C0
 }
 
-h3 {color: ##3F3F3F; }
+h3 {color: #3F3F3F; }
 h4 {color: #808080; }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -39,6 +39,7 @@ h4 {color: #808080; }
 div.navbar-collapse .dropdown-menu > li > a:hover {
     background-color: #EE8F35;
 }
+
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
     color: white;

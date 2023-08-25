@@ -13,7 +13,6 @@ This section gives **partners** an overview of the API calls required for the th
 
 * CHECKOUT
 * SELF-HOSTED
-* SELF-HOSTED-CALLBACK
 * REDIRECT
 
 See [Implementation Options](ob_pispimplementations.html) for more on these options.
@@ -34,7 +33,7 @@ You will need to download:
 
 {% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_partners' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %}
 
-Once you have donwloaded the *Collection* and the *Environment* files:
+Once you have downloaded the *Collection* and the *Environment* files:
 
 1. Open Postman.
 1. Import the collection files.
@@ -45,7 +44,7 @@ Once you have donwloaded the *Collection* and the *Environment* files:
 
 ## Checkout Mode
 
-{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%}
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then use the SELF-HOSTED integration."%}
 
 
 As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
@@ -78,6 +77,7 @@ Call the following services in this order:
 
 For more details on this see the [Partner-Level Self-Hosted Setup](ob_selfsetupoverview.html)
 
+<!-- Not appropriate for Partners so commenting this out (raised by Diarmaid on Thu 23/03/2023 11:56)
 ## Self-Hosted Callback
 
 As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the service to retrieve it.
@@ -96,9 +96,10 @@ Call the following services in this order:
 
 For more details, see [Partner Self-Hosted-Callback Payment Page Setup](ob_selfcallbacksetupoverview.html).
 
+-->
 ## Redirect Mode
 
-{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%}
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then use the SELF-HOSTED integration."%}
 
 As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
 

@@ -16,7 +16,7 @@ Please note:
 
 * Prior to a Direct Debit (DD) payment being passed to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.clearing}}">SEPA Clearing system</a> or to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.bacs-clearing}}">Bacs Service</a> it is given a `READY_FOR_EXPORT` status.
 * Nuapay combines Direct Debits into a single payments file prior to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a>.
-* When a DD transaction is added to a payment file its status is updated to `EXPORTED` (it is transmitted electonically (exported) to an appropriate Clearing mechanism at this point).
+* When a DD transaction is added to a payment file its status is updated to `EXPORTED` (it is transmitted electronically (exported) to an appropriate Clearing mechanism at this point).
 * The DD transaction is exported at least one business day before the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.collection_date}}">collection date</a> (for SEPA) or 2 business days before (for Bacs).
 * The Clearing channel will dispatch the Direct Debit payments to your payers' banks. If the payers' banks do not reject the Direct Debit payment, Nuapay will update the Direct Debit status to `ACCEPTED` on the collection date. This will generally be the final status of a Direct Debit.
 

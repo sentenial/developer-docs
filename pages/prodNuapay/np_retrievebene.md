@@ -2,7 +2,7 @@
 title: Retrieve Beneficiary
 keywords: Retrieve Beneficiary API
 summary: "Retrieve Beneficiary RESTful API"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_retrievebene.html
 folder: prodNuapay
 toc: false
@@ -22,12 +22,12 @@ The request requires that you provide the beneficiary resource ID:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/viewBeneficiaryUsingGET','#profileTabs',timerRef); }, 500);
 

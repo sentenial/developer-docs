@@ -2,7 +2,7 @@
 title: Credit Transfer Statuses
 keywords: sample
 summary: "Credit Transfer transactions move through various statuses in their lifecycle; these are described in this section."
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_ctstatuses.html
 folder: prodNuapay
 ---

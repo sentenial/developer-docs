@@ -2,7 +2,7 @@
 title: List Transactions
 keywords: List Transactions API
 summary: "List Transactions RESTful API"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_listtransactions.html
 folder: prodNuapay
 toc: false
@@ -25,12 +25,12 @@ Note that:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listTransactionsUsingPOST','#profileTabs',timerRef); }, 500);
 

@@ -2,7 +2,7 @@
 title: Credit Transfer Accept Event
 keywords: Credit Transfer Accept Event Webhook
 summary: "Credit Transfer Accept Webhook event"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_whctaccept.html
 folder: prodNuapay
 toc: false

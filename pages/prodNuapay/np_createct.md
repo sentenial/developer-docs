@@ -2,7 +2,7 @@
 title: Create Credit Transfer
 keywords: Create Credit Transfer
 summary: "Create Credit Transfer RESTful API"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_createct.html
 folder: prodNuapay
 toc: true
@@ -15,7 +15,7 @@ toc: true
 
 {% include tip.html content="Before you can generate a Credit Transfer (CT) payment, using this API request, you must first [Create a Beneficiary](np_createbeneficiary.html). Alternatively you can use the [Create Credit Transfer & Beneficiary](np_createctandbene.html) to create the payee and the payment in one API request." %}
 
-{% include idempotency.html %} 
+{% include idempotency.html %}
 
 
 ## SEPA Credit Transfers

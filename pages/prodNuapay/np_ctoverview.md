@@ -1,8 +1,8 @@
 ---
 title: Credit Transfer Overview
 keywords: Credit Transfer Overview
-summary: "Credit Transfer payments allow you to push payments to your creditors' accounts via the SEPA CT (SCT) and SEPA Instant CT Schemes (EUR currency) or via Faster Payments or Bacs Direct Credit (for GBP currency)"
-sidebar: np_sidebar
+summary: "Credit Transfer payments allow you to push payments to your beneficiaries' accounts via the SEPA CT (SCT) and SEPA Instant CT Schemes (EUR currency) or via Faster Payments or Bacs Direct Credit (for GBP currency)"
+sidebar: ct_sidebar
 permalink: np_ctoverview.html
 folder: prodNuapay
 ---
@@ -14,7 +14,7 @@ A few points to note in relation to CTs:
 * CTs allow you to transfer funds from your account to a beneficiary's account.
 * You must have sufficient balance on your account to make the payment.
 * You (the merchant) are the payer and the person to whom you are transferring funds is the beneficiary.
-* For a SEPA CT generated _today_, the beneficiary's account is generally credited on the following working day (however payments generated prior to 08:00 GMT should be credited on the same day).
+* For a SEPA CT generated _today_, the beneficiary's account is generally credited on the following working day (however payments generated prior to 08:00 GMT (see note below) should be credited on the same day).
 * A Bacs Direct Credit generated _today_ will typically be credited to your beneficiary in 2 business days' time.
 * Express payments (Faster Payments for GBP; SEPA CT Instant for EUR) are typically credited within seconds.
 

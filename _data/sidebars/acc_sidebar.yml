@@ -1,0 +1,73 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Nuapay Accounts
+  product: Nuapay Accounts
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_accountoverview.html
+      output: web
+
+    - title: Transaction Overview
+      url: /np_transactionoverview.html
+      output: web, pdf
+
+      subfolders:
+      - title: Nuapay Account APIs
+        output: web
+        subfolderitems:
+
+        - title: Create Account
+          url: /np_createaccount.html
+          output: web
+
+        - title: List Accounts
+          url: /np_listaccounts.html
+          output: web
+
+        - title: View Account
+          url: /np_viewaccount.html
+          output: web
+
+        - title: List Sub-Accounts
+          url: /np_listsubaccount.html
+          output: web
+
+        - title: List CTs for Account
+          url: /np_listctsforaccount.html
+          output: web
+
+        - title: List Account Balances
+          url: /np_listaccountbals.html
+          output: web
+
+        - title: List Transactions
+          url: /np_listtransactions.html
+          output: web
+
+        - title: Retrieve Transaction
+          url: /np_viewtransaction.html
+          output: web
+
+        - title: Transfer Between Accounts
+          url: /np_accounttransfer.html
+          output: web

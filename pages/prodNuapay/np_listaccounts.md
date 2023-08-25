@@ -2,7 +2,7 @@
 title: List Accounts
 keywords: List Accounts API
 summary: "List Accounts RESTful API"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_listaccounts.html
 folder: prodNuapay
 toc: false
@@ -20,12 +20,12 @@ The List Accounts request allows you to view a collection of accounts linked to 
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listAccountsUsingPOST','#profileTabs',timerRef); }, 500);
 

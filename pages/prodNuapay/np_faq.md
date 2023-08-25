@@ -1,7 +1,7 @@
 ---
 title: FAQs
 permalink: np_faq.html
-sidebar: np_sidebar
+sidebar: resources_sidebar
 keywords: frequently asked questions, FAQs, questions and answers, TLS
 summary: "Frequently Asked Questions have been provided here and arranged based on various Nuapay areas."
 toc: false
@@ -152,7 +152,7 @@ folder: prodNuapay
                             <div class="panel-body">
                                 <p>The collection date (also referred to as the Settlement Date and the Value Date) is the date on which funds are debited from your payers' bank account and credited to your Nuapay account and (optionally - see the note below) credited from there to your external, non-Nuapay bank account. </p>
                                 <p><b>Note</b>: If you are configured as a Self-Managed originator then you control when funds are moved from your Nuapay account; your funds stay on your account until you initiate a funds transfer either via the API or via the Nuapay User Interface. If you are not Self-Managed then your settlement amount is automatically swept to your external account on the collection date.</p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -237,7 +237,7 @@ folder: prodNuapay
                         <div id="collapseThirteen" class="panel-collapse collapse">
                             <div class="panel-body">
                             <p>A Reject is received before the settlement date; a Return is received after the settlement date. When your Nuapay settlement is calculated your gross credit will be debited by the value of any pre-settlement rejects that have been processed. Any Return transactions that are processed after the settlement date will be debited against your <b>next</b> collection.</p>
-                            
+
 
                             </div>
                         </div>
@@ -255,7 +255,7 @@ folder: prodNuapay
                             <p><b>AUTHORISED</b>: In the case of an authorised refund the payer has claimed a refund for a transaction within an 8 week period of the initial debit on his/her account. The payer must be credited - you as a merchant cannot contest this, as per the SEPA CORE scheme rules.</p>
 
                             <p><b>UNAUTHORISED</b>: An unauthorised refund can occur after 8 weeks and within 13 months of the debit. In this scenario the payer's bank will lodge a request with your bank to provide proof of a mandate. Your bank will seek this proof from you and pass it to the payer's bank. If the payer's bank is satisfied that the mandate is valid then they will not seek to debit your account for the refund amount. If the mandate is not provided or the payer's bank deem that no mandate (and payer authorisation) was in place they will initiate a debit on your account to credit your payer's account.</p>
-                            
+
 
                             </div>
                         </div>
@@ -273,7 +273,7 @@ folder: prodNuapay
                             <p>A REFUSAL is a pre-settlement R-transaction. A payer may refuse your direct debit based on specific settings that they may have applied to their bank account.
 
                             For example the payer may have set a limit on the value of collections that may be debited in a single transaction. If your debit exceeds this limit then this will result in a REFUSAL (typically an MS02 - see <a href="np_separeasons.html">SEPA Error Codes</a> for more information)</p>
-                            
+
 
                             </div>
                         </div>
@@ -291,7 +291,7 @@ folder: prodNuapay
                             <p>It is possible to re-present any failed payment but we recommend that you only attempt to re-present failed payments with error code <b>AM04</b> and <b>MS03</b>. </p>
 
                             <p>See <a href ="np_representfaileddds.html">Re-present Failed Direct Debits</a> for more details.</p>
-                            
+
 
                             </div>
                         </div>
@@ -309,7 +309,7 @@ folder: prodNuapay
                             <p>Technical rejects refer to transactions that fail for business validation reason when imported <b>via file upload only</b>.</p>
 
                             <p>When interacting with Nuapay via the API you will not receive technical rejects.</p>
-                            
+
 
                             </div>
                         </div>
@@ -326,7 +326,7 @@ folder: prodNuapay
                         <div id="collapse18" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <p>You can configure your Webhook notifications to retry for a period of time e.g. for 1 day. Notifications that fail to be delivered will be retried every 30 minutes until successful or until the configured retry period is reached.</p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -386,7 +386,7 @@ folder: prodNuapay
                         </div>
                     </div>
                     <!-- /.panel -->
-                    
+
 
 
 
@@ -401,7 +401,7 @@ folder: prodNuapay
                         <div id="collapse23" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <p>This error is generally related to you application's default security protocol type being set too low. We recommend TLS 1.2 or above. Check out <a href = 'https://codeshare.co.uk/blog/how-to-fix-the-error-authentication-failed-because-the-remote-party-has-closed-the-transport-stream/'>codeshare.co.uk</a> for more information on how to reolve this.</p>
-                                
+
                             </div>
                         </div>
                     </div>

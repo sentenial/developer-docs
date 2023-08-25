@@ -1,9 +1,9 @@
 ---
-title: View Transaction
+title: Retrieve Transaction
 keywords: View Transaction
 summary: "View Transaction RESTful API"
 toc: false
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_viewtransaction.html
 folder: prodNuapay
 toc: false
@@ -22,12 +22,12 @@ Following a <a href= "np_listtransactions.html">List Transaction</a> request you
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/viewTransactionUsingGET','#profileTabs',timerRef); }, 500);
 

@@ -1,0 +1,97 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Credit Transfers
+  product: Credit Transfers
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_ctoverview.html
+      output: web
+
+    - title: Credit Transfer Statuses
+      url: /np_ctstatuses.html
+      output: web, pdf
+
+  - title: Credit Transfer APIs
+    output: web, pdf
+    folderitems:
+
+    - title: Create Beneficiary
+      url: /np_createbeneficiary.html
+      output: web
+
+    - title: Retrieve Beneficiary
+      url: /np_retrievebene.html
+      output: web
+
+    - title: List Beneficiaries
+      url: /np_listbeneficiaries.html
+      output: web
+
+    - title: Create Credit Transfer
+      url: /np_createct.html
+      output: web
+
+    - title: Create Credit Transfer & Beneficiary
+      url: /np_createctandbene.html
+      output: web
+
+    - title: Retrieve Credit Transfer
+      url: /np_retrievect.html
+      output: web
+
+    - title: List Credit Transfers
+      url: /np_listcts.html
+      output: web
+
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_ctwhoverview.html
+      output: web, pdf
+
+      subfolders:
+      - title: Webhook Events
+        output: web
+        subfolderitems:
+
+        - title: Incoming Credit Transfer
+          url: /np_whincomingct.html
+          output: web
+
+        - title: Credit Transfer Reject
+          url: /np_whctreject.html
+          output: web
+
+        - title: Credit Transfer Accept
+          url: /np_whctaccept.html
+          output: web
+
+        - title: Express Credit Transfer Reject
+          url: /np_whctexpreject.html
+          output: web
+
+        - title: Express Credit Transfer Accept
+          url: /np_whctexpaccept.html
+          output: web  

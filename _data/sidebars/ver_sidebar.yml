@@ -1,0 +1,65 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: User Verification
+  product: User Verification
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /ver_landing_page.html
+      output: web
+
+    - title: Launching the Flow
+      url: /ver_launch.html
+      output: web
+
+    - title: End User Experience
+      url: /ver_psujourney.html
+      output: web
+
+    - title: Verification Scoring
+      url: /ver_scoring.html
+      output: web
+
+    - title: Verification Statuses
+      url: /ver_verificationstatuses.html
+      output: web
+
+
+  - title: User Verification APIs
+    output: web, pdf
+    folderitems:
+
+    - title: Request Verification
+      url: /ver_reqverification.html
+      output: web
+
+    - title: Retrieve Verification
+      url: /ver_retrieveverification.html
+      output: web
+
+    - title: List Verifications
+      url: /ver_listverification.html
+      output: web
+
+#    - title: Set Consent
+#      url: /ver_setconsent.html
+#      output: web
