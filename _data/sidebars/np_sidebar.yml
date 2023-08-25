@@ -1,8 +1,8 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: DDs & CTs
-  product: DDs & CTs
+- title: Direct Debits
+  product: Direct Debits
   version:
   folders:
 
@@ -132,8 +132,12 @@ entries:
           url: /np_uploademandatedoc.html
           output: web
 
-        - title: List Mandates / DDI
+        - title: List Scheme Mandates / DDI
           url: /np_listmandates.html
+          output: web
+
+        - title: List Originator Mandates / DDI
+          url: /np_listallmandates.html
           output: web
 
         - title: Update Mandate / DDI
@@ -227,97 +231,6 @@ entries:
           url: /np_cancelschedule.html
           output: web
 
-  - title: Credit Transfers
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /np_ctoverview.html
-      output: web, pdf
-
-    - title: Credit Transfer Statuses
-      url: /np_ctstatuses.html
-      output: web, pdf
-
-
-      subfolders:
-      - title: Credit Transfer APIs
-        output: web
-        subfolderitems:
-
-        - title: Create Beneficiary
-          url: /np_createbeneficiary.html
-          output: web
-
-        - title: Retrieve Beneficiary
-          url: /np_retrievebene.html
-          output: web
-
-        - title: List Beneficiaries
-          url: /np_listbeneficiaries.html
-          output: web
-
-        - title: Create Credit Transfer
-          url: /np_createct.html
-          output: web
-
-        - title: Create Credit Transfer & Beneficiary
-          url: /np_createctandbene.html
-          output: web
-
-        - title: Retrieve Credit Transfer
-          url: /np_retrievect.html
-          output: web
-
-        - title: List Credit Transfers
-          url: /np_listcts.html
-          output: web
-
-  - title: Nuapay Accounts
-    output: web, pdf
-    folderitems:
-
-    - title: Account Overview
-      url: /np_accountoverview.html
-      output: web, pdf
-
-    - title: Transaction Overview
-      url: /np_transactionoverview.html
-      output: web, pdf
-
-      subfolders:
-      - title: Nuapay Account APIs
-        output: web
-        subfolderitems:
-
-        - title: Create Account
-          url: /np_createaccount.html
-          output: web
-
-        - title: List Accounts
-          url: /np_listaccounts.html
-          output: web
-
-        - title: View Account
-          url: /np_viewaccount.html
-          output: web
-
-        - title: List Account Balances
-          url: /np_listaccountbals.html
-          output: web
-
-        - title: List Transactions
-          url: /np_listtransactions.html
-          output: web
-
-        - title: View Transaction
-          url: /np_viewtransaction.html
-          output: web
-
-        - title: Transfer Between Accounts
-          url: /np_accounttransfer.html
-          output: web
-
   - title: Webhooks
     output: web, pdf
     folderitems:
@@ -339,10 +252,6 @@ entries:
           url: /np_whddicaevent.html
           output: web
 
-        - title: Incoming Credit Transfer
-          url: /np_whincomingct.html
-          output: web
-
         - title: Accepted Direct Debit
           url: /np_whaccepteddd.html
           output: web
@@ -358,59 +267,3 @@ entries:
         - title: Mandate Reject
           url: /np_whmandreject.html
           output: web
-
-        - title: Credit Transfer Reject
-          url: /np_whctreject.html
-          output: web
-
-        - title: Credit Transfer Accept
-          url: /np_whctaccept.html
-          output: web
-
-        - title: Express Credit Transfer Reject
-          url: /np_whctexpreject.html
-          output: web
-
-        - title: Express Credit Transfer Accept
-          url: /np_whctexpaccept.html
-          output: web
-
-  - title: Resources
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /np_resourcesoverview.html
-      output: web, pdf
-
-    - title: Account Validation
-      url: /np_validateaccount.html
-      output: web, pdf
-
-    - title: Test IBANs
-      url: /np_testibans.html
-      output: web, pdf
-
-    - title: Non-Processing Days
-      url: /np_businessdays.html
-      output: web, pdf
-
-    - title: Use Cases
-      url: /np_usecases.html
-      output: web, pdf
-
-    - title: HTTP Response Codes
-      url: /np_httpreasons.html
-      output: web, pdf
-
-    - title: SEPA Reason Codes
-      url: /np_separeasons.html
-      output: web, pdf
-
-    - title: Bacs Reason Codes
-      url: /np_bacsreasons.html
-      output: web, pdf
-
-    - title: FAQs
-      url: /np_faq.html
-      output: web, pdf

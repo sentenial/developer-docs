@@ -2,7 +2,7 @@
 title: Credit Transfer Reject Event
 keywords: Credit Transfer Reject Event Webhook
 summary: "Credit Transfer Reject Webhook event"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_whctreject.html
 folder: prodNuapay
 toc: false

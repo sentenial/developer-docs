@@ -3,7 +3,7 @@ title: Retrieve Credit Transfer
 keywords: Retrieve Credit Transfer
 summary: "Retrieve Credit Transfer RESTful API"
 toc: false
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_retrievect.html
 folder: prodNuapay
 toc: false
@@ -26,12 +26,12 @@ The request requires that you provide the:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/viewCreditTransferUsingGET','#profileTabs',timerRef); }, 500);
 

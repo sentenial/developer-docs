@@ -1,0 +1,64 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Resources
+  product: Resources
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_resrcesoverview.html
+      output: web, pdf
+
+  - title: Resources
+    output: web, pdf
+    folderitems:
+
+    - title: Account Validation
+      url: /np_validateaccount.html
+      output: web, pdf
+
+    - title: Test IBANs
+      url: /np_testibans.html
+      output: web, pdf
+
+    - title: Non-Processing Days
+      url: /np_businessdays.html
+      output: web, pdf
+
+    - title: Use Cases
+      url: /np_usecases.html
+      output: web, pdf
+
+    - title: HTTP Response Codes
+      url: /np_httpreasons.html
+      output: web, pdf
+
+    - title: SEPA Reason Codes
+      url: /np_separeasons.html
+      output: web, pdf
+
+    - title: Bacs Reason Codes
+      url: /np_bacsreasons.html
+      output: web, pdf
+
+    - title: FAQs
+      url: /np_faq.html
+      output: web, pdf

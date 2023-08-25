@@ -1,0 +1,40 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Token Management
+  product: Token Management
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /tok_tokenmgmt.html
+      output: web
+
+  - title: Token APIs
+    output: web, pdf
+    folderitems:
+
+    - title: Request Tokens
+      url: /tok_reqtokorg.html
+      output: web
+
+    - title: Revoke Tokens
+      url: /tok_revoke.html
+      output: web  

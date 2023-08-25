@@ -12,13 +12,13 @@ toc: true
 
 {% include swagger_ob.html %}
 
-The Refund Payment service allows you to refund an Open Banking payment. 
+The Refund Payment service allows you to refund an Open Banking payment.
 
 {% include important.html content="Refunding a payment using the Refund Payment API is only possible if you are using a Nuapay account as your merchant account."%}
 
 {% include tip.html content="for clients who do not have a Nuapay account, in some cases you may be able to retrieve your payer's account details and use this information to make a credit payment see [Refund for Non-Nuapay-Account Owners](#refund-for-non-nuapay-account-owners) below for more on this." %}
 
-When you initiate a refund request, a new refund object is created. 
+When you initiate a refund request, a new refund object is created.
 
 The refund request object may be in one of three statuses:
 
@@ -39,7 +39,7 @@ Where a refund request is **unsuccessful**:
 
 1. The user calls the `/payments/{paymentId}/refunds` service and all validations (as mentioned above) are passed.
 1. A Credit Transfer payment is initiated to the customer account linked to the provided `paymentId` but cannot be processed e.g. the PSU's account is closed.
-1. The refund object is updated to `REFUND_REJECTED`. 
+1. The refund object is updated to `REFUND_REJECTED`.
 1. A **Payment Refund Rejected** webhook notifies the merchant of the _unsuccessful_ refund. See <a href="ob_whrefundrejected.html">Open Banking Payment Refunded Rejected Event</a> in the Webhooks section for more details.
 
 {% include note.html content="Where a refund is unsuccessful you will not be notified via a Webhook; this will be available in the next Open Banking release." %}
@@ -56,7 +56,7 @@ The value of your refund is handled in the API via the `refundAmount` and `compe
 
 ## Refund Configuration
 
-To allow merchants to manage the refund process, it is possible to apply limits on the value of refunds. 
+To allow merchants to manage the refund process, it is possible to apply limits on the value of refunds.
 The following settings may all be configured per merchant; please discuss your requirements with your Account Manager:
 
 |**Setting**|**Description**|**Default**|
@@ -64,7 +64,7 @@ The following settings may all be configured per merchant; please discuss your r
 |Maximum Refund Percentage per Transaction|Percentage of the original transaction amount that can be Refunded in a single refund (whole numbers only, no decimal places, e.g. 1% is acceptable, 0.1% is not)|0|
 |Refunds Period|The maximum Refund period in days; it is not possible to initiate a refund for a payment that is older than this configured number of days.|540|
 
-These configurations are evaluated when you make a refund request. 
+These configurations are evaluated when you make a refund request.
 
 A refund will be initiated where:
 
@@ -78,6 +78,12 @@ A refund will be initiated where:
 
 {% include note.html content="Depending on the payment scheme you are using, refunded payments may be credited to the PSU on the following business day e.g. for SEPA CTs or funds may be credited in a matter of seconds via the SEPA CT Instant Scheme or via Faster Payments for GBP payments." %}
 
+## Remittance Information
+
+When providing remittance information, `remittanceInformation.reference`, in GBP payments, note that:
+
+* A maximum of 18 characters are allowed.
+* The text used must conform to the following regular expression: `^[a-zA-Z0-9\- ,.]*$`
 
 ## Refund for Non-Nuapay-Account Owners
 
@@ -94,10 +100,10 @@ To use the PSU account details:
 {% include urls-ob.html %}
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
- 
+
 {% include redoc.html %}
 
 loadRedoc('#profileTabs', 'https://sentenial.github.io/open-banking-swagger/docs/redoc.html');

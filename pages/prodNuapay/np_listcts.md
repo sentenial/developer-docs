@@ -2,7 +2,7 @@
 title: List Credit Transfers
 keywords: List Credit Transfers API
 summary: "List Credit Transfers RESTful API"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_listcts.html
 folder: prodNuapay
 toc: true
@@ -24,12 +24,12 @@ Use an appropriate URI (as described below) to return the required collection of
 ## List CTs Linked to a Single Beneficiary
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/listCreditTransfersBeneficiaryUsingGET','#profileTabs',timerRef); }, 500);
 
@@ -46,9 +46,9 @@ var timerRef = setInterval(function() { getDocs('operation/listCreditTransfersBe
 
 <ul id="profileTabs2" class="nav nav-tabs">
 </ul>
-  
+
 {% include redoc.html %}
-   
+
 var timerRef2 = setInterval(function() { getDocs('operation/listCreditTransfersUsingGET','#profileTabs2',timerRef2); }, 500);
 </script>
 </div>

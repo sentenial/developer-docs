@@ -94,7 +94,7 @@ Note that you will need to specify the correct URL based on whether you are test
 To launch the Payment and E-Mandate flow In REDIRECT mode:
 
 * Call the [Create Payment](ob_createpayment.html) endpoint to retrieve the `userInterfacePaymentId`.
-* Constuct the required URL to pass to the PSU as a payment link.
+* Construct the required URL to pass to the PSU as a payment link.
 
 In the standard `REDIRECT` Open Banking payment, a URL similar to the following is used:
 

@@ -14,7 +14,7 @@ entries:
       url: /np_secoverview.html
       output: web, pdf
 
-    - title: API Key Authentication
+    - title: Authentication Options
       url: /np_secapikeyauth.html
       output: web, pdf
 

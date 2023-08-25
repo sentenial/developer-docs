@@ -2,7 +2,7 @@
 title: List Account Balances
 keywords: List Account Balances API
 summary: "List Account Balances RESTful API"
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_listaccountbals.html
 folder: prodNuapay
 toc: false
@@ -25,7 +25,7 @@ For example:
 Note that:
 * At this point, €1,0000.00 is still credited on the account (the `BOOKED_BALANCE`)
 * €400.00 has been set aside for the payment that will be issued tomorrow.
-* If you wanted to create a second Credit Transfer, at this point, you would only be able to create a payment up to a maximum value = €600.00 i.e. up to the total value of the `AVAILABLE_BALANCE`. 
+* If you wanted to create a second Credit Transfer, at this point, you would only be able to create a payment up to a maximum value = €600.00 i.e. up to the total value of the `AVAILABLE_BALANCE`.
 * Once the payment is successfully credited to the beneficiary on its execution date (_tomorrow_, in this example), the `BOOKED_BALANCE` is updated to €600.00.
 
 
@@ -37,12 +37,12 @@ Note that:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/viewAccountBalancesUsingGET','#profileTabs',timerRef); }, 500);
 

@@ -31,12 +31,12 @@ For example, assume you have created a SEPA Direct Debit transaction under a spe
 |Mandate Reference | MAND-12345|
 |Direct Debit End-to-End| C5F53BF5-EFA4-4319-8|
 
-When working with this transaction via the API, you will need to reference the **resource identifier** values. 
+When working with this transaction via the API, you will need to reference the **resource identifier** values.
 These might be as follows:
 
 |**Item**| **Value**| **Resource Identifier** |
 |Creditor Scheme ID | GB09ZZZSDDBBRU00000055356871SD1| abxq9kq52l |
-|Mandate Reference | MAND-12345| rtsxq8kaby5 | 
+|Mandate Reference | MAND-12345| rtsxq8kaby5 |
 |Direct Debit End-to-End| C5F53BF5-EFA4-4319-8| eshw2137gfc |
 
 <div markdown="span" class="alert alert-info" role="alert"><i class="fas fa-info-circle"></i> <b>Note</b>:  The resource identifier for your scheme is essential and is the building block for all subsequent mandate and direct debit calls. Details of how to retrieve your creditor scheme identifier (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.sun}}">SUN</a> for Bacs users) is described in the [List Schemes](np_listcredscheme.html) section.</div>
@@ -58,7 +58,7 @@ To retrieve that mandate later you would use the following:
 
 **Retrieve Direct Debit**
 
-To retrieve the details of the speific transaction created against the mandate, you would use the following:
+To retrieve the details of the specific transaction created against the mandate, you would use the following:
 
 |GET `/schemes/abxq9kq52l/mandates/rtsxq8kaby5/directdebits/eshw2137gfc`|
 

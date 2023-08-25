@@ -2,7 +2,7 @@
 title: Non-Processing Days
 keywords: Working Days Business Days SEPA Bacs
 summary: "In the SEPA and Bacs schemes certain days are configured as non-working or non-business days. On these days no payment or mandate processing is carried out. This section gives some extra details on these non-processing days."
-sidebar: np_sidebar
+sidebar: resources_sidebar
 permalink: np_businessdays.html
 folder: prodNuapay
 toc: false
@@ -49,13 +49,11 @@ The following summarises the non-processing days applicable to both the SEPA and
 Note that:
 * As some holidays may fall on a Saturday or Sunday and get pushed to the next business day in any given year, it is important to verify the non-processing days from year to year.
 * Some Bacs holidays are only applicable to Northern Ireland.
-* Ad hoc dates may be added as non-processing dates, for example the Platinum Jubilee bank holiday planned for June 2022.
+* Ad hoc dates may be added as non-processing dates from time to time.
 
 To confirm the exact dates for the Bacs holidays, please refer to the **Bacs Processing Calendar**, which is published annually and available on the Bacs Web site:
 
 |**Year**|**Link**|
-|2021|[https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf](https://www.bacs.co.uk/documentlibrary/bacs_processing_calendar_2021.pdf){:target="_blank"}|
-|2022|[https://www.bacs.co.uk/documentlibrary/bacs_payment_system_processing_calendar_2022.pdf](https://www.bacs.co.uk/documentlibrary/bacs_payment_system_processing_calendar_2022.pdf){:target="_blank"}|
-
+|2023|[Processing Calendar 2023](https://www.bacs.co.uk/media/mgxj4stu/bacs-payment-system-processing-calendar-2023.pdf){:target="_blank"}|
 
 {% include links.html %}

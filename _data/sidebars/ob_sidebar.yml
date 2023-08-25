@@ -14,13 +14,13 @@ entries:
       url: /ob_landing_page.html
       output: web
 
-    - title: Open Banking Services
+    - title: Services Overview
       url: /ob_servicesoverview.html
       output: web
 
-    - title: General API Rules
-      url: /ob_generalrules.html
-      output: web, pdf
+#    - title: General API Rules
+#      url: /ob_generalrules.html
+#      output: web, pdf
 
   - title: Integration Models
     output: web, pdf
@@ -67,9 +67,9 @@ entries:
           url: /ob_getbankfamily.html
           output: web
 
-        - title: View Bank
-          url: /ob_viewbank.html
-          output: web
+      ##  - title: View Bank
+      ##    url: /ob_viewbank.html --> NOT IMPLEMENTS - REMOVED
+      ##    output: web
 
   - title: Payment Initiation Service
     output: web, pdf
@@ -100,9 +100,9 @@ entries:
           url: /ob_selfsetupoverview.html
           output: web, pdf
 
-        - title: Self-Hosted-Callback Setup
-          url: /ob_selfcallbacksetupoverview.html
-          output: web, pdf
+      #  - title: Self-Hosted-Callback Setup
+      #    url: /ob_selfcallbacksetupoverview.html
+      #    output: web, pdf --> Not usable for Partners
 
         - title: Redirect Setup
           url: /ob_redirectoverview.html
@@ -182,47 +182,100 @@ entries:
           url: /ob_refundpaymentview.html
           output: web
 
-
-  - title: Subscription Payments
+  - title: Account Information Services
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /ob_emoverview.html
+      url: /ob_aispoverview.html
+      output: web, pdf
+
+    - title: Implementation Options
+      url: /ob_aisimplementations.html
+      output: web, pdf
+
+    - title: Quick Start
+      url: /ob_aisquickstart.html
+      output: web, pdf
+
+    - title: Self-Hosted Setup
+      url: /ob_aisselfsetupoverview.html
+      output: web, pdf
+
+    - title: Self-Hosted Callback Setup
+      url: /ob_aisselfcallback.html
       output: web, pdf
 
       subfolders:
-      - title: Payment-Initiated E-Mandates
+      - title: Account Information APIs
         output: web
         subfolderitems:
 
-        - title: Launching the Flow
-          url: /ob_emlaunching.html
-          output: web, pdf
+        - title: Create Consent
+          url: /ob_createconsent.html
+          output: web
 
-        - title: The User Journey
-          url: /ob_emoverallflow.html
-          output: web, pdf
+        - title: Retrieve Consent
+          url: /ob_retrieveconsent.html
+          output: web
 
-        - title: Self-Hosted Mode
-          url: /ob_emselfhosted.html
-          output: web, pdf
+        - title: Revoke Consent
+          url: /ob_revokeconsent.html
+          output: web
 
-      - title: Account-Access E-Mandates
-        output: web
-        subfolderitems:
+        - title: Set Bank ID
+          url: /ob_setbankconsent.html
+          output: web
 
-         - title: Launching the Flow
-           url: /ob_acc_emlaunching.html
-           output: web, pdf
+        - title: Forward Account Access Consent
+          url: /ob_forwardaccessconsent.html
+          output: web
 
-         - title: The User Journey
-           url: /ob_acc_emoverallflow.html
-           output: web, pdf
+        - title: List Accounts
+          url: /ob_listaccount.html
+          output: web
 
-         - title: Self-Hosted Mode
-           url: /ob_acc_emselfhosted.html
-           output: web, pdf
+
+  #- title: Subscription Payments ---> Moved to the E-Mandate section. Delete this later once it's confirmed it's okay under the E-Mandates section
+  #  output: web, pdf
+  #  folderitems:
+
+  #  - title: Overview
+  #    url: /ob_emoverview.html
+  #    output: web, pdf
+
+  #    subfolders:
+  #    - title: Payment-Initiated E-Mandates
+  #      output: web
+  #      subfolderitems:
+
+  #      - title: Launching the Flow
+  #        url: /ob_emlaunching.html
+  #        output: web, pdf
+
+  #      - title: The User Journey
+  #        url: /ob_emoverallflow.html
+  #        output: web, pdf
+
+  #      - title: Self-Hosted Mode
+  #        url: /ob_emselfhosted.html
+  #        output: web, pdf
+
+  #    - title: Account-Access E-Mandates
+  #      output: web
+  #      subfolderitems:
+
+  #       - title: Launching the Flow
+  #         url: /ob_acc_emlaunching.html
+  #         output: web, pdf
+
+  #       - title: The User Journey
+  #         url: /ob_acc_emoverallflow.html
+  #         output: web, pdf
+
+  #       - title: Self-Hosted Mode
+  #         url: /ob_acc_emselfhosted.html
+  #         output: web, pdf
 
   - title: Bank Status Service
     output: web, pdf

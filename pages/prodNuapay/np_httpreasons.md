@@ -1,8 +1,8 @@
 ---
 title: HTTP Response Codes
-keywords: HTTP Response Codes 
+keywords: HTTP Response Codes
 summary: "All APIs respond with a HTTP code. 200 and 201 indicate success, the meaning for other codes are provided below."
-sidebar: np_sidebar
+sidebar: resources_sidebar
 permalink: np_httpreasons.html
 folder: prodNuapay
 toc: true
@@ -15,7 +15,7 @@ datatable: true
 
 ## The JSON Object Returned in the 400 and 422 Responses
 
-When a `400` or a `422` response is returned, the body will contain a JSON object that describes the problem. 
+When a `400` or a `422` response is returned, the body will contain a JSON object that describes the problem.
 
 The error object has the following structure:
 
@@ -33,11 +33,11 @@ The error object has the following structure:
 See the possible error codes in the table below:
 
 <ul id="profileTabs" class="nav nav-tabs">
-  
+
 </ul>
-   
+
 {% include redoc.html %}
-   
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('tag/Error-Codes','#profileTabs',timerRef); }, 500);
 </script>

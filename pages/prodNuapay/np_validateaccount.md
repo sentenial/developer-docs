@@ -2,13 +2,14 @@
 title: Account Validation
 keywords: Validate IBAN BBAN
 summary: "The Validate Account service allows you to pass either domestic account details (to validate and retrieve an IBAN) or to pass an IBAN (to validate and retrieve the domestic account details). "
-sidebar: np_sidebar
+sidebar: resources_sidebar
 permalink: np_validateaccount.html
 folder: prodNuapay
 toc: false
 ---
 
 ## API Details
+TEST
 
 The Validate Account service allows you to:
 

@@ -29,15 +29,25 @@ topnav_dropdowns:
 #          url: /index.html
         - title: Getting Started
           url: /prod_overview.html
-        - title: Direct Debits & Credit Transfers
+        - title: Token Management
+          url: /tok_tokenmgmt.html  
+        - title: Direct Debits
           url: /np_landing_page.html
         - title: Electronic Mandates
           url: /em_landing_page.html
+        - title: Credit Transfers
+          url: /np_ctoverview.html
+        - title: Nuapay Accounts
+          url: /np_accountoverview.html
         - title: Instant Payments
           url: /ip_landing_page.html
         - title: Open Banking
           url: /ob_landing_page.html
+        - title: User Verification
+          url: /ver_landing_page.html
         - title: Webhooks
           url: /wh_landing_page.html
         - title: Security
           url: /np_secoverview.html
+        - title: Resources
+          url: /np_resrcesoverview.html

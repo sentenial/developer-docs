@@ -2,12 +2,12 @@
 title: Nuapay Account Overview
 keywords: Nuapay Account Overview
 summary: "Every Nuapay merchant is assigned a unique Nuapay International Bank Account - Direct Debit settlements are credited to this account; Credit Transfers are debited from this account."
-sidebar: np_sidebar
+sidebar: acc_sidebar
 permalink: np_accountoverview.html
 folder: prodNuapay
 ---
 
-You will be provided with your Nuapay IBAN when you register for the Nuapay service. 
+You will be provided with your Nuapay IBAN when you register for the Nuapay service.
 
 Our API allows you to carry out various operations on your account:
 

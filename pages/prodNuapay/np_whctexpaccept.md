@@ -2,7 +2,7 @@
 title: Express Credit Transfer Accept Event
 keywords: Express Credit Transfer Accept Event Webhook
 summary: "Express Credit Transfer Accept Webhook event"
-sidebar: np_sidebar
+sidebar: ct_sidebar
 permalink: np_whctexpaccept.html
 folder: prodNuapay
 toc: false
