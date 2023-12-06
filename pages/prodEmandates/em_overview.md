@@ -19,7 +19,7 @@ We currently offer the following implementation options:
 |<a href="em_wpoverview.html">WordPress</a>| Our WordPress plug-in offers you the easiest integration option but is only available if your site has been built on WordPress.|
 |<a href = "em_directapioverview.html">Direct API</a>| This option allows you the greatest control, allowing you to build your own client from the ground up using our powerful APIs.|
 
-{% include tip.html content="It is also possible to leverage Open Banking to create an electronic mandate. Note that in this flow, the payer initially makes an Open Banking payment and then signs the mandate so that future payments may be collected via Direct Debit. This option is currently only available for the Bacs scheme. For more information, see the Open Banking section: [Open Banking & E-mandate Overview](ob_emoverview.html)  " %}
+{% include tip.html content="It is also possible to leverage Open Banking to create an electronic mandate. For more information, see the [Open Banking E-mandate Overview](em_oboverview.html)  " %}
 
 ## Showcase
 

@@ -21,16 +21,16 @@ In addition, two elements must be added to your Web page:
 1. The E-Mandate Token
 
 ````js
-<script> 
+<script>
 
-/*<![CDATA[*/ 
-
-
-
-EMandates.setToken('07e43737-22d5-491e-9dd1-423e2270d190'); 
+/*<![CDATA[*/
 
 
-EMandates.setUrl('https://api.nuapay.com/emandate-rest'); 
+
+EMandates.setToken('07e43737-22d5-491e-9dd1-423e2270d190');
+
+
+EMandates.setUrl('https://api.nuapay.com/'); 
 
 </script>
 ````

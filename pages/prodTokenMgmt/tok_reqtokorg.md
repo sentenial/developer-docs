@@ -1,5 +1,5 @@
 ---
-title: Request Tokens
+title: Request Organisation Tokens
 keywords: Request Token (for Organization) Merchant and Partner users
 summary: "The Request Token RESTful API allows you to generate a token for a specific organization (for Partners) or may be used to exchange an API Key for an access token (for merchants)."
 sidebar: tok_sidebar

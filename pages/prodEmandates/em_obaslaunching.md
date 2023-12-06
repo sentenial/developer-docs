@@ -61,31 +61,16 @@ At this point you have:
 To enable the <span class="label label-info">SET UP SUBSCRIPTION</span> button you will need to add an ``onclick`` event:
 
 ````
-<a class="btn-primary" onclick="aisEmandates()">SET UP SUBSCRIPTION</a>
+<a class="btn-primary" onclick="NuapayOpenBanking.showEmandateAisp( [token], [uiUrl] )">SET UP SUBSCRIPTION</a>
 
 ````
-
-This onclick event triggers the following JavaScript, which launches the subscription signup pop-up:
-
-````
-NuapayOpenBanking.showEmandateAisp( /*[[${token}]]*/, /*[[${uiUrl}]]*/ );
-
-````
-
 Where:
 
 * The `token` is the retrieved E-Mandate token.
-* The `uiUrl` is = `https://api.nuapay.com/tpp-ui` (on Production)
+* The `uiUrl` being either
+  * `https://api.nuapay.com/tpp-ui` (for Production)
+  * or `https://sandbox.nuapay.com/tpp-ui/` (for Sandbox)
 
-Note that you will need to specify the correct URL based on whether you are testing or working in Production:
-
-|SANDBOX|https://sandbox.nuapay.com/tpp-ui/|
-|PRODUCTION| https://api.nuapay.com/tpp-ui/|
-
-
-An example URL could be:
-
-|https://api.nuapay.com/tpp-ui/app/emandate-ui/aisp?flow=JS_API&token=8084300c-1a5b-4c5c-8576-7712fd71b19a-bo8pw4qv6j|
 
 {% include tip.html content="To avoid any issues with **pop-up blockers**, we recommend that you request your users to: <br/>
 <br/>1. Click a button to choose to set up a subscription via Open Banking Account Access (allowing you to retrieve the E-Mandate token)
@@ -103,5 +88,5 @@ To launch the flow In REDIRECT mode:
 * Use JavaScript, similar to the following:
 
 ````
-NuapayOpenBanking.showEmandateAisp( "fe5d1946-2c57-45c9-865b-600016291081-bo43xegjom", "https:\/\/api.nuapay.com\/tpp-ui\/");
+NuapayOpenBanking.redirectEmandateAisp( "fe5d1946-2c57-45c9-865b-600016291081-bo43xegjom", "https:\/\/api.nuapay.com\/tpp-ui\/");
 ````

@@ -222,6 +222,61 @@ Note that:
 {% include tip.html content="If you do not specify a creditor account then the payment will be processed as per the configured defaults for your merchant." %}
 
 
+## Risk Object
+
+{% include tip.html content="Note that the features described in the following section relate to GBP processing only and will be available in the next Nuapay Open Banking release, scheduled for November 2023." %}
+
+For UK Open Banking, with the release of the OBIE Specification v3.1.10, the `Risk` object has been enhanced and includes the following Transaction Risk Indicators (TRIs).
+
+| TRI                                   | Description                                                                                                                  |
+|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Payment Context Code                  | 7 possible values – `Billing for Goods And Services In Advance`, `Billing for Goods And Services In Arrears`, `PISP Payee`, `Ecommerce Merchant Initiated Payment`, `F2F POS`, `Transfer to Self`, `Transfer to third party` |
+| Contract Present Indicator           | Indicates whether Nuapay has a contract with you (the Merchant) and has undertaken some form of validation/due diligence. Possible values are True/False. Always set to `true` for Nuapay merchants.                                   |
+| Beneficiary Payment details pre-populated indicator | Indicates whether the PISP, rather than the PSU, has generated the following fields. These fields are immutable and have not been changed by the PSU in the transaction journey. Possible values are True/False |
+| Payee Account Name                   | Name of the Account                                                                                                           |
+| Beneficiary Account Type              | Personal/Business                                                                                                            |
+| Merchant Customer Identification      | The unique customer identifier of the PSU by the merchant – Max 70 text.                                                    |
+| Delivery Address                      | As defined by Postal Services                                                                                                |
+| Merchant Category Code                | Category code that conforms to ISO 18245                                                                                     |
+| Payment Purpose Code                  | Conforms to recommended UK purpose code in ISO 20022 payment messaging list                                                   |
+
+
+What are TRIs and why are they needed?
+* TRIs refer to particular payment payload fields included in the Risk section of the JSON object, which are passed to your payer's bank.
+* These risk indicators are then used by the target bank to enhance its security of payments for customers through the detection and prevention of fraud.
+* In addition, the improved risk scoring can provide support for various banks' vulnerable customers by allowing the implementation of gambling blocks on Open Banking payments, for example.
+
+{% include tip.html content="Providing all these values is not mandatory but banks generally require the `PaymentContextCode` and `merchantCategoryCode` to be provided." %}
+
+The following 'paymentContextCode' values are available in v3.1.10 of the OBIE specification:
+
+* `BillingGoodsAndServicesInAdvance`
+* `BillingGoodsAndServicesInArrears`
+* `PispPayee`
+* `EcommerceMerchantInitiatedPayment`
+* `FaceToFacePointOfSale`
+* `TransferToSelf`
+* `TransferToThirdParty`
+
+It is possible to:
+
+* Manually provide any of these values in your payment request (in `risk` > `paymentContextCode`).
+* Configure values that are automatically passed in all your requests. If all your payments fall under a specific payment context and merchant category then this is the better option. Discuss your requirements with your Account Manager.  
+
+{% include note.html content="If you provide a v3.1.10 'paymentContextCode' and your payment is processed by a bank who are on an earlier specification version, the code you provide will be remapped to `Other`. This will ensure that your payment will not be rejected. Similarly, if you provide a pre-v3.1.10 code, and the payment is destined for a bank using the later specification, the provided code  will be remapped to `PispPayee` " %}
+
+The following matrix describes how the values for `paymentContextCode` and `merchantCategoryCode` are handled, whether they are provided in the API request or if they have been configured for your organisation:
+
+| Bank Requires PaymentContextCode? | PaymentContextCode / MerchantCategoryCode provided in API? | PaymentContextCode / MerchantCategoryCode Configured? | Result |
+|-------------------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------|-------------|
+| NO                         | NO                                                                                          | NO                                                | The `PaymentContextCode` / `MerchantCategoryCode` are not sent to the bank.                             |
+| NO                         | NO                                                                                          | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values are sent to the bank with the configured values.              |
+| NO                         | YES                                                                                           | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values are sent to the bank with the value provided in the API request |
+| YES                          | NO                                                                                          | NO                                                | The `Risk.PaymentContextCode` = `Other` is added and sent to the bank               |
+| YES                          | NO                                                                                          | YES                                                 | The configured  `PaymentContextCode` / `MerchantCategoryCode` is sent to the bank.               |
+| YES                          | YES                                                                                           | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values provided in the API request are passed to the bank.  |
+
+
 ## Timeout Setting
 
 It is possible to configure the timeout period for your payments. This is the time allowed from when the payment is initially created to when it is approved at the ASPSP.

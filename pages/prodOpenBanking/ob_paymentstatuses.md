@@ -149,7 +149,7 @@ The various statuses possible (for both payments and refunds) are presented in t
       <td><code class="highlighter-rouge">PAYMENT_RECEIVED</code></td>
       <td>The settlement amount has been credited to the merchant’s Nuapay account. Only possible if the merchant has a Nuapay account.</td>
        <td>No</td>
-       <td>No</td>
+       <td>Yes</td>
       <td>Yes</td>    
       <td><a href="ob_whreceived.html">PaymentReceived</a></td>
     </tr>
