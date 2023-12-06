@@ -10,10 +10,10 @@ folder: prodWebhooks
 
 {% include note.html content="The configuration of your (receiving) Endpoint will be specific to your chosen Web server and architecture and is out of scope for this documentation. Here we assume that you have configured the Endpoint that you will be using for processing all Webhook notifications transferred to the Endpoint from Nuapay." %}
 
-## X-Signature
+## x-signature
 To ensure that you can be confident that the Webhook message received by your defined Endpoint has actually been dispatched from Nuapay, we encode the Sign Key (as configured on the Add Webhook pop-up via the [Developer Dashboard screen](ob_whconfiguration.html) or via the `signKey` value in the [Create Webhook](ob_whrestcreate.html) API) using HMAC: Keyed-Hashing for Message Authentication .
 
-Before transmitting the Webhook message to your Endpoint, Nuapay creates a hash value based on your Sign Key. Nuapay uses the Apache Commons HmacUtils codec for the encoding; the hashed value is then passed in the X-Signature.
+Before transmitting the Webhook message to your Endpoint, Nuapay creates a hash value based on your Sign Key. Nuapay uses the Apache Commons HmacUtils codec for the encoding; the hashed value is then passed in the x-signature.
 
 ````
 
@@ -38,8 +38,8 @@ Notification Details - HTTP POST Request
 <b>Extra Request Headers</b>
 
 |**Header Name**|**Header Value**                                                                      |
-|X-Request-Id   |UUID of the Webhook Notification                                                      |
-|X-Signature    |Signature of the request JSON body, created with the Sign Key stored on the Webhook   |
+|x-request-Id   |UUID of the Webhook Notification                                                      |
+|x-signature    |Signature of the request JSON body, created with the Sign Key stored on the Webhook   |
 
 
 <b>JSON Body</b>

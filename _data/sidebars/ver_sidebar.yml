@@ -1,8 +1,8 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: User Verification
-  product: User Verification
+- title: Account Holder Verification
+  product: Account Holder Verification
   version:
   folders:
 

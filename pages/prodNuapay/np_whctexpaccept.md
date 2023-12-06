@@ -114,7 +114,7 @@ The following is an example of a Credit Transfer Accept event JSON:
 
 |POST| http://example.com/webhooks|
 |Content-Type:| application/json;charset=UTF-8|
-|X-Signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|x-signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
 |Content-Length:| 261|
 |X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
 

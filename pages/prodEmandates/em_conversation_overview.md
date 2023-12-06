@@ -17,6 +17,7 @@ The following conversation steps are available (with links to the Swagger defini
 |<span class="label label-info">POST</span>| Sign | [/conversations/sign](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/signMandatePostUsingPOST) |
 |<span class="label label-success">GET</span> | Verify | [/conversations/verify](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/verifyGetUsingGET) |
 |<span class="label label-info">POST</span>| Verify |  [/conversations/verify](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/verifyPostUsingPOST) |
+|<span class="label label-info">POST</span>| Prepare Conversation | [prepare/{emailToken}](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/preparePostUsingPOST) |
 |<span class="label label-success">GET</span>| Resend One-Time Password | [/conversations/resend](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/resendOtpPostUsingGET) |
 |<span class="label label-info">POST</span>| Resend One-Time Password | [/conversations/resend](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/resendOtpPostUsingPOST) |
 |<span class="label label-success">GET</span>| Confirm| [/conversations/confirm](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/confirmMandateGetUsingGET) |
@@ -25,7 +26,7 @@ The following conversation steps are available (with links to the Swagger defini
 |<span class="label label-success">GET</span>| Download Contract Document | [/conversations/contract](https://sentenial.github.io/emandates-swagger/docs/redoc.html#operation/conversationContractGetUsingGET)|
 
 
-These services can be used when you need to implement a specific flow. 
+These services can be used when you need to implement a specific flow.
 The following implementations examples show how you can work with the conversation APIs to:
 
 * [Set up SMS Authentication](em_conversation_settings.html) (EXAMPLE 1)

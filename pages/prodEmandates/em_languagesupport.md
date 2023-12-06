@@ -12,17 +12,17 @@ folder: prodEmandates
 E-Mandates supports the following languages:
 
 * English (the default)
+* Dutch
 * French
 * German
+* Italian
+* Slovak
 * Spanish
-* Dutch
-
-## Rendering the E-Mandate Screens in a Specifc Language
-
-For [Overlay](em_overlay.html) and [Redirect](em_redirect.html) implementations the E-Mandate application uses the end user's browser locale (passed in the Accepted-Languages HTTP header) to determine in what language to render the usr interface screens, emails, SMS messages and mandate PDF. If the language is not supported then English is used as the default. 
 
 
+## Rendering the E-Mandate Screens in a Specific Language
 
+For [Overlay](em_overlay.html) and [Redirect](em_redirect.html) implementations the E-Mandate application uses the end user's browser locale (passed in the Accepted-Languages HTTP header) to determine in what language to render the user interface screens, emails, SMS messages and mandate PDF. If the language is not supported then English is used as the default.
 
 
 

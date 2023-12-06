@@ -22,12 +22,21 @@ Tokens:
 * Allow you to control exactly which resources an application can access and for how long.
 * In addition, tokens can be easily revoked.
 
+## OAuth Token Types
+
+There are three token types:
+
+* 'Partner' level
+* 'Merchant' level
+* 'Application' level
+
 ## When Do I Need to Use OAuth Tokens?
 
 Token management is mandatory for partner users and optional for merchant users.
 
 * As a `partner`, once you generate an OAuth token representing a specified merchant, you can initiate any API requests on behalf of that merchant.
 * As a `merchant`, you may also want to authenticate with OAuth tokens rather than using an `API Key`.
+* In addition to using OAuth tokens to represent a merchant entity, you may also use tokens for access to specific applications or resources. 
 
 See the API section for details of the various Token endpoints.
 

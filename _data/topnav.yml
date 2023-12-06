@@ -30,7 +30,7 @@ topnav_dropdowns:
         - title: Getting Started
           url: /prod_overview.html
         - title: Token Management
-          url: /tok_tokenmgmt.html  
+          url: /tok_tokenmgmt.html
         - title: Direct Debits
           url: /np_landing_page.html
         - title: Electronic Mandates
@@ -39,11 +39,11 @@ topnav_dropdowns:
           url: /np_ctoverview.html
         - title: Nuapay Accounts
           url: /np_accountoverview.html
-        - title: Instant Payments
-          url: /ip_landing_page.html
+      #  - title: Instant Payments --> removed 26/10/23
+      #    url: /ip_landing_page.html --> removed 26/10/23
         - title: Open Banking
           url: /ob_landing_page.html
-        - title: User Verification
+        - title: Account Holder Verification
           url: /ver_landing_page.html
         - title: Webhooks
           url: /wh_landing_page.html

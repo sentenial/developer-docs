@@ -129,94 +129,59 @@ entries:
         
         - title: Managing E-Mail Notifications
           url: /em_directapinotifications.html
-          output: web, pdf             
-
-
-  - title: Conversation APIs
-    output: web, pdf
-    folderitems:
-    
-
-    - title: Overview
-      url: /em_conversation_overview.html
-      output: web, pdf
-
-      subfolders:
-      - title: EXAMPLE 1 - SMS Authentication
-        output: web
-        subfolderitems:
-
-        - title: Settings
-          url: /em_conversation_settings.html
-          output: web, pdf
-
-        - title: Initialise Conversation
-          url: /em_conversation_init.html
-          output: web, pdf
-
-        - title: Sign GET and POST
-          url: /em_conversation_sign.html
-          output: web, pdf
-
-        - title: Confirm GET and POST
-          url: /em_conversation_confirm.html
-          output: web, pdf          
-   
-      - title: EXAMPLE 2 - Resend OTP
-        output: web
-        subfolderitems:          
-
-        - title: Settings
-          url: /em_conversation_resend_settings.html
-          output: web, pdf          
+          output: web, pdf                
         
-        - title: Sign GET and POST
-          url: /em_conversation_resend_sign.html
-          output: web
+          subfolders:
+          - title: Conversation APIs
+            output: web
+            subfolderitems:
 
-        - title: Resend POST
-          url: /em_conversation_resend_post.html
-          output: web
+            - title: Overview
+              url: /em_conversation_overview.html
+              output: web, pdf
 
-        - title: Confirm GET and POST
-          url: /em_conversation_resend_confirm.html
-          output: web                
-     
-      - title: Conversation APIs
-        output: web
-        subfolderitems:
+              subfolders:
+              - title: EXAMPLE 1 - SMS Authentication
+                output: web
+                subfolderitems:
 
-        - title: Retrieve Settings
-          url: /em_retrsettings.html
-          output: web, pdf
+                - title: Settings
+                  url: /em_conversation_settings.html
+                  output: web
 
-        - title: Initialise Conversation
-          url: /em_init.html
-          output: web, pdf
+                - title: Initialise Conversation
+                  url: /em_conversation_init.html
+                  output: web
 
-        - title: Sign Conversation
-          url: /em_sign.html
-          output: web, pdf
+                - title: Sign GET and POST
+                  url: /em_conversation_sign.html
+                  output: web
 
-        - title: Verify Conversation
-          url: /em_verify.html
-          output: web, pdf
+                - title: Confirm GET and POST
+                  url: /em_conversation_confirm.html
+                  output: web
+                
 
-        - title: Confirm Conversation
-          url: /em_confirm.html
-          output: web, pdf
+              subfolders:
+              - title: EXAMPLE 2 - Resend OTP
+                output: web
+                subfolderitems:            
 
-        - title: Re-Send One-Time-Password
-          url: /em_resend.html
-          output: web, pdf
+                - title: Settings
+                  url: /em_conversation_resend_settings.html
+                  output: web
 
-        - title: Retrieve Mandate Document
-          url: /em_retrieve_doc.html
-          output: web, pdf
+                - title: Sign GET and POST
+                  url: /em_conversation_resend_sign.html
+                  output: web
 
-        - title: Download Contract Document
-          url: /em_retrieve_contract.html
-          output: web, pdf
+                - title: Resend POST
+                  url: /em_conversation_resend_post.html
+                  output: web
+
+                - title: Confirm GET and POST
+                  url: /em_conversation_resend_confirm.html
+                  output: web
 
 
   - title: Open Banking E-Mandates
@@ -282,7 +247,42 @@ entries:
       output: web, pdf
 
       subfolders:
-      
+      - title: Conversation APIs
+        output: web
+        subfolderitems:
+
+        - title: Retrieve Settings
+          url: /em_retrsettings.html
+          output: web, pdf
+
+        - title: Initialise Conversation
+          url: /em_init.html
+          output: web, pdf
+
+        - title: Sign Conversation
+          url: /em_sign.html
+          output: web, pdf
+
+        - title: Verify Conversation
+          url: /em_verify.html
+          output: web, pdf
+
+        - title: Confirm Conversation
+          url: /em_confirm.html
+          output: web, pdf
+
+        - title: Re-Send One-Time-Password
+          url: /em_resend.html
+          output: web, pdf
+
+        - title: Retrieve Mandate Document
+          url: /em_retrieve_doc.html
+          output: web, pdf
+
+        - title: Download Contract Document
+          url: /em_retrieve_contract.html
+          output: web, pdf
+
       - title: Configuration APIs
         output: web
         subfolderitems:

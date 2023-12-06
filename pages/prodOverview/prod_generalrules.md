@@ -25,5 +25,17 @@ All services may be accessed via the following URLs:
 
 To request an API Key please contact our Support Team: <a href="mailto:api.support@nuapay.com">api.support@nuapay.com</a>.
 
+## Response Handling
+
+<p>All API requests generate responses.</p>
+
+<p>Successful requests return one of the following:</p>
+
+* 200 (<b>OK</b> - The request completed successfully)
+* 201 (<b>Created</b> - A new resource has been created successfully)
+
+{% include callout.html content="Response codes in the 400 to 499 range are generally related to business validation errors. Response codes in the 500 to 503 range are related to API service issues." type="primary" %}
+
+See [HTTP Response Codes](em_httpreasons.html) for more information on the various responses and possible API error codes.
 
 {% include links.html %}

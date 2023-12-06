@@ -31,10 +31,14 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Request Tokens
+    - title: Request Organisation Tokens
       url: /tok_reqtokorg.html
+      output: web
+
+    - title: Request Application Tokens
+      url: /tok_reqtokapp.html
       output: web
 
     - title: Revoke Tokens
       url: /tok_revoke.html
-      output: web  
+      output: web
