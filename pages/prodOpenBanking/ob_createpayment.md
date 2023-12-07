@@ -224,8 +224,6 @@ Note that:
 
 ## Risk Object
 
-{% include tip.html content="Note that the features described in the following section relate to GBP processing only and will be available in the next Nuapay Open Banking release, scheduled for November 2023." %}
-
 For UK Open Banking, with the release of the OBIE Specification v3.1.10, the `Risk` object has been enhanced and includes the following Transaction Risk Indicators (TRIs).
 
 | TRI                                   | Description                                                                                                                  |
@@ -246,7 +244,7 @@ What are TRIs and why are they needed?
 * These risk indicators are then used by the target bank to enhance its security of payments for customers through the detection and prevention of fraud.
 * In addition, the improved risk scoring can provide support for various banks' vulnerable customers by allowing the implementation of gambling blocks on Open Banking payments, for example.
 
-{% include tip.html content="Providing all these values is not mandatory but banks generally require the `PaymentContextCode` and `merchantCategoryCode` to be provided." %}
+{% include tip.html content="Providing all these values is not mandatory but banks generally require the `PaymentContextCode` to be provided at a minimum." %}
 
 The following 'paymentContextCode' values are available in v3.1.10 of the OBIE specification:
 
