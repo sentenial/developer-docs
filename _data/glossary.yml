@@ -37,6 +37,8 @@ psu: "Payment Service User - the person using the payment service - the payer."
 
 nupay_tpp: "Nuapay TPP is the Open Banking application"
 
+ob_basic_pisp: "The Open Banking payment inisitiation product, where a Nuapay account IS NOT used; the merchant's high-street bank holds the beneficiary account."
+
 r-transaction: "Refers to the Direct Debit failures that begin with the letter 'R': Revoke, Reject, Refuse, Return, Refund (also Cancel)"
 
 scheme: "A payment scheme is a set of rules that govern how DD and CT transactions are processed. SEPA and Bacs are two such schemes, which govern both Direct Debit and Credit Transfer transactions in the EU and in the UK."
