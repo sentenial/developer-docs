@@ -229,14 +229,13 @@ For UK Open Banking, with the release of the OBIE Specification v3.1.10, the `Ri
 | TRI                                   | Description                                                                                                                  |
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | Payment Context Code                  | 7 possible values – `Billing for Goods And Services In Advance`, `Billing for Goods And Services In Arrears`, `PISP Payee`, `Ecommerce Merchant Initiated Payment`, `F2F POS`, `Transfer to Self`, `Transfer to third party` |
-| Contract Present Indicator           | Indicates whether Nuapay has a contract with you (the Merchant) and has undertaken some form of validation/due diligence. Possible values are True/False. Always set to `true` for Nuapay merchants.                                   |
-| Beneficiary Payment details pre-populated indicator | Indicates whether the PISP, rather than the PSU, has generated the following fields. These fields are immutable and have not been changed by the PSU in the transaction journey. Possible values are True/False |
-| Payee Account Name                   | Name of the Account                                                                                                           |
-| Beneficiary Account Type              | Personal/Business                                                                                                            |
+| Merchant Category Code                | Category code that conforms to ISO 18245                                                                                     |
 | Merchant Customer Identification      | The unique customer identifier of the PSU by the merchant – Max 70 text.                                                    |
 | Delivery Address                      | As defined by Postal Services                                                                                                |
-| Merchant Category Code                | Category code that conforms to ISO 18245                                                                                     |
+| Contract Present Indicator           | Indicates whether Nuapay has a contract with you (the Merchant) and has undertaken some form of validation/due diligence. Possible values are True/False. Always set to `true` for Nuapay merchants.                                   |
 | Payment Purpose Code                  | Conforms to recommended UK purpose code in ISO 20022 payment messaging list                                                   |
+| Beneficiary Payment details pre-populated indicator | Indicates whether the PISP, rather than the PSU, has generated the following fields. These fields are immutable and have not been changed by the PSU in the transaction journey. Possible values are True/False |
+| Beneficiary Account Type              | Personal/Business                                                                                                            |
 
 
 What are TRIs and why are they needed?
@@ -263,16 +262,19 @@ It is possible to:
 
 {% include note.html content="If you provide a v3.1.10 'paymentContextCode' and your payment is processed by a bank who are on an earlier specification version, the code you provide will be remapped to `Other`. This will ensure that your payment will not be rejected. Similarly, if you provide a pre-v3.1.10 code, and the payment is destined for a bank using the later specification, the provided code  will be remapped to `PispPayee` " %}
 
-The following matrix describes how the values for `paymentContextCode` and `merchantCategoryCode` are handled, whether they are provided in the API request or if they have been configured for your organisation:
+The following Risk values may be automatically provided, if configured for your merchant:
 
-| Bank Requires PaymentContextCode? | PaymentContextCode / MerchantCategoryCode provided in API? | PaymentContextCode / MerchantCategoryCode Configured? | Result |
-|-------------------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------|-------------|
-| NO                         | NO                                                                                          | NO                                                | The `PaymentContextCode` / `MerchantCategoryCode` are not sent to the bank.                             |
-| NO                         | NO                                                                                          | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values are sent to the bank with the configured values.              |
-| NO                         | YES                                                                                           | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values are sent to the bank with the value provided in the API request |
-| YES                          | NO                                                                                          | NO                                                | The `Risk.PaymentContextCode` = `Other` is added and sent to the bank               |
-| YES                          | NO                                                                                          | YES                                                 | The configured  `PaymentContextCode` / `MerchantCategoryCode` is sent to the bank.               |
-| YES                          | YES                                                                                           | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` values provided in the API request are passed to the bank.  |
+* `paymentContextCode`
+* `merchantCategoryCode`
+* `contractPresentIndicator`
+
+The following table indicates how these values are managed when provided directly in the API request and/or when taken from the configured values:
+
+| Risk Values provided in API? | Risk Values Configured? | Result |
+|------------------------------------------------------------------------------------------------|------------------------------------------------------|-------------|
+| NO                                                                                           | NO                                                | The `Risk.PaymentContextCode` = `PispPayee` (for v3.1.10 Banks) or `Risk.PaymentContextCode` = `Other` (for banks on the pre-v3.1.10 spec) is added and sent to the bank               |
+| NO                                                                                           | YES                                                 | The configured  `PaymentContextCode` / `MerchantCategoryCode` / `contractPresentIndicator` values are passed to the bank.               |
+| YES                                                                                           | YES                                                 | The `PaymentContextCode` / `MerchantCategoryCode` / `contractPresentIndicator` values provided in the API request are passed to the bank.  |
 
 
 ## Timeout Setting

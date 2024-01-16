@@ -15,14 +15,20 @@ folder: prodOverview
 
   <h2 class="page-header" id ="SR">Sandbox Access</h2>
 
-If you want to try our API:
-<ol>
-<li>Please complete this online form to request <a href='https://www.nuapay.com/en/request-api-sandbox/' target = '_blank'>Sandbox access</a>.</li>
-<li>Tell us a little about your company and the product(s) that you'd like to explore.</li>
-<li>Our support team will review your request and send you an API key to allow you to begin testing. </li>
-</ol>
+<p>If you want to try our APIs, please complete this online form: <a href='https://www.nuapay.com/request-api-sandbox/' target = '_blank'>Sandbox access</a>.
+A member of our Client Support team will review your required products and get you all set up as soon as possible.</p>
+
+<p>
+If you want to get started right away and are interested in trying our <strong>Open Banking PISP</strong> product, try our self-service signup:
+
+<a href='https://sandbox.nuapay.com/onboarding/web/signup' target = '_blank'>Self-Service Sandbox access</a>. </p>
+
+Currently only the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ob_basic_pisp}}">Open Banking Basic PISP</a> product is available for self-service onboarding.
+
 
 {% include tip.html content="Once you have completed your Sandbox testing and want to move to the Live environment, please ensure that you have a good understanding of our approach to <a href='prod_versioning.html'> Versioning and Backward Compatibility</a>" %}
+
+
 
 
   <h2 class="page-header" id ="SR">The Nuapay Product Suite</h2>
@@ -40,7 +46,7 @@ If you want to try our API:
                     </a>
                 </div>
                 <div class="panel-body">
-                    <h4>Direct Debits & Credit Transfers</h4>
+                    <h4>Direct Debits</h4>
                     <p>Create payments and schedules </p>
                     <a href="np_landing_page.html" class="btn btn-primary">Learn More</a>
                 </div>
@@ -63,6 +69,7 @@ If you want to try our API:
                 </div>
             </div>
         </div>
+
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
                 <a href="ip_landing_page.html">
@@ -74,12 +81,13 @@ If you want to try our API:
                   </a>
                 </div>
                 <div class="panel-body">
-                    <h4>Instant Payments</h4>
-                    <p>Transmit and receive instant payments in seconds.</p>
-                    <a href="ip_landing_page.html" class="btn btn-primary">Learn More</a>
+                    <h4>Credit Transfers</h4>
+                    <p>Issue payments to your payees using our Powerful CT APIs.</p>
+                    <a href="np_ctoverview.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
+
 
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -109,11 +117,11 @@ If you want to try our API:
         <div class="col-lg-12">
 
             <ul id="myTab" class="nav nav-tabs nav-justified">
-                <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-money-bill-wave"></i> DDs & CTs</a>
+                <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-money-bill-wave"></i> Direct Debits</a>
                 </li>
                 <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-barcode"></i> Electronic Mandates</a>
                 </li>
-                <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-stopwatch"></i> Instant Payments</a>
+                <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-stopwatch"></i> Credit Transfers</a>
                 </li>
                 <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-lock-open"></i> Open Banking </a>
                 </li>
@@ -121,9 +129,9 @@ If you want to try our API:
 
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="service-one">
-                    <h4>Direct Debits & Credit Transfers</h4>
-                    <p>Nuapay allows you to process Direct Debit and Credit Transfer payments.</p>
-                    <p>With Direct Debit you are the payee; you can initiate pull payments as agreed with your payers. With Credit Transfer payments, you are the payer. </p>
+                    <h4>Direct Debits</h4>
+                    <p>Nuapay allows you to process Direct Debit payments.</p>
+                    <p>With Direct Debit you are the payee; you can initiate pull payments as agreed with your payers. </p>
                     <p><a href="https://github.com/sentenial/nuapay-swagger" target = "_blank"><i class="fa fa-cogs"></i> Swagger Reference</a></p>
                     <p><a href="https://github.com/sentenial/nuapay-swagger/blob/master/nuapay-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
                 </div>
@@ -135,14 +143,14 @@ If you want to try our API:
                     <p><a href="https://github.com/sentenial/emandates-swagger/blob/master/emandates-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
                 </div>
                 <div class="tab-pane fade" id="service-three">
-                    <h4>Instant Payments</h4>
-                    <p>Sentenial's Origix Instant Payments module allows financial institutions / PSPs to process near instantaneous payments using our powerful Application Programming Interface (API). </p>
-                    <p>The application works in two modes:
+                    <h4>Credit Transfers</h4>
+                    <p>It is possible to initiate Credit Transfer both standard and instant (in GBP via Faster Payments). </p>
+                    <p>CTs may be used in two modes, where you act as a:
 
-                         <li>As a Receiver of inbound Payments.</li>
-                        <li> As a Disburser of outbound Payments.</li>    </p>
-                    <a href="https://github.com/sentenial/instant-payments-swagger" target = "_new"><i class="fa fa-cogs"></i> Swagger Reference</a>
-                    <p><a href="https://github.com/sentenial/instant-payments-swagger/blob/master/instant-payments-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
+                         <li>Receiver of inbound Payments.</li>
+                        <li> Disburser of outbound Payments.</li>    </p>
+                    <a href="https://github.com/sentenial/nuapay-swagger" target = "_new"><i class="fa fa-cogs"></i> Swagger Reference</a>
+                    <p><a href="https://github.com/sentenial/nuapay-swagger/blob/master/nuapay-swagger.yaml" target = "_blank"><i class="fa fa-file-import"></i> YAML</a></p>
                 </div>
                 <div class="tab-pane fade" id="service-four">
                     <h4>Open Banking</h4>
