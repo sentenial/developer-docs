@@ -8,14 +8,14 @@ folder: prodNuapay
 toc: false
 ---
 
-{% include webhook.html content="An AUDDIS rejection is processed resulting in a DDI transitioning from EXPORTED to REJECTED status. This event only impacts DDIs created in the Bacs scheme." %}
+{% include webhook.html content="An AUDDIS rejection is processed resulting in a DDI transitioning from EXPORTED to CANCELLED status. This event only impacts DDIs created in the Bacs scheme." %}
 
 {% include wh-compatibility.html %}
 
 A Direct Debit Instruction (mandate) created under Bacs:
 * Must be passed to the scheme to be approved before collections may be made against it.
 * Where the DDI is not approved (e.g. the payer's account does not allow Direct Debit payments), the scheme will inform Nuapay via an Automated Direct Debit Instruction Service (AUDDIS) notification. A specific [AUDDIS error code](np_bacsreasons.html#auddis-reason-codes) is assigned.
-* Nuapay will set the [DDI status](np_mandatestatuses.html) to `REJECTED`.
+* Nuapay will set the [DDI status](np_mandatestatuses.html) to `CANCELLED`.
 
 ## Webhook Message Details
 
@@ -131,7 +131,7 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceType": "Mandate",
 	"reasonCode": B,
 	"resourceOwner": "tc47ygrg72",
-	"resourceRemittanceInformation": null	
+	"resourceRemittanceInformation": null
 }</code>
 </pre>
 
