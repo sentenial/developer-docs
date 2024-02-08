@@ -260,7 +260,7 @@ It is possible to:
 * Manually provide any of these values in your payment request (in `risk` > `paymentContextCode`).
 * Configure values that are automatically passed in all your requests. If all your payments fall under a specific payment context and merchant category then this is the better option. Discuss your requirements with your Account Manager.  
 
-{% include note.html content="If you provide a v3.1.10 'paymentContextCode' and your payment is processed by a bank who are on an earlier specification version, the code you provide will be remapped to `Other`. This will ensure that your payment will not be rejected. Similarly, if you provide a pre-v3.1.10 code, and the payment is destined for a bank using the later specification, the provided code  will be remapped to `PispPayee` " %}
+{% include note.html content="If you provide a v3.1.10 'paymentContextCode' and your payment is processed by a bank who are on an earlier specification version, the code you provide will be remapped to `Other`. This will ensure that your payment will not be rejected." %}
 
 The following Risk values may be automatically provided, if configured for your merchant:
 

@@ -1,5 +1,5 @@
 ---
-title: Overlay E-Mandate Token
+title: Checkout E-Mandate Token
 keywords: E-Mandate Token
 summary: "The session identifier or token required to initiate the e-mandate conversation."
 sidebar: em_sidebar
@@ -31,13 +31,13 @@ To retrieve your token you must make a <b>Prepare E-Mandate</b> request:
 
 
 <ul id="profileTabs" class="nav nav-tabs">
-    
-   
+
+
 </ul>
- 
+
  {% include redoc.html %}
- 
- 
+
+
 loadRedoc('#profileTabs', 'https://sentenial.github.io/emandates-swagger/docs/redoc.html');
 var timerRef = setInterval(function() { getDocs('operation/prepareMandateUsingPOST','#profileTabs',timerRef); }, 500);
 

@@ -1,6 +1,6 @@
 ---
-title: Overlay Event Handler 
-keywords: E-Mandate Overlay Event Handler
+title: Checkout Event Handler
+keywords: E-Mandate Checkout Event Handler
 summary: "Registering an Event Handler"
 sidebar: em_sidebar
 permalink: em_overlayeventhandler.html
@@ -49,7 +49,7 @@ Your Event Handler script might be similar to the following sample:
 </script>
 ````
 
-{% include note.html content="See the Overlay approach in action on our [Showcase site](https://demo.sentenialtest.com/showcase/movie-flix)" %}
+{% include note.html content="See the Checkout approach in action on our [Showcase site](https://showcase.nuapay.com/showcase/movie-flix)" %}
 
 
 

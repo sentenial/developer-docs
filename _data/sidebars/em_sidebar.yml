@@ -39,11 +39,11 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Overlay
+      - title: Checkout
         output: web
         subfolderitems:
 
-        - title: Overlay Overview
+        - title: Checkout Overview
           url: /em_overlay.html
           output: web, pdf
 
@@ -51,11 +51,11 @@ entries:
           url: /em_token.html
           output: web, pdf
 
-        - title: Overlay JavaScript
+        - title: Checkout JavaScript
           url: /em_overlayjavascript.html
           output: web, pdf
 
-        - title: Overlay Event Handler
+        - title: Checkout Event Handler
           url: /em_overlayeventhandler.html
           output: web, pdf
 
@@ -74,7 +74,7 @@ entries:
         - title: Redirect to Mandate Signing
           url: /em_redirectmdtsigning.html
           output: web, pdf
-          
+
         - title: Redirect Success and Failure
           url: /em_redirecteventhandler.html
           output: web, pdf
@@ -94,15 +94,15 @@ entries:
         - title: Plugin Configuration
           url: /em_wpconfig.html
           output: web, pdf
-          
+
         - title: Page Setup
           url: /em_wppagesetup.html
           output: web, pdf
-         
+
         - title: Handling New Users
           url: /em_wpnewusers.html
           output: web, pdf
- 
+
       - title: Direct API Integration
         output: web
         subfolderitems:
@@ -118,24 +118,24 @@ entries:
         - title: Rendering the Screen
           url: /em_directapirenderscreen.html
           output: web, pdf
-          
+
         - title: Processing the Form Submission
           url: /em_directapiformsub.html
           output: web, pdf
-         
+
         - title: Adding a Response Handler
           url: /em_directapiresphandler.html
-          output: web, pdf         
-        
+          output: web, pdf
+
         - title: Managing E-Mail Notifications
           url: /em_directapinotifications.html
-          output: web, pdf             
+          output: web, pdf
 
 
   - title: Conversation APIs
     output: web, pdf
     folderitems:
-    
+
 
     - title: Overview
       url: /em_conversation_overview.html
@@ -160,16 +160,16 @@ entries:
 
         - title: Confirm GET and POST
           url: /em_conversation_confirm.html
-          output: web, pdf          
-   
+          output: web, pdf
+
       - title: EXAMPLE 2 - Resend OTP
         output: web
-        subfolderitems:          
+        subfolderitems:
 
         - title: Settings
           url: /em_conversation_resend_settings.html
-          output: web, pdf          
-        
+          output: web, pdf
+
         - title: Sign GET and POST
           url: /em_conversation_resend_sign.html
           output: web
@@ -180,8 +180,8 @@ entries:
 
         - title: Confirm GET and POST
           url: /em_conversation_resend_confirm.html
-          output: web                
-     
+          output: web
+
       - title: Conversation APIs
         output: web
         subfolderitems:
@@ -282,7 +282,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      
+
       - title: Configuration APIs
         output: web
         subfolderitems:
