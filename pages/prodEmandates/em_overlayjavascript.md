@@ -1,6 +1,6 @@
 ---
-title: E-Mandate Overlay JavaScript
-keywords: E-Mandate Overlay JavaScript
+title: E-Mandate Checkout JavaScript
+keywords: E-Mandate Checkout JavaScript
 summary: "Once you have retrieved an E-Mandate Token, add JavaScript to your calling Payment Page"
 sidebar: em_sidebar
 permalink: em_overlayjavascript.html
@@ -15,8 +15,8 @@ toc: false
 * You will need to references either the Sandbox or the Production environment:
 
 |**Environment**|**JS Link**|**CSS Link**|
-|**Sandbox**|https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js | https://sandbox.nuapay.com/emandate/static/css/emandates-overlay.css |
-|**Production**|https://api.nuapay.com/emandate/static/js/emandates-integration.js | https://api.nuapay.com/emandate/static/css/emandates-overlay.css |
+|**Sandbox**|`https://sandbox.nuapay.com/emandate/static/js/emandates-integration.js `| `https://sandbox.nuapay.com/emandate/static/css/emandates-overlay.css` |
+|**Production**|`https://api.nuapay.com/emandate/static/js/emandates-integration.js` | `https://api.nuapay.com/emandate/static/css/emandates-overlay.css` |
 
 To set up your page (for Sandbox):
 1. Use the following JS and CSS references:
