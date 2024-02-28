@@ -38,3 +38,26 @@ entries:
     - title: Support
       url: /prod_support.html
       output: web
+
+  - title: Nuapay Console
+    output: web, pdf
+    folderitems:
+    - title: Overview
+      url: /prod_consoleoverview.html
+      output: web
+
+    - title: API Key Configuration
+      url: /prod_consoleapi.html
+      output: web
+
+    - title: Webhook Configuration
+      url: /prod_consolewebhooks.html
+      output: web
+
+    - title: PKI Management
+      url: /prod_consolewpkimgmt.html
+      output: web
+
+    - title: Merchant Management
+      url: /prod_consolemrchmgmt.html
+      output: web

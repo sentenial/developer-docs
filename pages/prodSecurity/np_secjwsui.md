@@ -9,15 +9,13 @@ folder: prodSecurity
 
 It is possible to set up and manage the JWS via the User Interface (as described in this section) or alternatively, this may be done via [REST](np_secjwsrest.html).
 
-{% include tip.html content="Partner users cannot configure their JWS via the User Interface instead they must use the [REST API](np_secjwsrest.html) approach." %}
-
 ## Generating the PKI Key and Certificate via the UI
 
-{% include note.html content="You will require access to the Developer Dashboard via the Nuapay front end. Once you have logged on to Nuapay, the <b>Developer Dashboard</b> link is available on the top right of the screen. Click this to launch the dashboard." %}
+{% include note.html content="You will require access to the Nuapay Console / Developer Dashboard to configure your PKI settings via the User Interface. See the [Nuapay Console Overview](prod_consoleoverview.html) for more details." %}
 
 To generate your private key and certificate:
 
-1. Navigate to the 'PKI Management' screen on the Developer Dashboard. (If you cannot see this as a menu option please contact your Account Manager - specific permissions must be enabled to allow you to access this section of the dashboard).
+1. Navigate to the **PKI Management** screen on the Nuapay Console. (If you cannot see this as a menu option please contact your Account Manager - specific permissions must be enabled to allow you to access this section of the dashboard).
 1. If this is the first time using this screen you will see a notification to say that no PKI key has been generated.
 <img src = "images/01_PKI_Management.png">
 1. Click <b>Generate PKI Key</b>. This will generate:
