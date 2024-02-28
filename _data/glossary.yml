@@ -1,5 +1,7 @@
 addacs: "The Automated Direct Debit Amendment and Cancellation Service. An electronic notification file, issued by the Bacs scheme, to notify Nuapay on behalf of its merchants/partners of payer-requested amendments or cancellations of DDIs (mandates)."
 
+allowed-ips: "These are the IPs from which your API requests may originate. Any request not passed from one of your defined allowed-IP addresses will fail with a HTTP status code response of 403 - Forbidden"
+
 auddis: "The Automated Direct Debit Instruction Service. A Bacs service allowing merchants to set up new Direct Debit Instructions (DDIs) and also to notify the scheme of any DDI cancellations."
 
 bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the scheme behind the clearing and settlement of Direct Debits in the UK."
@@ -27,9 +29,13 @@ flat_file: "A payment file (e.g. the Bacs Std-18 file) that is provided as text 
 
 iso_xml: "The ISO 20022 XML standard used for electronic data interchange between financial institutions."
 
+merchant: "A Nuapay client or user that accesses the system and initiates API requests on its own behalf."
+
 obie: "The UK Open Banking Implementation Entity is an organization set up by the UK’s Competition and Markets Authority to design and manage the  specifications for the Application Program Interfaces (APIs) that banks and building societies use to securely provide Open Banking services to TPPs. The OBIE manage the Open Banking Directory, produce guidelines and act as an arbiter managing disputes/complaints"
 
 otp: "One-Time Password"
+
+partner: "A Nuapay client or user that acts on behalf or a number of child merchant entities. Partners generate API requests on behalf of their merchants."
 
 psd2: "The Payment Services Directive 2 (Directive (EU) 2015/2366), commonly referred to as PSD2 is the EU directive that compelled ASPSPs (typically high-street banks) to makes its customers' data available for Third Party Providers (TPPs like Nuapay) to allow them to provide Account Initiation and Payment Initiation services."
 
