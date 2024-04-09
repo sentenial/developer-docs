@@ -7,46 +7,12 @@ permalink: em_configuration.html
 folder: prodEmandates
 ---
 
-
-## API Information
-
-Before you begin your implementation please ensure that you have:
-
-* A valid *API Key*
-* A *Creditor IBAN*
-* The unique *Resource Identifier to the CSID*
-
-When working with E-Mandate APIs note that all requests must:
-
-* Be sent via the HTTPS protocol
-* Pass a specific API Key unique to each merchant, for authentication
-* Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
-* Include (at a minimum) the mandatory fields required for the specific request that is being made
-
-{% include note.html content="Our API is backward-compatible. For more details see [Versioning and Backward Compatibility](prod_versioning.html) under the Product Overview section." %}
-
-## Available End Points
-
-Nuapay uses the JSON format to submit and retrieve data.
-
-Note that in the API descriptions the endpoints use the LIVE URI.
-
-We offer two separate endpoints for our E-Mandates API:
-
-|LIVE| https://api.nuapay.com |
-|Sandbox| https://sandbox.nuapay.com/ |
-
-
-{% include note.html content="If you are a Java Developer please note that a Nuapay REST client is available on Github: [https://github.com/sentenial/nuapay-rest-client]( https://github.com/sentenial/nuapay-rest-client)" %}
-
-## Configurations
-
 {% include important.html content="Specific configurations are generally carried out internally by Nuapay staff so please discuss your requirements with a member of our Customer Support team who will be able to assist you in this. Alternatively, you may make your own configuration changes via the Configuration API. In addition, you can view your current settings using the [Retrieve Configuration](em_retrieveconfig.html) service." %}
 
 The following E-Mandate configurations may be customised as required:
 
 
-|Authentication Method| E-mandates may be signed via a **check box**, via **SMS** or through **Email**. Where SMS or Email is selected as the authenticatioin method, users receive a unique code (through either SMS or via Email) that they must supply when prompted, to sign the mandate.| 
+|Authentication Method| E-mandates may be signed via a **check box**, via **SMS** or through **Email**. Where SMS or Email is selected as the authenticatioin method, users receive a unique code (through either SMS or via Email) that they must supply when prompted, to sign the mandate.|
 |Email Alert|If turned on this setting will dispatch an email to notify you (the merchant) that a new e-mandate has been signed. This feature is particularly useful for smaller businesses with low volumes.|
 |Logo| A custom logo can be displayed on the E-Mandate application - suitable for Redirect and Overlay implementations.|
 |Third-Party Signing | A flag to indicate if additional third-party authorization is enabled. We partner with Morpho for mandates originating in France, for example, to provide an extra layer of archiving and traceability to protect your business against Refund claims. More suitable for larger businesses, please discuss your needs with our Customer Support team if you feel that this would be beneficial for your business.|

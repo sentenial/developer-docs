@@ -22,6 +22,8 @@ To view merchants:
    * Webhooks
    * PKI Management
 
+## Retrieving the Merchant Identifier
+
 To retrieve a merchant's unique identifier:
 1. Click the merchant's name (e.g., the ABC Merchant from the screen above).
 1. The merchant's unique identifier (`encodedOrganisationId`) is available in the URL:

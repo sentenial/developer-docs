@@ -3,7 +3,7 @@
 
 entries:
 - title: Sidebar
-  product: Getting Started
+  product: Overview
   version:
   folders:
 
@@ -20,7 +20,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Getting Started
+  - title: Overview
     output: web, pdf
     folderitems:
     - title: Overview
@@ -37,6 +37,21 @@ entries:
 
     - title: Support
       url: /prod_support.html
+      output: web
+
+  - title: Integration Models
+    output: web, pdf
+    folderitems:
+    - title: Integration Overview
+      url: /prod_integrationoverview.html
+      output: web
+
+    - title: Merchant Integration
+      url: /prod_merchantintegration.html
+      output: web
+
+    - title: Partner Integration
+      url: /prod_partnerintegration.html
       output: web
 
   - title: Nuapay Console

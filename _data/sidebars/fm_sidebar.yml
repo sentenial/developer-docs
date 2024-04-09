@@ -1,0 +1,80 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: File Management
+  product: File Management
+  version:
+  folders:
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /fm_overview.html
+      output: web, pdf
+
+    - title: Supported File Types
+      url: /fm_supported_filetypes.html
+      output: web, pdf
+
+  - title: File Services
+    output: web, pdf
+    folderitems:
+
+    - title: File Upload
+      url: /fm_file_upload.html
+      output: web, pdf
+
+    - title: Retrieve Files
+      url: /fm_retrieve_files.html
+      output: web, pdf
+
+    - title: Retrieve a Single File
+      url: /fm_retrieve_single_file.html
+      output: web, pdf
+
+  - title: Batch Services
+    output: web, pdf
+    folderitems:
+
+    - title: Retrieve Batches
+      url: /fm_retrieve_batches.html
+      output: web, pdf
+
+    - title: Retrieve a Single Batch
+      url: /fm_retrieve_single_batch.html
+      output: web, pdf
+
+  - title: Transaction Services
+    output: web, pdf
+    folderitems:
+
+    - title: Retrieve Transactions
+      url: /fm_retrieve_all_tx.html
+      output: web, pdf
+
+    - title: Retrieve Transactions in a Batch
+      url: /fm_retrieve_batch_tx.html
+      output: web, pdf
+
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /fm_whoverview.html
+      output: web, pdf
+
+      subfolders:
+      - title: Webhook Events
+        output: web
+        subfolderitems:
+
+        - title: File Status Update
+          url: /fm_whfile_status.html
+          output: web
+
+        - title: Batch Status Update
+          url: /fm_whbatch_status.html
+          output: web

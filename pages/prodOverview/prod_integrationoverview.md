@@ -1,0 +1,75 @@
+---
+title: Integration Overview
+keywords: Integration Overview
+summary: "Depending on whether you are an individual merchant or a Partner (who is managing multiple merchants) your integration with Nuapay will be different."
+sidebar: productOverview_sidebar
+permalink: prod_integrationoverview.html
+folder: prodOverview
+---
+
+Nuapay provides the option to  interact with products as an individual <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.merchant}}">Merchant</a> or as a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.partner}}">Partner</a> entity (with the ability to call services on behalf of specific merchants linked to that entity).
+
+
+|`Merchant`| A single entity| Calls Nuapay APIs for itself|
+|`Partner`| A "parent" entity with one or more "child" merchants linked to it| Calls Nuapay APIs on behalf of individual merchants (using an OAuth token to reference the required merchant entity). See [Token Management](tok_tokenmgmt.html) for more details on this.|
+
+
+## Merchant Integration
+
+Two authentication approaches are available for merchant integrators, to ensure the security of your sensitive data, with both methods using Secure Sockets Layer (SSL) over the HTTPS protocol:
+
+1. API Keys
+1. OAuth Tokens
+
+### API Key Authentication
+
+Access to the API is controlled by HTTP Basic authentication.
+
+* You may generate your own API Key via the [Nuapay Console](prod_consoleapi.html) or alternatively, the Onboarding team may issue you with an API Key when you are onboarded.
+* Also as part of the onboarding process, you will need to configure your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.allowed-ips}}">Allowed IP addresses</a> via the Nuapay Console or, alternatively, you may provide these IPs to the Onboarding team, who will configure them on your behalf.
+
+
+{% include note.html content= "Any API requests **not** originating from one of the white-listed IP addresses will be rejected." type="primary" %}
+
+
+When making an API request, note that:
+* You may provide your API key as the basic authentication username, encoded in Base64 in all your API requests.
+* A password is not required and the request must be made from an allowed IP address.
+
+|API authentication header format:|`Authorization: Basic Base64(<API_Key>:)`|
+
+**API Key Example**
+
+To generate an encoded, Base64 HTTP Header (`"Authorization: Basic {Base64(API_KEY:)}"`) for use in your requests:
+
+* With the following given (example) `APIKey = bb09c2b6a9478720765c757a8bcadf1aa1fb31554566a21118c9c75e26c29686`
+* Encode this in base 64: `bb09c2b6a9478720765c757a8bcadf1aa1fb31554566a21118c9c75e26c29686:` (note that the colon (:) is required)
+* the HTTPS header will then be:
+  `"Authorization: Basic YmIwOWMyYjZhOTQ3ODcyMDc2NWM3NTdhOGJjYWRmMWFhMWZiMzE1NTQ1NjZhMjExMThjOWM3NWUyNmMyOTY4Njo="`
+
+{% include note.html content="All API requests must be made over HTTPS; calls made over plain HTTP will fail. Note too that all API requests must be authenticated." %}
+
+
+### Token Authentication
+
+Instead of using an API key, it is also possible to use `OAuth` tokens to secure your requests.
+
+`OAuth` Tokens offer greater flexibility to manage access to specific resources as they can be protected by Scopes:
+
+* This is useful, for example, where you may want to give an engineer access to work with the `Create Payment` service but due to security concerns, you may not want that user to have access to the Refund service.
+* Similarly, you may have outsourced some development expertise and you want to grant access to a service for only a period of time until the outsourced work is complete. An OAuth token can be configured with a Time-to-Live of 2 weeks for example, after which point it cannot be used.
+* If you were to provide your API key to the outsourced resource in this scenario, then effectively that 3rd-party developer could still interact with Open Banking services via your API Key (even after completing their contracted work for you).
+
+## Partner Integration
+
+When interacting with Nuapay services as a partner, you will need to generate and use a specific token per merchant in your API requests.  
+
+The following steps are required to generate an access token for a specific merchant:
+
+1. Using your Partner-grade API Key, call the `GET /organisations` service; this returns a list of all organisations/merchants configured under your partner entity in Nuapay. Alternatively, use the Nuapay Console to [Retrieve a Merchant Identifier](prod_consolemrchmgmt.html#retrieving-the-merchant-identifier.html)
+1. Select the required merchant's identifier from the API response, or copy the ID from the URL in the Console.
+1. Pass that merchant identifier to the `Security /token` endpoint to retrieve an OAuth token unique to the selected merchant.
+
+Use the OAuth token returned in the response in all subsequent API requests generated by you, as partner, on behalf of your merchant.
+
+For more on this see [Partner Integration](ob_partnerintegration.html).
