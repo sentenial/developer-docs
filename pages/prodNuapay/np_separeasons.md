@@ -47,20 +47,21 @@ AC13       | Invalid debtor account type                                        
 AG01       | Transaction forbidden on this type of account (formerly No Agreement)        | REJECT   RETURN    | Contact the Debtor in order to get information about the payment account to be used
 AG02       | Bank Operation code specified in the message is not valid for receiver       | REJECT   RETURN    | - Contact your merchant bank to confirm what has caused this issue <br/> - Correct the wrong information
 AM04       | Amount of funds available to cover specified message amount is insufficient  | REJECT   RETURN    | Contact the Debtor to ensure that there are funds on his account OR (Optionally) <a href= "np_representfaileddds.html">Re-present</a> the payment
-AM05       | Duplication                                                                  | REJECT   RETURN    | Check if the collection is really duplicated
+AM05       | Duplication                                                                  | REJECT   RETURN  REVERSAL  | Check if the collection is really duplicated
 BE05       | Party who initiated the message is not recognised by the end customer        | REJECT   RETURN    | Creditor to contact the Creditor Bank
-CNOR       | Creditor Bank is not registered under this BIC in the CSM                    | REJECT   RETURN    | Creditor to contact the Creditor Bank
+CNOR       | Creditor Bank is not registered under this BIC in the CSM                    | REJECT       | Creditor to contact the Creditor Bank
 CUST       | Cancellation of Credit Transfer payment, requested by the originator         | CANCEL             |
 CUTA       | Cancellation requested because an investigation request has been received and no remediation is possible. | CANCEL    |
-DNOR       | Debtor Bank is not registered under this BIC in the CSM                      | REJECT             | - Ask the Creditor Bank to check the reachability of the Debtor Bank <br/> - Contact Debtor to agree on another means of payment
+DNOR       | Debtor Bank is not registered under this BIC in the CSM                      | REJECT       | - Ask the Creditor Bank to check the reachability of the Debtor Bank <br/> - Contact Debtor to agree on another means of payment
 DUPL       | Payment is a duplicate of another payment.                                   | CANCEL             |
-FF01       | 	File format incomplete or invalid                                         | REJECT   RETURN    | Contact Nuapay Support
-MD01       | No mandate                                                                   | REJECT   RETURN  REFUND  | - Analyse the characteristics of the SEPA Direct Debit transaction <br/> - Contact the Debtor in the case of a refund
+ED05       | Settlement failed                                                          | REJECT               | Contact the debtor
+FF01       | 	File format incomplete or invalid                                         | REJECT   | Contact Nuapay Support
+MD01       | No mandate. **CORE SDD**: no valid mandate; **B2B SDD**: no valid mandate or unable to determine if the debtor has lodged a mandate; or unathorised transaction (for refunds of SDD CORE collections). -                                                                  | REJECT   RETURN  REFUND  | - Analyse the characteristics of the SEPA Direct Debit transaction <br/> - Contact the Debtor in the case of a refund
 MD02       | Mandate related information data required by the scheme is missing           | REJECT             | Contact Nuapay Support
 MD06       | Return of funds requested by end customer                                    | REFUND             | Contact the debtor
 MD07       | End customer is deceased. In some countries, MS03 may be used in this scenario (due to data protection regulations).                                                    | REJECT   RETURN    | Close the agreement with deceased Debtor. See <a href = "np_cancelmandate.html">Cancel Mandate</a>
-MS02       | Reason has not been specified by end customer                                | REJECT   RETURN    | Contact the Debtor
-MS03       | Reason has not been specified by agent. Banks should only use this code where national legislation (e.g. data protection laws) does not allow for the use of AC04, AM04, MD07, RR01, RR02, RR03, and RR04.                                       | REJECT   RETURN    | Contact the Debtor
+MS02       | Reason has not been specified by end customer                                | REJECT   RETURN   REVERSAL REFUSAL  | Contact the Debtor
+MS03       | Reason has not been specified by agent. Banks should only use this code where national legislation (e.g. data protection laws) does not allow for the use of AC04, AM04, MD07, RR01, RR02, RR03, and RR04.                                       | REJECT   RETURN  REVERSAL   | Contact the Debtor
 RC01       | Bank Identifier code specified in the message has an incorrect format        | REJECT   RETURN    | Contact your bank
 RR01       | Specification of the debtor's account or unique identification needed for reasons of regulatory requirements is insufficient or missing                                   | REJECT   RETURN    | Contact your bank
 RR02       | Specification of the Debtor’s name and/or address needed for regulatory requirements is insufficient or missing. In some countries, MS03 may be used in this scenario (due to data protection regulations). | REJECT   RETURN    | Contact Nuapay Support

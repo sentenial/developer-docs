@@ -1,5 +1,7 @@
 addacs: "The Automated Direct Debit Amendment and Cancellation Service. An electronic notification file, issued by the Bacs scheme, to notify Nuapay on behalf of its merchants/partners of payer-requested amendments or cancellations of DDIs (mandates)."
 
+ack_nack: "Ack/Nack (Acknowledgement/Negative Acknowledgement), is used in file processing. An Acknowledgement (Ack) confirms successful receipt and processing of the transmitted file data, while a Negative Acknowledgement (Nack) indicates failure or error in the submission."
+
 allowed-ips: "These are the IPs from which your API requests may originate. Any request not passed from one of your defined allowed-IP addresses will fail with a HTTP status code response of 403 - Forbidden"
 
 auddis: "The Automated Direct Debit Instruction Service. A Bacs service allowing merchants to set up new Direct Debit Instructions (DDIs) and also to notify the scheme of any DDI cancellations."
@@ -36,6 +38,8 @@ obie: "The UK Open Banking Implementation Entity is an organization set up by th
 otp: "One-Time Password"
 
 partner: "A Nuapay client or user that acts on behalf or a number of child merchant entities. Partners generate API requests on behalf of their merchants."
+
+partner_group: "A Nuapay client or user that manages child partner entities."
 
 psd2: "The Payment Services Directive 2 (Directive (EU) 2015/2366), commonly referred to as PSD2 is the EU directive that compelled ASPSPs (typically high-street banks) to makes its customers' data available for Third Party Providers (TPPs like Nuapay) to allow them to provide Account Initiation and Payment Initiation services."
 

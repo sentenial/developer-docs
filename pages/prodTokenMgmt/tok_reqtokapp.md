@@ -14,6 +14,29 @@ Use the Request Application Access Token Endpoints to generate an OAuth token wh
 * A specific resource.
 * A set of scopes.
 
+## Application Friendly Tokens
+
+Application Friendly Tokens:
+* Can be used by Mobile Apps to call our APIs directly.
+* As mobile apps are not considered a safe processing environment for credentials, the tokens will be limited to must-have access scopes that are required to deal with an individual resource.
+* In most cases these will be used for API calls in read-only mode.
+
+{% include tip.html content="If you use an application token against the wrong resource, you will be presented with a `401 unauthorized` response." %}
+
+The image below illustrates the flow:
+
+{% include image.html file="tok_app_tokens.png" url="images/tok_app_tokens.png" target = "_new" %}
+
+Note that:
+
+*	No IP Filtering is applied.
+*	You will not be able to create resources using an application friendly token.
+*	Calls contribute to your throttling statistics.
+*	All resource creation is still a server-to-server call.
+*	These tokens are available for the products listed below.
+
+## Supported Applications
+
 Application tokens may be generated for resources on any one of the following applications:
 
 * `open_banking_pis`
