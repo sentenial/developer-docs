@@ -39,6 +39,19 @@ In **Redirect** mode you will:
 1. The TPP UI then redirects the PSU to the `merchantPostAuthUrl` with the parameter `paymentId`.
 1. Use [Retrieve Payment](ob_retrievepayment.html) to determine the final payment status. (This integration also supports webhooks so you can be informed when the payment is completed).
 
+
+## Merchant Post-Auth URL Handling
+The merchant merchantPostAuthUrl is sent as follows:
+
+The payload of this request that you need to process includes:
+
+**Headers** e.g. `Content-Type: application/x-www-form-urlencoded`
+<br/>
+**Body** e.g. `paymentId=4m6vjed32a&userInterfacePaymentId=95125314-5161-4769-926f-143ff6cbdd82`
+
+Please note that the 'paymentId' allows you to look up the payment associated with this callback.
+
+
 ## Authorisation
 
 An API Key or an OAuth token uniquely identifies you on Nuapay and is required to allow you to use our API services.

@@ -27,6 +27,7 @@ When creating a Direct Debit against a Bacs DDI, please note:
 * The `endToEndId` will be automatically applied if you do not want to provide this identifier.
 * If you do want to specify the `endToEndId` it must follow the following rules:
   * It must be at least 6 alphanumeric characters in length and cannot exceed a total of 18 characters.
+  * It should only be composed of upper-case characters.
   * **IMPORTANT! It must include the `mandateId` i.e. the DDI reference as its initial characters**; so if your `mandateId` is ``ABCDEF123`` then valid `endToEndId` values would be `ABCDEF123-01`, `ABCDEF12302`, `ABCDEF123/456`, for example.
 * The following non-alphanumeric characters are supported and may be used in the `endToEndId` identifier:
   * Full stop(.)
