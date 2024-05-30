@@ -80,10 +80,29 @@ A refund will be initiated where:
 
 ## Remittance Information
 
-When providing remittance information, `remittanceInformation.reference`, in GBP payments, note that:
+**For GBP payments**:
+
+To provide remittance information for GBP payments, use `remittanceInformation.reference`.
+
+Note that:
 
 * A maximum of 18 characters are allowed.
 * The text used must conform to the following regular expression: `^[a-zA-Z0-9\- ,.]*$`
+
+**For EUR payments**:
+
+To provide remittance information for EUR payments, use `remittanceInformation.unstructured`
+
+Note that:
+
+* A maximum of 120 characters are allowed.
+* In SEPA, the following characters are supported:
+
+
+|a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 / - ? : ( ) . , ' + Space|
+
+A unique End-to-End identifier will be applied automatically or if you prefer to use your own identifier, provide a value for `endToEndIdentification`.
+
 
 ## Refund for Non-Nuapay-Account Owners
 
