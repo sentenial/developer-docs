@@ -128,6 +128,74 @@ The following is an example of a Received Payment event JSON:
 }</code>
 </pre>
 
+## Differences in EUR and GBP Remittance Information
 
+* Remittance information is handled differently for GBP and EUR transactions.
+* See the [Remittance Information](ob_refundpayment.html#remittance-information) section under the [Refund Payment](ob_refundpayment.html) for more on this.
+* Depending on the currency of the original transaction, the Webhook notification varies:
+
+**GBP Message Sample**:
+
+Where the following remittance information is returned in the response from the initial refund request:
+
+<pre>
+<code class="json">
+"remittanceInformation": {
+            "reference": "reference",
+            "unstructured": null
+        },
+</code>
+</pre>
+
+The Webhook message returns the remittance as follows:
+
+<pre>
+<code class="json">{
+  "eventTimestamp": 1716323062000,
+  "eventType": "PaymentRefundComplete",
+  "resourceReference": "reference",
+  "resourceReferenceType": "EndToEndId",
+  "resourceUri": "/payments/w6be49w52y/refunds/w6bejzqp2y",
+  "resourceType": "refund",
+  "reasonCode": null,
+  "resourceOwner": "8b5jaky82r",
+  "resourceRemittanceInformation": "reference"
+}
+</code>
+</pre>
+
+Note that:
+* The `resourceReferenceType` is flagged as `EndToEndId`
+* For GBP transactions, this is the transaction reference and not an End-to-End identifier.
+
+**EUR Message Sample**:
+
+Where the following remittance information is returned in the response from the initial refund request:
+
+<pre>
+<code class="json">
+
+"remittanceInformation": {
+            "reference": null,
+            "unstructured": "remittanceInformation.unstructured"
+        }
+</code>
+</pre>
+
+The Webhook message returns the remittance as follows:
+
+<pre>
+<code class="json">{
+  "eventTimestamp": 1716322382000,
+  "eventType": "PaymentRefundComplete",
+  "resourceReference": "v0hlvm56k000000000",
+  "resourceReferenceType": "EndToEndId",
+  "resourceUri": "/payments/zrmp73dlm6/refunds/zrmp86qy26",
+  "resourceType": "refund",
+  "reasonCode": null,
+  "resourceOwner": "p2lj6g5abv",
+  "resourceRemittanceInformation": "remittanceInformation.unstructured"
+}</code>
+</pre>
 
 {% include links.html %}
