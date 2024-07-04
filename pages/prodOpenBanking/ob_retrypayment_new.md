@@ -3,7 +3,7 @@ title: Retry Payment
 keywords: Retry an Open Banking Payment
 summary: "Retry Open Banking Payment RESTful API"
 sidebar: ob_sidebar
-permalink: ob_retrypayment.html
+permalink: ob_retrypayment_new.html
 folder: prodOpenBanking
 toc: true
 ---
