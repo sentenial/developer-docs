@@ -51,6 +51,7 @@ var timerRef = setInterval(function() { getDocs('operation/setBankIdForPaymentUs
 
 
 </div>
+ <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
 
 
 {% include links.html %}
