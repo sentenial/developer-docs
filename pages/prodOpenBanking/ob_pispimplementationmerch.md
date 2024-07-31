@@ -18,9 +18,6 @@ Your PISP checkout page may be implemented in one of the following ways:
 |**Self-Hosted**| The user interface is handled by you, the merchant (or partner, acting on behalf of a merchant) for Bank Selection; callback handling is through the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>, you process the merchantPostAuth on your system when the payment flow is completed.|
 |**Self-Hosted-Callback**| In this mode the user interface is handled by you, the merchant (or partner, acting on behalf of a merchant) and you manage the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a>'s experience after interacting with an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>: the Callback bypasses the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>, you manage the callback URL that is required for each <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a> interaction, upon receiving the callback you send the details back to Nuapay for processing.|
 
-{% include warning.html content="SELF_HOSTED_CALLBACK mode is currently only available in the Nuapay Test environment." %}
-
-
 ## What is the Best Approach? 
 
 Each approach has its advantages and disadvantages - the table below summarises the different implementations  
