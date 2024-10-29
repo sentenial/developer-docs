@@ -17,36 +17,101 @@ When working with this endpoint note that:
 * Unlike the Direct Debit payment API, Beneficiary and CT requests do not require a Creditor Scheme ID or SUN reference.
 * Before you can initiate a payment via the Create Credit Transfer request you must first create a beneficiary.
 * Alternatively it is possible to generate a new beneficiary and a payment in a single request. See the <a href ="np_createctandbene.html">Create Credit Transfer and Beneficiary</a> request.
-
-{% include note.html content="at its most basic, a beneficiary requires a name and a bank account reference. Additional data may also be stored but is not mandatory (address details and contact details, for example)" %}
-
-{% include tip.html content="If you specify domestic account details for the beneficiary account, specify the Sort Code in **domesticBranchCode** (not in the **domesticBankCode**)." %}
+* At its most basic, a beneficiary requires a name and a bank account reference. Additional data may also be stored but is not mandatory (address details and contact details, for example).
+* If you specify domestic account details for a GBP beneficiary account, specify the Sort Code in `domesticBranchCode` (**do not use** `domesticBankCode`).
 
 {% include idempotency.html %}
 
-
-
-{% include swagger_np.html %}
+{% include swagger_ct.html %}
 
 {% include urls.html %}
 
+{% include async_note.html %}
 
-<ul id="profileTabs" class="nav nav-tabs">
+<!-- TABS FOR V! and V2 -->
 
+<div class="api-docs">
+  <ul id="profileTabs" class="nav nav-tabs">
+    <li><a href="#V2" data-toggle="tab">V2 Asynchronous</a></li>
+    <li><a href="#V1" data-toggle="tab">V1 Synchronous</a></li>
+  </ul>
 
-</ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane" id="V2">
+      <!--  <p>Version 2 Add text here if required </p> -->
+      <div id="V2-content"></div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="V1">
+    <!--  <p>Version 1 Add text here if required </p> -->
+      <div id="V1-content"></div>
+    </div>
+  </div>
+</div>
 
-{% include redoc.html %}
+<script>
+function loadRedoc(remoteDocs) {
+    jQuery('<div/>', {
+        id: 'docs-jekyll',
+        class: 'some-class',
+        title: 'now this div has a title!'
+    }).prependTo('body');
+    $("#docs-jekyll").hide();
+    $("#docs-jekyll").load(remoteDocs);
+}
 
-loadRedoc('#profileTabs', 'https://sentenial.github.io/nuapay-swagger/docs/redoc.html');
-var timerRef = setInterval(function() { getDocs('operation/addBeneficiaryUsingPOST','#profileTabs',timerRef); }, 500);
+function unloadRedoc() {
+    document.getElementById("docs-jekyll").remove();
+}
 
+function insertDocs(contentId, locationSelector) {
+    const div = document.getElementById(contentId);
+    if (div) {
+        div.removeAttribute('id');
+        $(locationSelector).html(div);
+    }
+}
 
+function loadV1Docs() {
+    loadRedoc('https://sentenial.github.io/credit-transfers/docs/redoc.html');
+    setTimeout(function() {
+        insertDocs('operation/addBeneficiaryUsingPOST', '#V1-content');
+        unloadRedoc();
+    }, 1000);
+}
+
+function loadV2Docs() {
+    loadRedoc('https://sentenial.github.io/credit-transfers/docs/redoc-v2.html');
+    setTimeout(function() {
+        insertDocs('operation/addBeneficiaryUsingPOST', '#V2-content');
+        unloadRedoc();
+    }, 1000);
+}
+
+function setActiveTab(tabId) {
+    $('#profileTabs a[href="#' + tabId + '"]').tab('show');
+    localStorage.setItem('activeTab', tabId);
+}
+
+$(document).ready(function() {
+    var activeTab = localStorage.getItem('activeTab') || 'V2';
+
+    setActiveTab(activeTab);
+
+    if (activeTab === 'V1') {
+        loadV1Docs();
+    } else {
+        loadV2Docs();
+    }
+
+    $('#profileTabs a').on('shown.bs.tab', function(e) {
+        var target = $(e.target).attr("href").substr(1);
+        setActiveTab(target);
+
+        if (target === "V1" && $('#V1-content').is(':empty')) {
+            loadV1Docs();
+        } else if (target === "V2" && $('#V2-content').is(':empty')) {
+            loadV2Docs();
+        }
+    });
+});
 </script>
-
-
-<div id="mydiv"></div>
-</div>
-</div>
-
-{% include links.html %}

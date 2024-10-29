@@ -1,5 +1,3 @@
-# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
-
 entries:
 - title: Credit Transfers
   product: Credit Transfers
@@ -22,45 +20,64 @@ entries:
   - title: Introduction
     output: web, pdf
     folderitems:
-
     - title: Overview
       url: /np_ctoverview.html
       output: web
-
+    - title: Versioning
+      url: /np_ctversioning.html
+      output: web
+    - title: CT Collections
+      url: /np_ctcollectionoverview.html
+      output: web
     - title: Credit Transfer Statuses
       url: /np_ctstatuses.html
+      output: web, pdf
+    - title: Credit Transfer Cut Off Timing
+      url: /np_ctcutoffs.html
       output: web, pdf
 
   - title: Credit Transfer APIs
     output: web, pdf
     folderitems:
-
     - title: Create Beneficiary
       url: /np_createbeneficiary.html
       output: web
-
     - title: Retrieve Beneficiary
       url: /np_retrievebene.html
       output: web
-
     - title: List Beneficiaries
       url: /np_listbeneficiaries.html
       output: web
-
     - title: Create Credit Transfer
       url: /np_createct.html
       output: web
-
     - title: Create Credit Transfer & Beneficiary
       url: /np_createctandbene.html
       output: web
-
     - title: Retrieve Credit Transfer
       url: /np_retrievect.html
       output: web
+    - title: List Credit Transfers (Originator)
+      url: /np_listctsorig.html
+      output: web
+    - title: List Credit Transfers (Beneficiary)
+      url: /np_listctbene.html
+      output: web
 
-    - title: List Credit Transfers
-      url: /np_listcts.html
+  - title: CT Collection APIs
+    output: web, pdf
+    folderitems:
+    - title: Create Collection
+      url: /np_ctcreatecoll.html
+      output: web
+    - title: List Collections
+      url: /np_ctlistcoll.html
+      output: web
+    - title: View Collection
+      url: /np_ctviewcoll.html
+      output: web
+    - title: List CTs in a Collection
+      url: /np_ctlistctcoll.html
       output: web
 
   - title: Webhooks
@@ -72,7 +89,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Webhook Events
+      - title: Credit Transfer Notifications
         output: web
         subfolderitems:
 
@@ -94,4 +111,32 @@ entries:
 
         - title: Express Credit Transfer Accept
           url: /np_whctexpaccept.html
-          output: web  
+          output: web
+
+        - title: Beneficiary Update
+          url: /np_whctbenefupdate.html
+          output: web
+
+      - title: CT Collections Notifications
+        output: web
+        subfolderitems:
+
+        - title: Collection Initiated
+          url: /np_whctcollinit.html
+          output: web
+
+        - title: Collection Rejected
+          url: /np_whctcollreject.html
+          output: web
+
+        - title: Collection Failed
+          url: /np_whctcollfailed.html
+          output: web
+
+        - title: Collection Complete
+          url: /np_whctcollcomplete.html
+          output: web
+
+        - title: Collection Complete With Errors
+          url: /np_whctcollcompleteerror.html
+          output: web

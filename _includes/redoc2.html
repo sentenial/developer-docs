@@ -1,0 +1,29 @@
+<!--<div>
+<div role="tabpanel" class="tab-pane active" id="profile">-->
+
+  <script>
+
+      function loadRedoc(remoteDocs) {
+          jQuery('<div/>', {
+              id: 'docs-jekyll',
+              class: 'some-class',
+              title: 'now this div has a title!'
+          }).prependTo('body');
+          $("#docs-jekyll").hide();
+          $("#docs-jekyll").load( remoteDocs );
+      }
+
+      function unloadRedoc() {
+          document.getElementById("docs-jekyll").remove();
+      }
+
+      function insertDocs(contentId, locationSelector) {
+          const div = document.getElementById(contentId);
+           //we want to remove the id as it can be picked up again otherwise
+          // after selecting the docs by id we scrub them to not interfere with v3 loads
+          // Select all elements inside the div
+          div.removeAttribute('id');
+          $(locationSelector).html(div);
+      }
+
+  </script>

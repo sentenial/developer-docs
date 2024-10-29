@@ -94,31 +94,9 @@ When using a detached JWS, the payload is sent as normal in the body but it is n
 
 To generate your certificate via REST:
 
-1. Call the `POST/certificates` endpoint.
+1. Call the `POST/certificates` endpoint. See [Create Certificates](np_seccreatecert.html)
 1. Provide your CSR in the request.
 1. A successful 201 reponse will return your certificate details.
-
-
-{% include swagger_gk.html %}
-
-<ul id="profileTabs1" class="nav nav-tabs">
-
-
-
-</ul>
-
-{% include redoc.html %}
-
-loadRedoc('#profileTabs', 'https://sentenial.github.io/gatekeeper-swagger/docs/redoc.html');
-var timerRef1 = setInterval(function() { getDocs('operation/generateUsingPOST','#profileTabs1',timerRef1); }, 500);
-
-
-</script>
-
-
-</div>
-</div>
-
 
 ## Retrieving Details from the Certificate
 
@@ -180,42 +158,7 @@ To better understand how best to do this please refer to the:
 
 ## Managing Certificates
 
-It is possible to List and Delete Certificates:
-
-## List All Certificates
-
-<ul id="profileTabs2" class="nav nav-tabs">
-
-
-</ul>
-
-{% include redoc.html %}
-
-loadRedoc('#profileTabs', 'https://sentenial.github.io/gatekeeper-swagger/docs/redoc.html');
-var timerRef2 = setInterval(function() { getDocs('operation/listUsingGET','#profileTabs2',timerRef2); }, 500);
-
-
-</script>
-
-
-<div id="mydiv"></div>
-</div>
-</div>
-
-## Delete a Certificate
-
-<ul id="profileTabs3" class="nav nav-tabs">
-
-
-</ul>
-
-{% include redoc.html %}
-
-loadRedoc('#profileTabs', 'https://sentenial.github.io/gatekeeper-swagger/docs/redoc.html');
-var timerRef3 = setInterval(function() { getDocs('operation/deleteUsingDELETE','#profileTabs3',timerRef3); }, 500);
-
-
-</script>
+As described in the API section, it is possible to [List](np_seclistcert.html) and [Delete Certificates](np_secdeletecert.html).
 
 
 </div>

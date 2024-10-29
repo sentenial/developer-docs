@@ -10,7 +10,14 @@ folder: prodVerification
 <div class="row">
         <div class="col-lg-12">
             <h2 class="page-header">Introduction</h2>
-            <p>Account Holder Verification allows you to leverage the power of Open Banking Account Information Service to verify if user details, held by you, match the account details stored at the user's bank.</p>
+            <p>Nuapay allows you to verify account holders in two ways, via:
+              <ul>
+                <li>Open Banking - AIS </li>
+                <li>Account Holder Verification - Confirmation of Payee (CoP) </li>
+                </ul>
+            </p>
+              <h2 class="page-header">AIS Mode</h2>
+            <p>Account Holder Verification allows you to leverage the power of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ais}}">Open Banking Account Information Service</a> to verify if user details, held by you, match the account details stored at the user's bank.</p>
 
             {% include tip.html content="Want to start testing? See the <a href='prod_overview.html'> Getting Started </a> section to request an API Key for the Nuapay Sandbox." %}
 
@@ -24,12 +31,21 @@ folder: prodVerification
 
               {% include note.html content="Name matching will return a match score; 100% is used for exact or very close matches. Merchants will need to determine what scores are acceptable and will need to determine the risk and value of transaction when deciding on how to proceed where the verification matching score is less than 100%" %}
 
+              <p>Customer verification is a 2-step process:</p>
+              <ul>
+              <li>Request the Customer consent to retrieve account details from the bank.</li>
+              <li>Using the retrieved account details, calculate a verification score against data that the client already holds (i.e., the customer’s name).
+              Currently the matching is carried out only on the customer’s name.</li>
+              </ul>
+
+              <h2 class="page-header">CoP Mode</h2>
+              <p>In <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.cop}}">Confirmation of Payee (CoP) </a> mode (for UK users processing GBP only)
+                <ul>
+                <li>Use the service to pass the account details to the target bank.</li>
+                <li> The bank will perform the matching and return a score.</li>
+                <li> Based on the score returned, you can decide on the next steps.</li>
+                </ul>
+                </p>
+
         </div>
 </div>
-
-<p>Customer verification is a 2-step process:</p>
-<ul>
-<li>Request the Customer consent to retrieve account details from the bank.</li>
-<li>Using the retrieved account details, calculate a verification score against data that the client already holds (i.e., the customer’s name).
-Currently the matching is carried out only on the customer’s name.</li>
-</ul>

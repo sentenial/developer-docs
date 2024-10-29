@@ -49,27 +49,20 @@ This Webhook has the following event types:
 			<td>string</td>
 			<td>Mandatory</td>
             <td>Either <b>CreditTransferReject </b> <br/> or <br/> <b>CreditTransferCancel</b></td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>number</td>
-			<td>Mandatory</td>
-            <td>Unique identifier</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>This can be the business reference of the resource, useful when filtering events via the Webhooks area of the Developer Dashboard.</td>
+			<td>This can be the business reference of the resource, useful when filtering events via the Webhooks area of the Nuapay Console.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceReferenceType</td>
 			<td>string</td>
 			<td> optional</td>
-			<td>This can be a business reference of the resource, useful when filtering events via the Webhooks area of the Developer Dashboard.</td>
+			<td>This can be a business reference of the resource, useful when filtering events via the Webhooks area of the Nuapay Console.</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -138,5 +131,8 @@ The following is an example of a Credit Transfer Rejection event JSON:
 	"resourceRemittanceInformation": null
 }</code>
 </pre>
+
+{% include tip.html content="Webhook URIs do not include a version number. If you are attempting to retrieve a specific resource via a v2 API, please make sure to include the full `v2` path in your request." %}
+
 
 {% include links.html %}

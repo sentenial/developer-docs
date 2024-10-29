@@ -3,7 +3,7 @@ title: Bank Overview
 keywords: Open Banking Participating Banks Overview
 summary: "The Bank APIs allow you to retrieve and view details of all available banks (ASPSPs)"
 sidebar: ob_sidebar
-permalink: ob_bankoverview.html
+permalink: ob_banksoverview.html
 folder: prodOpenBanking
 toc: false
 ---

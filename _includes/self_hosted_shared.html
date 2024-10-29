@@ -33,7 +33,7 @@ In <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.s
 
 When designing your user interface, we recommend that you use the [Retrieve Banks](ob_getbank.html) and the [View Bank Families](ob_getbankfamilies.html) endpoints so that when a PSU selects a bank that has a number of regional banks (branches) linked to it, the user is provided with an option to select the required branch.
 
-In CHECKOUT mode (i.e. where Nuapay manages the User Interface), the bank/branch selection screens are handled as follows:
+In `REDIRECT` mode (i.e. where Nuapay manages the User Interface), the bank/branch selection screens are handled as follows:
 1. The user selects a bank that has a number of branches linked to it (in the call to [Retrieve Banks](ob_getbank.html), `bankfamilyId` is populated for Credit Agricole, for example).
 1. The bank is rendered once, as in the image below and appears like any other bank icon on screen:
    {% include image.html file="bnk_fam_chckout.png" url="images/bnk_fam_chckout.png" target = "_new" alt="Bank with Bank Family Selected" %}

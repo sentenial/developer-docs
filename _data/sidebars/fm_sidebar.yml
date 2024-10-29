@@ -46,6 +46,10 @@ entries:
       url: /fm_retrieve_single_batch.html
       output: web, pdf
 
+    - title: Recall a Batch
+      url: /fm_recall_batch.html
+      output: web, pdf
+
   - title: Transaction Services
     output: web, pdf
     folderitems:

@@ -14,6 +14,8 @@ folder: prodOpenBanking
 * Originate from an allowed IP address (the allowed IP addresses will be configured for you when you register for the service)
 * Include (at a minimum) the mandatory fields required for the specific request that is being made
 
+<img src = 'images/api_gen_rules.png'>
+
 {% include note.html content="Our API is backward-compatible. For more details see [Versioning and Backward Compatibility](prod_versioning.html)." %}
 
 ## Endpoints

@@ -1,5 +1,5 @@
 ---
-title: Merchant Quick Start PISP Initiation
+title: Quick Start PISP Initiation
 keywords: Open Banking Quick Start
 summary: "Quick Start - Let's make an Open Banking payment!"
 sidebar: ob_sidebar
@@ -9,16 +9,16 @@ folder: prodOpenBanking
 
 ## Overview
 
-This section gives **merchants** an overview of the API calls required for the three integration models:
+You can interact with Nuapay Open Banking PISP via one of the following integration models:
 
-* CHECKOUT
+* REDIRECT
 * SELF-HOSTED
 * SELF-HOSTED-CALLBACK
-* REDIRECT
+* <p style="color: #d3d3d3;">CHECKOUT</p>
 
 See [PISP Implementation Options](ob_pispimplementations.html) for more on these options.
 
-Depending on the setup that best suits your business needs, the API calls that you need to make and how you process the responses vary. 
+Depending on the setup that best suits your business needs, the API calls that you need to make and how you process the responses vary.
 
 
 ## A Note on Authentication
@@ -28,92 +28,293 @@ When interacting with the Nuapay Endpoints you must be authenticated via one of 
 * API Keys
 * OAuth Tokens
 
-For more details, and to decide on the approach that suits your business needs, see [API Key Authentication](ob_merchantintegration.html#api-key-authentication) and [Token Authentication](ob_merchantintegration.html#token-authentication).
-  
+For more details on this see the section on [API Key Authentication](np_secapikeyauth.html) or OAuth Tokens in the [Token Management](tok_tokenmgmt.html) section.
+
 
 ## Postman Collection
 
-|<img src="images/postman-logo.png">|<br>We highly recommend that you use **Postman** to test our PISP APIs on the Sandbox environment. Download it for free from <a href= "https://www.postman.com/downloads/" target="_blank">www.postman.com/downloads</a>.<br>| 
+|<img src="images/postman-logo.png">|<br>We highly recommend that you use **Postman** to test our PISP APIs on the Sandbox environment. Download it for free from <a href= "https://www.postman.com/downloads/" target="_blank">www.postman.com/downloads</a>.<br>|
 
 
-{% include tip.html content="Unlike the Swagger specification, the Postman Collection we've created allows you to work with the APIs directly in our Sandbox environment. While our Swagger file is a formal definition of our PISP service, which you can use to generate client libraries, the Postman Collection logically groups the services together so that you can see the business logic of why (and when) to call the various PISP endpoints."%} 
+{% include tip.html content="Unlike the Swagger specification, the Postman Collection we've created allows you to work with the APIs directly in our Sandbox environment. While our Swagger file is a formal definition of our PISP service, which you can use to generate client libraries, the Postman Collection logically groups the services together so that you can see the business logic of why (and when) to call the various PISP endpoints."%}
 
 You will need to download:
 
-* A Collection `.JSON` file. 
+* A Collection `.JSON` file.
 * An Environment `.JSON` file.
 
-{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_merchants' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %} 
+{% include callout.html content="Download the files from Github here: <a href= 'https://github.com/sentenial/postman-collections/tree/master/collections/open_banking/open_banking_merchants' target='_blank'><span class='label label-success'>Postman Collections on Github</span></a> <br/><br/> If you are new to Postman and are unsure how to import the collection, please see the <a href ='https://github.com/sentenial/postman-collections/blob/master/README.md#what-are-postman-collections' target='_blank'>README</a>." type="primary" %}
 
-Once you have donwloaded the *Collection* and the *Environment* files:
+Once you have downloaded the *Collection* and the *Environment* files:
 
 1. Open Postman.
 1. Import the collection files.
 1. Specify your API Key.
 
-{% include tip.html content="If you don't already have one, contact our Support Team to request an API Key: <a href='mailto:api.support@nuapay.com'>api.support@nuapay.com</a>."%} 
+{% include tip.html content="If you don't already have one, contact our Support Team to request an API Key: <a href='mailto:api.support@nuapay.com'>api.support@nuapay.com</a>."%}
 
-## Checkout Mode
+## Redirect Mode
 
-{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%}
 
-Call the following services in this order:
+If you are acting as a _partner_:
+* You will need to retrieve your merchant's identifier.
+* If you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
 
-|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| (Optional) Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls. Alternatively you may use your API Key.|
-|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| The Create Payment service generates an Open Banking payment object, returning a unique `userInterfacepaymentId` with an (initial) [status](ob_paymentstatuses.html) of `PENDING`. Apply the Nuapay-provided JS and CSS on your page to render the Bank Selection screen for your payers.|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>) and is redirected to authenticate and approve the payment on that ASPSP's online banking portal.|
-|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment|
+Call the following services in this order
 
-For more details on this see the [Merchant-level Checkout Setup](ob_checkoutoverviewmerch.html). 
+<table>
+  <tbody>
+    <tr>
+      <td><a href="tok_listorgs.html"><span class="label label-success">GET</span></a></td>
+      <td><a href="tok_listorgs.html">Organisations</a></td>
+      <td>
+        (Optional - <em>For Partner users only</em>) Use this service to retrieve the list of organisations/merchants under you as the Partner entity.
+        <ul>
+          <li>Use your Partner-level API Key</li>
+          <li>Store the required merchant identifier</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="tok_reqtokorg.html"><span class="label label-info">POST</span></a></td>
+      <td><a href="tok_reqtokorg.html">Access Token</a></td>
+      <td>
+        (Optional) For merchants, use this service to retrieve an OAuth token. <br>For partners:
+        <ul>
+          <li>Retrieve an OAuth token for your required merchant</li>
+          <li>Pass your API Key and merchantId</li>
+          <li>Set scope = <code>openbanking_pisp</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_createpayment.html#create-payment-endpoint"><span class="label label-info">POST</span></a></td>
+      <td><a href="ob_createpayment.html#create-payment-endpoint">Create Payment</a></td>
+      <td>        
+        Note that:
+        <ul>
+          <li>The <code>integrationType</code> must be set to <strong>REDIRECT</strong></li>
+          <li>The <code>merchantPostAuthUrl</code> must be provided</li>
+          <li>The Create Payment service generates an Open Banking payment object</li>
+          <li>Returns a unique <code>userInterfacePaymentId</code></li>
+          <li>Initial payment status is <a href="ob_paymentstatuses.html"><strong>PENDING</strong></a></li>
+          <li>The URI must be passed to the PSU</li>
+          <li>Bank Selection screen launches in a new browser window/tab when the user clicks the link</li>
+        </ul>          
+      </td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank and is redirected to authenticate and approve the payment on that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP's</a> online banking portal.
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint"><span class="label label-success">GET</span></a></td>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint">Retrieve Payment Status</a></td>
+      <td>
+        Retrieve the status of the payment.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+For more details on this see the [Redirect Setup](ob_redirectoverviewmerch.html).
 
 ## Self-Hosted
 
 Call the following services in this order:
 
-|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| (Optional) Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls. Alternatively you may use your API Key.|
-|[<span class="label label-success">GET</span>](ob_getbank.html#retrieve-banks-endpoint)| [Retrieve Banks](ob_getbank.html#retrieve-banks-endpoint)| Use this service to give your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> a list of banks from which to choose|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>). |
-|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| Once the user selects an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>, pass its `bankId` in the payment request.|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is redirected to authenticate and approve the payment on that ASPSP's online banking portal. Once the user approves or declines the payment he/she is redirected to the `merchantPostAuthUrl` (as referenced in the Create Payment call). |
-|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
+<table>
+  <tbody>
+    <tr>
+      <td><a href="tok_listorgs.html"><span class="label label-success">GET</span></a></td>
+      <td><a href="tok_listorgs.html">Organisations</a></td>
+      <td>
+        (Optional - <em>For Partner users only</em>) Use this service to retrieve the list of organisations/merchants under you as the Partner entity.
+        <ul>
+          <li>Use your Partner-level API Key</li>
+          <li>Store the required merchant identifier</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="tok_reqtokorg.html"><span class="label label-info">POST</span></a></td>
+      <td><a href="tok_reqtokorg.html">Access Token</a></td>
+      <td>
+        (Optional) For merchants, use this service to retrieve an OAuth token. <br>For partners:
+        <ul>
+          <li>Retrieve an OAuth token for your required merchant</li>
+          <li>Pass your API Key and merchantId</li>
+          <li>Set scope = <code>openbanking_pisp</code></li>
+        </ul>
+      </td>
+    </tr>
+	<tr>      
+	  <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint"><span class="label label-success">GET</span></a></td>
+      <td><a href="tok_reqtokorg.html">Retrieve Banks</a></td>
+      <td>
+        Use this service to give your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> a list of banks from which to choose.
+      </td>
+    </tr>
+	<tr>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_createpayment.html#create-payment-endpoint"><span class="label label-info">POST</span></a></td>
+      <td><a href="ob_createpayment.html#create-payment-endpoint">Create Payment</a></td>
+      <td>        
+        Once the user selects an ASPSP, pass its <code>bankId</code> in the payment request. Note that:
+        <ul>
+          <li>The <code>integrationType</code> must be set to <strong>SELF_HOSTED</strong></li>
+          <li>The <code>merchantPostAuthUrl</code> must be provided</li>
+          <li>The Create Payment service generates an Open Banking payment object</li>
+          <li>Returns a unique <code>userInterfacePaymentId</code></li>
+          <li>Initial payment status is <a href="ob_paymentstatuses.html"><strong>PENDING</strong></a></li>
+          <li>The URI must be passed to the PSU</li>
+          <li>Bank Selection screen launches in a new browser window/tab when the user clicks the link</li>
+        </ul>          
+      </td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is redirected to authenticate and approve the payment on that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP's</a> online banking portal.
+		 Once the user approves or declines the payment he/she is redirected to the <code>merchantPostAuthUrl</code> (as referenced in the Create Payment call).
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint"><span class="label label-success">GET</span></a></td>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint">Retrieve Payment Status</a></td>
+      <td>
+        Retrieve the status of the payment.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-For more details on this see the [Merchant-Level Self-Hosted Setup](ob_selfsetupoverviewmerch.html)
+
+For more details on this see the [Self-Hosted Setup](ob_selfsetupoverviewmerch.html) section.
 
 ## Self-Hosted Callback
 
 Call the following services in this order:
 
-|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls.|
-|[<span class="label label-success">GET</span>](ob_getbank.html#retrieve-banks-endpoint)| [Retrieve Banks](ob_getbank.html#retrieve-banks-endpoint)| Use this service to give your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> a list of banks from which to choose|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>). |
-|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| Once the user selects an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>, pass its `bankId` in the payment request.|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is redirected to authenticate and approve the payment on that ASPSP's online banking portal. Once the user approves or declines the payment he/she is redirected to the `merchantPostAuthUrl` (as referenced in the Create Payment call). |
-|[<span class="label label-info">POST</span>](ob_tokenmgmt.html#request-an-access-token)| [Access Token](ob_tokenmgmt.html#request-an-access-token)| Pass your merchant API Key with the required scope = `openbanking_callback` to retrieve an OAuth access token.|
-|[<span class="label label-info">POST</span>](ob_paymentcallback.html#forward-payment-callback-endpoint)|[Forward Payment Callback](ob_paymentcallback.html#forward-payment-callback-endpoint)| In this mode as the callback/redirect from the ASPSP does not go directly to the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.nupay_tpp}}">Nuapay TPP</a>, it is required to forward the details via this service; you must pass your `callbackAccessToken` and the `callbackParams`|
-|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
 
-For more details, see [Merchant Self-Hosted-Callback Payment Page Setup](ob_selfcallbackmerch.html).
+<table>
+  <tbody>
+    <tr>
+      <td><a href="tok_listorgs.html"><span class="label label-success">GET</span></a></td>
+      <td><a href="tok_listorgs.html">Organisations</a></td>
+      <td>
+        (Optional - <em>For Partner users only</em>) Use this service to retrieve the list of organisations/merchants under you as the Partner entity.
+        <ul>
+          <li>Use your Partner-level API Key</li>
+          <li>Store the required merchant identifier</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="tok_reqtokorg.html"><span class="label label-info">POST</span></a></td>
+      <td><a href="tok_reqtokorg.html">Access Token</a></td>
+      <td>
+        (Optional) For merchants, use this service to retrieve an OAuth token. <br>For partners:
+        <ul>
+          <li>Retrieve an OAuth token for your required merchant</li>
+          <li>Pass your API Key and merchantId</li>
+          <li>Set scope = <code>openbanking_pisp</code></li>
+        </ul>
+      </td>
+    </tr>
+	<tr>      
+	  <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint"><span class="label label-success">GET</span></a></td>
+      <td><a href="tok_reqtokorg.html">Retrieve Banks</a></td>
+      <td>
+        Use this service to give your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> a list of banks from which to choose.
+      </td>
+    </tr>
+	<tr>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>.
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_createpayment.html#create-payment-endpoint"><span class="label label-info">POST</span></a></td>
+      <td><a href="ob_createpayment.html#create-payment-endpoint">Create Payment</a></td>
+      <td>        
+        Once the user selects an ASPSP, pass its <code>bankId</code> in the payment request. Note that:
+        <ul>
+          <li>The <code>integrationType</code> must be set to <strong>SELF_HOSTED_CALLBACK</strong></li>
+          <li>The <code>merchantPostAuthUrl</code> must be provided</li>
+          <li>The Create Payment service generates an Open Banking payment object</li>
+          <li>Returns a unique <code>userInterfacePaymentId</code></li>
+          <li>Initial payment status is <a href="ob_paymentstatuses.html"><strong>PENDING</strong></a></li>
+          <li>The URI must be passed to the PSU</li>
+          <li>Bank Selection screen launches in a new browser window/tab when the user clicks the link</li>
+        </ul>          
+      </td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> is redirected to authenticate and approve the payment on that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP's</a> online banking portal.
+		 Once the user approves or declines the payment he/she is redirected to the <code>merchantPostAuthUrl</code> (as referenced in the Create Payment call).
+      </td>
+    </tr>
+	<tr>
+      <td><a href="tok_reqtokorg.html"><span class="label label-info">POST</span></a></td>
+      <td><a href="tok_reqtokorg.html">Access Token</a></td>
+      <td>
+        Pass your merchant API Key with the required scope = <code>openbanking_callback</code> to retrieve an OAuth access token.
+      </td>
+    </tr>
+	<tr>
+      <td><a href="ob_paymentcallback.html#forward-payment-callback-endpoint"><span class="label label-info">POST</span></a></td>
+      <td><a href="ob_paymentcallback.html#forward-payment-callback-endpoint">Forward Payment Callback</a></td>
+      <td>
+        In this mode as the callback/redirect from the ASPSP does not go directly to the Nuapay TPP, it is required to forward the details via this service;
+		you must pass your <code>callbackAccessToken</code> and the <code>callbackParams</code>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint"><span class="label label-success">GET</span></a></td>
+      <td><a href="ob_retrievepayment.html#retrieve-payment-endpoint">Retrieve Payment Status</a></td>
+      <td>
+        Retrieve the status of the payment.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-## Redirect Mode
 
-{% include note.html content="CHECKOUT and REDIRECT is only available for merchants who want to process GBP payments; if you want to process EUR transactions then you must go with either the SELF-HOSTED or SELF-HOSTED-CALLBACK integration."%} 
+For more details, see [Self-Hosted-Callback Payment Page Setup](ob_selfcallbackmerch.html).
 
+## Checkout Mode
 
-Call the following services in this order
+{% include tip.html content="The CHECKOUT integration can be problematic in the mobile flow on some devices. If you want to use the Nuapay UI, we recommend that you use the REDIRECT integration to avoid any issues."%}
 
-|[<span class="label label-info">POST</span>](ob_partnerintegration.html#api-details---post-tokens)| [Access Token](ob_partnerintegration.html#api-details---post-tokens)| (Optional) Use this service to retrieve an OAuth token, which you will use to authenticate yourself in subsequent calls. Alternatively you may use your API Key.|
-|[<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint)|[Create Payment](ob_createpayment.html#create-payment-endpoint)| The `integrationType` must be set to *REDIRECT* and the `merchantPostAuthUrl` must be provided. The Create Payment service generates an Open Banking payment object, returning a unique `userInterfacePaymentId` with the payment object having an initial [status](ob_paymentstatuses.html) of `PENDING`. The URI must be passed to the PSU; once the user clicks the link the Bank Selection screen is launched in a new browser window/tab.|
-|-|-|The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank and is redirected to authenticate and approve the payment on that ASPSP's online banking portal.|
-|[<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint)|[Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint)| Retrieve the status of the payment.|
+{% include note.html content="<span style='color: #B0B0B0;'>CHECKOUT and REDIRECT are only available for merchants who want to process GBP payments; if you want to process EUR transactions then use the SELF-HOSTED integration.</span>" %}
 
-For more details on this see the [Merchant-level Redirect Setup](ob_redirectoverviewmerch.html). 
+<span style="color: #B0B0B0;">
+As a partner, you will need to interact with the Nuapay Open Banking services on behalf of your merchants. In this example we will assume that you want to set up a payment for Merchant X but do not have the merchant identifier and need to query the `GET /organisations` service to retrieve it as a first step.
 
+<span style="color: #B0B0B0;">Call the following services in this order:</span>
 
+| [<span class="label label-success">GET</span>](tok_listorgs.html) | [Organisations](tok_listorgs.html) | <span style="color: #B0B0B0;">(Optional) For _Partners_ Use this service to retrieve the list of organisations/merchants under your entity. Use your Partner-level API Key and store the required merchant identifier.  |
+| [<span class="label label-info">POST</span>](tok_reqtokorg.html) | [Access Token](tok_reqtokorg.html) | <span style="color: #B0B0B0;">Use this service to retrieve an OAuth token for the required merchant. Pass your API Key and merchantId with scope = `openbanking_pisp`. </span>|
+| [<span class="label label-info">POST</span>](ob_createpayment.html#create-payment-endpoint) | [Create Payment](ob_createpayment.html#create-payment-endpoint) | <span style="color: #B0B0B0;">Call this service with the merchant access token; the Create Payment service generates an Open Banking payment object, returning a unique `userInterfacePaymentId` with an (initial) [status](ob_paymentstatuses.html) of `PENDING`. Apply the Nuapay-provided JS and CSS on your page to render the Bank Selection screen for your merchant's payers.</span> |
+| - | - | <span style="color: #B0B0B0;">The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU</a> selects a bank (also referred to as the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.aspsp}}">ASPSP</a>) and is redirected to authenticate and approve the payment on that ASPSP's online banking portal. </span> |
+| [<span class="label label-success">GET</span>](ob_retrievepayment.html#retrieve-payment-endpoint) | [Retrieve Payment Status](ob_retrievepayment.html#retrieve-payment-endpoint) | <span style="color: #B0B0B0;"> Retrieve the status of the payment. </span> |
 
-
-
-
-
-
-
-
+<span style="color: #B0B0B0;">For more details on this see the [Checkout Setup](ob_checkoutoverview.html). </span>

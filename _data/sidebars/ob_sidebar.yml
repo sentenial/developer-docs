@@ -1,5 +1,3 @@
-# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
-
 entries:
 - title: Open Banking
   product: Open Banking
@@ -18,17 +16,13 @@ entries:
       url: /ob_servicesoverview.html
       output: web
 
-#    - title: General API Rules
-#      url: /ob_generalrules.html
-#      output: web, pdf
-
   - title: Bank Service
     output: web, pdf
     folderitems:
 
     - title: Overview
       url: /ob_bankoverview.html
-      output: web, pdf
+      output: web
 
       subfolders:
       - title: Bank APIs
@@ -47,10 +41,6 @@ entries:
           url: /ob_getbankfamily.html
           output: web
 
-      ##  - title: View Bank
-      ##    url: /ob_viewbank.html --> NOT IMPLEMENTS - REMOVED
-      ##    output: web
-
   - title: Payment Initiation Service
     output: web, pdf
     folderitems:
@@ -59,36 +49,8 @@ entries:
       url: /ob_pispoverview.html
       output: web, pdf
 
-    - title: Implementation Options
-      url: /ob_pispimplementations.html
-      output: web, pdf
-
       subfolders:
-      - title: Partner Integration
-        output: web
-        subfolderitems:
-
-        - title: Quick Start
-          url: /ob_quickstartpart.html
-          output: web, pdf
-
-        - title: Checkout Setup
-          url: /ob_checkoutoverview.html
-          output: web, pdf
-
-        - title: Self-Hosted Setup
-          url: /ob_selfsetupoverview.html
-          output: web, pdf
-
-      #  - title: Self-Hosted-Callback Setup
-      #    url: /ob_selfcallbacksetupoverview.html
-      #    output: web, pdf --> Not usable for Partners
-
-        - title: Redirect Setup
-          url: /ob_redirectoverview.html
-          output: web, pdf
-
-      - title: Merchant Integration
+      - title: Implementation Options
         output: web
         subfolderitems:
 
@@ -96,26 +58,25 @@ entries:
           url: /ob_quickstart.html
           output: web, pdf
 
-        - title: Checkout Setup
-          url: /ob_checkoutoverviewmerch.html
+        - title: Redirect Setup
+          url: /ob_redirectoverview.html
           output: web, pdf
 
         - title: Self-Hosted Setup
-          url: /ob_selfsetupoverviewmerch.html
+          url: /ob_selfsetupoverview.html
           output: web, pdf
 
-        - title: Self-Hosted-Callback Setup
-          url: /ob_selfcallbackmerch.html
+        - title: Self-Hosted Callback Setup
+          url: /ob_selfcallback.html
           output: web, pdf
 
-        - title: Redirect Setup
-          url: /ob_redirectoverviewmerch.html
+        - title: Checkout Setup
+          url: /ob_checkoutoverview.html
           output: web, pdf
 
     - title: Payment & Refund Statuses
       url: /ob_paymentstatuses.html
       output: web, pdf
-
 
     - title: Payment Retries
       url: /ob_paymentretries.html
@@ -214,48 +175,6 @@ entries:
         - title: List Accounts
           url: /ob_listaccount.html
           output: web
-
-
-  #- title: Subscription Payments ---> Moved to the E-Mandate section. Delete this later once it's confirmed it's okay under the E-Mandates section
-  #  output: web, pdf
-  #  folderitems:
-
-  #  - title: Overview
-  #    url: /ob_emoverview.html
-  #    output: web, pdf
-
-  #    subfolders:
-  #    - title: Payment-Initiated E-Mandates
-  #      output: web
-  #      subfolderitems:
-
-  #      - title: Launching the Flow
-  #        url: /ob_emlaunching.html
-  #        output: web, pdf
-
-  #      - title: The User Journey
-  #        url: /ob_emoverallflow.html
-  #        output: web, pdf
-
-  #      - title: Self-Hosted Mode
-  #        url: /ob_emselfhosted.html
-  #        output: web, pdf
-
-  #    - title: Account-Access E-Mandates
-  #      output: web
-  #      subfolderitems:
-
-  #       - title: Launching the Flow
-  #         url: /ob_acc_emlaunching.html
-  #         output: web, pdf
-
-  #       - title: The User Journey
-  #         url: /ob_acc_emoverallflow.html
-  #         output: web, pdf
-
-  #       - title: Self-Hosted Mode
-  #         url: /ob_acc_emselfhosted.html
-  #         output: web, pdf
 
   - title: Bank Status Service
     output: web, pdf

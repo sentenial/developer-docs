@@ -32,7 +32,6 @@ We currently support the following CT payment schemes:
 
 |**Currency**|**Payment Scheme**|
 |EUR|SEPA CT|
-|EUR|SEPA Inst CT|
 |GBP|Faster Payments|
 |GBP|Bacs Direct Credit|
 

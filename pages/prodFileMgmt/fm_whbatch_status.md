@@ -70,14 +70,7 @@ You may configure your notifications to be triggered for any of these statuses o
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>Always set to BatchStatusUpdated. </td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>The unique identifier of the batch (the internal Database ID). </td>
-		</tr>			
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -146,11 +139,10 @@ The following is an example of a File Status Update event JSON:
 <b>JSON Request Body</b>
 <pre>
 <code class="json">{
-    "eventTimestamp": 1501169079000,
-    "eventType": "BatchStatusUpdated",
+  "eventTimestamp": 1501169079000,
+  "eventType": "BatchStatusUpdated",
 	"resourceReference": "CRCUR09052023IE98ULSB98644073416",
-	"resourceReferenceType": "BatchReference",
-        "resourceTechicalId": "500009",
+	"resourceReferenceType": "BatchReference",  
 	"resourceUri": "/files/j29pwvl5bx/batches/w24y5qgv2p",
 	"resourceType": "Batch",
 	"reasonCode": null,

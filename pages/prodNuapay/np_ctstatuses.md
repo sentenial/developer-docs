@@ -32,83 +32,28 @@ The following table summarises the differences across the supported CT schemes:
 
 ## All Credit Transfer Statuses
 
-Note that in:
-* _EXPRESS_ schemes, transactions can move from `PENDING` to `PENDING_SETTLEMENT` to  `ACCEPTED` (or `REJECTED`).
-* _STANDARD_ schemes, transactions can move from `PENDING` to `READY FOR EXPORT` to `EXPORTED` to `ACCEPTED` (or `REJECTED`).
+CT payments transition to different statuses. The statuses vary slightly between _EXPRESS_ and _STANDARD_ schemes:
+
+<img src='images/ct_statuses.png'>
+
+{% include note.html content="Some statuses are only possible in asynchronous processing - these statuses are flagged in the table below." %}
 
 
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Status</strong></td>
-      <td><strong>Description</strong></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">PENDING</code></td>
-      <td>Future-dated payments are initially created in pending status.
-      <ul>
-      <li>Based on the scheme rules for <strong>standard payments</strong>, the CT will transition from this status to READY FOR EXPORT.</li>
-      <li>Future-dated <strong>Express</strong> payments will transition from this status to PENDING_SETTLEMENT and to ACCEPTED (or REJECTED) on their execution date (at approximately 02:00 GMT)</li>
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">READY FOR EXPORT</code></td>
-      <td>Only applicable for <strong>Standard</strong> schemes:
-      <ul>
-      <li>The standard CT payment has been created.</li>
-      <li>It has not yet been included in a PAIN.001 XML file (SEPA) or a STD-18 payment file (Bacs) </li>       
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">EXPORTED</code></td>
-      <td>Only applicable for <strong>Standard</strong> schemes:
-      <ul>
-      <li>The standard CT payment has been included in a PAIN.001 file (SEPA) or a STD-18 file (Bacs) and has been passed to Clearing.</li>
-      <li>The CT will generally be exported 1 business day prior to the collection date (SEPA) or 2 days in advance (Bacs). </li>
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">PENDING_SETTLEMENT</code></td>
-      <td>Only applicable for <strong>Express</strong> schemes:
-      <ul>
-      <li>The payment has been passed to the scheme but has not yet transitioned to `ACCEPTED` or `REJECTED`</li>
-      <li>This is a an interim status and a payment should only be in this status for a few seconds before transitioning to a final status.</li>
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">ACCEPTED</code></td>
-      <td>Where a payment has not been rejected, The CT status is updated to Accepted on its execution date.
-      </td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">REJECTED</code></td>
-      <td>If the payment cannot be made e.g. the beneficiary account is closed, the payment will transition to Rejected.
-      <ul>
-      <li>The CT payment will transition to this status where a rejection is processed from the beneficiary bank or from the Scheme.</li>
-      <li>A CT Rejection results in a credit to the merchant account.</li>
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">RECALLED</code></td>
-      <td>A <strong>standard</strong> payment has been cancelled prior to being sent to the Scheme for further processing.
-      <ul>
-      <li>A CT payment may be recalled when it is in PENDING or READY FOR EXPORT status.</li>
-      <li>The Recall operation is available via the Nuapay User Interface (this is not currently an option via the API).</li>      
-      <li>Please contact support should you need to recall a CT payment.</li>
-      </ul></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">CANCELLED</code></td>
-      <td>A <strong>standard</strong> payment has been cancelled AFTER export to the scheme, where the <a href = "np_separeasons.html">SEPA Reason Code</a> is one of the following: `CUST`, `CUTA`, `DUPL`, `UPAY`.
-      <ul>
-      <li>This status is only applicable to SEPA CT payments.</li>
-      <li>It may not always be possible to cancel an EXPORTED CT payment.</li>
-      <li>this process requires a manual intervention from the Nuapay Support team to contact the beneficiary bank. </li>
-      <li>Please contact support should you need to cancel a CT payment.</li>
-      </ul></td>
-    </tr>
-  </tbody>
-</table>
+| **Status**                           | **Async?**   | **Description**                                                                                                                                                                                                                                                                                                                                                                         |
+|--------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `QUEUED`                             | YES         | This status, specific to CT Collections, represents the initial state of a collection before the individual CTs are created and validated.                                                                                                                                                                                                                                               |
+| `INITIATED`                          | YES         | This is the initial state of a CT created via the asynchronous API. It indicates that the request has been accepted and queued for processing but the actual processing has not yet begun.                                                                                                                                                                                               |
+| `PENDING`                            |             | Future-dated payments are initially created in pending status. <br> - Based on the scheme rules for **standard payments**, the CT will transition from this status to READY FOR EXPORT. <br> - Future-dated **Express** payments will transition from this status to PENDING_SETTLEMENT and to ACCEPTED (or REJECTED) on their execution date (at approximately 02:00 GMT).               |
+| `PENDING SETTLEMENT`                 |             | This status is applied to Express CTs after they have passed all validation checks and funds have been reserved. The CT is awaiting settlement via the relevant payment scheme.                                                                                                                                                                                                         |
+| `READY FOR EXPORT`                   |             | Only applicable for **Standard** schemes: <br> - The standard CT payment has been created. <br> - It has not yet been included in a PAIN.001 XML file (SEPA) or a STD-18 payment file (Bacs).                                                                                                                                                                                             |
+| `FAILED`                             | YES         | This status is assigned to a CT that failed to transition from the INITIATED state to a valid subsequent state (e.g., READY_FOR_EXPORT, PENDING_SETTLEMENT) due to validation errors or other processing issues.                                                                                                                                                                         |
+| `EXPORTED`                           |             | Only applicable for **Standard** schemes: <br> - The standard CT payment has been included in a PAIN.001 file (SEPA) or a STD-18 file (Bacs) and has been passed to Clearing. <br> - The CT will generally be exported 1 business day prior to the collection date (SEPA) or 2 days in advance (Bacs).                                                                                   |
+| `PENDING_SETTLEMENT`                 |             | Only applicable for **Express** schemes: <br> - The payment has been passed to the scheme but has not yet transitioned to `ACCEPTED` or `REJECTED`. <br> - This is an interim status and a payment should only be in this status for a few seconds before transitioning to a final status.                                                                                               |
+| `ACCEPTED`                           |             | Where a payment has not been rejected, the CT status is updated to Accepted on its execution date.                                                                                                                                                                                                                                                                                      |
+| `REJECTED`                           |             | If the payment cannot be made (e.g., the beneficiary account is closed), the payment will transition to Rejected. <br> - The CT payment will transition to this status where a rejection is processed from the beneficiary bank or from the Scheme. <br> - A CT Rejection results in a credit to the merchant account.                                                                  |
+| `RECALLED`                           |             | A **standard** payment has been cancelled prior to being sent to the Scheme for further processing. <br> - A CT payment may be recalled when it is in PENDING or READY FOR EXPORT status. <br> - The Recall operation is available via the Nuapay User Interface (this is not currently an option via the API). <br> - Please contact support should you need to recall a CT payment.        |
+| `CANCELLED`                          |             | A **standard** payment has been cancelled AFTER export to the scheme, where the [SEPA Reason Code](np_separeasons.html) is one of the following: `CUST`, `CUTA`, `DUPL`, `UPAY`. <br> - This status is only applicable to SEPA CT payments. <br> - It may not always be possible to cancel an EXPORTED CT payment. <br> - This process requires manual intervention from the Nuapay Support team. |
+
 
 
 

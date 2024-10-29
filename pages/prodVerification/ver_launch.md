@@ -1,5 +1,5 @@
 ---
-title: Verification Scoring
+title: Launching the AIS Flow
 keywords: Verification scoring
 summary: "Once the account holder name is retrieved from the bank, a matching score is calculated."
 sidebar: ver_sidebar
@@ -9,7 +9,7 @@ toc: false
 ---
 ## Overview
 
-To initiate the Verification check, you first need to generate a Verification ID:
+To initiate an AIS Verification check, you first need to generate a Verification ID:
 
 1. Generate a server-to-server call to POST `/verifications`.
 1. Decide in your request whether you want to open the flow as a pop-up (`CHECKOUT` mode) or as a new window/tab (`REDIRECT` mode): set this via `integrationType`.

@@ -65,14 +65,7 @@ You may configure your notifications to be triggered for any of these statuses o
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>Always set to FileStatusUpdated. </td>
-		</tr>
-		<tr>
-			<td>root</td>
-			<td>resourceTechnicalId</td>
-			<td>string</td>
-			<td>Mandatory</td>
-			<td>The unique identifier of the file (the internal Database ID). </td>
-		</tr>			
+		</tr>		
 		<tr>
 			<td>root</td>
 			<td>resourceReference</td>
@@ -100,8 +93,8 @@ You may configure your notifications to be triggered for any of these statuses o
 			<td>string</td>
 			<td>Mandatory</td>
 			<td>This is the type of the resource to which the URI is related. In this case it is a File resource.</td>
-		</tr>   
-    <tr>
+		</tr>    
+		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
@@ -142,15 +135,14 @@ The following is an example of a File Status Update event JSON:
 <pre>
 <code class="json">{
   "eventTimestamp": 1501169079000,
-  "eventType": "FileStatusUpdated",
-      "resourceTechnicalId": 500001,
-      "resourceReference": "202310171191612G08-05",
-      "resourceReferenceType": "MessageId",
-      "resourceUri": "/files/j29pwvl5bx",
-      "resourceType": "File",
-      "reasonCode": null,
-      "resourceOwner": "tc47ygrg72",
-      "resourceRemittanceInformation": null      
+  "eventType": "FileStatusUpdated",    
+  "resourceReference": "202310171191612G08-05",
+  "resourceReferenceType": "MessageId",
+  "resourceUri": "/files/j29pwvl5bx",
+  "resourceType": "File",
+  "reasonCode": null,
+  "resourceOwner": "tc47ygrg72",
+  "resourceRemittanceInformation": null      
 }</code>
 </pre>
 

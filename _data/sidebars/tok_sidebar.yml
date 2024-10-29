@@ -27,11 +27,23 @@ entries:
       url: /tok_tokenmgmt.html
       output: web
 
+  - title: Organisation APIs
+    output: web, pdf
+    folderitems:
+
+    - title: List Organisations
+      url: /tok_listorgs.html
+      output: web
+
+    - title: Retrieve Organisation
+      url: /tok_retrieveorg.html
+      output: web
+
   - title: Token APIs
     output: web, pdf
     folderitems:
 
-    - title: Request Organisation Tokens
+    - title: Request Organisation Access Tokens
       url: /tok_reqtokorg.html
       output: web
 
