@@ -22,6 +22,8 @@ toc: false
 
 {% include urls.html %}
 
+{% include tip.html content="The Collections CT APIs are Asynchronous and available under the <a href='https://sentenial.github.io/credit-transfers/docs/redoc-v2.html#tag/Credit-Transfers-Collections' target ='_new'> v2 CT Swagger </a>." type="primary"  %}
+
 <ul id="profileTabs" class="nav nav-tabs">
 
 
@@ -40,12 +42,6 @@ var timerRef = setInterval(function() { getDocs('operation/listCollectionsUsingG
 </div>
 </div>
 
-</div> <!-- closing v2 -->
 
-<div role="tabpanel" class="tab-pane" id="about">
-
-THIS IS V1
-
-</div>
 
 {% include links.html %}
