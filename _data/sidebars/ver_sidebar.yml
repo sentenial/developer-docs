@@ -1,5 +1,3 @@
-# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
-
 entries:
 - title: Account Holder Verification
   product: Account Holder Verification
@@ -27,7 +25,11 @@ entries:
       url: /ver_landing_page.html
       output: web
 
-    - title: Launching the Flow
+  - title: AIS Verification
+    output: web, pdf
+    folderitems:
+
+    - title: Launching the AIS Flow
       url: /ver_launch.html
       output: web
 
@@ -43,6 +45,13 @@ entries:
       url: /ver_verificationstatuses.html
       output: web
 
+  - title: CoP Verification
+    output: web, pdf
+    folderitems:
+
+    - title: Initiating a CoP Check
+      url: /ver_coplaunch.html
+      output: web
 
   - title: User Verification APIs
     output: web, pdf
@@ -59,7 +68,3 @@ entries:
     - title: List Verifications
       url: /ver_listverification.html
       output: web
-
-#    - title: Set Consent
-#      url: /ver_setconsent.html
-#      output: web

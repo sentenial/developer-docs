@@ -33,7 +33,7 @@ It is possible to configure your certificate via:
 
 To create a JOSE header **via the UI** you will need to:
 
-* Log on to the Developer Dashboard.
+* Log on to the Nuapay Console.
 * Generate a <b>Private Key</b> and a <b>Certificate</b>.
 * Retrieve the certificate serial number and decode it.
 * Extract the issuer details from your certificate.

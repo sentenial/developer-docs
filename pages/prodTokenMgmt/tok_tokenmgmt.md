@@ -14,7 +14,7 @@ It is possible to use OAuth tokens as an alternative to `API Keys`, to access th
 
 * They can be easily shared, which can lead to unauthorized access to your data.
 * Additionally, if an API Key is compromised, it can be challenging to revoke access to it.
-* There is also the danger that you could re-generate your API key in error, via the Developer Dashboard, which would result in you losing access to your Nuapay services.
+* There is also the danger that you could re-generate your API key in error, via the Nuapay Console, which would result in you losing access to your Nuapay services.
 
 OAuth tokens, provide a more secure and flexible way to authorize access to your data.
 Tokens:
@@ -36,8 +36,27 @@ Token management is mandatory for partner users and optional for merchant users.
 
 * As a `partner`, once you generate an OAuth token representing a specified merchant, you can initiate any API requests on behalf of that merchant.
 * As a `merchant`, you may also want to authenticate with OAuth tokens rather than using an `API Key`.
-* In addition to using OAuth tokens to represent a merchant entity, you may also use tokens for access to specific applications or resources. 
+* In addition to using OAuth tokens to represent a merchant entity, you may also use tokens for access to specific applications or resources.
 
 See the API section for details of the various Token endpoints.
+
+## Organisation Management
+
+For **Partners**:
+
+Before you can generate your token you must first retrieve your `organisationId`:
+
+* Use the [List Organisation](tok_listorgs.html) service to retrieve details of your organisations.
+* Use the `id` (also referred to as the `encodedOrganisationId`) in your [Request Access Token for Organisation](tok_reqtokorg.html)
+
+For **Merchants**:
+
+To retrieve your `id`:
+
+* Use the Nuapay Console.
+* See [Retrieving the Merchant Identifier](prod_consolemrchmgmt.html#retrieving-the-merchant-identifier)
+
+Or use the [Request Access at the Organisation level](tok_reqtokorg.html#request-access-at-the-organisation-level) service.
+
 
 {% include links.html %}

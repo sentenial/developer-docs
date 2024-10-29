@@ -14,16 +14,28 @@ entries:
       url: /np_secoverview.html
       output: web, pdf
 
-    - title: Authentication Options
+    - title: API Key Authentication
       url: /np_secapikeyauth.html
       output: web, pdf
 
-    - title: MTLS Configuration
-      url: /np_secmtls.html
-      output: web, pdf
-
       subfolders:
-      - title: JSON Web Signature
+      - title: MTLS Configuration
+        output: web
+        subfolderitems:
+
+        - title: Overview
+          url: /np_secmtls.html
+          output: web, pdf
+
+        - title: MTLS via UI
+          url: /np_secmtlsui.html
+          output: web, pdf
+
+        - title: MTLS via REST
+          url: /np_secmtlsrest.html
+          output: web, pdf
+
+      - title: JWS Configuration
         output: web
         subfolderitems:
 
@@ -31,14 +43,30 @@ entries:
           url: /np_secjws.html
           output: web, pdf
 
-        - title: JWS Configuration via UI
+        - title: JWS via UI
           url: /np_secjwsui.html
           output: web, pdf
 
-        - title: JWS Configuration via REST
+        - title: JWS via REST
           url: /np_secjwsrest.html
           output: web, pdf
 
         - title: JWS Signature Samples
           url: /np_secjwssample.html
+          output: web, pdf
+
+      - title: Certificate APIs
+        output: web
+        subfolderitems:
+
+        - title: Create Certificates
+          url: /np_seccreatecert.html
+          output: web, pdf
+
+        - title: List Certificates
+          url: /np_seclistcert.html
+          output: web, pdf
+
+        - title: Delete Certificate
+          url: /np_secdeletecert.html
           output: web, pdf

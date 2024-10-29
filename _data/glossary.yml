@@ -2,9 +2,13 @@ addacs: "The Automated Direct Debit Amendment and Cancellation Service. An elect
 
 ack_nack: "Ack/Nack (Acknowledgement/Negative Acknowledgement), is used in file processing. An Acknowledgement (Ack) confirms successful receipt and processing of the transmitted file data, while a Negative Acknowledgement (Nack) indicates failure or error in the submission."
 
+ais: "Account Information Service: AIS allows third-party providers (Like Nuapay) to access users’ bank account information with their consent."
+
 allowed-ips: "These are the IPs from which your API requests may originate. Any request not passed from one of your defined allowed-IP addresses will fail with a HTTP status code response of 403 - Forbidden"
 
 auddis: "The Automated Direct Debit Instruction Service. A Bacs service allowing merchants to set up new Direct Debit Instructions (DDIs) and also to notify the scheme of any DDI cancellations."
+
+awacs: "Advice of Wrong Account for Automated Credits Service. A Bacs service that notifies the paying party of a change to beneficiary details. This may be triggered where incorrect beneficiary account details were supplied and the receiving bank has adjusted the details or where a beneficiary has switched accounts."
 
 bacs-clearing: "Bacs Payment Schemes Limited, previously known as Bankers' Automated Clearing Services, is the organisation with responsibility for the scheme behind the clearing and settlement of Direct Debits in the UK."
 clearing: "The Clearing and Settlement Mechanism (CSM) that processes SEPA payments. (The EBA's STEP-2 system allows banks across Europe to use one channel to send and receive their SEPA Credit Transfer and SEPA Direct Debit transactions)"
@@ -17,9 +21,13 @@ aspsp: "The Account Servicing Payment Service Provider: this is the Bank or Paym
 
 collection_date: "The date on which funds are debited from payers' accounts and credited to the merchant account. Can also be referred to as the value date or the settlement date."
 
+cop: "A UK-specific account checking service: when an account name, sort code, and account number of a payee is provided, the CoP service checks if the details match the account holder’s information. A confirmation response, such as match, no match, or close match, is returned helping users ensure they’re paying the correct recipient."
+
 csm: "The Clearing and Settlement Mechanisms are the processes underlying all payment transactions exchanged between two payment service providers (PSPs)."
 
 credit_transfer: "A Credit Transfer or CT is a payment instruction from one account to another. Unlike a Direct Debit payment where funds are pulled from an account, a CT payment is a push payment."
+
+bacs_ct_cycle: "Day 1 (Input Day): You submit the credit transfer payment instruction; Day 2: the payment is processed by Bacs; Day 3; The credit is applied to the destination PSP (beneficiary's bank) account."
 
 direct_debit: "A Direct Debit or DD is a payment initiated by an originator that pulls the requested amount from the payer's bank account. Payers must have agreed to the payment being pulled from their account in advance by signing a mandate or Direct Debit Instruction. "
 

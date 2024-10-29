@@ -41,7 +41,7 @@ The various statuses possible (for both payments and refunds) are presented in t
     </tr>
     <tr>
       <td><code class="highlighter-rouge">PENDING</code></td>
-      <td>[Relevant for <a href="ob_pispimplementation.html#checkout-mode">Checkout</a> mode only] The payment has been created: the merchant has initiated the <code class="highlighter-rouge">POST/payments</code> call but the PSU has not yet selected the required bank.</td>
+      <td>The payment has been created: the merchant has initiated the <code class="highlighter-rouge">POST/payments</code> call but the PSU has not yet selected the required bank. (This status is possible in Checkout and Redirect.) Note that payments in PENDING are automatically updated to TIMEOUT status after 14 days.</td>
       <td>No</td>
       <td>No</td>
       <td>No</td>

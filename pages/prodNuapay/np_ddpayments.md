@@ -30,7 +30,7 @@ Nuapay supports the following Direct Debit schemes:
 
 The SEPA scheme is managed by the European Payment Council. In the UK, Bacs is responsible for the Direct Debit scheme.
 
-Both the EPC and Bacs publish guides and rulebooks (which are generally updated on an anual basis) related to how the schemes should be implemented. Nuapay is fully compliant with these rulebooks and constantly monitor and update our Direct Debit solution as required to ensure that we remain fully compliant.
+Both the EPC and Bacs publish guides and rulebooks (which are generally updated on an annual basis) related to how the schemes should be implemented. Nuapay is fully compliant with these rulebooks and constantly monitor and update our Direct Debit solution as required to ensure that we remain fully compliant.
 
 
 ## Scheme Differences
