@@ -113,6 +113,21 @@ Our API allows you to carry out various operations on your account:
 <td><code>CREDIT</code></td>
 <td>Debtor</td>
 </tr>
+
+<tr>
+<td>Credit Transfer Batch</td>
+<td><code>CREDIT_TRANSFER_BATCH</code></td>
+<td><code>DEBIT</code></td>
+<td>Creditor</td>
+</tr>
+
+<tr>
+<td>Credit Transfer Technical Reject</td>
+<td><code>CREDIT_TRANSFER_TECH_REJECT</code></td>
+<td><code>CREDIT</code></td>
+<td>Debtor</td>
+</tr>
+
 <tr>
 <td>Instant Credit Transfer</td>
 <td><code>INCOMING_INSTANT_CREDIT_TRANSFER</code></td>
