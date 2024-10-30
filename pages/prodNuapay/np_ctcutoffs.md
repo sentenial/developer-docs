@@ -34,7 +34,7 @@ By default, Nuapay has the following CT cut-off times (where D is _today_):
 
 |Scheme| Cut-Off Time| Collection Date|
 |SEPA CT| 08:00| D|
-|Bacs CT| 21:15| D+2|
+|Bacs CT| 21:00| D+2|
 
 These are the latest times by which your payments must be submitted in order to achieve your required collection date.
 
@@ -43,8 +43,8 @@ These are the latest times by which your payments must be submitted in order to 
 |**Scheme Name**|**Earliest Export Date**| **Funds Credited**| **Notes**|
 |SEPA CT|	On D **before 08:00 GMT**| D| If the transaction/collection is processed **before** 08:00 on a processing day, the CT transaction(s) will generally be processed on the same day: your beneficiary will see the credit on the same day.|
 |         | On D **after 08:00** | D+1 | Where the transaction/collection is processed **after** 08:00, the CT transaction(s) will be processed on the next processing day |
-|Bacs CT| On D **before 21:15 GMT**|D+2| If the transaction/collection is processed **before** 21:15 on a processing day (DAY 1), the CT transaction(s) will be passed to Bacs with your beneficiary being credited on D+2 (DAY 3).|
-|         | On D **after 21:15 GMT**|D+3| If the transaction/collection is processed **after** 21:15 on a processing day, the CT transaction(s) will be passed to Bacs on the next business day, with your beneficiary being credited on D+3.|
+|Bacs CT| On D **before 21:00 GMT**|D+2| If the transaction/collection is processed **before** 21:00 on a processing day (DAY 1), the CT transaction(s) will be passed to Bacs with your beneficiary being credited on D+2 (DAY 3).|
+|         | On D **after 21:00 GMT**|D+3| If the transaction/collection is processed **after** 21:00 on a processing day, the CT transaction(s) will be passed to Bacs on the next business day, with your beneficiary being credited on D+3.|
 |FPS|N/A|D| Because FPS is an Instant scheme, payments are settled within seconds so there are no export timings or restrictions. For future-dated payments, these are processed at 02:00 GMT on the morning of the requested collection date.|
 
 
