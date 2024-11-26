@@ -59,6 +59,10 @@ entries:
       url: /np_bacsreasons.html
       output: web, pdf
 
+    - title: Application Reason Codes
+      url: /np_appreasons.html
+      output: web, pdf
+
     - title: FAQs
       url: /np_faq.html
       output: web, pdf

@@ -12,6 +12,26 @@ toc: false
 
 {% include wh-compatibility.html %}
 
+## Failed vs Rejected Collections
+
+It is important to distinguish between `FAILED` and `REJECTED` states, which both indicate unsuccessful processing but have different implications:
+
+* A `FAILED` collection occurs when the entire collection fails validation checks before individual Credit Transfers (CTs) are created. This is a collection-level failure triggered by a common error affecting the whole collection. The collection is marked as `FAILED`, and no CTs are created.
+* `REJECTED` applies when individual CTs within a collection fail specific validations during processing. This is a transaction-level failure, and a collection can be marked as REJECTED even if only one CT fails. A REJECTED collection can also have a mix of rejected and failed CTs.
+
+The following table summarises the key differences:
+
+| Feature           | FAILED                                           | REJECTED                                                       |
+|-------------------|--------------------------------------------------|-----------------------------------------------------------------|
+| **Scope**         | Collection-level                                 | Transaction-level (can include collection-level failures)       |
+| **Trigger**       | Failure of collection-level validations          | Failure of individual CT validations during processing          |
+| **CT Creation**   | No CTs are created                               | CTs are created, but some/all may fail or be rejected           |
+| **Error Reporting** | `rejectDetails` on the collection object      | `rejectDetails` on individual CT objects (and potentially the collection) |
+| **Example Reason** | Invalid originator account, incorrect total amount | Insufficient funds for a specific CT                           |
+
+
+{% include tip.html content="**FAILED** signals an issue with the collection data itself, preventing the creation of any CTs. **REJECTED** indicates that the collection was initially valid, but individual CTs encountered issues during processing." %}
+
 ## Webhook Message Details
 
 This Webhook has the following event types:
@@ -80,7 +100,7 @@ This Webhook has the following event types:
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The The <a href="np_separeasons.html">SEPA Reason Code</a> or the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme)</td>
+            <td>The <a href="np_separeasons.html">SEPA Reason Code</a>, the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme) or the <a href="np_appreasons.html#ct-collection-application-error-codes"> Application Reason Code</a> (where a collection has been rejected prior be being passed to Clearing).</td>
 		</tr>
         <tr>
 			<td>root</td>
