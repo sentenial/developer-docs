@@ -5,7 +5,7 @@ summary: "When processing transactions via file, a number of application errors 
 sidebar: resources_sidebar
 permalink: np_appreasons.html
 folder: prodNuapay
-toc: false
+toc: true
 datatable: true
 ---
 
@@ -170,5 +170,6 @@ DD030	   | A DD exists with generated End to End Reference
 DD031	   | Country code provided is not a valid ISO 3166-1 alpha-2 code
 
 <div class="datatable-end"></div>
+
 
 {% include links.html %}
