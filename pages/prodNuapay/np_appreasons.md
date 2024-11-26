@@ -5,7 +5,7 @@ summary: "When processing transactions via file, a number of application errors 
 sidebar: resources_sidebar
 permalink: np_appreasons.html
 folder: prodNuapay
-toc: false
+toc: true
 datatable: true
 ---
 
@@ -120,7 +120,7 @@ CT095	   | The Collection reference must be unique per originator
 | CTC006 | Credit transfer not available from this account. The Originator Account is not eligible to initiate credit transfers. This could be due to account restrictions or configuration settings.                                                      |
 | CTC007 | The Collection batchBooking indicator must be false for non-Nuapay originators. The collection request has batchBooking set to true, but the Originator Account does not belong to a Nuapay customer. Non-Nuapay originators cannot use the batch booking feature. |
 | CTC008 | Originator Bank BIC is required for EXPRESS payments. The collection request includes a payment with type EXPRESS, but the Originator Account does not have a Bank Identifier Code (BIC). A BIC is necessary to process EXPRESS payments.       |
-| CTC009 | Requested payment type is not supported by Originator. This appears to be a duplicate of CTC003.                                                                                                          |
+| CTC009 | Requested payment type is not supported by Originator. |
 | CTC010 | Requested execution date is today, and Cut-off time has passed. The requested execution date for the credit transfer is today's date, but the cut-off time for processing payments for that day has already passed.                              |
 | CTC011 | Requested execution date is not a working day. The requested execution date for the credit transfer falls on a non-working day, such as a weekend or bank holiday.                                       |
 | CTC012 | Requested execution date is in the past. The requested execution date for the credit transfer is a date that has already occurred.                                                                        |
@@ -170,5 +170,6 @@ DD030	   | A DD exists with generated End to End Reference
 DD031	   | Country code provided is not a valid ISO 3166-1 alpha-2 code
 
 <div class="datatable-end"></div>
+
 
 {% include links.html %}
