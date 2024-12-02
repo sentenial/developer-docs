@@ -64,14 +64,14 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is URI of the resource for RESTful API querying. Use the URI in the <a href="np_retrievect.html">Retrieve Credit Transfer</a> call.</td>
+			<td> This is URI of the transaction resource. Use the URI to <a href="np_viewtransaction.html">Retrieve the transaction</a>.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a Transaction resource.</td>
 		</tr>
 		<tr>
 			<td>root</td>
