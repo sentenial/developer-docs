@@ -57,6 +57,9 @@ entries:
     - title: Retrieve Credit Transfer
       url: /np_retrievect.html
       output: web
+    - title: Recall Credit Transfers
+      url: /np_recallct.html
+      output: web
     - title: List Credit Transfers (Originator)
       url: /np_listctsorig.html
       output: web

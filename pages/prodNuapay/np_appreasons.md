@@ -104,6 +104,8 @@ CT092	   | UltimateDebtor PrivateId either 'dateAndPlaceOfBirth' or 'other' is a
 CT093	   | UltimateDebtor PrivateId Other SchemeName either 'code' or 'proprietary' is allowed.
 CT094	   | StructuredRemittanceInformation cannot be provided in addition to RemittanceInformation
 CT095	   | The Collection reference must be unique per originator
+CT096	   | Credit Transfer is not in a valid status to be Recalled.
+CT097	   | Credit Transfer can not be recalled as it is a part of HCM batch.
 
 <div class="datatable-end"></div>
 ### CT Collection Application Error codes

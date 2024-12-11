@@ -37,6 +37,8 @@ epc: "European Payments Council - The authority that manages the SEPA payment sc
 
 flat_file: "A payment file (e.g. the Bacs Std-18 file) that is provided as text with a number of lines/records for each Direct Debit or Credit Transfer payment."
 
+hcm: "Human Capital Management (HCM)) files are special files used for large Payroll runs. HCM processing is file-based and there is no similar mechanism via REST."
+
 iso_xml: "The ISO 20022 XML standard used for electronic data interchange between financial institutions."
 
 merchant: "A Nuapay client or user that accesses the system and initiates API requests on its own behalf."
