@@ -111,8 +111,31 @@ The following are all possible codes related to DDICs. In addition, valid reason
 7               | Claim raised at Service User's request after Direct Debit applied to payer's account. | The request will not be accepted by the paying PSP until after payment has been debited to the payer’s account. No action will be taken on any request until it has been confirmed in writing to the paying PSP e.g. by fax / email. Details of the confirmation will be submitted with the indemnity claim. | Where the indemnity claim for reason code 7 (indemnity claim raised at service user’s request) is disputed. The paying PSP is required to uphold the challenge if the fax / email provided by the service user cannot be produced.
 8               | Service User Name disputed | Payer does not recognise the Service User collecting Direct Debit.| **AUDDIS service users** – may provide one or more of the following as evidence: <br /><br /> (1) A valid instruction e.g. one retained by the service user in accordance with the AUDDIS requirements <br />(2) A contract signed by the payer that specifically references payment by Direct Debit <br />(3) A contract that specifically references payment by Direct Debit – this need not be signed by the payer where the payer does not dispute the existence of the contract, merely the payment method <br />(4) Evidence showing that the payer has confirmed receipt of a nominal amount into their account by provision of an associated reference to the service user <br />(5) Correspondence addressed to the payer relating to the Direct Debit e.g. advance notice, from a service user with the same name as on the Direct Debit collection <br />(6) Results evidencing the completion of the payer verification measures (as required under section 3C of this Guide & Rules), previously agreed as acceptable between the service user and their sponsor.
 
+<div class="datatable-end"></div>
+
+## ARUCS Reason Codes
+
+The following are the Automated Return of Unapplied Credits (ARUCS) reason codes:
+
+
+<div class="datatable-begin"></div>
+
+Code | Reason                      | Circumstances                                             | Special Instructions
+-----|-----------------------------|----------------------------------------------------------|---------------------
+0    | Invalid details             | The account details were not recognized.                | The service user should contact the beneficiary for new details.
+2    | Beneficiary deceased        | The beneficiary of the credit has died.                 |
+3    | Account transferred         | The beneficiary's account has been transferred to another bank or building society. | The service user should contact the beneficiary for the new account details.
+5    | No account                  | There is no account matching the details provided.       | The service user should check the details and/or contact the beneficiary.
+B    | Account closed              | The beneficiary's account has been closed.              | The service user should contact the beneficiary for new account details.
+C    | Requested by originator     | The originator of the credit has requested the payment not be applied. | The service user should contact the originator of the credit for instructions.
+
+
 
 <div class="datatable-end"></div>
+
+
+
+
 
 
 {% include links.html %}

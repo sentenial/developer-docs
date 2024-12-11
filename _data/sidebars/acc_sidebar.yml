@@ -71,3 +71,15 @@ entries:
         - title: Transfer Between Accounts
           url: /np_accounttransfer.html
           output: web
+
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /np_accwhoverview.html
+      output: web, pdf
+
+    - title: Account Creation
+      url: /np_whacccreate.html
+      output: web
