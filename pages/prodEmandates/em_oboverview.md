@@ -20,7 +20,7 @@ Nuapay Open Banking & E-Mandates support both the Bacs **Direct Debit scheme (GB
 Note that:
 
 * To use the Nuapay User Interface, some client-side JavaScript is required to launch this flow.
-* For `SELF-HOSTED` integrations, a Postman collection is available.
+* For `SELF-HOSTED` integrations, a Postman collection is available. See the <a href = 'prod_postmoverview.html'>Postman Overview</a> section for more on this.
 
 ## Payment Initiation and E-Mandates
 
