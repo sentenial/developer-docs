@@ -8,7 +8,8 @@ folder: prodEmandates
 ---
 
 In order to launch the Open Banking Payment and E-Mandate signup flow, in `SELF_HOSTED` mode, you must call a number of payment- and mandate-related APIs, as outlined below.
-A Postman collection may be provided upon request. Please contact your Account Manager for more details.
+
+|<img src="images/postman-logo.png">|<br>We highly recommend that you use **Postman** to test our APIs on the Sandbox environment. See the <a href = 'prod_postmoverview.html'>Postman Overview</a> section for more on this.<br>|
 
 ## Payment APIs
 

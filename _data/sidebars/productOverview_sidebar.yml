@@ -76,3 +76,10 @@ entries:
     - title: Merchant Management
       url: /prod_consolemrchmgmt.html
       output: web
+
+  - title: Postman Collections
+    output: web, pdf
+    folderitems:
+    - title: Overview
+      url: /prod_postmoverview.html
+      output: web
