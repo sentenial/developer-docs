@@ -25,10 +25,8 @@ To view merchants:
 ## Retrieving the Merchant Identifier
 
 To retrieve a merchant's unique identifier:
-1. Click the merchant's name (e.g., the ABC Merchant from the screen above).
-1. The merchant's unique identifier (`encodedOrganisationId`) is available in the URL:
-<img src = "images/console_orgid.png">
-1. In this example, the identifier is: `qj29q69mxn`
-1. Use this `encodedOrganisationId` identifier when requesting an [Access Token](http://localhost:4000/tok_reqtokorg.html#request-an-access-token-for-an-organisation) on behalf of your merchant(s).
+1. List the merchants.
+1. The `Organisation Id` column in the list view is the unique merchant identifier.
+1. Use this as the `encodedOrganisationId` identifier when requesting an [Access Token](http://localhost:4000/tok_reqtokorg.html#request-an-access-token-for-an-organisation) on behalf of your merchant(s).
 
 {% include links.html %}
