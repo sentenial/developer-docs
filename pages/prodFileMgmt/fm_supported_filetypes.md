@@ -70,42 +70,44 @@ The STD-18 and PAIN files all follow the rules governing these file formats. For
 
 ## The Generic Credit Transfer CSV format
 
-{% include tip.html content="The Generic CSV for CT payments is only available for SEPA CT transactions." %}
-
 If you want to use Nuapay's Generic CSV format, provide the following details in a CSV:
 
-| **Heading**                   | **Required/Optional** | **Description**                           | **Format**                 |
-|-------------------------------|-----------------------|-------------------------------------------|----------------------------|
-| BeneficiaryName               | Required              | Beneficiary's Name                        | Text 70                    |
-| BeneficiaryAddressLine1      | Optional              | Beneficiary's Address Line 1              | Text 70                    |
-| BeneficiaryAddressLine2      | Optional              | Beneficiary's Address Line 2              | Text 70                    |
-| BeneficiaryAddressCity/Town  | Optional              | City/Town of Beneficiary's Address        | Text 35                    |
-| BeneficiaryAddressPostCode   | Optional              | Postal Code of Beneficiary's Address      | Text 16                    |
-| BeneficiaryAddressState/Province/County | Optional   | State/Province/County of Beneficiary's Address | Text 35           |
-| BeneficiaryAddressCountry    | Optional              | Country of Beneficiary's Address          | ISO3166 Country Code 2    |
-| DescriptionofPurpose         | Optional              | Description of Payment Purpose            | Text 140                   |
-| BeneficiaryemailAddress      | Optional              | Beneficiary's Email Address               | Text 254                   |
-| BeneficiaryPhoneNumber       | Optional              | Beneficiary's Phone Number                | Text 50                    |
-| BeneficiaryMobilePhone       | Optional              | Beneficiary's Mobile Phone Number         | Text 50                    |
-| BeneficiaryLanguage          | Optional              | Beneficiary's Language                    | Enumeration. May be one of: EN, FR, DE, ES, NL, IT|
-| DomesticAccountCountry       | Optional              | Country of Domestic Account               | ISO3166 Country Code 2    |
-| DomesticBankCode             | Optional              | Domestic Bank Code                        | Text 70                    |
-| DomesticBranchCode           | Optional              | Domestic Branch Code                      | Text 70                    |
-| DomesticAccountNumber        | Optional              | Domestic Account Number                   | Text 70                    |
-| DomesticAccountChecksum      | Optional              | Domestic Account Checksum                 | Text 35                    |
-| BeneficiaryAccountBIC        | Optional              | Beneficiary's Account BIC                 | Text 11                    |
-| BeneficiaryAccountIBAN       | Required              | Beneficiary's Account IBAN                | Text 35                    |
-| OriginatorAccount            | Required              | Originator's Account                      | Text 70                    |
-| RequestedExecutionDate       | Required              | Requested Execution Date                  | Must be provided in YYYY-MM-DD format|
-| PaymentAmount                | Required              | Payment Amount                            | Decimal 12 (Fraction=2)    |
-| PaymentReference             | Optional              | Payment Reference                         | Text 35                    |
-| RemittanceInformation        | Optional              | Remittance Information                    | Text 140                   |
-| PaymentFrequency             | Optional              | Payment Frequency                         | Text 11                    |
-| ReserveField1                | Optional              | Reserved Field 1                          | Text 140                   |
-| ReserveField2                | Optional              | Reserved Field 2                          | Text 140                   |
-| ReserveField3                | Optional              | Reserved Field 3                          | Text 140                   |
-| ReserveField4                | Optional              | Reserved Field 4                          | Text 140                   |
-| ReserveField5                | Optional              | Reserved Field 5                          | Text 140                   |
+
+
+| **Heading**                   | **Required/Optional** | **Description**                           | **Format**                 | **Notes**                |
+|-------------------------------|-----------------------|-------------------------------------------|----------------------------|--------------------------|
+| BeneficiaryName               | Conditional              | Beneficiary's Name                        | Text 70                    | Required if this is the first payment to the beneficiary                         |
+| BeneficiaryAddressLine1      | Optional              | Beneficiary's Address Line 1              | Text 70                    |                          |
+| BeneficiaryAddressLine2      | Optional              | Beneficiary's Address Line 2              | Text 70                    |                          |
+| BeneficiaryAddressCity/Town  | Optional              | City/Town of Beneficiary's Address        | Text 35                    |                          |
+| BeneficiaryAddressPostCode   | Optional              | Postal Code of Beneficiary's Address      | Text 16                    |                          |
+| BeneficiaryAddressState/Province/County | Optional   | State/Province/County of Beneficiary's Address | Text 35           |                          |
+| BeneficiaryAddressCountry    | Optional              | Country of Beneficiary's Address          | ISO3166 Country Code 2    |                          |
+| DescriptionofPurpose         | Optional              | Description of Payment Purpose            | Text 140                   |                          |
+| BeneficiaryemailAddress      | Optional              | Beneficiary's Email Address               | Text 254                   |                          |
+| BeneficiaryPhoneNumber       | Optional              | Beneficiary's Phone Number                | Text 50                    |                          |
+| BeneficiaryMobilePhone       | Optional              | Beneficiary's Mobile Phone Number         | Text 50                    |                          |
+| BeneficiaryLanguage          | Optional              | Beneficiary's Language                    | Enumeration. May be one of: EN, FR, DE, ES, NL, IT | |
+| DomesticAccountCountry       | Conditional           | Country of Domestic Account               | ISO3166 Country Code 2    |  Not required if providing a Beneficiary IBAN                        |
+| DomesticBankCode             | Conditional              | Domestic Bank Code                        | Text 70                 | Not required if providing a Beneficiary IBAN                        |
+| DomesticBranchCode           | Conditional              | Domestic Branch Code                      | Text 70                 | Not required if providing a Beneficiary IBAN                       |
+| DomesticAccountNumber        | Conditional              | Domestic Account Number                   | Text 70                 |  Not required if providing a Beneficiary IBAN                     |
+| DomesticAccountChecksum      | Conditional              | Domestic Account Checksum                 | Text 35                    |  Not required if providing a Beneficiary IBAN                        |
+| BeneficiaryAccountBIC        | Optional              | Beneficiary's Account BIC                 | Text 11                    |                          |
+| BeneficiaryAccountIBAN       | Conditional              | Beneficiary's Account IBAN                | Text 35                    |  Not required if domestic account details are provided                        |
+| OriginatorAccount            | Required              | Originator's Account                      | Text 70                    |                  |
+| RequestedExecutionDate       | Required              | Requested Execution Date                  | Must be provided in YYYY-MM-DD format|          |
+| PaymentAmount                | Required              | Payment Amount                            | Decimal 12 (Fraction=2)    |                      |
+| PaymentReference             | Optional              | Payment Reference                         | Text 35                    |   For GBP payments this max is 18 characters                       |
+| RemittanceInformation        | Optional              | Remittance Information                    | Text 140                   |                          |
+| PaymentFrequency             | Optional              | Payment Frequency                         | Text 11                    |  ONCE_OFF	 DAILY  WEEKLY	 BIWEEKLY  MONTHLY  YEARLY	|
+| ReserveField1                | Optional              | Reserved Field 1                          | Text 140                   |  If initiating an FPS payment (GBP currency), set this value to `EXPRESS`; if initiating a GBP Bacs payment, set this value to `STANDARD` otherwise empty.                        |
+| ReserveField2                | Optional              | Reserved Field 2                          | Text 140                   |                          |
+| ReserveField3                | Optional              | Reserved Field 3                          | Text 140                   |                          |
+| ReserveField4                | Optional              | Reserved Field 4                          | Text 140                   |                          |
+| ReserveField5                | Optional              | Reserved Field 5                          | Text 140                   |                          |
+
+
 
 
 A (basic) sample CSV would be formatted as follows:
@@ -118,7 +120,6 @@ Max Mustermann,,,,,,,,,,,,,,,,,,DE25370502991000122343,IE63AIBK93106511111234,20
 
 Note:
 
-* Only SEPA CT is supported.
 * The date format may be modified if you open your file in Excel (a date set to 2024-03-29 originally, for example, and saved will be modified in Excel to be 29/03/2024 when the file is reopened later). To avoid this, we recommend that you use a text editor when working with your CSV file. The date must be provided as `YYYY-MM-DD`.
 * Where you provide a payment reference, it must be unique.
 * If you do not provide a payment reference, the system will automatically generate one.
