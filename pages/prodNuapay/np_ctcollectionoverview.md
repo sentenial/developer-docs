@@ -7,7 +7,7 @@ permalink: np_ctcollectionoverview.html
 folder: prodNuapay
 ---
 
-Credit Transfer (CT) collections are batches of CT payments that may bee initiated via a single REST request.
+Credit Transfer (CT) collections are batches of CT payments that may be initiated via a single REST request.
 
 * You can create and manage collections of credit transfer (CT) payments using the dedicated API endpoints. See the [CT Collection API](np_ctcreatecoll.html).
 * These endpoints allow you to submit multiple CT payments in a single request, track the progress of the entire collection, and retrieve details about individual CTs within the collection.
