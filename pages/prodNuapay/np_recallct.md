@@ -16,7 +16,7 @@ The Recall Credit Transfer request allows you to recall (i.e. cancel) transactio
 The recall functionality applies to:
 
 * Individual credit transfers in `READY_FOR_EXPORT` or `PENDING` status.
-* Credit transfers within collections in `READY_FOR_EXPORT` or `PENDING` status. (Both `batchBooking=false` and `batchBooking=true` collections may be recalled).
+* Credit transfers within batches in `READY_FOR_EXPORT` or `PENDING` status. (Both `batchBooking=false` and `batchBooking=true` batches may be recalled).
 
 |Note that Credit transfers originating from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hcm}}">HCM file</a> uploads cannot be recalled.|
 

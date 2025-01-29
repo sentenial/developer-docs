@@ -12,7 +12,7 @@ There are two versions of the Nuapay CT APIs:
 * V1 operates in synchronous mode.
 * V2 operates asynchronously
 
-{% include note.html content="In general, only v2 APIs use 'v2' in their URI path. Collection CTs are asynchronous but as they did not have a v1 synchronous version, they do not include a 'v2' in their endpoint path. " %}
+{% include note.html content="In general, only v2 APIs use 'v2' in their URI path. Batch CTs are asynchronous but as they did not have a v1 synchronous version, they do not include a 'v2' in their endpoint path. " %}
 
 ## Synchronous vs Asynchronous Processing
 

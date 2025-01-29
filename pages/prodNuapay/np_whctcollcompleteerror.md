@@ -1,14 +1,14 @@
 ---
-title: Credit Transfer Collection Complete With Errors Event
-keywords: Credit Transfer Collection Complete With Errors Event Webhook
-summary: "Credit Transfer Collection Complete With Errors Webhook event"
+title: Credit Transfer Batch Complete With Errors Event
+keywords: Credit Transfer Batch Complete With Errors Event Webhook
+summary: "Credit Transfer Batch Complete With Errors Webhook event"
 sidebar: ct_sidebar
 permalink: np_whctcollcompleteerror.html
 folder: prodNuapay
 toc: false
 ---
 
-{% include webhook.html content="A CT Collection moves to COMPLETE status." %}
+{% include webhook.html content="A CT Batch moves to COMPLETE status." %}
 
 {% include wh-compatibility.html %}
 
@@ -17,7 +17,7 @@ toc: false
 This Webhook has the following event type:
 
 |**Webhook Event Type**| **Description**|
-|CreditTransferCollectionCompleteWithErrors|Triggered where a Credit Transfer collection transitions to status = COMPLETE WITH ERRORS|
+|CreditTransferBatchCompleteWithErrors|Triggered where a Credit Transfer Batch transitions to status = COMPLETE WITH ERRORS|
 
 ## Webhook Event Message Details
 
@@ -45,7 +45,7 @@ This Webhook has the following event type:
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-            <td>CreditTransferCollectionCompleteWithErrors</td>
+            <td>CreditTransferBatchCompleteWithErrors</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -66,14 +66,14 @@ This Webhook has the following event type:
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_ctviewcoll.html">Retrieve Credit Transfer Collection</a>.</td>
+			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_ctviewcoll.html">Retrieve Credit Transfer Batch</a>.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer Collection resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer Batch resource.</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -103,7 +103,7 @@ This Webhook has the following event type:
 
 ## JSON Sample
 
-The following is an example of a Credit Transfer Collection Rejection event JSON:
+The following is an example of a Credit Transfer Batch Rejection event JSON:
 
 <b>Headers</b>:
 
@@ -119,11 +119,11 @@ The following is an example of a Credit Transfer Collection Rejection event JSON
 <code class="json">{
 
  "eventTimestamp": 1501169079000,
- "eventType": "CreditTransferCollectionCompleteWithErrors",    
+ "eventType": "CreditTransferBatchCompleteWithErrors",    
  "resourceReference": "E2E123456",
  "resourceReferenceType": "Reference",   
- "resourceUri": "/credittransfers/collections/w24y5qgv2p",
- "resourceType": "CreditTransferCollection",
+ "resourceUri": "/credittransfers/batches/w24y5qgv2p",
+ "resourceType": "CreditTransferBatch",
  "reasonCode": null,
  "resourceOwner": "878UJK",
  "resourceRemittanceInformation": null

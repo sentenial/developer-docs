@@ -1,43 +1,43 @@
 ---
-title: Credit Transfer Collection Reject Event
-keywords: Credit Transfer Collection Reject Event Webhook
-summary: "Credit Transfer Collection Reject Webhook event"
+title: Credit Transfer Batch Reject Event
+keywords: Credit Transfer Batch Reject Event Webhook
+summary: "Credit Transfer Batch Reject Webhook event"
 sidebar: ct_sidebar
 permalink: np_whctcollreject.html
 folder: prodNuapay
 toc: false
 ---
 
-{% include webhook.html content="A CT Collection moves to REJECTED status." %}
+{% include webhook.html content="A CT Batch moves to REJECTED status." %}
 
 {% include wh-compatibility.html %}
 
-## Failed vs Rejected Collections
+## Failed vs Rejected Batches
 
 It is important to distinguish between `FAILED` and `REJECTED` states, which both indicate unsuccessful processing but have different implications:
 
-* A `FAILED` collection occurs when the entire collection fails validation checks before individual Credit Transfers (CTs) are created. This is a collection-level failure triggered by a common error affecting the whole collection. The collection is marked as `FAILED`, and no CTs are created.
-* `REJECTED` applies when individual CTs within a collection fail specific validations during processing. This is a transaction-level failure, and a collection can be marked as REJECTED even if only one CT fails. A REJECTED collection can also have a mix of rejected and failed CTs.
+* A `FAILED` batch occurs when the entire batch fails validation checks before individual Credit Transfers (CTs) are created. This is a batch-level failure triggered by a common error affecting the whole batch. The batch is marked as `FAILED`, and no CTs are created.
+* `REJECTED` applies when individual CTs within a batch fail specific validations during processing. This is a transaction-level failure, and a batch can be marked as REJECTED even if only one CT fails. A REJECTED batch can also have a mix of rejected and failed CTs.
 
 The following table summarises the key differences:
 
 | Feature           | FAILED                                           | REJECTED                                                       |
 |-------------------|--------------------------------------------------|-----------------------------------------------------------------|
-| **Scope**         | Collection-level                                 | Transaction-level (can include collection-level failures)       |
-| **Trigger**       | Failure of collection-level validations          | Failure of individual CT validations during processing          |
+| **Scope**         | Batch-level                                 | Transaction-level (can include batch-level failures)       |
+| **Trigger**       | Failure of batch-level validations          | Failure of individual CT validations during processing          |
 | **CT Creation**   | No CTs are created                               | CTs are created, but some/all may fail or be rejected           |
-| **Error Reporting** | `rejectDetails` on the collection object      | `rejectDetails` on individual CT objects (and potentially the collection) |
+| **Error Reporting** | `rejectDetails` on the batch object      | `rejectDetails` on individual CT objects (and potentially the batch) |
 | **Example Reason** | Invalid originator account, incorrect total amount | Insufficient funds for a specific CT                           |
 
 
-{% include tip.html content="**FAILED** signals an issue with the collection data itself, preventing the creation of any CTs. **REJECTED** indicates that the collection was initially valid, but individual CTs encountered issues during processing." %}
+{% include tip.html content="**FAILED** signals an issue with the batch data itself, preventing the creation of any CTs. **REJECTED** indicates that the batch was initially valid, but individual CTs encountered issues during processing." %}
 
 ## Webhook Message Details
 
 This Webhook has the following event types:
 
 |**Webhook Event Type**| **Description**|
-|CreditTransferCollectionRejected|Triggered where a Credit Transfer collection transitions to status = REJECTED|
+|CreditTransferBatchRejected|Triggered where a Credit Transfer batch transitions to status = REJECTED|
 
 ## Webhook Event Message Details
 
@@ -65,7 +65,7 @@ This Webhook has the following event types:
 			<td>eventType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-            <td>CreditTransferCollectionRejected</td>
+            <td>CreditTransferBatchRejected</td>
 		</tr>
 		<tr>
 			<td>root</td>
@@ -86,21 +86,21 @@ This Webhook has the following event types:
 			<td>resourceUri</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_ctviewcoll.html">Retrieve Credit Transfer Collection</a>.</td>
+			<td> This is the URI of the resource. Use the URI to retrieve more details - see <a href ="np_ctviewcoll.html">Retrieve Credit Transfer Batch</a>.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
-			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer Collection resource.</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a Credit Transfer Batch resource.</td>
 		</tr>
 		<tr>
 			<td>root</td>
 			<td>reasonCode</td>
 			<td>string</td>
 			<td>optional</td>
-            <td>The <a href="np_separeasons.html">SEPA Reason Code</a>, the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme) or the <a href="np_appreasons.html#ct-collection-application-error-codes"> Application Reason Code</a> (where a collection has been rejected prior be being passed to Clearing).</td>
+            <td>The <a href="np_separeasons.html">SEPA Reason Code</a>, the <a href="np_bacsreasons.html"> Bacs Reason Code</a> (depending on the scheme) or the <a href="np_appreasons.html#ct-collection-application-error-codes"> Application Reason Code</a> (where a batch has been rejected prior be being passed to Clearing).</td>
 		</tr>
         <tr>
 			<td>root</td>
@@ -123,7 +123,7 @@ This Webhook has the following event types:
 
 ## JSON Sample
 
-The following is an example of a Credit Transfer Collection Rejection event JSON:
+The following is an example of a Credit Transfer Batch Rejection event JSON:
 
 <b>Headers</b>:
 
@@ -139,11 +139,11 @@ The following is an example of a Credit Transfer Collection Rejection event JSON
 <code class="json">{
 
  "eventTimestamp": 1501169079000,
- "eventType": "CreditTransferCollectionRejected",    
+ "eventType": "CreditTransferBatchRejected",    
  "resourceReference": "E2E123456",
  "resourceReferenceType": "Reference",   
- "resourceUri": "/credittransfers/collections/w24y5qgv2p",
- "resourceType": "CreditTransferCollection",
+ "resourceUri": "/credittransfers/batches/w24y5qgv2p",
+ "resourceType": "CreditTransferBatch",
  "reasonCode": null,
  "resourceOwner": "878UJK",
  "resourceRemittanceInformation": null

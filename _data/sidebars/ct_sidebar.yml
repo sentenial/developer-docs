@@ -26,7 +26,7 @@ entries:
     - title: Versioning
       url: /np_ctversioning.html
       output: web
-    - title: CT Collections
+    - title: CT Batches
       url: /np_ctcollectionoverview.html
       output: web
     - title: Credit Transfer Statuses
@@ -67,19 +67,19 @@ entries:
       url: /np_listctbene.html
       output: web
 
-  - title: CT Collection APIs
+  - title: CT Batch APIs
     output: web, pdf
     folderitems:
-    - title: Create Collection
+    - title: Create Batch
       url: /np_ctcreatecoll.html
       output: web
-    - title: List Collections
+    - title: List Batches
       url: /np_ctlistcoll.html
       output: web
-    - title: View Collection
+    - title: View Batch
       url: /np_ctviewcoll.html
       output: web
-    - title: List CTs in a Collection
+    - title: List CTs in a Batch
       url: /np_ctlistctcoll.html
       output: web
 
@@ -120,26 +120,26 @@ entries:
           url: /np_whctbenefupdate.html
           output: web
 
-      - title: CT Collections Notifications
+      - title: CT Batch Notifications
         output: web
         subfolderitems:
 
-        - title: Collection Initiated
+        - title: Batch Initiated
           url: /np_whctcollinit.html
           output: web
 
-        - title: Collection Rejected
+        - title: Batch Rejected
           url: /np_whctcollreject.html
           output: web
 
-        - title: Collection Failed
+        - title: Batch Failed
           url: /np_whctcollfailed.html
           output: web
 
-        - title: Collection Complete
+        - title: Batch Complete
           url: /np_whctcollcomplete.html
           output: web
 
-        - title: Collection Complete With Errors
+        - title: Batch Complete With Errors
           url: /np_whctcollcompleteerror.html
           output: web
