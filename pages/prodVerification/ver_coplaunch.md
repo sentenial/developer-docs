@@ -30,4 +30,6 @@ The following are the required parameters:
 * The service handles the provider's response, storing the CoP results and setting the verification status accordingly.
 * Finally, a `201 Created` response is sent back to the `POST /verifications` endpoint, indicating the completion of the request
 
+{% include tip.html content="When testing on the Sandbox environment, use the [CoP Test Data](ver_coptest.html) to simulate the possible responses." %}
+
 See the [Request Verification](ver_reqverification.html) service for more details on the endpoint.

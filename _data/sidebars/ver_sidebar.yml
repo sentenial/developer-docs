@@ -53,6 +53,10 @@ entries:
       url: /ver_coplaunch.html
       output: web
 
+    - title: CoP Test Data
+      url: /ver_coptest.html
+      output: web
+
   - title: User Verification APIs
     output: web, pdf
     folderitems:

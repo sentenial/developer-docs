@@ -18,6 +18,9 @@ The Request Verification endpoint allows you to:
 * Note that the end user will complete the verification via the User Interface (as described in the [End User Experience](ver_psujourney.html)).
 * It is possible to have the verification flow as a pop-up (`CHECKOUT` mode) or the screen may be opened in a new browser Window/tab (`REDIRECT`); specify the required UI by setting the `integrationType` value.
 
+{% include tip.html content="When testing on the Sandbox environment, use the [CoP Test Data](ver_coptest.html) to simulate the possible responses." %}
+
+
 {% include idempotency.html %}
 
 
