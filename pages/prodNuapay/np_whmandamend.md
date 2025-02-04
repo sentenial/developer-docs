@@ -1,0 +1,146 @@
+---
+title: Mandate Amendment Event
+keywords: Mandate/DDI Cancel Event Webhook
+summary: "Direct Debit Intruction Amendment Webhook event"
+sidebar: np_sidebar
+permalink: np_whmandamend.html
+folder: prodNuapay
+toc: false
+---
+
+{% include webhook.html content="An ADDACS amendment is processed resulting in a DDI being updated." %}
+
+{% include wh-compatibility.html %}
+
+A DDI may be amended for the following reasons:
+
+|**ADDACS Code**|**Description**|
+|3|Account transferred to a new bank or building society|
+|C|Account transferred to a different branch of bank/building society|
+|E|Instruction amended|
+
+You will typically:
+
+* Process the Webhook message and retrieve the URI for the DDI.
+* Use [Retrieve Mandate/DDI](np_retrievemandate.html)
+* Extract the new debtor account details and update your internal systems as required.
+
+## Webhook Message Details
+
+This Webhook has the following event types:
+
+|**Webhook Event Type**| **Description**|
+|MandateAmendment|Nuapay are notified by the scheme of a DDI amendment. Bacs issue a notification file, referred to as an ADDACS, to notify of DDI amendments. Once processed, Nuapay will trigger this notification, provided the partner/merchant has been configured to receive it.|
+
+
+## Webhook Event Message Details
+
+<p>
+	The following table describes the details of the Webhook notification:</p>
+
+<table cellspacing="0">
+
+	<tbody>
+		<tr>
+			<th>Parent</th>
+			<th>Parameter</th>
+			<th>Type</th>
+			<th>Mandatory/Optional</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td >root</td>
+			<td>eventTimestamp</td>
+			<td>number</td>
+			<td>Mandatory</td>
+			<td> The Unix epoch timestamp </td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>eventType</td>
+			<td>string</td>
+			<td>Mandatory</td>
+            <td><b>MandateAmendment</b></td>
+		</tr>		
+		<tr>
+			<td>root</td>
+			<td>resourceReference</td>
+			<td>string</td>
+			<td>optional</td>
+			<td>This is the business reference of the resource (the Mandate ID/unique mandate/DDI reference).</td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>resourceReferenceType</td>
+			<td>string</td>
+			<td> optional</td>
+			<td>This is set to MandateReference for this message.</td>
+		</tr>		
+		<tr>
+			<td>root</td>
+			<td>resourceUri</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td> This is URI of the resource allowing you to query the mandate details. See <a href ="np_retrievemandate.html">Retrieve Mandate</a>.</td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>resourceType</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the type of the resource to which the URI is related. In this case it is a mandate resource.</td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>reasonCode</td>
+			<td>string</td>
+			<td>Optional</td>
+            <td>The <a href="np_bacsreasons.html#addacs-reason-codes">Reason code</a> returned in the ADDACS import.</td>
+		</tr>
+        <tr>
+			<td>root</td>
+			<td>resourceOwner</td>
+			<td>string</td>
+			<td>Mandatory</td>
+			<td>This is the identifier of the merchant resource to which this notification is linked.</td>
+		</tr>
+    <tr>
+  <td>root</td>
+  <td>resourceRemittanceInformation</td>
+  <td>string</td>
+  <td>optional</td>
+  <td>Remittance information related to the transaction.</td>
+</tr>
+
+	</tbody>
+</table>
+
+## JSON Sample
+
+The following is an example of an electronic mandate signing event JSON:
+
+<b>Headers</b>:
+
+
+|POST| http://example.com/webhooks|
+|Content-Type:| application/json;charset=UTF-8|
+|x-signature: |123ab01d030dee864fb44cc65a3be52ae591f46cde8d14d3e72fbc3790e4a304|
+|Content-Length:| 261|
+|X-Request-Id:| dc645679-71a5-498d-bb29-ec027948c7c1|
+
+<b>JSON Request Body</b>
+<pre>
+<code class="json">{
+    "eventTimestamp": 1501169079000,
+    "eventType": "MandateAmendment",
+	"resourceReference": "MY-UNIQUE-MANDATE-REF",
+	"resourceReferenceType": "MandateReference",
+	"resourceUri": "/schemes/p2lqa394mv/mandates/awtc1ebd",
+	"resourceType": "Mandate",
+	"reasonCode": 3,
+	"resourceOwner": "tc47ygr1234",
+	"resourceRemittanceInformation": null
+}</code>
+</pre>
+
+{% include links.html %}
