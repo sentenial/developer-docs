@@ -247,3 +247,7 @@ entries:
         - title: Mandate Reject
           url: /np_whmandreject.html
           output: web
+
+        - title: Mandate Amendment
+          url: /np_whmandamend.html
+          output: web
