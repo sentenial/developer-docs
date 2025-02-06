@@ -70,6 +70,13 @@ This Webhook has a single event type: <b>PaymentRefundRejected</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -121,6 +128,7 @@ The following is an example of a Refund Rejected event JSON:
     "resourceReference": "null",
     "resourceReferenceType": "reference",    
     "resourceUri": "/payments/t9rklm6lrp/refunds/ghyxq6df2",
+    "resourceId": "ghyxq6df2",
     "resourceType": "refund",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",

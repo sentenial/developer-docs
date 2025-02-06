@@ -75,6 +75,13 @@ This Webhook has the following event types:
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>		
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -127,6 +134,7 @@ The following is an example of an electronic mandate signing event JSON:
 	"resourceReference": "MY-UNIQUE-MANDATE-REF",
 	"resourceReferenceType": "MandateReference",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd",
+	"resourceId": "lbyjxj5ebd",
 	"resourceType": "Mandate",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",

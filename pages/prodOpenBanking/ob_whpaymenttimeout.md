@@ -80,6 +80,13 @@ Please discuss your requirements with your Account Manager. The Nuapay API Suppo
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -130,7 +137,8 @@ The following is an example of a Received Payment event JSON:
     "eventType": "PaymentTimeout",    
     "resourceReference": "7392ihg234rg8b4d1362y4",
     "resourceReferenceType": "EndToEndId",    
-    "resourceUri": "/payments/n7rklmvdmq",
+    "resourceUri": "/payments/tyrklm7fmq",
+    "resourceId": "tyrklm7fmq",
     "resourceType": "payment",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",

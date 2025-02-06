@@ -67,6 +67,13 @@ This Webhook has a single event type: **CreditTransferAccept**
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -119,6 +126,7 @@ The following is an example of a Credit Transfer Accept event JSON:
 	"resourceReference": "341-CTCD-264-ABC",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/beneficiaries/ru39pkgnbx/credittransfers/tcabdwgrg23",
+	"resourceId": "tcabdwgrg23",
 	"resourceType": "CreditTransfer",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",

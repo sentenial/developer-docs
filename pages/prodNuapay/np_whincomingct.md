@@ -68,6 +68,13 @@ This Webhook has just one event type: <b>IncomingCreditTransfer</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -120,6 +127,7 @@ The following is an example of an Incoming CT event JSON:
 	"resourceReference": "EDS-1234-RFT-456-DEF-87",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/accounts/qj29pkgnbx/transactions/ym37ygrg23",
+	"resourceId": "ym37ygrg23",
 	"resourceType": "Transaction",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",

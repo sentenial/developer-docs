@@ -70,6 +70,13 @@ This Webhook has a single event type: <b>PaymentInProgress</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -119,7 +126,8 @@ The following is an example of a Received Payment event JSON:
     "eventType": "PaymentInProgress",    
     "resourceReference": "43f8c5e89326f8b4d1e3243",
     "resourceReferenceType": "reference",   
-    "resourceUri": "/payments/n7rklmvdmq",
+    "resourceUri": "/payments/f5rklmvfkc",
+    "resourceId": "f5rklmvfkc",
     "resourceType": "payment",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",

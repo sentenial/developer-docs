@@ -70,6 +70,13 @@ This Webhook has a single event type: <b>PaymentRejected</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -130,9 +137,10 @@ The following is an example of a Received Payment event JSON:
     "eventType": "PaymentRejected",    
     "resourceReference": "93t8f5g234rg8b4d16473r",
     "resourceReferenceType": "reference",    
-    "resourceUri": "/payments/n7rklmvdmq",
+    "resourceUri": "/payments/rp8klmvcmq",
+    "resourceId": "rp8klmvcmq",
     "resourceType": "payment",
-    "reasonCode": "PIS01 - SETTLEMENT_REJECTED,
+    "reasonCode": "PIS01 - SETTLEMENT_REJECTED",
     "resourceOwner": "tc47ygrg72",
     "resourceRemittanceInformation": null   
 }</code>
