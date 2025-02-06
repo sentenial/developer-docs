@@ -86,6 +86,13 @@ You may configure your notifications to be triggered for any of these statuses o
 			<td> string</td>
 			<td>Mandatory</td>
 			<td>The URI of the file resource.  </td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
 		</tr>		
 		<tr>
 			<td>root</td>
@@ -139,6 +146,7 @@ The following is an example of a File Status Update event JSON:
   "resourceReference": "202310171191612G08-05",
   "resourceReferenceType": "MessageId",
   "resourceUri": "/files/j29pwvl5bx",
+  "resourceId": "j29pwvl5bx",
   "resourceType": "File",
   "reasonCode": null,
   "resourceOwner": "tc47ygrg72",

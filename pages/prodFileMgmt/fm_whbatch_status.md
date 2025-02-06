@@ -91,6 +91,13 @@ You may configure your notifications to be triggered for any of these statuses o
 			<td> string</td>
 			<td>Mandatory</td>
 			<td>The URI of the batch resource.  </td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
 		</tr>		
 		<tr>
 			<td>root</td>
@@ -144,6 +151,7 @@ The following is an example of a File Status Update event JSON:
 	"resourceReference": "CRCUR09052023IE98ULSB98644073416",
 	"resourceReferenceType": "BatchReference",  
 	"resourceUri": "/files/j29pwvl5bx/batches/w24y5qgv2p",
+	"resourceId": "w24y5qgv2p",
 	"resourceType": "Batch",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",

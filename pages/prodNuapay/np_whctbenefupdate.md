@@ -75,6 +75,13 @@ Following a beneficiary update, when you [Create a Credit Transfer](np_createct.
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -120,6 +127,7 @@ The following is an example of an Incoming CT event JSON:
     "resourceReference": "John Smith",
     "resourceReferenceType": "beneficiaryName",
     "resourceUri": "/beneficiary/ybo8zayk2q",
+    "resourceId": "ybo8zayk2q",
     "resourceType": "beneficiary",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72"

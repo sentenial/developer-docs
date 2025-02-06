@@ -82,6 +82,13 @@ For more on the possible refund reasons and the challenges available, see [DDIC 
 		</tr>		
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>		
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -133,6 +140,7 @@ The following is an example of a Direct Debit Indemnity Claim Received event JSO
 	"resourceReference": "MAND12345abcdefd",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
+	"resourceId": "a2rexnvdmq",
 	"resourceType": "DirectDebit",
 	"reasonCode": "8",
 	"resourceOwner": "tc47ygrg72",

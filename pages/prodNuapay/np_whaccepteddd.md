@@ -75,6 +75,13 @@ This Webhook has a single event type: <b>DirectDebitAccept</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -127,6 +134,7 @@ The following is an example of a Direct Debit Accept event JSON:
 	"resourceReference": "36C1234B-99C2-8G9C",
 	"resourceReferenceType": "EndToEndId",
 	"resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/wew3qnvdmq",
+	"resourceId": "wew3qnvdmq",
 	"resourceType": "DirectDebit",
 	"reasonCode": null,
 	"resourceOwner": "tc47ygrg72",

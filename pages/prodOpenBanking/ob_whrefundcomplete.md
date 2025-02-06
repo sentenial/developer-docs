@@ -70,6 +70,13 @@ This Webhook has a single event type: <b>PaymentRefundComplete</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -121,6 +128,7 @@ The following is an example of a Received Payment event JSON:
     "resourceReference": "null",
     "resourceReferenceType": "reference",    
     "resourceUri": "/payments/n7rklmvtjc/refunds/mfc672erts",
+    "resourceId": "mfc672erts",
     "resourceType": "null",
     "reasonCode": null,
     "resourceOwner": "tc47ygrg72",
@@ -156,6 +164,7 @@ The Webhook message returns the remittance as follows:
   "resourceReference": "reference",
   "resourceReferenceType": "EndToEndId",
   "resourceUri": "/payments/w6be49w52y/refunds/w6bejzqp2y",
+  "resourceId": "w6bejzqp2y",
   "resourceType": "refund",
   "reasonCode": null,
   "resourceOwner": "8b5jaky82r",
@@ -191,6 +200,7 @@ The Webhook message returns the remittance as follows:
   "resourceReference": "v0hlvm56k000000000",
   "resourceReferenceType": "EndToEndId",
   "resourceUri": "/payments/zrmp73dlm6/refunds/zrmp86qy26",
+  "resourceId": "zrmp86qy26",
   "resourceType": "refund",
   "reasonCode": null,
   "resourceOwner": "p2lj6g5abv",

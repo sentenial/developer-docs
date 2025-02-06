@@ -70,6 +70,13 @@ This Webhook has the following event type:
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -122,7 +129,8 @@ The following is an example of a Credit Transfer Batch Rejection event JSON:
  "eventType": "CreditTransferBatchComplete",    
  "resourceReference": "E2E123456",
  "resourceReferenceType": "Reference",   
- "resourceUri": "/credittransfers/batches/w24y5qgv2p",
+ "resourceUri": "/credittransfers/batches/gh4h75qgbg3",
+ "resourceId": "gh4h75qgbg3",
  "resourceType": "CreditTransferBatch",
  "reasonCode": null,
  "resourceOwner": "878UJK",

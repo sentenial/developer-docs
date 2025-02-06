@@ -73,6 +73,13 @@ This Webhook has the following event types:
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -124,7 +131,8 @@ The following is an example of a Credit Transfer Rejection event JSON:
     "eventType": "CreditTransferCancel",
 	"resourceReference": "321-CTAB-234-GFT",
 	"resourceReferenceType": "EndToEndId",
-	"resourceUri": "/beneficiaries/qj29pkgnbx/credittransfers/yabcdwgrg23",
+	"resourceUri": "/beneficiaries/qj29pkgnbx/credittransfers/tabcfwgrg72",
+	"resourceId": "tabcfwgrg72",
 	"resourceType": "CreditTransfer",
 	"reasonCode": "CUST",
 	"resourceOwner": "tc47ygrg72",

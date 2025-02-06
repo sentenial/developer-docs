@@ -68,6 +68,13 @@ This Webhook has just one event type: <b>AccountCreation</b>
 		</tr>
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -120,6 +127,7 @@ The following is an example of an Incoming CT event JSON:
   "resourceReference": "GB12SELN00999912345678",
   "resourceReferenceType": "IBAN",
   "resourceUri": "/accounts/qj29pkgnbx/",
+  "resourceId": "qj29pkgnbx",
   "resourceType": "Account",
   "reasonCode": null,
   "resourceOwner": "tc47ygrg72",

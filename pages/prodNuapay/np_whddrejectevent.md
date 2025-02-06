@@ -77,6 +77,13 @@ The following event types are possible:
 		</tr>		
 		<tr>
 			<td>root</td>
+			<td>resourceId</td>
+			<td> string</td>
+			<td>Mandatory</td>
+			<td>The encoded technical ID of the resource being referenced in the event. </td>
+		</tr>		
+		<tr>
+			<td>root</td>
 			<td>resourceType</td>
 			<td>string</td>
 			<td>Mandatory</td>
@@ -135,6 +142,7 @@ The following is an example of a Direct Debit Reject event JSON:
       "resourceReference": "42F13E56-96C9-4F9B",
       "resourceReferenceType": "EndToEndId",
       "resourceUri": "/schemes/p2lqa394mv/mandates/lbyjxj5ebd/directdebits/a2rexnvdmq",
+      "resourceId": "a2rexnvdmq",
       "resourceType": "DirectDebit",
       "reasonCode": "MS03",
       "resourceOwner": "tc47ygrg72",
