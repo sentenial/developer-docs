@@ -56,7 +56,7 @@ For more on the unpaid cycle for Bacs payments please see the Bacs Service User 
 | `ACCEPTED`	 | If there have been no pre-settlement R-transactions the status is updated to Accepted on the settlement date. |
 | `REJECTED` /`REFUSED` / `CANCELLED` | If a pre-settlement R-transaction is processed in Nuapay the status will move from Exported to Rejected/Refused/Cancelled |
 | `RETURNED`/`REFUNDED` | Where a Direct Debit is in Accepted status and a post-settlement R-transaction is processed its status will be updated to Returned/Refunded|
-| `RE-PRESENTED` | Where a direct debit has been Rejected/Refused/Cancelled/Returned/Refunded you may want to re-try to collect the payment. When you re-present the Direct Debit status is updated to Re-presented and a new Ready-for-Export Direct Debit is generated with a new collection date.|
+| `REPRESENTED` | Where a direct debit has been Rejected/Refused/Cancelled/Returned/Refunded you may want to re-try to collect the payment. When you re-present the Direct Debit status is updated to Represented and a new Ready-for-Export Direct Debit is generated with a new collection date.|
 |`REVOKED`| A Direct Debit that is in READY FOR EXPORT status can be withdrawn before it is dispatched to Clearing so that it isn't processed. In this case the Direct Debit status is updated to REVOKED.|
 |`PENDING`|The payment is in a pending status. A payment may be in this status where it is created with a mandate and the mandate status is in pending status. |
 
