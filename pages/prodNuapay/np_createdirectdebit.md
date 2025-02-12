@@ -20,22 +20,22 @@ The Create Direct Debit request must:
 
 {% include idempotency.html %}
 
-## A Note on End-to-End Identifiers in the Bacs Scheme
+## A Note on Payment References in the Bacs Scheme
 
 When creating a Direct Debit against a Bacs DDI, please note:
 
-* The `endToEndId` will be automatically applied if you do not want to provide this identifier.
-* If you do want to specify the `endToEndId` it must follow the following rules:
+* The Payment Reference (`endToEndId`) will be automatically applied to your Direct Debit payment (if you do not want to provide this reference manually).
+* If you do want to specify a Payment Reference, the `endToEndId` value that you provide must conform to the following rules:
   * It must be at least 6 alphanumeric characters in length and cannot exceed a total of 18 characters.
   * It should only be composed of upper-case characters.
-  * **IMPORTANT! It must include the `mandateId` i.e. the DDI reference as its initial characters**; so if your `mandateId` is ``ABCDEF123`` then valid `endToEndId` values would be `ABCDEF123-01`, `ABCDEF12302`, `ABCDEF123/456`, for example.
+  * **IMPORTANT! It must include the `mandateId` i.e. the DDI reference as its initial characters**; so if your DDI Reference (`mandateId`) is ``ABCDEF123`` then valid `endToEndId` values would be `ABCDEF123-01`, `ABCDEF12302`, `ABCDEF123/456`, for example.
 * The following non-alphanumeric characters are supported and may be used in the `endToEndId` identifier:
   * Full stop(.)
   * Slash (/)
   * Hyphen (-)
   * Blank space ( )
 
-{% include warning.html content="If you do not follow these rules for specifying the End-to-End value, when the payment file is passed to the Bacs scheme for processing, your payer's bank will be unable to match the transaction to a DDI and your payment will be rejected." %}
+{% include warning.html content="If you do not follow these rules for specifying the Payment Reference value, when the payment file is passed to the Bacs scheme for processing, your payer's bank will be unable to match the transaction to a DDI and your payment will be rejected." %}
 
 
 
