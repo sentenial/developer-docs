@@ -240,6 +240,14 @@ entries:
         - title: Payment Refund Rejected
           url: /ob_whrefundrejected.html
           output: web
+  
+        - title: Account Consent Active
+          url: /ob_whconsactive.html
+          output: web
+ 
+        - title: Account Consent Declined
+          url: /ob_whconsdeclined.html
+          output: web         
 
   - title: Resources
     output: web, pdf

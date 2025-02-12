@@ -72,3 +72,15 @@ entries:
     - title: List Verifications
       url: /ver_listverification.html
       output: web
+
+  - title: Webhooks
+    output: web, pdf
+    folderitems:
+
+    - title: Verification Complete
+      url: /ver_whcomplete.html
+      output: web
+
+    - title: Verification Failed
+      url: /ver_whfailed.html
+      output: web

@@ -83,3 +83,7 @@ entries:
     - title: Account Creation
       url: /np_whacccreate.html
       output: web
+
+    - title: Account Entry
+      url: /np_whacccentry.html
+      output: web
