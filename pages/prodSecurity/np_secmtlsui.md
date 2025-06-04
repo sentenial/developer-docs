@@ -38,4 +38,4 @@ Note that:
 
 * You can upload any certificate for MTLS [self signed certificates are permitted] i.e., you do not have to use Nuapay’s `POST /certificates` endpoint.
 * MTLS-enabled clients should call Nuapay APIs on Port 8443.
-* You may register more than one client certificate. This is useful as it allows you to rotate certificates and allows you to avoid any potential downtime due to certificate expiry, for example.
+* You may register up to two client certificates. This is useful as it allows you to rotate certificates and allows you to avoid any potential downtime due to certificate expiry, for example.
