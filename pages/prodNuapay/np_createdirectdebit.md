@@ -5,7 +5,7 @@ summary: "Create Direct Debit RESTful API"
 sidebar: np_sidebar
 permalink: np_createdirectdebit.html
 folder: prodNuapay
-toc: false
+toc: true
 ---
 
 ## API Details
@@ -24,11 +24,16 @@ The Create Direct Debit request must:
 
 When creating a Direct Debit against a Bacs DDI, please note:
 
-* The Payment Reference (`endToEndId`) will be automatically applied to your Direct Debit payment (if you do not want to provide this reference manually).
-* If you do want to specify a Payment Reference, the `endToEndId` value that you provide must conform to the following rules:
-  * It must be at least 6 alphanumeric characters in length and cannot exceed a total of 18 characters.
-  * It should only be composed of upper-case characters.
-  * **IMPORTANT! It must include the `mandateId` i.e. the DDI reference as its initial characters**; so if your DDI Reference (`mandateId`) is ``ABCDEF123`` then valid `endToEndId` values would be `ABCDEF123-01`, `ABCDEF12302`, `ABCDEF123/456`, for example.
+* Your payment must include a reference that includes your DDI (the Core Reference). Note that the reference you provide:
+  * **IMPORTANT! Must include the `mandateId` i.e. the DDI reference as its initial characters**; so if your DDI Reference (`mandateId`) is ``ABCDEF123`` then valid reference values would be `ABCDEF123-01`, `ABCDEF12302`, `ABCDEF123/456`, for example. If required you may simply always provide the same reference:  ``ABCDEF123``.
+  * Must be at least 6 alphanumeric characters in length and cannot exceed a total of 18 characters.
+  * Cannot begin with `DDIC` (this is reserved for PSP use).
+  * Should only be composed of upper-case characters.
+  
+* If you don't pass a reference, Nuapay will automatically generate one for you and store the DDI Reference as the `structuredRemittanceInformation.reference`. A unique `endToEndId` is also generated.
+* If you you provide an `endToEndId` this will be saved as the `structuredRemittanceInformation.reference` subject to a duplicate check.
+* If an `endToEndId` and a `structuredRemittanceInformation.reference` are provided in your request, the `structuredRemittanceInformation.reference` is used as the DDI (Core) Reference.
+* If you only provide a `structuredRemittanceInformation.reference`, Nuapay will generate an `endToEndId` and the `structuredRemittanceInformation.reference` is used as the Core Reference.
 * The following non-alphanumeric characters are supported and may be used in the `endToEndId` identifier:
   * Full stop(.)
   * Slash (/)
@@ -37,6 +42,8 @@ When creating a Direct Debit against a Bacs DDI, please note:
 
 {% include warning.html content="If you do not follow these rules for specifying the Payment Reference value, when the payment file is passed to the Bacs scheme for processing, your payer's bank will be unable to match the transaction to a DDI and your payment will be rejected." %}
 
+
+{% include tip.html content="Payers will typically see your Service User Name and the Core Reference on their bank statements. Different banks have different standards however and while all will display your Service User Name, not all will display the Core Reference." %}
 
 
 {% include swagger_np.html %}

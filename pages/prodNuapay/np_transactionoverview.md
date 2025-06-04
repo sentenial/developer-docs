@@ -141,12 +141,6 @@ Our API allows you to carry out various operations on your account:
 <td>Debtor</td>
 </tr>
 <tr>
-<td>SEPA Instant Payment Outgoing</td>
-<td><code>INSTANT_PAYMENT_CREDIT_TRANSFER_OUT</code></td>
-<td><code>DEBIT</code></td>
-<td>Creditor</td>
-</tr>
-<tr>
 <td>Availability Fee</td>
 <td><code>AVAILABILITY_FEE</code></td>
 <td><code>DEBIT</code></td>

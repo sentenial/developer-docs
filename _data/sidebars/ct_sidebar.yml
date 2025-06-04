@@ -108,6 +108,10 @@ entries:
           url: /np_whctaccept.html
           output: web
 
+        - title: Credit Transfer Failed
+          url: /np_whctfailed.html
+          output: web
+
         - title: Express Credit Transfer Reject
           url: /np_whctexpreject.html
           output: web

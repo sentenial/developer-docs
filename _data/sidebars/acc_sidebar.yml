@@ -31,6 +31,10 @@ entries:
       url: /np_transactionoverview.html
       output: web, pdf
 
+    - title: Ledger Accounts Overview
+      url: /np_ledgeraccsoverview.html
+      output: web, pdf
+
       subfolders:
       - title: Nuapay Account APIs
         output: web
@@ -70,6 +74,45 @@ entries:
 
         - title: Transfer Between Accounts
           url: /np_accounttransfer.html
+          output: web
+      - title: Ledger Account APIs
+        output: web
+        subfolderitems:
+
+        - title: Create Collective Account
+          url: /np_createcollaccount.html
+          output: web
+
+        - title: List Collective Accounts
+          url: /np_retrievecollaccount.html
+          output: web
+
+        - title: Retrieve Collective Account Balance
+          url: /np_retrievecollbalance.html
+          output: web
+
+        - title: List Collective Account Postings
+          url: /np_listcollaccountposts.html
+          output: web
+
+        - title: Create Ledger Account
+          url: /np_createledgaccount.html
+          output: web    
+
+        - title: List Ledger Accounts
+          url: /np_listledgaccounts.html
+          output: web
+
+        - title: Retrieve Ledger Account Balance
+          url: /np_retrieveledgbalance.html
+          output: web
+
+        - title: Retrieve Ledger Account Postings
+          url: /np_retrieveledgpostings.html
+          output: web
+
+        - title: Transfer Between Ledger Accounts
+          url: /np_transferbtwnledg.html
           output: web
 
   - title: Webhooks

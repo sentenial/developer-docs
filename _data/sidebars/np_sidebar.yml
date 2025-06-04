@@ -47,6 +47,10 @@ entries:
       url: /np_currencysupport.html
       output: web, pdf
 
+    - title: Cut Off Timing
+      url: /np_ddcutoffs.html
+      output: web, pdf
+
       subfolders:
       - title: API Basics
         output: web, pdf

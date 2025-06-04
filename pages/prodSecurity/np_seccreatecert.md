@@ -10,8 +10,9 @@ toc: false
 
 ## API Details
 
-The Create Certificate request allows you to create a certificate for JWS or for MTLS:
+The Create Certificate request allows you to create a certificate for JWS or for MTLS.
 
+{% include tip.html content="You can have up to **two certificates** at a time. This lets you keep one active while setting up a new one, making it easier to transition before the old certificate expires." %}
 
 {% include swagger_gk.html %}
 

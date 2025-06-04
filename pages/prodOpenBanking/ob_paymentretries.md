@@ -42,6 +42,21 @@ Retries are possible for payments that are in specific statuses, as summarised i
 
 For more information on these payment statuses, see [Payment Statuses](ob_paymentstatuses.html).
 
+## Configuring the Retry Functionality
+
+Some clients find the default retry behaviour problematic. Webhooks notify clients about changes in payment status; when a failed payment is automatically retried, it can trigger a sequence of webhook events—such as `PaymentRejected` followed by `PaymentCompleted`. This can be unexpected for some clients, who may prefer to handle retries themselves by starting a brand new payment process.
+
+If you’d prefer not to allow customers to retry failed payments, you can turn off this feature in the [Nuapay Console](prod_consoleoverview.html):
+
+1. Log in to the Nuapay Console.
+1. Go to **Products > Open Banking PIS**.
+1. Clear the **Allow Failed Payments Retry** option.
+
+Please note:
+
+* This setting is enabled by default (true), which means failed payments can be retried unless you change it.
+* If you disable retries, the Retry Payment option will no longer be visible to end users (PSUs) once a payment reaches a final status.
+
 ## CHECKOUT & REDIRECT Integrations
 
 The PSU interaction is similar for both the `CHECKOUT` and `REDIRECT` integrations, where a payment retry is possible. 
