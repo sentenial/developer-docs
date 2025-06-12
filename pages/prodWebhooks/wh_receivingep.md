@@ -10,6 +10,9 @@ folder: prodWebhooks
 
 {% include note.html content="The configuration of your (receiving) Endpoint will be specific to your chosen Web server and architecture and is out of scope for this documentation. Here we assume that you have configured the Endpoint that you will be using for processing all Webhook notifications transferred to the Endpoint from Nuapay." %}
 
+## Port Usage
+For security, your receiving endpoint must be accessible via HTTPS on port 443. Ensure that your web server is configured to listen on port 443 and that any network firewalls allow inbound HTTPS traffic to this port.
+
 ## x-signature
 To ensure that you can be confident that the Webhook message received by your defined Endpoint has actually been dispatched from Nuapay, we encode the Sign Key (as configured on the Add Webhook pop-up via the [Developer Dashboard screen](ob_whconfiguration.html) or via the `signKey` value in the [Create Webhook](ob_whrestcreate.html) API) using HMAC: Keyed-Hashing for Message Authentication .
 
