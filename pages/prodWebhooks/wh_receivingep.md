@@ -129,7 +129,7 @@ For details of the Webhook Event messages and `JSON` samples, see the events des
 
 Nuapay Webhooks are triggered from the following IP addresses:
 
-|**Production**:|217.114.175.30, 34.240.148.92, 52.213.164.32, 54.195.100.243, 217.114.175.30|
+|**Production**:|217.114.175.30, 34.240.148.92, 52.213.164.32, 54.195.100.243|
 |**Sandbox**:| 149.5.33.51, 149.5.33.52, 149.5.33.53, 87.252.222.190, 34.240.148.92, 52.213.164.32, 54.195.100.243,149.5.33.51, 149.5.33.52, 149.5.33.53, 87.252.222.190|
 
 
