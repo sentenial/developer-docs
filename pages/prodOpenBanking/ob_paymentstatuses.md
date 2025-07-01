@@ -115,11 +115,11 @@ The various statuses possible (for both payments and refunds) are presented in t
     -->
     <tr>
       <td><code class="highlighter-rouge">SETTLEMENT_PENDING</code></td>
-      <td>The payment has been authorised but has not yet transitioned to <code class="highlighter-rouge">SETTLEMENT_IN_PROGRESS</code> status.</td>
-       <td>No</td>
+      <td>The payment has been authorised but has not yet transitioned to <code class="highlighter-rouge">SETTLEMENT_IN_PROGRESS</code> status. Generally this is just an intermediary status however where multiple authorisations are required, a payment may remain in this status for a longer period of time, while additional authorisations are awaited.</td>
       <td>No</td>
       <td>No</td>
-      <td>N/A</td>
+      <td>Yes</td>
+      <td><a href="ob_whpaymentinprogress.html">PaymentInProgress</a></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">SETTLEMENT_IN_PROGRESS</code></td>

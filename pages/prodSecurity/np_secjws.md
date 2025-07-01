@@ -51,7 +51,7 @@ To create a JOSE header **via REST** you will need to:
 * Retrieve the certificate and extract the issuer details.
 * Use these details in your code to generate the JWS Signature when required.
 
-{% include tip.html content="The JWS Signature Generator tool (see the [JWS Signature Samples](np_secjwssample.html) section allows you to test that the JWS is working as expected. You will need to build logic into your application to generate a signature when required for specific payloads (typically for Credit-Transfer-related calls). For an example of how this might be done in Java, see the [JWS Sample Java](https://github.com/sentenial/jws-sample-java) on Nuapay Github." %}
+{% include tip.html content="The JWS Signature Generator tool (see the [JWS Signature Samples](np_secjwssample.html) section allows you to test that the JWS is working as expected. You will need to build logic into your application to generate a signature when required for specific payloads (typically for Credit-Transfer-related calls). For example implementations, see the [JWS Sample for Java](https://github.com/sentenial/jws-sample-java) and the [C# Sample using .NET](https://github.com/sentenial/jws-sample-csharp) on the Nuapay GitHub." %}
 
 ## Setup Approaches
 
