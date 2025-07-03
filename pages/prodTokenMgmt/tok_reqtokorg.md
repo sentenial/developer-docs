@@ -23,7 +23,7 @@ It is possible to request a token in two modes, as a:
 
 {% include swagger_gk.html %}
 
-{% include urls-ob.html %}
+{% include urls.html %}
 
 ## Request an Access Token for an Organisation
 
