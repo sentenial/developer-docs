@@ -5,7 +5,7 @@ summary: "Create Mandate RESTful API"
 sidebar: np_sidebar
 permalink: np_createmandate.html
 folder: prodNuapay
-toc: false
+toc: true
 ---
 
 
@@ -54,6 +54,23 @@ So for a mandate/DDI = `ABCDEF123`, its linked transactions could have identifie
 For this reason we recommend that your `mandateId` should not use all 18 characters as this will mean that reconciling individual transactions later will be made more difficult (as in this case all transactions would have the same `endToEndId`).
 
 {% include tip.html content="If in any doubt allow Nuapay to automatically assign the `mandateId`; your DDI reference will be correctly formatted and you can be confident that your reference will not be in breach of any Bacs guidelines, which could potentially result in failed payments later." %}
+
+## Managing Address Details in SEPA
+
+The European Payments Council, which manages SEPA rules, has specific guidelines for how addresses should be used when provided. Please review the following points to understand the specific requirements.
+
+
+**If either you or your debtor is located outside the EEA**, you **must** provide debtor address information, including:  
+  - `line1` or `streetName`
+  - `town`  
+  - `country`  
+This requirement comes from the **Wire Transfer Regulation (WTR)**, an EU law designed to ensure that banks and payment providers can identify the sender of a transfer. Providing these address details helps track payments and prevent fraud, money laundering, and other financial crime.
+
+**If both you and your debtor are located within the EEA**, providing an address for the debtor is **not mandatory**.  
+
+**If you choose to provide an address voluntarily** (even when not required), at a minimum you must include:  
+  - `town`  
+  - `country`  
 
 
 {% include swagger_np.html %}

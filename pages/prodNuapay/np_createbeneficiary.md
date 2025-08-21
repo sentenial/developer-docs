@@ -5,7 +5,7 @@ summary: "Create Beneficiary RESTful API"
 sidebar: ct_sidebar
 permalink: np_createbeneficiary.html
 folder: prodNuapay
-toc: false
+toc: true
 ---
 
 ## API Details
@@ -21,6 +21,22 @@ When working with this endpoint note that:
 * If you specify domestic account details for a GBP beneficiary account, specify the Sort Code in `domesticBranchCode` (**do not use** `domesticBankCode`).
 
 {% include idempotency.html %}
+
+## Managing Address Details in SEPA
+
+The European Payments Council, which manages SEPA rules, has specific guidelines for how addresses should be used when provided. Please review the following points to understand the specific requirements.
+
+**If either you or your beneficiary is located outside the EEA**, you **must** provide countrparty address information, including:  
+  - `line1` or `streetName`
+  - `town`  
+  - `country`  
+This requirement comes from the **Wire Transfer Regulation (WTR)**, an EU law designed to ensure that banks and payment providers can identify the sender of a transfer. Providing these address details helps track payments and prevent fraud, money laundering, and other financial crime.
+
+**If both you and your beneficiary are located within the EEA**, providing an address for your payee is **not mandatory**.  
+
+**If you choose to provide an address voluntarily** (even when not required), at a minimum you must include:  
+  - `town`  
+  - `country`  
 
 {% include swagger_ct.html %}
 
