@@ -5,7 +5,7 @@ summary: "Create Credit Transfer & Beneficiary RESTful API - generate a payment 
 sidebar: ct_sidebar
 permalink: np_createctandbene.html
 folder: prodNuapay
-toc: false
+toc: true
 ---
 
 ## API Details
@@ -62,6 +62,21 @@ By default EUR payments are processed as `STANDARD`; GBP payments are processed 
 
 Where you specify `FASTEST_POSSIBLE` a payment will go via the the Express payment if possible (i.e. if configured for you); if it is not possible to send the payment as Express  then the transaction will be processed as a Standard payment.
 
+## Managing Address Details in SEPA
+
+The European Payments Council, which manages SEPA rules, has specific guidelines for how addresses should be used when provided. Please review the following points to understand the specific requirements.
+
+**If either you or your beneficiary is located outside the EEA**, you **must** provide countrparty address information, including:  
+  - `line1` or `streetName`
+  - `town`  
+  - `country`  
+This requirement comes from the **Wire Transfer Regulation (WTR)**, an EU law designed to ensure that banks and payment providers can identify the sender of a transfer. Providing these address details helps track payments and prevent fraud, money laundering, and other financial crime.
+
+**If both you and your beneficiary are located within the EEA**, providing an address for your payee is **not mandatory**.  
+
+**If you choose to provide an address voluntarily** (even when not required), at a minimum you must include:  
+  - `town`  
+  - `country`  
 
 {% include swagger_np.html %}
 
