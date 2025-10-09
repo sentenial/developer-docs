@@ -10,10 +10,38 @@ toc: false
 
 ## API Details
 
+## CoP / VoP
+
 The Retrieve Verification request allows you to:
 
 * Pass the `verificationId`, returned in the response from the [Request Verification](ver_reqverification.html) endpoint.
-* Retrieve the `nameScore` in the `results` object.
+* Retrieve the verification `type`.
+
+The detail of the verification result are provided in the `accountHolderVerificationResult` object. 
+
+Possible `types` include:
+
+* FULL_MATCH
+* PARTIAL_MATCH 
+* NO_MATCH
+* UNABLE_TO_MATCH
+
+| Type | Definition | Likely Causes | Next Steps |
+|--------|------------|---------------|------------|
+| `FULL_MATCH` | The account details exactly match the records held by the bank. | • All submitted details (name, account number, sort code/IBAN) match bank records | Safe to proceed. You can continue with the payment or add the beneficiary confidently. |
+| `PARTIAL_MATCH` | The account details partly align with the records (e.g., surname matches but first name differs). | • Minor spelling differences (e.g., “Jon” vs “John”)<br>• Typo or formatting variation in name<br>• Business/trading name vs registered name<br>• Initials vs full names | Review details carefully. May be acceptable if variation is minor/expected (e.g., business vs trading name). If unexpected, confirm with payee before proceeding. |
+| `NO_MATCH` | The account details do not align with what the bank holds. | • Incorrect account name<br>• Typo in account number/sort code/IBAN<br>• Details belong to a different account | Contact payee to confirm details; consider halting payment until resolved. |
+| `UNABLE TO MATCH` | The service cannot confirm either way. | • Receiving bank not participating in VoP.CoP<br>• Account type not supported (e.g., savings, pooled, some business accounts)<br>• Temporary technical issue at bank<br>• Incomplete or incorrectly formatted input | Does not mean details are wrong. Proceed with caution; may need manual confirmation from payee. |
+
+
+## Open Banking AIS
+
+{% include tip.html content="Open Banking AIS-based user verification will be deprecated in November 2025 so we highly recommend using CoP/VoP verification. " %}
+
+The Retrieve Verification request allows you to:
+
+* Pass the `verificationId`, returned in the response from the [Request Verification](ver_reqverification.html) endpoint.
+* Retrieve the `nameScore` in the `openBankingVerificationResults` object.
 * See the account type: `CACC` - Current Account; `SVGS` - Savings Account, etc. See table below.
 
 In some cases, where the user holds more than one account at the bank, a number of account holder names and scores may be returned in the `results` object of the response.
@@ -48,7 +76,7 @@ The following account types may be returned:
 {% include idempotency.html %}
 
 
-{% include swagger_np.html %}
+{% include swagger_ver.html %}
 
 {% include urls.html %}
 
