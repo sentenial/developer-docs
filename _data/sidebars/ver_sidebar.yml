@@ -45,15 +45,19 @@ entries:
       url: /ver_verificationstatuses.html
       output: web
 
-  - title: CoP Verification
+  - title: CoP / VoP Verification
     output: web, pdf
     folderitems:
 
-    - title: Initiating a CoP Check
+    - title: Initiating a Payee Check
       url: /ver_coplaunch.html
       output: web
 
-    - title: CoP Test Data
+    - title: Custom Account Verification
+      url: /ver_implementcustom.html
+      output: web
+
+    - title: Test Data
       url: /ver_coptest.html
       output: web
 
@@ -72,6 +76,10 @@ entries:
     - title: List Verifications
       url: /ver_listverification.html
       output: web
+
+#    - title: Set Consent --> MORE AN INTERNAL ENDPOINT 
+#      url: /ver_setconsent.html
+#      output: web
 
   - title: Webhooks
     output: web, pdf

@@ -1,7 +1,7 @@
 ---
-title: CoP Test Data
-keywords: CoP Test Data Stub
-summary: "Use the provided names in the table below to call our Stub and simulate the various possible responses for your CoP checks on our Sandbox environment."
+title: CoP/VoP Test Data
+keywords: CoP/VoP Test Data Stub
+summary: "Use the provided names in the table below to call our Stub and simulate the various possible responses for your CoP/VoP checks on our Sandbox environment."
 sidebar: ver_sidebar
 permalink: ver_coptest.html
 folder: prodNuapay
@@ -9,7 +9,7 @@ toc: false
 ---
 ## Overview
 
-When testing the CoP APIs, it is possible to use the following test data to simulated specific CoP results:
+When testing the `ACCOUNT_HOLDER_VERIFICATION` APIs, it is possible to use the following test data to simulated specific results:
 
 | Entity                  | Account Responded Name | Account Status | Account Name Check Status | Scheme Response Code |
 |-------------------------|------------------------|----------------|---------------------------|----------------------|

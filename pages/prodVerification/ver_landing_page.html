@@ -10,12 +10,79 @@ folder: prodVerification
 <div class="row">
         <div class="col-lg-12">
             <h2 class="page-header">Introduction</h2>
-            <p>Nuapay allows you to verify account holders in two ways, via:
-              <ul>
-                <li>Open Banking - AIS </li>
-                <li>Account Holder Verification - Confirmation of Payee (CoP) </li>
-                </ul>
-            </p>
+
+<p>
+    Verifying account ownership before disbursing funds helps to prevent fraud and minimise the risk of misdirected payments.
+    Verification allows you to validate beneficiary details prior to payment execution.
+  </p>
+            <p>
+
+              Nuapay allows you to verify account holders in two ways, via:
+<uL>
+<li>Confirmation of Payee (CoP) / Verification of Payee (VoP)</li>
+<li>Open Banking - AIS</li>
+</uL>
+
+{% include warning.html content="Verification via Open Banking AIS will be deprecated in November 2025 so we recommend using CoP (for UK clients) or VoP as your verification method." %}
+
+
+ <h2 class="page-header">CoP and VoP</h2>
+
+ <p>
+  Account verification services, including Confirmation of Payee (CoP) in the UK and Verification of Payee (VoP) in the EU and other regions,
+  allow payers or systems to check that a payee's name matches the account details provided. These services help prevent typographical errors, misdirected payments,
+  and fraud before funds are transferred.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Region</th>
+      <th>Purpose</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Confirmation of Payee (CoP)</td>
+      <td>UK</td>
+      <td>Verify payee details</td>
+      <td>Confirms that the name on a bank account matches the account number before making a payment, helping to reduce fraud and misdirected payments.</td>
+    </tr>
+    <tr>
+      <td>Verification of Payee (VoP)</td>
+      <td>EU / SEPA</td>
+      <td>Verify payee details</td>
+      <td>Checks that the recipient’s name matches the IBAN and account details before a payment is processed, reducing errors and unauthorized transactions.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h4>Common Verification Results</h4>
+<ul>
+  <li><strong>Match:</strong> The payee name exactly matches the account details. Payment can proceed with confidence.</li>
+  <li><strong>Partial Match:</strong> The payee name partially matches the account details (e.g., minor spelling differences). Users or systems may require additional confirmation.</li>
+  <li><strong>No Match:</strong> The payee name does not match the account details. Payment should be stopped or reviewed to avoid errors or potential fraud.</li>
+</ul>
+
+<p>
+  These results are common across both CoP and VoP implementations, though specific handling, terminology, and regulatory requirements may vary by region.
+</p>
+
+
+
+ 
+  <h3>Why these checks matter</h3>
+  <ul>
+    <li>Prevent misdirected payments and reduce refund workload.</li>
+    <li>Mitigate authorised push payment (APP) and other account-targeted fraud.</li>
+    <li>Improve customer confidence by displaying verification results before payment confirmation.</li>
+  </ul>
+
+             
               <h2 class="page-header">AIS Mode</h2>
             <p>Account Holder Verification allows you to leverage the power of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ais}}">Open Banking Account Information Service</a> to verify if user details, held by you, match the account details stored at the user's bank.</p>
 
@@ -37,7 +104,7 @@ folder: prodVerification
               <li>Using the retrieved account details, calculate a verification score against data that the client already holds (i.e., the customer’s name).
               Currently the matching is carried out only on the customer’s name.</li>
               </ul>
-
+<!--
               <h2 class="page-header">CoP Mode</h2>
               <p>In <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.cop}}">Confirmation of Payee (CoP) </a> mode (for UK users processing GBP only)
                 <ul>
@@ -45,7 +112,8 @@ folder: prodVerification
                 <li> The bank will perform the matching and return a score.</li>
                 <li> Based on the score returned, you can decide on the next steps.</li>
                 </ul>
-                </p>
+                </p> -->
+              
 
         </div>
 </div>
