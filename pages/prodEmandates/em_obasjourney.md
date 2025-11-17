@@ -5,6 +5,7 @@ summary: "The PSU experience when opting to set up a subscription with Direct De
 sidebar: em_sidebar
 permalink: em_obasjourney.html
 folder: prodEmandates
+published: false
 ---
 
 For Merchants/Partners who are using either the `CHECKOUT` or `REDIRECT` integration approach to set up a subscription, the following gives a summary of the user's interaction.

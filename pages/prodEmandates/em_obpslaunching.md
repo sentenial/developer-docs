@@ -5,6 +5,7 @@ summary: "Depending on the integration type you have implemented, the method for
 sidebar: em_sidebar
 permalink: em_obpslaunching.html
 folder: prodEmandates
+published: false
 ---
 
 {% include tip.html content="Before you can set up a subscription payment solution you must first be configured for Direct Debit processing. Read more about [Direct Debit Basics](np_mdtbasics.html) and discuss your requirements with your Account Manager, who can guide you on how best to configure Direct Debits for your specific business needs." %}

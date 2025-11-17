@@ -22,8 +22,8 @@ folder: prodOpenBanking
 
 All services may be accessed via the following URLs:
 
-|SANDBOX|https://sandbox.nuapay.com/tpp/|
-|PRODUCTION| https://api.nuapay.com/tpp/|
+|SANDBOX|https://sandbox.nuapay.com/|
+|PRODUCTION| https://api.nuapay.com/|
 
 To request an API Key please contact our Support Team: <a href="mailto:api.support@nuapay.com">api.support@nuapay.com</a>.
 

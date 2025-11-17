@@ -5,6 +5,7 @@ summary: "Combine Open Banking with an electronic mandate to better and more sea
 sidebar: em_sidebar
 permalink: em_oboverview.html
 folder: prodEmandates
+published: false
 ---
 
 {% include tip.html content="Open Banking allows third-party organizations (like Nuapay) to access banking transactions and data through APIs. For an added layer of security when signing up for Direct Debits, payers are required to connect to their bank (with Strong Customer Authentication) as an initial step in the signing process. For more information on Open Banking, see the [Open Banking section](ob_landing_page.html)" %}
