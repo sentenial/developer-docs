@@ -5,6 +5,7 @@ summary: "For Partners/Merchants who would like to use the Account Access & E-Ma
 sidebar: em_sidebar
 permalink: em_obasselfhosted.html
 folder: prodEmandates
+published: false
 ---
 
 In order to launch the Open Banking Account Access and E-Mandate signup flow, in `SELF_HOSTED` mode, you must call various APIs, as outlined below.

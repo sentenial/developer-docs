@@ -114,6 +114,23 @@ entries:
         - title: Transfer Between Ledger Accounts
           url: /np_transferbtwnledg.html
           output: web
+  
+    - title: Settlement Overview
+      url: /np_setmtoverview.html
+      output: web, pdf
+
+      subfolders:
+      - title: Settlement APIs
+        output: web
+        subfolderitems:
+
+        - title: List Account Settlements
+          url: /np_listaccountsetmts.html
+          output: web
+
+        - title: Retrieve Account Settlement
+          url: /np_retraccountssetmt.html
+          output: web
 
   - title: Webhooks
     output: web, pdf

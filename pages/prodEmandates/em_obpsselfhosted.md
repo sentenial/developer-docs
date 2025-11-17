@@ -5,6 +5,7 @@ summary: "For Partners/Merchants who would like to use the payment & E-Mandate s
 sidebar: em_sidebar
 permalink: em_obpsselfhosted.html
 folder: prodEmandates
+published: false
 ---
 
 In order to launch the Open Banking Payment and E-Mandate signup flow, in `SELF_HOSTED` mode, you must call a number of payment- and mandate-related APIs, as outlined below.

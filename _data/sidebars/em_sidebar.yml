@@ -217,48 +217,47 @@ entries:
         - title: Download Contract Document
           url: /em_retrieve_contract.html
           output: web, pdf
+# Commented out the OB section - now deprecated. Updated on 17/11/25
+  # - title: Open Banking E-Mandates
+  #   output: web, pdf
+  #   folderitems:
 
+  #   - title: Overview
+  #     url: /em_oboverview.html
+  #     output: web, pdf
 
-  - title: Open Banking E-Mandates
-    output: web, pdf
-    folderitems:
+  #     subfolders:
+  #     - title: Payment-Initiated E-Mandates
+  #       output: web
+  #       subfolderitems:
 
-    - title: Overview
-      url: /em_oboverview.html
-      output: web, pdf
+  #       - title: Launching the Flow
+  #         url: /em_obpslaunching.html
+  #         output: web, pdf
 
-      subfolders:
-      - title: Payment-Initiated E-Mandates
-        output: web
-        subfolderitems:
+  #       - title: The User Journey
+  #         url: /em_obpsjourney.html
+  #         output: web, pdf
 
-        - title: Launching the Flow
-          url: /em_obpslaunching.html
-          output: web, pdf
+  #       - title: Self-Hosted Mode
+  #         url: /em_obpsselfhosted.html
+  #         output: web, pdf
 
-        - title: The User Journey
-          url: /em_obpsjourney.html
-          output: web, pdf
+  #     - title: Account-Access E-Mandates
+  #       output: web
+  #       subfolderitems:
 
-        - title: Self-Hosted Mode
-          url: /em_obpsselfhosted.html
-          output: web, pdf
+  #        - title: Launching the Flow
+  #          url: /em_obaslaunching.html
+  #          output: web, pdf
 
-      - title: Account-Access E-Mandates
-        output: web
-        subfolderitems:
+  #        - title: The User Journey
+  #          url: /em_obasjourney.html
+  #          output: web, pdf
 
-         - title: Launching the Flow
-           url: /em_obaslaunching.html
-           output: web, pdf
-
-         - title: The User Journey
-           url: /em_obasjourney.html
-           output: web, pdf
-
-         - title: Self-Hosted Mode
-           url: /em_obasselfhosted.html
-           output: web, pdf
+  #        - title: Self-Hosted Mode
+  #          url: /em_obasselfhosted.html
+  #          output: web, pdf
 
 
   - title: E-Mandate & Contract
@@ -307,6 +306,10 @@ entries:
       - title: Webhook Notifications
         output: web
         subfolderitems:
+
+        - title: E-Mandate Captured
+          url: /em_whmandcaptured.html
+          output: web
 
         - title: E-Mandate Signature
           url: /em_whmandsignature.html

@@ -5,6 +5,7 @@ summary: "The PSU experience when opting to pay by Bank Transfer and set up Dire
 sidebar: em_sidebar
 permalink: em_obpsjourney.html
 folder: prodEmandates
+published: false
 ---
 
 For Merchants/Partners who are using either the `CHECKOUT` or `REDIRECT` integration approach, the following gives a summary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.psu}}">PSU's</a> interaction.
