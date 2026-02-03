@@ -57,20 +57,48 @@ For this reason we recommend that your `mandateId` should not use all 18 charact
 
 ## Managing Address Details in SEPA
 
-The European Payments Council, which manages SEPA rules, has specific guidelines for how addresses should be used when provided. Please review the following points to understand the specific requirements.
+The European Payments Council (EPC), which manages SEPA rules, has specific guidelines for how addresses must be formatted and provided. Please review the following points to ensure that your payment files remain compliant and avoid bank rejections.
+
+## Structured / Unstructured / Hybrid Address Formats
+Addresses in SEPA payments can be Structured, Unstructured or Hybrid.
+
+**Structured**: Every address component has a dedicated field (Street, Building Number, Postcode, etc.). In payments files, each element is placed in its own dedicated XML tag. This is the most reliable format and the eventual industry standard.
+
+**Unstructured**: Address details are provided as a single block of free text using "Address Lines." Note: This format is currently being phased out in favor of structured data. After November 16th 2026, purely unstructured addresses will not be permitted.
+
+**Hybrid**: A transitional format that combines mandatory structured tags (Country and Town) with unstructured "Address Lines" for the remaining details. This serves as a bridge for systems not yet ready for full structural mapping.
+
+The following table summarises the valus that are possible with each address format, with the mandatory and optional elements:
+
+| Element               | XML Tag        | Unstructured | Structured | Hybrid | Mandatory Status                     |
+|-----------------------|----------------|--------------|------------|--------|--------------------------------------|
+| Country               | Ctry           | ✔︎           | ✔︎         | ✔︎     | Mandatory (Always)                   |
+| Address Line          | AdrLine        | ✔︎           | ✘          | ✔︎     | Mandatory (Unstructured)             |
+| Town Name             | TwnNm          | ✘            | ✔︎         | ✔︎     | Mandatory (Structured, Hybrid)       |
+| Street Name           | StrtNm         | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Post Code             | PstCd          | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Building Number       | BldgNb         | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Building Name         | BldgNm         | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Floor                 | Flr            | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Unit Number           | UnitNb         | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Room                  | Room           | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Post Box              | PstBx          | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Department            | Dept           | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Sub-Department        | SubDept        | ✘            | ✔︎         | ✔︎     | Optional                             |
+| District Name         | DstrctNm       | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Town Location         | TwnLctnNm      | ✘            | ✔︎         | ✔︎     | Optional                             |
+| Country Sub-Division  | CtrySubDvsn    | ✘            | ✔︎         | ✔︎     | Optional                             |
 
 
-**If either you or your debtor is located outside the EEA**, you **must** provide debtor address information, including:  
-  - `line1` or `streetName`
-  - `town`  
-  - `country`  
-This requirement comes from the **Wire Transfer Regulation (WTR)**, an EU law designed to ensure that banks and payment providers can identify the sender of a transfer. Providing these address details helps track payments and prevent fraud, money laundering, and other financial crime.
+### Transactions Involving Non-European-Ecomomic-Area (EEA) Countries
+If either you or your debtor is located outside the EEA, you must provide debtor address information under the Wire Transfer Regulation (WTR). This EU law ensures transparency for fraud prevention and anti-money laundering (AML) efforts.
 
-**If both you and your debtor are located within the EEA**, providing an address for the debtor is **not mandatory**.  
+|**Best Practice**: While Town and Country are the technical minimums for structured addresses, we strongly recommend providing additional elements (such as `Street Name` and `Building Number`) to reduce the risk of manual intervention or payment rejection by the intermediary or beneficiary bank.|
 
-**If you choose to provide an address voluntarily** (even when not required), at a minimum you must include:  
-  - `town`  
-  - `country`  
+### Transactions Within the EEA
+If both you and your debtor are located within the EEA, providing an address for the debtor is not mandatory.
+
+If you choose to provide an address voluntarily (where not strictly required by the WTR), ensure that you meet the mandatory elements as outlined in the table above.
 
 
 {% include swagger_np.html %}
