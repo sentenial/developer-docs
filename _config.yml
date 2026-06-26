@@ -6,13 +6,13 @@ plugins_dir:
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Nuapay Developer Hub
+topnav_title: Origix Developer Hub
 # this appears on the top navigation bar next to the home button
 
-site_title: Nuapay Developer Hub
+site_title: Origix Developer Hub
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: Sentenial | Nuapay
+company_name: Sentenial | GoCardless
 # this appears in the footer
 
 #github_editme_path: sentenial/developer-docs/blob/master/
@@ -44,7 +44,7 @@ exclude:
 
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Nuapay Documentation Hub 
+feedback_subject_line: Origix Documentation Hub 
 
 feedback_email: api.support@nuapay.com 
 # used as a contact email for the Feedback link in the top navigation bar
@@ -117,6 +117,6 @@ sidebars:
 - productOverview_sidebar
 - other
 
-description: "Nuapay Developer Hub providing documentation and support to API developers interested in Nuapay and Sentenial payment products."
+description: "Origix Developer Hub providing documentation and support to API developers interested in Origix and Sentenial payment products."
 # the description is used in the feed.xml file
 

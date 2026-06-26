@@ -39,11 +39,11 @@ topnav_dropdowns:
           url: /np_ctoverview.html
         - title: File Management 
           url: /fm_overview.html
-        - title: Nuapay Accounts
+        - title: Accounts
           url: /np_accountoverview.html
       #  - title: Instant Payments --> removed 26/10/23
       #    url: /ip_landing_page.html --> removed 26/10/23
-        - title: Open Banking
+      #  - title: Open Banking --> removed on 26/06/26
           url: /ob_landing_page.html
         - title: Account Holder Verification
           url: /ver_landing_page.html
