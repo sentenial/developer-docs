@@ -54,7 +54,7 @@ entries:
       url: /prod_partnerintegration.html
       output: web
 
-  - title: Nuapay Console
+  - title: Console
     output: web, pdf
     folderitems:
     - title: Overview
